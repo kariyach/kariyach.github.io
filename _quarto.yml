@@ -1,0 +1,61 @@
+# This file controls the settings for your Quarto template from www.marvinschmitt.com
+
+# website settings
+website:
+  title: "CHIHIRO KARIYA:  Intellectual Historian of Early Modern Ideas"                                # Your name
+  description: "Historian of Early Modern Ideas and Scholarship"   # A brief slogan (optional)
+  image: img/politics.png
+  
+  # start of the navigation bar at the top of the website
+  navbar:
+    pinned: true
+    # your sub-pages
+    left:
+      - text: "Publications"
+        href: publications/index.qmd
+      - text: "Events"
+        href: events/index.qmd
+      - text: "Education"
+        href: education/index.qmd
+      - text: "CV"
+        href: cv/index.qmd
+    
+    # your social media handles
+    right:
+      - icon: envelope
+        aria-label: email
+        href: "mailto:kariyach@staff.kanazawa-u.ac.jp"
+
+# Don't touch unless you know what you are doing :) ------------
+  search: 
+    location: navbar
+    type: textbox
+  page-footer: 
+    left: |
+      <span class="faux-block">&#169; 2024 CHIHIRO KARIYA</span>
+
+project:
+  type: website
+  output-dir: docs
+
+  preview: 
+    port: 22221
+    browser: true
+    watch-inputs: true
+    navigate: true
+
+execute:
+  freeze: true
+
+format:
+  html:
+    fontsize: 1.1em
+    theme:
+      - cosmo
+      - html/styles.scss
+    toc: true
+    code-link: true
+    anchor-sections: true
+    fig-cap-location: margin
+    reference-location: margin
+    footnotes-hover: true
