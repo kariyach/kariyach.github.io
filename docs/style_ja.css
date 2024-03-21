@@ -1,0 +1,119 @@
+
+h1{
+  font-size:130%;
+}
+h2{
+  font-size:120%;
+}
+
+h3{
+  font-size:110%;
+}
+
+h4{
+  font-size:100%;
+}
+
+blockquote {
+  font-size:80%;
+  border-left: 5px solid $text-muted;
+  padding-left: 0.5em;
+  border-color: #7a746d;
+  color: #000000;
+}
+
+blockquote p {
+    font-size:80%;
+    padding: 0;
+    margin: 0px 0;
+    line-height: 1.2;
+    color: #373A3C;
+    font-size: 1.0em;
+}
+
+blockquote cite {
+    font-size:80%;
+    display: block;
+    text-align: right;
+    color: #000000;
+    font-size: 0.9em;
+}
+
+caption {
+    color: #000000;
+    font-size: 0.9em;
+}
+
+table {
+            width: 80%; /* テーブルの幅を100%に設定 */
+ }
+
+p {
+    font-size: 100%;
+  }
+
+.print-only {
+  display: none;
+  /*color: aquamarine;*/
+}
+
+@media print {
+  @page {
+  size: a4 portrait;
+  font-family: YuMincho, "Hiragino Mincho ProN", serif;
+  @bottom-center {
+    content: counter(page) " / " counter(pages);
+  }
+  }
+
+  html {
+    font-family: 'Hiragino Mincho ProN', sans-serif;
+    font-size: 95%;
+    line-height: 1.1
+  }
+
+ h1 {
+    font-family: 'Meiryo', 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-size: 105%;
+    line-height: 0.9
+  }
+
+ h2 {
+    font-family: 'Meiryo', 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-size: 100%;
+    line-height: 0.9;
+    text-decoration: underline
+  }
+
+ h3 {
+    font-family: 'Meiryo', 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-size: 95%;
+    line-height: 0.9
+  }
+
+ h4 {
+    font-family: 'Meiryo', 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-size: 95%;
+    line-height: 0.9
+  }
+
+ strong {
+    font-family: 'Meiryo', 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-size: 100%;
+  }
+
+  p {
+    font-size: small;
+  }
+
+  ul li{
+    font-size: small;
+    line-height: 1.1
+  }
+
+  .no-print {
+      display: none;
+  }
+  .print-only {
+      display: block;
+  }
