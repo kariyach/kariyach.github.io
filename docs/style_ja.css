@@ -102,18 +102,45 @@ p {
   }
 
   p {
-    font-size: small;
+    font-size: small
+    margin: 0.5em 0px;   /* 上下に1em・左右に0px */
   }
 
   ul li{
     font-size: small;
-    line-height: 1.1
+    line-height: 1.2
   }
   
   ol li{
     font-size: small;
-    line-height: 1.1
+    line-height: 1.2
   }
+
+/* Main Level */
+ul{
+  margin-left:1px;
+}
+
+/* Second Level */
+ul ul{
+  margin-left:3px;
+}
+
+/* Third Level */
+ul ul ul{
+  margin-left:9px;
+}
+
+blockquote {
+    font-size: x-small;
+    line-height: 1.1;
+    margin: 0.5em 0px;   /* 上下に1em・左右に0px */
+}
+
+callout-title-container flex-fill {
+    font-size: small;
+    line-height: 1.1
+}
 
   .no-print {
       display: none;
