@@ -67,6 +67,11 @@ p {
   }
   }
 
+
+  title-element {
+    white-space: nowrap;
+  }
+
   html {
     font-family: 'Hiragino Mincho ProN', sans-serif;
     font-size: 90%;
@@ -103,7 +108,7 @@ p {
   }
 
   p {
-    font-size: small
+    font-size: small;
     margin: 0.5em 0px;   /* 上下に1em・左右に0px */
   }
 
@@ -118,29 +123,39 @@ p {
   }
 
 /* Main Level */
-ul{
-  margin-left:1px;
+ul {
+  padding-left: 20px; /* メインレベルのパディング */
 }
 
 /* Second Level */
-ul ul{
-  margin-left:3px;
+ul ul {
+  padding-left: 30px; /* 2番目のレベルのパディング */
 }
 
 /* Third Level */
-ul ul ul{
-  margin-left:9px;
+ul ul ul {
+  padding-left: 30px; /* 3番目のレベルのパディング */
+}
+
+/* Main Level */
+ol {
+  padding-left: 20px; /* メインレベルのパディング */
+}
+
+/* Second Level */
+ol ol {
+  padding-left: 30px; /* 2番目のレベルのパディング */
+}
+
+/* Third Level */
+ol ol ol {
+  padding-left: 30px; /* 3番目のレベルのパディング */
 }
 
 blockquote {
     font-size: x-small;
     line-height: 1.1;
     margin: 0.5em 0px;   /* 上下に1em・左右に0px */
-}
-
-callout-title-container flex-fill {
-    font-size: small;
-    line-height: 1.1
 }
 
   .no-print {

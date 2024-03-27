@@ -1,0 +1,24 @@
+.print-only {
+  display: none;
+  /*color: aquamarine;*/
+}
+
+@media print {
+  @page {
+    size: a4 portrait;
+    counter-increment: page;
+  @bottom-center {
+    content: counter(page) " / " counter(pages);
+  }
+}
+  /* タイトルなどの要素に対して改行を取り除く */
+  .title-element {
+    white-space: nowrap;
+  }
+}
+  .no-print {
+      display: none;
+  }
+  .print-only {
+      display: block;
+  }
