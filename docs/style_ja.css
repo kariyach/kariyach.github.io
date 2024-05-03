@@ -1,6 +1,7 @@
 h1{
-  font-size:130%;
+  font-size:125%;
 }
+
 h2{
   font-size:120%;
 }
@@ -14,7 +15,7 @@ h4{
 }
 
 blockquote {
-  font-size:80%;
+  font-size:95%;
   border-left: 5px solid $text-muted;
   padding-left: 0.5em;
   border-color: #7a746d;
@@ -22,20 +23,18 @@ blockquote {
 }
 
 blockquote p {
-    font-size:80%;
+    font-size:95%;
     padding: 0;
     margin: -5px 0;
     line-height: 1.2;
     color: #373A3C;
-    font-size: 1.0em;
 }
 
 blockquote cite {
-    font-size:80%;
+    font-size:95%;
     display: block;
     text-align: right;
     color: #000000;
-    font-size: 0.9em;
     margin: -5px 0;
 }
 
@@ -51,6 +50,10 @@ table {
 p {
     font-size: 100%;
   }
+
+footnote-ref {
+    font-size: x-small;
+}
 
 .print-only {
   display: none;
@@ -137,10 +140,9 @@ p {
     font-size: 100%;
   }
 
-  p {
-    font-size: small;
-    margin: 0.5em 0px;   /* 上下に1em・左右に0px */
-  }
+ p {
+    font-size: 100%;
+ }
 
   ul li{
     font-size: small;
@@ -183,14 +185,27 @@ ol ol ol {
 }
 
 .blockquote {
-    font-size: 120% !important;
-    padding-left: 40px
-    padding-right: 40px
+    font-size: 90%;
+    padding-left: 40px;
+    padding-right: 40px;
     margin: 0.5em 0px;   /* 上下に1em・左右に0px */
 }
 
-.footnote-ref {
-    font-size: x-small;
+.blockquote p {
+    font-size:95%;
+    padding-left: 40px;
+    padding-right: 40px;
+    line-height: 1.2;
+    margin: 0.5em 0px;   /* 上下に1em・左右に0px */
+}
+
+div.column-container p {
+    font-size: 85%;
+}
+
+.csl-entry {
+    font-size: 85%;
+    margin: 0.5em 0px;   /* 上下に1em・左右に0px */
 }
 
   .no-print {
