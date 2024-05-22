@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CHIHIRO KARIYA - 学域横断的プロジェクト入門 2024</title>
+<title>CHIHIRO KARIYA - RとQuartoではじめるデータサイエンス 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -148,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title"><a href="index.html">学域横断的プロジェクト入門 2024</a></h1>
+      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス 2024</a></h1>
             <p class="subtitle lead">シラバス</p>
                       </div>
   </div>
@@ -176,8 +176,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#評価の割合" id="toc-評価の割合" class="nav-link" data-scroll-target="#評価の割合">評価の割合</a></li>
   <li><a href="#教科書参考書補足" id="toc-教科書参考書補足" class="nav-link" data-scroll-target="#教科書参考書補足">教科書・参考書補足</a>
   <ul class="collapse">
+  <li><a href="#教科書" id="toc-教科書" class="nav-link" data-scroll-target="#教科書">教科書</a></li>
   <li><a href="#参考書" id="toc-参考書" class="nav-link" data-scroll-target="#参考書">参考書</a></li>
   </ul></li>
+  <li><a href="#その他履修上の注意事項や学習上の助言" id="toc-その他履修上の注意事項や学習上の助言" class="nav-link" data-scroll-target="#その他履修上の注意事項や学習上の助言">その他履修上の注意事項や学習上の助言</a></li>
   <li><a href="#予習に関する指示" id="toc-予習に関する指示" class="nav-link" data-scroll-target="#予習に関する指示">予習に関する指示</a></li>
   <li><a href="#復習に関する指示" id="toc-復習に関する指示" class="nav-link" data-scroll-target="#復習に関する指示">復習に関する指示</a></li>
   </ul>
@@ -192,32 +194,27 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="授業の主題" class="level2">
 <h2 class="anchored" data-anchor-id="授業の主題">授業の主題</h2>
-<p>この授業は、高校時代に培った、探究学習を始めとする、主体的かつ協働的な学びや経験を、発展的に、大学への学びと接続させることを目指す、グループワーク型の研究プロジェクトです。また、学域、学類を超えて集まった「多様な学生が切磋琢磨し相互に刺激を与えながら成長する場」として研究プロジェクトを位置づけ、多様な視点を交差、交流させることから得られる学知や経験を重視します。この授業を通して、今後の専門教育の土台の一つを築くことを目指します。</p>
+<p>この授業は、統計プログラム言語「R」の基本的な機能と、Quarto（Rの出力結果を出力するR Studioの機能の一つ）を学習するものです｡R言語は、プログラム言語のなかでは比較的習得が容易であり、社会科学から自然科学にいたるまで幅広い分野の研究者が活用しています｡ この授業は統計学、確率、多変量解析の授業ではありません｡統計学的な出力やその妥当性の検討よりも、数値の出力結果を可視化する（<a href="https://ggplot2.tidyverse.org">ggplot2パッケージ</a>）方法に重点を置きます｡わかりやすい図を簡単に、また、同じコードを繰り返し利用することで作業量を減らす、再現可能性を高めることも重視されます｡</p>
+<p>専攻、専門分野は問いません｡すでにあるデータを可視化したい、あるいは、データを可視化することに関心をもてる方の受講を歓迎いたします｡プログラム言語の初心者であっても受講に問題はありません｡</p>
 </section>
 <section id="学修目標到達目標" class="level2">
 <h2 class="anchored" data-anchor-id="学修目標到達目標">学修目標（到達目標）</h2>
 <ol type="1">
-<li>受講生が、高校での学びと大学での学びの質的な連続性と相違点を自覚することができるようになる</li>
-<li>受講生が、グループワークを通して、研究の分担や協力などの基本的な作法を身に付ける</li>
-<li>受講生が、他のグループの研究発表に興味関心をもち、主体的、積極的に、質問やコメントができるようになる</li>
-<li>受講生が、質の高い研究プロジェクトにするための条件について、自ら考えられるようになる</li>
-<li>受講生が、グループ内で共通する問題意識について議論し、それを一つに集約し、言語化できるようになる</li>
-<li>受講生が、問題意識を、検証可能なリサーチクエッションに変換できるようになり、また、リサーチクエッションや選択した対象に適した、先行研究や資料を探すことができるようになる</li>
-<li>受講生が、選択した対象に適した、ディシプリンや検証方法について考えることができるようになる</li>
-<li>受講生が、グループ内またはクラス内発表などを通して、自分（たち）の研究上の問題点を自覚し、それを修正する態度を身に付けられるようになる</li>
+<li>受講生が、R言語の基本的な操作（データの読み込み、加工、抽出、結合など）ができる</li>
+<li>受講生が、ggplot2パッケージを使い、基本的な図（棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ）を作成できる</li>
+<li>受講生が、自分の関心のあるテーマにかかわるデータから適切な図を作成できる</li>
 </ol>
 </section>
 <section id="授業概要" class="level2">
 <h2 class="anchored" data-anchor-id="授業概要">授業概要</h2>
-<p>学域、学類を超えて編成されるグループにおいて、課題発見から課題解決にいたる一連のプロセスを経験します 1. 高校での探究学習を共有する 2. グループ全員が興味をもつことができるテーマを探し出し、リサーチプロポーザル（リサーチクエッション、先行研究、研究方法など）を執筆する 3. リサーチプロポーザルにもとづく、プレゼンテーションを実施する</p>
+<p>授業は、講義と演習の形式でおこないます｡ 講義の前半は、テキスト『データ分析のためのデータ可視化入門』を中心に、コードの意味や記述方法、動作、実行結果などを例示、解説します｡ 後半の演習は、1. 各自所有のノートPCおこないますので、必ずノートPCを持参してください｡テキストの例題と合わせて、2. 自分の関心のあるテーマにかかわるデータでも、同様のコードを実践してください｡</p>
 </section>
 <section id="評価の割合" class="level2">
 <h2 class="anchored" data-anchor-id="評価の割合">評価の割合</h2>
 <ul>
-<li>リサーチプロポーザル（レポート形式）30％</li>
-<li>プレゼンテーション（スライド資料） 20%</li>
-<li>毎回の授業課題（予習・復習）30%</li>
-<li>受講態度（グループへの貢献度を含む） 20%
+<li>毎回の授業課題（感想と演習）：50%（25%と25%）</li>
+<li>レポートとプレゼンテーション：30%</li>
+<li>受講態度：20%
 <ul>
 <li>※授業には3分の2以上の出席を必要とします 　- ※評価基準は、授業目標に準じます</li>
 </ul></li>
@@ -225,22 +222,42 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="教科書参考書補足" class="level2">
 <h2 class="anchored" data-anchor-id="教科書参考書補足">教科書・参考書補足</h2>
+<section id="教科書" class="level3">
+<h3 class="anchored" data-anchor-id="教科書">教科書</h3>
+<ul>
+<li>キーラン・ヒーリー（2021）『データ分析のためのデータ可視化入門』（瓜生真也・ 江口哲史・三村喬生 訳）、講談社（<a href="https://www.kspub.co.jp/book/detail/5164044.html">LINK</a>）</li>
+</ul>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>教科書『データ分析のためのデータ可視化入門』は必ず購入してください｡購入先はどこでも構いません｡セカンドハウンドも可。受講者数が少ないため､生協の「教科書」には指定していませんので､ご注意下さい（生協で購入する場合は､各自取り寄せ注文すること）。</p>
+</div>
+</div>
+</div>
+</section>
 <section id="参考書" class="level3">
 <h3 class="anchored" data-anchor-id="参考書">参考書</h3>
-<ol type="1">
-<li>戸田山和久『最新版 論文の教室：レポートから卒論まで』（NHKブックス、2022年）</li>
-<li>ジョン・モーリー（高橋さきの訳・国枝哲夫監訳）『アカデミック・フレーズバンク：そのまま使える！構文200・文例1900』（講談社、2022年）</li>
-</ol>
-<p>適宜、授業内で配布します。</p>
+<ul>
+<li>松村優哉・湯谷啓明・紀ノ定保礼・前田和寛（2021）『改訂2版 RユーザのためのRStudio「実践」入門：tidyverseによるモダンな分析フローの世界』、技術評論社（<a href="https://gihyo.jp/book/2021/978-4-297-12170-9">LINK</a>）</li>
+<li>松村優哉・瓜生真也・吉村広志（2023）『Rユーザのためのtidymodels「実践」入門：モダンな統計・機械学習モデリングの世界』、技術評論社（<a href="https://gihyo.jp/book/2018/978-4-7741-9853-8">LINK</a>）</li>
+</ul>
 </section>
+</section>
+<section id="その他履修上の注意事項や学習上の助言" class="level2">
+<h2 class="anchored" data-anchor-id="その他履修上の注意事項や学習上の助言">その他履修上の注意事項や学習上の助言</h2>
+<p>R言語に初めて触れる方で受講を検討している方は、まず「統計言語 「R」の神はなぜ無償で貢献したのか：オープンコミュニティで活躍する“新人類”の誕生」（<a href="https://business.nikkei.com/atcl/report/16/122700258/010900004/%5D">日経ビジネス・電子版</a>）を読んでみるとよいでしょう｡また検索サイトに検索ワードにggplotと興味のある専門領域を入力してみてみると、この授業のイメージを掴めると思います｡</p>
+<p>持参するPCは、WindowsでもMacでもかまいませんが、R Studioをインストールできる環境が必要です｡<a href="https://posit.co/download/rstudio-desktop/">公式サイト</a>から、確認してください（ここ数年、販売されたPCであれば問題ないと思います）｡</p>
 </section>
 <section id="予習に関する指示" class="level2">
 <h2 class="anchored" data-anchor-id="予習に関する指示">予習に関する指示</h2>
-<p>グループワークまたはリサーチプロポーザルに必要な文献を適宜配布します。授業までに読み、指示に応じて、まとめてください（目安1時間）。</p>
+<p>事前に教科書を下読することが望ましいです｡</p>
 </section>
 <section id="復習に関する指示" class="level2">
 <h2 class="anchored" data-anchor-id="復習に関する指示">復習に関する指示</h2>
-<p>毎回の授業内容に合わせて、授業時間外のグループワークが必要です。進捗を確認できる資料を用意してください（目安1時間）。</p>
+<p>毎回の授業で学習したコードやパッケージを各自のPCで再実践してください｡</p>
 
 
 </section>
