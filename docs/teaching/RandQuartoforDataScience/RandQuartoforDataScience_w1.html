@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="苅谷千尋・田中千晶・中野正俊">
+<meta name="author" content="苅谷千尋">
 <meta name="dcterms.date" content="2024-06-12">
-<meta name="keywords" content="イントロダクション；成績評価；芋づる式振り返り">
+<meta name="keywords" content="データを見る；RとR Studioのインストール；プロジェクトの作成">
 
-<title>CHIHIRO KARIYA - 学域横断的プロジェクト入門 2024</title>
+<title>CHIHIRO KARIYA - RとQuartoではじめるデータサイエンス 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,9 +102,17 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<style>html{ scroll-behavior: smooth; }</style>
+<link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="../../site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="../../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="../../site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="../../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="../../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="../../site_libs/leaflet-binding-2.2.2/leaflet.js"></script>
 
 
 <link rel="stylesheet" href="../../style_ja.css">
@@ -153,18 +195,18 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title"><a href="index.html">学域横断的プロジェクト入門 2024</a></h1>
+    <div class="quarto-title column-page-left">
+      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス 2024</a></h1>
             <p class="subtitle lead">#1 イントロダクション</p>
                       </div>
   </div>
     
-  <div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-author column-page-left">
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-heading">Affiliation</div>
     
       <div class="quarto-title-meta-contents">
-      <p class="author">苅谷千尋・田中千晶・中野正俊 </p>
+      <p class="author">苅谷千尋 </p>
     </div>
     <div class="quarto-title-meta-contents">
           <p class="affiliation">
@@ -173,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     </div>
 
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
         
       <div>
@@ -190,11 +232,11 @@ ul.task-list li input[type="checkbox"] {
   <div>
     <div class="keywords">
       <div class="block-title">Keywords</div>
-      <p>イントロダクション；成績評価；芋づる式振り返り</p>
+      <p>データを見る；RとR Studioのインストール；プロジェクトの作成</p>
     </div>
   </div>
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -202,52 +244,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#科目概要" id="toc-科目概要" class="nav-link active" data-scroll-target="#科目概要">Ⅰ. 科目概要</a>
+  <li><a href="#なぜrなのか" id="toc-なぜrなのか" class="nav-link active" data-scroll-target="#なぜrなのか">Ⅰ. なぜRなのか</a></li>
+  <li><a href="#シラバス" id="toc-シラバス" class="nav-link" data-scroll-target="#シラバス">Ⅱ. シラバス</a></li>
+  <li><a href="#サンプル" id="toc-サンプル" class="nav-link" data-scroll-target="#サンプル">Ⅲ. サンプル</a>
   <ul class="collapse">
-  <li><a href="#担当教員" id="toc-担当教員" class="nav-link" data-scroll-target="#担当教員">1. 担当教員</a>
+  <li><a href="#ggplot受講者の属性" id="toc-ggplot受講者の属性" class="nav-link" data-scroll-target="#ggplot受講者の属性">1. ggplot（受講者の属性）</a>
   <ul class="collapse">
-  <li><a href="#メンバー" id="toc-メンバー" class="nav-link" data-scroll-target="#メンバー">メンバー</a></li>
-  <li><a href="#所属" id="toc-所属" class="nav-link" data-scroll-target="#所属">所属</a></li>
+  <li><a href="#マップ" id="toc-マップ" class="nav-link" data-scroll-target="#マップ">2. マップ</a></li>
   </ul></li>
-  <li><a href="#授業の主題" id="toc-授業の主題" class="nav-link" data-scroll-target="#授業の主題">2. 授業の主題</a>
+  </ul></li>
+  <li><a href="#図" id="toc-図" class="nav-link" data-scroll-target="#図">Ⅳ. 図</a></li>
+  <li><a href="#アンケート" id="toc-アンケート" class="nav-link" data-scroll-target="#アンケート">Ⅴ. アンケート</a></li>
+  <li><a href="#インストール" id="toc-インストール" class="nav-link" data-scroll-target="#インストール">Ⅵ. インストール</a></li>
+  <li><a href="#プロジェクトの作成" id="toc-プロジェクトの作成" class="nav-link" data-scroll-target="#プロジェクトの作成">Ⅶ. プロジェクトの作成</a></li>
+  <li><a href="#宿題" id="toc-宿題" class="nav-link" data-scroll-target="#宿題">Ⅷ. 宿題</a>
   <ul class="collapse">
-  <li><a href="#キーワード" id="toc-キーワード" class="nav-link" data-scroll-target="#キーワード">キーワード</a></li>
+  <li><a href="#授業の感想" id="toc-授業の感想" class="nav-link" data-scroll-target="#授業の感想">授業の感想：</a></li>
   </ul></li>
-  <li><a href="#学修目標到達目標" id="toc-学修目標到達目標" class="nav-link" data-scroll-target="#学修目標到達目標">3. 学修目標（到達目標）</a></li>
-  <li><a href="#授業概要" id="toc-授業概要" class="nav-link" data-scroll-target="#授業概要">4. 授業概要</a></li>
-  <li><a href="#成績評価" id="toc-成績評価" class="nav-link" data-scroll-target="#成績評価">5. 成績評価</a>
-  <ul class="collapse">
-  <li><a href="#単位についての考え方" id="toc-単位についての考え方" class="nav-link" data-scroll-target="#単位についての考え方">単位についての考え方</a></li>
-  <li><a href="#予習復習に関する指示" id="toc-予習復習に関する指示" class="nav-link" data-scroll-target="#予習復習に関する指示">予習・復習に関する指示</a></li>
-  </ul></li>
-  <li><a href="#授業の進め方" id="toc-授業の進め方" class="nav-link" data-scroll-target="#授業の進め方">6. 授業の進め方</a></li>
-  <li><a href="#オフィスアワー等" id="toc-オフィスアワー等" class="nav-link" data-scroll-target="#オフィスアワー等">7. オフィスアワー等</a>
-  <ul class="collapse">
-  <li><a href="#学生からの質問への対応方法等" id="toc-学生からの質問への対応方法等" class="nav-link" data-scroll-target="#学生からの質問への対応方法等">学生からの質問への対応方法等</a></li>
-  </ul></li>
-  <li><a href="#教科書参考書補足" id="toc-教科書参考書補足" class="nav-link" data-scroll-target="#教科書参考書補足">8. 教科書・参考書補足</a>
-  <ul class="collapse">
-  <li><a href="#参考書" id="toc-参考書" class="nav-link" data-scroll-target="#参考書">参考書</a></li>
-  </ul></li>
-  <li><a href="#スケジュール" id="toc-スケジュール" class="nav-link" data-scroll-target="#スケジュール">9. スケジュール</a></li>
-  </ul></li>
-  <li><a href="#自己紹介" id="toc-自己紹介" class="nav-link" data-scroll-target="#自己紹介">Ⅱ. 自己紹介</a></li>
-  <li><a href="#振り返り" id="toc-振り返り" class="nav-link" data-scroll-target="#振り返り">Ⅲ. 振り返り</a>
-  <ul class="collapse">
-  <li><a href="#芋づる式マップ" id="toc-芋づる式マップ" class="nav-link" data-scroll-target="#芋づる式マップ">芋づる式マップ</a></li>
-  </ul></li>
-  <li><a href="#グループ分け" id="toc-グループ分け" class="nav-link" data-scroll-target="#グループ分け">Ⅳ. グループ分け</a></li>
-  <li><a href="#次回までの宿題" id="toc-次回までの宿題" class="nav-link" data-scroll-target="#次回までの宿題">Ⅴ. 次回までの宿題</a>
-  <ul class="collapse">
-  <li><a href="#授業の感想" id="toc-授業の感想" class="nav-link" data-scroll-target="#授業の感想">1.授業の感想</a></li>
-  <li><a href="#芋づる式マップ-1" id="toc-芋づる式マップ-1" class="nav-link" data-scroll-target="#芋づる式マップ-1">2. 芋づる式マップ</a></li>
-  </ul></li>
-  <li><a href="#引用文献" id="toc-引用文献" class="nav-link" data-scroll-target="#引用文献">引用文献</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="RandQuartoforDataScience_w1.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full column-page-left" id="quarto-document-content">
 
 
 
@@ -256,457 +274,427 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell">
 
 </div>
-<section id="科目概要" class="level1">
-<h1>Ⅰ. 科目概要</h1>
-<section id="担当教員" class="level2">
-<h2 class="anchored" data-anchor-id="担当教員">1. 担当教員</h2>
-<section id="メンバー" class="level3">
-<h3 class="anchored" data-anchor-id="メンバー">メンバー</h3>
+<section id="なぜrなのか" class="level1">
+<h1>Ⅰ. なぜRなのか</h1>
 <ul>
-<li>苅谷千尋
+<li>無料</li>
+<li>コード
 <ul>
-<li>政治学（政治思想史）</li>
+<li>再現可能性</li>
+<li>作業の効率化</li>
+<li>初期コストはすぐに回収できる</li>
 </ul></li>
-<li>田中千晶
+<li>豊富な可視化ツール
 <ul>
-<li>心理学（動物心理学）</li>
+<li><a href="https://ggplot2.tidyverse.org">ggplot2(公式サイト)</a></li>
 </ul></li>
-<li>中野正俊
+<li>豊富な出力パッケージ
 <ul>
-<li>工学（材料工学）</li>
+<li><a href="https://quarto.org/docs/output-formats/html-basics.html">Documents</a></li>
+<li><a href="https://quarto.org/docs/presentations/">Presentations</a></li>
+<li><a href="https://quarto.org/docs/dashboards/">Dashboards</a></li>
+<li><a href="https://quarto.org/docs/websites/">Website</a></li>
+<li>➡ YAML（ファイル冒頭部分）を変えるだけ</li>
 </ul></li>
+<li>親切なコミュニティ
+<ul>
+<li><a href="https://tokyor.connpass.com">Tokyo.R</a></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Cf. Microsoft Excel / SPSS / python</p>
+</div>
+</div>
+</div>
+</section>
+<section id="シラバス" class="level1">
+<h1>Ⅱ. シラバス</h1>
+<ul>
+<li><a href="syllabus.html">シラバス</a></li>
 </ul>
 </section>
-<section id="所属" class="level3">
-<h3 class="anchored" data-anchor-id="所属">所属</h3>
-<ul>
-<li>高大接続コア・センター</li>
-</ul>
-<blockquote class="blockquote">
-<p>金沢大学高大接続コア・センターは，多種多様な潜在能力を有する人材を幅広く受け入れ，国際社会の中核的リーダーとなる「金沢大学ブランド」人材を育成する目的で設置されました。〔略〕 高大接続コア・センターでは，多様なバックグラウンドや能力を持った学生が金沢大学に入学し，互いに切磋琢磨することで，困難な課題を解決に導くことができる人材育成の取り組みに努めてまいります（山本茂センター長）</p>
-</blockquote>
+<section id="サンプル" class="level1 page-columns page-full">
+<h1>Ⅲ. サンプル</h1>
+<section id="ggplot受講者の属性" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="ggplot受講者の属性">1. ggplot（受講者の属性）</h2>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df_受講生 <span class="sc">%&gt;%</span> <span class="co">#対象とするデータフレーム</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(学域) <span class="sc">%&gt;%</span> <span class="co">#学域でデータを分ける</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>( <span class="co">#分けたデータの個数を数える</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    人数 <span class="ot">=</span> <span class="fu">n</span>()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    比率 <span class="ot">=</span> 人数<span class="sc">/</span><span class="fu">sum</span>(人数) <span class="co">#個数から比率を算出</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> <span class="co">#グルーピングの解除</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> 人数, <span class="at">group =</span> 学域)) <span class="sc">+</span> <span class="co">#図の台座</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>( <span class="co">#帯グラフ</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">color =</span> 学域, <span class="at">fill =</span> <span class="fu">after_scale</span>(<span class="fu">alpha</span>(color, <span class="fl">0.9</span>))),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_fill</span>(),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>( <span class="co">#帯グラフにテキストを貼る</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">str_c</span>(scales<span class="sc">::</span><span class="fu">percent</span>(比率, <span class="at">accuracy =</span> <span class="fl">0.1</span>), <span class="st">"("</span>, 人数, <span class="st">"人)"</span>)),</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_fill</span>(<span class="at">reverse =</span> <span class="cn">FALSE</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>( <span class="co">#Y軸の余白を詰める</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.01</span>)),</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>()) <span class="sc">+</span> <span class="co">#Y軸をパーセントにする</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co">#ラベル名（ここではxとyのラベルを削除）､凡例を変更</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"学域"</span> <span class="co">#ここで凡例を変える</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="co">#X軸とY軸を逆転させる</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"DresdenColor::briefcases"</span>) <span class="co">#配色変更</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="RandQuartoforDataScience_w1_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="margin-caption">受講者（学域）</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_受講生 <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(年次) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    人数 <span class="ot">=</span> <span class="fu">n</span>()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    比率 <span class="ot">=</span> 人数<span class="sc">/</span><span class="fu">sum</span>(人数)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> 人数, <span class="at">group =</span> 年次)) <span class="sc">+</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">color =</span> 年次, <span class="at">fill =</span> <span class="fu">after_scale</span>(<span class="fu">alpha</span>(color, <span class="fl">0.9</span>))),</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_fill</span>(),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">str_c</span>(scales<span class="sc">::</span><span class="fu">percent</span>(比率, <span class="at">accuracy =</span> <span class="fl">0.1</span>), <span class="st">"("</span>, 人数, <span class="st">"人)"</span>)),</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_fill</span>(<span class="at">reverse =</span> <span class="cn">FALSE</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.01</span>)),</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>()) <span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"年次"</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"PrettyCols::Fun"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="RandQuartoforDataScience_w1_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="margin-caption">受講者（年次）</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="マップ" class="level3">
+<h3 class="anchored" data-anchor-id="マップ">2. マップ</h3>
 <div class="cell">
-
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">setView</span>(<span class="at">lng =</span> <span class="fl">136.70847</span>, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">lat =</span> <span class="fl">36.54517</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">zoom =</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-cf26ceb02ae8a4fae7c0" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-cf26ceb02ae8a4fae7c0">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]}],"setView":[[36.54517,136.70847],18,[]]},"evals":[],"jsHooks":[]}</script>
+<p>高大接続コア・センター（インキュベーション施設3F）</p>
+</div>
 </div>
 </section>
 </section>
-<section id="授業の主題" class="level2">
-<h2 class="anchored" data-anchor-id="授業の主題">2. 授業の主題</h2>
-<p>この授業は、高校時代に培った、探究学習を始めとする、主体的かつ協働的な学びや経験を、発展的に、<strong>大学への学びと接続させる</strong>ことを目指す、グループワーク型の研究プロジェクトです。</p>
-<p><strong>学域、学類を超えて集まった</strong>「多様な学生が切磋琢磨し相互に刺激を与えながら成長する場」 として研究プロジェクトを位置づけ、多様な視点を交差、交流させることから得られる学知や経験を重視します。</p>
-<p>この授業を通して、今後の専門教育の土台の一つを築くことを目指します。</p>
-<section id="キーワード" class="level3">
-<h3 class="anchored" data-anchor-id="キーワード">キーワード</h3>
-<ol type="1">
-<li>Project Based Learning（PBL）</li>
-</ol>
+</section>
+<section id="図" class="level1">
+<h1>Ⅳ. 図</h1>
 <ul>
-<li>「問題解決型学習」型授業
-<ul>
-<li>学修者自身の<strong>問題意識</strong>と<strong>主体性</strong>を重視</li>
-</ul></li>
+<li>理論</li>
+<li>『図りすぎ』</li>
 </ul>
-<ol start="2" type="1">
-<li><strong>高大接続</strong></li>
-<li>グループワーク</li>
-<li>アカデミックライティング</li>
-</ol>
 </section>
-</section>
-<section id="学修目標到達目標" class="level2">
-<h2 class="anchored" data-anchor-id="学修目標到達目標">3. 学修目標（到達目標）</h2>
+<section id="アンケート" class="level1 page-columns page-full">
+<h1>Ⅴ. アンケート</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note | 到達目標の基本的な考え方
+note | 回答先と締め切り
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>「受講生が○○できる」という表現に注意してください</li>
-<li>学修目標（到達目標）と成績評価基準は連動しています</li>
-</ol>
-</div>
-</div>
-<ol type="1">
-<li><p>受講生が、高校と大学の学びの<strong>質的な連続性と相違点</strong>を自覚することができるようになる</p></li>
-<li><p>受講生が、グループワークを通して、研究の分担や協力などの基本的な作法を身に付ける</p></li>
-<li><p>受講生が、他のグループの研究発表に興味関心をもち、主体的、積極的に、質問やコメントができるようになる</p></li>
-<li><p>受講生が、質の高い研究プロジェクトにするための条件について、自ら考えられるようになる</p></li>
-<li><p>受講生が、グループ内で共通する問題意識について議論し、それを一つに集約し、言語化できるようになる</p></li>
-<li><p>受講生が、<strong>問題意識を、検証可能なリサーチクエッションに</strong>変換できるようになり、また、リサーチクエッションや選択した対象に適した、先行研究や資料を探すことができるようになる</p></li>
-<li><p>受講生が、選択した対象に適した、ディシプリンや検証方法について考えることができるようになる</p></li>
-<li><p>受講生が、グループ内またはクラス内発表などを通して、自分（たち）の研究上の問題点を自覚し、それを修正する態度を身に付けられるようになる</p></li>
-</ol>
-<div style="page-break-before:always">
-
-</div>
-</section>
-<section id="授業概要" class="level2">
-<h2 class="anchored" data-anchor-id="授業概要">4. 授業概要</h2>
-<p><strong>学域、学類を超えて編成されるグループ</strong>において、課題発見から課題解決にいたる一連のプロセスを経験します</p>
-<ol type="1">
-<li><p>高校での探究学習を共有する</p></li>
-<li><p><strong>グループ全員が興味をもつことができるテーマを探し出し</strong>、リサーチプロポーザル（リサーチクエッション、先行研究、研究方法など）を執筆する</p></li>
-<li><p><strong>リサーチプロポーザル</strong>にもとづく、プレゼンテーションを実施する</p></li>
-</ol>
 <ul>
-<li>注：分析や実験など、<strong>論証はおこないません</strong></li>
+<li><strong>回答先</strong>：<a href="https://forms.gle/bCEhrvMx4HyEdRZA8">Google Forms</a></li>
 </ul>
-</section>
-<section id="成績評価" class="level2">
-<h2 class="anchored" data-anchor-id="成績評価">5. 成績評価</h2>
-<table class="table">
-<caption>配点（内訳）</caption>
-<thead>
-<tr class="header">
-<th>項目</th>
-<th style="text-align: left;">配点</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>リサーチプロポーザル（レポート形式）</td>
-<td style="text-align: left;">30%</td>
-</tr>
-<tr class="even">
-<td>プレゼンテーション（スライド資料）</td>
-<td style="text-align: left;">20%</td>
-</tr>
-<tr class="odd">
-<td>毎回の授業課題（予習・復習）</td>
-<td style="text-align: left;">30%</td>
-</tr>
-<tr class="even">
-<td>受講態度（グループへの貢献度を含む）</td>
-<td style="text-align: left;">20%</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-important callout-titled">
+</div>
+</div>
+<div class="cell page-columns page-full">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_初回アンケート <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(学域) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    人数 <span class="ot">=</span> <span class="fu">n</span>()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    比率 <span class="ot">=</span> 人数<span class="sc">/</span><span class="fu">sum</span>(人数)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> 人数, <span class="at">group =</span> 学域)) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">color =</span> 学域, <span class="at">fill =</span> <span class="fu">after_scale</span>(<span class="fu">alpha</span>(color, <span class="fl">0.9</span>))),</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_fill</span>(),</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">str_c</span>(scales<span class="sc">::</span><span class="fu">percent</span>(比率, <span class="at">accuracy =</span> <span class="fl">0.1</span>), <span class="st">"("</span>, 人数, <span class="st">"人)"</span>)),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_fill</span>(<span class="at">reverse =</span> <span class="cn">FALSE</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.01</span>)),</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>()) <span class="sc">+</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"学域"</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"DresdenColor::briefcases"</span>) <span class="co">#配色変更</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="RandQuartoforDataScience_w1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="margin-caption">初回アンケート（学域）</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_初回アンケート <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(学年) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    人数 <span class="ot">=</span> <span class="fu">n</span>()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    比率 <span class="ot">=</span> 人数<span class="sc">/</span><span class="fu">sum</span>(人数)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> 人数, <span class="at">group =</span> 学年)) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">color =</span> 学年, <span class="at">fill =</span> <span class="fu">after_scale</span>(<span class="fu">alpha</span>(color, <span class="fl">0.9</span>))),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_fill</span>(),</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">str_c</span>(scales<span class="sc">::</span><span class="fu">percent</span>(比率, <span class="at">accuracy =</span> <span class="fl">0.1</span>), <span class="st">"("</span>, 人数, <span class="st">"人)"</span>)),</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_fill</span>(<span class="at">reverse =</span> <span class="cn">FALSE</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.01</span>)),</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>()) <span class="sc">+</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"年次"</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"PrettyCols::Fun"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="RandQuartoforDataScience_w1_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="margin-caption">初回アンケート（年次）</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_初回アンケート <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Q1. パソコンのスキルに自信がありますか</span><span class="st">`</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">y =</span> <span class="st">`</span><span class="at">Q2. R言語を知っていますか？</span><span class="st">`</span>, <span class="at">color =</span> 学域)) <span class="sc">+</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="RandQuartoforDataScience_w1_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="margin-caption">初回アンケート（Q1とQ2の散布図）</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-重要
+Tips | コードの利点
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>授業には3分の2以上の出席を必要とします</li>
-<li>評価基準は、授業目標に準じます</li>
+<li>アンケート実施前に､コードを書ける</li>
+<li>アンケート回収後すみやかに､可視化（分析）できる</li>
 </ul>
 </div>
 </div>
-<section id="単位についての考え方" class="level3">
-<h3 class="anchored" data-anchor-id="単位についての考え方">単位についての考え方</h3>
-<div class="callout callout-style-default callout-note callout-titled">
+</section>
+<section id="インストール" class="level1">
+<h1>Ⅵ. インストール</h1>
+<ol type="1">
+<li><a href="https://cran.rstudio.com">R</a>
+<ul>
+<li>エラーメッセージの日本語化
+<ul>
+<li><a href="https://qiita.com/libra_lt/items/feb65b1742d9508740a9">Mac: localeを日本語(ja_JP.UTF-8)にする</a></li>
+<li><a href="https://niszet.hatenablog.com/entry/2022/04/25/083000">Win: (R) R4.2でWindowsでもUTF-8を設定できることを確認した</a></li>
+</ul></li>
+</ul></li>
+<li><a href="https://posit.co/download/rstudio-desktop/">R Studio</a>
+<ul>
+<li><a href="http://nineworks2.blog.fc2.com/blog-entry-123.html">RStudioで日本語ユーザー名だとパッケージがインストールできない問題の解決方法</a></li>
+</ul></li>
+<li>（基本パッケージ）</li>
+<li>（教科書のデータセット）</li>
+</ol>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>3と4は次の「プロジェクトの作成」内で実行します</p>
+</div>
+</div>
+</div>
+</section>
+<section id="プロジェクトの作成" class="level1">
+<h1>Ⅶ. プロジェクトの作成</h1>
+<ol type="1">
+<li>OS: フォルダ作成</li>
+<li>R Studio: File &gt; New Project &gt; Existing Directory &gt; 1 のフォルダを指定 &gt; Create Project</li>
+<li>R Studio: File &gt; Quarto Document &gt; Create
+<ul>
+<li>Title:</li>
+<li>HTML</li>
+</ul></li>
+<li>基本パッケージのインストール</li>
+<li>教科書のデータセットのインストール</li>
+<li>動作確認テスト（iris）</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note | 予習復習も単位取得に必要な時間です
+注意 | コードの入力
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>授業出席時間だけでは、単位取得時間を満たしません</li>
-<li>学修の観点だけでなく、大学制度上、予習復習は必須です</li>
-</ul>
-</div>
-</div>
-<section id="単位45時間の学修の考え方大学設置基準" class="level4">
-<h4 class="anchored" data-anchor-id="単位45時間の学修の考え方大学設置基準">1単位＝45時間の学修の考え方（「大学設置基準」）</h4>
-<blockquote class="blockquote">
-<p>我が国の大学教育は単位制度を基本としており、1単位あたり45時間の学修を必要とする内容をもって構成することが標準とされています。ここでいう１単位あたりの学修時間は、授業時間内の学修時間だけではなく、その授業の事前の準備学修・事後の準備復習を合わせたものとなっています（<span class="citation" data-cites="MEXT_University_credits">@MEXT_University_credits</span>）</p>
-</blockquote>
-</section>
-<section id="単位8週間の授業の場合" class="level4">
-<h4 class="anchored" data-anchor-id="単位8週間の授業の場合">1単位8週間の授業の場合</h4>
+<li>短いコードなので､手入力しましょう</li>
+<li>R Studioがファンクションを補完してくれることがわかるはずです</li>
+<li>「#」以下の文字は入力しません
 <ul>
-<li>45時間の学修を要し、うち1/3の12時間が授業時間</li>
-<li>残りの<strong>33時間が授業外での学修時間</strong>となる
-<ul>
-<li>慣例的に概算計算される</li>
+<li>「#」は注記のため､もしくは一時的に実行したくないコードのために使います（コメントアウトと言います）</li>
 </ul></li>
 </ul>
-<div style="page-break-before:always">
-
-</div>
-</section>
-</section>
-<section id="予習復習に関する指示" class="level3">
-<h3 class="anchored" data-anchor-id="予習復習に関する指示">予習・復習に関する指示</h3>
-<section id="予習" class="level4">
-<h4 class="anchored" data-anchor-id="予習">予習</h4>
-<ul>
-<li>グループワークまたはリサーチプロポーザルに必要な文献を適宜配布します</li>
-<li>授業までに読み、指示に応じて、まとめてください</li>
-</ul>
-</section>
-<section id="復習" class="level4">
-<h4 class="anchored" data-anchor-id="復習">復習</h4>
-<ul>
-<li>授業内容に関する感想を提出してください</li>
-<li>毎回の授業内容に合わせて、授業時間外のグループワークが必要です（進捗を確認できる資料を用意してください）</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note | 予習・復習時間の目安
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>どちらも1時間</li>
-</ul>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="授業の進め方" class="level2">
-<h2 class="anchored" data-anchor-id="授業の進め方">6. 授業の進め方</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note | 連絡について
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>全員への連絡
-<ul>
-<li><a href="https://lms-wc.el.kanazawa-u.ac.jp/webclass/course.php/23040073717000/manage/?acs_=22fd7f85">WebClass</a>を通しておこないます</li>
-</ul></li>
-<li>個別連絡
-<ul>
-<li><a href="https://acanthus.cis.kanazawa-u.ac.jp">アカンサスポータル</a>のメッセージ機能を使います</li>
-<li>転送設定を忘れないでください</li>
-</ul></li>
-</ul>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note | 配布物について
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>レジュメは印刷して配布します</li>
-<li>欠席者は「ウェブサイト &gt; 授業スケジュール &gt; Other Formats &gt; PDF」から各自､ダウンロードして下さい</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="オフィスアワー等" class="level2">
-<h2 class="anchored" data-anchor-id="オフィスアワー等">7. オフィスアワー等</h2>
-<section id="学生からの質問への対応方法等" class="level3">
-<h3 class="anchored" data-anchor-id="学生からの質問への対応方法等">学生からの質問への対応方法等</h3>
-<ul>
-<li><p>随時、対応します</p></li>
-<li><p>授業の際、またはメールによる事前連絡にて、日時を調整します</p>
-<ul>
-<li>苅谷千尋（<a href="mailto:kariyach@staff.kanazawa-u.ac.jp">kariyach@staff.kanazawa-u.ac.jp</a>）</li>
-<li>田中千晶（<a href="mailto:tanakachiaki@staff.kanazawa-u.ac.jp">tanakachiaki@staff.kanazawa-u.ac.jp</a>）</li>
-<li>中野正俊（<a href="mailto:nakano.m@staff.kanazawa-u.ac.jp">nakano.m@staff.kanazawa-u.ac.jp</a>）</li>
-</ul></li>
-</ul>
-<div style="page-break-before:always">
-
-</div>
-</section>
-</section>
-<section id="教科書参考書補足" class="level2">
-<h2 class="anchored" data-anchor-id="教科書参考書補足">8. 教科書・参考書補足</h2>
-<section id="参考書" class="level3">
-<h3 class="anchored" data-anchor-id="参考書">参考書</h3>
-<ol type="1">
-<li><p>戸田山和久『<a href="https://www.nhk-book.co.jp/detail/000000912722022.html">最新版 論文の教室：レポートから卒論まで</a>』（NHKブックス、2022年）</p></li>
-<li><p>ジョン・モーリー（高橋さきの訳・国枝哲夫監訳）『<a href="https://bookclub.kodansha.co.jp/product?item=0000314092">アカデミック・フレーズバンク：そのまま使える！構文200・文例1900</a>』（講談社、2022年）</p></li>
-</ol>
-<ul>
-<li>適宜、授業内で配布します。</li>
-</ul>
-</section>
-</section>
-<section id="スケジュール" class="level2">
-<h2 class="anchored" data-anchor-id="スケジュール">9. スケジュール</h2>
-<div class="cell" data-layout-align="default">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#パッケージの読み込み</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#「モダンなデータ分析」を行うためのパッケージ群</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co">#可視化パッケージ</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#図を描くためのコード</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span> <span class="co"># iris：Rにはじめから入っているデータセット</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 「%&gt;%」は「コマンド + シフト + M」で入力できます</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 「%&gt;%」は指示が次に続くことを意味します</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="at">y =</span> Petal.Length)) <span class="sc">+</span> <span class="co"># 「+」も指示が次に続くことを意味します。ggplotの指示はすべて「+」で繋げます</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>() <span class="co"># 散布図</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">  gantt
-    title プロジェクトの流れ
-    dateFormat YYYY-MM-DD
-    axisFormat %m/%d
-    tickInterval 1week
-    %% excludes weekends
-    %% 動かない tickInterval 1week weekday wednesday（v10.3.0+）
-
-    section プロジェクト
-    開始（12/13）: milestone, 2023-12-13, 0d
-    テーマ（12/13-）: active, a1, 2023-12-13, 3w
-    課題背景（12/20-）: active, a2, 2023-12-20, 2024-01-17
-    先行研究（12/20-）: active, a3, 2023-12-20, 2024-01-17
-    リサーチクエッション（12/27-）: active, a4, 2023-12-27, 2024-01-17
-    リサーチプロポーザル案（1/10-）: active, a5, 2024-01-10, 2024-01-31
-     section プロジェクト
-    プレゼンテーション: crit, c1, 2024-01-17, 2024-02-10
-    レポート: crit, c2, 2024-01-24, 2024-02-10
-    〆切（2/10）: milestone, after c2, 2024-02-08, 4d
-
-</pre>
-</div>
-<p></p></figure><p></p>
+<figure class="figure">
+<p><img src="RandQuartoforDataScience_w1_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
 </div>
-<!-- gantt -->
-<!--   tickInterval 1week -->
-<!--   weekday monday -->
-<div class="cell" data-tbl-cap="スケジュール表">
-
-</div>
-<div style="page-break-before:always">
-
-</div>
-</section>
-</section>
-<section id="自己紹介" class="level1">
-<h1>Ⅱ. 自己紹介</h1>
-<ul>
-<li>出身地</li>
-<li>学類</li>
-<li>一番興味があること</li>
-<li>この授業に期待すること</li>
-</ul>
-</section>
-<section id="振り返り" class="level1">
-<h1>Ⅲ. 振り返り</h1>
-<section id="芋づる式マップ" class="level3">
-<h3 class="anchored" data-anchor-id="芋づる式マップ">芋づる式マップ</h3>
-<section id="つながる-ひろがる芋づる式-岩波新書" class="level4">
-<h4 class="anchored" data-anchor-id="つながる-ひろがる芋づる式-岩波新書">「つながる ひろがる，芋づる式！ 岩波新書」</h4>
-<ul>
-<li><a href="https://www.iwanami.co.jp/news/n32672.html">公式サイト</a></li>
-</ul>
-<blockquote class="blockquote">
-<p>「あなたがつくる、読書案内」――ご好評をいただいた、岩波新書フェア連動企画「芋づる式！読書MAP」。自分でもMAPを作ってみたい、という声に応え、書名の入っていない白地図版を用意いたしました。……芋づる式につながるひろがる、あなたの読書の世界へ連れていってください！（<span class="citation" data-cites="IwanamiShoten:2019web1">@IwanamiShoten:2019web1</span>）</p>
-</blockquote>
-<ul>
-<li><strong>芋づる式マップでこれまでの勉強や研究を振り返ろう！</strong></li>
-</ul>
-<ol type="1">
-<li>□枠には大きなトピックを書こう</li>
-<li>5つの□枠のうち、</li>
-</ol>
-<ul>
-<li>2つは高校のこと（過去）</li>
-<li>2つは大学のこと（過去）</li>
-<li>1つは大学で今後やってみたいこと（未来）を書こう</li>
-</ul>
-<ol start="3" type="1">
-<li>芋枠は□枠を補足するサブ的なトピックを書こう</li>
-<li>□枠と芋枠を線でつなげよう</li>
-</ol>
-<ul>
-<li>それぞれのつながりを意識して振り返ってみましょう</li>
-<li>高校での学びは大学での学びに<strong>つながっていますか？</strong></li>
-</ul>
-</section>
-</section>
-</section>
-<section id="グループ分け" class="level1">
-<h1>Ⅳ. グループ分け</h1>
-<div class="cell" data-tbl-cap="グループ表">
-
-</div>
-<ul>
-<li>学域・学類を交差させよう</li>
-<li>芋づる式マップをもとに、類似したテーマを発見、集約しよう</li>
-</ul>
-<div style="page-break-before:always">
-
-</div>
-</section>
-<section id="次回までの宿題" class="level1">
-<h1>Ⅴ. 次回までの宿題</h1>
-<section id="授業の感想" class="level3">
-<h3 class="anchored" data-anchor-id="授業の感想">1.授業の感想</h3>
-<ol type="1">
-<li>重要だと思った箇所､あるいは､面白いと思った箇所､疑問に思っていた点が解決した箇所などを挙げて下さい</li>
-<li>上記の理由を教えて下さい（100字程度）</li>
-<li>以降のこの他のアンケートにも答えて下さい（<strong>アンケートに関しては匿名集計・匿名紹介</strong>のみ）</li>
-</ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note | 回答先と締め切り
+note | コードの実行
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>回答先</strong>：<a href="https://forms.gle/r89h7DFGqCfVPpDy9">Google Forms</a></li>
-<li><strong>締め切り</strong>：2023年12月17日（日）23時59分</li>
+<li>コードを入力できたら､右上の「三角」を押して､コードを実行しましょう</li>
+<li>「コマンド ＋ シフト + I」でインデントが揃います
+<ul>
+<li>インデントを揃える習慣をつけてください</li>
+</ul></li>
 </ul>
 </div>
 </div>
 </section>
-<section id="芋づる式マップ-1" class="level3">
-<h3 class="anchored" data-anchor-id="芋づる式マップ-1">2. 芋づる式マップ</h3>
-<ul>
-<li>用紙の8割は埋める努力をしましょう</li>
-<li>用紙の余白に氏名を記載してください</li>
-<li>芋づる式マップを写真に撮ってファイルを送ってください</li>
-</ul>
+<section id="宿題" class="level1">
+<h1>Ⅷ. 宿題</h1>
+<section id="授業の感想" class="level2">
+<h2 class="anchored" data-anchor-id="授業の感想">授業の感想：</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note | 摘出先と締め切り
+note | 回答先と締め切り
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>回答先</strong>：<a href="https://forms.gle/4R4PFkAwmUqq3jsV6">Google Forms</a></li>
-<li><strong>締め切り</strong>：2023年12月17日（日）23時59分</li>
-<li><strong>ファイル形式</strong>：jpeg/jpg（その他､一般的な形式のもの）</li>
-<li><strong>ファイル名</strong>：氏名のよみがな_芋づる式マップ.jpg</li>
+<li><strong>回答先</strong>：<a href="https://forms.gle/ZCkbPXYprjoibA8i6">Google Forms</a></li>
+<li><strong>締め切り</strong>：2024年6月14日（金）23時59分まで</li>
 </ul>
 </div>
 </div>
-</section>
-</section>
-<section id="引用文献" class="level1">
-<h1>引用文献</h1>
+<!-- # 引用文献 -->
 
 
 </section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>金沢大学 高大接続コア・センター</div></div></section></div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>苅谷千尋</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1132,4 +1120,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
