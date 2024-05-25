@@ -21,256 +21,109 @@
     "text": "Public Lecture & Workshop\n\nCafé Philosophique\n\nIs Success the Result of Luck or Hard Work?: Michael Sandel, The Tyranny of Merit, Kanazawa University, Kanazawa, Japan, Aug, 2024."
   },
   {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "Curriculum vitae",
-    "section": "",
-    "text": "Download current CV"
+    "objectID": "address/index.html#address",
+    "href": "address/index.html#address",
+    "title": "Address",
+    "section": "Address",
+    "text": "Address\n\nKanazawa University\n\nKakuma, Kanazawa, Ishikawa 920-1192 Japan"
   },
   {
-    "objectID": "teaching/RandQuartoforDataScience/syllabus.html",
-    "href": "teaching/RandQuartoforDataScience/syllabus.html",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
-    "section": "",
-    "text": "この授業は、統計プログラム言語「R」の基本的な機能と、Quarto（Rの出力結果を出力するR Studioの機能の一つ）を学習するものです｡R言語は、プログラム言語のなかでは比較的習得が容易であり、社会科学から自然科学にいたるまで幅広い分野の研究者が活用しています｡ この授業は統計学、確率、多変量解析の授業ではありません｡統計学的な出力やその妥当性の検討よりも、数値の出力結果を可視化する（ggplot2パッケージ）方法に重点を置きます｡わかりやすい図を簡単に、また、同じコードを繰り返し利用することで作業量を減らす、再現可能性を高めることも重視されます｡\n専攻、専門分野は問いません｡すでにあるデータを可視化したい、あるいは、データを可視化することに関心をもてる方の受講を歓迎いたします｡プログラム言語の初心者であっても受講に問題はありません｡"
+    "objectID": "address/index.html#map",
+    "href": "address/index.html#map",
+    "title": "Address",
+    "section": "Map",
+    "text": "Map\nKanazawa City and Kakuma Campus, Kanazawa University\n\n\n\n\n\n\n　\n\n\nKakuma Campus(Enlarged Map)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe above map was created with the Leaflet package in R. I came to know about this package in studying the R language, and in the course of creating this website I knew the fact the package was created by a brave Ukrainian, Volodymyr Agafonkin. May this simple, open, and powerful package be used for the freedom, happiness and dignity of the Ukrainian people. I stand with Ukraine. 🇺🇦 March, 2024"
   },
   {
-    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#授業の主題",
-    "href": "teaching/RandQuartoforDataScience/syllabus.html#授業の主題",
+    "objectID": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#ggplot受講者の属性",
+    "href": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#ggplot受講者の属性",
     "title": "RとQuartoではじめるデータサイエンス 2024",
-    "section": "",
-    "text": "この授業は、統計プログラム言語「R」の基本的な機能と、Quarto（Rの出力結果を出力するR Studioの機能の一つ）を学習するものです｡R言語は、プログラム言語のなかでは比較的習得が容易であり、社会科学から自然科学にいたるまで幅広い分野の研究者が活用しています｡ この授業は統計学、確率、多変量解析の授業ではありません｡統計学的な出力やその妥当性の検討よりも、数値の出力結果を可視化する（ggplot2パッケージ）方法に重点を置きます｡わかりやすい図を簡単に、また、同じコードを繰り返し利用することで作業量を減らす、再現可能性を高めることも重視されます｡\n専攻、専門分野は問いません｡すでにあるデータを可視化したい、あるいは、データを可視化することに関心をもてる方の受講を歓迎いたします｡プログラム言語の初心者であっても受講に問題はありません｡"
+    "section": "1. ggplot（受講者の属性）",
+    "text": "1. ggplot（受講者の属性）\n\ndf_受講生 %&gt;% #対象とするデータフレーム\n  group_by(学域) %&gt;% #学域でデータを分ける\n  summarise( #分けたデータの個数を数える\n    人数 = n()\n  ) %&gt;%\n  mutate(\n    比率 = 人数/sum(人数) #個数から比率を算出\n  ) %&gt;%\n  ungroup() %&gt;% #グルーピングの解除\n  ggplot(aes(x = \"\", y = 人数, group = 学域)) + #図の台座\n  geom_col( #帯グラフ\n    aes(color = 学域, fill = after_scale(alpha(color, 0.9))),\n    position = position_fill(),\n  ) +\n  geom_text( #帯グラフにテキストを貼る\n    aes(label = str_c(scales::percent(比率, accuracy = 0.1), \"(\", 人数, \"人)\")),\n    position = position_fill(reverse = FALSE, vjust = 0.5),\n  ) +\n  scale_y_continuous( #Y軸の余白を詰める\n    expand = expansion(mult = c(0.01, 0.01)),\n    labels = scales::label_percent()) + #Y軸をパーセントにする\n  labs( #ラベル名（ここではxとyのラベルを削除）､凡例を変更\n    x = \"\",\n    y = \"\",\n    color = \"学域\" #凡例のラベルを「学域」に変更\n  ) +\n  coord_flip() + #X軸とY軸を逆転させる\n  scale_color_paletteer_d(\"DresdenColor::briefcases\") #配色変更\n\n\n\n受講者（学域）\n\n\n\n\nCodedf_受講生 %&gt;%\n  group_by(年次) %&gt;% \n  summarise(\n    人数 = n()\n  ) %&gt;%\n  mutate(\n    比率 = 人数/sum(人数)\n  ) %&gt;%\n  ungroup() %&gt;%\n  ggplot(aes(x = \"\", y = 人数, group = 年次)) +\n  geom_col(\n    aes(color = 年次, fill = after_scale(alpha(color, 0.9))),\n    position = position_fill(),\n  ) +\n  geom_text(\n    aes(label = str_c(scales::percent(比率, accuracy = 0.1), \"(\", 人数, \"人)\")),\n    position = position_fill(reverse = FALSE, vjust = 0.5),\n  ) +\n  scale_y_continuous(\n    expand = expansion(mult = c(0.01, 0.01)),\n    labels = scales::label_percent()) +\n  labs(\n    x = \"\",\n    y = \"\",\n    color = \"年次\"\n  ) +\n  coord_flip() +\n  scale_color_paletteer_d(\"PrettyCols::Fun\")\n\n\n\n受講者（年次）\n\n\n\n2. マップ\n\nCodeleaflet() %&gt;% \n  addTiles() %&gt;% \n  setView(lng = 136.70847, \n          lat = 36.54517,\n          zoom = 18)\n\n\n高大接続コア・センター（インキュベーション施設3F）"
   },
   {
-    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#学修目標到達目標",
-    "href": "teaching/RandQuartoforDataScience/syllabus.html#学修目標到達目標",
+    "objectID": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#データの落とし穴",
+    "href": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#データの落とし穴",
     "title": "RとQuartoではじめるデータサイエンス 2024",
+    "section": "データの落とし穴",
+    "text": "データの落とし穴\nミュラー『測りすぎ』\n\n定量化とは魅力的なものだ。知識を整理して、単純化してくれるからだ。人や組織間で簡単に比較できる数値情報を提供してくれる。だが、この単純化はゆがみにつながる可能性がある。何かを比較可能にするというのは往々にして本来の概念、歴史、意味をはぎとってしまうことを意味するからだ。その結果、情報は問題の現実よりも確実で権威あるもののように見える。危険信号や曖昧さ、不確定要素ははぎとられる。特定の知識の体裁を整えるには、数値で表現するのが一番だ（Jerry Z. Muller (2018)）\n\n\n正確に測定できるものが、本当に重要なものを見劣りさせるようになっていく（Jerry Z. Muller (2018)）"
+  },
+  {
+    "objectID": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#アンケート分析",
+    "href": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#アンケート分析",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "section": "アンケート分析",
+    "text": "アンケート分析\n図\n\nCodedf_初回アンケート %&gt;%\n  group_by(学域) %&gt;% \n  summarise(\n    人数 = n()\n  ) %&gt;%\n  mutate(\n    比率 = 人数/sum(人数)\n  ) %&gt;%\n  ungroup() %&gt;%\n  ggplot(aes(x = \"\", y = 人数, group = 学域)) +\n  geom_col(\n    aes(color = 学域, fill = after_scale(alpha(color, 0.9))),\n    position = position_fill(),\n  ) +\n  geom_text(\n    aes(label = str_c(scales::percent(比率, accuracy = 0.1), \"(\", 人数, \"人)\")),\n    position = position_fill(reverse = FALSE, vjust = 0.5),\n  ) +\n  scale_y_continuous(\n    expand = expansion(mult = c(0.01, 0.01)),\n    labels = scales::label_percent()) +\n  labs(\n    x = \"\",\n    y = \"\",\n    color = \"学域\"\n  ) +\n  coord_flip() +\n  scale_color_paletteer_d(\"DresdenColor::briefcases\") #配色変更\n\n\n\n初回アンケート（学域）\n\n\n\n\nCodedf_初回アンケート %&gt;%\ngroup_by(学域, `Q5. 受講理由でもっとも近いものを選んでください`) %&gt;% \nsummarise(\n人数 = n(), .groups = \"drop\"\n) %&gt;%\nmutate(\n比率 = 人数/sum(人数)\n) %&gt;%\nungroup() %&gt;%\nggplot(aes(x = \"\", y = 人数, group = 学域)) +\ngeom_col(\naes(color = `Q5. 受講理由でもっとも近いものを選んでください`, fill = after_scale(alpha(color, 0.9))),\nposition = position_fill(),\n) +\ngeom_text(\naes(label = str_c(scales::percent(比率, accuracy = 0.1), \"(\", 人数, \"人)\")),\nposition = position_fill(reverse = FALSE, vjust = 0.5),\n) +\nscale_y_continuous(\nexpand = expansion(mult = c(0.01, 0.01)),\nlabels = scales::label_percent()) +\nlabs(\nx = \"\",\ny = \"\",\ncolor = \"Q5\"\n) +\ncoord_flip() +\nfacet_wrap(~ 学域) +\ntheme(legend.position=\"bottom\") + #凡例を図の下に\nscale_color_paletteer_d(\"DresdenColor::briefcases\")\n\n\n\n初回アンケート（Q5. 学域別集計）\n\n\n\n\nCodedf_初回アンケート %&gt;% \n  group_by(学年) %&gt;% \n  summarise(\n    人数 = n()\n  ) %&gt;%\n  mutate(\n    比率 = 人数/sum(人数)\n  ) %&gt;%\n  ungroup() %&gt;%\n  ggplot(aes(x = \"\", y = 人数, group = 学年)) +\n  geom_col(\n    aes(color = 学年, fill = after_scale(alpha(color, 0.9))),\n    position = position_fill(),\n  ) +\n  geom_text(\n    aes(label = str_c(scales::percent(比率, accuracy = 0.1), \"(\", 人数, \"人)\")),\n    position = position_fill(reverse = FALSE, vjust = 0.5),\n  ) +\n  scale_y_continuous(\n    expand = expansion(mult = c(0.01, 0.01)),\n    labels = scales::label_percent()) +\n  labs(\n    x = \"\",\n    y = \"\",\n    color = \"年次\"\n  ) +\n  coord_flip() +\n  scale_color_paletteer_d(\"PrettyCols::Fun\")\n\n\n\n初回アンケート（年次）\n\n\n\n\nCodedf_初回アンケート %&gt;%\nselect(5:10) %&gt;%\nggplot(aes(x = `Q1. パソコンのスキルに自信がありますか`,\ny = `Q2. R言語を知っていますか？`, color = 学域)) + \ngeom_point() #散布図\n\n\n\n初回アンケート（Q1とQ2の散布図）\n\n\n\n表\n\nCodedf_初回アンケート %&gt;%\nselect(!1:4) %&gt;% #1列目から4列目までを削除（回答者の氏名などの情報のため）\n# 「!」は除外をさす\n# 「x:y」はx列からy列までの範囲の列を指す\nsummary()\n\n     学域               学年           Q1. パソコンのスキルに自信がありますか\n Length:16          Length:16          Min.   :1.00                          \n Class :character   Class :character   1st Qu.:1.75                          \n Mode  :character   Mode  :character   Median :2.50                          \n                                       Mean   :2.75                          \n                                       3rd Qu.:3.50                          \n                                       Max.   :5.00                          \n Q2. R言語を知っていますか？ Q3. プログラム言語を使ったことはありますか\n Min.   :1.00                Min.   :2                                 \n 1st Qu.:1.75                1st Qu.:2                                 \n Median :2.00                Median :2                                 \n Mean   :2.25                Mean   :2                                 \n 3rd Qu.:2.50                3rd Qu.:2                                 \n Max.   :4.00                Max.   :2                                 \n Q4. 可視化したいデータはありますか\n Length:16                         \n Class :character                  \n Mode  :character                  \n                                   \n                                   \n                                   \n Q5. 受講理由でもっとも近いものを選んでください\n Length:16                                     \n Class :character                              \n Mode  :character                              \n                                               \n                                               \n                                               \n\n\n\nCodedf_初回アンケート %&gt;%\nselect(!1:4) %&gt;%\ntbl_summary()\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n\nN = 161\n\n\n\n\n学域\n\n\n\n    医薬保健学域\n4 (25%)\n\n\n    人間社会学域\n8 (50%)\n\n\n    理工学域\n4 (25%)\n\n\n学年\n\n\n\n    1年生\n3 (19%)\n\n\n    2年生\n3 (19%)\n\n\n    3年生\n1 (6.3%)\n\n\n    5年生以上\n9 (56%)\n\n\nQ1. パソコンのスキルに自信がありますか\n\n\n\n    1\n4 (25%)\n\n\n    2\n4 (25%)\n\n\n    3\n4 (25%)\n\n\n    5\n4 (25%)\n\n\nQ2. R言語を知っていますか？\n\n\n\n    1\n4 (25%)\n\n\n    2\n8 (50%)\n\n\n    4\n4 (25%)\n\n\nQ3. プログラム言語を使ったことはありますか\n\n\n\n    2\n16 (100%)\n\n\nQ4. 可視化したいデータはありますか\n\n\n\n    ある\n3 (19%)\n\n\n    ない（見当はつく）\n3 (19%)\n\n\n    ない（見当もつかない。これから考える）\n10 (63%)\n\n\nQ5. 受講理由でもっとも近いものを選んでください\n\n\n\n    プログラム言語に興味がある\n4 (25%)\n\n\n    研究でデータを可視化したい（具体的なデータがある）\n4 (25%)\n\n\n    単位取得が簡単そう\n8 (50%)\n\n\n\n\n1 n (%)\n\n\n\n\n\n\n\nCodedf_初回アンケート %&gt;%\nselect(学域, `Q1. パソコンのスキルに自信がありますか`) %&gt;% \ntbl_summary(by = 学域) #学域で分ける\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n\n人間社会学域, N = 81\n\n\n医薬保健学域, N = 41\n\n\n理工学域, N = 41\n\n\n\n\nQ1. パソコンのスキルに自信がありますか\n\n\n\n\n\n    1\n4 (50%)\n0 (0%)\n0 (0%)\n\n\n    2\n4 (50%)\n0 (0%)\n0 (0%)\n\n\n    3\n0 (0%)\n0 (0%)\n4 (100%)\n\n\n    5\n0 (0%)\n4 (100%)\n0 (0%)\n\n\n\n\n1 n (%)\n\n\n\n\n\n\n\nCodedf_初回アンケート %&gt;%\nselect(学域, `Q1. パソコンのスキルに自信がありますか`) %&gt;% \ntbl_summary(by = 学域)  %&gt;% \n  add_p(test = list(all_continuous() ~ \"t.test\",\n                    all_categorical() ~ \"fisher.test\"),\n        test.args = all_continuous() ~ list(var.equal = TRUE)) %&gt;% #検定\n  bold_p(t = 0.05) #P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n\n人間社会学域, N = 81\n\n\n医薬保健学域, N = 41\n\n\n理工学域, N = 41\n\n\np-value2\n\n\n\n\nQ1. パソコンのスキルに自信がありますか\n\n\n\n&lt;0.001\n\n\n    1\n4 (50%)\n0 (0%)\n0 (0%)\n\n\n\n    2\n4 (50%)\n0 (0%)\n0 (0%)\n\n\n\n    3\n0 (0%)\n0 (0%)\n4 (100%)\n\n\n\n    5\n0 (0%)\n4 (100%)\n0 (0%)\n\n\n\n\n\n\n1 n (%)\n\n\n\n2 Fisher’s exact test\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips | コードの利点\n\n\n\n\nアンケート実施前に､コードを書ける\nアンケート回収後すみやかに､可視化（分析）できる"
+  },
+  {
+    "objectID": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#授業の感想",
+    "href": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#授業の感想",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "section": "授業の感想：",
+    "text": "授業の感想：\n\nQ1. 本日の授業で重要だと思った箇所､あるいは､面白いと思った箇所､疑問に思っていた点が解決した箇所などを挙げて下さい\n\n\nQ2. 上記の理由を教えて下さい（100字程度）\n\n\n\n\n\n\n\nnote | 回答先と締め切り\n\n\n\n\n\n回答先：Google Forms\n\n\n締め切り：2024年6月14日（金）23時59分まで"
+  },
+  {
+    "objectID": "teaching/RandQuartoforDataScience/usefulsite.html",
+    "href": "teaching/RandQuartoforDataScience/usefulsite.html",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "section": "",
+    "text": "随時更新します\n\n\n\n\n\n\n\n\n\n以下のサイトは有益ですが､今となっては古い情報も交じっています。まずは指定の教科書をしっかりと理解することから始めましょう（教科書も古くなりますが､教科書内においては､相互に矛盾する記述はありません）\n\n\n\n\n全般\n\n私たちのR：ベストプラクティスの探求\nR初学者からよく質問されること\nStatistics Globe\n\n\n\n基本\n\nR初学者のためのtidyverse100本ノック\nR Studio: Beginners\n\n\n\nggplot\n\nggplot2(公式サイト)\n統計学2: ggplot2入門\nggplot2の辞書\n図から逆引きするgeom_*関数 (ggplot2)\nggplot2における 軸関連のコントロール～逆引き的ミニまとめ～\nggplot2のアノテーション技法\nggplot2を使って、注釈を入れる-1\nFAQ: Annotation\nBeautifully Annotated: Enhancing your ggplots with Text\n\n\n\nカラーパレット\n\nfishualize - Paracanthurus_hepatus\nR Color Palettes\n\n\n\n研究分野別\n\n疫学や公衆衛生に関わる業務のためのR\nみんなのデータサイエンス：e-Stat\n総選挙データの可視化\nquanteda：衆議院外務委員会の議事録\n西山 他『計量経済学』のためのR\nIntroduction to Econometrics with R\n医学統計でよく使うRパッケージ\nJulia Silge\nbob3’s blog\nThe Jose M Sallan static website\n\n\n\n出力方法\n\nR Markdown クックブック\nTinyTeX\n.qmd を超お手軽完全無料パブリッシュできる Quarto Pub を使ってみる\nQuarto Pub\nCreate Your Website with Quarto\n\n\n\nマップ\n\nLeaflet Map View\n\n\n\nテーブル\n\nIntroduction to Creating gt Tables（gt公式サイト）\n【R】ガチできれいなTableを作れるgtパッケージとは?\n【R】データ要約ガチ勢のためのgtsummaryで表を書こう\n回帰モデルの結果をキレイに表示する（gtsummaryパッケージtbl_regression関数）[R]\n\n\n\n時間処理\n\nlubridate（公式サイト）\n【R前処理講座32】{lubridate}：時間処理【tidyverse】\nlubridateパッケージ入門\n\n\n\nコミュニティ\n\nr-wakalang へようこそ\nTokyo.R\n\n\n\n前処理（データ加工）\n\nRで読むExcelファイル\n「Rによるデータクリーニング実践」をやってみた\nStyle guide\n住所や年号、漢数字のデータ操作を楽にするRパッケージをCRANに登録しました\n\n\n\nインストール他\n\nlocaleを日本語(ja_JP.UTF-8)にする\nものすごくどうでもいい覚え書き: RStudioのエディタ・テーマ総ざらえ\nModern CSV"
+  },
+  {
+    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html",
+    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html",
+    "title": "学域横断的プロジェクト入門 2024",
+    "section": "",
+    "text": "この授業は、高校時代に培った、探究学習を始めとする、主体的かつ協働的な学びや経験を、発展的に、大学への学びと接続させることを目指す、グループワーク型の研究プロジェクトです。また、学域、学類を超えて集まった「多様な学生が切磋琢磨し相互に刺激を与えながら成長する場」として研究プロジェクトを位置づけ、多様な視点を交差、交流させることから得られる学知や経験を重視します。この授業を通して、今後の専門教育の土台の一つを築くことを目指します。"
+  },
+  {
+    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#授業の主題",
+    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#授業の主題",
+    "title": "学域横断的プロジェクト入門 2024",
+    "section": "",
+    "text": "この授業は、高校時代に培った、探究学習を始めとする、主体的かつ協働的な学びや経験を、発展的に、大学への学びと接続させることを目指す、グループワーク型の研究プロジェクトです。また、学域、学類を超えて集まった「多様な学生が切磋琢磨し相互に刺激を与えながら成長する場」として研究プロジェクトを位置づけ、多様な視点を交差、交流させることから得られる学知や経験を重視します。この授業を通して、今後の専門教育の土台の一つを築くことを目指します。"
+  },
+  {
+    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#学修目標到達目標",
+    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#学修目標到達目標",
+    "title": "学域横断的プロジェクト入門 2024",
     "section": "学修目標（到達目標）",
-    "text": "学修目標（到達目標）\n\n受講生が、R言語の基本的な操作（データの読み込み、加工、抽出、結合など）ができる\n受講生が、ggplot2パッケージを使い、基本的な図（棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ）を作成できる\n受講生が、自分の関心のあるテーマにかかわるデータから適切な図を作成できる"
+    "text": "学修目標（到達目標）\n\n受講生が、高校での学びと大学での学びの質的な連続性と相違点を自覚することができるようになる\n受講生が、グループワークを通して、研究の分担や協力などの基本的な作法を身に付ける\n受講生が、他のグループの研究発表に興味関心をもち、主体的、積極的に、質問やコメントができるようになる\n受講生が、質の高い研究プロジェクトにするための条件について、自ら考えられるようになる\n受講生が、グループ内で共通する問題意識について議論し、それを一つに集約し、言語化できるようになる\n受講生が、問題意識を、検証可能なリサーチクエッションに変換できるようになり、また、リサーチクエッションや選択した対象に適した、先行研究や資料を探すことができるようになる\n受講生が、選択した対象に適した、ディシプリンや検証方法について考えることができるようになる\n受講生が、グループ内またはクラス内発表などを通して、自分（たち）の研究上の問題点を自覚し、それを修正する態度を身に付けられるようになる"
   },
   {
-    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#授業概要",
-    "href": "teaching/RandQuartoforDataScience/syllabus.html#授業概要",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#授業概要",
+    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#授業概要",
+    "title": "学域横断的プロジェクト入門 2024",
     "section": "授業概要",
-    "text": "授業概要\n授業は、講義と演習の形式でおこないます｡ 講義の前半は、テキスト『データ分析のためのデータ可視化入門』を中心に、コードの意味や記述方法、動作、実行結果などを例示、解説します｡ 後半の演習は、1. 各自所有のノートPCおこないますので、必ずノートPCを持参してください｡テキストの例題と合わせて、2. 自分の関心のあるテーマにかかわるデータでも、同様のコードを実践してください｡"
+    "text": "授業概要\n学域、学類を超えて編成されるグループにおいて、課題発見から課題解決にいたる一連のプロセスを経験します 1. 高校での探究学習を共有する 2. グループ全員が興味をもつことができるテーマを探し出し、リサーチプロポーザル（リサーチクエッション、先行研究、研究方法など）を執筆する 3. リサーチプロポーザルにもとづく、プレゼンテーションを実施する"
   },
   {
-    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#評価の割合",
-    "href": "teaching/RandQuartoforDataScience/syllabus.html#評価の割合",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#評価の割合",
+    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#評価の割合",
+    "title": "学域横断的プロジェクト入門 2024",
     "section": "評価の割合",
-    "text": "評価の割合\n\n毎回の授業課題（感想と演習）：50%（25%と25%）\nレポートとプレゼンテーション：30%\n受講態度：20%\n\n※授業には3分の2以上の出席を必要とします 　- ※評価基準は、授業目標に準じます"
+    "text": "評価の割合\n\nリサーチプロポーザル（レポート形式）30％\nプレゼンテーション（スライド資料） 20%\n毎回の授業課題（予習・復習）30%\n受講態度（グループへの貢献度を含む） 20%\n\n※授業には3分の2以上の出席を必要とします 　- ※評価基準は、授業目標に準じます"
   },
   {
-    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#教科書参考書補足",
-    "href": "teaching/RandQuartoforDataScience/syllabus.html#教科書参考書補足",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#教科書参考書補足",
+    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#教科書参考書補足",
+    "title": "学域横断的プロジェクト入門 2024",
     "section": "教科書・参考書補足",
-    "text": "教科書・参考書補足\n\n教科書\n\nキーラン・ヒーリー（2021）『データ分析のためのデータ可視化入門』（瓜生真也・ 江口哲史・三村喬生 訳）、講談社（LINK）\n\n\n\n\n\n\n\n教科書『データ分析のためのデータ可視化入門』は必ず購入してください｡購入先はどこでも構いません｡セカンドハウンドも可。受講者数が少ないため､生協の「教科書」には指定していませんので､ご注意下さい（生協で購入する場合は､各自取り寄せ注文すること）。\n\n\n\n\n\n参考書\n\n松村優哉・湯谷啓明・紀ノ定保礼・前田和寛（2021）『改訂2版 RユーザのためのRStudio「実践」入門：tidyverseによるモダンな分析フローの世界』、技術評論社（LINK）\n松村優哉・瓜生真也・吉村広志（2023）『Rユーザのためのtidymodels「実践」入門：モダンな統計・機械学習モデリングの世界』、技術評論社（LINK）"
+    "text": "教科書・参考書補足\n\n参考書\n\n戸田山和久『最新版 論文の教室：レポートから卒論まで』（NHKブックス、2022年）\nジョン・モーリー（高橋さきの訳・国枝哲夫監訳）『アカデミック・フレーズバンク：そのまま使える！構文200・文例1900』（講談社、2022年）\n\n適宜、授業内で配布します。"
   },
   {
-    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#その他履修上の注意事項や学習上の助言",
-    "href": "teaching/RandQuartoforDataScience/syllabus.html#その他履修上の注意事項や学習上の助言",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
-    "section": "その他履修上の注意事項や学習上の助言",
-    "text": "その他履修上の注意事項や学習上の助言\nR言語に初めて触れる方で受講を検討している方は、まず「統計言語 「R」の神はなぜ無償で貢献したのか：オープンコミュニティで活躍する“新人類”の誕生」（日経ビジネス・電子版）を読んでみるとよいでしょう｡また検索サイトに検索ワードにggplotと興味のある専門領域を入力してみてみると、この授業のイメージを掴めると思います｡\n持参するPCは、WindowsでもMacでもかまいませんが、R Studioをインストールできる環境が必要です｡公式サイトから、確認してください（ここ数年、販売されたPCであれば問題ないと思います）｡"
-  },
-  {
-    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#予習に関する指示",
-    "href": "teaching/RandQuartoforDataScience/syllabus.html#予習に関する指示",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#予習に関する指示",
+    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#予習に関する指示",
+    "title": "学域横断的プロジェクト入門 2024",
     "section": "予習に関する指示",
-    "text": "予習に関する指示\n事前に教科書を下読することが望ましいです｡"
+    "text": "予習に関する指示\nグループワークまたはリサーチプロポーザルに必要な文献を適宜配布します。授業までに読み、指示に応じて、まとめてください（目安1時間）。"
   },
   {
-    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#復習に関する指示",
-    "href": "teaching/RandQuartoforDataScience/syllabus.html#復習に関する指示",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#復習に関する指示",
+    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#復習に関する指示",
+    "title": "学域横断的プロジェクト入門 2024",
     "section": "復習に関する指示",
-    "text": "復習に関する指示\n毎回の授業で学習したコードやパッケージを各自のPCで再実践してください｡"
-  },
-  {
-    "objectID": "teaching/RandQuartoforDataScience/index.html",
-    "href": "teaching/RandQuartoforDataScience/index.html",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
-    "section": "",
-    "text": "このウェブサイトは2024年9月30日に削除します"
-  },
-  {
-    "objectID": "teaching/RandQuartoforDataScience/index.html#シラバス",
-    "href": "teaching/RandQuartoforDataScience/index.html#シラバス",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
-    "section": "シラバス",
-    "text": "シラバス\n\nシラバス"
-  },
-  {
-    "objectID": "teaching/RandQuartoforDataScience/index.html#講義スケジュール",
-    "href": "teaching/RandQuartoforDataScience/index.html#講義スケジュール",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
-    "section": "講義スケジュール",
-    "text": "講義スケジュール\n\n\n\n\n\n\n授業日当日までに､各回のレジュメにアクセスできるようにします（リンクを貼ります）\n\n\n\n\nWeek 1 (6/12)： イントロダクション\n\n\nキーワード：- データを見る；RとR Studioのインストール；プロジェクトの作成\n『データ分析のためのデータ可視化入門』：\n\nはじめに\nインストール\n\n\n\n\nWeek 2 (6/19) ：Rの基本的な操作方法（1）\n\nキーワード：データの読み込み；データの型；データの構造；データの集計；再現可能性（アウトプット）\n\n\n\nWeek 3 (6/26) ：Rの基本的な操作方法（2）\n\nTidyverse；パイプ演算子；データの加工；データの抽出；記述統計量；データの結合\n\n\n\nWeek 4 (7/3)：Visualization (1)\n\nggplot2；プロットとレイヤー\n\n\n\nWeek 5 (7/10) ：Visualization (2)\n\n5 Named Graphs (5NG)：棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ\n\n\n\nWeek 6 (7/17) ：Visualization (3)\n\nプロットを整える；色とラベル\n\n\n\nWeek 7 (7/24) ：Visualization (4)\n\n地図\n\n\n\nWeek 8 (7/31) ：Visualization (5)\n\n補足\n\n\n\nWeek 9 (8/7)：プレゼンテーション\n\n\n\n\n\n\n欠席者はご自身で授業内容､授業課題をフォローしてください"
-  },
-  {
-    "objectID": "teaching/RandQuartoforDataScience/index.html#提出物提出先",
-    "href": "teaching/RandQuartoforDataScience/index.html#提出物提出先",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
-    "section": "提出物（提出先）",
-    "text": "提出物（提出先）\n\n\n\n\n\n\n欠席を理由とする､授業課題の未提出は認めません\n\n\n\n\n授業の感想：後日案内します     \n\n\n\n\n\n\n\n\n授業の演習：後日案内します\n最終成果物：後日案内します\nその他：必要に応じて案内します"
-  },
-  {
-    "objectID": "teaching/RandQuartoforDataScience/index.html#講評",
-    "href": "teaching/RandQuartoforDataScience/index.html#講評",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
-    "section": "講評",
-    "text": "講評\n\n成績評価後に掲載します"
-  },
-  {
-    "objectID": "teaching/RandQuartoforDataScience/index.html#役立つサイト",
-    "href": "teaching/RandQuartoforDataScience/index.html#役立つサイト",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
-    "section": "役立つサイト",
-    "text": "役立つサイト\n\n役立つサイト"
-  },
-  {
-    "objectID": "teaching/index.html",
-    "href": "teaching/index.html",
-    "title": "Teaching",
-    "section": "",
-    "text": "R and Quarto for Data Science: Visualizing Data, Q2 \nInterdisciplinary Collaborative Workshop: Inquiry-Based Learning for Early Undergraduate Students, Q2 \n\n\n\n\n\nIntroduction to Political Science II, Winter\n\n\n\n\n\n\n\n\nInterdisciplinary Collaborative Workshop: Inquiry-Based Learning for Early Undergraduate Students, Q4\n\n\n\n\n\nIntroduction to Political Science I, Winter"
-  },
-  {
-    "objectID": "teaching/index.html#lecture",
-    "href": "teaching/index.html#lecture",
-    "title": "Teaching",
-    "section": "",
-    "text": "R and Quarto for Data Science: Visualizing Data, Q2 \nInterdisciplinary Collaborative Workshop: Inquiry-Based Learning for Early Undergraduate Students, Q2 \n\n\n\n\n\nIntroduction to Political Science II, Winter\n\n\n\n\n\n\n\n\nInterdisciplinary Collaborative Workshop: Inquiry-Based Learning for Early Undergraduate Students, Q4\n\n\n\n\n\nIntroduction to Political Science I, Winter"
-  },
-  {
-    "objectID": "teaching/index.html#workshop",
-    "href": "teaching/index.html#workshop",
-    "title": "Teaching",
-    "section": "Workshop",
-    "text": "Workshop\n\n2024\n\nKanazawa University\n\nReading Seminar for Articulating High School and University Studies\n\n\n\n\n2023\n\nKanazawa University\n\nReading Seminar for Articulating High School and University Studies\n\nSummer\n\nYamaguchi, Shintaro (2019), Kazoku no Shiawase no Keizai-gaku (The Economics of “Family Happiness”: The Reality of Marriage, Childbirth, and Childrearing revealed by Data Analysis), Kobunsha-Shinsho.\nTsukazaki, Asako (2018), Sekai wo Sukutta Nihon no Kusuri (Japanese Medicine Saved the World), Kodansha Blue Backs.\n\nSpring\n\nIto, Asei (2020), Dejitalka suru Shinkou-koku: Senshin-koku wo koeruka, Kanshi-syakai no toraika (Digitalizing Emerging Economies: Will They Surpass the Developed Countries or will the Surveillance Society), Chuko Shinsho.\nNakagawa, Takeshi (2017), Jinrui to Kiko no 10 man-nen -shi: Kako ni Nani ga Okitanoka (A 100,000-Year History of Humans and Climate: What Happened in the Past?), Kodansha Blue Backs.\nKawashima, Midori (2012), Kango no chikara (The Power of Nursing), Iwanami shinsho.\n\n\n\n\n\n\n2022\n\nKanazawa University\n\nReading Seminar for Articulating High School and University Studies\n\nSummer\n\nHonda, Yuki (2021), Nippon tte donna kuni?, (What’s “Japan”?: Elucidating the Society with International Comparative Data), Chikuma Primer Shinsho.\n\nSpring\n\nNashiki, Kaho (2022), Honto no leader no mitsukekata (How to Discover the True Leader), Iwanami Gendai Bunko.\nOoguri, Hiroshi (2021), Tankyu suru seishin (Spirit of Inquiry: Basic Science as a Vocation), Gentosha Bunko."
-  },
-  {
-    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html",
-    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html",
-    "title": "学域横断的プロジェクト入門 2024",
-    "section": "",
-    "text": "このウェブサイトは2024年9月30日に削除します"
-  },
-  {
-    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#シラバス",
-    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#シラバス",
-    "title": "学域横断的プロジェクト入門 2024",
-    "section": "シラバス",
-    "text": "シラバス\n\nシラバス"
-  },
-  {
-    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#講義スケジュール",
-    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#講義スケジュール",
-    "title": "学域横断的プロジェクト入門 2024",
-    "section": "講義スケジュール",
-    "text": "講義スケジュール\n\n\n\n\n\n\n授業日当日までに､各回のレジュメにアクセスできるようにします（リンクを貼ります）\n\n\n\n\nWeek 1 (6/12) イントロダクション\n\n\n\nWeek 2 (6/19) グループワーク1\n\n共通テーマの設定\n\n\n\nWeek 3 (6/26) グループワーク2：\n\nアカデミック・サーチ\n\n\n\nWeek 4 (7/3) グループワーク3：\n\nアカデミック・リーディング\n\n\n\nWeek 5 (7/10) グループワーク4：\n\nアカデミック・リーディング\n\n\n\nWeek 6 (7/17) グループワーク5：\n\nリサーチプロポーザル1\n\n\n\nWeek 7 (7/24) グループワーク6：\n\nリサーチプロポーザル2\n\n\n\nWeek 8 (7/31) グループワーク7：\n\nリサーチプロポーザル3\n\n\n\nWeek 9 (8/7) プレゼンテーション\n\n\n\n\n\n\n欠席者はご自身で授業内容､授業課題をフォローしてください"
-  },
-  {
-    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#提出物提出先",
-    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#提出物提出先",
-    "title": "学域横断的プロジェクト入門 2024",
-    "section": "提出物（提出先）",
-    "text": "提出物（提出先）\n\n\n\n\n\n\n欠席を理由とする､授業課題の未提出は認めません\n\n\n\n\n授業の感想\n\n初回：準備中です\n第2回-第8回：準備中です\n最終回：準備中です\n\nリーディングアサインメント：準備中です\nグループワーク（進捗確認）：準備中です\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n最終成果物：後日案内します\nその他：必要に応じて案内します"
-  },
-  {
-    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#講評",
-    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#講評",
-    "title": "学域横断的プロジェクト入門 2024",
-    "section": "講評",
-    "text": "講評\n\n成績評価後に掲載します"
-  },
-  {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "note\n\n\n\n\nThis blog is mainly used to inform you of updates to the website.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMar 2, 2024\n\n\nChihiro Kariya\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "CHIHIRO KARIYA",
-    "section": "",
-    "text": "Email"
-  },
-  {
-    "objectID": "index.html#about",
-    "href": "index.html#about",
-    "title": "CHIHIRO KARIYA",
-    "section": "About",
-    "text": "About\nI am Chihiro Kariya, an intellectual historian of early modern ideas. My main subject is Edmund Burke, who is best known for his late writings on the French Revolution and is the 18th-century member of Parliament in Britain. I currently work as an Assistant Professor at the Articulation Center for High School and University at Kanazawa University, Japan. This website is intended to post my research in English and is updated about 3 or 4 times a year.\nOn this website, you will find my published works, including articles, monographs, reviews, and translations. You will also find news and updates on my current research projects, as well as information on upcoming events and conferences where I will be speaking. Please feel free to contact me if you have any questions or would like to discuss projects.\nFor my academic profile in Japanese, please refer to the researchmap, managed by the Japan Science and Technology Agency (JST)."
-  },
-  {
-    "objectID": "index.html#social-link",
-    "href": "index.html#social-link",
-    "title": "CHIHIRO KARIYA",
-    "section": "Social Link",
-    "text": "Social Link\n\n\n ORCiD\n Github"
-  },
-  {
-    "objectID": "publications/index.html",
-    "href": "publications/index.html",
-    "title": "Publications",
-    "section": "",
-    "text": "WARNING\n\n\n\n\nAll following papers are written in Japanese.\nThis page shows abstracts in English attached to each paper or abstracts translated into English for this website."
-  },
-  {
-    "objectID": "publications/index.html#articles-chapters",
-    "href": "publications/index.html#articles-chapters",
-    "title": "Publications",
-    "section": "Articles & Chapters",
-    "text": "Articles & Chapters\n\nJames Mackintosh in Bombay: Colonial Rule of the Scottish Enlightenment\n\nAbstract: Neither his contemporaries nor today’s scholarship has paid enough attention to James Mackintosh in Bombay. Mackintosh, a leading figure in the Scottish Enlightenment, was the author of A Discourse on the Study of the Law of Nature and Nations, a book that is forgotten today but that attracted the attention of his contemporaries. He was an exceptional political theorist who stayed in the Indian subcontinent. This study organizes his discussion of state, relations between states, and narrative on civilization and barbarism from the discourse, and discusses how these ideas and narrative were or were not utilized by Mackintosh in Bombay. The essay concludes as follows: He used the idea of state in the rule of law and civil society in Bombay. On the other hand, his theory on the law of nations does not have sufficient concepts and language to discuss empire, such as referring to the protectorate of Great Britain as if it were an independent state. This study argues that he, who had the aporia of legitimacy of acquisition and legitimacy of administration, seems to have wandered into a further aporia, by neglecting to discuss the natives in the subcontinent. The author implies that the colonial application of his Enlightenment thought ̶ especially his conception of political economy ̶ was his own answer to getting out of the aporia.\n\nThe Eloquence in Wartime: Mackintosh on Burke’s Letters on a Regicide Peace\n\nAbstract: This paper explores the political context of eloquence in Britain during the French Revolutionary Wars, by examining the controversy on peace with France. Burke’s enigmatic political pamphlet Letters on a Regicide Peace, published for continuing the war in 1796, is one of the most difficult works to interpret. The pamphlet which interweaves threads of rich rhetoric and antagonism toward France has kept scholarship away for a long time. Some scholars have found in the text international theory, and a newly invented word, diplomacy, emphasizing his talent, originality, and innovation. But since they have not paid attention to the reaction from his contemporary, his intention, and the context, the interpretations may be anachronistic. This essay reads the pamphlet in the contemporary controversy, especially with James Mackintosh, who published Vindiciae Gallicae in 1791. His review on Letters on a Regicide Peace, which appeared in Monthly Review in 1796 and refuted Burke’s opinion, has been rarely considered. This paper argues Mackintosh adapted the alternative strategy focusing on Burke’s eloquence or rhetoric, rule of law, and opinions, which were not any subject to Burke. First, after introducing the period background and brief overview of Letters on a Regicide Peace, it shows that Mackintosh warned Burkes’ eloquence by referring to the canonical speeches by Demosthenes and Cicero, and by putting his pamphlet in the context of literature such as The Life of Henry the Fifth (William Shakespeare) and Paradise Regained (John Milton). Second, it focuses on disagreement on the idea of opinions between them. He locked Burke’s perilous gift for eloquence, which incited people to the war persuasively, and called for anti-war.\n\n\n\n\n\nhttps://doi.org/10.34382/00014305\n pdf\n\nThe International Politics of Jealousy: Edmund Burke, Adam Smith and James Mackintosh\n\nAbstract: This paper aims to think about global governance through the classics, focusing on the language, in particular on jealousy, of international relations in Britain during the French Revolutionary Wars. This paper explores perceptions on relations between states of the statesman Edmund Burke (1730-1797) and his contemporaries (the political economist (philosopher) Adam Smith (1723-1790) and the political pamphleteer James Mackintosh (1765-1832) . Through the above discussion, it questions what is “classics” in the study of global governance. It is not common to focus on jealousy in the discussion of global governance and inter-state relations. This is partly because jealousy is not a phenomenon or an analytical concept unique to inter-state relations, such as diplomacy, sovereignty (external sovereignty), balance of power theory, or hegemony, and therefore has been avoided from being discussed head-on. But in today’s relations between states too, jealousy, far from disappearing, continues to be a source of great trouble.This paper finds that Burke, Smith and Mackintosh commonly perceived that inter-state relations were hampered by jealousy, and they all seem to be pessimistic about overcoming jealousy. What is interesting for this paper, however, is Burke has repeatedly expressed concern that other states or nations were jealous of his state. Adam Smith, in arguing for the ‘impartial observer’ in his The Theory of Moral Sentiments, emphasis of the importance of lowering passions to the point where others can follow. It is true that we may not be able to overcome jealousy, but by asking ourselves whether our state is not the object of jealousy from other states, we seem to open the way to cooperative governance with other countries.At any given time, classical texts and later generations does not share preconditions. In this respect, the limitations of this paper do not stem solely from global governance. What is important is that we continue to have a sense of learning from the classics, and that we form a common understanding among contemporaries by sharing the classics, or at least sharing the need to do so. Just as the study of international relations has developed primarily through the classicization of international law, global governance seems to need a corresponding classic. Since the study of global governance has a broader scope than the study of international relations, the scope of the classics should be even broader.\n\n\n\n\n\nhttps://doi.org/10.51054/sgg.2022.8_51\n pdf\n\nThe Language of War and Peace in Britain during the French Revolution: Controversy over Burke’s Letters on a Regicide Peace’\n\nInstitute of Legal Studies, Kansai University\n\nThe Law of Nations in Britain during the French Revolution: Edmund Burke and James Mackintosh\n\nInstitute of Legal Studies, Kansai University\n\nBurke on Empire: The Dilemma of Liberty and Empire\n\n\n\n\nhttps://doi.org/10.24587/sbp.2013_043\n\n\nAbstract: British conceptions of empire were shaped by political arguments on liberty. This study revisits on Edmund Burke’s empire thought in the light of the dilemma of liberty and empire, demonstrating that he struggled to reconcile liberty with empire. And the paper tries to offer his original contribution to history of discourse on empire. Burke regarded British Empire’s problems after the Seven Years’ War as unknown, and could not rely on the example of Roman, Greek, or even British colonies. In order to find the reason, the paper pays attention to Burke’s perception that political sphere in empire of the seas is too vast for power and authority of imperial government to exercise enough. And the perception brought him distinction between state and empire, and plan of colonial self-government."
-  },
-  {
-    "objectID": "publications/index.html#book-reviews",
-    "href": "publications/index.html#book-reviews",
-    "title": "Publications",
-    "section": "Book Reviews",
-    "text": "Book Reviews\n\n’Review of Hanna Fenichel Pitkin, The Concept of Representation (Japanese translation, Nagoya University Press, 2017), Tosho Shinbun [The Book Review], The Book Review Press, 3350.\n‘Review of Richard Bourke, Empire and Revolution: The Political Life of Edmund Burke, Princeton University Press, 2015’, Igirisu Tetugaku Kenkyu [Studies in British Philosophy], Japanese Society for British Philosophy, 40, 88-89.\n’Review of David Armitage, Foundations of Modern International Thought (Japanese translation, Hosei University Press, 2015), Igirisu Tetugaku Kenkyu [Studies in British Philosophy], Japanese Society for British Philosophy, 39, 105-107."
-  },
-  {
-    "objectID": "publications/index.html#translation",
-    "href": "publications/index.html#translation",
-    "title": "Publications",
-    "section": "Translation",
-    "text": "Translation\n\nC. H. Alexandrowicz (2017), ‘Kautilyan Principles and the Law of Nations (1965-66)’, in The Law of Nations in Global History, David Armitage and Jennifer Pitts, eds, Oxford: Oxford University Press, 35-52. (Japanese translation, Gurobal Hisutori to Kokusai-ho [Globai History and International Law], Nihon Keizai Hyoronsya, 2020)."
-  },
-  {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Projects",
-    "section": "",
-    "text": "The research project is to elucidate how rhetoric, which was invented in ancient Greece, developed in ancient Rome, and inherited in Europe — a system of persuasion techniques, and the two wheels, along with political institutions — , was recepted and used in the late eighteenth- and early nineteenth-century Britain, a period of of progress for parliamentary and journalistic press.\nInspired by Skinner (1996) and Peltonen (2013), the preeminent studies on the history of rhetorical discourse, this research project will also be aware of the differences in the reception of rhetoric in 17th and 18th-century Britain.At the centre of this study is Edmund Burke, who was active in the arena of the Age of Eloquence and was known as the British Cicero. On the other hand, Samuel Johnson — who, in his obscurity, compiled parliamentary speeches in the Gentleman’s Magazine and created a template for parliamentary oratory, and James Mackintosh — who lived through the long 18th century and knew the rhetoric of the late 18th and early 19th century in Britain well, and used it in politics — are also noted.\nFrom the perspective of reception study, this study will also shed light on how they and their contemporaries read Plutarchus and Tacitus, not to mention Cicero, and what they thought about eloquence, parliamentary speeches, or statesmanship. And with them, I would like to consider, for example, the enigmatic following passages from Plutarchus and Tacitus.\n\nfor such preparation was a mark of deference to the people, whereas heedlessness of what the multitude will think of his speech marks a man of oligarchical spirit, and one who relies on force rather than on persuasion. (Plutarch, The Parallel Lives, The Life of Demosthenes)\n\n\nin such times it must be acknowledged that Rome produced a race of noble orators; as in the wild uncultivated field the richest vegetables will often shoot up, and flourish with uncommon vigour. And yet it is fair to ask, Could all the eloquence of the Gracchi atone for the laws which they imposed on their country? Could the fame which Cicero obtained by his eloquence, compensate for the tragic end to which it brought him ? (Tacitus, Dialogue on Oratory)\n\n\nSkinner, Quentin (1996) Reason and Rhetoric in the Philosophy of Hobbes, Cambridge: Cambridge University Press.\nPeltonen, Markku (2013) Rhetoric, Politics, and Popularity in Pre-Revolutionary England, Cambridge: Cambridge University Press."
-  },
-  {
-    "objectID": "projects/index.html#the-reception-of-rhetoric-in-the-long-eighteenth-century-in-britain",
-    "href": "projects/index.html#the-reception-of-rhetoric-in-the-long-eighteenth-century-in-britain",
-    "title": "Projects",
-    "section": "",
-    "text": "The research project is to elucidate how rhetoric, which was invented in ancient Greece, developed in ancient Rome, and inherited in Europe — a system of persuasion techniques, and the two wheels, along with political institutions — , was recepted and used in the late eighteenth- and early nineteenth-century Britain, a period of of progress for parliamentary and journalistic press.\nInspired by Skinner (1996) and Peltonen (2013), the preeminent studies on the history of rhetorical discourse, this research project will also be aware of the differences in the reception of rhetoric in 17th and 18th-century Britain.At the centre of this study is Edmund Burke, who was active in the arena of the Age of Eloquence and was known as the British Cicero. On the other hand, Samuel Johnson — who, in his obscurity, compiled parliamentary speeches in the Gentleman’s Magazine and created a template for parliamentary oratory, and James Mackintosh — who lived through the long 18th century and knew the rhetoric of the late 18th and early 19th century in Britain well, and used it in politics — are also noted.\nFrom the perspective of reception study, this study will also shed light on how they and their contemporaries read Plutarchus and Tacitus, not to mention Cicero, and what they thought about eloquence, parliamentary speeches, or statesmanship. And with them, I would like to consider, for example, the enigmatic following passages from Plutarchus and Tacitus.\n\nfor such preparation was a mark of deference to the people, whereas heedlessness of what the multitude will think of his speech marks a man of oligarchical spirit, and one who relies on force rather than on persuasion. (Plutarch, The Parallel Lives, The Life of Demosthenes)\n\n\nin such times it must be acknowledged that Rome produced a race of noble orators; as in the wild uncultivated field the richest vegetables will often shoot up, and flourish with uncommon vigour. And yet it is fair to ask, Could all the eloquence of the Gracchi atone for the laws which they imposed on their country? Could the fame which Cicero obtained by his eloquence, compensate for the tragic end to which it brought him ? (Tacitus, Dialogue on Oratory)\n\n\nSkinner, Quentin (1996) Reason and Rhetoric in the Philosophy of Hobbes, Cambridge: Cambridge University Press.\nPeltonen, Markku (2013) Rhetoric, Politics, and Popularity in Pre-Revolutionary England, Cambridge: Cambridge University Press."
-  },
-  {
-    "objectID": "projects/index.html#the-discourse-of-interstate-relations-and-empires-in-britain-during-the-french-revolution",
-    "href": "projects/index.html#the-discourse-of-interstate-relations-and-empires-in-britain-during-the-french-revolution",
-    "title": "Projects",
-    "section": "2. The Discourse of Interstate Relations and Empires in Britain during the French Revolution",
-    "text": "2. The Discourse of Interstate Relations and Empires in Britain during the French Revolution\n\n\nThis project, stimulated by the international turn advocated by Armitage (2013), is to examine the language and discourse of the international sphere from the late 18th to the mid-19th century, stemming from the French Revolution. It aims to reveal how political bodies, such as state, empire, and commonwealth, and the relations among these bodies, were perceived and how these perceptions were changed by the French Revolution.\nOne of the central questions of this project is how the concepts of independence of state and external sovereignty were popularized and resisted; these concepts, which are seen as generalized by Vattel’s Le Droit des gens, were resisted by conservatives in other states not only because of the violence of the French Revolution, but also because of the pervasiveness of the revolutionary ideas and concepts. Conservatives explored the rationale for interfering in the internal affairs of revolutionary states; they also explored the concepts of mustering counter-revolutionary states, and the interests beyond the individual interests of the states at the time; some political theorists, led by Burke, believed that the international community could not be sustained simply by holding the independence of state sacred. On the other hand, it was also characteristic of this period that political theorists like Mackintosh were active who took this idea for granted.\nIn considering the independence of states, it is necessary to recall that during this period the partition of Poland was often looked back upon and provided material for thinking about interstate relations. Taking Burke as a starting point, this study will consider how Mackintosh and Robert Stewart, Viscount Castlereagh, accepted or did not accept Burke’s language and theory.\nThe project will also discuss Martin Wight and Harry Hinsley, two of the leading theorists of international relations and diplomatic historians in 20th-century Britain.\n\nArmitage, David (2013), Foundations of Modern International Thought, Cambridge: Cambridge University Press.\n\n\n\n\n\n\n\n\nIn relation to the above research projects, I just started studying quanteda, one of the text analysis packages in the R language. If I get any useful usage regarding the quanteda package, I will share it via github — I am a newbie to github. If you have any good ideas related to this, please let me know."
-  },
-  {
-    "objectID": "blog/posts/welcome/index.html",
-    "href": "blog/posts/welcome/index.html",
-    "title": "Welcome to My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\n\n\nSeagull not Screaming at Chirihama Beach in Spring"
+    "text": "復習に関する指示\n毎回の授業内容に合わせて、授業時間外のグループワークが必要です。進捗を確認できる資料を用意してください（目安1時間）。"
   },
   {
     "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/InterdisciplinaryCollaborativeWorkshop_w1.html#担当教員",
@@ -336,115 +189,255 @@
     "text": "9. スケジュール\n\n\n\n\n\n  gantt\n    title プロジェクトの流れ\n    dateFormat YYYY-MM-DD\n    axisFormat %m/%d\n    tickInterval 1week\n    %% excludes weekends\n    %% 動かない tickInterval 1week weekday wednesday（v10.3.0+）\n\n    section プロジェクト\n    開始（12/13）: milestone, 2023-12-13, 0d\n    テーマ（12/13-）: active, a1, 2023-12-13, 3w\n    課題背景（12/20-）: active, a2, 2023-12-20, 2024-01-17\n    先行研究（12/20-）: active, a3, 2023-12-20, 2024-01-17\n    リサーチクエッション（12/27-）: active, a4, 2023-12-27, 2024-01-17\n    リサーチプロポーザル案（1/10-）: active, a5, 2024-01-10, 2024-01-31\n     section プロジェクト\n    プレゼンテーション: crit, c1, 2024-01-17, 2024-02-10\n    レポート: crit, c2, 2024-01-24, 2024-02-10\n    〆切（2/10）: milestone, after c2, 2024-02-08, 4d"
   },
   {
-    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html",
-    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html",
-    "title": "学域横断的プロジェクト入門 2024",
+    "objectID": "blog/posts/welcome/index.html",
+    "href": "blog/posts/welcome/index.html",
+    "title": "Welcome to My Blog",
     "section": "",
-    "text": "この授業は、高校時代に培った、探究学習を始めとする、主体的かつ協働的な学びや経験を、発展的に、大学への学びと接続させることを目指す、グループワーク型の研究プロジェクトです。また、学域、学類を超えて集まった「多様な学生が切磋琢磨し相互に刺激を与えながら成長する場」として研究プロジェクトを位置づけ、多様な視点を交差、交流させることから得られる学知や経験を重視します。この授業を通して、今後の専門教育の土台の一つを築くことを目指します。"
+    "text": "This is the first post in a Quarto blog. Welcome!\n\n\n\nSeagull not Screaming at Chirihama Beach in Spring"
   },
   {
-    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#授業の主題",
-    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#授業の主題",
-    "title": "学域横断的プロジェクト入門 2024",
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
     "section": "",
-    "text": "この授業は、高校時代に培った、探究学習を始めとする、主体的かつ協働的な学びや経験を、発展的に、大学への学びと接続させることを目指す、グループワーク型の研究プロジェクトです。また、学域、学類を超えて集まった「多様な学生が切磋琢磨し相互に刺激を与えながら成長する場」として研究プロジェクトを位置づけ、多様な視点を交差、交流させることから得られる学知や経験を重視します。この授業を通して、今後の専門教育の土台の一つを築くことを目指します。"
+    "text": "The research project is to elucidate how rhetoric, which was invented in ancient Greece, developed in ancient Rome, and inherited in Europe — a system of persuasion techniques, and the two wheels, along with political institutions — , was recepted and used in the late eighteenth- and early nineteenth-century Britain, a period of of progress for parliamentary and journalistic press.\nInspired by Skinner (1996) and Peltonen (2013), the preeminent studies on the history of rhetorical discourse, this research project will also be aware of the differences in the reception of rhetoric in 17th and 18th-century Britain.At the centre of this study is Edmund Burke, who was active in the arena of the Age of Eloquence and was known as the British Cicero. On the other hand, Samuel Johnson — who, in his obscurity, compiled parliamentary speeches in the Gentleman’s Magazine and created a template for parliamentary oratory, and James Mackintosh — who lived through the long 18th century and knew the rhetoric of the late 18th and early 19th century in Britain well, and used it in politics — are also noted.\nFrom the perspective of reception study, this study will also shed light on how they and their contemporaries read Plutarchus and Tacitus, not to mention Cicero, and what they thought about eloquence, parliamentary speeches, or statesmanship. And with them, I would like to consider, for example, the enigmatic following passages from Plutarchus and Tacitus.\n\nfor such preparation was a mark of deference to the people, whereas heedlessness of what the multitude will think of his speech marks a man of oligarchical spirit, and one who relies on force rather than on persuasion. (Plutarch, The Parallel Lives, The Life of Demosthenes)\n\n\nin such times it must be acknowledged that Rome produced a race of noble orators; as in the wild uncultivated field the richest vegetables will often shoot up, and flourish with uncommon vigour. And yet it is fair to ask, Could all the eloquence of the Gracchi atone for the laws which they imposed on their country? Could the fame which Cicero obtained by his eloquence, compensate for the tragic end to which it brought him ? (Tacitus, Dialogue on Oratory)\n\n\nSkinner, Quentin (1996) Reason and Rhetoric in the Philosophy of Hobbes, Cambridge: Cambridge University Press.\nPeltonen, Markku (2013) Rhetoric, Politics, and Popularity in Pre-Revolutionary England, Cambridge: Cambridge University Press."
   },
   {
-    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#学修目標到達目標",
-    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#学修目標到達目標",
+    "objectID": "projects/index.html#the-reception-of-rhetoric-in-the-long-eighteenth-century-in-britain",
+    "href": "projects/index.html#the-reception-of-rhetoric-in-the-long-eighteenth-century-in-britain",
+    "title": "Projects",
+    "section": "",
+    "text": "The research project is to elucidate how rhetoric, which was invented in ancient Greece, developed in ancient Rome, and inherited in Europe — a system of persuasion techniques, and the two wheels, along with political institutions — , was recepted and used in the late eighteenth- and early nineteenth-century Britain, a period of of progress for parliamentary and journalistic press.\nInspired by Skinner (1996) and Peltonen (2013), the preeminent studies on the history of rhetorical discourse, this research project will also be aware of the differences in the reception of rhetoric in 17th and 18th-century Britain.At the centre of this study is Edmund Burke, who was active in the arena of the Age of Eloquence and was known as the British Cicero. On the other hand, Samuel Johnson — who, in his obscurity, compiled parliamentary speeches in the Gentleman’s Magazine and created a template for parliamentary oratory, and James Mackintosh — who lived through the long 18th century and knew the rhetoric of the late 18th and early 19th century in Britain well, and used it in politics — are also noted.\nFrom the perspective of reception study, this study will also shed light on how they and their contemporaries read Plutarchus and Tacitus, not to mention Cicero, and what they thought about eloquence, parliamentary speeches, or statesmanship. And with them, I would like to consider, for example, the enigmatic following passages from Plutarchus and Tacitus.\n\nfor such preparation was a mark of deference to the people, whereas heedlessness of what the multitude will think of his speech marks a man of oligarchical spirit, and one who relies on force rather than on persuasion. (Plutarch, The Parallel Lives, The Life of Demosthenes)\n\n\nin such times it must be acknowledged that Rome produced a race of noble orators; as in the wild uncultivated field the richest vegetables will often shoot up, and flourish with uncommon vigour. And yet it is fair to ask, Could all the eloquence of the Gracchi atone for the laws which they imposed on their country? Could the fame which Cicero obtained by his eloquence, compensate for the tragic end to which it brought him ? (Tacitus, Dialogue on Oratory)\n\n\nSkinner, Quentin (1996) Reason and Rhetoric in the Philosophy of Hobbes, Cambridge: Cambridge University Press.\nPeltonen, Markku (2013) Rhetoric, Politics, and Popularity in Pre-Revolutionary England, Cambridge: Cambridge University Press."
+  },
+  {
+    "objectID": "projects/index.html#the-discourse-of-interstate-relations-and-empires-in-britain-during-the-french-revolution",
+    "href": "projects/index.html#the-discourse-of-interstate-relations-and-empires-in-britain-during-the-french-revolution",
+    "title": "Projects",
+    "section": "2. The Discourse of Interstate Relations and Empires in Britain during the French Revolution",
+    "text": "2. The Discourse of Interstate Relations and Empires in Britain during the French Revolution\n\n\nThis project, stimulated by the international turn advocated by Armitage (2013), is to examine the language and discourse of the international sphere from the late 18th to the mid-19th century, stemming from the French Revolution. It aims to reveal how political bodies, such as state, empire, and commonwealth, and the relations among these bodies, were perceived and how these perceptions were changed by the French Revolution.\nOne of the central questions of this project is how the concepts of independence of state and external sovereignty were popularized and resisted; these concepts, which are seen as generalized by Vattel’s Le Droit des gens, were resisted by conservatives in other states not only because of the violence of the French Revolution, but also because of the pervasiveness of the revolutionary ideas and concepts. Conservatives explored the rationale for interfering in the internal affairs of revolutionary states; they also explored the concepts of mustering counter-revolutionary states, and the interests beyond the individual interests of the states at the time; some political theorists, led by Burke, believed that the international community could not be sustained simply by holding the independence of state sacred. On the other hand, it was also characteristic of this period that political theorists like Mackintosh were active who took this idea for granted.\nIn considering the independence of states, it is necessary to recall that during this period the partition of Poland was often looked back upon and provided material for thinking about interstate relations. Taking Burke as a starting point, this study will consider how Mackintosh and Robert Stewart, Viscount Castlereagh, accepted or did not accept Burke’s language and theory.\nThe project will also discuss Martin Wight and Harry Hinsley, two of the leading theorists of international relations and diplomatic historians in 20th-century Britain.\n\nArmitage, David (2013), Foundations of Modern International Thought, Cambridge: Cambridge University Press.\n\n\n\n\n\n\n\n\nIn relation to the above research projects, I just started studying quanteda, one of the text analysis packages in the R language. If I get any useful usage regarding the quanteda package, I will share it via github — I am a newbie to github. If you have any good ideas related to this, please let me know."
+  },
+  {
+    "objectID": "publications/index.html",
+    "href": "publications/index.html",
+    "title": "Publications",
+    "section": "",
+    "text": "WARNING\n\n\n\n\nAll following papers are written in Japanese.\nThis page shows abstracts in English attached to each paper or abstracts translated into English for this website."
+  },
+  {
+    "objectID": "publications/index.html#articles-chapters",
+    "href": "publications/index.html#articles-chapters",
+    "title": "Publications",
+    "section": "Articles & Chapters",
+    "text": "Articles & Chapters\n\nJames Mackintosh in Bombay: Colonial Rule of the Scottish Enlightenment\n\nAbstract: Neither his contemporaries nor today’s scholarship has paid enough attention to James Mackintosh in Bombay. Mackintosh, a leading figure in the Scottish Enlightenment, was the author of A Discourse on the Study of the Law of Nature and Nations, a book that is forgotten today but that attracted the attention of his contemporaries. He was an exceptional political theorist who stayed in the Indian subcontinent. This study organizes his discussion of state, relations between states, and narrative on civilization and barbarism from the discourse, and discusses how these ideas and narrative were or were not utilized by Mackintosh in Bombay. The essay concludes as follows: He used the idea of state in the rule of law and civil society in Bombay. On the other hand, his theory on the law of nations does not have sufficient concepts and language to discuss empire, such as referring to the protectorate of Great Britain as if it were an independent state. This study argues that he, who had the aporia of legitimacy of acquisition and legitimacy of administration, seems to have wandered into a further aporia, by neglecting to discuss the natives in the subcontinent. The author implies that the colonial application of his Enlightenment thought ̶ especially his conception of political economy ̶ was his own answer to getting out of the aporia.\n\nThe Eloquence in Wartime: Mackintosh on Burke’s Letters on a Regicide Peace\n\nAbstract: This paper explores the political context of eloquence in Britain during the French Revolutionary Wars, by examining the controversy on peace with France. Burke’s enigmatic political pamphlet Letters on a Regicide Peace, published for continuing the war in 1796, is one of the most difficult works to interpret. The pamphlet which interweaves threads of rich rhetoric and antagonism toward France has kept scholarship away for a long time. Some scholars have found in the text international theory, and a newly invented word, diplomacy, emphasizing his talent, originality, and innovation. But since they have not paid attention to the reaction from his contemporary, his intention, and the context, the interpretations may be anachronistic. This essay reads the pamphlet in the contemporary controversy, especially with James Mackintosh, who published Vindiciae Gallicae in 1791. His review on Letters on a Regicide Peace, which appeared in Monthly Review in 1796 and refuted Burke’s opinion, has been rarely considered. This paper argues Mackintosh adapted the alternative strategy focusing on Burke’s eloquence or rhetoric, rule of law, and opinions, which were not any subject to Burke. First, after introducing the period background and brief overview of Letters on a Regicide Peace, it shows that Mackintosh warned Burkes’ eloquence by referring to the canonical speeches by Demosthenes and Cicero, and by putting his pamphlet in the context of literature such as The Life of Henry the Fifth (William Shakespeare) and Paradise Regained (John Milton). Second, it focuses on disagreement on the idea of opinions between them. He locked Burke’s perilous gift for eloquence, which incited people to the war persuasively, and called for anti-war.\n\n\n\n\n\nhttps://doi.org/10.34382/00014305\n pdf\n\nThe International Politics of Jealousy: Edmund Burke, Adam Smith and James Mackintosh\n\nAbstract: This paper aims to think about global governance through the classics, focusing on the language, in particular on jealousy, of international relations in Britain during the French Revolutionary Wars. This paper explores perceptions on relations between states of the statesman Edmund Burke (1730-1797) and his contemporaries (the political economist (philosopher) Adam Smith (1723-1790) and the political pamphleteer James Mackintosh (1765-1832) . Through the above discussion, it questions what is “classics” in the study of global governance. It is not common to focus on jealousy in the discussion of global governance and inter-state relations. This is partly because jealousy is not a phenomenon or an analytical concept unique to inter-state relations, such as diplomacy, sovereignty (external sovereignty), balance of power theory, or hegemony, and therefore has been avoided from being discussed head-on. But in today’s relations between states too, jealousy, far from disappearing, continues to be a source of great trouble.This paper finds that Burke, Smith and Mackintosh commonly perceived that inter-state relations were hampered by jealousy, and they all seem to be pessimistic about overcoming jealousy. What is interesting for this paper, however, is Burke has repeatedly expressed concern that other states or nations were jealous of his state. Adam Smith, in arguing for the ‘impartial observer’ in his The Theory of Moral Sentiments, emphasis of the importance of lowering passions to the point where others can follow. It is true that we may not be able to overcome jealousy, but by asking ourselves whether our state is not the object of jealousy from other states, we seem to open the way to cooperative governance with other countries.At any given time, classical texts and later generations does not share preconditions. In this respect, the limitations of this paper do not stem solely from global governance. What is important is that we continue to have a sense of learning from the classics, and that we form a common understanding among contemporaries by sharing the classics, or at least sharing the need to do so. Just as the study of international relations has developed primarily through the classicization of international law, global governance seems to need a corresponding classic. Since the study of global governance has a broader scope than the study of international relations, the scope of the classics should be even broader.\n\n\n\n\n\nhttps://doi.org/10.51054/sgg.2022.8_51\n pdf\n\nThe Language of War and Peace in Britain during the French Revolution: Controversy over Burke’s Letters on a Regicide Peace’\n\nInstitute of Legal Studies, Kansai University\n\nThe Law of Nations in Britain during the French Revolution: Edmund Burke and James Mackintosh\n\nInstitute of Legal Studies, Kansai University\n\nBurke on Empire: The Dilemma of Liberty and Empire\n\n\n\n\nhttps://doi.org/10.24587/sbp.2013_043\n\n\nAbstract: British conceptions of empire were shaped by political arguments on liberty. This study revisits on Edmund Burke’s empire thought in the light of the dilemma of liberty and empire, demonstrating that he struggled to reconcile liberty with empire. And the paper tries to offer his original contribution to history of discourse on empire. Burke regarded British Empire’s problems after the Seven Years’ War as unknown, and could not rely on the example of Roman, Greek, or even British colonies. In order to find the reason, the paper pays attention to Burke’s perception that political sphere in empire of the seas is too vast for power and authority of imperial government to exercise enough. And the perception brought him distinction between state and empire, and plan of colonial self-government."
+  },
+  {
+    "objectID": "publications/index.html#book-reviews",
+    "href": "publications/index.html#book-reviews",
+    "title": "Publications",
+    "section": "Book Reviews",
+    "text": "Book Reviews\n\n’Review of Hanna Fenichel Pitkin, The Concept of Representation (Japanese translation, Nagoya University Press, 2017), Tosho Shinbun [The Book Review], The Book Review Press, 3350.\n‘Review of Richard Bourke, Empire and Revolution: The Political Life of Edmund Burke, Princeton University Press, 2015’, Igirisu Tetugaku Kenkyu [Studies in British Philosophy], Japanese Society for British Philosophy, 40, 88-89.\n’Review of David Armitage, Foundations of Modern International Thought (Japanese translation, Hosei University Press, 2015), Igirisu Tetugaku Kenkyu [Studies in British Philosophy], Japanese Society for British Philosophy, 39, 105-107."
+  },
+  {
+    "objectID": "publications/index.html#translation",
+    "href": "publications/index.html#translation",
+    "title": "Publications",
+    "section": "Translation",
+    "text": "Translation\n\nC. H. Alexandrowicz (2017), ‘Kautilyan Principles and the Law of Nations (1965-66)’, in The Law of Nations in Global History, David Armitage and Jennifer Pitts, eds, Oxford: Oxford University Press, 35-52. (Japanese translation, Gurobal Hisutori to Kokusai-ho [Globai History and International Law], Nihon Keizai Hyoronsya, 2020)."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CHIHIRO KARIYA",
+    "section": "",
+    "text": "Email"
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "CHIHIRO KARIYA",
+    "section": "About",
+    "text": "About\nI am Chihiro Kariya, an intellectual historian of early modern ideas. My main subject is Edmund Burke, who is best known for his late writings on the French Revolution and is the 18th-century member of Parliament in Britain. I currently work as an Assistant Professor at the Articulation Center for High School and University at Kanazawa University, Japan. This website is intended to post my research in English and is updated about 3 or 4 times a year.\nOn this website, you will find my published works, including articles, monographs, reviews, and translations. You will also find news and updates on my current research projects, as well as information on upcoming events and conferences where I will be speaking. Please feel free to contact me if you have any questions or would like to discuss projects.\nFor my academic profile in Japanese, please refer to the researchmap, managed by the Japan Science and Technology Agency (JST)."
+  },
+  {
+    "objectID": "index.html#social-link",
+    "href": "index.html#social-link",
+    "title": "CHIHIRO KARIYA",
+    "section": "Social Link",
+    "text": "Social Link\n\n\n ORCiD\n Github"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "note\n\n\n\n\nThis blog is mainly used to inform you of updates to the website.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMar 2, 2024\n\n\nChihiro Kariya\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html",
+    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html",
     "title": "学域横断的プロジェクト入門 2024",
+    "section": "",
+    "text": "このウェブサイトは2024年9月30日に削除します"
+  },
+  {
+    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#シラバス",
+    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#シラバス",
+    "title": "学域横断的プロジェクト入門 2024",
+    "section": "シラバス",
+    "text": "シラバス\n\nシラバス"
+  },
+  {
+    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#講義スケジュール",
+    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#講義スケジュール",
+    "title": "学域横断的プロジェクト入門 2024",
+    "section": "講義スケジュール",
+    "text": "講義スケジュール\n\n\n\n\n\n\n授業日当日までに､各回のレジュメにアクセスできるようにします（リンクを貼ります）\n\n\n\n\nWeek 1 (6/12) イントロダクション\n\n\n\nWeek 2 (6/19) グループワーク1\n\n共通テーマの設定\n\n\n\nWeek 3 (6/26) グループワーク2：\n\nアカデミック・サーチ\n\n\n\nWeek 4 (7/3) グループワーク3：\n\nアカデミック・リーディング\n\n\n\nWeek 5 (7/10) グループワーク4：\n\nアカデミック・リーディング\n\n\n\nWeek 6 (7/17) グループワーク5：\n\nリサーチプロポーザル1\n\n\n\nWeek 7 (7/24) グループワーク6：\n\nリサーチプロポーザル2\n\n\n\nWeek 8 (7/31) グループワーク7：\n\nリサーチプロポーザル3\n\n\n\nWeek 9 (8/7) プレゼンテーション\n\n\n\n\n\n\n欠席者はご自身で授業内容､授業課題をフォローしてください"
+  },
+  {
+    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#提出物提出先",
+    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#提出物提出先",
+    "title": "学域横断的プロジェクト入門 2024",
+    "section": "提出物（提出先）",
+    "text": "提出物（提出先）\n\n\n\n\n\n\n欠席を理由とする､授業課題の未提出は認めません\n\n\n\n\n授業の感想\n\n初回：準備中です\n第2回-第8回：準備中です\n最終回：準備中です\n\nリーディングアサインメント：準備中です\nグループワーク（進捗確認）：準備中です\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n最終成果物：後日案内します\nその他：必要に応じて案内します"
+  },
+  {
+    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#講評",
+    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/index.html#講評",
+    "title": "学域横断的プロジェクト入門 2024",
+    "section": "講評",
+    "text": "講評\n\n成績評価後に掲載します"
+  },
+  {
+    "objectID": "teaching/index.html",
+    "href": "teaching/index.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "R and Quarto for Data Science: Visualizing Data, Q2 \nInterdisciplinary Collaborative Workshop: Inquiry-Based Learning for Early Undergraduate Students, Q2 \n\n\n\n\n\nIntroduction to Political Science II, Winter\n\n\n\n\n\n\n\n\nInterdisciplinary Collaborative Workshop: Inquiry-Based Learning for Early Undergraduate Students, Q4\n\n\n\n\n\nIntroduction to Political Science I, Winter"
+  },
+  {
+    "objectID": "teaching/index.html#lecture",
+    "href": "teaching/index.html#lecture",
+    "title": "Teaching",
+    "section": "",
+    "text": "R and Quarto for Data Science: Visualizing Data, Q2 \nInterdisciplinary Collaborative Workshop: Inquiry-Based Learning for Early Undergraduate Students, Q2 \n\n\n\n\n\nIntroduction to Political Science II, Winter\n\n\n\n\n\n\n\n\nInterdisciplinary Collaborative Workshop: Inquiry-Based Learning for Early Undergraduate Students, Q4\n\n\n\n\n\nIntroduction to Political Science I, Winter"
+  },
+  {
+    "objectID": "teaching/index.html#workshop",
+    "href": "teaching/index.html#workshop",
+    "title": "Teaching",
+    "section": "Workshop",
+    "text": "Workshop\n\n2024\n\nKanazawa University\n\nReading Seminar for Articulating High School and University Studies\n\n\n\n\n2023\n\nKanazawa University\n\nReading Seminar for Articulating High School and University Studies\n\nSummer\n\nYamaguchi, Shintaro (2019), Kazoku no Shiawase no Keizai-gaku (The Economics of “Family Happiness”: The Reality of Marriage, Childbirth, and Childrearing revealed by Data Analysis), Kobunsha-Shinsho.\nTsukazaki, Asako (2018), Sekai wo Sukutta Nihon no Kusuri (Japanese Medicine Saved the World), Kodansha Blue Backs.\n\nSpring\n\nIto, Asei (2020), Dejitalka suru Shinkou-koku: Senshin-koku wo koeruka, Kanshi-syakai no toraika (Digitalizing Emerging Economies: Will They Surpass the Developed Countries or will the Surveillance Society), Chuko Shinsho.\nNakagawa, Takeshi (2017), Jinrui to Kiko no 10 man-nen -shi: Kako ni Nani ga Okitanoka (A 100,000-Year History of Humans and Climate: What Happened in the Past?), Kodansha Blue Backs.\nKawashima, Midori (2012), Kango no chikara (The Power of Nursing), Iwanami shinsho.\n\n\n\n\n\n\n2022\n\nKanazawa University\n\nReading Seminar for Articulating High School and University Studies\n\nSummer\n\nHonda, Yuki (2021), Nippon tte donna kuni?, (What’s “Japan”?: Elucidating the Society with International Comparative Data), Chikuma Primer Shinsho.\n\nSpring\n\nNashiki, Kaho (2022), Honto no leader no mitsukekata (How to Discover the True Leader), Iwanami Gendai Bunko.\nOoguri, Hiroshi (2021), Tankyu suru seishin (Spirit of Inquiry: Basic Science as a Vocation), Gentosha Bunko."
+  },
+  {
+    "objectID": "teaching/RandQuartoforDataScience/index.html",
+    "href": "teaching/RandQuartoforDataScience/index.html",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "section": "",
+    "text": "このウェブサイトは2024年9月30日に削除します"
+  },
+  {
+    "objectID": "teaching/RandQuartoforDataScience/index.html#シラバス",
+    "href": "teaching/RandQuartoforDataScience/index.html#シラバス",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "section": "シラバス",
+    "text": "シラバス\n\nシラバス"
+  },
+  {
+    "objectID": "teaching/RandQuartoforDataScience/index.html#講義スケジュール",
+    "href": "teaching/RandQuartoforDataScience/index.html#講義スケジュール",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "section": "講義スケジュール",
+    "text": "講義スケジュール\n\n\n\n\n\n\n授業日当日までに､各回のレジュメにアクセスできるようにします（リンクを貼ります）\n\n\n\n\nWeek 1 (6/12)： イントロダクション\n\n\nキーワード：- データを見る；RとR Studioのインストール；プロジェクトの作成\n『データ分析のためのデータ可視化入門』：\n\nはじめに\nインストール\n\n\n\n\nWeek 2 (6/19) ：Rの基本的な操作方法（1）\n\nキーワード：データの読み込み；データの型；データの構造；データの集計；再現可能性（アウトプット）\n\n\n\nWeek 3 (6/26) ：Rの基本的な操作方法（2）\n\nTidyverse；パイプ演算子；データの加工；データの抽出；記述統計量；データの結合\n\n\n\nWeek 4 (7/3)：Visualization (1)\n\nggplot2；プロットとレイヤー\n\n\n\nWeek 5 (7/10) ：Visualization (2)\n\n5 Named Graphs (5NG)：棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ\n\n\n\nWeek 6 (7/17) ：Visualization (3)\n\nプロットを整える；色とラベル\n\n\n\nWeek 7 (7/24) ：Visualization (4)\n\n地図\n\n\n\nWeek 8 (7/31) ：Visualization (5)\n\n補足\n\n\n\nWeek 9 (8/7)：プレゼンテーション\n\n\n\n\n\n\n欠席者はご自身で授業内容､授業課題をフォローしてください"
+  },
+  {
+    "objectID": "teaching/RandQuartoforDataScience/index.html#提出物提出先",
+    "href": "teaching/RandQuartoforDataScience/index.html#提出物提出先",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "section": "提出物（提出先）",
+    "text": "提出物（提出先）\n\n\n\n\n\n\n欠席を理由とする､授業課題の未提出は認めません\n\n\n\n\n授業の感想：後日案内します     \n\n\n\n\n\n\n\n\n授業の演習：後日案内します\n最終成果物：後日案内します\nその他：必要に応じて案内します"
+  },
+  {
+    "objectID": "teaching/RandQuartoforDataScience/index.html#講評",
+    "href": "teaching/RandQuartoforDataScience/index.html#講評",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "section": "講評",
+    "text": "講評\n\n成績評価後に掲載します"
+  },
+  {
+    "objectID": "teaching/RandQuartoforDataScience/index.html#役立つサイト",
+    "href": "teaching/RandQuartoforDataScience/index.html#役立つサイト",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "section": "役立つサイト",
+    "text": "役立つサイト\n\n役立つサイト"
+  },
+  {
+    "objectID": "teaching/RandQuartoforDataScience/syllabus.html",
+    "href": "teaching/RandQuartoforDataScience/syllabus.html",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "section": "",
+    "text": "この授業は、統計プログラム言語「R」の基本的な機能と、Quarto（Rの出力結果を出力するR Studioの機能の一つ）を学習するものです｡R言語は、プログラム言語のなかでは比較的習得が容易であり、社会科学から自然科学にいたるまで幅広い分野の研究者が活用しています｡ この授業は統計学、確率、多変量解析の授業ではありません｡統計学的な出力やその妥当性の検討よりも、数値の出力結果を可視化する（ggplot2パッケージ）方法に重点を置きます｡わかりやすい図を簡単に、また、同じコードを繰り返し利用することで作業量を減らす、再現可能性を高めることも重視されます｡\n専攻、専門分野は問いません｡すでにあるデータを可視化したい、あるいは、データを可視化することに関心をもてる方の受講を歓迎いたします｡プログラム言語の初心者であっても受講に問題はありません｡"
+  },
+  {
+    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#授業の主題",
+    "href": "teaching/RandQuartoforDataScience/syllabus.html#授業の主題",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "section": "",
+    "text": "この授業は、統計プログラム言語「R」の基本的な機能と、Quarto（Rの出力結果を出力するR Studioの機能の一つ）を学習するものです｡R言語は、プログラム言語のなかでは比較的習得が容易であり、社会科学から自然科学にいたるまで幅広い分野の研究者が活用しています｡ この授業は統計学、確率、多変量解析の授業ではありません｡統計学的な出力やその妥当性の検討よりも、数値の出力結果を可視化する（ggplot2パッケージ）方法に重点を置きます｡わかりやすい図を簡単に、また、同じコードを繰り返し利用することで作業量を減らす、再現可能性を高めることも重視されます｡\n専攻、専門分野は問いません｡すでにあるデータを可視化したい、あるいは、データを可視化することに関心をもてる方の受講を歓迎いたします｡プログラム言語の初心者であっても受講に問題はありません｡"
+  },
+  {
+    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#学修目標到達目標",
+    "href": "teaching/RandQuartoforDataScience/syllabus.html#学修目標到達目標",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
     "section": "学修目標（到達目標）",
-    "text": "学修目標（到達目標）\n\n受講生が、高校での学びと大学での学びの質的な連続性と相違点を自覚することができるようになる\n受講生が、グループワークを通して、研究の分担や協力などの基本的な作法を身に付ける\n受講生が、他のグループの研究発表に興味関心をもち、主体的、積極的に、質問やコメントができるようになる\n受講生が、質の高い研究プロジェクトにするための条件について、自ら考えられるようになる\n受講生が、グループ内で共通する問題意識について議論し、それを一つに集約し、言語化できるようになる\n受講生が、問題意識を、検証可能なリサーチクエッションに変換できるようになり、また、リサーチクエッションや選択した対象に適した、先行研究や資料を探すことができるようになる\n受講生が、選択した対象に適した、ディシプリンや検証方法について考えることができるようになる\n受講生が、グループ内またはクラス内発表などを通して、自分（たち）の研究上の問題点を自覚し、それを修正する態度を身に付けられるようになる"
+    "text": "学修目標（到達目標）\n\n受講生が、R言語の基本的な操作（データの読み込み、加工、抽出、結合など）ができる\n受講生が、ggplot2パッケージを使い、基本的な図（棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ）を作成できる\n受講生が、自分の関心のあるテーマにかかわるデータから適切な図を作成できる"
   },
   {
-    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#授業概要",
-    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#授業概要",
-    "title": "学域横断的プロジェクト入門 2024",
+    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#授業概要",
+    "href": "teaching/RandQuartoforDataScience/syllabus.html#授業概要",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
     "section": "授業概要",
-    "text": "授業概要\n学域、学類を超えて編成されるグループにおいて、課題発見から課題解決にいたる一連のプロセスを経験します 1. 高校での探究学習を共有する 2. グループ全員が興味をもつことができるテーマを探し出し、リサーチプロポーザル（リサーチクエッション、先行研究、研究方法など）を執筆する 3. リサーチプロポーザルにもとづく、プレゼンテーションを実施する"
+    "text": "授業概要\n授業は、講義と演習の形式でおこないます｡ 講義の前半は、テキスト『データ分析のためのデータ可視化入門』を中心に、コードの意味や記述方法、動作、実行結果などを例示、解説します｡ 後半の演習は、1. 各自所有のノートPCおこないますので、必ずノートPCを持参してください｡テキストの例題と合わせて、2. 自分の関心のあるテーマにかかわるデータでも、同様のコードを実践してください｡"
   },
   {
-    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#評価の割合",
-    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#評価の割合",
-    "title": "学域横断的プロジェクト入門 2024",
+    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#評価の割合",
+    "href": "teaching/RandQuartoforDataScience/syllabus.html#評価の割合",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
     "section": "評価の割合",
-    "text": "評価の割合\n\nリサーチプロポーザル（レポート形式）30％\nプレゼンテーション（スライド資料） 20%\n毎回の授業課題（予習・復習）30%\n受講態度（グループへの貢献度を含む） 20%\n\n※授業には3分の2以上の出席を必要とします 　- ※評価基準は、授業目標に準じます"
+    "text": "評価の割合\n\n毎回の授業課題（感想と演習）：50%（25%と25%）\nレポートとプレゼンテーション：30%\n受講態度：20%\n\n※授業には3分の2以上の出席を必要とします 　- ※評価基準は、授業目標に準じます"
   },
   {
-    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#教科書参考書補足",
-    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#教科書参考書補足",
-    "title": "学域横断的プロジェクト入門 2024",
+    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#教科書参考書補足",
+    "href": "teaching/RandQuartoforDataScience/syllabus.html#教科書参考書補足",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
     "section": "教科書・参考書補足",
-    "text": "教科書・参考書補足\n\n参考書\n\n戸田山和久『最新版 論文の教室：レポートから卒論まで』（NHKブックス、2022年）\nジョン・モーリー（高橋さきの訳・国枝哲夫監訳）『アカデミック・フレーズバンク：そのまま使える！構文200・文例1900』（講談社、2022年）\n\n適宜、授業内で配布します。"
+    "text": "教科書・参考書補足\n\n教科書\n\nキーラン・ヒーリー（2021）『データ分析のためのデータ可視化入門』（瓜生真也・ 江口哲史・三村喬生 訳）、講談社（LINK）\n\n\n\n\n\n\n\n教科書『データ分析のためのデータ可視化入門』は必ず購入してください｡購入先はどこでも構いません｡セカンドハウンドも可。受講者数が少ないため､生協の「教科書」には指定していませんので､ご注意下さい（生協で購入する場合は､各自取り寄せ注文すること）。\n\n\n\n\n\n参考書\n\n松村優哉・湯谷啓明・紀ノ定保礼・前田和寛（2021）『改訂2版 RユーザのためのRStudio「実践」入門：tidyverseによるモダンな分析フローの世界』、技術評論社（LINK）\n松村優哉・瓜生真也・吉村広志（2023）『Rユーザのためのtidymodels「実践」入門：モダンな統計・機械学習モデリングの世界』、技術評論社（LINK）"
   },
   {
-    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#予習に関する指示",
-    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#予習に関する指示",
-    "title": "学域横断的プロジェクト入門 2024",
+    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#その他履修上の注意事項や学習上の助言",
+    "href": "teaching/RandQuartoforDataScience/syllabus.html#その他履修上の注意事項や学習上の助言",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "section": "その他履修上の注意事項や学習上の助言",
+    "text": "その他履修上の注意事項や学習上の助言\nR言語に初めて触れる方で受講を検討している方は、まず「統計言語 「R」の神はなぜ無償で貢献したのか：オープンコミュニティで活躍する“新人類”の誕生」（日経ビジネス・電子版）を読んでみるとよいでしょう｡また検索サイトに検索ワードにggplotと興味のある専門領域を入力してみてみると、この授業のイメージを掴めると思います｡\n持参するPCは、WindowsでもMacでもかまいませんが、R Studioをインストールできる環境が必要です｡公式サイトから、確認してください（ここ数年、販売されたPCであれば問題ないと思います）｡"
+  },
+  {
+    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#予習に関する指示",
+    "href": "teaching/RandQuartoforDataScience/syllabus.html#予習に関する指示",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
     "section": "予習に関する指示",
-    "text": "予習に関する指示\nグループワークまたはリサーチプロポーザルに必要な文献を適宜配布します。授業までに読み、指示に応じて、まとめてください（目安1時間）。"
+    "text": "予習に関する指示\n事前に教科書を下読することが望ましいです｡"
   },
   {
-    "objectID": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#復習に関する指示",
-    "href": "teaching/InterdisciplinaryCollaborativeWorkshop/syllabus.html#復習に関する指示",
-    "title": "学域横断的プロジェクト入門 2024",
+    "objectID": "teaching/RandQuartoforDataScience/syllabus.html#復習に関する指示",
+    "href": "teaching/RandQuartoforDataScience/syllabus.html#復習に関する指示",
+    "title": "RとQuartoではじめるデータサイエンス 2024",
     "section": "復習に関する指示",
-    "text": "復習に関する指示\n毎回の授業内容に合わせて、授業時間外のグループワークが必要です。進捗を確認できる資料を用意してください（目安1時間）。"
+    "text": "復習に関する指示\n毎回の授業で学習したコードやパッケージを各自のPCで再実践してください｡"
   },
   {
-    "objectID": "teaching/RandQuartoforDataScience/usefulsite.html",
-    "href": "teaching/RandQuartoforDataScience/usefulsite.html",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Curriculum vitae",
     "section": "",
-    "text": "随時更新します\n\n\n\n\n\n\n\n\n\n以下のサイトは有益ですが､今となっては古い情報も交じっています。まずは指定の教科書をしっかりと理解することから始めましょう（教科書も古くなりますが､教科書内においては､相互に矛盾する記述はありません）\n\n\n\n\n全般\n\n私たちのR：ベストプラクティスの探求\nR初学者からよく質問されること\nStatistics Globe\n\n\n\n基本\n\nR初学者のためのtidyverse100本ノック\nR Studio: Beginners\n\n\n\nggplot\n\nggplot2(公式サイト)\n統計学2: ggplot2入門\nggplot2の辞書\n図から逆引きするgeom_*関数 (ggplot2)\nggplot2における 軸関連のコントロール～逆引き的ミニまとめ～\nggplot2のアノテーション技法\nggplot2を使って、注釈を入れる-1\nFAQ: Annotation\nBeautifully Annotated: Enhancing your ggplots with Text\n\n\n\nカラーパレット\n\nfishualize - Paracanthurus_hepatus\nR Color Palettes\n\n\n\n研究分野別\n\n疫学や公衆衛生に関わる業務のためのR\nみんなのデータサイエンス：e-Stat\n総選挙データの可視化\nquanteda：衆議院外務委員会の議事録\n西山 他『計量経済学』のためのR\nIntroduction to Econometrics with R\n医学統計でよく使うRパッケージ\nJulia Silge\nbob3’s blog\nThe Jose M Sallan static website\n\n\n\n出力方法\n\nR Markdown クックブック\nTinyTeX\n.qmd を超お手軽完全無料パブリッシュできる Quarto Pub を使ってみる\nQuarto Pub\nCreate Your Website with Quarto\n\n\n\nマップ\n\nLeaflet Map View\n\n\n\nテーブル\n\nIntroduction to Creating gt Tables（gt公式サイト）\n【R】ガチできれいなTableを作れるgtパッケージとは?\n【R】データ要約ガチ勢のためのgtsummaryで表を書こう\n回帰モデルの結果をキレイに表示する（gtsummaryパッケージtbl_regression関数）[R]\n\n\n\n時間処理\n\nlubridate（公式サイト）\n【R前処理講座32】{lubridate}：時間処理【tidyverse】\nlubridateパッケージ入門\n\n\n\nコミュニティ\n\nr-wakalang へようこそ\nTokyo.R\n\n\n\n前処理（データ加工）\n\nRで読むExcelファイル\n「Rによるデータクリーニング実践」をやってみた\nStyle guide\n住所や年号、漢数字のデータ操作を楽にするRパッケージをCRANに登録しました\n\n\n\nインストール他\n\nlocaleを日本語(ja_JP.UTF-8)にする\nものすごくどうでもいい覚え書き: RStudioのエディタ・テーマ総ざらえ\nModern CSV"
-  },
-  {
-    "objectID": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#ggplot受講者の属性",
-    "href": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#ggplot受講者の属性",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
-    "section": "1. ggplot（受講者の属性）",
-    "text": "1. ggplot（受講者の属性）\n\ndf_受講生 %&gt;% #対象とするデータフレーム\n  group_by(学域) %&gt;% #学域でデータを分ける\n  summarise( #分けたデータの個数を数える\n    人数 = n()\n  ) %&gt;%\n  mutate(\n    比率 = 人数/sum(人数) #個数から比率を算出\n  ) %&gt;%\n  ungroup() %&gt;% #グルーピングの解除\n  ggplot(aes(x = \"\", y = 人数, group = 学域)) + #図の台座\n  geom_col( #帯グラフ\n    aes(color = 学域, fill = after_scale(alpha(color, 0.9))),\n    position = position_fill(),\n  ) +\n  geom_text( #帯グラフにテキストを貼る\n    aes(label = str_c(scales::percent(比率, accuracy = 0.1), \"(\", 人数, \"人)\")),\n    position = position_fill(reverse = FALSE, vjust = 0.5),\n  ) +\n  scale_y_continuous( #Y軸の余白を詰める\n    expand = expansion(mult = c(0.01, 0.01)),\n    labels = scales::label_percent()) + #Y軸をパーセントにする\n  labs( #ラベル名（ここではxとyのラベルを削除）､凡例を変更\n    x = \"\",\n    y = \"\",\n    color = \"学域\" #ここで凡例を変える\n  ) +\n  coord_flip() + #X軸とY軸を逆転させる\n  scale_color_paletteer_d(\"DresdenColor::briefcases\") #配色変更\n\n\n\n受講者（学域）\n\n\n\n\nCodedf_受講生 %&gt;%\n  group_by(年次) %&gt;% \n  summarise(\n    人数 = n()\n  ) %&gt;%\n  mutate(\n    比率 = 人数/sum(人数)\n  ) %&gt;%\n  ungroup() %&gt;%\n  ggplot(aes(x = \"\", y = 人数, group = 年次)) +\n  geom_col(\n    aes(color = 年次, fill = after_scale(alpha(color, 0.9))),\n    position = position_fill(),\n  ) +\n  geom_text(\n    aes(label = str_c(scales::percent(比率, accuracy = 0.1), \"(\", 人数, \"人)\")),\n    position = position_fill(reverse = FALSE, vjust = 0.5),\n  ) +\n  scale_y_continuous(\n    expand = expansion(mult = c(0.01, 0.01)),\n    labels = scales::label_percent()) +\n  labs(\n    x = \"\",\n    y = \"\",\n    color = \"年次\"\n  ) +\n  coord_flip() +\n  scale_color_paletteer_d(\"PrettyCols::Fun\")\n\n\n\n受講者（年次）\n\n\n\n2. マップ\n\nCodeleaflet() %&gt;% \n  addTiles() %&gt;% \n  setView(lng = 136.70847, \n          lat = 36.54517,\n          zoom = 18)\n\n\n高大接続コア・センター（インキュベーション施設3F）"
-  },
-  {
-    "objectID": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#図-1",
-    "href": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#図-1",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
-    "section": "図",
-    "text": "図\n\nCodedf_初回アンケート %&gt;%\n  group_by(学域) %&gt;% \n  summarise(\n    人数 = n()\n  ) %&gt;%\n  mutate(\n    比率 = 人数/sum(人数)\n  ) %&gt;%\n  ungroup() %&gt;%\n  ggplot(aes(x = \"\", y = 人数, group = 学域)) +\n  geom_col(\n    aes(color = 学域, fill = after_scale(alpha(color, 0.9))),\n    position = position_fill(),\n  ) +\n  geom_text(\n    aes(label = str_c(scales::percent(比率, accuracy = 0.1), \"(\", 人数, \"人)\")),\n    position = position_fill(reverse = FALSE, vjust = 0.5),\n  ) +\n  scale_y_continuous(\n    expand = expansion(mult = c(0.01, 0.01)),\n    labels = scales::label_percent()) +\n  labs(\n    x = \"\",\n    y = \"\",\n    color = \"学域\"\n  ) +\n  coord_flip() +\n  scale_color_paletteer_d(\"DresdenColor::briefcases\") #配色変更\n\n\n\n初回アンケート（学域）\n\n\n\n\nCodedf_初回アンケート %&gt;%\ngroup_by(学域, `Q5. 受講理由でもっとも近いものを選んでください`) %&gt;% \nsummarise(\n人数 = n(), .groups = \"drop\"\n) %&gt;%\nmutate(\n比率 = 人数/sum(人数)\n) %&gt;%\nungroup() %&gt;%\nggplot(aes(x = \"\", y = 人数, group = 学域)) +\ngeom_col(\naes(color = `Q5. 受講理由でもっとも近いものを選んでください`, fill = after_scale(alpha(color, 0.9))),\nposition = position_fill(),\n) +\ngeom_text(\naes(label = str_c(scales::percent(比率, accuracy = 0.1), \"(\", 人数, \"人)\")),\nposition = position_fill(reverse = FALSE, vjust = 0.5),\n) +\nscale_y_continuous(\nexpand = expansion(mult = c(0.01, 0.01)),\nlabels = scales::label_percent()) +\nlabs(\nx = \"\",\ny = \"\",\ncolor = \"Q5\"\n) +\ncoord_flip() +\nfacet_wrap(~ 学域) +\ntheme(legend.position=\"bottom\") +\nscale_color_paletteer_d(\"DresdenColor::briefcases\")\n\n\n\n初回アンケート（Q5. 学域別集計）\n\n\n\n\nCodedf_初回アンケート %&gt;% \n  group_by(学年) %&gt;% \n  summarise(\n    人数 = n()\n  ) %&gt;%\n  mutate(\n    比率 = 人数/sum(人数)\n  ) %&gt;%\n  ungroup() %&gt;%\n  ggplot(aes(x = \"\", y = 人数, group = 学年)) +\n  geom_col(\n    aes(color = 学年, fill = after_scale(alpha(color, 0.9))),\n    position = position_fill(),\n  ) +\n  geom_text(\n    aes(label = str_c(scales::percent(比率, accuracy = 0.1), \"(\", 人数, \"人)\")),\n    position = position_fill(reverse = FALSE, vjust = 0.5),\n  ) +\n  scale_y_continuous(\n    expand = expansion(mult = c(0.01, 0.01)),\n    labels = scales::label_percent()) +\n  labs(\n    x = \"\",\n    y = \"\",\n    color = \"年次\"\n  ) +\n  coord_flip() +\n  scale_color_paletteer_d(\"PrettyCols::Fun\")\n\n\n\n初回アンケート（年次）\n\n\n\n\nCodedf_初回アンケート %&gt;%\nselect(5:10) %&gt;%\nggplot(aes(x = `Q1. パソコンのスキルに自信がありますか`,\ny = `Q2. R言語を知っていますか？`, color = 学域)) + \ngeom_point()\n\n\n\n初回アンケート（Q1とQ2の散布図）"
-  },
-  {
-    "objectID": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#表",
-    "href": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#表",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
-    "section": "表",
-    "text": "表\n\nCodedf_初回アンケート %&gt;%\nselect(!1:4) %&gt;% #1列目から4列目までを削除（回答者の氏名などの情報のため）\n# 「!」は除外をさす\n# 「x:y」はx列からy列までの範囲の列を指す\nsummary()\n\n     学域               学年           Q1. パソコンのスキルに自信がありますか\n Length:16          Length:16          Min.   :1.00                          \n Class :character   Class :character   1st Qu.:1.75                          \n Mode  :character   Mode  :character   Median :2.50                          \n                                       Mean   :2.75                          \n                                       3rd Qu.:3.50                          \n                                       Max.   :5.00                          \n Q2. R言語を知っていますか？ Q3. プログラム言語を使ったことはありますか\n Min.   :1.00                Min.   :2                                 \n 1st Qu.:1.75                1st Qu.:2                                 \n Median :2.00                Median :2                                 \n Mean   :2.25                Mean   :2                                 \n 3rd Qu.:2.50                3rd Qu.:2                                 \n Max.   :4.00                Max.   :2                                 \n Q4. 可視化したいデータはありますか\n Length:16                         \n Class :character                  \n Mode  :character                  \n                                   \n                                   \n                                   \n Q5. 受講理由でもっとも近いものを選んでください\n Length:16                                     \n Class :character                              \n Mode  :character                              \n                                               \n                                               \n                                               \n\n\n\nCodedf_初回アンケート %&gt;%\nselect(!1:4) %&gt;%\ntbl_summary()\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n\nN = 161\n\n\n\n\n学域\n\n\n\n    医薬保健学域\n4 (25%)\n\n\n    人間社会学域\n8 (50%)\n\n\n    理工学域\n4 (25%)\n\n\n学年\n\n\n\n    1年生\n3 (19%)\n\n\n    2年生\n3 (19%)\n\n\n    3年生\n1 (6.3%)\n\n\n    5年生以上\n9 (56%)\n\n\nQ1. パソコンのスキルに自信がありますか\n\n\n\n    1\n4 (25%)\n\n\n    2\n4 (25%)\n\n\n    3\n4 (25%)\n\n\n    5\n4 (25%)\n\n\nQ2. R言語を知っていますか？\n\n\n\n    1\n4 (25%)\n\n\n    2\n8 (50%)\n\n\n    4\n4 (25%)\n\n\nQ3. プログラム言語を使ったことはありますか\n\n\n\n    2\n16 (100%)\n\n\nQ4. 可視化したいデータはありますか\n\n\n\n    ある\n3 (19%)\n\n\n    ない（見当はつく）\n3 (19%)\n\n\n    ない（見当もつかない。これから考える）\n10 (63%)\n\n\nQ5. 受講理由でもっとも近いものを選んでください\n\n\n\n    プログラム言語に興味がある\n4 (25%)\n\n\n    研究でデータを可視化したい（具体的なデータがある）\n4 (25%)\n\n\n    単位取得が簡単そう\n8 (50%)\n\n\n\n\n1 n (%)\n\n\n\n\n\n\n\nCodedf_初回アンケート %&gt;%\nselect(学域, `Q1. パソコンのスキルに自信がありますか`) %&gt;% \ntbl_summary(by = 学域) #学域で分ける\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n\n人間社会学域, N = 81\n\n\n医薬保健学域, N = 41\n\n\n理工学域, N = 41\n\n\n\n\nQ1. パソコンのスキルに自信がありますか\n\n\n\n\n\n    1\n4 (50%)\n0 (0%)\n0 (0%)\n\n\n    2\n4 (50%)\n0 (0%)\n0 (0%)\n\n\n    3\n0 (0%)\n0 (0%)\n4 (100%)\n\n\n    5\n0 (0%)\n4 (100%)\n0 (0%)\n\n\n\n\n1 n (%)\n\n\n\n\n\n\n\nCodedf_初回アンケート %&gt;%\nselect(学域, `Q1. パソコンのスキルに自信がありますか`) %&gt;% \ntbl_summary(by = 学域)  %&gt;% \n  add_p(test = list(all_continuous() ~ \"t.test\",\n                    all_categorical() ~ \"fisher.test\"),\n        test.args = all_continuous() ~ list(var.equal = TRUE)) %&gt;% #検定\n  bold_p(t = 0.05) #P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n\n人間社会学域, N = 81\n\n\n医薬保健学域, N = 41\n\n\n理工学域, N = 41\n\n\np-value2\n\n\n\n\nQ1. パソコンのスキルに自信がありますか\n\n\n\n&lt;0.001\n\n\n    1\n4 (50%)\n0 (0%)\n0 (0%)\n\n\n\n    2\n4 (50%)\n0 (0%)\n0 (0%)\n\n\n\n    3\n0 (0%)\n0 (0%)\n4 (100%)\n\n\n\n    5\n0 (0%)\n4 (100%)\n0 (0%)\n\n\n\n\n\n\n1 n (%)\n\n\n\n2 Fisher’s exact test\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips | コードの利点\n\n\n\n\nアンケート実施前に､コードを書ける\nアンケート回収後すみやかに､可視化（分析）できる"
-  },
-  {
-    "objectID": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#授業の感想",
-    "href": "teaching/RandQuartoforDataScience/RandQuarto_w1.html#授業の感想",
-    "title": "RとQuartoではじめるデータサイエンス 2024",
-    "section": "授業の感想：",
-    "text": "授業の感想：\n\n\n\n\n\n\nnote | 回答先と締め切り\n\n\n\n\n\n回答先：Google Forms\n\n\n締め切り：2024年6月14日（金）23時59分まで"
-  },
-  {
-    "objectID": "address/index.html#address",
-    "href": "address/index.html#address",
-    "title": "Address",
-    "section": "Address",
-    "text": "Address\n\nKanazawa University\n\nKakuma, Kanazawa, Ishikawa 920-1192 Japan"
-  },
-  {
-    "objectID": "address/index.html#map",
-    "href": "address/index.html#map",
-    "title": "Address",
-    "section": "Map",
-    "text": "Map\nKanazawa City and Kakuma Campus, Kanazawa University\n\n\n\n\n\n\n　\n\n\nKakuma Campus(Enlarged Map)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe above map was created with the Leaflet package in R. I came to know about this package in studying the R language, and in the course of creating this website I knew the fact the package was created by a brave Ukrainian, Volodymyr Agafonkin. May this simple, open, and powerful package be used for the freedom, happiness and dignity of the Ukrainian people. I stand with Ukraine. 🇺🇦 March, 2024"
-  },
-  {
-    "objectID": "test.html",
-    "href": "test.html",
-    "title": "Untitled",
-    "section": "",
-    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gapminder)\n\n\n\ngapminder %&gt;% view()"
+    "text": "Download current CV"
   }
 ]
