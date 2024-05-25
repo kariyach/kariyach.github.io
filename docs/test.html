@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.550">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>CHIHIRO KARIYA - RとQuartoではじめるデータサイエンス 2024</title>
+<title>CHIHIRO KARIYA - Untitled</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +17,58 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
-
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../img/favicon-16x16.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./img/favicon-16x16.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -65,19 +94,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-
-
-<link rel="stylesheet" href="../../style_ja.css">
 </head>
-
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">CHIHIRO KARIYA</span>
     </a>
   </div>
@@ -87,37 +110,37 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../projects/index.html"> 
+<li class="nav-item">
+    <a class="nav-link" href="./projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications/index.html"> 
+    <a class="nav-link" href="./publications/index.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../events/index.html"> 
+    <a class="nav-link" href="./events/index.html"> 
 <span class="menu-text">Events</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../teaching/index.html"> 
+    <a class="nav-link" href="./teaching/index.html"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../cv/index.html"> 
+    <a class="nav-link" href="./cv/index.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../address/index.html"> 
+    <a class="nav-link" href="./address/index.html"> 
 <span class="menu-text">Address</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog/index.html"> 
+    <a class="nav-link" href="./blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="mailto:kariyach@staff.kanazawa-u.ac.jp"> <i class="bi bi-envelope" role="img" aria-label="email">
 </i> 
 <span class="menu-text"></span></a>
@@ -133,137 +156,61 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="./index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス 2024</a></h1>
-            <p class="subtitle lead">シラバス</p>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Contents</h2>
-   
-  <ul>
-  <li><a href="#授業の主題" id="toc-授業の主題" class="nav-link active" data-scroll-target="#授業の主題">授業の主題</a></li>
-  <li><a href="#学修目標到達目標" id="toc-学修目標到達目標" class="nav-link" data-scroll-target="#学修目標到達目標">学修目標（到達目標）</a></li>
-  <li><a href="#授業概要" id="toc-授業概要" class="nav-link" data-scroll-target="#授業概要">授業概要</a></li>
-  <li><a href="#評価の割合" id="toc-評価の割合" class="nav-link" data-scroll-target="#評価の割合">評価の割合</a></li>
-  <li><a href="#教科書参考書補足" id="toc-教科書参考書補足" class="nav-link" data-scroll-target="#教科書参考書補足">教科書・参考書補足</a>
-  <ul class="collapse">
-  <li><a href="#教科書" id="toc-教科書" class="nav-link" data-scroll-target="#教科書">教科書</a></li>
-  <li><a href="#参考書" id="toc-参考書" class="nav-link" data-scroll-target="#参考書">参考書</a></li>
-  </ul></li>
-  <li><a href="#その他履修上の注意事項や学習上の助言" id="toc-その他履修上の注意事項や学習上の助言" class="nav-link" data-scroll-target="#その他履修上の注意事項や学習上の助言">その他履修上の注意事項や学習上の助言</a></li>
-  <li><a href="#予習に関する指示" id="toc-予習に関する指示" class="nav-link" data-scroll-target="#予習に関する指示">予習に関する指示</a></li>
-  <li><a href="#復習に関する指示" id="toc-復習に関する指示" class="nav-link" data-scroll-target="#復習に関する指示">復習に関する指示</a></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="syllabus.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+        
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
-
-
-
-
-
-<section id="授業の主題" class="level2">
-<h2 class="anchored" data-anchor-id="授業の主題">授業の主題</h2>
-<p>この授業は、統計プログラム言語「R」の基本的な機能と、Quarto（Rの出力結果を出力するR Studioの機能の一つ）を学習するものです｡R言語は、プログラム言語のなかでは比較的習得が容易であり、社会科学から自然科学にいたるまで幅広い分野の研究者が活用しています｡ この授業は統計学、確率、多変量解析の授業ではありません｡統計学的な出力やその妥当性の検討よりも、数値の出力結果を可視化する（<a href="https://ggplot2.tidyverse.org">ggplot2パッケージ</a>）方法に重点を置きます｡わかりやすい図を簡単に、また、同じコードを繰り返し利用することで作業量を減らす、再現可能性を高めることも重視されます｡</p>
-<p>専攻、専門分野は問いません｡すでにあるデータを可視化したい、あるいは、データを可視化することに関心をもてる方の受講を歓迎いたします｡プログラム言語の初心者であっても受講に問題はありません｡</p>
-</section>
-<section id="学修目標到達目標" class="level2">
-<h2 class="anchored" data-anchor-id="学修目標到達目標">学修目標（到達目標）</h2>
-<ol type="1">
-<li>受講生が、R言語の基本的な操作（データの読み込み、加工、抽出、結合など）ができる</li>
-<li>受講生が、ggplot2パッケージを使い、基本的な図（棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ）を作成できる</li>
-<li>受講生が、自分の関心のあるテーマにかかわるデータから適切な図を作成できる</li>
-</ol>
-</section>
-<section id="授業概要" class="level2">
-<h2 class="anchored" data-anchor-id="授業概要">授業概要</h2>
-<p>授業は、講義と演習の形式でおこないます｡ 講義の前半は、テキスト『データ分析のためのデータ可視化入門』を中心に、コードの意味や記述方法、動作、実行結果などを例示、解説します｡ 後半の演習は、1. 各自所有のノートPCおこないますので、必ずノートPCを持参してください｡テキストの例題と合わせて、2. 自分の関心のあるテーマにかかわるデータでも、同様のコードを実践してください｡</p>
-</section>
-<section id="評価の割合" class="level2">
-<h2 class="anchored" data-anchor-id="評価の割合">評価の割合</h2>
-<ul>
-<li>毎回の授業課題（感想と演習）：50%（25%と25%）</li>
-<li>レポートとプレゼンテーション：30%</li>
-<li>受講態度：20%
-<ul>
-<li>※授業には3分の2以上の出席を必要とします 　- ※評価基準は、授業目標に準じます</li>
-</ul></li>
-</ul>
-</section>
-<section id="教科書参考書補足" class="level2">
-<h2 class="anchored" data-anchor-id="教科書参考書補足">教科書・参考書補足</h2>
-<section id="教科書" class="level3">
-<h3 class="anchored" data-anchor-id="教科書">教科書</h3>
-<ul>
-<li>キーラン・ヒーリー（2021）『データ分析のためのデータ可視化入門』（瓜生真也・ 江口哲史・三村喬生 訳）、講談社（<a href="https://www.kspub.co.jp/book/detail/5164044.html">LINK</a>）</li>
-</ul>
-<div class="callout callout-style-simple callout-important">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Untitled</h1>
 </div>
-<div class="callout-body-container">
-<p>教科書『データ分析のためのデータ可視化入門』は必ず購入してください｡購入先はどこでも構いません｡セカンドハウンドも可。受講者数が少ないため､生協の「教科書」には指定していませんので､ご注意下さい（生協で購入する場合は､各自取り寄せ注文すること）。</p>
-</div>
-</div>
-</div>
-</section>
-<section id="参考書" class="level3">
-<h3 class="anchored" data-anchor-id="参考書">参考書</h3>
-<ul>
-<li>松村優哉・湯谷啓明・紀ノ定保礼・前田和寛（2021）『改訂2版 RユーザのためのRStudio「実践」入門：tidyverseによるモダンな分析フローの世界』、技術評論社（<a href="https://gihyo.jp/book/2021/978-4-297-12170-9">LINK</a>）</li>
-<li>松村優哉・瓜生真也・吉村広志（2023）『Rユーザのためのtidymodels「実践」入門：モダンな統計・機械学習モデリングの世界』、技術評論社（<a href="https://gihyo.jp/book/2018/978-4-7741-9853-8">LINK</a>）</li>
-</ul>
-</section>
-</section>
-<section id="その他履修上の注意事項や学習上の助言" class="level2">
-<h2 class="anchored" data-anchor-id="その他履修上の注意事項や学習上の助言">その他履修上の注意事項や学習上の助言</h2>
-<p>R言語に初めて触れる方で受講を検討している方は、まず「統計言語 「R」の神はなぜ無償で貢献したのか：オープンコミュニティで活躍する“新人類”の誕生」（<a href="https://business.nikkei.com/atcl/report/16/122700258/010900004/">日経ビジネス・電子版</a>）を読んでみるとよいでしょう｡また検索サイトに検索ワードにggplotと興味のある専門領域を入力してみてみると、この授業のイメージを掴めると思います｡</p>
-<p>持参するPCは、WindowsでもMacでもかまいませんが、R Studioをインストールできる環境が必要です｡<a href="https://posit.co/download/rstudio-desktop/">公式サイト</a>から、確認してください（ここ数年、販売されたPCであれば問題ないと思います）｡</p>
-</section>
-<section id="予習に関する指示" class="level2">
-<h2 class="anchored" data-anchor-id="予習に関する指示">予習に関する指示</h2>
-<p>事前に教科書を下読することが望ましいです｡</p>
-</section>
-<section id="復習に関する指示" class="level2">
-<h2 class="anchored" data-anchor-id="復習に関する指示">復習に関する指示</h2>
-<p>毎回の授業で学習したコードやパッケージを各自のPCで再実践してください｡</p>
 
 
-</section>
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span></span>
+<span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/view.html">view</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+
+</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -671,8 +618,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p><span class="faux-block">© 2024 CHIHIRO KARIYA</span></p>
 </div>   
@@ -684,8 +630,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-
-
 
 
 </body></html>
