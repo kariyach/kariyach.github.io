@@ -454,8 +454,8 @@ div.csl-indent {
 <span>          lat <span class="op">=</span> <span class="fl">36.54517</span>,</span>
 <span>          zoom <span class="op">=</span> <span class="fl">18</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-fc1b862148626cb78fd2" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-fc1b862148626cb78fd2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]}],"setView":[[36.54517,136.70847],18,[]]},"evals":[],"jsHooks":[]}</script><p>高大接続コア・センター（インキュベーション施設3F）</p>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-920c383d54fbe9352f38" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-920c383d54fbe9352f38">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]}],"setView":[[36.54517,136.70847],18,[]]},"evals":[],"jsHooks":[]}</script><p>高大接続コア・センター（インキュベーション施設3F）</p>
 </div>
 </div>
 </section></section></section><section id="図とデータ" class="level1"><h1>Ⅳ. 図とデータ</h1>
@@ -627,6 +627,7 @@ div.csl-indent {
 </div>
 </div>
 </section><section id="表" class="level3"><h3 class="anchored" data-anchor-id="表">表</h3>
+<section id="単純集計" class="level4"><h4 class="anchored" data-anchor-id="単純集計">単純集計</h4>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
 <span><span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co">#1列目から4列目までを削除（回答者の氏名などの情報のため）</span></span>
@@ -670,23 +671,23 @@ div.csl-indent {
 <span><span class="fu">tbl_summary</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<div id="gbicmxpshd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gbicmxpshd table {
+<div id="smyujvpypo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#smyujvpypo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gbicmxpshd thead, #gbicmxpshd tbody, #gbicmxpshd tfoot, #gbicmxpshd tr, #gbicmxpshd td, #gbicmxpshd th {
+#smyujvpypo thead, #smyujvpypo tbody, #smyujvpypo tfoot, #smyujvpypo tr, #smyujvpypo td, #smyujvpypo th {
   border-style: none;
 }
 
-#gbicmxpshd p {
+#smyujvpypo p {
   margin: 0;
   padding: 0;
 }
 
-#gbicmxpshd .gt_table {
+#smyujvpypo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -712,12 +713,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#gbicmxpshd .gt_caption {
+#smyujvpypo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gbicmxpshd .gt_title {
+#smyujvpypo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -729,7 +730,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#gbicmxpshd .gt_subtitle {
+#smyujvpypo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -741,7 +742,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#gbicmxpshd .gt_heading {
+#smyujvpypo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -753,13 +754,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gbicmxpshd .gt_bottom_border {
+#smyujvpypo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gbicmxpshd .gt_col_headings {
+#smyujvpypo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -774,7 +775,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gbicmxpshd .gt_col_heading {
+#smyujvpypo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -794,7 +795,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#gbicmxpshd .gt_column_spanner_outer {
+#smyujvpypo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -806,15 +807,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#gbicmxpshd .gt_column_spanner_outer:first-child {
+#smyujvpypo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gbicmxpshd .gt_column_spanner_outer:last-child {
+#smyujvpypo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gbicmxpshd .gt_column_spanner {
+#smyujvpypo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -826,11 +827,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#gbicmxpshd .gt_spanner_row {
+#smyujvpypo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gbicmxpshd .gt_group_heading {
+#smyujvpypo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -856,7 +857,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#gbicmxpshd .gt_empty_group_heading {
+#smyujvpypo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -871,15 +872,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#gbicmxpshd .gt_from_md > :first-child {
+#smyujvpypo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gbicmxpshd .gt_from_md > :last-child {
+#smyujvpypo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gbicmxpshd .gt_row {
+#smyujvpypo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -898,7 +899,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#gbicmxpshd .gt_stub {
+#smyujvpypo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -911,7 +912,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gbicmxpshd .gt_stub_row_group {
+#smyujvpypo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -925,15 +926,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#gbicmxpshd .gt_row_group_first td {
+#smyujvpypo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gbicmxpshd .gt_row_group_first th {
+#smyujvpypo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gbicmxpshd .gt_summary_row {
+#smyujvpypo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -943,16 +944,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gbicmxpshd .gt_first_summary_row {
+#smyujvpypo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gbicmxpshd .gt_first_summary_row.thick {
+#smyujvpypo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gbicmxpshd .gt_last_summary_row {
+#smyujvpypo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -962,7 +963,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#gbicmxpshd .gt_grand_summary_row {
+#smyujvpypo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -972,7 +973,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gbicmxpshd .gt_first_grand_summary_row {
+#smyujvpypo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -982,7 +983,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#gbicmxpshd .gt_last_grand_summary_row_top {
+#smyujvpypo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -992,11 +993,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#gbicmxpshd .gt_striped {
+#smyujvpypo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gbicmxpshd .gt_table_body {
+#smyujvpypo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1005,7 +1006,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#gbicmxpshd .gt_footnotes {
+#smyujvpypo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1019,7 +1020,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gbicmxpshd .gt_footnote {
+#smyujvpypo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1028,7 +1029,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gbicmxpshd .gt_sourcenotes {
+#smyujvpypo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1042,7 +1043,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gbicmxpshd .gt_sourcenote {
+#smyujvpypo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1050,63 +1051,63 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gbicmxpshd .gt_left {
+#smyujvpypo .gt_left {
   text-align: left;
 }
 
-#gbicmxpshd .gt_center {
+#smyujvpypo .gt_center {
   text-align: center;
 }
 
-#gbicmxpshd .gt_right {
+#smyujvpypo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gbicmxpshd .gt_font_normal {
+#smyujvpypo .gt_font_normal {
   font-weight: normal;
 }
 
-#gbicmxpshd .gt_font_bold {
+#smyujvpypo .gt_font_bold {
   font-weight: bold;
 }
 
-#gbicmxpshd .gt_font_italic {
+#smyujvpypo .gt_font_italic {
   font-style: italic;
 }
 
-#gbicmxpshd .gt_super {
+#smyujvpypo .gt_super {
   font-size: 65%;
 }
 
-#gbicmxpshd .gt_footnote_marks {
+#smyujvpypo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gbicmxpshd .gt_asterisk {
+#smyujvpypo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gbicmxpshd .gt_indent_1 {
+#smyujvpypo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gbicmxpshd .gt_indent_2 {
+#smyujvpypo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gbicmxpshd .gt_indent_3 {
+#smyujvpypo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gbicmxpshd .gt_indent_4 {
+#smyujvpypo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gbicmxpshd .gt_indent_5 {
+#smyujvpypo .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1248,29 +1249,30 @@ div.csl-indent {
 </div>
 </div>
 </div>
+</section><section id="クロス集計" class="level4"><h4 class="anchored" data-anchor-id="クロス集計">クロス集計</h4>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
 <span><span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q1. パソコンのスキルに自信がありますか`</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span><span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="co">#学域で分ける</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<div id="ekwjbcaymu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ekwjbcaymu table {
+<div id="cenrkibamc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cenrkibamc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ekwjbcaymu thead, #ekwjbcaymu tbody, #ekwjbcaymu tfoot, #ekwjbcaymu tr, #ekwjbcaymu td, #ekwjbcaymu th {
+#cenrkibamc thead, #cenrkibamc tbody, #cenrkibamc tfoot, #cenrkibamc tr, #cenrkibamc td, #cenrkibamc th {
   border-style: none;
 }
 
-#ekwjbcaymu p {
+#cenrkibamc p {
   margin: 0;
   padding: 0;
 }
 
-#ekwjbcaymu .gt_table {
+#cenrkibamc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1296,12 +1298,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#ekwjbcaymu .gt_caption {
+#cenrkibamc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ekwjbcaymu .gt_title {
+#cenrkibamc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1313,7 +1315,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#ekwjbcaymu .gt_subtitle {
+#cenrkibamc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1325,7 +1327,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#ekwjbcaymu .gt_heading {
+#cenrkibamc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1337,13 +1339,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ekwjbcaymu .gt_bottom_border {
+#cenrkibamc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ekwjbcaymu .gt_col_headings {
+#cenrkibamc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1358,7 +1360,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ekwjbcaymu .gt_col_heading {
+#cenrkibamc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1378,7 +1380,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#ekwjbcaymu .gt_column_spanner_outer {
+#cenrkibamc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1390,15 +1392,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#ekwjbcaymu .gt_column_spanner_outer:first-child {
+#cenrkibamc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ekwjbcaymu .gt_column_spanner_outer:last-child {
+#cenrkibamc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ekwjbcaymu .gt_column_spanner {
+#cenrkibamc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1410,11 +1412,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#ekwjbcaymu .gt_spanner_row {
+#cenrkibamc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ekwjbcaymu .gt_group_heading {
+#cenrkibamc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1440,7 +1442,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#ekwjbcaymu .gt_empty_group_heading {
+#cenrkibamc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1455,15 +1457,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#ekwjbcaymu .gt_from_md > :first-child {
+#cenrkibamc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ekwjbcaymu .gt_from_md > :last-child {
+#cenrkibamc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ekwjbcaymu .gt_row {
+#cenrkibamc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1482,7 +1484,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#ekwjbcaymu .gt_stub {
+#cenrkibamc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1495,7 +1497,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ekwjbcaymu .gt_stub_row_group {
+#cenrkibamc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1509,15 +1511,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#ekwjbcaymu .gt_row_group_first td {
+#cenrkibamc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ekwjbcaymu .gt_row_group_first th {
+#cenrkibamc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ekwjbcaymu .gt_summary_row {
+#cenrkibamc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1527,16 +1529,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ekwjbcaymu .gt_first_summary_row {
+#cenrkibamc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ekwjbcaymu .gt_first_summary_row.thick {
+#cenrkibamc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ekwjbcaymu .gt_last_summary_row {
+#cenrkibamc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1546,7 +1548,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ekwjbcaymu .gt_grand_summary_row {
+#cenrkibamc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1556,7 +1558,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ekwjbcaymu .gt_first_grand_summary_row {
+#cenrkibamc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1566,7 +1568,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#ekwjbcaymu .gt_last_grand_summary_row_top {
+#cenrkibamc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1576,11 +1578,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ekwjbcaymu .gt_striped {
+#cenrkibamc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ekwjbcaymu .gt_table_body {
+#cenrkibamc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1589,7 +1591,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ekwjbcaymu .gt_footnotes {
+#cenrkibamc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1603,7 +1605,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ekwjbcaymu .gt_footnote {
+#cenrkibamc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1612,7 +1614,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ekwjbcaymu .gt_sourcenotes {
+#cenrkibamc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1626,7 +1628,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ekwjbcaymu .gt_sourcenote {
+#cenrkibamc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1634,63 +1636,63 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ekwjbcaymu .gt_left {
+#cenrkibamc .gt_left {
   text-align: left;
 }
 
-#ekwjbcaymu .gt_center {
+#cenrkibamc .gt_center {
   text-align: center;
 }
 
-#ekwjbcaymu .gt_right {
+#cenrkibamc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ekwjbcaymu .gt_font_normal {
+#cenrkibamc .gt_font_normal {
   font-weight: normal;
 }
 
-#ekwjbcaymu .gt_font_bold {
+#cenrkibamc .gt_font_bold {
   font-weight: bold;
 }
 
-#ekwjbcaymu .gt_font_italic {
+#cenrkibamc .gt_font_italic {
   font-style: italic;
 }
 
-#ekwjbcaymu .gt_super {
+#cenrkibamc .gt_super {
   font-size: 65%;
 }
 
-#ekwjbcaymu .gt_footnote_marks {
+#cenrkibamc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ekwjbcaymu .gt_asterisk {
+#cenrkibamc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ekwjbcaymu .gt_indent_1 {
+#cenrkibamc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ekwjbcaymu .gt_indent_2 {
+#cenrkibamc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ekwjbcaymu .gt_indent_3 {
+#cenrkibamc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ekwjbcaymu .gt_indent_4 {
+#cenrkibamc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ekwjbcaymu .gt_indent_5 {
+#cenrkibamc .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1770,23 +1772,23 @@ div.csl-indent {
 <span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<div id="atcphuigzy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#atcphuigzy table {
+<div id="gfbrnvchdg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gfbrnvchdg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#atcphuigzy thead, #atcphuigzy tbody, #atcphuigzy tfoot, #atcphuigzy tr, #atcphuigzy td, #atcphuigzy th {
+#gfbrnvchdg thead, #gfbrnvchdg tbody, #gfbrnvchdg tfoot, #gfbrnvchdg tr, #gfbrnvchdg td, #gfbrnvchdg th {
   border-style: none;
 }
 
-#atcphuigzy p {
+#gfbrnvchdg p {
   margin: 0;
   padding: 0;
 }
 
-#atcphuigzy .gt_table {
+#gfbrnvchdg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1812,12 +1814,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#atcphuigzy .gt_caption {
+#gfbrnvchdg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#atcphuigzy .gt_title {
+#gfbrnvchdg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1829,7 +1831,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#atcphuigzy .gt_subtitle {
+#gfbrnvchdg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1841,7 +1843,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#atcphuigzy .gt_heading {
+#gfbrnvchdg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1853,13 +1855,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#atcphuigzy .gt_bottom_border {
+#gfbrnvchdg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#atcphuigzy .gt_col_headings {
+#gfbrnvchdg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1874,7 +1876,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#atcphuigzy .gt_col_heading {
+#gfbrnvchdg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1894,7 +1896,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#atcphuigzy .gt_column_spanner_outer {
+#gfbrnvchdg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1906,15 +1908,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#atcphuigzy .gt_column_spanner_outer:first-child {
+#gfbrnvchdg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#atcphuigzy .gt_column_spanner_outer:last-child {
+#gfbrnvchdg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#atcphuigzy .gt_column_spanner {
+#gfbrnvchdg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1926,11 +1928,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#atcphuigzy .gt_spanner_row {
+#gfbrnvchdg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#atcphuigzy .gt_group_heading {
+#gfbrnvchdg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1956,7 +1958,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#atcphuigzy .gt_empty_group_heading {
+#gfbrnvchdg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1971,15 +1973,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#atcphuigzy .gt_from_md > :first-child {
+#gfbrnvchdg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#atcphuigzy .gt_from_md > :last-child {
+#gfbrnvchdg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#atcphuigzy .gt_row {
+#gfbrnvchdg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1998,7 +2000,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#atcphuigzy .gt_stub {
+#gfbrnvchdg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2011,7 +2013,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#atcphuigzy .gt_stub_row_group {
+#gfbrnvchdg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2025,15 +2027,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#atcphuigzy .gt_row_group_first td {
+#gfbrnvchdg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#atcphuigzy .gt_row_group_first th {
+#gfbrnvchdg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#atcphuigzy .gt_summary_row {
+#gfbrnvchdg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2043,16 +2045,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#atcphuigzy .gt_first_summary_row {
+#gfbrnvchdg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#atcphuigzy .gt_first_summary_row.thick {
+#gfbrnvchdg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#atcphuigzy .gt_last_summary_row {
+#gfbrnvchdg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2062,7 +2064,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#atcphuigzy .gt_grand_summary_row {
+#gfbrnvchdg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2072,7 +2074,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#atcphuigzy .gt_first_grand_summary_row {
+#gfbrnvchdg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2082,7 +2084,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#atcphuigzy .gt_last_grand_summary_row_top {
+#gfbrnvchdg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2092,11 +2094,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#atcphuigzy .gt_striped {
+#gfbrnvchdg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#atcphuigzy .gt_table_body {
+#gfbrnvchdg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2105,7 +2107,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#atcphuigzy .gt_footnotes {
+#gfbrnvchdg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2119,7 +2121,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#atcphuigzy .gt_footnote {
+#gfbrnvchdg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2128,7 +2130,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#atcphuigzy .gt_sourcenotes {
+#gfbrnvchdg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2142,7 +2144,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#atcphuigzy .gt_sourcenote {
+#gfbrnvchdg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2150,63 +2152,63 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#atcphuigzy .gt_left {
+#gfbrnvchdg .gt_left {
   text-align: left;
 }
 
-#atcphuigzy .gt_center {
+#gfbrnvchdg .gt_center {
   text-align: center;
 }
 
-#atcphuigzy .gt_right {
+#gfbrnvchdg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#atcphuigzy .gt_font_normal {
+#gfbrnvchdg .gt_font_normal {
   font-weight: normal;
 }
 
-#atcphuigzy .gt_font_bold {
+#gfbrnvchdg .gt_font_bold {
   font-weight: bold;
 }
 
-#atcphuigzy .gt_font_italic {
+#gfbrnvchdg .gt_font_italic {
   font-style: italic;
 }
 
-#atcphuigzy .gt_super {
+#gfbrnvchdg .gt_super {
   font-size: 65%;
 }
 
-#atcphuigzy .gt_footnote_marks {
+#gfbrnvchdg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#atcphuigzy .gt_asterisk {
+#gfbrnvchdg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#atcphuigzy .gt_indent_1 {
+#gfbrnvchdg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#atcphuigzy .gt_indent_2 {
+#gfbrnvchdg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#atcphuigzy .gt_indent_3 {
+#gfbrnvchdg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#atcphuigzy .gt_indent_4 {
+#gfbrnvchdg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#atcphuigzy .gt_indent_5 {
+#gfbrnvchdg .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2308,7 +2310,7 @@ Tips | コードの利点
 </ul>
 </div>
 </div>
-</section></section></section><section id="インストール" class="level1"><h1>Ⅵ. インストール</h1>
+</section></section></section></section><section id="インストール" class="level1"><h1>Ⅵ. インストール</h1>
 <ol type="1">
 <li>
 <a href="https://cran.rstudio.com">R</a>
@@ -2370,8 +2372,75 @@ Tips | コードの利点
 </li>
 </ul>
 </li>
-<li>動作確認テスト（iris）</li>
+<li>動作確認テスト（iris）
+<ol type="1">
+<li>ソースペイン（4分割されている画面の左上）に､カーソルを合わせる</li>
+<li>Rチャンクを作る</li>
+<li>以下のコードを入力する（各行の#以下の文字は不要）</li>
+<li>コードを入力できたら､右上の「三角」を押して､コードを実行しましょう</li>
 </ol>
+</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tips | Rチャンク（｀｀｀R｀｀｀ *「｀」は半角）のショートカット
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Win: Ctrl + Alt + I<br>
+</li>
+<li>Mac: Command + option + I
+<ul>
+<li>「｀」バッククォートと読む</li>
+<li>日本語キーボード：Shift + @<br>
+</li>
+<li>英語キーボード：数字の1の左</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tips | パイプ（%&gt;%）のショートカット
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Win: Ctrl + Shift + M</li>
+<li>Mac: Command + Shift + M</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tips | インデントの調整
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Win: Ctrl + I</li>
+<li>Mac: Command + I
+<ul>
+<li>※インデントを揃える癖をつけましょう</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2413,26 +2482,6 @@ Tips | コードの利点
 <figure class="figure"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-note | コードの実行
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>コードを入力できたら､右上の「三角」を押して､コードを実行しましょう</li>
-<li>「コマンド + I」でインデントが揃います
-<ul>
-<li>インデントを揃える習慣をつけてください</li>
-</ul>
-</li>
-</ul>
 </div>
 </div>
 </section><section id="宿題" class="level1"><h1>Ⅷ. 宿題</h1>
