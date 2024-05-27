@@ -241,7 +241,7 @@ div.csl-indent {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
    
   <ul>
-<li><a href="#%E3%81%AA%E3%81%9Cr%E3%81%AA%E3%81%AE%E3%81%8B" id="toc-なぜrなのか" class="nav-link active" data-scroll-target="#%E3%81%AA%E3%81%9Cr%E3%81%AA%E3%81%AE%E3%81%8B">Ⅰ. なぜRなのか</a></li>
+<li><a href="#%E3%81%AA%E3%81%9Crquarto%E3%81%AA%E3%81%AE%E3%81%8B" id="toc-なぜrquartoなのか" class="nav-link active" data-scroll-target="#%E3%81%AA%E3%81%9Crquarto%E3%81%AA%E3%81%AE%E3%81%8B">Ⅰ. なぜR（+Quarto）なのか</a></li>
   <li><a href="#%E3%82%B7%E3%83%A9%E3%83%90%E3%82%B9" id="toc-シラバス" class="nav-link" data-scroll-target="#%E3%82%B7%E3%83%A9%E3%83%90%E3%82%B9">Ⅱ. シラバス</a></li>
   <li>
 <a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB" id="toc-サンプル" class="nav-link" data-scroll-target="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB">Ⅲ. サンプル</a>
@@ -299,25 +299,26 @@ div.csl-indent {
 <main class="content quarto-banner-title-block page-columns page-full column-page-left" id="quarto-document-content"><div class="cell">
 
 </div>
-<section id="なぜrなのか" class="level1"><h1>Ⅰ. なぜRなのか</h1>
+<section id="なぜrquartoなのか" class="level1"><h1>Ⅰ. なぜR（+Quarto）なのか</h1>
 <ol type="1">
 <li>無料
 <ul>
-<li>ITベンダーから自由に</li>
+<li>ITベンダーから自由に（予算；分析；可視化）</li>
 </ul>
 </li>
 <li>コード
 <ul>
 <li>再現可能性
 <ul>
+<li>マウス操作と違い､手順を説明する必要性が少ない（真似しやすい）</li>
 <li>操作を忘れてもコードが残る</li>
-<li>ミスも再現できる</li>
+<li><strong>ミスも再現できる</strong></li>
 </ul>
 </li>
 <li>使い回せる</li>
 <li>作業の効率化
 <ul>
-<li>図を使ったコミュニケーションや分析自体に時間を使える</li>
+<li><strong>図を使ったコミュニケーションや分析自体に時間を使える</strong></li>
 </ul>
 </li>
 <li>安全性（元データは加工しない）</li>
@@ -327,6 +328,7 @@ div.csl-indent {
 <li>豊富な可視化ツール
 <ul>
 <li><a href="https://ggplot2.tidyverse.org">ggplot2(公式サイト)</a></li>
+<li>カラーパッケージ</li>
 </ul>
 </li>
 <li>豊富な出力パッケージ（quarto）
@@ -334,13 +336,29 @@ div.csl-indent {
 <li><a href="https://quarto.org/docs/output-formats/html-basics.html">Documents</a></li>
 <li><a href="https://quarto.org/docs/presentations/">Presentations</a></li>
 <li><a href="https://quarto.org/docs/dashboards/">Dashboards</a></li>
-<li><a href="https://quarto.org/docs/websites/">Website</a></li>
+<li>
+<a href="https://quarto.org/docs/websites/">Website</a>
+<ul>
+<li>このウェブサイトもQuartoの出力パッケージを使って作成</li>
+</ul>
+</li>
 <li>➡ YAML（ファイル冒頭部分）を変えるだけ</li>
+<li>この他､各図表を個別に出力可能（pngファイル；csvファイル）</li>
 </ul>
 </li>
 <li>親切なコミュニティ
 <ul>
+<li><strong>各専門分野の研究者が､当該分野の分析に最適化したパッケージを作っている</strong></li>
+<li>困っていることはみんな一緒（先達の回答が参考になる）
+<ul>
 <li><a href="https://tokyor.connpass.com">Tokyo.R</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>簡易的な記述法
+<ul>
+<li>markdown</li>
 </ul>
 </li>
 </ol>
@@ -453,8 +471,8 @@ div.csl-indent {
 <span>          lat <span class="op">=</span> <span class="fl">36.54517</span>,</span>
 <span>          zoom <span class="op">=</span> <span class="fl">18</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-475d4c1fe281ebe22474" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-475d4c1fe281ebe22474">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]}],"setView":[[36.54517,136.70847],18,[]]},"evals":[],"jsHooks":[]}</script><p>高大接続コア・センター（インキュベーション施設3F）</p>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-d89089c4e34f3c4f7bc4" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-d89089c4e34f3c4f7bc4">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]}],"setView":[[36.54517,136.70847],18,[]]},"evals":[],"jsHooks":[]}</script><p>高大接続コア・センター（インキュベーション施設3F）</p>
 </div>
 </div>
 </section></section></section><section id="図とデータ" class="level1"><h1>Ⅳ. 図とデータ</h1>
@@ -568,6 +586,7 @@ div.csl-indent {
 <span><span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">学域</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu">theme</span><span class="op">(</span>legend.position<span class="op">=</span><span class="st">"bottom"</span><span class="op">)</span> <span class="op">+</span> <span class="co">#凡例を図の下に</span></span>
+<span><span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="fu">guide_legend</span><span class="op">(</span>nrow <span class="op">=</span> <span class="fl">3</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"DresdenColor::briefcases"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
@@ -626,7 +645,7 @@ div.csl-indent {
 </div>
 </div>
 </section><section id="表" class="level3"><h3 class="anchored" data-anchor-id="表">表</h3>
-<section id="単純集計" class="level4"><h4 class="anchored" data-anchor-id="単純集計">単純集計</h4>
+<section id="基本統計量" class="level4"><h4 class="anchored" data-anchor-id="基本統計量">基本統計量</h4>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
 <span><span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co">#1列目から4列目までを削除（回答者の氏名などの情報のため）</span></span>
@@ -635,72 +654,96 @@ div.csl-indent {
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>     学域               学年           Q1. パソコンのスキルに自信がありますか
- Length:16          Length:16          Min.   :1.000                         
- Class :character   Class :character   1st Qu.:1.750                         
- Mode  :character   Mode  :character   Median :2.500                         
-                                       Mean   :2.812                         
-                                       3rd Qu.:4.250                         
-                                       Max.   :5.000                         
+ Length:10          Length:10          Min.   :1.00                          
+ Class :character   Class :character   1st Qu.:1.25                          
+ Mode  :character   Mode  :character   Median :2.00                          
+                                       Mean   :2.60                          
+                                       3rd Qu.:3.75                          
+                                       Max.   :5.00                          
  Q2. R言語を知っていますか？ Q3. プログラム言語を使ったことはありますか
- Min.   :1.00                Min.   :2                                 
- 1st Qu.:1.75                1st Qu.:2                                 
- Median :2.00                Median :2                                 
- Mean   :2.25                Mean   :2                                 
- 3rd Qu.:2.50                3rd Qu.:2                                 
- Max.   :4.00                Max.   :2                                 
+ Min.   :1.00                Min.   :1.0                               
+ 1st Qu.:2.00                1st Qu.:1.0                               
+ Median :2.00                Median :2.5                               
+ Mean   :2.70                Mean   :2.4                               
+ 3rd Qu.:3.75                3rd Qu.:3.0                               
+ Max.   :5.00                Max.   :5.0                               
  Q4. 可視化したいデータはありますか
- Length:16                         
+ Length:10                         
  Class :character                  
  Mode  :character                  
                                    
                                    
                                    
  Q5. 受講理由でもっとも近いものを選んでください
- Length:16                                     
+ Length:10                                     
  Class :character                              
  Mode  :character                              
                                                
                                                
-                                               </code></pre>
+                                               
+ Q6. Microsoft Excelを使ったことはありますか Q7. SPSSを使ったことはありますか
+ Min.   :1.00                                Min.   :1.00                    
+ 1st Qu.:2.25                                1st Qu.:2.00                    
+ Median :3.00                                Median :2.00                    
+ Mean   :3.10                                Mean   :2.60                    
+ 3rd Qu.:3.75                                3rd Qu.:3.75                    
+ Max.   :5.00                                Max.   :5.00                    
+ Q8. Stataを使ったことはありますか Q9. SASを使ったことはありますか
+ Min.   :1.00                      Min.   :1.0                    
+ 1st Qu.:2.00                      1st Qu.:2.0                    
+ Median :2.00                      Median :2.0                    
+ Mean   :2.40                      Mean   :2.6                    
+ 3rd Qu.:2.75                      3rd Qu.:3.0                    
+ Max.   :5.00                      Max.   :5.0                    
+ Q10. tableauを使ったことはありますか Q11. pythonを使ったことはありますか
+ Min.   :1.00                         Min.   :1.00                       
+ 1st Qu.:2.25                         1st Qu.:2.25                       
+ Median :3.00                         Median :3.00                       
+ Mean   :2.70                         Mean   :2.80                       
+ 3rd Qu.:3.00                         3rd Qu.:3.00                       
+ Max.   :5.00                         Max.   :5.00                       
+ Q12. Microsoft Wordを使ったことはありますか Q13. TeXを使ったことはありますか
+ Min.   :1.00                                Min.   :1.00                    
+ 1st Qu.:2.00                                1st Qu.:2.00                    
+ Median :2.00                                Median :2.00                    
+ Mean   :2.50                                Mean   :2.40                    
+ 3rd Qu.:2.75                                3rd Qu.:2.75                    
+ Max.   :5.00                                Max.   :5.00                    
+ Q14. markdownを使ったことはありますか
+ Min.   :1.00                         
+ 1st Qu.:2.00                         
+ Median :2.00                         
+ Mean   :2.40                         
+ 3rd Qu.:2.75                         
+ Max.   :5.00                         </code></pre>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gt_table</span> <span class="op">&lt;-</span> </span>
+<span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
 <span><span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span><span class="fu">get_summary_stats</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 13
-  variable        n   min   max median    q1    q3   iqr   mad  mean    sd    se
-  &lt;fct&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 Q1. パソコ…    16     1     5    2.5  1.75  4.25  2.5  2.22   2.81  1.56 0.39 
-2 Q2. R言語…     16     1     4    2    1.75  2.5   0.75 0.741  2.25  1.12 0.281
-3 Q3. プログ…    16     2     2    2    2     2     0    0      2     0    0    
-# ℹ 1 more variable: ci &lt;dbl&gt;</code></pre>
-</div>
-</div>
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
-<span><span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span><span class="fu">tbl_summary</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">get_summary_stats</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">gt_table</span> <span class="op">|&gt;</span> <span class="fu">gt</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<div id="hmcblceurx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hmcblceurx table {
+<div id="yqjedppeqa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yqjedppeqa table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hmcblceurx thead, #hmcblceurx tbody, #hmcblceurx tfoot, #hmcblceurx tr, #hmcblceurx td, #hmcblceurx th {
+#yqjedppeqa thead, #yqjedppeqa tbody, #yqjedppeqa tfoot, #yqjedppeqa tr, #yqjedppeqa td, #yqjedppeqa th {
   border-style: none;
 }
 
-#hmcblceurx p {
+#yqjedppeqa p {
   margin: 0;
   padding: 0;
 }
 
-#hmcblceurx .gt_table {
+#yqjedppeqa .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -726,12 +769,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#hmcblceurx .gt_caption {
+#yqjedppeqa .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hmcblceurx .gt_title {
+#yqjedppeqa .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -743,7 +786,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#hmcblceurx .gt_subtitle {
+#yqjedppeqa .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -755,7 +798,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#hmcblceurx .gt_heading {
+#yqjedppeqa .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -767,13 +810,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#hmcblceurx .gt_bottom_border {
+#yqjedppeqa .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hmcblceurx .gt_col_headings {
+#yqjedppeqa .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -788,7 +831,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#hmcblceurx .gt_col_heading {
+#yqjedppeqa .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -808,7 +851,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#hmcblceurx .gt_column_spanner_outer {
+#yqjedppeqa .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -820,15 +863,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#hmcblceurx .gt_column_spanner_outer:first-child {
+#yqjedppeqa .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hmcblceurx .gt_column_spanner_outer:last-child {
+#yqjedppeqa .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hmcblceurx .gt_column_spanner {
+#yqjedppeqa .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -840,11 +883,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#hmcblceurx .gt_spanner_row {
+#yqjedppeqa .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hmcblceurx .gt_group_heading {
+#yqjedppeqa .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -870,7 +913,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#hmcblceurx .gt_empty_group_heading {
+#yqjedppeqa .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -885,15 +928,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#hmcblceurx .gt_from_md > :first-child {
+#yqjedppeqa .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hmcblceurx .gt_from_md > :last-child {
+#yqjedppeqa .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hmcblceurx .gt_row {
+#yqjedppeqa .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -912,7 +955,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#hmcblceurx .gt_stub {
+#yqjedppeqa .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -925,7 +968,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hmcblceurx .gt_stub_row_group {
+#yqjedppeqa .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -939,15 +982,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#hmcblceurx .gt_row_group_first td {
+#yqjedppeqa .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hmcblceurx .gt_row_group_first th {
+#yqjedppeqa .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hmcblceurx .gt_summary_row {
+#yqjedppeqa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -957,16 +1000,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hmcblceurx .gt_first_summary_row {
+#yqjedppeqa .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hmcblceurx .gt_first_summary_row.thick {
+#yqjedppeqa .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hmcblceurx .gt_last_summary_row {
+#yqjedppeqa .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -976,7 +1019,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#hmcblceurx .gt_grand_summary_row {
+#yqjedppeqa .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -986,7 +1029,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hmcblceurx .gt_first_grand_summary_row {
+#yqjedppeqa .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -996,7 +1039,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#hmcblceurx .gt_last_grand_summary_row_top {
+#yqjedppeqa .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1006,11 +1049,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#hmcblceurx .gt_striped {
+#yqjedppeqa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hmcblceurx .gt_table_body {
+#yqjedppeqa .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1019,7 +1062,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#hmcblceurx .gt_footnotes {
+#yqjedppeqa .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1033,7 +1076,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#hmcblceurx .gt_footnote {
+#yqjedppeqa .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1042,7 +1085,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hmcblceurx .gt_sourcenotes {
+#yqjedppeqa .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1056,7 +1099,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#hmcblceurx .gt_sourcenote {
+#yqjedppeqa .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1064,63 +1107,712 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hmcblceurx .gt_left {
+#yqjedppeqa .gt_left {
   text-align: left;
 }
 
-#hmcblceurx .gt_center {
+#yqjedppeqa .gt_center {
   text-align: center;
 }
 
-#hmcblceurx .gt_right {
+#yqjedppeqa .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hmcblceurx .gt_font_normal {
+#yqjedppeqa .gt_font_normal {
   font-weight: normal;
 }
 
-#hmcblceurx .gt_font_bold {
+#yqjedppeqa .gt_font_bold {
   font-weight: bold;
 }
 
-#hmcblceurx .gt_font_italic {
+#yqjedppeqa .gt_font_italic {
   font-style: italic;
 }
 
-#hmcblceurx .gt_super {
+#yqjedppeqa .gt_super {
   font-size: 65%;
 }
 
-#hmcblceurx .gt_footnote_marks {
+#yqjedppeqa .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hmcblceurx .gt_asterisk {
+#yqjedppeqa .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hmcblceurx .gt_indent_1 {
+#yqjedppeqa .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hmcblceurx .gt_indent_2 {
+#yqjedppeqa .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hmcblceurx .gt_indent_3 {
+#yqjedppeqa .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hmcblceurx .gt_indent_4 {
+#yqjedppeqa .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hmcblceurx .gt_indent_5 {
+#yqjedppeqa .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="header gt_col_headings">
+<th id="variable" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">variable</th>
+<th id="n" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">n</th>
+<th id="min" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">min</th>
+<th id="max" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">max</th>
+<th id="median" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">median</th>
+<th id="q1" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">q1</th>
+<th id="q3" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">q3</th>
+<th id="iqr" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">iqr</th>
+<th id="mad" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">mad</th>
+<th id="mean" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">mean</th>
+<th id="sd" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">sd</th>
+<th id="se" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">se</th>
+<th id="ci" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">ci</th>
+</tr></thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="variable">Q1. パソコンのスキルに自信がありますか</td>
+<td class="gt_row gt_right" headers="n">10</td>
+<td class="gt_row gt_right" headers="min">1</td>
+<td class="gt_row gt_right" headers="max">5</td>
+<td class="gt_row gt_right" headers="median">2.0</td>
+<td class="gt_row gt_right" headers="q1">1.25</td>
+<td class="gt_row gt_right" headers="q3">3.75</td>
+<td class="gt_row gt_right" headers="iqr">2.50</td>
+<td class="gt_row gt_right" headers="mad">1.483</td>
+<td class="gt_row gt_right" headers="mean">2.6</td>
+<td class="gt_row gt_right" headers="sd">1.578</td>
+<td class="gt_row gt_right" headers="se">0.499</td>
+<td class="gt_row gt_right" headers="ci">1.129</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="variable">Q2. R言語を知っていますか？</td>
+<td class="gt_row gt_right" headers="n">10</td>
+<td class="gt_row gt_right" headers="min">1</td>
+<td class="gt_row gt_right" headers="max">5</td>
+<td class="gt_row gt_right" headers="median">2.0</td>
+<td class="gt_row gt_right" headers="q1">2.00</td>
+<td class="gt_row gt_right" headers="q3">3.75</td>
+<td class="gt_row gt_right" headers="iqr">1.75</td>
+<td class="gt_row gt_right" headers="mad">1.483</td>
+<td class="gt_row gt_right" headers="mean">2.7</td>
+<td class="gt_row gt_right" headers="sd">1.494</td>
+<td class="gt_row gt_right" headers="se">0.473</td>
+<td class="gt_row gt_right" headers="ci">1.069</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="variable">Q3. プログラム言語を使ったことはありますか</td>
+<td class="gt_row gt_right" headers="n">10</td>
+<td class="gt_row gt_right" headers="min">1</td>
+<td class="gt_row gt_right" headers="max">5</td>
+<td class="gt_row gt_right" headers="median">2.5</td>
+<td class="gt_row gt_right" headers="q1">1.00</td>
+<td class="gt_row gt_right" headers="q3">3.00</td>
+<td class="gt_row gt_right" headers="iqr">2.00</td>
+<td class="gt_row gt_right" headers="mad">2.224</td>
+<td class="gt_row gt_right" headers="mean">2.4</td>
+<td class="gt_row gt_right" headers="sd">1.430</td>
+<td class="gt_row gt_right" headers="se">0.452</td>
+<td class="gt_row gt_right" headers="ci">1.023</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="variable">Q6. Microsoft Excelを使ったことはありますか</td>
+<td class="gt_row gt_right" headers="n">10</td>
+<td class="gt_row gt_right" headers="min">1</td>
+<td class="gt_row gt_right" headers="max">5</td>
+<td class="gt_row gt_right" headers="median">3.0</td>
+<td class="gt_row gt_right" headers="q1">2.25</td>
+<td class="gt_row gt_right" headers="q3">3.75</td>
+<td class="gt_row gt_right" headers="iqr">1.50</td>
+<td class="gt_row gt_right" headers="mad">1.483</td>
+<td class="gt_row gt_right" headers="mean">3.1</td>
+<td class="gt_row gt_right" headers="sd">1.287</td>
+<td class="gt_row gt_right" headers="se">0.407</td>
+<td class="gt_row gt_right" headers="ci">0.920</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="variable">Q7. SPSSを使ったことはありますか</td>
+<td class="gt_row gt_right" headers="n">10</td>
+<td class="gt_row gt_right" headers="min">1</td>
+<td class="gt_row gt_right" headers="max">5</td>
+<td class="gt_row gt_right" headers="median">2.0</td>
+<td class="gt_row gt_right" headers="q1">2.00</td>
+<td class="gt_row gt_right" headers="q3">3.75</td>
+<td class="gt_row gt_right" headers="iqr">1.75</td>
+<td class="gt_row gt_right" headers="mad">1.483</td>
+<td class="gt_row gt_right" headers="mean">2.6</td>
+<td class="gt_row gt_right" headers="sd">1.350</td>
+<td class="gt_row gt_right" headers="se">0.427</td>
+<td class="gt_row gt_right" headers="ci">0.966</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="variable">Q8. Stataを使ったことはありますか</td>
+<td class="gt_row gt_right" headers="n">10</td>
+<td class="gt_row gt_right" headers="min">1</td>
+<td class="gt_row gt_right" headers="max">5</td>
+<td class="gt_row gt_right" headers="median">2.0</td>
+<td class="gt_row gt_right" headers="q1">2.00</td>
+<td class="gt_row gt_right" headers="q3">2.75</td>
+<td class="gt_row gt_right" headers="iqr">0.75</td>
+<td class="gt_row gt_right" headers="mad">0.741</td>
+<td class="gt_row gt_right" headers="mean">2.4</td>
+<td class="gt_row gt_right" headers="sd">1.265</td>
+<td class="gt_row gt_right" headers="se">0.400</td>
+<td class="gt_row gt_right" headers="ci">0.905</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="variable">Q9. SASを使ったことはありますか</td>
+<td class="gt_row gt_right" headers="n">10</td>
+<td class="gt_row gt_right" headers="min">1</td>
+<td class="gt_row gt_right" headers="max">5</td>
+<td class="gt_row gt_right" headers="median">2.0</td>
+<td class="gt_row gt_right" headers="q1">2.00</td>
+<td class="gt_row gt_right" headers="q3">3.00</td>
+<td class="gt_row gt_right" headers="iqr">1.00</td>
+<td class="gt_row gt_right" headers="mad">0.741</td>
+<td class="gt_row gt_right" headers="mean">2.6</td>
+<td class="gt_row gt_right" headers="sd">1.174</td>
+<td class="gt_row gt_right" headers="se">0.371</td>
+<td class="gt_row gt_right" headers="ci">0.840</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="variable">Q10. tableauを使ったことはありますか</td>
+<td class="gt_row gt_right" headers="n">10</td>
+<td class="gt_row gt_right" headers="min">1</td>
+<td class="gt_row gt_right" headers="max">5</td>
+<td class="gt_row gt_right" headers="median">3.0</td>
+<td class="gt_row gt_right" headers="q1">2.25</td>
+<td class="gt_row gt_right" headers="q3">3.00</td>
+<td class="gt_row gt_right" headers="iqr">0.75</td>
+<td class="gt_row gt_right" headers="mad">0.000</td>
+<td class="gt_row gt_right" headers="mean">2.7</td>
+<td class="gt_row gt_right" headers="sd">1.160</td>
+<td class="gt_row gt_right" headers="se">0.367</td>
+<td class="gt_row gt_right" headers="ci">0.829</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="variable">Q11. pythonを使ったことはありますか</td>
+<td class="gt_row gt_right" headers="n">10</td>
+<td class="gt_row gt_right" headers="min">1</td>
+<td class="gt_row gt_right" headers="max">5</td>
+<td class="gt_row gt_right" headers="median">3.0</td>
+<td class="gt_row gt_right" headers="q1">2.25</td>
+<td class="gt_row gt_right" headers="q3">3.00</td>
+<td class="gt_row gt_right" headers="iqr">0.75</td>
+<td class="gt_row gt_right" headers="mad">0.741</td>
+<td class="gt_row gt_right" headers="mean">2.8</td>
+<td class="gt_row gt_right" headers="sd">1.229</td>
+<td class="gt_row gt_right" headers="se">0.389</td>
+<td class="gt_row gt_right" headers="ci">0.879</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="variable">Q12. Microsoft Wordを使ったことはありますか</td>
+<td class="gt_row gt_right" headers="n">10</td>
+<td class="gt_row gt_right" headers="min">1</td>
+<td class="gt_row gt_right" headers="max">5</td>
+<td class="gt_row gt_right" headers="median">2.0</td>
+<td class="gt_row gt_right" headers="q1">2.00</td>
+<td class="gt_row gt_right" headers="q3">2.75</td>
+<td class="gt_row gt_right" headers="iqr">0.75</td>
+<td class="gt_row gt_right" headers="mad">0.000</td>
+<td class="gt_row gt_right" headers="mean">2.5</td>
+<td class="gt_row gt_right" headers="sd">1.179</td>
+<td class="gt_row gt_right" headers="se">0.373</td>
+<td class="gt_row gt_right" headers="ci">0.843</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="variable">Q13. TeXを使ったことはありますか</td>
+<td class="gt_row gt_right" headers="n">10</td>
+<td class="gt_row gt_right" headers="min">1</td>
+<td class="gt_row gt_right" headers="max">5</td>
+<td class="gt_row gt_right" headers="median">2.0</td>
+<td class="gt_row gt_right" headers="q1">2.00</td>
+<td class="gt_row gt_right" headers="q3">2.75</td>
+<td class="gt_row gt_right" headers="iqr">0.75</td>
+<td class="gt_row gt_right" headers="mad">0.741</td>
+<td class="gt_row gt_right" headers="mean">2.4</td>
+<td class="gt_row gt_right" headers="sd">1.265</td>
+<td class="gt_row gt_right" headers="se">0.400</td>
+<td class="gt_row gt_right" headers="ci">0.905</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="variable">Q14. markdownを使ったことはありますか</td>
+<td class="gt_row gt_right" headers="n">10</td>
+<td class="gt_row gt_right" headers="min">1</td>
+<td class="gt_row gt_right" headers="max">5</td>
+<td class="gt_row gt_right" headers="median">2.0</td>
+<td class="gt_row gt_right" headers="q1">2.00</td>
+<td class="gt_row gt_right" headers="q3">2.75</td>
+<td class="gt_row gt_right" headers="iqr">0.75</td>
+<td class="gt_row gt_right" headers="mad">0.741</td>
+<td class="gt_row gt_right" headers="mean">2.4</td>
+<td class="gt_row gt_right" headers="sd">1.265</td>
+<td class="gt_row gt_right" headers="se">0.400</td>
+<td class="gt_row gt_right" headers="ci">0.905</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
+<span><span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span><span class="fu">tbl_summary</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div>
+<div id="ceuoajaixi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ceuoajaixi table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ceuoajaixi thead, #ceuoajaixi tbody, #ceuoajaixi tfoot, #ceuoajaixi tr, #ceuoajaixi td, #ceuoajaixi th {
+  border-style: none;
+}
+
+#ceuoajaixi p {
+  margin: 0;
+  padding: 0;
+}
+
+#ceuoajaixi .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ceuoajaixi .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ceuoajaixi .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ceuoajaixi .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ceuoajaixi .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ceuoajaixi .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ceuoajaixi .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ceuoajaixi .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ceuoajaixi .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ceuoajaixi .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ceuoajaixi .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ceuoajaixi .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ceuoajaixi .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ceuoajaixi .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ceuoajaixi .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ceuoajaixi .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ceuoajaixi .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ceuoajaixi .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ceuoajaixi .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ceuoajaixi .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ceuoajaixi .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ceuoajaixi .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ceuoajaixi .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ceuoajaixi .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ceuoajaixi .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ceuoajaixi .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ceuoajaixi .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ceuoajaixi .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ceuoajaixi .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ceuoajaixi .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ceuoajaixi .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ceuoajaixi .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ceuoajaixi .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ceuoajaixi .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ceuoajaixi .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ceuoajaixi .gt_left {
+  text-align: left;
+}
+
+#ceuoajaixi .gt_center {
+  text-align: center;
+}
+
+#ceuoajaixi .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ceuoajaixi .gt_font_normal {
+  font-weight: normal;
+}
+
+#ceuoajaixi .gt_font_bold {
+  font-weight: bold;
+}
+
+#ceuoajaixi .gt_font_italic {
+  font-style: italic;
+}
+
+#ceuoajaixi .gt_super {
+  font-size: 65%;
+}
+
+#ceuoajaixi .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ceuoajaixi .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ceuoajaixi .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ceuoajaixi .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ceuoajaixi .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ceuoajaixi .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ceuoajaixi .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1131,8 +1823,8 @@ div.csl-indent {
 </colgroup>
 <thead><tr class="header gt_col_headings">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="<strong>N = 16</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
-<strong>N = 16</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+<th id="<strong>N = 10</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>N = 10</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
 </th>
 </tr></thead>
 <tbody class="gt_table_body">
@@ -1142,115 +1834,371 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;医薬保健学域</td>
-<td class="gt_row gt_center" headers="stat_0">4 (25%)</td>
+<td class="gt_row gt_center" headers="stat_0">3 (30%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;人間社会学域</td>
-<td class="gt_row gt_center" headers="stat_0">8 (50%)</td>
+<td class="gt_row gt_center" headers="stat_0">3 (30%)</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;理工学域</td>
-<td class="gt_row gt_center" headers="stat_0">4 (25%)</td>
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;融合学域</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
 </tr>
 <tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;理工学域</td>
+<td class="gt_row gt_center" headers="stat_0">3 (30%)</td>
+</tr>
+<tr class="even">
 <td class="gt_row gt_left" headers="label">学年</td>
 <td class="gt_row gt_center" headers="stat_0"><br></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1年生</td>
-<td class="gt_row gt_center" headers="stat_0">3 (19%)</td>
+<td class="gt_row gt_center" headers="stat_0">3 (30%)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2年生</td>
-<td class="gt_row gt_center" headers="stat_0">3 (19%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3年生</td>
-<td class="gt_row gt_center" headers="stat_0">1 (6.3%)</td>
+<td class="gt_row gt_center" headers="stat_0">3 (30%)</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5年生以上</td>
-<td class="gt_row gt_center" headers="stat_0">9 (56%)</td>
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3年生</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
 </tr>
 <tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4年生</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="odd">
 <td class="gt_row gt_left" headers="label">Q1. パソコンのスキルに自信がありますか</td>
 <td class="gt_row gt_center" headers="stat_0"><br></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
-<td class="gt_row gt_center" headers="stat_0">4 (25%)</td>
+<td class="gt_row gt_center" headers="stat_0">3 (30%)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
-<td class="gt_row gt_center" headers="stat_0">4 (25%)</td>
+<td class="gt_row gt_center" headers="stat_0">3 (30%)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
-<td class="gt_row gt_center" headers="stat_0">3 (19%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
-<td class="gt_row gt_center" headers="stat_0">1 (6.3%)</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
-<td class="gt_row gt_center" headers="stat_0">4 (25%)</td>
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
 </tr>
 <tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="odd">
 <td class="gt_row gt_left" headers="label">Q2. R言語を知っていますか？</td>
 <td class="gt_row gt_center" headers="stat_0"><br></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
-<td class="gt_row gt_center" headers="stat_0">4 (25%)</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
+<td class="gt_row gt_center" headers="stat_0">4 (40%)</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
-<td class="gt_row gt_center" headers="stat_0">8 (50%)</td>
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
-<td class="gt_row gt_center" headers="stat_0">4 (25%)</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
 </tr>
 <tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="odd">
 <td class="gt_row gt_left" headers="label">Q3. プログラム言語を使ったことはありますか</td>
 <td class="gt_row gt_center" headers="stat_0"><br></td>
 </tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td class="gt_row gt_center" headers="stat_0">4 (40%)</td>
+</tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
-<td class="gt_row gt_center" headers="stat_0">16 (100%)</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
 </tr>
 <tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
+<td class="gt_row gt_center" headers="stat_0">3 (30%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
 <td class="gt_row gt_left" headers="label">Q4. 可視化したいデータはありますか</td>
 <td class="gt_row gt_center" headers="stat_0"><br></td>
 </tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;ある（具体的なデータがある）</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;ある</td>
-<td class="gt_row gt_center" headers="stat_0">3 (19%)</td>
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;ある（具体的なデータはないが、分野は特定できる）</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;ない（見当はつく）</td>
-<td class="gt_row gt_center" headers="stat_0">3 (19%)</td>
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;ない（見当もつかない）</td>
+<td class="gt_row gt_center" headers="stat_0">5 (50%)</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;ない（見当もつかない。これから考える）</td>
-<td class="gt_row gt_center" headers="stat_0">10 (63%)</td>
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;ない（時間があれば、考えられそう）</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">Q5. 受講理由でもっとも近いものを選んでください</td>
 <td class="gt_row gt_center" headers="stat_0"><br></td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;プログラム言語に興味がある</td>
-<td class="gt_row gt_center" headers="stat_0">4 (25%)</td>
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;ちょうどいい時間に授業がある</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;研究でデータを可視化したい（具体的なデータがある）</td>
-<td class="gt_row gt_center" headers="stat_0">4 (25%)</td>
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;パソコンが好き</td>
+<td class="gt_row gt_center" headers="stat_0">3 (30%)</td>
 </tr>
 <tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;プログラム言語に興味がある</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;研究でデータを可視化したい（具体的なデータはない）</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;将来のことを考えてデータを可視化（分析）できるようになりたい</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;単位取得が簡単そう</td>
-<td class="gt_row gt_center" headers="stat_0">8 (50%)</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Q6. Microsoft Excelを使ったことはありますか</td>
+<td class="gt_row gt_center" headers="stat_0"><br></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
+<td class="gt_row gt_center" headers="stat_0">4 (40%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Q7. SPSSを使ったことはありますか</td>
+<td class="gt_row gt_center" headers="stat_0"><br></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
+<td class="gt_row gt_center" headers="stat_0">4 (40%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Q8. Stataを使ったことはありますか</td>
+<td class="gt_row gt_center" headers="stat_0"><br></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
+<td class="gt_row gt_center" headers="stat_0">5 (50%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Q9. SASを使ったことはありますか</td>
+<td class="gt_row gt_center" headers="stat_0"><br></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
+<td class="gt_row gt_center" headers="stat_0">5 (50%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Q10. tableauを使ったことはありますか</td>
+<td class="gt_row gt_center" headers="stat_0"><br></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
+<td class="gt_row gt_center" headers="stat_0">6 (60%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Q11. pythonを使ったことはありますか</td>
+<td class="gt_row gt_center" headers="stat_0"><br></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
+<td class="gt_row gt_center" headers="stat_0">5 (50%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Q12. Microsoft Wordを使ったことはありますか</td>
+<td class="gt_row gt_center" headers="stat_0"><br></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
+<td class="gt_row gt_center" headers="stat_0">6 (60%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Q13. TeXを使ったことはありますか</td>
+<td class="gt_row gt_center" headers="stat_0"><br></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
+<td class="gt_row gt_center" headers="stat_0">5 (50%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Q14. markdownを使ったことはありますか</td>
+<td class="gt_row gt_center" headers="stat_0"><br></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td class="gt_row gt_center" headers="stat_0">2 (20%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
+<td class="gt_row gt_center" headers="stat_0">5 (50%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
+<td class="gt_row gt_center" headers="stat_0">1 (10%)</td>
 </tr>
 </tbody>
 <tfoot class="gt_footnotes"><tr class="even">
@@ -1264,28 +2212,28 @@ div.csl-indent {
 </div>
 </section><section id="クロス集計" class="level4"><h4 class="anchored" data-anchor-id="クロス集計">クロス集計</h4>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
 <span><span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q1. パソコンのスキルに自信がありますか`</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span><span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="co">#学域で分ける</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<div id="apiiwusphn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#apiiwusphn table {
+<div id="zyuyhscezm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zyuyhscezm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#apiiwusphn thead, #apiiwusphn tbody, #apiiwusphn tfoot, #apiiwusphn tr, #apiiwusphn td, #apiiwusphn th {
+#zyuyhscezm thead, #zyuyhscezm tbody, #zyuyhscezm tfoot, #zyuyhscezm tr, #zyuyhscezm td, #zyuyhscezm th {
   border-style: none;
 }
 
-#apiiwusphn p {
+#zyuyhscezm p {
   margin: 0;
   padding: 0;
 }
 
-#apiiwusphn .gt_table {
+#zyuyhscezm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1311,12 +2259,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#apiiwusphn .gt_caption {
+#zyuyhscezm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#apiiwusphn .gt_title {
+#zyuyhscezm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1328,7 +2276,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#apiiwusphn .gt_subtitle {
+#zyuyhscezm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1340,7 +2288,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#apiiwusphn .gt_heading {
+#zyuyhscezm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1352,13 +2300,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#apiiwusphn .gt_bottom_border {
+#zyuyhscezm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#apiiwusphn .gt_col_headings {
+#zyuyhscezm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1373,7 +2321,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#apiiwusphn .gt_col_heading {
+#zyuyhscezm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1393,7 +2341,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#apiiwusphn .gt_column_spanner_outer {
+#zyuyhscezm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1405,15 +2353,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#apiiwusphn .gt_column_spanner_outer:first-child {
+#zyuyhscezm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#apiiwusphn .gt_column_spanner_outer:last-child {
+#zyuyhscezm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#apiiwusphn .gt_column_spanner {
+#zyuyhscezm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1425,11 +2373,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#apiiwusphn .gt_spanner_row {
+#zyuyhscezm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#apiiwusphn .gt_group_heading {
+#zyuyhscezm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1455,7 +2403,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#apiiwusphn .gt_empty_group_heading {
+#zyuyhscezm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1470,15 +2418,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#apiiwusphn .gt_from_md > :first-child {
+#zyuyhscezm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#apiiwusphn .gt_from_md > :last-child {
+#zyuyhscezm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#apiiwusphn .gt_row {
+#zyuyhscezm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1497,7 +2445,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#apiiwusphn .gt_stub {
+#zyuyhscezm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1510,7 +2458,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#apiiwusphn .gt_stub_row_group {
+#zyuyhscezm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1524,15 +2472,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#apiiwusphn .gt_row_group_first td {
+#zyuyhscezm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#apiiwusphn .gt_row_group_first th {
+#zyuyhscezm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#apiiwusphn .gt_summary_row {
+#zyuyhscezm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1542,16 +2490,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#apiiwusphn .gt_first_summary_row {
+#zyuyhscezm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#apiiwusphn .gt_first_summary_row.thick {
+#zyuyhscezm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#apiiwusphn .gt_last_summary_row {
+#zyuyhscezm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1561,7 +2509,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#apiiwusphn .gt_grand_summary_row {
+#zyuyhscezm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1571,7 +2519,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#apiiwusphn .gt_first_grand_summary_row {
+#zyuyhscezm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1581,7 +2529,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#apiiwusphn .gt_last_grand_summary_row_top {
+#zyuyhscezm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1591,11 +2539,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#apiiwusphn .gt_striped {
+#zyuyhscezm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#apiiwusphn .gt_table_body {
+#zyuyhscezm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1604,7 +2552,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#apiiwusphn .gt_footnotes {
+#zyuyhscezm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1618,7 +2566,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#apiiwusphn .gt_footnote {
+#zyuyhscezm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1627,7 +2575,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#apiiwusphn .gt_sourcenotes {
+#zyuyhscezm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1641,7 +2589,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#apiiwusphn .gt_sourcenote {
+#zyuyhscezm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1649,83 +2597,87 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#apiiwusphn .gt_left {
+#zyuyhscezm .gt_left {
   text-align: left;
 }
 
-#apiiwusphn .gt_center {
+#zyuyhscezm .gt_center {
   text-align: center;
 }
 
-#apiiwusphn .gt_right {
+#zyuyhscezm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#apiiwusphn .gt_font_normal {
+#zyuyhscezm .gt_font_normal {
   font-weight: normal;
 }
 
-#apiiwusphn .gt_font_bold {
+#zyuyhscezm .gt_font_bold {
   font-weight: bold;
 }
 
-#apiiwusphn .gt_font_italic {
+#zyuyhscezm .gt_font_italic {
   font-style: italic;
 }
 
-#apiiwusphn .gt_super {
+#zyuyhscezm .gt_super {
   font-size: 65%;
 }
 
-#apiiwusphn .gt_footnote_marks {
+#zyuyhscezm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#apiiwusphn .gt_asterisk {
+#zyuyhscezm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#apiiwusphn .gt_indent_1 {
+#zyuyhscezm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#apiiwusphn .gt_indent_2 {
+#zyuyhscezm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#apiiwusphn .gt_indent_3 {
+#zyuyhscezm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#apiiwusphn .gt_indent_4 {
+#zyuyhscezm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#apiiwusphn .gt_indent_5 {
+#zyuyhscezm .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 <table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead><tr class="header gt_col_headings">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="<strong>人間社会学域</strong>, N = 8<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
-<strong>人間社会学域</strong>, N = 8<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+<th id="<strong>人間社会学域</strong>, N = 3<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>人間社会学域</strong>, N = 3<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
 </th>
-<th id="<strong>医薬保健学域</strong>, N = 4<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
-<strong>医薬保健学域</strong>, N = 4<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+<th id="<strong>医薬保健学域</strong>, N = 3<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>医薬保健学域</strong>, N = 3<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
 </th>
-<th id="<strong>理工学域</strong>, N = 4<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
-<strong>理工学域</strong>, N = 4<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+<th id="<strong>理工学域</strong>, N = 3<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>理工学域</strong>, N = 3<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+</th>
+<th id="<strong>融合学域</strong>, N = 1<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>融合学域</strong>, N = 1<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
 </th>
 </tr></thead>
 <tbody class="gt_table_body">
@@ -1734,40 +2686,46 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="stat_1"><br></td>
 <td class="gt_row gt_center" headers="stat_2"><br></td>
 <td class="gt_row gt_center" headers="stat_3"><br></td>
+<td class="gt_row gt_center" headers="stat_4"><br></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
-<td class="gt_row gt_center" headers="stat_1">4 (50%)</td>
-<td class="gt_row gt_center" headers="stat_2">0 (0%)</td>
-<td class="gt_row gt_center" headers="stat_3">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1">1 (33%)</td>
+<td class="gt_row gt_center" headers="stat_2">1 (33%)</td>
+<td class="gt_row gt_center" headers="stat_3">1 (33%)</td>
+<td class="gt_row gt_center" headers="stat_4">0 (0%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
-<td class="gt_row gt_center" headers="stat_1">4 (50%)</td>
+<td class="gt_row gt_center" headers="stat_1">1 (33%)</td>
 <td class="gt_row gt_center" headers="stat_2">0 (0%)</td>
-<td class="gt_row gt_center" headers="stat_3">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_3">2 (67%)</td>
+<td class="gt_row gt_center" headers="stat_4">0 (0%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
-<td class="gt_row gt_center" headers="stat_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1">1 (33%)</td>
 <td class="gt_row gt_center" headers="stat_2">0 (0%)</td>
-<td class="gt_row gt_center" headers="stat_3">3 (75%)</td>
+<td class="gt_row gt_center" headers="stat_3">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_4">0 (0%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
 <td class="gt_row gt_center" headers="stat_1">0 (0%)</td>
 <td class="gt_row gt_center" headers="stat_2">0 (0%)</td>
-<td class="gt_row gt_center" headers="stat_3">1 (25%)</td>
+<td class="gt_row gt_center" headers="stat_3">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_4">1 (100%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
 <td class="gt_row gt_center" headers="stat_1">0 (0%)</td>
-<td class="gt_row gt_center" headers="stat_2">4 (100%)</td>
+<td class="gt_row gt_center" headers="stat_2">2 (67%)</td>
 <td class="gt_row gt_center" headers="stat_3">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_4">0 (0%)</td>
 </tr>
 </tbody>
 <tfoot class="gt_footnotes"><tr class="odd">
-<td colspan="4" class="gt_footnote">
+<td colspan="5" class="gt_footnote">
 <span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> n (%)</td>
 </tr></tfoot>
 </table>
@@ -1776,7 +2734,7 @@ div.csl-indent {
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
 <span><span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q1. パソコンのスキルに自信がありますか`</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span><span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span>  <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
@@ -1785,23 +2743,23 @@ div.csl-indent {
 <span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<div id="bbetdemcis" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bbetdemcis table {
+<div id="wgjylmqzkl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wgjylmqzkl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bbetdemcis thead, #bbetdemcis tbody, #bbetdemcis tfoot, #bbetdemcis tr, #bbetdemcis td, #bbetdemcis th {
+#wgjylmqzkl thead, #wgjylmqzkl tbody, #wgjylmqzkl tfoot, #wgjylmqzkl tr, #wgjylmqzkl td, #wgjylmqzkl th {
   border-style: none;
 }
 
-#bbetdemcis p {
+#wgjylmqzkl p {
   margin: 0;
   padding: 0;
 }
 
-#bbetdemcis .gt_table {
+#wgjylmqzkl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1827,12 +2785,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#bbetdemcis .gt_caption {
+#wgjylmqzkl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bbetdemcis .gt_title {
+#wgjylmqzkl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1844,7 +2802,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#bbetdemcis .gt_subtitle {
+#wgjylmqzkl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1856,7 +2814,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#bbetdemcis .gt_heading {
+#wgjylmqzkl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1868,13 +2826,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#bbetdemcis .gt_bottom_border {
+#wgjylmqzkl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bbetdemcis .gt_col_headings {
+#wgjylmqzkl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1889,7 +2847,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#bbetdemcis .gt_col_heading {
+#wgjylmqzkl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1909,7 +2867,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#bbetdemcis .gt_column_spanner_outer {
+#wgjylmqzkl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1921,15 +2879,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#bbetdemcis .gt_column_spanner_outer:first-child {
+#wgjylmqzkl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bbetdemcis .gt_column_spanner_outer:last-child {
+#wgjylmqzkl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bbetdemcis .gt_column_spanner {
+#wgjylmqzkl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1941,11 +2899,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#bbetdemcis .gt_spanner_row {
+#wgjylmqzkl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bbetdemcis .gt_group_heading {
+#wgjylmqzkl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1971,7 +2929,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#bbetdemcis .gt_empty_group_heading {
+#wgjylmqzkl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1986,15 +2944,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#bbetdemcis .gt_from_md > :first-child {
+#wgjylmqzkl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bbetdemcis .gt_from_md > :last-child {
+#wgjylmqzkl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bbetdemcis .gt_row {
+#wgjylmqzkl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2013,7 +2971,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#bbetdemcis .gt_stub {
+#wgjylmqzkl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2026,7 +2984,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#bbetdemcis .gt_stub_row_group {
+#wgjylmqzkl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2040,15 +2998,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#bbetdemcis .gt_row_group_first td {
+#wgjylmqzkl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bbetdemcis .gt_row_group_first th {
+#wgjylmqzkl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bbetdemcis .gt_summary_row {
+#wgjylmqzkl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2058,16 +3016,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#bbetdemcis .gt_first_summary_row {
+#wgjylmqzkl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bbetdemcis .gt_first_summary_row.thick {
+#wgjylmqzkl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bbetdemcis .gt_last_summary_row {
+#wgjylmqzkl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2077,7 +3035,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#bbetdemcis .gt_grand_summary_row {
+#wgjylmqzkl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2087,7 +3045,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#bbetdemcis .gt_first_grand_summary_row {
+#wgjylmqzkl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2097,7 +3055,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#bbetdemcis .gt_last_grand_summary_row_top {
+#wgjylmqzkl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2107,11 +3065,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#bbetdemcis .gt_striped {
+#wgjylmqzkl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bbetdemcis .gt_table_body {
+#wgjylmqzkl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2120,7 +3078,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#bbetdemcis .gt_footnotes {
+#wgjylmqzkl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2134,7 +3092,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#bbetdemcis .gt_footnote {
+#wgjylmqzkl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2143,7 +3101,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#bbetdemcis .gt_sourcenotes {
+#wgjylmqzkl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2157,7 +3115,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#bbetdemcis .gt_sourcenote {
+#wgjylmqzkl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2165,84 +3123,88 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#bbetdemcis .gt_left {
+#wgjylmqzkl .gt_left {
   text-align: left;
 }
 
-#bbetdemcis .gt_center {
+#wgjylmqzkl .gt_center {
   text-align: center;
 }
 
-#bbetdemcis .gt_right {
+#wgjylmqzkl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bbetdemcis .gt_font_normal {
+#wgjylmqzkl .gt_font_normal {
   font-weight: normal;
 }
 
-#bbetdemcis .gt_font_bold {
+#wgjylmqzkl .gt_font_bold {
   font-weight: bold;
 }
 
-#bbetdemcis .gt_font_italic {
+#wgjylmqzkl .gt_font_italic {
   font-style: italic;
 }
 
-#bbetdemcis .gt_super {
+#wgjylmqzkl .gt_super {
   font-size: 65%;
 }
 
-#bbetdemcis .gt_footnote_marks {
+#wgjylmqzkl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bbetdemcis .gt_asterisk {
+#wgjylmqzkl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bbetdemcis .gt_indent_1 {
+#wgjylmqzkl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bbetdemcis .gt_indent_2 {
+#wgjylmqzkl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bbetdemcis .gt_indent_3 {
+#wgjylmqzkl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bbetdemcis .gt_indent_4 {
+#wgjylmqzkl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bbetdemcis .gt_indent_5 {
+#wgjylmqzkl .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 <table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
 </colgroup>
 <thead><tr class="header gt_col_headings">
 <th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="<strong>人間社会学域</strong>, N = 8<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
-<strong>人間社会学域</strong>, N = 8<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+<th id="<strong>人間社会学域</strong>, N = 3<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>人間社会学域</strong>, N = 3<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
 </th>
-<th id="<strong>医薬保健学域</strong>, N = 4<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
-<strong>医薬保健学域</strong>, N = 4<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+<th id="<strong>医薬保健学域</strong>, N = 3<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>医薬保健学域</strong>, N = 3<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
 </th>
-<th id="<strong>理工学域</strong>, N = 4<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
-<strong>理工学域</strong>, N = 4<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+<th id="<strong>理工学域</strong>, N = 3<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>理工学域</strong>, N = 3<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+</th>
+<th id="<strong>融合学域</strong>, N = 1<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>融合学域</strong>, N = 1<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
 </th>
 <th id="<strong>p-value</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>2</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
 <strong>p-value</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span>
@@ -2254,51 +3216,57 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="stat_1"><br></td>
 <td class="gt_row gt_center" headers="stat_2"><br></td>
 <td class="gt_row gt_center" headers="stat_3"><br></td>
-<td class="gt_row gt_center" headers="p.value" style="font-weight: bold">&lt;0.001</td>
+<td class="gt_row gt_center" headers="stat_4"><br></td>
+<td class="gt_row gt_center" headers="p.value">0.4</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
-<td class="gt_row gt_center" headers="stat_1">4 (50%)</td>
-<td class="gt_row gt_center" headers="stat_2">0 (0%)</td>
-<td class="gt_row gt_center" headers="stat_3">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1">1 (33%)</td>
+<td class="gt_row gt_center" headers="stat_2">1 (33%)</td>
+<td class="gt_row gt_center" headers="stat_3">1 (33%)</td>
+<td class="gt_row gt_center" headers="stat_4">0 (0%)</td>
 <td class="gt_row gt_center" headers="p.value"><br></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
-<td class="gt_row gt_center" headers="stat_1">4 (50%)</td>
+<td class="gt_row gt_center" headers="stat_1">1 (33%)</td>
 <td class="gt_row gt_center" headers="stat_2">0 (0%)</td>
-<td class="gt_row gt_center" headers="stat_3">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_3">2 (67%)</td>
+<td class="gt_row gt_center" headers="stat_4">0 (0%)</td>
 <td class="gt_row gt_center" headers="p.value"><br></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
-<td class="gt_row gt_center" headers="stat_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1">1 (33%)</td>
 <td class="gt_row gt_center" headers="stat_2">0 (0%)</td>
-<td class="gt_row gt_center" headers="stat_3">3 (75%)</td>
+<td class="gt_row gt_center" headers="stat_3">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_4">0 (0%)</td>
 <td class="gt_row gt_center" headers="p.value"><br></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
 <td class="gt_row gt_center" headers="stat_1">0 (0%)</td>
 <td class="gt_row gt_center" headers="stat_2">0 (0%)</td>
-<td class="gt_row gt_center" headers="stat_3">1 (25%)</td>
+<td class="gt_row gt_center" headers="stat_3">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_4">1 (100%)</td>
 <td class="gt_row gt_center" headers="p.value"><br></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;5</td>
 <td class="gt_row gt_center" headers="stat_1">0 (0%)</td>
-<td class="gt_row gt_center" headers="stat_2">4 (100%)</td>
+<td class="gt_row gt_center" headers="stat_2">2 (67%)</td>
 <td class="gt_row gt_center" headers="stat_3">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_4">0 (0%)</td>
 <td class="gt_row gt_center" headers="p.value"><br></td>
 </tr>
 </tbody>
 <tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="5" class="gt_footnote">
+<td colspan="6" class="gt_footnote">
 <span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> n (%)</td>
 </tr>
 <tr class="even">
-<td colspan="5" class="gt_footnote">
+<td colspan="6" class="gt_footnote">
 <span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> Fisher’s exact test</td>
 </tr>
 </tfoot>
@@ -2488,7 +3456,7 @@ Tips | インデントの調整
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#パッケージの読み込み</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#パッケージの読み込み</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> <span class="co">#「モダンなデータ分析」を行うためのパッケージ群</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span> <span class="co">#可視化パッケージ</span></span>
 <span></span>
