@@ -173,8 +173,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#全般" id="toc-全般" class="nav-link active" data-scroll-target="#全般">全般</a></li>
   <li><a href="#基本" id="toc-基本" class="nav-link" data-scroll-target="#基本">基本</a></li>
   <li><a href="#ggplot" id="toc-ggplot" class="nav-link" data-scroll-target="#ggplot">ggplot</a></li>
-  <li><a href="#カラーパレット" id="toc-カラーパレット" class="nav-link" data-scroll-target="#カラーパレット">カラーパレット</a></li>
   <li><a href="#研究分野別" id="toc-研究分野別" class="nav-link" data-scroll-target="#研究分野別">研究分野別</a></li>
+  <li><a href="#データ入手" id="toc-データ入手" class="nav-link" data-scroll-target="#データ入手">データ入手</a></li>
   <li><a href="#出力方法" id="toc-出力方法" class="nav-link" data-scroll-target="#出力方法">出力方法</a></li>
   <li><a href="#マップ" id="toc-マップ" class="nav-link" data-scroll-target="#マップ">マップ</a></li>
   <li><a href="#テーブル" id="toc-テーブル" class="nav-link" data-scroll-target="#テーブル">テーブル</a></li>
@@ -208,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>以下のサイトは有益ですが､今となっては古い情報も交じっています。まずは指定の教科書をしっかりと理解することから始めましょう（教科書も古くなりますが､教科書内においては､相互に矛盾する記述はありません）</p>
+<p>以下のサイトは有益ですが､今となっては古い情報も交じっています。まずは指定の教科書をしっかりと理解することから始めましょう。いずれ教科書も古くなりますが､教科書内においては､相互に矛盾する記述はないため､理解しやすいです。</p>
 </div>
 </div>
 </div>
@@ -216,8 +216,10 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="全般">全般</h3>
 <ul>
 <li><a href="https://www.jaysong.net/RBook/">私たちのR：ベストプラクティスの探求</a></li>
+<li><a href="https://kts-research-blog.com/2022/04/21/実験データの解析はエクセルではなくrを使った方/">実験データの解析はエクセルではなくRを使った方がその研究は成功する</a></li>
 <li><a href="https://qiita.com/okiyuki99/items/df213e52ffefa88bb20d">R初学者からよく質問されること</a></li>
 <li><a href="https://statisticsglobe.com">Statistics Globe</a></li>
+<li><a href="https://jhudatascience.org/tidyversecourse/">Tidyverse Skills for Data Science</a> -<a href="https://cran.r-project.org/web/packages/pubh/vignettes/introduction.html">Introduction to the pubh package</a></li>
 </ul>
 </section>
 <section id="基本" class="level3">
@@ -229,41 +231,103 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="ggplot" class="level3">
 <h3 class="anchored" data-anchor-id="ggplot">ggplot</h3>
+<section id="ggplot-1" class="level4">
+<h4 class="anchored" data-anchor-id="ggplot-1">ggplot</h4>
 <ul>
 <li><a href="https://ggplot2.tidyverse.org">ggplot2(公式サイト)</a></li>
 <li><a href="https://yukiyanai.github.io/jp/classes/stat2/contents/R/intro-to-ggplot2.html">統計学2: ggplot2入門</a></li>
 <li><a href="https://izunyan.github.io/practice_ggplot2/">ggplot2の辞書</a></li>
 <li><a href="https://qiita.com/ocean_f/items/4d28b8707ff5c7b977e0">図から逆引きするgeom_*関数 (ggplot2)</a></li>
 <li><a href="https://qiita.com/ocean_f/items/52fcef259f06c503bd4a">ggplot2における 軸関連のコントロール～逆引き的ミニまとめ～</a></li>
+</ul>
+</section>
+<section id="アノテーション" class="level4">
+<h4 class="anchored" data-anchor-id="アノテーション">アノテーション</h4>
+<ul>
 <li><a href="https://ytknzw.github.io/TokyoR/ggplot2のアノテーション技法_TokyoR_20240224.pdf">ggplot2のアノテーション技法</a></li>
 <li><a href="https://mukkujohn.hatenablog.com/entry/2016/09/28/223957">ggplot2を使って、注釈を入れる-1</a></li>
 <li><a href="https://ggplot2.tidyverse.org/articles/faq-annotation.html">FAQ: Annotation</a></li>
 <li><a href="https://www.cararthompson.com/talks/rl-cambridge-beautifully-annotated/">Beautifully Annotated: Enhancing your ggplots with Text</a></li>
 </ul>
 </section>
-<section id="カラーパレット" class="level3">
-<h3 class="anchored" data-anchor-id="カラーパレット">カラーパレット</h3>
+<section id="カラーパレット" class="level4">
+<h4 class="anchored" data-anchor-id="カラーパレット">カラーパレット</h4>
 <ul>
 <li><a href="https://emilhvitfeldt.github.io/r-color-palettes/discrete/fishualize/Paracanthurus_hepatus/">fishualize - Paracanthurus_hepatus</a></li>
 <li><a href="https://emilhvitfeldt.github.io/r-color-palettes/">R Color Palettes</a></li>
 </ul>
 </section>
+</section>
 <section id="研究分野別" class="level3">
 <h3 class="anchored" data-anchor-id="研究分野別">研究分野別</h3>
+<section id="社会科学" class="level4">
+<h4 class="anchored" data-anchor-id="社会科学">社会科学</h4>
 <ul>
-<li><a href="https://epirhandbook.com/jp/index.html">疫学や公衆衛生に関わる業務のためのR</a></li>
-<li><a href="https://uchidamizuki.quarto.pub/blog/posts/2022/12/call-e-stat-api-in-r.html">Rで日本の統計データを効率的に取得しよう</a></li>
-<li><a href="https://icu-hsuzuki.github.io/ds4aj/estat.html">みんなのデータサイエンス：e-Stat</a></li>
+<li><a href="http://www.strengejacke.de/sjPlot/reference/index.html">sjPlot</a></li>
+<li><a href="https://ryotamugiyama.github.io/seminar_sociology_r/domain.html">社会学のデータ分析でよくある処理</a></li>
 <li><a href="http://www.ner.takushoku-u.ac.jp/masano/class_material/waseda/keiryo/R39_visualize_Election.html">総選挙データの可視化</a></li>
 <li><a href="https://quanteda.io/articles/pkgdown/examples/japanese_speech_ja.html">quanteda：衆議院外務委員会の議事録</a></li>
 <li><a href="https://ritsu1997.github.io/r-for-nlas-econometrics/">西山 他『計量経済学』のためのR</a></li>
 <li><a href="https://www.econometrics-with-r.org">Introduction to Econometrics with R</a></li>
-<li><a href="https://zenn.dev/shuntarosato/articles/0f2b780418cdee">医学統計でよく使うRパッケージ</a></li>
 <li><a href="https://juliasilge.com/blog/">Julia Silge</a></li>
-<li><a href="https://bob3.hatenablog.com/entry/2023/12/25/221810">bob3’s blog</a></li>
-<li><a href="https://jmsallan.netlify.app">The Jose M Sallan static website</a></li>
+</ul>
+</section>
+<section id="医学生物学" class="level4">
+<h4 class="anchored" data-anchor-id="医学生物学">医学・生物学</h4>
+<ul>
+<li><a href="https://epirhandbook.com/jp/index.html">疫学や公衆衛生に関わる業務のためのR</a></li>
+<li><a href="https://zenn.dev/shuntarosato/articles/0f2b780418cdee">医学統計でよく使うRパッケージ</a></li>
+<li><a href="https://www.slideshare.net/slideshow/r-seminar-on-igraph/16967510">Rtigraphではじめる生物ネットワーク解析</a></li>
+<li><a href="https://shiokoji11235.com/rna-seq-analysis-part2">【RNA-seq】RNA-seq解析を徹底的に解説！Part2<sub>発現変動解析(DEG解析)</sub></a></li>
+<li><a href="https://heavywatal.github.io/rstats/bioconductor.html">Bioconductor — Genomicデータ解析ツール群</a></li>
+</ul>
+</section>
+<section id="心理学" class="level4">
+<h4 class="anchored" data-anchor-id="心理学">心理学</h4>
+<ul>
+<li><a href="http://blue.zero.jp/yokumura/R.html">無料統計ソフトRで心理学</a></li>
+</ul>
+</section>
+<section id="気象学" class="level4">
+<h4 class="anchored" data-anchor-id="気象学">気象学</h4>
+<ul>
+<li><a href="https://towardsdatascience.com/democratizing-historical-weather-data-with-r-cc3c76dde7c5">Democratizing Historical Weather Data Analysis with R</a></li>
+<li><a href="https://uribo.hatenablog.com/entry/2020/04/20/232214">気象庁提供の潮位表、過去の気象データをRで読み込む</a></li>
+</ul>
+</section>
+<section id="スポーツ" class="level4">
+<h4 class="anchored" data-anchor-id="スポーツ">スポーツ</h4>
+<ul>
 <li><a href="https://medium.com/@danlarson_74954/using-the-r-and-the-tidyverse-to-analyze-joel-embiids-player-stats-efaf332d4836">Using the R and the Tidyverse to analyze Joel Embiid’s Player Stats</a></li>
 </ul>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>この他､専門分野ごとに多くの専門書が出版されています</p>
+</div>
+</div>
+</div>
+</section>
+<section id="ネットワーク分析" class="level4">
+<h4 class="anchored" data-anchor-id="ネットワーク分析">ネットワーク分析</h4>
+<ul>
+<li><a href="https://bob3.hatenablog.com/entry/2023/12/25/221810">bob3’s blog</a></li>
+<li><a href="https://jmsallan.netlify.app">The Jose M Sallan static website</a></li>
+</ul>
+</section>
+</section>
+<section id="データ入手" class="level3">
+<h3 class="anchored" data-anchor-id="データ入手">データ入手</h3>
+<section id="日本政府統計の総合窓口e-stat" class="level4">
+<h4 class="anchored" data-anchor-id="日本政府統計の総合窓口e-stat">日本政府統計の総合窓口（e-stat）</h4>
+<ul>
+<li><a href="https://uchidamizuki.quarto.pub/blog/posts/2022/12/call-e-stat-api-in-r.html">Rで日本の統計データを効率的に取得しよう</a></li>
+<li><a href="https://icu-hsuzuki.github.io/ds4aj/estat.html">みんなのデータサイエンス：e-Stat</a></li>
+</ul>
+</section>
 </section>
 <section id="出力方法" class="level3">
 <h3 class="anchored" data-anchor-id="出力方法">出力方法</h3>
@@ -273,6 +337,7 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://notchained.hatenablog.com/entry/2022/10/31/000354">.qmd を超お手軽完全無料パブリッシュできる Quarto Pub を使ってみる</a></li>
 <li><a href="https://quarto.org/docs/publishing/quarto-pub.html">Quarto Pub</a></li>
 <li><a href="https://www.marvinschmitt.com/blog/website-tutorial-quarto/">Create Your Website with Quarto</a></li>
+<li><a href="https://medium.com/@quinten./how-to-create-a-dashboard-using-quarto-f801265e7c1d">How to create a dashboard using Quarto</a></li>
 </ul>
 </section>
 <section id="マップ" class="level3">
@@ -283,6 +348,7 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://handsondataviz.org/leaflet-maps-with-csv.html">Leaflet Maps with CSV Data・公式サイト</a></li>
 <li><a href="https://github.com/fresques/ggmap/">ggmap・公式サイト</a></li>
 <li><a href="https://rcarto.github.io/user2019/#15">Thematic maps with cartography・公式サイト</a></li>
+<li><a href="https://uribo.hatenablog.com/entry/2018/12/16/084535">Rで国土地理院 基盤地図情報データを扱う</a></li>
 </ul>
 </section>
 <section id="テーブル" class="level3">
