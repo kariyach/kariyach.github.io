@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.550">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="苅谷 千尋">
-
 <title>CHIHIRO KARIYA - RとQuartoではじめるデータサイエンス 2024</title>
 <style>
 code{white-space: pre-wrap;}
@@ -22,7 +19,6 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -39,8 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -65,18 +60,16 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="../../style_ja.css">
+}</script><link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><link href="../../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="../../site_libs/leaflet-1.3.1/leaflet.js"></script><link href="../../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="../../site_libs/proj4-2.6.2/proj4.min.js"></script><script src="../../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script><link href="../../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="../../site_libs/leaflet-binding-2.2.2/leaflet.js"></script><link rel="stylesheet" href="../../style_ja.css">
 </head>
-
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">CHIHIRO KARIYA</span>
@@ -88,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
@@ -117,8 +110,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="mailto:kariyach@staff.kanazawa-u.ac.jp"> <i class="bi bi-envelope" role="img" aria-label="email">
 </i> 
 <span class="menu-text"></span></a>
@@ -139,15 +132,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス 2024</a></h1>
             <p class="subtitle lead">QRコード</p>
@@ -181,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">30, May, 2024</p>
+        <p class="date-modified">4, Jun, 2024</p>
       </div>
     </div>
       
@@ -192,29 +181,31 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#ウェブサイトトップページ" id="toc-ウェブサイトトップページ" class="nav-link active" data-scroll-target="#ウェブサイトトップページ">Ⅰ. ウェブサイト（トップページ）</a></li>
-  <li><a href="#提出物提出先" id="toc-提出物提出先" class="nav-link" data-scroll-target="#提出物提出先">Ⅱ. 提出物（提出先）</a>
+<li><a href="#%E3%82%A6%E3%82%A7%E3%83%96%E3%82%B5%E3%82%A4%E3%83%88%E3%83%88%E3%83%83%E3%83%97%E3%83%9A%E3%83%BC%E3%82%B8" id="toc-ウェブサイトトップページ" class="nav-link active" data-scroll-target="#%E3%82%A6%E3%82%A7%E3%83%96%E3%82%B5%E3%82%A4%E3%83%88%E3%83%88%E3%83%83%E3%83%97%E3%83%9A%E3%83%BC%E3%82%B8">Ⅰ. ウェブサイト（トップページ）</a></li>
+  <li>
+<a href="#%E6%8F%90%E5%87%BA%E7%89%A9%E6%8F%90%E5%87%BA%E5%85%88" id="toc-提出物提出先" class="nav-link" data-scroll-target="#%E6%8F%90%E5%87%BA%E7%89%A9%E6%8F%90%E5%87%BA%E5%85%88">Ⅱ. 提出物（提出先）</a>
   <ul class="collapse">
-  <li><a href="#授業の感想" id="toc-授業の感想" class="nav-link" data-scroll-target="#授業の感想">1. 授業の感想</a></li>
-  <li><a href="#演習" id="toc-演習" class="nav-link" data-scroll-target="#演習">2. 演習</a></li>
-  <li><a href="#メールアドレス" id="toc-メールアドレス" class="nav-link" data-scroll-target="#メールアドレス">3. メールアドレス</a></li>
-  </ul></li>
+<li><a href="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3" id="toc-授業の感想" class="nav-link" data-scroll-target="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3">1. 授業の感想</a></li>
+  <li><a href="#%E6%BC%94%E7%BF%92" id="toc-演習" class="nav-link" data-scroll-target="#%E6%BC%94%E7%BF%92">2. 演習</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="QRcode.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</li>
+  <li><a href="#%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9" id="toc-メールアドレス" class="nav-link" data-scroll-target="#%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9">Ⅲ. メールアドレス</a></li>
+  <li>
+<a href="#%E7%A0%94%E7%A9%B6%E5%AE%A4" id="toc-研究室" class="nav-link" data-scroll-target="#%E7%A0%94%E7%A9%B6%E5%AE%A4">Ⅳ. 研究室</a>
+  <ul class="collapse">
+<li><a href="#%E9%AB%98%E5%A4%A7%E6%8E%A5%E7%B6%9A%E3%82%B3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC" id="toc-高大接続コアセンター" class="nav-link" data-scroll-target="#%E9%AB%98%E5%A4%A7%E6%8E%A5%E7%B6%9A%E3%82%B3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC">高大接続コア・センター</a></li>
+  </ul>
+</li>
+  </ul><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="QRcode.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content"><div class="cell">
 
-
-
-
-
-<section id="ウェブサイトトップページ" class="level1">
-<h1>Ⅰ. ウェブサイト（トップページ）</h1>
+</div>
+<section id="ウェブサイトトップページ" class="level2"><h2 class="anchored" data-anchor-id="ウェブサイトトップページ">Ⅰ. ウェブサイト（トップページ）</h2>
 <p><img src="img/QR_トップページ.png" class="img-fluid" style="width:12.0%"></p>
 <ul>
 <li>https://kariyach.github.io/teaching/RandQuarto/</li>
@@ -229,18 +220,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-</section>
-<section id="提出物提出先" class="level1">
-<h1>Ⅱ. 提出物（提出先）</h1>
-<section id="授業の感想" class="level2">
-<h2 class="anchored" data-anchor-id="授業の感想">1. 授業の感想</h2>
+</section><section id="提出物提出先" class="level2"><h2 class="anchored" data-anchor-id="提出物提出先">Ⅱ. 提出物（提出先）</h2>
+<section id="授業の感想" class="level3"><h3 class="anchored" data-anchor-id="授業の感想">1. 授業の感想</h3>
 <p><img src="img/QR_授業の感想.png" class="img-fluid" style="width:12.0%"></p>
 <ul>
 <li>https://forms.gle/Rgu4bDgt11zLy3R8A</li>
-</ul>
-</section>
-<section id="演習" class="level2">
-<h2 class="anchored" data-anchor-id="演習">2. 演習</h2>
+</ul></section><section id="演習" class="level3"><h3 class="anchored" data-anchor-id="演習">2. 演習</h3>
 <p><img src="img/QR_演習.png" class="img-fluid" style="width:12.0%"></p>
 <ul>
 <li>https://forms.gle/VMjdbqBu1rbcLe9j9</li>
@@ -255,9 +240,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-</section>
-<section id="メールアドレス" class="level2">
-<h2 class="anchored" data-anchor-id="メールアドレス">3. メールアドレス</h2>
+</section></section><section id="メールアドレス" class="level2"><h2 class="anchored" data-anchor-id="メールアドレス">Ⅲ. メールアドレス</h2>
 <p><img src="img/QR_メールアドレス.png" class="img-fluid" style="width:12.0%"></p>
 <ul>
 <li>kariyach@staff.kanazawa-u.ac.jp</li>
@@ -272,13 +255,20 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+</section><section id="研究室" class="level2"><h2 class="anchored" data-anchor-id="研究室">Ⅳ. 研究室</h2>
+<section id="高大接続コアセンター" class="level3"><h3 class="anchored" data-anchor-id="高大接続コアセンター">高大接続コア・センター</h3>
+<ul>
+<li>インキュベーション施設（新学術創成研究機構） 3F</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-fd73e29aa027b815aaa1" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-fd73e29aa027b815aaa1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[36.54517,136.70847,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"高大接続コア・センター",null,null,null,"高大接続コア・センター",{"interactive":false,"permanent":true,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[36.54517,136.70847],17,[]],"limits":{"lat":[36.54517,36.54517],"lng":[136.70847,136.70847]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -686,8 +676,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p><span class="faux-block">© 2024 CHIHIRO KARIYA</span></p>
 </div>   
@@ -699,8 +688,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-
-
 
 
 </body></html>
