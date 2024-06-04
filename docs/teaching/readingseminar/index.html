@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="苅谷 千尋">
+
+<title>Reading Seminar</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/favicon-16x16.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../style_ja.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">CHIHIRO KARIYA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects/index.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/index.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../events/index.html"> 
+<span class="menu-text">Events</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv/index.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../address/index.html"> 
+<span class="menu-text">Address</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:kariyach@staff.kanazawa-u.ac.jp"> <i class="bi bi-envelope" role="img" aria-label="email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://orcid.org/0009-0008-3085-947X"> <i class="bi bi-info-circle" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/kariyach"> <i class="bi bi-github" role="img" aria-label="github">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">金沢大学 高大接続プログラム：リーディングセミナー</h1>
+            <p class="subtitle lead">Reading Seminar for Articulating High School and University Studies in Kanazawa University</p>
+                      </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">苅谷 千尋, PhD <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              金沢大学 高大接続コア・センター
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">1, Apr, 2024</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">4, Jun, 2024</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#開催趣旨" id="toc-開催趣旨" class="nav-link active" data-scroll-target="#開催趣旨">Ⅰ. 開催趣旨</a></li>
+  <li><a href="#今後の開催予定" id="toc-今後の開催予定" class="nav-link" data-scroll-target="#今後の開催予定">Ⅱ. 今後の開催予定</a>
+  <ul class="collapse">
+  <li><a href="#年夏" id="toc-年夏" class="nav-link" data-scroll-target="#年夏">1. 2024年夏</a></li>
+  <li><a href="#年春" id="toc-年春" class="nav-link" data-scroll-target="#年春">2. 2025年春</a></li>
+  </ul></li>
+  <li><a href="#過去の開催金沢大学ニュース掲載" id="toc-過去の開催金沢大学ニュース掲載" class="nav-link" data-scroll-target="#過去の開催金沢大学ニュース掲載">Ⅲ. 過去の開催（金沢大学「ニュース」掲載）</a></li>
+  <li><a href="#これまでの紹介文" id="toc-これまでの紹介文" class="nav-link" data-scroll-target="#これまでの紹介文">Ⅳ. これまでの紹介文</a>
+  <ul class="collapse">
+  <li><a href="#川嶋みどり看護の力" id="toc-川嶋みどり看護の力" class="nav-link" data-scroll-target="#川嶋みどり看護の力">9. 川嶋みどり『看護の力』</a></li>
+  <li><a href="#中川毅人類と気候の10万年史" id="toc-中川毅人類と気候の10万年史" class="nav-link" data-scroll-target="#中川毅人類と気候の10万年史">8. 中川毅『人類と気候の10万年史』</a></li>
+  <li><a href="#伊藤亜聖デジタル化する新興国" id="toc-伊藤亜聖デジタル化する新興国" class="nav-link" data-scroll-target="#伊藤亜聖デジタル化する新興国">7. 伊藤亜聖『デジタル化する新興国』</a></li>
+  <li><a href="#塚崎朝子世界を救った日本の薬" id="toc-塚崎朝子世界を救った日本の薬" class="nav-link" data-scroll-target="#塚崎朝子世界を救った日本の薬">6. 塚崎朝子『世界を救った日本の薬』</a></li>
+  <li><a href="#山口慎太郎家族の幸せの経済学" id="toc-山口慎太郎家族の幸せの経済学" class="nav-link" data-scroll-target="#山口慎太郎家族の幸せの経済学">4. 山口慎太郎『「家族の幸せ」の経済学』</a></li>
+  <li><a href="#大栗博司探究する精神職業としての基礎科学" id="toc-大栗博司探究する精神職業としての基礎科学" class="nav-link" data-scroll-target="#大栗博司探究する精神職業としての基礎科学">3. 大栗博司『探究する精神：職業としての基礎科学』</a></li>
+  <li><a href="#梨木香歩ほんとうのリーダーのみつけかた-増補版" id="toc-梨木香歩ほんとうのリーダーのみつけかた-増補版" class="nav-link" data-scroll-target="#梨木香歩ほんとうのリーダーのみつけかた-増補版">2. 梨木香歩『ほんとうのリーダーのみつけかた 増補版』</a></li>
+  <li><a href="#本田由紀日本ってどんな国国際比較データで社会が見えてくる" id="toc-本田由紀日本ってどんな国国際比較データで社会が見えてくる" class="nav-link" data-scroll-target="#本田由紀日本ってどんな国国際比較データで社会が見えてくる">1. 本田由紀『「日本」ってどんな国？：国際比較データで社会が見えてくる』</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="開催趣旨" class="level1">
+<h1>Ⅰ. 開催趣旨</h1>
+<p>リーディングセミナーでは、近年、⼤学界隈において話題の、⾼校⽣向けに書かれた(または⾼校⽣にも考えて欲しい)、新書や⽂庫を1冊、取り上げ、参加者で読書体験を共有します。</p>
+<p>参加者間で、重要だと思った点、疑問に感じた点、⾯⽩いと思った点などについて意⾒交換したうえで、本書の紹介⽂を作成します。これらを通して、テキスト、そしてその学問的背景についての理解を深めます。ひとりの読書もいいですが、読書体験を共有する楽しさを、ぜひ、感じ取って下さい。参加に当たり、事前にテキストを読み、簡単な課題に答えてもらいます。</p>
+<p>⼤学の授業（特に、ゼミナール形式で開かれるもの）では、このように1冊のテキストを読み合い、議論する（輪読する）ことがあります。⼤学らしい学びをいち早く体験してみませんか。</p>
+</section>
+<section id="今後の開催予定" class="level1">
+<h1>Ⅱ. 今後の開催予定</h1>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>KUGS高大接続プログラム「ポータルサイト：マイページ」内の「カレンダー」からお申し込みください。</p>
+</div>
+</div>
+</div>
+<section id="年夏" class="level2">
+<h2 class="anchored" data-anchor-id="年夏">1. 2024年夏</h2>
+<ul>
+<li><p>第10回リーディングセミナー：Jose. 川島良彰ら『コーヒーで読み解くSDGs』（ポプラ新書、2023年）</p>
+<blockquote class="blockquote">
+<p>SDGsは、環境、経済、社会に関わる17の目標を掲げていますが、それらの目標は、コーヒー業界がSDGs以前から取り組んできた課題の縮図でもあります。大学教授、国際NGOの元職員、コーヒーハンターという3人の著者がコーヒーを通してSDGsを紐解き、解説していくことで、誰もがコーヒーを通じてSDGsに貢献できることに気付く。コーヒーを通してSDGsの理解を深められるこれまでにない一冊。（<a href="https://www.poplar.co.jp/book/search/result/archive/8201235.html">公式サイト</a>）</p>
+</blockquote></li>
+<li><p>第11回リーディングセミナー：2. 和泉悠『悪口ってなんだろう』（ちくまプリマー新書、2023）</p>
+<blockquote class="blockquote">
+<p>悪口とは何か？悪口と軽口や冗談は何が違うのだろうか？まっとうな批判とは何が違うのだろうか？どうして「タコ」とか「ザコ」とか他の生き物を指すことばで悪口を言うのだろうか？どうして悪口を言うのは楽しいのだろうか？悪口はなくならないのだろうか？こうした問いに答え、悪口を通じて人間の本質に迫る。（<a href="https://www.chikumashobo.co.jp/product/9784480684592/">公式サイト</a>）</p>
+</blockquote></li>
+</ul>
+</section>
+<section id="年春" class="level2">
+<h2 class="anchored" data-anchor-id="年春">2. 2025年春</h2>
+<ul>
+<li><p>第12回リーディングセミナー：岡西政典『生物を分けると世界が分かる』（講談社ブルーバックス、2022）</p>
+<blockquote class="blockquote">
+<p>地球上で年間１万種もの生物が絶滅しているという。その多くは、人類に認識すらされる前に姿を消していっている。つまり私たちは、まだこの地球のことをこれっぽっちも分かっていない。それどころか、「分かっていないことすらも分かっていない」のである。だが、分類学を学ぶことで、この地球の見え方は確実に変わる。奇妙な海洋生物・クモヒトデに魅せられ、分類学に取りつかれた若き分類学者が描き出す、新しい分類学の世界。（<a href="https://bookclub.kodansha.co.jp/product?item=0000368300">公式サイト</a>）</p>
+</blockquote></li>
+<li><p>第13回リーディングセミナー：小野寺拓也・田野大輔 『検証 ナチスは「良いこと」もしたのか？』（岩波ブックレット、2023）</p>
+<blockquote class="blockquote">
+<p>「ナチスは良いこともした」という言説は、国内外で定期的に議論の的になり続けている。アウトバーンを建設した、失業率を低下させた、福祉政策を行った――功績とされがちな事象をとりあげ、ナチズム研究の蓄積をもとに事実性や文脈を検証。歴史修正主義が影響力を持つなか、多角的な視点で歴史を考察することの大切さを訴える。（<a href="https://www.iwanami.co.jp/book/b628046.html">公式サイト</a>）</p>
+</blockquote></li>
+</ul>
+</section>
+</section>
+<section id="過去の開催金沢大学ニュース掲載" class="level1">
+<h1>Ⅲ. 過去の開催（金沢大学「ニュース」掲載）</h1>
+<ul>
+<li><a href="https://www.kanazawa-u.ac.jp/news/143808/">第7・8・9回リーディングセミナー（2024年春）</a></li>
+<li><a href="https://www.kanazawa-u.ac.jp/news/129228">第4・6回リーディングセミナー（2023年夏）</a></li>
+<li><a href="https://www.kanazawa-u.ac.jp/news/122670">第2・3回リーディングセミナー（2023年春）</a></li>
+<li><a href="https://www.kanazawa-u.ac.jp/news/108967">第1回リーディングセミナー（2022年夏）</a></li>
+</ul>
+</section>
+<section id="これまでの紹介文" class="level1">
+<h1>Ⅳ. これまでの紹介文</h1>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>以下の紹介文は受講生が合作したものです</p>
+</div>
+</div>
+</div>
+<section id="川嶋みどり看護の力" class="level2">
+<h2 class="anchored" data-anchor-id="川嶋みどり看護の力">9. 川嶋みどり『看護の力』</h2>
+<blockquote class="blockquote">
+<p><strong>紹介文</strong>：皆さんは看護師と聞いて、医師のアシスタントというイメージをもったことはないだろうか。川嶋みどり著『看護の力』は、看護および広く医療業界を目指す学生はもちろん、医療を受ける可能性のある人であれば、誰が読んでも、看護師という仕事の真髄を正しく理解する助けとなる良書である。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>著者は実際の患者の例を挙げながら、看護のもつ本当の力について説く。看護師の仕事は、診療の補助に限らず、患者の自然治癒力を引き出すことにある。そのために看護師は、手で触れあい、よく観察して、患者が人間らしい生活をすることを整える必要がある、という。そのような看護を阻害するものは何か｡著者は、看護現場の慢性的な人手不足を問題視する｡人間本来の自然に治る力に看護師が働きかけるためには、人間らしいケアの可能な医療現場を目指して、看護師が働く条件を整える努力が必要だ｡したがって著者は、機械や市場原理に振り回され気味な現在の医療システムに異を唱える。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>本書が説得力をもつのは、最先端の医学よりも目の前の患者にかかわる豊富なエピソード、事例が紹介されているからだ｡たとえば、医師に脳が死んでいて、意識は戻らないと宣告された患者の例が挙げられている｡このような患者に対して、ある看護師は毎日欠かさずケアをしたという｡彼女のケアによって45日後に意識が回復し、社会に復帰できた。著者はこのエピソードから「医師の宣告に左右されて早々と諦めるのではなく、最後までその人の命の可能性を信じてケアをすること」が大切であるという教訓を語る｡脊髄の悪性腫瘍がある少女の垢を取り続けた看護の例も感動的だ｡このような看護の目的は患者を清潔に保つということだけではない｡呼吸をする、ご飯を食べる、排泄する、動く、止まるなど、私たちが当たり前にしていることこそが、私たちの命を守っていることを思い出させてくれる｡読者は、このような記述から、看護師が患者に親身に寄り添うことで助かる命、生きる希望があること知るだろう｡</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>本書を読んで教えられ、また考えたことは、看護は看護師だけの特権でなく、私たちの普段の会話、動作なども看護である、ということだ｡看護師に限らず私たちも、著者のいう「治る医療」を日常生活でも行えるのだ｡とはいえ、このような「治る医療」を実践するには、川嶋のような看護経験豊富な者の声に耳を傾ける必要がある｡だからこそ、看護師という職業が、決して医師の従属部ではなく、患者に寄り添う誇りある、独立した仕事であることを本書は実感させてくれるのである｡</p>
+</blockquote>
+</section>
+<section id="中川毅人類と気候の10万年史" class="level2">
+<h2 class="anchored" data-anchor-id="中川毅人類と気候の10万年史">8. 中川毅『人類と気候の10万年史』</h2>
+<blockquote class="blockquote">
+<p><strong>紹介文</strong>：近年、地球では大規模な気候変動が起きている。そのため私たちは、地球の歴史をもとに気候変動の傾向を掴み、今後の環境を守るために行動をする必要がある。地質学者・中川毅による『人類と気候の10万年史』は、この点について考える格好のヒントになる｡</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>この本には専門用語も交じっているため、内容を理解することは難しいかもしれない｡だが、温暖化は全世界の人々に関わることなのだから、全世界の人びとに、自分たちの住む地球に対して新しい見方をもつために、是非一度、本書を読んで欲しい｡また、本書には、地理で習うケッペンの気候区分、地学基礎で出てきた先カンブリア時代の地球の姿や地軸の傾きにより季節が生まれること、生物基礎で習う針葉樹林、照葉樹林など日本の森林分布など学校の授業と関連する部分もある｡このため、これらの授業を受けている高校生なら、わりと読みやすいだろう。加えて、このような授業を履修していない者であっても、未来の地球を守る高校生は、地球がどのような過去をたどり、どのような未来を描いていくのかを知るために、本書を読む必要があるだろう。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>著者によると、福井県にある水月湖には7万年分もの年縞がきれいに溜まっている。これは世界的に見ても珍しく貴重であると同時に、地球の過去を知る上で重要な役割を担っている。その年縞に付着していた花粉をもとに過去を見てみると、水月湖周辺は今の西日本を中心に広がる照葉樹が林立したり、北海道やロシアなどを中心に広がる針葉樹が林立したりと大きく気候変動していたことがわかる。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>筆者は、人は、一般に、提示された学説が「『本当らしく』見える」という。私たちは提示される説を鵜呑みにするのではなく、自分なりの意見をもち、どのような対策が妥当かを考えなければならない。たとえば農業には意外な一面があることを知っているだろうか。農業はとても環境に優しい産業だと一般に思われている。しかし、実際には自然に抗った非常に不安定なものだった。農業には植物としての多様性が欠けていて、多少の気温のズレですぐにだめになってしまう。そのため、気候のズレで受ける影響の少ない狩猟採集にも手を打つ必要が出てくるかもしれない。本書にはこの他にも、今までの知識や常識とは全く違う新たな視点で書かれた箇所が多くある。きっと多くの読者にとっても驚きがあるに違いない。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>本書の読者は、ここ数年よくニュースで取り上げられ、問題となっている地球温暖化について、10万年という長い期間で見ることで、今までとは違う印象をもつはずだ。ニュースなどでは100年単位などのグラフを使って、今の異常な温暖化ぶりを浮き彫りにしているが、この本では地球の今までの気候変動の歴史から今がどういう時代か、本来はどうであるべきなのかをグラフとともに読み解くことができて面白い。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>筆者は近年の温暖化という不測の事態を地球の歴史をもとに傾向を掴み、知恵を働かせ、これからの地球のためにどのような行動が必要か考えるべきだと主張している。私たち高校生は、これからの社会を様々な方向から支えることを求められる世代だからこそ、気候変動について新たな見方をもち、温暖化だけでなく色々な地球問題について考え直すべきだろう。</p>
+</blockquote>
+</section>
+<section id="伊藤亜聖デジタル化する新興国" class="level2">
+<h2 class="anchored" data-anchor-id="伊藤亜聖デジタル化する新興国">7. 伊藤亜聖『デジタル化する新興国』</h2>
+<blockquote class="blockquote">
+<p><strong>紹介文</strong>：『デジタル化する新興国』（経済学者・伊藤亜聖）は、何気なくスマートフォンを使っている高校生にこそ読んでほしい一冊である。通常、デジタル化が論じられる際、その対象は先進国だが、著者が目をつけるのは、忘れられがちな新興国である｡著者は、様々なデータや資料に基づいて、デジタル化によってもたらされる可能性、脆弱性のどちらにおいても、実は、先進国よりも新興国の方がより大きいことを示す｡またデジタル化は、人工知能（AI）技術や通信システムなど、好意的に紹介されることが多い｡そのため、デジタル化によって生活が便利になるような印象をもつ人が多いだろう｡しかし著者はその危険性を論じることを忘れていない｡</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>新興国は、いま、工業化とデジタル化という二つのフェーズにある。前者のフェーズにおいては、新興国は先進国で開発された技術を用いて加工し、それを輸出するだけである｡だが後者のフェーズでは、広大な現地市場という利点を背景に、新興国自身が活躍の担い手となることで、新興国こそ、新たなデジタル技術を用いたサービスの苗床になっているのである｡</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>本書の後半部分まで、日本について書かれていないことに驚いた｡本書で紹介される新興国の斬新なアイデアを読むと、日本はデジタル社会に乗り遅れているのではないかと心配になる｡日本は先進国であると思っている人には衝撃的な内容だろう。現在の国際情勢はめまぐるしく移り変わっているが、特に、デジタル分野においては「先進国」と「それ以外」で分けられるほど単純なものではない。徐々に力をつけるデジタル新興国に、日本はどれだけ協調し、学びを得られるのだろうか。考えていくのは他の誰でもない私たちだ。日本は先進工業国と課題先進国という二つの立場から、新興国と途上国の架け橋となるべきだろう。</p>
+</blockquote>
+</section>
+<section id="塚崎朝子世界を救った日本の薬" class="level2">
+<h2 class="anchored" data-anchor-id="塚崎朝子世界を救った日本の薬">6. 塚崎朝子『世界を救った日本の薬』</h2>
+<blockquote class="blockquote">
+<p><strong>紹介文</strong>：本書は題名の通り日本発の画期的な新薬がどのように生まれたのかその舞台裏を紹介する一冊である。医学や薬学に興味をもっている人はもちろん部活動や趣味に打ち込んでいる人にも手に取って欲しい。というのは後にも触れる通り強い意志を伴う努力が実を結ぶことを本書は教えてくれるからである。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>本書のメッセージはイベルメクチンを発明した大村智氏の言葉「幸運は強い意志を好む」という一文に集約されている。創薬は確率の世界だが決して偶然の産物ではない。意志努力発想力工夫が幸運を味方につけるのである。たとえば本書には癌の画期的な治療薬を開発した本庶佑氏という医師が登場する。これまで癌を薬で治療するのは困難であったが本庶の諦めない心と研究心が幸運を呼び新たな薬に最適な分子の発見に繋がった。このように強い意志は時に運をも味方につけ世界を変える発見や発明を可能にすることを読者に示しているのである。また大村氏は通勤時の日課としてスプーン一杯の土を採取することを続けたが有望な新規物質はほとんど見つからなかった。だが彼はそこで諦めない。彼はついにゴルフ場から採取した土にイベルメクチンにつながる放線菌を発見したのだった。このように強い意志があってはじめて幸運を味方につけることができる。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>これらの事例は創薬のみに当てはまるわけではないだろう。部活動や趣味においても好奇心を大切にして、好きなものを突き詰めていくことで奇跡のような成功が得られることを本書から学んで欲しい。</p>
+</blockquote>
+</section>
+<section id="山口慎太郎家族の幸せの経済学" class="level2">
+<h2 class="anchored" data-anchor-id="山口慎太郎家族の幸せの経済学">4. 山口慎太郎『「家族の幸せ」の経済学』</h2>
+<blockquote class="blockquote">
+<p><strong>紹介文</strong>：あなたは帝王切開なんてだめ、赤ちゃんには母乳が一番、子どもが三才になるまではお母さんが尽きっきりで子育てをしないとダメ、などといった偏見やうわさ話を耳にしたことがあるだろうか。 　本書は、こういった事柄をデータや研究を通して、科学的に説明している。また、筆者は人間の行動を理解し、幸せにつなげるための枠組みである経済学を通して、事案について考え、家族の幸せというものの真実をとらえようとしている。本書は、家族の成立から子育てまで各分野について章立てされ、データや科学的根拠を基に「幸せとは何か」を問うている。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>客観的な視点から著されているため、現時点で自分の家庭を持っていない高校生が、本書を読み進めながら、理想の家庭像を考えられるところが良い。また、子育ての経験がない高校生であってもデータから納得できる点が多い点も、本書のよい点である。もちろん、結婚していて子供がいない夫婦や結婚する予定のある人たちにとっても、本書は良書である。というのは、子育ての方針や家族のあり方を、決めておくことで子供が産まれた後などで意見の違いから二人の関係が悪くなるのが減ると思われるからだ。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>物事と向き合う時は「事実」と「神話」を見分けることが大事だということを、本書は伝えている。データ分析などの結果には大きな説得力があるのだ。データ分析にはこのような利点があるが、近年、日本の研究のデータ不足と質の低下のため、適切な統計調査が難しくなっていると著者は言う。「調査を依頼されるようなことがあれば、ぜひ、協力して欲しい」という著者のメッセージに応えていきたい。</p>
+</blockquote>
+</section>
+<section id="大栗博司探究する精神職業としての基礎科学" class="level2">
+<h2 class="anchored" data-anchor-id="大栗博司探究する精神職業としての基礎科学">3. 大栗博司『探究する精神：職業としての基礎科学』</h2>
+<blockquote class="blockquote">
+<p><strong>紹介文</strong>：本書は、物理学（素粒子論）を研究する世界レベルの研究者である大栗博司の手による自伝的著作である。自分は文系人間、理系人間と、自分で枠をはめてはいないだろうか。この本は、文理の垣根を疑い、それを超えようとする高校生や、自分の専門分野以外にも目を向け、自分の知見を増やすことで、いずれ社会に貢献したいと思っている高校生にとって、良きガイドブックになるだろう。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>本書は、自分の好奇心や探究心にしたがって、好きなものを突き詰め、自由に研究していると、いずれ社会の役に立つ研究となることを教えてくれる。著者は研究に対して真剣でありながらも、とても楽しそうである。未知の研究を真剣に楽しむことで、幅広いものに応用できる価値ある研究につながる。価値ある発見や新しい視点は、一見、関係のないことの融合によって生まれることを、著者は自らの経験を通して、読者に説得的に語りかける。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>本書の読みどころは、著者の強い好奇心と探究心を感じられるところだ。本書の第一部では、著者が影響を受けた本や考え方が書かれている。著者の専門は物理学なのだが、読んだ本は物理学や化学にとどまらず、数学や哲学、文学作品なども多い。一見、科学とは無関係に見えるこれらが、後半の第二部、第三部で著者の研究人生を振り返った時、意外なところで役に立っている。また、著者が物理学を志すことになったきっかけであり、研究人生を支えてきたのも、小学生の頃からの好奇心だ。まさに題名の通り、著者の人生は探究する精神によって作られてきた。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>本書が教えてくれることは、興味を持ったことを突き詰める楽しさと幅広い知識の大切さだ。強い好奇心と探究心があってこそ、学問も知識も極められるのだ。進路選択の岐路に立つ高校生のうちに、ぜひ、本書を読み、好奇心と探究心の凄さや素晴らしさ、そして大切さを体験してほしい。</p>
+</blockquote>
+</section>
+<section id="梨木香歩ほんとうのリーダーのみつけかた-増補版" class="level2">
+<h2 class="anchored" data-anchor-id="梨木香歩ほんとうのリーダーのみつけかた-増補版">2. 梨木香歩『ほんとうのリーダーのみつけかた 増補版』</h2>
+<blockquote class="blockquote">
+<p><strong>紹介文</strong>：周りに流され、自分が本当に思っていることにフタをした経験を、誰もがもっているだろう。また、同調圧力により、自分の良心とは違う意見を認めてしまったこともあるかもしれない。本書は、そのような経験をもつ、あるいはそのようなことを考えたことがある若者への、著者（梨木香歩）からのメッセージである。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>「ほんとうのリーダー」はどこにいるのだろうか？タイトルを手がかりに読み進めると、意外にも著者は、本当のリーダーは、他の誰でもなく自分自身であると説く。自分の中のリーダーを見つけ、育て上げ、「自分で構成された群れ」を形成することが、自らの個性を大事にしていることに繋がる。そのためには同調圧力に促されない、即ち周りに流されずに自分自身で考えることをやめないこと、自分を客観視すること、感じた疑問や怒りを素直に認めて周りに発信することが、自分を強くする上で大切なのだと著者は言う。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>人々はいつも「群れ」を形成したがる。著者は、その例示に「テレビの実験」を挙げ、人々が、絶対的にみんなと自分の意見が違っても、同調圧力、つまり周りに流され、自分の意見を殺してしまう、弱い存在であることを認める。その上で本書は、このような傾向にあらがう術として、先に触れたように「ほんとうのリーダーは自分の中にいる」ことを教えるのである。著者は、歴史的な事例や哲学者の言葉だけでなく、テニススポーツの事例などのわかりやすい例も挙げている。そのため、本書はとても読みやすく、考えるために立ち止まり、自分自身の経験を振り返りながら、読み返すことのできる一冊になっている。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>本書で繰り返し説かれる、同調圧力や「群れの一員としての幸せ」といった問題は、現代の政治問題に通じるのみならず、私たち高校生にとっても身近なSNSにも当てはまるだろう。また、本書は、日本人に今まさに求められている力が的確に示されている。今の日本社会にある同調圧力という現象は、個人の意見を蔑ろにするものだ。だから、私たちは自分の疑問を受け止め、発信していく必要がある。例えば、選挙で投票するときには周りの意見を鵜呑みにせず、本書を手がかりとしながら、自分の判断で選ぶようにしたい。また自分の意見を発信しつつも、それが正しいと決めつけずに、他者との考えの違いも理解することも大切だろう。本書から得られる教訓は、人生のターニングポイントにある高校生にとって、とても大きいものだ。</p>
+</blockquote>
+</section>
+<section id="本田由紀日本ってどんな国国際比較データで社会が見えてくる" class="level2">
+<h2 class="anchored" data-anchor-id="本田由紀日本ってどんな国国際比較データで社会が見えてくる">1. 本田由紀『「日本」ってどんな国？：国際比較データで社会が見えてくる』</h2>
+<blockquote class="blockquote">
+<p><strong>紹介文</strong>：世界情勢が大きく変動しつつある今、日本を各国と比較することで物事の本質を掴み理解することが求められている。本書は、データと考えをもとに各国と比較して日本の実態を炙り出し、日本の⺠主主義の問題に目を背けず、どのようにしたらそれらが解決できるのかを問いかける。また、本書は、家族やジェンダー、社会運動などのテーマ別に問題を取り上げ、グラフと共に解説がなされているため、興味がある分野ごとに読み易い構造になっており、現代社会に問題意識を持つ若者に是非オススメしたい。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>例えば、第4章において、筆者は、若者の友達は学校内など限られた空間で通用する、後に関係が失われてしまうことの多いものだと述べている。しかしその後の文中で、「我が国と諸外国の若者の意識に関する調査」の結果から、悩み事や心配事の相談相手として友達を挙げる割合が多く、一方で、家族を挙げる割合が少ないため、友達の存在感が強くなっているとも述べている。家族よりも友達に相談する方が多い理由は、友達は将来までつながっている可能性が低いから、逆に相談しやすいのかもしれない。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>また著者は、他国と比べてみたとき、日本の授業の特徴を「演劇」と表現しているが、これは納得できる。確かに、日本の生徒たちは授業を聞くことに徹しており、発言を自由に伸び伸びと行わない。また、教師に対し答えを発言することはあっても、それはクラス全体の自由なディスカッションではない。このような授業風景から、初めから教師と生徒の間で取り決められた格式ばった台本通りに授業が進んでいるように思われるからだ。これでは、学力を養うことはできても、人間力、生きる力を養うことはできない。なんでもできる大人にとって都合のいいすごい人になることを強要するのは勝手だということを反省するべき、と著者は言う。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>これから高校生が踏み出していく社会は、予めイメージが植え付けられたものが多いはずだ。だからこそ、まだその事実もイメージも、あるべき姿もわからないであろう若者が、新たな視点を持って社会と関わっていくべきだろう。グローバル化が十分に進み、海外に移住することも不可能では無い現在、日本が変わらなければ、より良い環境が整った海外諸国に出ていってしまう若者が増える可能性がある。それを防がなければ日本はさらに没落していくはずだ。その可能性を少しでも下げるために、今こそ、日本の若者は、個人としての意見をもち、著者が期待するように、SNSなどのツールを用いて発信し、社会を変えていく力が自分たちにあることに気付くべきだろう。</p>
+</blockquote>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/kariyach\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block">© 2024 CHIHIRO KARIYA</span></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
