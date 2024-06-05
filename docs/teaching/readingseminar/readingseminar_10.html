@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>CHIHIRO KARIYA - Reading Seminar: Summer 2024</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/favicon-16x16.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><link href="../../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="../../site_libs/leaflet-1.3.1/leaflet.js"></script><link href="../../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="../../site_libs/proj4-2.6.2/proj4.min.js"></script><script src="../../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script><link href="../../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="../../site_libs/leaflet-binding-2.2.2/leaflet.js"></script><link rel="stylesheet" href="../../style_ja.css">
+</head>
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">CHIHIRO KARIYA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../projects/index.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/index.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../events/index.html"> 
+<span class="menu-text">Events</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv/index.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../address/index.html"> 
+<span class="menu-text">Address</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
+    <a class="nav-link" href="mailto:kariyach@staff.kanazawa-u.ac.jp"> <i class="bi bi-envelope" role="img" aria-label="email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://orcid.org/0009-0008-3085-947X"> <i class="bi bi-info-circle" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/kariyach"> <i class="bi bi-github" role="img" aria-label="github">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+</div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
+   
+  <ul>
+<li>
+<a href="#jose.-%E5%B7%9D%E5%B3%B6%E8%89%AF%E5%BD%B0%E3%82%89%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E3%81%A7%E8%AA%AD%E3%81%BF%E8%A7%A3%E3%81%8Fsdgs%E3%83%9D%E3%83%97%E3%83%A9%E6%96%B0%E6%9B%B82023%E5%B9%B4" id="toc-jose.-川島良彰らコーヒーで読み解くsdgsポプラ新書2023年" class="nav-link active" data-scroll-target="#jose.-%E5%B7%9D%E5%B3%B6%E8%89%AF%E5%BD%B0%E3%82%89%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E3%81%A7%E8%AA%AD%E3%81%BF%E8%A7%A3%E3%81%8Fsdgs%E3%83%9D%E3%83%97%E3%83%A9%E6%96%B0%E6%9B%B82023%E5%B9%B4">Jose. 川島良彰ら『コーヒーで読み解くSDGs』（ポプラ新書、2023年）</a>
+  <ul class="collapse">
+<li><a href="#%E6%97%A5%E6%99%82" id="toc-日時" class="nav-link" data-scroll-target="#%E6%97%A5%E6%99%82">日時</a></li>
+  <li><a href="#%E4%BC%9A%E5%A0%B4" id="toc-会場" class="nav-link" data-scroll-target="#%E4%BC%9A%E5%A0%B4">会場</a></li>
+  <li><a href="#%E4%BA%8B%E5%89%8D%E8%AA%B2%E9%A1%8C" id="toc-事前課題" class="nav-link" data-scroll-target="#%E4%BA%8B%E5%89%8D%E8%AA%B2%E9%A1%8C">事前課題</a></li>
+  <li><a href="#%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3" id="toc-オンライン" class="nav-link" data-scroll-target="#%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3">オンライン</a></li>
+  <li><a href="#%E9%85%8D%E5%B8%83%E8%B3%87%E6%96%99" id="toc-配布資料" class="nav-link" data-scroll-target="#%E9%85%8D%E5%B8%83%E8%B3%87%E6%96%99">配布資料</a></li>
+  <li><a href="#%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88%E5%8F%97%E8%AC%9B%E3%81%AE%E6%84%9F%E6%83%B3%E3%81%AA%E3%81%A9" id="toc-アンケート受講の感想など" class="nav-link" data-scroll-target="#%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88%E5%8F%97%E8%AC%9B%E3%81%AE%E6%84%9F%E6%83%B3%E3%81%AA%E3%81%A9">アンケート（受講の感想など）</a></li>
+  <li><a href="#%E9%80%A3%E7%B5%A1%E5%85%88" id="toc-連絡先" class="nav-link" data-scroll-target="#%E9%80%A3%E7%B5%A1%E5%85%88">連絡先</a></li>
+  <li><a href="#%E3%81%9D%E3%81%AE%E4%BB%96" id="toc-その他" class="nav-link" data-scroll-target="#%E3%81%9D%E3%81%AE%E4%BB%96">その他</a></li>
+  </ul>
+</li>
+  </ul><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="readingseminar_10.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Reading Seminar: Summer 2024</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><div class="cell">
+
+</div>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img src="../../img/works/logo_kanazawauniversity.jpg" class="img-fluid" style="width:50.0%"></p>
+</div><div class="column" style="width:30%;">
+<p><img src="../../img/works/logo_kugs.png" class="img-fluid" style="width:60.0%"></p>
+</div><div class="column" style="width:30%;">
+<p><img src="../../img/works/icon_4-education.png" class="img-fluid" style="width:45.0%"></p>
+</div>
+</div>
+<section id="jose.-川島良彰らコーヒーで読み解くsdgsポプラ新書2023年" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="jose.-川島良彰らコーヒーで読み解くsdgsポプラ新書2023年">Jose. 川島良彰ら『コーヒーで読み解くSDGs』（ポプラ新書、2023年）</h2>
+<blockquote class="blockquote">
+<p>リーディングセミナーでは、近年、⼤学界隈において話題の、⾼校⽣向けに書かれた(または⾼校⽣にも考えて欲しい)、新書や⽂庫を1冊、取り上げ、参加者で読書体験を共有します。</p>
+</blockquote>
+<ul>
+<li><a href="https://www.kanazawa-u.ac.jp/news/129228">前回の模様</a></li>
+</ul>
+<!-- - [前回の模様](https://kariyach.github.io/teaching/readingseminar/readingseminar_past.html) --><blockquote class="blockquote">
+<p>今回は､Jose. 川島良彰ら『コーヒーで読み解くSDGs』（ポプラ新書、2023年）を取り上げます（<a href="https://www.poplar.co.jp/book/search/result/archive/8201235.html">出版社の案内</a>）。コーヒーを手がかりに､SDGsについて考えてみませんか。</p>
+</blockquote>
+<ul>
+<li>図書は各自、書店や図書館で入手して下さい</li>
+</ul>
+<section id="日時" class="level3"><h3 class="anchored" data-anchor-id="日時">日時</h3>
+<ul>
+<li>2024年7月30日（火） 13:30-17:00</li>
+</ul></section><section id="会場" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="会場">会場</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>金沢大学 角間キャンパス
+<ul>
+<li>インキュベーション施設 A302（3階）</li>
+<li><a href="https://www.google.com/maps/place/%E3%80%92920-1164+%E7%9F%B3%E5%B7%9D%E7%9C%8C%E9%87%91%E6%B2%A2%E5%B8%82%E8%A7%92%E9%96%93%E7%94%BA+%E5%85%B1%E5%90%8C%E7%A0%94%E7%A9%B6%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC+%E3%82%A4%E3%83%B3%E3%82%AD%E3%83%A5%E3%83%99%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E6%96%BD%E8%A8%AD/@36.5450643,136.7083926,17z/data=!3m1!4b1!4m6!3m5!1s0x5ff8315a4e9f6101:0x85b54dbe4590a30d!8m2!3d36.5450643!4d136.7083926!16s%2Fg%2F11g0zp26gx?entry=ttu">Google Map</a></li>
+</ul>
+</li>
+<li>公共交通機関（via 北陸鉄道バス）
+<ul>
+<li>バス停（乗り口）
+<ul>
+<li>金沢駅兼六園口（東口）8番乗り場発　93・94・97金沢大学行き（兼六園下経由）</li>
+</ul>
+</li>
+<li>バス停（下車）：<strong>金沢大学自然研前</strong>
+<ul>
+<li>インキュベーション施設まで徒歩5分</li>
+</ul>
+</li>
+<li>時刻表（北陸鉄道バス 公式サイト）
+<ul>
+<li><a href="http://www.hokutetsu.co.jp/media/route-bus/20240316/route_timetable_kindai_hei.pdf">金沢大学行き/金沢駅行き</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-bf6f5b6a6656c184e1af" style="width:100%;height:371px;"></div>
+<script type="application/json" data-for="htmlwidget-bf6f5b6a6656c184e1af">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]}],"setView":[[36.54517,136.70847],18,[]]},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+注意 | バス停から会場までのアクセス
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>北陸鉄道バスを「金沢大学自然研前」で降り、連絡橋（南アカンサスインターフェース）を渡ってください</li>
+<li>連絡橋を渡ったあとは右手に進んでください｡一番奥の建物が会場です</li>
+<li>インキュベーション施設の入り口はわかりにくく、プレートもかかっていません｡新学術創成研究機構を目指してください（建物は連結しています）</li>
+</ul>
+</div>
+</div>
+<div class="columns page-columns page-full">
+<div class="column page-columns page-full" style="width:50%;">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="../../img/works/Bridge_Interface_1.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="margin-caption">南アカンサスインターフェース（入り口）</figcaption></figure>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="../../img/works/Bridge_Interface_2.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="margin-caption">南アカンサスインターフェース</figcaption></figure>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="../../img/works/Bridge_Interface_3.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="margin-caption">南アカンサスインターフェース（出口）ここを右手に進む</figcaption></figure>
+</div>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note | キャンパスの雰囲気を味わってみよう
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>南アカンサスインターフェース（出口）を左手に進むと、もう一つ、連絡橋が出てきます（北アカンサスインターフェイス）｡橋を渡った先が、1年生の共通科目、人間社会学域のメインキャンパスです <!-- - この時期の上記エリアは新入生があふれており、大学の雰囲気を味わえます｡時間があれば、散策してみましょう --> <!-- - 大学の飲食店を利用できます｡会場最寄りの食堂は[ナカフクリ食堂](https://www.kanazawa-u.ac.jp/news/130408)です｡北アカンサスインターフェイス手前にある「中福利施設」の階段を下りてください -->
+</li>
+</ul>
+</div>
+</div>
+<div class="columns page-columns page-full">
+<div class="column page-columns page-full" style="width:50%;">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="../../img/works/Building_InstituteForFrontierScienceInitiative_1.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="margin-caption">新学術創成研究機構（右手）</figcaption></figure>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="../../img/works/Building_InstituteForFrontierScienceInitiative_2.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="margin-caption">新学術創成研究機構（正面玄関）</figcaption></figure>
+</div>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note | その他
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>服装の指定はありません</li>
+</ul>
+</div>
+</div>
+<!-- Reading Seminar for Articulating High School and University Studies -->
+</section><section id="事前課題" class="level3"><h3 class="anchored" data-anchor-id="事前課題">事前課題</h3>
+<ul>
+<li>提出先：<a href="https://forms.gle/kquo5jNTD5hxskrz5">Google Form</a><i class="bi bi-unlock-fill"></i>
+<ul>
+<li>開催日前日（7月29日（月）23時59分）までに、課題に答えてください</li>
+<li>当日は、事前課題をもとに、参加者で議論し、紹介文を作成します</li>
+</ul>
+</li>
+</ul></section><section id="オンライン" class="level3"><h3 class="anchored" data-anchor-id="オンライン">オンライン</h3>
+<ul>
+<li>接続方法：Zoom<i class="bi bi-lock-fill"></i>
+<ul>
+<li>13:00から入室可能です<br>
+</li>
+<li>接続情報は、Google フォームに登録されたメールアドレスに、当日午前中にお送りします</li>
+<li>メールが届かない場合は、下記の連絡先にお問い合わせください</li>
+<li>少人数のグループワークです｡できるだけビデオオンでご参加下さい</li>
+</ul>
+</li>
+</ul></section><section id="配布資料" class="level3"><h3 class="anchored" data-anchor-id="配布資料">配布資料</h3>
+<ul>
+<li>オンラインストレージ： <!-- [Google ドライブ](https://drive.google.com/drive/folders/1hB2_CLvTjahav2LqQ_fa-ah6nKPa8XMn?usp=sharing) <i class="bi bi-unlock-fill"></i> -->
+<ul>
+<li>当日午前中に公開します</li>
+<li>アクセス権が必要な場合は、適宜クリックするか、以下のメールアドレスにお問い合わせ下さい</li>
+</ul>
+</li>
+<li>ウェブページ：
+<ul>
+<li>当日午前中に公開します</li>
+</ul>
+<!-- (resume_readingseminar_7.html) -->
+</li>
+</ul>
+<!-- :::{.callout-note} --><!-- ## Note | 研究者による著書紹介 --><!-- - ウェブページに、時間の都合で紹介できなかった、著書紹介を追加しました --><!-- - 特に正解があるとは思いません｡今回作った紹介文との違いを楽しんでみましょう --><!-- ::: --></section><section id="アンケート受講の感想など" class="level3"><h3 class="anchored" data-anchor-id="アンケート受講の感想など">アンケート（受講の感想など）</h3>
+<ul>
+<li>提出先：当日案内します</li>
+</ul>
+<!-- [Google Form](https://forms.gle/Fsd1W7quDW1YcJT99) <i class="bi bi-unlock-fill"></i> --><!--   - 翌日（3月26日（火）23時59分）までに回答下さい --></section><section id="連絡先" class="level3"><h3 class="anchored" data-anchor-id="連絡先">連絡先</h3>
+<ul>
+<li>担当講師（苅谷）： <a href="mailto:kariyach@staff.kanazawa-u.ac.jp">kariyach@staff.kanazawa-u.ac.jp</a>
+</li>
+<li>入試課：076-264-6082</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+重要
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>当日、体調不良などで急きょ、参加できなくなった場合は、簡単で結構ですので、上記のメールアドレスに連絡下さい</li>
+</ul>
+</div>
+</div>
+</section><section id="その他" class="level3"><h3 class="anchored" data-anchor-id="その他">その他</h3>
+<ul>
+<li>このプログラムは金沢大学KUGS高大接続プログラム（大学での学び）の対象です</li>
+<li>特別入試に興味がある方は<a href="https://kugspro.adm.kanazawa-u.ac.jp">公式サイト</a>をご覧下さい</li>
+</ul>
+
+
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/kariyach\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block">© 2024 CHIHIRO KARIYA</span></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+</body></html>
