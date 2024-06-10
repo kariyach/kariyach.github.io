@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="苅谷 千尋">
 <meta name="keywords" content="図とデータ；Rのインストールとプロジェクトの作成">
-<title>CHIHIRO KARIYA - RとQuartoではじめるデータサイエンス 2024</title>
+<title>CHIHIRO KARIYA - RとQuartoではじめるデータサイエンス：データを可視化する《2024》</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -193,7 +193,7 @@ div.csl-indent {
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス 2024</a></h1>
+      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス：データを可視化する《2024》</a></h1>
             <p class="subtitle lead">#1 イントロダクション</p>
                       </div>
   </div>
@@ -225,7 +225,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">6, Jun, 2024</p>
+        <p class="date-modified">10, Jun, 2024</p>
       </div>
     </div>
       
@@ -246,12 +246,17 @@ div.csl-indent {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
    
   <ul>
-<li><a href="#%E3%81%AA%E3%81%9Crquarto%E3%81%AA%E3%81%AE%E3%81%8B" id="toc-なぜrquartoなのか" class="nav-link active" data-scroll-target="#%E3%81%AA%E3%81%9Crquarto%E3%81%AA%E3%81%AE%E3%81%8B">Ⅰ. なぜR（+Quarto）なのか</a></li>
-  <li>
+<li>
+<a href="#%E3%81%AA%E3%81%9Crquarto%E3%81%AA%E3%81%AE%E3%81%8B" id="toc-なぜrquartoなのか" class="nav-link active" data-scroll-target="#%E3%81%AA%E3%81%9Crquarto%E3%81%AA%E3%81%AE%E3%81%8B">Ⅰ. なぜR（+Quarto）なのか</a>
+  <ul class="collapse">
+<li>
 <a href="#%E4%BA%8B%E4%BE%8B" id="toc-事例" class="nav-link" data-scroll-target="#%E4%BA%8B%E4%BE%8B">事例</a>
   <ul class="collapse">
 <li><a href="#%E5%AD%A6%E5%95%8F" id="toc-学問" class="nav-link" data-scroll-target="#%E5%AD%A6%E5%95%8F">⑴ 学問</a></li>
   <li><a href="#%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9" id="toc-ビジネス" class="nav-link" data-scroll-target="#%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9">⑵ ビジネス</a></li>
+  <li><a href="#covid-19" id="toc-covid-19" class="nav-link" data-scroll-target="#covid-19">⑶ COVID-19</a></li>
+  </ul>
+</li>
   </ul>
 </li>
   <li><a href="#%E3%82%B7%E3%83%A9%E3%83%90%E3%82%B9" id="toc-シラバス" class="nav-link" data-scroll-target="#%E3%82%B7%E3%83%A9%E3%83%90%E3%82%B9">Ⅱ. シラバス</a></li>
@@ -261,7 +266,9 @@ div.csl-indent {
 <li>
 <a href="#ggplot%E5%8F%97%E8%AC%9B%E8%80%85%E3%81%AE%E5%B1%9E%E6%80%A7" id="toc-ggplot受講者の属性" class="nav-link" data-scroll-target="#ggplot%E5%8F%97%E8%AC%9B%E8%80%85%E3%81%AE%E5%B1%9E%E6%80%A7">1. ggplot（受講者の属性）</a>
   <ul class="collapse">
-<li><a href="#%E3%83%9E%E3%83%83%E3%83%97" id="toc-マップ" class="nav-link" data-scroll-target="#%E3%83%9E%E3%83%83%E3%83%97">2. マップ</a></li>
+<li><a href="#%E5%AD%A6%E5%9F%9F%E5%88%86%E5%B8%83" id="toc-学域分布" class="nav-link" data-scroll-target="#%E5%AD%A6%E5%9F%9F%E5%88%86%E5%B8%83">⑴ 学域分布</a></li>
+  <li><a href="#%E5%B9%B4%E6%AC%A1%E5%88%86%E5%B8%83" id="toc-年次分布" class="nav-link" data-scroll-target="#%E5%B9%B4%E6%AC%A1%E5%88%86%E5%B8%83">⑵ 年次分布</a></li>
+  <li><a href="#%E3%83%9E%E3%83%83%E3%83%97" id="toc-マップ" class="nav-link" data-scroll-target="#%E3%83%9E%E3%83%83%E3%83%97">2. マップ</a></li>
   </ul>
 </li>
   </ul>
@@ -313,7 +320,7 @@ div.csl-indent {
 <main class="content quarto-banner-title-block page-columns page-full column-page-left" id="quarto-document-content"><div class="cell">
 
 </div>
-<section id="なぜrquartoなのか" class="level2"><h2 class="anchored" data-anchor-id="なぜrquartoなのか">Ⅰ. なぜR（+Quarto）なのか</h2>
+<section id="なぜrquartoなのか" class="level1"><h1>Ⅰ. なぜR（+Quarto）なのか</h1>
 <ul>
 <li>Cf. Microsoft Excel / SPSS / python</li>
 </ul>
@@ -384,7 +391,8 @@ div.csl-indent {
 <li>markdown</li>
 </ul>
 </li>
-</ol></section><section id="事例" class="level2"><h2 class="anchored" data-anchor-id="事例">事例</h2>
+</ol>
+<section id="事例" class="level2"><h2 class="anchored" data-anchor-id="事例">事例</h2>
 <section id="学問" class="level3"><h3 class="anchored" data-anchor-id="学問">⑴ 学問</h3>
 <ul>
 <li>
@@ -407,11 +415,34 @@ div.csl-indent {
 <p>Rはデータ分析の一連のフローの中で全ての場面で使われます。例えば、探索的(Exploratory)データ分析、予測モデルの作成、ビジネス・パートナーと結果を共有するといった場面です。この記事の中ではRがどのように使われているか、さらに、これからRを使ってデータをもっと理解していきたいと考えている人たちへの実用的なアドバイスを共有したいと思います。</p>
 </blockquote>
 </li>
-</ul></section></section><section id="シラバス" class="level1"><h1>Ⅱ. シラバス</h1>
+</ul></section><section id="covid-19" class="level3"><h3 class="anchored" data-anchor-id="covid-19">⑶ COVID-19</h3>
+<ul>
+<li><a href="https://www.rivm.nl/en/coronavirus-covid-19/current/variants">オランダの国立公衆衛生環境研究所（RIVM）</a></li>
+<li><a href="https://data.who.int/dashboards/covid19/cases">WHO COVID-19 dashboard</a></li>
+<li><a href="https://dashboard.cowin.gov.in/?lang=en">インド保健家族福祉省（Winning Over Covid-19）</a></li>
+<li>
+<a href="https://www.niid.go.jp/niid/ja/2019-ncov/2484-idsc/12015-covid19-surveillance-report.html">日本の国立感染症研究所：新型コロナウイルス感染症サーベイランス週報</a>
+<ul>
+<li>ダッシュボードなし（PDFで情報提供。図はエクセルで作った図をWordに貼り付けている（？））</li>
+</ul>
+</li>
+<li>
+<a href="https://exdeaths-japan.org">日本の国立感染症研究所：日本の超過および過少死亡数</a>
+<ul>
+<li>ダッシュボード：Rを用いている</li>
+<li>➡ 「デジタル敗戦」
+<ul>
+<li><a href="https://digital.asahi.com/articles/ASPBX5V0HPBVULFA00C.html">「デジタル敗戦」なぜ起きた？　慶応大・国領氏が語る「組織の壁」（『朝日新聞』2021年11月1日）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></section></section></section><section id="シラバス" class="level1"><h1>Ⅱ. シラバス</h1>
 <ul>
 <li><a href="syllabus.html">シラバス</a></li>
 </ul></section><section id="サンプル" class="level1 page-columns page-full"><h1>Ⅲ. サンプル</h1>
 <section id="ggplot受講者の属性" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="ggplot受講者の属性">1. ggplot（受講者の属性）</h2>
+<section id="学域分布" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="学域分布">⑴ 学域分布</h3>
 <div class="cell page-columns page-full" data-code_download="true">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_受講生</span> <span class="op">%&gt;%</span> <span class="co">#対象とするデータフレーム</span></span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">学域</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co">#学域でデータを分ける</span></span>
@@ -422,24 +453,24 @@ div.csl-indent {
 <span>    比率 <span class="op">=</span> <span class="va">人数</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">人数</span><span class="op">)</span> <span class="co">#個数から比率を算出</span></span>
 <span>  <span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co">#グルーピングの解除</span></span>
-<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="va">人数</span>, group <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co">#図の台座</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">人数</span>, y <span class="op">=</span> <span class="st">""</span>, group <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co">#図の台座</span></span>
 <span>  <span class="fu">geom_col</span><span class="op">(</span> <span class="co">#帯グラフ</span></span>
 <span>    <span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">学域</span>, fill <span class="op">=</span> <span class="fu">after_scale</span><span class="op">(</span><span class="fu">alpha</span><span class="op">(</span><span class="va">color</span>, <span class="fl">0.9</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_text</span><span class="op">(</span> <span class="co">#帯グラフにテキストを貼る</span></span>
-<span>    <span class="fu">aes</span><span class="op">(</span>label <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent</a></span><span class="op">(</span><span class="va">比率</span>, accuracy <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span>, <span class="st">"("</span>, <span class="va">人数</span>, <span class="st">"人)"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    <span class="fu">aes</span><span class="op">(</span>label <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_percent.html">label_percent</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span><span class="op">(</span><span class="va">比率</span><span class="op">)</span>, <span class="st">"("</span>, <span class="va">人数</span>, <span class="st">"人)"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span>reverse <span class="op">=</span> <span class="cn">FALSE</span>, vjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_y_continuous</span><span class="op">(</span> <span class="co">#Y軸の余白を詰める</span></span>
+<span>  <span class="fu">scale_x_continuous</span><span class="op">(</span> <span class="co">#X軸の余白を詰める</span></span>
 <span>    expand <span class="op">=</span> <span class="fu">expansion</span><span class="op">(</span>mult <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">0.01</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>    labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_percent.html">label_percent</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co">#Y軸をパーセントにする</span></span>
-<span>  <span class="fu">labs</span><span class="op">(</span> <span class="co">#ラベル名（ここではxとyのラベルを削除）､凡例を変更</span></span>
-<span>    x <span class="op">=</span> <span class="st">""</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">""</span>,</span>
+<span>    labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_percent.html">label_percent</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co">#X軸をパーセントにする</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span></span>
 <span>    color <span class="op">=</span> <span class="st">"学域"</span> <span class="co">#凡例のラベルを「学域」に変更</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="co">#X軸とY軸を逆転させる</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span></span>
+<span>    axis.title <span class="op">=</span> <span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span> <span class="co"># 軸タイトル要素を空にする</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"DresdenColor::briefcases"</span><span class="op">)</span> <span class="co">#配色変更</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
@@ -455,7 +486,7 @@ div.csl-indent {
 <span>    人数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co">#グルーピングの解除</span></span>
-<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="va">人数</span>, fill <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co">#図の台座</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">人数</span>, y <span class="op">=</span> <span class="st">""</span>, fill <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co">#図の台座（x軸とy軸を考える）</span></span>
 <span>  <span class="fu">geom_col</span><span class="op">(</span> <span class="co">#帯グラフ</span></span>
 <span>    <span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">学域</span><span class="op">)</span>,</span>
 <span>    position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span><span class="op">)</span></span>
@@ -468,7 +499,70 @@ div.csl-indent {
 </div>
 </div>
 <div class="cell page-columns page-full">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_受講生</span> <span class="op">%&gt;%</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_受講生</span> <span class="op">%&gt;%</span> <span class="co">#対象とするデータフレーム</span></span>
+<span> <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>y <span class="op">=</span> <span class="st">""</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co">#図の台座</span></span>
+<span> <span class="fu">geom_bar</span><span class="op">(</span> <span class="co">#帯グラフ</span></span>
+<span>   stat <span class="op">=</span> <span class="va">StatCount</span>, <span class="co">#デフォルトなので書かなくてもこれ：行数をカウントする</span></span>
+<span>   <span class="fu">aes</span><span class="op">(</span></span>
+<span>     color <span class="op">=</span> <span class="va">学域</span>,</span>
+<span>     fill <span class="op">=</span> <span class="fu">after_scale</span><span class="op">(</span><span class="fu">alpha</span><span class="op">(</span><span class="va">color</span>, <span class="fl">0.9</span><span class="op">)</span><span class="op">)</span></span>
+<span>   <span class="op">)</span>,</span>
+<span>   position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span><span class="op">)</span>,</span>
+<span> <span class="op">)</span> <span class="op">+</span></span>
+<span> <span class="fu">geom_text</span><span class="op">(</span> <span class="co">#帯グラフにテキストを貼る</span></span>
+<span>   <span class="co">#geom_textはデフォルトのStatではないので明示的に書く必要あり。</span></span>
+<span></span>
+<span><span class="co">#積み上げグラフで棒ごとに100%にしてfillの割合を計算できないので、GGallyパッケージのStatPropが必要</span></span>
+<span>   stat <span class="op">=</span> <span class="fu">GGally</span><span class="fu">::</span><span class="va"><a href="https://larmarange.github.io/ggstats/reference/stat_prop.html">StatProp</a></span>,</span>
+<span>   <span class="co">#aes(label = str_c(scales::percent(比率, accuracy = 0.1), "(", 人数, "人)")),</span></span>
+<span>   <span class="fu">aes</span><span class="op">(</span></span>
+<span>     by <span class="op">=</span> <span class="fl">1</span>, <span class="co"># 棒が1つでy=""と仮のものを与えているので、とりあえず固定値の1にしておく。</span></span>
+<span>     group <span class="op">=</span> <span class="va">学域</span>, <span class="co"># StatPropでは棒ごとに学域の割合を集計</span></span>
+<span>     <span class="co">#statで集計した値は、after_stat(count)でカウント、after_stat(prop)で割合が取り出せる。</span></span>
+<span>     label <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_percent.html">label_percent</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span><span class="op">(</span><span class="fu">after_stat</span><span class="op">(</span><span class="va">prop</span><span class="op">)</span><span class="op">)</span>, <span class="st">"("</span>,</span>
+<span><span class="fu">after_stat</span><span class="op">(</span><span class="va">count</span><span class="op">)</span>, <span class="st">"人)"</span><span class="op">)</span></span>
+<span>   <span class="op">)</span>,</span>
+<span>   position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span>vjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
+<span> <span class="op">)</span> <span class="op">+</span></span>
+<span> <span class="fu">scale_x_continuous</span><span class="op">(</span></span>
+<span>   expand <span class="op">=</span> <span class="fu">expansion</span><span class="op">(</span>mult <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">0.01</span><span class="op">)</span><span class="op">)</span>, <span class="co">#X軸の余白を詰める</span></span>
+<span>   labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_percent.html">label_percent</a></span><span class="op">(</span><span class="op">)</span> <span class="co">#X軸をパーセントにする</span></span>
+<span> <span class="op">)</span> <span class="op">+</span></span>
+<span> <span class="fu">labs</span><span class="op">(</span></span>
+<span>   color <span class="op">=</span> <span class="st">"学域"</span> <span class="co">#凡例のラベルを「学域」に変更</span></span>
+<span> <span class="op">)</span> <span class="op">+</span></span>
+<span> <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"DresdenColor::briefcases"</span><span class="op">)</span> <span class="op">+</span> <span class="co">#配色変更</span></span>
+<span> <span class="fu">theme</span><span class="op">(</span></span>
+<span>   axis.title <span class="op">=</span> <span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span> <span class="co"># 軸タイトル要素を空にする</span></span>
+<span> <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="margin-caption">受講者（学域）ggplot内で比率を計算</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<ul>
+<li>dplyrのデータハンドリング（group_by, summarise, mutate）をしない</li>
+<li>ggplot内で､GGallyパッケージのStatを使って計算する
+<ul>
+<li>利点：複数のデータを柔軟に記載可能（ggplotより前に数字を計算､操作すると､使い回ししづらい）</li>
+<li>dplyrのデータハンドリングは､Rの基本であるため､慣れるまではdplyrを使ってください</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section id="年次分布" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="年次分布">⑵ 年次分布</h3>
+<div class="cell page-columns page-full">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_受講生</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">年次</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span></span>
 <span>    人数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span></span>
@@ -477,7 +571,7 @@ div.csl-indent {
 <span>    比率 <span class="op">=</span> <span class="va">人数</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">人数</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="va">人数</span>, group <span class="op">=</span> <span class="va">年次</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">人数</span>, y <span class="op">=</span> <span class="st">""</span>, group <span class="op">=</span> <span class="va">年次</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_col</span><span class="op">(</span></span>
 <span>    <span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">年次</span>, fill <span class="op">=</span> <span class="fu">after_scale</span><span class="op">(</span><span class="fu">alpha</span><span class="op">(</span><span class="va">color</span>, <span class="fl">0.9</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span><span class="op">)</span>,</span>
@@ -486,33 +580,33 @@ div.csl-indent {
 <span>    <span class="fu">aes</span><span class="op">(</span>label <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent</a></span><span class="op">(</span><span class="va">比率</span>, accuracy <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span>, <span class="st">"("</span>, <span class="va">人数</span>, <span class="st">"人)"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span>reverse <span class="op">=</span> <span class="cn">FALSE</span>, vjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_y_continuous</span><span class="op">(</span></span>
+<span>  <span class="fu">scale_x_continuous</span><span class="op">(</span></span>
 <span>    expand <span class="op">=</span> <span class="fu">expansion</span><span class="op">(</span>mult <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">0.01</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_percent.html">label_percent</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span></span>
-<span>    x <span class="op">=</span> <span class="st">""</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">""</span>,</span>
 <span>    color <span class="op">=</span> <span class="st">"年次"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"PrettyCols::Fun"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"PrettyCols::Fun"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span></span>
+<span>   axis.title <span class="op">=</span> <span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span> <span class="co"># 軸タイトル要素を空にする</span></span>
+<span> <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure page-columns page-full"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption class="margin-caption">受講者（年次）</figcaption></figure>
 </div>
 </div>
 </div>
-<section id="マップ" class="level3"><h3 class="anchored" data-anchor-id="マップ">2. マップ</h3>
+</section><section id="マップ" class="level3"><h3 class="anchored" data-anchor-id="マップ">2. マップ</h3>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">leaflet</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">leaflet</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">addTiles</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">setView</span><span class="op">(</span>lng <span class="op">=</span> <span class="fl">136.70847</span>, </span>
 <span>          lat <span class="op">=</span> <span class="fl">36.54517</span>,</span>
 <span>          zoom <span class="op">=</span> <span class="fl">18</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-f2eccbf6831842a3c0a2" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-f2eccbf6831842a3c0a2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]}],"setView":[[36.54517,136.70847],18,[]]},"evals":[],"jsHooks":[]}</script><p>高大接続コア・センター（インキュベーション施設3F）</p>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-daedf5d52d14bd4b7581" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-daedf5d52d14bd4b7581">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]}],"setView":[[36.54517,136.70847],18,[]]},"evals":[],"jsHooks":[]}</script><p>高大接続コア・センター（インキュベーション施設3F）</p>
 </div>
 </div>
 </section></section></section><section id="図とデータ" class="level1"><h1>Ⅳ. 図とデータ</h1>
@@ -596,18 +690,18 @@ div.csl-indent {
 <section id="アンケート分析" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="アンケート分析">アンケート分析</h2>
 <section id="図" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="図">図</h3>
 <div class="cell page-columns page-full">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
-<span><span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">`Q1. パソコンのスキルに自信がありますか`</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
-<span><span class="fu">geom_bar</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">`Q1. パソコンのスキルに自信がありますか`</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure page-columns page-full"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption class="margin-caption">初回アンケート（Q1の棒グラフ）</figcaption></figure>
 </div>
 </div>
 </div>
 <div class="cell page-columns page-full">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">学域</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span></span>
 <span>    人数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span></span>
@@ -616,7 +710,7 @@ div.csl-indent {
 <span>    比率 <span class="op">=</span> <span class="va">人数</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">人数</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="va">人数</span>, group <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">人数</span>, y <span class="op">=</span> <span class="st">""</span>, group <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_col</span><span class="op">(</span></span>
 <span>    <span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">学域</span>, fill <span class="op">=</span> <span class="fu">after_scale</span><span class="op">(</span><span class="fu">alpha</span><span class="op">(</span><span class="va">color</span>, <span class="fl">0.9</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span><span class="op">)</span>,</span>
@@ -625,64 +719,63 @@ div.csl-indent {
 <span>    <span class="fu">aes</span><span class="op">(</span>label <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent</a></span><span class="op">(</span><span class="va">比率</span>, accuracy <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span>, <span class="st">"("</span>, <span class="va">人数</span>, <span class="st">"人)"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span>reverse <span class="op">=</span> <span class="cn">FALSE</span>, vjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_y_continuous</span><span class="op">(</span></span>
+<span>  <span class="fu">scale_x_continuous</span><span class="op">(</span></span>
 <span>    expand <span class="op">=</span> <span class="fu">expansion</span><span class="op">(</span>mult <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">0.01</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_percent.html">label_percent</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span></span>
-<span>    x <span class="op">=</span> <span class="st">""</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">""</span>,</span>
 <span>    color <span class="op">=</span> <span class="st">"学域"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"DresdenColor::briefcases"</span><span class="op">)</span> <span class="co">#配色変更</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"DresdenColor::briefcases"</span><span class="op">)</span> <span class="op">+</span> <span class="co">#配色変更</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span></span>
+<span>    axis.title <span class="op">=</span> <span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span> <span class="co"># 軸タイトル要素を空にする</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure page-columns page-full"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption class="margin-caption">初回アンケート（学域）</figcaption></figure>
 </div>
 </div>
 </div>
 <div class="cell page-columns page-full">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
-<span><span class="fu">group_by</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q5. 受講理由でもっとも近いものを選んでください`</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span><span class="fu">summarise</span><span class="op">(</span></span>
-<span>人数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>, .groups <span class="op">=</span> <span class="st">"drop"</span></span>
-<span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span><span class="fu">mutate</span><span class="op">(</span></span>
-<span>比率 <span class="op">=</span> <span class="va">人数</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">人数</span><span class="op">)</span></span>
-<span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span><span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span><span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="va">人数</span>, group <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span><span class="fu">geom_col</span><span class="op">(</span></span>
-<span><span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">`Q5. 受講理由でもっとも近いものを選んでください`</span>, fill <span class="op">=</span> <span class="fu">after_scale</span><span class="op">(</span><span class="fu">alpha</span><span class="op">(</span><span class="va">color</span>, <span class="fl">0.9</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span><span class="op">)</span>,</span>
-<span><span class="op">)</span> <span class="op">+</span></span>
-<span><span class="fu">geom_text</span><span class="op">(</span></span>
-<span><span class="fu">aes</span><span class="op">(</span>label <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent</a></span><span class="op">(</span><span class="va">比率</span>, accuracy <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span>, <span class="st">"("</span>, <span class="va">人数</span>, <span class="st">"人)"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span>reverse <span class="op">=</span> <span class="cn">FALSE</span>, vjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
-<span><span class="op">)</span> <span class="op">+</span></span>
-<span><span class="fu">scale_y_continuous</span><span class="op">(</span></span>
-<span>expand <span class="op">=</span> <span class="fu">expansion</span><span class="op">(</span>mult <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">0.01</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_percent.html">label_percent</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span><span class="fu">labs</span><span class="op">(</span></span>
-<span>x <span class="op">=</span> <span class="st">""</span>,</span>
-<span>y <span class="op">=</span> <span class="st">""</span>,</span>
-<span>color <span class="op">=</span> <span class="st">"Q5"</span></span>
-<span><span class="op">)</span> <span class="op">+</span></span>
-<span><span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span><span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">学域</span><span class="op">)</span> <span class="op">+</span></span>
-<span><span class="fu">theme</span><span class="op">(</span>legend.position<span class="op">=</span><span class="st">"bottom"</span><span class="op">)</span> <span class="op">+</span> <span class="co">#凡例を図の下に</span></span>
-<span><span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="fu">guide_legend</span><span class="op">(</span>nrow <span class="op">=</span> <span class="fl">3</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span><span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"DresdenColor::briefcases"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q5. 受講理由でもっとも近いものを選んでください`</span><span class="op">)</span> <span class="op">%&gt;%</span>   <span class="fu">summarise</span><span class="op">(</span></span>
+<span>    人数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>, .groups <span class="op">=</span> <span class="st">"drop"</span></span>
+<span>  <span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    比率 <span class="op">=</span> <span class="va">人数</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">人数</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">人数</span>, y <span class="op">=</span> <span class="st">""</span>, group <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_col</span><span class="op">(</span></span>
+<span>    <span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">`Q5. 受講理由でもっとも近いものを選んでください`</span>, fill <span class="op">=</span> <span class="fu">after_scale</span><span class="op">(</span><span class="fu">alpha</span><span class="op">(</span><span class="va">color</span>, <span class="fl">0.9</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_text</span><span class="op">(</span></span>
+<span>    <span class="fu">aes</span><span class="op">(</span>label <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent</a></span><span class="op">(</span><span class="va">比率</span>, accuracy <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span>, <span class="st">"("</span>, <span class="va">人数</span>, <span class="st">"人)"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span>reverse <span class="op">=</span> <span class="cn">FALSE</span>, vjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_x_continuous</span><span class="op">(</span></span>
+<span>    expand <span class="op">=</span> <span class="fu">expansion</span><span class="op">(</span>mult <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">0.01</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_percent.html">label_percent</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span></span>
+<span>    color <span class="op">=</span> <span class="st">"Q5"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">学域</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span>legend.position<span class="op">=</span><span class="st">"bottom"</span><span class="op">)</span> <span class="op">+</span> <span class="co">#凡例を図の下に</span></span>
+<span>  <span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="fu">guide_legend</span><span class="op">(</span>nrow <span class="op">=</span> <span class="fl">4</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"DresdenColor::briefcases"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span></span>
+<span>   axis.title <span class="op">=</span> <span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span> <span class="co"># 軸タイトル要素を空にする</span></span>
+<span> <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure page-columns page-full"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption class="margin-caption">初回アンケート（Q5. 学域別集計）</figcaption></figure>
 </div>
 </div>
 </div>
 <div class="cell page-columns page-full">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">学年</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span></span>
 <span>    人数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span></span>
@@ -691,7 +784,7 @@ div.csl-indent {
 <span>    比率 <span class="op">=</span> <span class="va">人数</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">人数</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="va">人数</span>, group <span class="op">=</span> <span class="va">学年</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">人数</span>, y <span class="op">=</span> <span class="st">""</span>, group <span class="op">=</span> <span class="va">学年</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_col</span><span class="op">(</span></span>
 <span>    <span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="va">学年</span>, fill <span class="op">=</span> <span class="fu">after_scale</span><span class="op">(</span><span class="fu">alpha</span><span class="op">(</span><span class="va">color</span>, <span class="fl">0.9</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span><span class="op">)</span>,</span>
@@ -700,33 +793,33 @@ div.csl-indent {
 <span>    <span class="fu">aes</span><span class="op">(</span>label <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent</a></span><span class="op">(</span><span class="va">比率</span>, accuracy <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span>, <span class="st">"("</span>, <span class="va">人数</span>, <span class="st">"人)"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span>reverse <span class="op">=</span> <span class="cn">FALSE</span>, vjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>,</span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_y_continuous</span><span class="op">(</span></span>
+<span>  <span class="fu">scale_x_continuous</span><span class="op">(</span></span>
 <span>    expand <span class="op">=</span> <span class="fu">expansion</span><span class="op">(</span>mult <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">0.01</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_percent.html">label_percent</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span></span>
-<span>    x <span class="op">=</span> <span class="st">""</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">""</span>,</span>
 <span>    color <span class="op">=</span> <span class="st">"年次"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"PrettyCols::Fun"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"PrettyCols::Fun"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span></span>
+<span>   axis.title <span class="op">=</span> <span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span></span>
+<span> <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure page-columns page-full"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption class="margin-caption">初回アンケート（年次）</figcaption></figure>
 </div>
 </div>
 </div>
 <div class="cell page-columns page-full">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
-<span><span class="fu">select</span><span class="op">(</span><span class="fl">5</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span><span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">`Q1. パソコンのスキルに自信がありますか`</span>,</span>
-<span>y <span class="op">=</span> <span class="va">`Q2. R言語を知っていますか？`</span>, color <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
-<span><span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="co">#散布図</span></span>
-<span><span class="fu">scale_color_colorblind</span><span class="op">(</span><span class="op">)</span> <span class="co"># ggthemeでドットの色を変える（配色は好みの問題でもあるが､colorblindはカラーユニバーサルデザインを意識した配色になっている）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="fl">5</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">`Q1. パソコンのスキルに自信がありますか`</span>,</span>
+<span>             y <span class="op">=</span> <span class="va">`Q2. R言語を知っていますか？`</span>, color <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="co">#散布図</span></span>
+<span>  <span class="fu">scale_color_colorblind</span><span class="op">(</span><span class="op">)</span> <span class="co"># ggthemeでドットの色を変える（配色は好みの問題でもあるが､colorblindはカラーユニバーサルデザインを意識した配色になっている）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure page-columns page-full"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption class="margin-caption">初回アンケート（Q1とQ2の散布図）</figcaption></figure>
 </div>
 </div>
@@ -738,15 +831,15 @@ div.csl-indent {
 <li>きれいな表として出力できないので実行していない</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
-<span><span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co">#1列目から4列目までを削除（回答者の氏名などの情報のため）*以下同じ</span></span>
-<span><span class="co"># 「!」は除外をさす</span></span>
-<span><span class="co"># 「x:y」はx列からy列までの範囲の列を指す</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co">#1列目から4列目までを削除（回答者の氏名などの情報のため）*以下同じ</span></span>
+<span>  <span class="co"># 「!」は除外をさす</span></span>
+<span>  <span class="co"># 「x:y」はx列からy列までの範囲の列を指す</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="b.-get_summary_stats関数" class="level5"><h5 class="anchored" data-anchor-id="b.-get_summary_stats関数">b. get_summary_stats関数</h5>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gt_table</span> <span class="op">&lt;-</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gt_table</span> <span class="op">&lt;-</span> </span>
 <span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
 <span><span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span><span class="fu">get_summary_stats</span><span class="op">(</span><span class="op">)</span></span>
@@ -754,23 +847,23 @@ div.csl-indent {
 <span><span class="va">gt_table</span> <span class="op">%&gt;%</span> <span class="fu">gt</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<div id="smlwdycdac" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#smlwdycdac table {
+<div id="nvvnulvbnq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nvvnulvbnq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#smlwdycdac thead, #smlwdycdac tbody, #smlwdycdac tfoot, #smlwdycdac tr, #smlwdycdac td, #smlwdycdac th {
+#nvvnulvbnq thead, #nvvnulvbnq tbody, #nvvnulvbnq tfoot, #nvvnulvbnq tr, #nvvnulvbnq td, #nvvnulvbnq th {
   border-style: none;
 }
 
-#smlwdycdac p {
+#nvvnulvbnq p {
   margin: 0;
   padding: 0;
 }
 
-#smlwdycdac .gt_table {
+#nvvnulvbnq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -796,12 +889,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#smlwdycdac .gt_caption {
+#nvvnulvbnq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#smlwdycdac .gt_title {
+#nvvnulvbnq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -813,7 +906,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#smlwdycdac .gt_subtitle {
+#nvvnulvbnq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -825,7 +918,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#smlwdycdac .gt_heading {
+#nvvnulvbnq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -837,13 +930,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#smlwdycdac .gt_bottom_border {
+#nvvnulvbnq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#smlwdycdac .gt_col_headings {
+#nvvnulvbnq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -858,7 +951,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#smlwdycdac .gt_col_heading {
+#nvvnulvbnq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -878,7 +971,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#smlwdycdac .gt_column_spanner_outer {
+#nvvnulvbnq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -890,15 +983,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#smlwdycdac .gt_column_spanner_outer:first-child {
+#nvvnulvbnq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#smlwdycdac .gt_column_spanner_outer:last-child {
+#nvvnulvbnq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#smlwdycdac .gt_column_spanner {
+#nvvnulvbnq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -910,11 +1003,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#smlwdycdac .gt_spanner_row {
+#nvvnulvbnq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#smlwdycdac .gt_group_heading {
+#nvvnulvbnq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -940,7 +1033,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#smlwdycdac .gt_empty_group_heading {
+#nvvnulvbnq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -955,15 +1048,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#smlwdycdac .gt_from_md > :first-child {
+#nvvnulvbnq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#smlwdycdac .gt_from_md > :last-child {
+#nvvnulvbnq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#smlwdycdac .gt_row {
+#nvvnulvbnq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -982,7 +1075,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#smlwdycdac .gt_stub {
+#nvvnulvbnq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -995,7 +1088,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#smlwdycdac .gt_stub_row_group {
+#nvvnulvbnq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1009,15 +1102,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#smlwdycdac .gt_row_group_first td {
+#nvvnulvbnq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#smlwdycdac .gt_row_group_first th {
+#nvvnulvbnq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#smlwdycdac .gt_summary_row {
+#nvvnulvbnq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1027,16 +1120,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#smlwdycdac .gt_first_summary_row {
+#nvvnulvbnq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#smlwdycdac .gt_first_summary_row.thick {
+#nvvnulvbnq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#smlwdycdac .gt_last_summary_row {
+#nvvnulvbnq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1046,7 +1139,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#smlwdycdac .gt_grand_summary_row {
+#nvvnulvbnq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1056,7 +1149,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#smlwdycdac .gt_first_grand_summary_row {
+#nvvnulvbnq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1066,7 +1159,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#smlwdycdac .gt_last_grand_summary_row_top {
+#nvvnulvbnq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1076,11 +1169,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#smlwdycdac .gt_striped {
+#nvvnulvbnq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#smlwdycdac .gt_table_body {
+#nvvnulvbnq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1089,7 +1182,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#smlwdycdac .gt_footnotes {
+#nvvnulvbnq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1103,7 +1196,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#smlwdycdac .gt_footnote {
+#nvvnulvbnq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1112,7 +1205,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#smlwdycdac .gt_sourcenotes {
+#nvvnulvbnq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1126,7 +1219,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#smlwdycdac .gt_sourcenote {
+#nvvnulvbnq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1134,63 +1227,63 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#smlwdycdac .gt_left {
+#nvvnulvbnq .gt_left {
   text-align: left;
 }
 
-#smlwdycdac .gt_center {
+#nvvnulvbnq .gt_center {
   text-align: center;
 }
 
-#smlwdycdac .gt_right {
+#nvvnulvbnq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#smlwdycdac .gt_font_normal {
+#nvvnulvbnq .gt_font_normal {
   font-weight: normal;
 }
 
-#smlwdycdac .gt_font_bold {
+#nvvnulvbnq .gt_font_bold {
   font-weight: bold;
 }
 
-#smlwdycdac .gt_font_italic {
+#nvvnulvbnq .gt_font_italic {
   font-style: italic;
 }
 
-#smlwdycdac .gt_super {
+#nvvnulvbnq .gt_super {
   font-size: 65%;
 }
 
-#smlwdycdac .gt_footnote_marks {
+#nvvnulvbnq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#smlwdycdac .gt_asterisk {
+#nvvnulvbnq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#smlwdycdac .gt_indent_1 {
+#nvvnulvbnq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#smlwdycdac .gt_indent_2 {
+#nvvnulvbnq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#smlwdycdac .gt_indent_3 {
+#nvvnulvbnq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#smlwdycdac .gt_indent_4 {
+#nvvnulvbnq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#smlwdycdac .gt_indent_5 {
+#nvvnulvbnq .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1429,8 +1522,8 @@ div.csl-indent {
 </div>
 </section><section id="c.-skim関数" class="level5"><h5 class="anchored" data-anchor-id="c.-skim関数">c.&nbsp;skim関数</h5>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
-<span><span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">skim</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">skim</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <caption>Data summary</caption>
@@ -1754,28 +1847,28 @@ div.csl-indent {
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
 <span><span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span><span class="fu">tbl_summary</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<div id="eaiccusagy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#eaiccusagy table {
+<div id="ygmzryymzp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ygmzryymzp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#eaiccusagy thead, #eaiccusagy tbody, #eaiccusagy tfoot, #eaiccusagy tr, #eaiccusagy td, #eaiccusagy th {
+#ygmzryymzp thead, #ygmzryymzp tbody, #ygmzryymzp tfoot, #ygmzryymzp tr, #ygmzryymzp td, #ygmzryymzp th {
   border-style: none;
 }
 
-#eaiccusagy p {
+#ygmzryymzp p {
   margin: 0;
   padding: 0;
 }
 
-#eaiccusagy .gt_table {
+#ygmzryymzp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1801,12 +1894,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#eaiccusagy .gt_caption {
+#ygmzryymzp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#eaiccusagy .gt_title {
+#ygmzryymzp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1818,7 +1911,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#eaiccusagy .gt_subtitle {
+#ygmzryymzp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1830,7 +1923,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#eaiccusagy .gt_heading {
+#ygmzryymzp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1842,13 +1935,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#eaiccusagy .gt_bottom_border {
+#ygmzryymzp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#eaiccusagy .gt_col_headings {
+#ygmzryymzp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1863,7 +1956,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#eaiccusagy .gt_col_heading {
+#ygmzryymzp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1883,7 +1976,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#eaiccusagy .gt_column_spanner_outer {
+#ygmzryymzp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1895,15 +1988,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#eaiccusagy .gt_column_spanner_outer:first-child {
+#ygmzryymzp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#eaiccusagy .gt_column_spanner_outer:last-child {
+#ygmzryymzp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#eaiccusagy .gt_column_spanner {
+#ygmzryymzp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1915,11 +2008,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#eaiccusagy .gt_spanner_row {
+#ygmzryymzp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#eaiccusagy .gt_group_heading {
+#ygmzryymzp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1945,7 +2038,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#eaiccusagy .gt_empty_group_heading {
+#ygmzryymzp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1960,15 +2053,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#eaiccusagy .gt_from_md > :first-child {
+#ygmzryymzp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#eaiccusagy .gt_from_md > :last-child {
+#ygmzryymzp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#eaiccusagy .gt_row {
+#ygmzryymzp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1987,7 +2080,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#eaiccusagy .gt_stub {
+#ygmzryymzp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2000,7 +2093,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#eaiccusagy .gt_stub_row_group {
+#ygmzryymzp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2014,15 +2107,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#eaiccusagy .gt_row_group_first td {
+#ygmzryymzp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#eaiccusagy .gt_row_group_first th {
+#ygmzryymzp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#eaiccusagy .gt_summary_row {
+#ygmzryymzp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2032,16 +2125,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#eaiccusagy .gt_first_summary_row {
+#ygmzryymzp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#eaiccusagy .gt_first_summary_row.thick {
+#ygmzryymzp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#eaiccusagy .gt_last_summary_row {
+#ygmzryymzp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2051,7 +2144,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#eaiccusagy .gt_grand_summary_row {
+#ygmzryymzp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2061,7 +2154,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#eaiccusagy .gt_first_grand_summary_row {
+#ygmzryymzp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2071,7 +2164,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#eaiccusagy .gt_last_grand_summary_row_top {
+#ygmzryymzp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2081,11 +2174,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#eaiccusagy .gt_striped {
+#ygmzryymzp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#eaiccusagy .gt_table_body {
+#ygmzryymzp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2094,7 +2187,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#eaiccusagy .gt_footnotes {
+#ygmzryymzp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2108,7 +2201,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#eaiccusagy .gt_footnote {
+#ygmzryymzp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2117,7 +2210,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#eaiccusagy .gt_sourcenotes {
+#ygmzryymzp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2131,7 +2224,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#eaiccusagy .gt_sourcenote {
+#ygmzryymzp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2139,63 +2232,63 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#eaiccusagy .gt_left {
+#ygmzryymzp .gt_left {
   text-align: left;
 }
 
-#eaiccusagy .gt_center {
+#ygmzryymzp .gt_center {
   text-align: center;
 }
 
-#eaiccusagy .gt_right {
+#ygmzryymzp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#eaiccusagy .gt_font_normal {
+#ygmzryymzp .gt_font_normal {
   font-weight: normal;
 }
 
-#eaiccusagy .gt_font_bold {
+#ygmzryymzp .gt_font_bold {
   font-weight: bold;
 }
 
-#eaiccusagy .gt_font_italic {
+#ygmzryymzp .gt_font_italic {
   font-style: italic;
 }
 
-#eaiccusagy .gt_super {
+#ygmzryymzp .gt_super {
   font-size: 65%;
 }
 
-#eaiccusagy .gt_footnote_marks {
+#ygmzryymzp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#eaiccusagy .gt_asterisk {
+#ygmzryymzp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#eaiccusagy .gt_indent_1 {
+#ygmzryymzp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#eaiccusagy .gt_indent_2 {
+#ygmzryymzp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#eaiccusagy .gt_indent_3 {
+#ygmzryymzp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#eaiccusagy .gt_indent_4 {
+#ygmzryymzp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#eaiccusagy .gt_indent_5 {
+#ygmzryymzp .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2619,28 +2712,28 @@ div.csl-indent {
 </div>
 </section></section><section id="クロス集計" class="level4"><h4 class="anchored" data-anchor-id="クロス集計">クロス集計</h4>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
-<span><span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q1. パソコンのスキルに自信がありますか`</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span><span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="co">#学域で分ける</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q1. パソコンのスキルに自信がありますか`</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="co">#学域で分ける</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<div id="gdqwxoyrhe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gdqwxoyrhe table {
+<div id="qnzykmmrye" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qnzykmmrye table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gdqwxoyrhe thead, #gdqwxoyrhe tbody, #gdqwxoyrhe tfoot, #gdqwxoyrhe tr, #gdqwxoyrhe td, #gdqwxoyrhe th {
+#qnzykmmrye thead, #qnzykmmrye tbody, #qnzykmmrye tfoot, #qnzykmmrye tr, #qnzykmmrye td, #qnzykmmrye th {
   border-style: none;
 }
 
-#gdqwxoyrhe p {
+#qnzykmmrye p {
   margin: 0;
   padding: 0;
 }
 
-#gdqwxoyrhe .gt_table {
+#qnzykmmrye .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2666,12 +2759,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#gdqwxoyrhe .gt_caption {
+#qnzykmmrye .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gdqwxoyrhe .gt_title {
+#qnzykmmrye .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2683,7 +2776,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#gdqwxoyrhe .gt_subtitle {
+#qnzykmmrye .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2695,7 +2788,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#gdqwxoyrhe .gt_heading {
+#qnzykmmrye .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2707,13 +2800,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gdqwxoyrhe .gt_bottom_border {
+#qnzykmmrye .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gdqwxoyrhe .gt_col_headings {
+#qnzykmmrye .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2728,7 +2821,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gdqwxoyrhe .gt_col_heading {
+#qnzykmmrye .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2748,7 +2841,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#gdqwxoyrhe .gt_column_spanner_outer {
+#qnzykmmrye .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2760,15 +2853,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#gdqwxoyrhe .gt_column_spanner_outer:first-child {
+#qnzykmmrye .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gdqwxoyrhe .gt_column_spanner_outer:last-child {
+#qnzykmmrye .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gdqwxoyrhe .gt_column_spanner {
+#qnzykmmrye .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2780,11 +2873,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#gdqwxoyrhe .gt_spanner_row {
+#qnzykmmrye .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gdqwxoyrhe .gt_group_heading {
+#qnzykmmrye .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2810,7 +2903,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#gdqwxoyrhe .gt_empty_group_heading {
+#qnzykmmrye .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2825,15 +2918,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#gdqwxoyrhe .gt_from_md > :first-child {
+#qnzykmmrye .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gdqwxoyrhe .gt_from_md > :last-child {
+#qnzykmmrye .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gdqwxoyrhe .gt_row {
+#qnzykmmrye .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2852,7 +2945,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#gdqwxoyrhe .gt_stub {
+#qnzykmmrye .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2865,7 +2958,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gdqwxoyrhe .gt_stub_row_group {
+#qnzykmmrye .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2879,15 +2972,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#gdqwxoyrhe .gt_row_group_first td {
+#qnzykmmrye .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gdqwxoyrhe .gt_row_group_first th {
+#qnzykmmrye .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gdqwxoyrhe .gt_summary_row {
+#qnzykmmrye .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2897,16 +2990,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gdqwxoyrhe .gt_first_summary_row {
+#qnzykmmrye .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gdqwxoyrhe .gt_first_summary_row.thick {
+#qnzykmmrye .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gdqwxoyrhe .gt_last_summary_row {
+#qnzykmmrye .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2916,7 +3009,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#gdqwxoyrhe .gt_grand_summary_row {
+#qnzykmmrye .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2926,7 +3019,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gdqwxoyrhe .gt_first_grand_summary_row {
+#qnzykmmrye .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2936,7 +3029,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#gdqwxoyrhe .gt_last_grand_summary_row_top {
+#qnzykmmrye .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2946,11 +3039,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#gdqwxoyrhe .gt_striped {
+#qnzykmmrye .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gdqwxoyrhe .gt_table_body {
+#qnzykmmrye .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2959,7 +3052,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#gdqwxoyrhe .gt_footnotes {
+#qnzykmmrye .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2973,7 +3066,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gdqwxoyrhe .gt_footnote {
+#qnzykmmrye .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2982,7 +3075,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gdqwxoyrhe .gt_sourcenotes {
+#qnzykmmrye .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2996,7 +3089,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gdqwxoyrhe .gt_sourcenote {
+#qnzykmmrye .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3004,63 +3097,63 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gdqwxoyrhe .gt_left {
+#qnzykmmrye .gt_left {
   text-align: left;
 }
 
-#gdqwxoyrhe .gt_center {
+#qnzykmmrye .gt_center {
   text-align: center;
 }
 
-#gdqwxoyrhe .gt_right {
+#qnzykmmrye .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gdqwxoyrhe .gt_font_normal {
+#qnzykmmrye .gt_font_normal {
   font-weight: normal;
 }
 
-#gdqwxoyrhe .gt_font_bold {
+#qnzykmmrye .gt_font_bold {
   font-weight: bold;
 }
 
-#gdqwxoyrhe .gt_font_italic {
+#qnzykmmrye .gt_font_italic {
   font-style: italic;
 }
 
-#gdqwxoyrhe .gt_super {
+#qnzykmmrye .gt_super {
   font-size: 65%;
 }
 
-#gdqwxoyrhe .gt_footnote_marks {
+#qnzykmmrye .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gdqwxoyrhe .gt_asterisk {
+#qnzykmmrye .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gdqwxoyrhe .gt_indent_1 {
+#qnzykmmrye .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gdqwxoyrhe .gt_indent_2 {
+#qnzykmmrye .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gdqwxoyrhe .gt_indent_3 {
+#qnzykmmrye .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gdqwxoyrhe .gt_indent_4 {
+#qnzykmmrye .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gdqwxoyrhe .gt_indent_5 {
+#qnzykmmrye .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3134,7 +3227,7 @@ div.csl-indent {
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
 <span><span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q1. パソコンのスキルに自信がありますか`</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span><span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span>  <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
@@ -3143,23 +3236,23 @@ div.csl-indent {
 <span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<div id="smgpkxtbvr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#smgpkxtbvr table {
+<div id="dffphjxnak" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dffphjxnak table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#smgpkxtbvr thead, #smgpkxtbvr tbody, #smgpkxtbvr tfoot, #smgpkxtbvr tr, #smgpkxtbvr td, #smgpkxtbvr th {
+#dffphjxnak thead, #dffphjxnak tbody, #dffphjxnak tfoot, #dffphjxnak tr, #dffphjxnak td, #dffphjxnak th {
   border-style: none;
 }
 
-#smgpkxtbvr p {
+#dffphjxnak p {
   margin: 0;
   padding: 0;
 }
 
-#smgpkxtbvr .gt_table {
+#dffphjxnak .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3185,12 +3278,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#smgpkxtbvr .gt_caption {
+#dffphjxnak .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#smgpkxtbvr .gt_title {
+#dffphjxnak .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3202,7 +3295,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#smgpkxtbvr .gt_subtitle {
+#dffphjxnak .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3214,7 +3307,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#smgpkxtbvr .gt_heading {
+#dffphjxnak .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3226,13 +3319,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#smgpkxtbvr .gt_bottom_border {
+#dffphjxnak .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#smgpkxtbvr .gt_col_headings {
+#dffphjxnak .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3247,7 +3340,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#smgpkxtbvr .gt_col_heading {
+#dffphjxnak .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3267,7 +3360,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#smgpkxtbvr .gt_column_spanner_outer {
+#dffphjxnak .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3279,15 +3372,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#smgpkxtbvr .gt_column_spanner_outer:first-child {
+#dffphjxnak .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#smgpkxtbvr .gt_column_spanner_outer:last-child {
+#dffphjxnak .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#smgpkxtbvr .gt_column_spanner {
+#dffphjxnak .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3299,11 +3392,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#smgpkxtbvr .gt_spanner_row {
+#dffphjxnak .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#smgpkxtbvr .gt_group_heading {
+#dffphjxnak .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3329,7 +3422,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#smgpkxtbvr .gt_empty_group_heading {
+#dffphjxnak .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3344,15 +3437,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#smgpkxtbvr .gt_from_md > :first-child {
+#dffphjxnak .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#smgpkxtbvr .gt_from_md > :last-child {
+#dffphjxnak .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#smgpkxtbvr .gt_row {
+#dffphjxnak .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3371,7 +3464,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#smgpkxtbvr .gt_stub {
+#dffphjxnak .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3384,7 +3477,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#smgpkxtbvr .gt_stub_row_group {
+#dffphjxnak .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3398,15 +3491,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#smgpkxtbvr .gt_row_group_first td {
+#dffphjxnak .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#smgpkxtbvr .gt_row_group_first th {
+#dffphjxnak .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#smgpkxtbvr .gt_summary_row {
+#dffphjxnak .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3416,16 +3509,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#smgpkxtbvr .gt_first_summary_row {
+#dffphjxnak .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#smgpkxtbvr .gt_first_summary_row.thick {
+#dffphjxnak .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#smgpkxtbvr .gt_last_summary_row {
+#dffphjxnak .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3435,7 +3528,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#smgpkxtbvr .gt_grand_summary_row {
+#dffphjxnak .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3445,7 +3538,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#smgpkxtbvr .gt_first_grand_summary_row {
+#dffphjxnak .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3455,7 +3548,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#smgpkxtbvr .gt_last_grand_summary_row_top {
+#dffphjxnak .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3465,11 +3558,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#smgpkxtbvr .gt_striped {
+#dffphjxnak .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#smgpkxtbvr .gt_table_body {
+#dffphjxnak .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3478,7 +3571,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#smgpkxtbvr .gt_footnotes {
+#dffphjxnak .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3492,7 +3585,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#smgpkxtbvr .gt_footnote {
+#dffphjxnak .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3501,7 +3594,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#smgpkxtbvr .gt_sourcenotes {
+#dffphjxnak .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3515,7 +3608,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#smgpkxtbvr .gt_sourcenote {
+#dffphjxnak .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3523,63 +3616,63 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#smgpkxtbvr .gt_left {
+#dffphjxnak .gt_left {
   text-align: left;
 }
 
-#smgpkxtbvr .gt_center {
+#dffphjxnak .gt_center {
   text-align: center;
 }
 
-#smgpkxtbvr .gt_right {
+#dffphjxnak .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#smgpkxtbvr .gt_font_normal {
+#dffphjxnak .gt_font_normal {
   font-weight: normal;
 }
 
-#smgpkxtbvr .gt_font_bold {
+#dffphjxnak .gt_font_bold {
   font-weight: bold;
 }
 
-#smgpkxtbvr .gt_font_italic {
+#dffphjxnak .gt_font_italic {
   font-style: italic;
 }
 
-#smgpkxtbvr .gt_super {
+#dffphjxnak .gt_super {
   font-size: 65%;
 }
 
-#smgpkxtbvr .gt_footnote_marks {
+#dffphjxnak .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#smgpkxtbvr .gt_asterisk {
+#dffphjxnak .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#smgpkxtbvr .gt_indent_1 {
+#dffphjxnak .gt_indent_1 {
   text-indent: 5px;
 }
 
-#smgpkxtbvr .gt_indent_2 {
+#dffphjxnak .gt_indent_2 {
   text-indent: 10px;
 }
 
-#smgpkxtbvr .gt_indent_3 {
+#dffphjxnak .gt_indent_3 {
   text-indent: 15px;
 }
 
-#smgpkxtbvr .gt_indent_4 {
+#dffphjxnak .gt_indent_4 {
   text-indent: 20px;
 }
 
-#smgpkxtbvr .gt_indent_5 {
+#dffphjxnak .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3697,9 +3790,9 @@ Tips | コードの利点
 <li>
 <a href="https://cran.rstudio.com">R</a>
 <ul>
-<li>エラーメッセージの日本語化
+<li>エラーメッセージの日本語化（ターミナル操作が必要）
 <ul>
-<li><a href="https://qiita.com/libra_lt/items/feb65b1742d9508740a9">Mac: localeを日本語(ja_JP.UTF-8)にする</a></li>
+<li><a href="https://maku77.github.io/r/basic/locale.html">Mac: R 環境の Locale 設定（日本語を使用する）</a></li>
 <li><a href="https://niszet.hatenablog.com/entry/2022/04/25/083000">Win: (R) R4.2でWindowsでもUTF-8を設定できることを確認した</a></li>
 </ul>
 </li>
@@ -3733,7 +3826,7 @@ Tips | コードの利点
 </li>
 </ol>
 <div class="cell" data-code_download="true">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">my_packages</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"tidyverse"</span>, <span class="st">"broom"</span>, <span class="st">"coefplot"</span>, <span class="st">"cowplot"</span>,</span>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">my_packages</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"tidyverse"</span>, <span class="st">"broom"</span>, <span class="st">"coefplot"</span>, <span class="st">"cowplot"</span>,</span>
 <span>                 <span class="st">"gapminder"</span>, <span class="st">"GGally"</span>, <span class="st">"ggrepel"</span>, <span class="st">"ggridges"</span>, <span class="st">"gridExtra"</span>,</span>
 <span>                 <span class="st">"here"</span>, <span class="st">"interplot"</span>, <span class="st">"margins"</span>, <span class="st">"maps"</span>, <span class="st">"mapproj"</span>,</span>
 <span>                 <span class="st">"mapdata"</span>, <span class="st">"MASS"</span>, <span class="st">"quantreg"</span>, <span class="st">"rlang"</span>, <span class="st">"scales"</span>,</span>
@@ -3750,6 +3843,16 @@ Tips | コードの利点
 <blockquote class="blockquote">
 <p>devtools::install_github(“kjhealy/socviz”)</p>
 </blockquote>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>上記の「““」（ダブルクオテーション）は、全角文字に置き換えられているので、直接入力してください</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -3840,7 +3943,7 @@ Tips | インデントの調整のショートカット
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#パッケージの読み込み</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#パッケージの読み込み</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> <span class="co">#「モダンなデータ分析」を行うためのパッケージ群</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span> <span class="co">#可視化パッケージ</span></span>
 <span></span>
@@ -3853,7 +3956,7 @@ Tips | インデントの調整のショートカット
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 散布図</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w1_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -3936,7 +4039,7 @@ note | 回答先と締め切り
 <div id="ref-MullerJZ:2018b1" class="csl-entry" role="listitem">
 Jerry Z. Muller (2018) 『The tyranny of metrics』, Princeton University Press.
 </div>
-</div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>苅谷千尋</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>2024 CHIHIRO KARIYA</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
