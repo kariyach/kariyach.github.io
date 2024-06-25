@@ -115,6 +115,7 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script><style>html{ scroll-behavior: smooth; }</style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script><script src="../../site_libs/quarto-diagram/mermaid-init.js"></script><link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <link rel="stylesheet" href="../../style_ja.css">
 </head>
 <body class="nav-fixed">
@@ -242,7 +243,15 @@ div.csl-indent {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
    
   <ul>
-<li><a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A" id="toc-前回の振り返り" class="nav-link active" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A">Ⅰ. 前回の振り返り</a></li>
+<li>
+<a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A" id="toc-前回の振り返り" class="nav-link active" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A">Ⅰ. 前回の振り返り</a>
+  <ul class="collapse">
+<li><a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3" id="toc-前回の授業の感想" class="nav-link" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3">1. 前回の「授業の感想」</a></li>
+  <li><a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E8%A3%9C%E8%B6%B3%E5%A4%9A%E6%A7%98%E3%81%AA%E6%95%B0%E5%AD%97%E3%81%AE%E5%9E%8B" id="toc-前回の補足多様な数字の型" class="nav-link" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E8%A3%9C%E8%B6%B3%E5%A4%9A%E6%A7%98%E3%81%AA%E6%95%B0%E5%AD%97%E3%81%AE%E5%9E%8B">2. 前回の補足：多様な数字の型</a></li>
+  <li><a href="#%E6%95%99%E5%93%A1%E3%81%AE%E4%BD%9C%E6%A5%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%85%B1%E6%9C%89" id="toc-教員の作業ファイルの共有" class="nav-link" data-scroll-target="#%E6%95%99%E5%93%A1%E3%81%AE%E4%BD%9C%E6%A5%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%85%B1%E6%9C%89">3. 教員の作業ファイルの共有</a></li>
+  <li><a href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E6%B5%81%E3%82%8Cdplyr%E3%81%A8ggplot" id="toc-基本的な流れdplyrとggplot" class="nav-link" data-scroll-target="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E6%B5%81%E3%82%8Cdplyr%E3%81%A8ggplot">4. 基本的な流れ：dplyrとggplot</a></li>
+  </ul>
+</li>
   <li>
 <a href="#%E5%AE%9F%E7%BF%92%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E7%A2%BA%E8%AA%8D" id="toc-実習ファイルの確認" class="nav-link" data-scroll-target="#%E5%AE%9F%E7%BF%92%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E7%A2%BA%E8%AA%8D">Ⅱ. 実習ファイルの確認</a>
   <ul class="collapse">
@@ -302,16 +311,15 @@ div.csl-indent {
 
 </div>
 <section id="前回の振り返り" class="level1"><h1>Ⅰ. 前回の振り返り</h1>
+<section id="前回の授業の感想" class="level2"><h2 class="anchored" data-anchor-id="前回の授業の感想">1. 前回の「授業の感想」</h2>
 <ul>
-<li>前回の「授業の感想」（別紙参照）</li>
-<li>前回の補足：多様な数字の型
+<li>別紙参照</li>
+</ul></section><section id="前回の補足多様な数字の型" class="level2"><h2 class="anchored" data-anchor-id="前回の補足多様な数字の型">2. 前回の補足：多様な数字の型</h2>
 <ul>
 <li>num: numeric, 数値
 <ul>
 <li>int: integer（整数）</li>
 <li>dbl: double（倍精度浮動小数点型、簡単に言えば実数）</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -332,13 +340,10 @@ integer型とdouble型
 </ul>
 </div>
 </div>
-<ul>
-<li>教員の作業ファイルの共有
+</section><section id="教員の作業ファイルの共有" class="level2"><h2 class="anchored" data-anchor-id="教員の作業ファイルの共有">3. 教員の作業ファイルの共有</h2>
 <ul>
 <li>毎回授業後に、教員の作業ファイルをアップロードします。何をどうしたのか、わからない場合はこのファイルを使って確認して下さい</li>
 <li><a href="https://drive.google.com/drive/folders/17TQGy7zkHA6ZMUYMS0yhoZ7tHuGlebMi?usp=sharing">Google Drive</a></li>
-</ul>
-</li>
 </ul>
 <div class="callout callout-style-simple callout-warning">
 <div class="callout-body d-flex">
@@ -346,11 +351,27 @@ integer型とdouble型
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>授業用.qmdだけでなく、フォルダ（例：imgフォルダ）も必ずダウンロードしてください。たとえば、qmdでimgフォルダ内の画像を指定しているため、フォルダも一緒にダウンロードしなければエラーがおこります（imgファイルがありません）</p>
+<p>授業用.qmdだけでなく、フォルダ（例：imgフォルダ）も必ずダウンロードしてください。たとえば、qmdでimgフォルダ内の画像を指定しているため、フォルダも一緒にダウンロードしなければエラーがおこります（エラー「imgファイルがありません」）</p>
 </div>
 </div>
 </div>
-</section><section id="実習ファイルの確認" class="level1 page-columns page-full"><h1>Ⅱ. 実習ファイルの確認</h1>
+</section><section id="基本的な流れdplyrとggplot" class="level2"><h2 class="anchored" data-anchor-id="基本的な流れdplyrとggplot">4. 基本的な流れ：dplyrとggplot</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"></figure><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    A([データの加工 &lt;br&gt; &lt;strong&gt;dplyr&lt;/strong&gt; &lt;br&gt; 例 select filter]) --- B([データの可視化 &lt;br&gt; &lt;strong&gt;ggplot2&lt;/strong&gt; &lt;br&gt; 例 geom_bar])
+
+</pre>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p><img src="img/dplyr.png" class="img-fluid" style="width:10.0%">　 <img src="img/ggplot2.png" class="img-fluid" style="width:10.0%"></p>
+</section></section><section id="実習ファイルの確認" class="level1 page-columns page-full"><h1>Ⅱ. 実習ファイルの確認</h1>
 <section id="セットアップチャンクの作成設定" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="セットアップチャンクの作成設定">1. セットアップチャンクの作成（設定）</h2>
 <ul>
 <li>実習ファイルのYAML（—で囲まれた次の箇所）以下を次の状態にして下さい（setupチャンクの作成）
@@ -620,7 +641,7 @@ library(read_excel)
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -644,7 +665,7 @@ library(read_excel)
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -691,7 +712,7 @@ library(read_excel)
 <span><span class="va">p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -712,7 +733,7 @@ library(read_excel)
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -724,7 +745,7 @@ library(read_excel)
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -738,7 +759,7 @@ library(read_excel)
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -759,7 +780,7 @@ library(read_excel)
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -782,7 +803,7 @@ library(read_excel)
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -832,7 +853,7 @@ library(read_excel)
 <span>  <span class="fu">stat_cor</span><span class="op">(</span>method <span class="op">=</span> <span class="st">"pearson"</span>, label.x <span class="op">=</span> <span class="fl">60000</span>, label.y <span class="op">=</span> <span class="fl">30</span><span class="op">)</span> <span class="co"># 相関係数を析出（ピアソン）。label.xとlabel.yは析出結果をプロットする位置を指す</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -861,7 +882,7 @@ library(read_excel)
 <span>  <span class="fu">geom_text_repel</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, max.overlaps <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="co"># sizeは文字サイズ、max.overlapsはテキストの重なりの最大値</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -884,7 +905,7 @@ library(read_excel)
 <span>  <span class="fu">geom_text_repel</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, max.overlaps <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -915,7 +936,7 @@ library(read_excel)
 <span>  <span class="fu">gghighlight</span><span class="op">(</span><span class="va">country</span> <span class="op">==</span> <span class="st">"Japan"</span><span class="op">)</span> <span class="co"># 条件を満たしたデータをハイライトする（他をグレーアウトする）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -929,7 +950,7 @@ library(read_excel)
 <span>  <span class="fu">gghighlight</span><span class="op">(</span><span class="va">lifeExp</span> <span class="op">&gt;</span> <span class="fl">80</span><span class="op">)</span> <span class="co"># 条件を満たしたデータをハイライトする（他をグレーアウトする）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -987,7 +1008,7 @@ library(read_excel)
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1008,7 +1029,7 @@ library(read_excel)
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 散布図は不向きなため、棒グラフを作ってみる。棒グラフは、図の性質上、一つのオブジェクトしか取れない</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
