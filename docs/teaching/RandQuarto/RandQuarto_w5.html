@@ -202,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">Tuesday, 9, Jul, 2024</p>
+        <p class="date-modified">Wednesday, 10, Jul, 2024</p>
       </div>
     </div>
       
@@ -298,17 +298,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>別紙参照</li>
 </ul>
 <!-- # レンダリング（windows） --><!-- - [レポート形式自由自在](https://gihyo.jp/admin/serial/01/r-markdown/0006) --></section><section id="フォント問題日本語windows" class="level2"><h2 class="anchored" data-anchor-id="フォント問題日本語windows">2. フォント問題（日本語・Windows）</h2>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>レンダリングした際に、日本語が表示されない（□で表示される）方のみ、以下を試して下さい。</p>
+</div>
+</div>
+</div>
 <ol type="1">
-<li>確認：Rバージョン</li>
-</ol>
+<li>確認：Rバージョン
 <ul>
 <li>「Console」タブの直下</li>
 <li>最新版：R4.4.0</li>
 <li>WindowsはR4.2からユニコード対応</li>
 </ul>
-<ol start="2" type="1">
-<li>確認：グラフィックデバイス</li>
-</ol>
+</li>
+<li>確認：グラフィックデバイス
 <ul>
 <li>RStudioのTool &gt; Global Option &gt; General &gt; Graphics
 <ul>
@@ -316,18 +324,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </li>
 </ul>
-<ol start="3" type="1">
-<li>確認：言語設定</li>
-</ol>
+</li>
+<li>確認：言語設定（日本語）
 <ul>
 <li>Console</li>
 </ul>
+</li>
+</ol>
 <pre><code><a href="https://rdrr.io/r/base/locales.html">Sys.getlocale()</a></code></pre>
 <blockquote class="blockquote">
 <p>[1] “ja_JP.UTF-8/ja_JP.UTF-8/ja_JP.UTF-8/C/ja_JP.UTF-8/ja_JP.UTF-8”</p>
 </blockquote>
 <ol start="4" type="1">
-<li>セットアップチャンクに以下のコードを入力</li>
+<li>セットアップチャンクに以下のコードを入力（セットアップチャンク内ならどこでもよい）</li>
 </ol>
 <pre><code>windowsFonts(
  `Yu Gothic` = windowsFont("Yu Gothic")
@@ -373,21 +382,23 @@ Gothic"))</code></pre>
 <section id="準備" class="level3"><h3 class="anchored" data-anchor-id="準備">0. 準備</h3>
 <ol type="1">
 <li>
-<a href="https://drive.google.com/drive/folders/17TQGy7zkHA6ZMUYMS0yhoZ7tHuGlebMi?usp=sharing">Google Drive</a>「データ」から以下のファイルをダウンロード</li>
-</ol>
+<a href="https://drive.google.com/drive/folders/17TQGy7zkHA6ZMUYMS0yhoZ7tHuGlebMi?usp=sharing">Google Drive</a>「データ」から以下のファイルをダウンロード
 <ul>
 <li>sample_join_学生データ.csv</li>
 <li>sample_join_スコア.csv</li>
 <li>sample_bind1.csv</li>
 <li>sample_bind2.csv</li>
 </ul>
-<ol start="2" type="1">
+</li>
 <li>各自の「data」フォルダに収納</li>
 <li>read_csv()関数でデータを読み込み、オブジェクトに入れる(困ったら、先々週のウェブページを参照しましょう)</li>
 </ol></section><section id="列の結合横方向の結合列を足す" class="level3"><h3 class="anchored" data-anchor-id="列の結合横方向の結合列を足す">⑴ 列の結合（横方向の結合）：列を足す</h3>
 <ul>
-<li>行頭がIDなど、固有の値をもつデータが必要</li>
+<li>行頭がIDなど、固有の値をもつデータが必要
+<ul>
 <li>例：生徒の属性データと、成績データが別々のファイルにまとまっており、一つにしたい場合</li>
+</ul>
+</li>
 </ul>
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample_join1</span> <span class="op">&lt;-</span> </span>
@@ -413,8 +424,11 @@ Gothic"))</code></pre>
 </div>
 </section><section id="行の結合縦方向の結合行を足す" class="level3"><h3 class="anchored" data-anchor-id="行の結合縦方向の結合行を足す">⑵ 行の結合（縦方向の結合）：行を足す</h3>
 <ul>
-<li>共通するカラム名をもつ複数のファイルが必要</li>
+<li>共通するカラム名をもつ複数のファイルが必要
+<ul>
 <li>例：生徒の属性データと、成績データが別々のファイルにまとまっており、一つにしたい場合</li>
+</ul>
+</li>
 </ul>
 <div class="cell">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample_bind1</span> <span class="op">&lt;-</span> <span class="co"># 学生番号1から3番まで</span></span>
@@ -849,6 +863,16 @@ Gothic"))</code></pre>
 4        NA
 5        NA
 6        NA</code></pre>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>ggplot内でも欠損値を処理することもできますが、初学者にはやや高度です。ggplotにデータを渡す前に欠損値を処理しましょう。ggplot内の欠損値の扱いについては<a href="https://notchained.hatenablog.com/entry/2016/11/23/105302">ggplot2でna.rmが効かなくなった話（2.2.0以降）</a>が詳しいです。</p>
+</div>
 </div>
 </div>
 </section></section><section id="出力の変更" class="level1"><h1>Ⅲ. 出力の変更</h1>
