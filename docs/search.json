@@ -550,7 +550,7 @@
     "href": "teaching/RandQuarto/RandQuarto_w6.html#縦持ちデータへの変換",
     "title": "RとQuartoではじめるデータサイエンス：データを可視化する《2024》",
     "section": "1. 縦持ちデータへの変換",
-    "text": "1. 縦持ちデータへの変換\n\ndf_東京都知事選挙_候補者別得票数_longer &lt;-\n  df_東京都知事選挙_候補者別得票数 %&gt;% \n  pivot_longer(\n    cols = 4:13, # 対象とする列を指定（すべて候補者）\n    names_to = \"候補者名\", # 縦持ちデータに変換した場合の列名\n    values_to = \"投票者数\" # 縦持ちデータに変換した場合の値の列名\n  )"
+    "text": "1. 縦持ちデータへの変換\n\ndf_東京都知事選挙_候補者別得票数_longer &lt;-\n  df_東京都知事選挙_候補者別得票数 %&gt;% \n  pivot_longer(\n    cols = 4:13, # 対象とする列を指定（すべて候補者）\n    names_to = \"候補者名\", # 縦持ちデータに変換した場合の列名\n    values_to = \"投票者数\" # 縦持ちデータに変換した場合の値の列名\n  )\n\n\n\n\n\n\n\n縦持ちデータへの変換については､初回アンケート集計やサンプル：金沢広域急病センター利用者数も参照下さい。この変換方法については､ChatGPTはおおむね､正しい返答をしてくれるので､お試し下さい。"
   },
   {
     "objectID": "teaching/RandQuarto/RandQuarto_w6.html#縦持ちデータを使った図の作成",
