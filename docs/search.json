@@ -1362,7 +1362,7 @@
     "href": "teaching/RandQuarto/RandQuarto_w7.html#ファイル形式",
     "title": "RとQuartoではじめるデータサイエンス：データを可視化する《2024》",
     "section": "1. ファイル形式",
-    "text": "1. ファイル形式\n\nhtmlファイル\n\nコードは折り畳むこと\n\n\nスライドファイル\n\nPowerPoint または Reveal\n忘れた人はこのリンク（第5週目教材）から復習して下さい"
+    "text": "1. ファイル形式\n\nhtmlファイル\n\nコードは折り畳むこと\n\n\nスライドファイル\n\nPowerPoint または revealjs\n忘れた人は第5週目教材で復習して下さい"
   },
   {
     "objectID": "teaching/RandQuarto/RandQuarto_w7.html#内容",
@@ -1376,21 +1376,21 @@
     "href": "teaching/RandQuarto/RandQuarto_w7.html#ルーブリック",
     "title": "RとQuartoではじめるデータサイエンス：データを可視化する《2024》",
     "section": "3. ルーブリック",
-    "text": "3. ルーブリック\n\n別紙参照"
+    "text": "3. ルーブリック\n\n別紙参照\n\n学修目標（到達目標）（再掲）\n\n受講生が、R言語の基本的な操作（データの読み込み、加工、抽出、結合など）ができる\n受講生が、ggplot2パッケージを使い、基本的な図（棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ）を作成できる\n受講生が、自分の関心のあるテーマにかかわるデータから適切な図を作成できる"
   },
   {
     "objectID": "teaching/RandQuarto/RandQuarto_w7.html#チャンクごとに設定",
     "href": "teaching/RandQuarto/RandQuarto_w7.html#チャンクごとに設定",
     "title": "RとQuartoではじめるデータサイエンス：データを可視化する《2024》",
     "section": "1. チャンクごとに設定",
-    "text": "1. チャンクごとに設定\n\nチャンクを実行しない\n\n一部のチャンクだけ動かないなどの理由で､レンダリングやすべてのチャンクの実行から除外したい場合に有効\n\n\n\n - 図にタイトルを付ける - 図の比率を変える - コードを折り畳む"
+    "text": "1. チャンクごとに設定\n\nチャンクを実行しない\n\n一部のチャンクだけ動かないなどの理由で､レンダリングやすべてのチャンクの実行から除外したい場合に有効\n\n\n\n\n#| fig-cap: タイトル\n#| fig-asp: 図の比率\n#| code-fold: する／しないの設定\n\n図にタイトルを付ける\n図の比率を変える\nコードを折り畳む（「コードを折り畳む」は､この授業ではファイル全体で設定することにします（以下参照））\n以下のように使います"
   },
   {
     "objectID": "teaching/RandQuarto/RandQuarto_w7.html#ファイル全体に設定",
     "href": "teaching/RandQuarto/RandQuarto_w7.html#ファイル全体に設定",
     "title": "RとQuartoではじめるデータサイエンス：データを可視化する《2024》",
     "section": "2. ファイル全体に設定",
-    "text": "2. ファイル全体に設定\nYAMLに以下を追加すると､すべてのチャンクでエラーを非表示､コードは折り畳んで表示される（挿入場所はどこでもよい）\nexecute:\n  error: false\ncode-fold: true\n\n\n\n\n\n\nスペースに注意（必ず半角スペースで空きスペースを作ること）"
+    "text": "2. ファイル全体に設定\nYAMLに以下を追加すると､すべてのチャンクでエラーと警告を非表示､コードは折り畳んで表示される（挿入場所はどこでもよい）\nexecute:\n  error: false\n  warning: false\ncode-fold: true\n\n\n\n\n\n\n\nスペースに注意（必ず半角スペースで空きスペースを作ること）"
   },
   {
     "objectID": "teaching/RandQuarto/RandQuarto_w7.html#事前準備",
@@ -1411,7 +1411,14 @@
     "href": "teaching/RandQuarto/RandQuarto_w7.html#power-point",
     "title": "RとQuartoではじめるデータサイエンス：データを可視化する《2024》",
     "section": "2. Power Point",
-    "text": "2. Power Point\n\nQuartoファイルと同一階層に､テンプレートファイルを置く\nYAMLに､html出力をコメントアウトしたうえで､以下を追加\n\nformat:\n  pptx:\n    toc: true\n    reference-doc: template.pptx\n\npptxで可能な設定については公式サイトを参照\n\nテンプレートファイルの作成\nこのサイト（RStudioとRMarkdownで作るPowerPointプレゼンテーション）が参考になります\n\nテンプレートに指定するファイルは、次の4つのレイアウトを最初の4つのレイアウトとして含む必要があります。\n\n\n\nタイトルスライド（Title Slide）\n\n\nセクション見出し（Section Header）\n\n\nタイトルとコンテンツ（Title and Content）\n\n\n2つのコンテンツ（Two Content）\n\n\n\n最近のバージョンのPowerPointに含まれているテンプレート、あるいはそれを編集したテンプレートであれば、おそらく問題なく使えるでしょう。"
+    "text": "2. Power Point\n\nQuartoファイルと同一階層に､テンプレートファイルを置く\nYAMLに､html出力をコメントアウトしたうえで､以下を追加\n\nformat:\n  pptx:\n    toc: true\n    reference-doc: template.pptx\n\npptxで可能な設定については公式サイトを参照\n\n⑴ テンプレートファイルの作成\nこのサイト（RStudioとRMarkdownで作るPowerPointプレゼンテーション）が参考になります\n\nテンプレートに指定するファイルは、次の4つのレイアウトを最初の4つのレイアウトとして含む必要があります。\n\n\n\nタイトルスライド（Title Slide）\n\n\nセクション見出し（Section Header）\n\n\nタイトルとコンテンツ（Title and Content）\n\n\n2つのコンテンツ（Two Content）\n\n\n\n最近のバージョンのPowerPointに含まれているテンプレート、あるいはそれを編集したテンプレートであれば、おそらく問題なく使えるでしょう。\n\n⑵ PowerPointに含まれているテンプレート\n\nファイル &gt; テンプレートから新規作成\n変更せず（変更してもよい）に保存\nファイル名を「template.pptx」とする\nQuartoファイルと同一階層に､テンプレートファイルを置く"
+  },
+  {
+    "objectID": "teaching/RandQuarto/RandQuarto_w7.html#revealjs",
+    "href": "teaching/RandQuarto/RandQuarto_w7.html#revealjs",
+    "title": "RとQuartoではじめるデータサイエンス：データを可視化する《2024》",
+    "section": "3. revealjs",
+    "text": "3. revealjs\nrevealjsのテーマを変更するには､YAMLにthemeを追加する\ntitle: \"Presentation\"\nformat:\n  revealjs: \n    theme: dark\n\nCSSで文字色などの変更も可能\nこの他､可能なテーマ､設定については公式サイトを参照"
   },
   {
     "objectID": "teaching/RandQuarto/RandQuarto_w7.html#サンプル最終成果物として提出して欲しいレポートのかたち再掲",
@@ -1432,7 +1439,7 @@
     "href": "teaching/RandQuarto/RandQuarto_w7.html#演習",
     "title": "RとQuartoではじめるデータサイエンス：データを可視化する《2024》",
     "section": "2. 演習",
-    "text": "2. 演習\n\n最終成果物を提出して下さい\n\n\n\n\n\n\n\nnote | 回答先と締め切り\n\n\n\n\n\n回答先：Google Forms\n\n\n締め切り：2024年8月7日（水）10時30分まで\n\n出力形式:\n\nR Studioで出力されたhtmlファイル\nPowerPoint/Revealファイル\n\n\n\n\n\n\n\n\n\n\n\n再提出する場合は8月9日（金）23:59分まで（必須ではありません）。最終版のファイルで成績を評価します"
+    "text": "2. 演習\n\n最終成果物を提出して下さい\n\n\n\n\n\n\n\nnote | 回答先と締め切り\n\n\n\n\n\n回答先：Google Forms\n\n\n締め切り：2024年8月7日（水）10時30分まで\n\n出力形式:\n\nR Studioで出力されたhtmlファイル\nPowerPoint/revealjsファイル（revealjsはhtmlファイルと「…_files」で出力される）\n\n\n\n\n\n\n\n\n\n\n\n再提出する場合は8月9日（金）23:59分まで（必須ではありません）。最終版のファイルで成績を評価します"
   },
   {
     "objectID": "teaching/RandQuarto/syllabus.html",
