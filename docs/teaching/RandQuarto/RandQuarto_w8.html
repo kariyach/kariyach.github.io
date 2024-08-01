@@ -202,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">Thursday, 1, Aug, 2024</p>
+        <p class="date-modified">Friday, 2, Aug, 2024</p>
       </div>
     </div>
       
@@ -273,14 +273,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>例：アメリカ大統領選挙（州単位の色分け）
 <ul>
-<li>選挙は有権者数（投票者数）が重要であって､空間（大きさ､小ささ）に意味はない ➡ 見る者に誤ったインパクトを与える</li>
+<li>選挙は有権者数（投票者数）が重要であって､空間（大きさ､小ささ）に意味はない</li>
+<li>➡ 見る者に誤ったインパクトを与える</li>
+<li>➡ 階級区分図は不適切に用いると誤解を招きやすい</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>階級区分図は誤解を招きやすい</p></li>
 </ul></section><section id="アメリカ合衆国の週単位での地図" class="level2"><h2 class="anchored" data-anchor-id="アメリカ合衆国の週単位での地図">2. アメリカ合衆国の週単位での地図</h2>
 <section id="データの確認" class="level3"><h3 class="anchored" data-anchor-id="データの確認">⑴ データの確認</h3>
 <div class="cell">
@@ -289,13 +290,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu">slice_sample</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 6
-  state         total_vote r_points pct_trump party      census   
-  &lt;chr&gt;              &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    
-1 Pennsylvania     6166729    0.710      48.2 Republican Northeast
-2 Idaho             690433   31.8        59.2 Republican West     
-3 Tennessee        2508027   26          60.7 Republican South    
-4 West Virginia     721233   41.7        67.8 Republican South    
-5 Connecticut      1644920  -13.6        40.9 Democratic Northeast</code></pre>
+  state                total_vote r_points pct_trump party      census   
+  &lt;chr&gt;                     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    
+1 West Virginia            721233     41.7     67.8  Republican South    
+2 District of Columbia     311268    -86.8      4.09 Democratic South    
+3 Massachusetts           3325046    -27.2     32.8  Democratic Northeast
+4 Hawaii                   428937    -32.2     30.0  Democratic West     
+5 New Jersey              3906723    -14.0     41    Democratic Northeast</code></pre>
 </div>
 </div>
 </section><section id="傾向の把握" class="level3"><h3 class="anchored" data-anchor-id="傾向の把握">⑵ 傾向の把握</h3>
@@ -432,14 +433,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <pre><code><a href="https://r-spatial.github.io/sf/">library(sf)
 library(NipponMap)
-library(jpndistrict)</a></code></pre>
+library(jpndistrict)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(rnaturalearthhires)</a></code></pre>
 </section><section id="作図-1" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="作図-1">⑵ 作図</h3>
 <section id="シンプルな日本地図" class="level4"><h4 class="anchored" data-anchor-id="シンプルな日本地図">シンプルな日本地図</h4>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>geom_sfは地理空間データを標準化された形式で扱うためのRパッケージです。geom_polygonに比べ､より高度な地理空間データを可視化できます</p>
+</div>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 日本の地図データを取得</span></span>
-<span><span class="va">df_japan_map</span> <span class="op">&lt;-</span> <span class="fu">ne_states</span><span class="op">(</span>country <span class="op">=</span> <span class="st">"Japan"</span>, returnclass <span class="op">=</span> <span class="st">"sf"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_japan_map</span> <span class="op">&lt;-</span> <span class="fu">ne_states</span><span class="op">(</span>country <span class="op">=</span> <span class="st">"Japan"</span>, returnclass <span class="op">=</span> <span class="st">"sf"</span><span class="op">)</span> <span class="co"># 日本の地図データを取得</span></span>
 <span></span>
-<span><span class="co"># 地図をプロット</span></span>
+<span><span class="va">df_japan_map</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">df_japan_map</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    name_local <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">name</span> <span class="op">==</span> <span class="st">"Shizuoka"</span>, <span class="st">"静岡県"</span>, <span class="va">name_local</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="co">#元データに静岡県が入っていない（入力漏れ？）ためデータ加工</span></span>
+<span></span>
 <span><span class="va">df_japan_map</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
@@ -451,9 +469,47 @@ library(jpndistrict)</a></code></pre>
 </div>
 </div>
 </div>
+<div class="cell">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_india_map</span> <span class="op">&lt;-</span> <span class="fu">ne_states</span><span class="op">(</span>country <span class="op">=</span> <span class="st">"India"</span>, returnclass <span class="op">=</span> <span class="st">"sf"</span><span class="op">)</span> <span class="co"># 各国の地理データを持つ</span></span>
+<span></span>
+<span><span class="va">df_india_map</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_map</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="南西諸島小笠原諸島の位置を変更した地図" class="level4"><h4 class="anchored" data-anchor-id="南西諸島小笠原諸島の位置を変更した地図">南西諸島・小笠原諸島の位置を変更した地図</h4>
+<ul>
+<li>kuniezuパッケージを使用
+<ul>
+<li>CRANにパッケージがないので､以下の方法でインストール（Consoleに入力）</li>
+</ul>
+</li>
+</ul>
+<pre><code>install.packages("remotes")
+remotes::install_github("uribo/kuniezu")</code></pre>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">move_jpn_rs</span><span class="op">(</span><span class="va">jgd2011_bbox</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="co"># st_union() %&gt;% </span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_jpsegment</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_map</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section><section id="日本地図都道府県毎に人口で色分け" class="level4"><h4 class="anchored" data-anchor-id="日本地図都道府県毎に人口で色分け">日本地図（都道府県毎に人口で色分け）</h4>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_日本の人口</span> <span class="op">&lt;-</span> </span>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_日本の人口</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/日本の人口_2023年10月1日現在.csv"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span></span>
 <span>    男性 <span class="op">=</span> <span class="va">男性</span> <span class="op">*</span> <span class="fl">1000</span>,</span>
@@ -462,56 +518,19 @@ library(jpndistrict)</a></code></pre>
 <span>    `人口（100万人）` <span class="op">=</span> <span class="va">人口</span><span class="op">/</span><span class="fl">1000000</span></span>
 <span>  <span class="op">)</span> </span>
 <span></span>
-<span><span class="va">df_japan_map</span> <span class="op">&lt;-</span> </span>
+<span><span class="va">df_japan_map_pop</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">df_japan_map</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">left_join</span><span class="op">(</span><span class="va">df_日本の人口</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"name_local"</span> <span class="op">=</span> <span class="st">"都道府県"</span><span class="op">)</span><span class="op">)</span> </span>
 <span></span>
-<span><span class="va">df_japan_map</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">`人口（100万人）`</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="va">df_japan_map_pop</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">人口</span><span class="op">)</span>, , size <span class="op">=</span> <span class="va">.pt</span> <span class="op">/</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_fill_continuous</span><span class="op">(</span>low <span class="op">=</span> <span class="st">"blue"</span>, high <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_fill_continuous_tableau</span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span> <span class="op">/</span> <span class="fl">1e6</span>,</span>
+<span>    guide <span class="op">=</span> <span class="fu">guide_colorbar</span><span class="op">(</span></span>
+<span>      nbin <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>  <span class="co"># 色の区分を10に設定</span></span>
+<span>    <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"人口 (100万人)"</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span>base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_日本の人口_long</span> <span class="op">&lt;-</span> </span>
-<span><span class="va">df_日本の人口</span> <span class="op">%&gt;%</span> </span>
-<span>    <span class="fu">pivot_longer</span><span class="op">(</span></span>
-<span>    cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"男性"</span>, <span class="st">"女性"</span><span class="op">)</span>,</span>
-<span>    names_to <span class="op">=</span> <span class="st">"性別"</span>,</span>
-<span>    values_to <span class="op">=</span> <span class="st">"人口_男女別"</span></span>
-<span>  <span class="op">)</span></span>
-<span></span>
-<span><span class="va">df_japan_map_long</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="va">df_japan_map</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">left_join</span><span class="op">(</span><span class="va">df_日本の人口_long</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"name_local"</span> <span class="op">=</span> <span class="st">"都道府県"</span><span class="op">)</span><span class="op">)</span> </span>
-<span></span>
-<span></span>
-<span><span class="va">df_japan_map_long</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">人口_男女別</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_fill_continuous</span><span class="op">(</span>low <span class="op">=</span> <span class="st">"blue"</span>, high <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">性別</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">theme_void</span><span class="op">(</span>base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="日本地図石川県" class="level4"><h4 class="anchored" data-anchor-id="日本地図石川県">日本地図（石川県）</h4>
-<div class="cell">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_japan_map</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">name_local</span> <span class="op">==</span> <span class="st">"石川県"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
@@ -519,7 +538,70 @@ library(jpndistrict)</a></code></pre>
 </div>
 </div>
 </div>
-</section><section id="日本地図基礎自治体" class="level4 page-columns page-full"><h4 class="anchored" data-anchor-id="日本地図基礎自治体">日本地図（基礎自治体）</h4>
+<div class="cell">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_japan_map_pop</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">人口</span><span class="op">)</span>, , size <span class="op">=</span> <span class="va">.pt</span> <span class="op">/</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_fill_continuous_tableau</span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span> <span class="op">/</span> <span class="fl">1e6</span>,</span>
+<span>    guide <span class="op">=</span> <span class="fu">guide_colorbar</span><span class="op">(</span></span>
+<span>      nbin <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>  <span class="co"># 色の区分を10に設定</span></span>
+<span>    <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"人口 (100万人)"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">theme_void</span><span class="op">(</span>base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_日本の人口_long</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">df_日本の人口</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
+<span>    cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"男性"</span>, <span class="st">"女性"</span><span class="op">)</span>,</span>
+<span>    names_to <span class="op">=</span> <span class="st">"性別"</span>,</span>
+<span>    values_to <span class="op">=</span> <span class="st">"人口_男女別"</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">df_japan_map_pop_long</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">df_japan_map</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">left_join</span><span class="op">(</span><span class="va">df_日本の人口_long</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"name_local"</span> <span class="op">=</span> <span class="st">"都道府県"</span><span class="op">)</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">df_japan_map_pop_long</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">人口</span><span class="op">)</span>, , size <span class="op">=</span> <span class="va">.pt</span> <span class="op">/</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_fill_continuous_tableau</span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span> <span class="op">/</span> <span class="fl">1e6</span>,</span>
+<span>    guide <span class="op">=</span> <span class="fu">guide_colorbar</span><span class="op">(</span></span>
+<span>      nbin <span class="op">=</span> <span class="fl">10</span>  <span class="co"># 色の区分を5に設定</span></span>
+<span>    <span class="op">)</span></span>
+<span>                                <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"人口 (100万人)"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">性別</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_void</span><span class="op">(</span>base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="都道府県の抽出" class="level4"><h4 class="anchored" data-anchor-id="都道府県の抽出">都道府県の抽出</h4>
+<section id="日本地図石川県" class="level5"><h5 class="anchored" data-anchor-id="日本地図石川県">日本地図（石川県）</h5>
+<div class="cell">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_japan_map</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">name_local</span> <span class="op">==</span> <span class="st">"石川県"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section></section><section id="日本地図基礎自治体" class="level4 page-columns page-full"><h4 class="anchored" data-anchor-id="日本地図基礎自治体">日本地図（基礎自治体）</h4>
 <ul>
 <li>jpn_pref()関数は基礎自治体の情報を持つ
 <ul>
@@ -528,7 +610,7 @@ library(jpndistrict)</a></code></pre>
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_japan_map</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">47</span> <span class="op">%&gt;%</span> </span>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_japan_map</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">47</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">map</span><span class="op">(</span><span class="op">~</span> <span class="fu">jpn_pref</span><span class="op">(</span>pref_code <span class="op">=</span> <span class="va">.</span>, district <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">reduce</span><span class="op">(</span><span class="va">rbind</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ms_simplify</span><span class="op">(</span>keep <span class="op">=</span> <span class="fl">0.01</span>, keep_shapes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
@@ -544,6 +626,16 @@ library(jpndistrict)</a></code></pre>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full"><p><img src="img/日本地図（基礎自治体・石川県）.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">日本地図（基礎自治体・石川県）</figcaption></figure>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>より詳しい説明を必要とする方は<a href="https://yamamoto-masashi.github.io/DSlec/chapter05.html#%E5%A1%97%E3%82%8A%E5%88%86%E3%81%91%E5%9C%B0%E5%9B%B3%E3%81%AE%E4%BD%9C%E6%88%90">データ分析入門（山本雅資）</a>を参照しましょう</p>
+</div>
+</div>
 </div>
 
 
