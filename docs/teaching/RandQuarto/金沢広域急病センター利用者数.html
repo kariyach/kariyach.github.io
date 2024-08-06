@@ -173,7 +173,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
    
   <ul>
-<li><a href="#%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF" id="toc-セットアップチャンク" class="nav-link active" data-scroll-target="#%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF">セットアップチャンク</a></li>
+<li>
+<a href="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB" id="toc-はじめに" class="nav-link active" data-scroll-target="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">はじめに</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF" id="toc-セットアップチャンク" class="nav-link" data-scroll-target="#%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF">セットアップチャンク</a></li>
   <li>
 <a href="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E7%A2%BA%E8%AA%8D" id="toc-データの確認" class="nav-link" data-scroll-target="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E7%A2%BA%E8%AA%8D">データの確認</a>
   <ul class="collapse">
@@ -193,6 +196,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
 <li><a href="#%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AA%E6%A3%92%E3%82%B0%E3%83%A9%E3%83%95" id="toc-シンプルな棒グラフ" class="nav-link" data-scroll-target="#%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AA%E6%A3%92%E3%82%B0%E3%83%A9%E3%83%95">シンプルな棒グラフ</a></li>
   <li><a href="#%E5%B0%82%E9%96%80%E3%81%A7%E8%89%B2%E5%88%86%E3%81%91%E3%81%97%E3%81%9F%E6%A3%92%E3%82%B0%E3%83%A9%E3%83%95" id="toc-専門で色分けした棒グラフ" class="nav-link" data-scroll-target="#%E5%B0%82%E9%96%80%E3%81%A7%E8%89%B2%E5%88%86%E3%81%91%E3%81%97%E3%81%9F%E6%A3%92%E3%82%B0%E3%83%A9%E3%83%95">専門で色分けした棒グラフ</a></li>
+  </ul>
+</li>
   </ul>
 </li>
   <li>
@@ -229,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2, Aug, 2024</p>
+      <p class="date-modified">6, Aug, 2024</p>
     </div>
   </div>
     
@@ -247,6 +252,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<section id="はじめに" class="level1"><h1>はじめに</h1>
+<p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。</p>
 <section id="セットアップチャンク" class="level2"><h2 class="anchored" data-anchor-id="セットアップチャンク">セットアップチャンク</h2>
 <div class="callout callout-style-simple callout-warning">
 <div class="callout-body d-flex">
@@ -330,23 +337,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_hospital</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<div id="ecfkshltan" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ecfkshltan table {
+<div id="gocojpyrex" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gocojpyrex table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ecfkshltan thead, #ecfkshltan tbody, #ecfkshltan tfoot, #ecfkshltan tr, #ecfkshltan td, #ecfkshltan th {
+#gocojpyrex thead, #gocojpyrex tbody, #gocojpyrex tfoot, #gocojpyrex tr, #gocojpyrex td, #gocojpyrex th {
   border-style: none;
 }
 
-#ecfkshltan p {
+#gocojpyrex p {
   margin: 0;
   padding: 0;
 }
 
-#ecfkshltan .gt_table {
+#gocojpyrex .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -372,12 +379,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#ecfkshltan .gt_caption {
+#gocojpyrex .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ecfkshltan .gt_title {
+#gocojpyrex .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -389,7 +396,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#ecfkshltan .gt_subtitle {
+#gocojpyrex .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -401,7 +408,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#ecfkshltan .gt_heading {
+#gocojpyrex .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -413,13 +420,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ecfkshltan .gt_bottom_border {
+#gocojpyrex .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ecfkshltan .gt_col_headings {
+#gocojpyrex .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -434,7 +441,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ecfkshltan .gt_col_heading {
+#gocojpyrex .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -454,7 +461,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ecfkshltan .gt_column_spanner_outer {
+#gocojpyrex .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -466,15 +473,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#ecfkshltan .gt_column_spanner_outer:first-child {
+#gocojpyrex .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ecfkshltan .gt_column_spanner_outer:last-child {
+#gocojpyrex .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ecfkshltan .gt_column_spanner {
+#gocojpyrex .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -486,11 +493,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#ecfkshltan .gt_spanner_row {
+#gocojpyrex .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ecfkshltan .gt_group_heading {
+#gocojpyrex .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -516,7 +523,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#ecfkshltan .gt_empty_group_heading {
+#gocojpyrex .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -531,15 +538,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#ecfkshltan .gt_from_md > :first-child {
+#gocojpyrex .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ecfkshltan .gt_from_md > :last-child {
+#gocojpyrex .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ecfkshltan .gt_row {
+#gocojpyrex .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -558,7 +565,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ecfkshltan .gt_stub {
+#gocojpyrex .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -571,7 +578,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ecfkshltan .gt_stub_row_group {
+#gocojpyrex .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -585,15 +592,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#ecfkshltan .gt_row_group_first td {
+#gocojpyrex .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ecfkshltan .gt_row_group_first th {
+#gocojpyrex .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ecfkshltan .gt_summary_row {
+#gocojpyrex .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -603,16 +610,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ecfkshltan .gt_first_summary_row {
+#gocojpyrex .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ecfkshltan .gt_first_summary_row.thick {
+#gocojpyrex .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ecfkshltan .gt_last_summary_row {
+#gocojpyrex .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -622,7 +629,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ecfkshltan .gt_grand_summary_row {
+#gocojpyrex .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -632,7 +639,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ecfkshltan .gt_first_grand_summary_row {
+#gocojpyrex .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -642,7 +649,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#ecfkshltan .gt_last_grand_summary_row_top {
+#gocojpyrex .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -652,11 +659,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ecfkshltan .gt_striped {
+#gocojpyrex .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ecfkshltan .gt_table_body {
+#gocojpyrex .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -665,7 +672,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ecfkshltan .gt_footnotes {
+#gocojpyrex .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -679,7 +686,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ecfkshltan .gt_footnote {
+#gocojpyrex .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -688,7 +695,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ecfkshltan .gt_sourcenotes {
+#gocojpyrex .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -702,7 +709,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ecfkshltan .gt_sourcenote {
+#gocojpyrex .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -710,63 +717,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ecfkshltan .gt_left {
+#gocojpyrex .gt_left {
   text-align: left;
 }
 
-#ecfkshltan .gt_center {
+#gocojpyrex .gt_center {
   text-align: center;
 }
 
-#ecfkshltan .gt_right {
+#gocojpyrex .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ecfkshltan .gt_font_normal {
+#gocojpyrex .gt_font_normal {
   font-weight: normal;
 }
 
-#ecfkshltan .gt_font_bold {
+#gocojpyrex .gt_font_bold {
   font-weight: bold;
 }
 
-#ecfkshltan .gt_font_italic {
+#gocojpyrex .gt_font_italic {
   font-style: italic;
 }
 
-#ecfkshltan .gt_super {
+#gocojpyrex .gt_super {
   font-size: 65%;
 }
 
-#ecfkshltan .gt_footnote_marks {
+#gocojpyrex .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ecfkshltan .gt_asterisk {
+#gocojpyrex .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ecfkshltan .gt_indent_1 {
+#gocojpyrex .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ecfkshltan .gt_indent_2 {
+#gocojpyrex .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ecfkshltan .gt_indent_3 {
+#gocojpyrex .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ecfkshltan .gt_indent_4 {
+#gocojpyrex .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ecfkshltan .gt_indent_5 {
+#gocojpyrex .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -951,23 +958,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_hospital_long</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<div id="ebmhwqepoc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ebmhwqepoc table {
+<div id="rpgyumstfz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rpgyumstfz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ebmhwqepoc thead, #ebmhwqepoc tbody, #ebmhwqepoc tfoot, #ebmhwqepoc tr, #ebmhwqepoc td, #ebmhwqepoc th {
+#rpgyumstfz thead, #rpgyumstfz tbody, #rpgyumstfz tfoot, #rpgyumstfz tr, #rpgyumstfz td, #rpgyumstfz th {
   border-style: none;
 }
 
-#ebmhwqepoc p {
+#rpgyumstfz p {
   margin: 0;
   padding: 0;
 }
 
-#ebmhwqepoc .gt_table {
+#rpgyumstfz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -993,12 +1000,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#ebmhwqepoc .gt_caption {
+#rpgyumstfz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ebmhwqepoc .gt_title {
+#rpgyumstfz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1010,7 +1017,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#ebmhwqepoc .gt_subtitle {
+#rpgyumstfz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1022,7 +1029,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#ebmhwqepoc .gt_heading {
+#rpgyumstfz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1034,13 +1041,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ebmhwqepoc .gt_bottom_border {
+#rpgyumstfz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ebmhwqepoc .gt_col_headings {
+#rpgyumstfz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1055,7 +1062,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ebmhwqepoc .gt_col_heading {
+#rpgyumstfz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1075,7 +1082,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ebmhwqepoc .gt_column_spanner_outer {
+#rpgyumstfz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1087,15 +1094,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#ebmhwqepoc .gt_column_spanner_outer:first-child {
+#rpgyumstfz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ebmhwqepoc .gt_column_spanner_outer:last-child {
+#rpgyumstfz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ebmhwqepoc .gt_column_spanner {
+#rpgyumstfz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1107,11 +1114,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#ebmhwqepoc .gt_spanner_row {
+#rpgyumstfz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ebmhwqepoc .gt_group_heading {
+#rpgyumstfz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1137,7 +1144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#ebmhwqepoc .gt_empty_group_heading {
+#rpgyumstfz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1152,15 +1159,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#ebmhwqepoc .gt_from_md > :first-child {
+#rpgyumstfz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ebmhwqepoc .gt_from_md > :last-child {
+#rpgyumstfz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ebmhwqepoc .gt_row {
+#rpgyumstfz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1179,7 +1186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ebmhwqepoc .gt_stub {
+#rpgyumstfz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1192,7 +1199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ebmhwqepoc .gt_stub_row_group {
+#rpgyumstfz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1206,15 +1213,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#ebmhwqepoc .gt_row_group_first td {
+#rpgyumstfz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ebmhwqepoc .gt_row_group_first th {
+#rpgyumstfz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ebmhwqepoc .gt_summary_row {
+#rpgyumstfz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1224,16 +1231,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ebmhwqepoc .gt_first_summary_row {
+#rpgyumstfz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ebmhwqepoc .gt_first_summary_row.thick {
+#rpgyumstfz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ebmhwqepoc .gt_last_summary_row {
+#rpgyumstfz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1243,7 +1250,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ebmhwqepoc .gt_grand_summary_row {
+#rpgyumstfz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1253,7 +1260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ebmhwqepoc .gt_first_grand_summary_row {
+#rpgyumstfz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1263,7 +1270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#ebmhwqepoc .gt_last_grand_summary_row_top {
+#rpgyumstfz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1273,11 +1280,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ebmhwqepoc .gt_striped {
+#rpgyumstfz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ebmhwqepoc .gt_table_body {
+#rpgyumstfz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1286,7 +1293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ebmhwqepoc .gt_footnotes {
+#rpgyumstfz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1300,7 +1307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ebmhwqepoc .gt_footnote {
+#rpgyumstfz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1309,7 +1316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ebmhwqepoc .gt_sourcenotes {
+#rpgyumstfz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1323,7 +1330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ebmhwqepoc .gt_sourcenote {
+#rpgyumstfz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1331,63 +1338,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ebmhwqepoc .gt_left {
+#rpgyumstfz .gt_left {
   text-align: left;
 }
 
-#ebmhwqepoc .gt_center {
+#rpgyumstfz .gt_center {
   text-align: center;
 }
 
-#ebmhwqepoc .gt_right {
+#rpgyumstfz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ebmhwqepoc .gt_font_normal {
+#rpgyumstfz .gt_font_normal {
   font-weight: normal;
 }
 
-#ebmhwqepoc .gt_font_bold {
+#rpgyumstfz .gt_font_bold {
   font-weight: bold;
 }
 
-#ebmhwqepoc .gt_font_italic {
+#rpgyumstfz .gt_font_italic {
   font-style: italic;
 }
 
-#ebmhwqepoc .gt_super {
+#rpgyumstfz .gt_super {
   font-size: 65%;
 }
 
-#ebmhwqepoc .gt_footnote_marks {
+#rpgyumstfz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ebmhwqepoc .gt_asterisk {
+#rpgyumstfz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ebmhwqepoc .gt_indent_1 {
+#rpgyumstfz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ebmhwqepoc .gt_indent_2 {
+#rpgyumstfz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ebmhwqepoc .gt_indent_3 {
+#rpgyumstfz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ebmhwqepoc .gt_indent_4 {
+#rpgyumstfz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ebmhwqepoc .gt_indent_5 {
+#rpgyumstfz .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1613,7 +1620,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section></section><section id="横持ちデータの活用" class="level1"><h1>横持ちデータの活用</h1>
+</section></section></section><section id="横持ちデータの活用" class="level1"><h1>横持ちデータの活用</h1>
 <section id="散布図利用者数" class="level2"><h2 class="anchored" data-anchor-id="散布図利用者数">散布図：利用者数</h2>
 <ul>
 <li>内科 vs.&nbsp;小児科</li>
