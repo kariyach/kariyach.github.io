@@ -346,13 +346,13 @@ div.csl-indent {
 <span>  <span class="fu">slice_sample</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 6
-  state         total_vote r_points pct_trump party      census   
-  &lt;chr&gt;              &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    
-1 Virginia         3982752   -5.32       44.4 Democratic South    
-2 Minnesota        2945233   -1.51       44.9 Democratic Midwest  
-3 New Hampshire     744296   -0.370      46.5 Democratic Northeast
-4 West Virginia     721233   41.7        67.8 Republican South    
-5 Maryland         2781446  -26.4        33.9 Democratic South    </code></pre>
+  state          total_vote r_points pct_trump party      census   
+  &lt;chr&gt;               &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    
+1 Minnesota         2945233    -1.51      44.9 Democratic Midwest  
+2 Hawaii             428937   -32.2       30.0 Democratic West     
+3 North Carolina    4741564     3.66      49.8 Republican South    
+4 Maine              747927    -2.96      44.9 Democratic Northeast
+5 Illinois          5594825   -16.9       38.4 Democratic Midwest  </code></pre>
 </div>
 </div>
 </section><section id="傾向の把握" class="level3"><h3 class="anchored" data-anchor-id="傾向の把握">⑵ 傾向の把握</h3>
@@ -822,15 +822,18 @@ remotes::install_github("uribo/kuniezu")</code></pre>
 </div>
 </div>
 </div>
+<ul>
+<li>以下のコードでは､軸のラベルとドットの色を修正している</li>
+</ul>
 <div class="cell">
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">function_penguin_plot_2</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span>, <span class="va">x_column</span>, <span class="va">y_column</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="va">penguins</span>, <span class="fu">aes_string</span><span class="op">(</span>x <span class="op">=</span> <span class="va">x_column</span>, y <span class="op">=</span> <span class="va">y_column</span>, color <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Scatter plot of"</span>, <span class="va">x_column</span>, <span class="st">"vs"</span>, <span class="va">y_column</span><span class="op">)</span>,</span>
-<span>         x <span class="op">=</span> <span class="va">x_column</span>,</span>
-<span>         y <span class="op">=</span> <span class="va">y_column</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu">scale_color_brewer</span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"set1"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span></span>
+<span>         x <span class="op">=</span> <span class="st">"ペンギンのヒレの長さ(mm)"</span>,</span>
+<span>         y <span class="op">=</span> <span class="st">"ペンギンの体重(g)"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">scale_color_brewer</span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Set2"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">theme_minimal</span><span class="op">(</span>base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
