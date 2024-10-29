@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
-
+<meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="苅谷 千尋">
 <meta name="keywords" content="整然データ（tidy data）と雑然データ (messy data)；データの型；代理演算子">
-
-<title>CHIHIRO KARIYA - RとQuartoではじめるデータサイエンス：データを可視化する《2024》</title>
+<title>RとQuartoではじめるデータサイエンス：データを可視化する《2024》 – CHIHIRO KARIYA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +32,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -77,7 +74,6 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -93,8 +89,7 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -119,34 +114,26 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-
-
+}</script><style>html{ scroll-behavior: smooth; }</style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script><script src="../../site_libs/quarto-diagram/mermaid-init.js"></script><link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <link rel="stylesheet" href="../../style_ja.css">
 </head>
-
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">CHIHIRO KARIYA</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
@@ -175,8 +162,8 @@ div.csl-indent {
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="mailto:kariyach@staff.kanazawa-u.ac.jp"> <i class="bi bi-envelope" role="img" aria-label="email">
 </i> 
 <span class="menu-text"></span></a>
@@ -197,15 +184,11 @@ div.csl-indent {
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
       <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス：データを可視化する《2024》</a></h1>
             <p class="subtitle lead">#2 Rの基本的な操作方法（1）</p>
@@ -239,7 +222,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">7, Aug, 2024</p>
+        <p class="date-modified">29, Oct, 2024</p>
       </div>
     </div>
       
@@ -257,109 +240,96 @@ div.csl-indent {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#前回の振り返り" id="toc-前回の振り返り" class="nav-link active" data-scroll-target="#前回の振り返り">Ⅰ. 前回の振り返り</a></li>
-  <li><a href="#前回の積み残し" id="toc-前回の積み残し" class="nav-link" data-scroll-target="#前回の積み残し">Ⅱ. 前回の積み残し</a>
+<li><a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A" id="toc-前回の振り返り" class="nav-link active" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A">Ⅰ. 前回の振り返り</a></li>
+  <li>
+<a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E7%A9%8D%E3%81%BF%E6%AE%8B%E3%81%97" id="toc-前回の積み残し" class="nav-link" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E7%A9%8D%E3%81%BF%E6%AE%8B%E3%81%97">Ⅱ. 前回の積み残し</a>
   <ul class="collapse">
-  <li><a href="#week1" id="toc-week1" class="nav-link" data-scroll-target="#week1">1. Week1</a></li>
-  <li><a href="#補足" id="toc-補足" class="nav-link" data-scroll-target="#補足">2. 補足</a>
+<li><a href="#week1" id="toc-week1" class="nav-link" data-scroll-target="#week1">1. Week1</a></li>
+  <li>
+<a href="#%E8%A3%9C%E8%B6%B3" id="toc-補足" class="nav-link" data-scroll-target="#%E8%A3%9C%E8%B6%B3">2. 補足</a>
   <ul class="collapse">
-  <li><a href="#先進事例" id="toc-先進事例" class="nav-link" data-scroll-target="#先進事例">⑴ 先進事例</a></li>
-  <li><a href="#パッケージのインストール追加" id="toc-パッケージのインストール追加" class="nav-link" data-scroll-target="#パッケージのインストール追加">⑵ パッケージのインストール（追加）</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#markdownとチャンク" id="toc-markdownとチャンク" class="nav-link" data-scroll-target="#markdownとチャンク">Ⅲ. markdownとチャンク</a></li>
-  <li><a href="#基本的な流れと用語" id="toc-基本的な流れと用語" class="nav-link" data-scroll-target="#基本的な流れと用語">Ⅳ. 基本的な流れと用語</a>
-  <ul class="collapse">
-  <li><a href="#基本的な流れdplyrとggplot" id="toc-基本的な流れdplyrとggplot" class="nav-link" data-scroll-target="#基本的な流れdplyrとggplot">1. 基本的な流れ：dplyrとggplot</a></li>
-  <li><a href="#用語" id="toc-用語" class="nav-link" data-scroll-target="#用語">2. 用語</a></li>
-  <li><a href="#整然データと雑然データ" id="toc-整然データと雑然データ" class="nav-link" data-scroll-target="#整然データと雑然データ">3. 整然データと雑然データ</a>
-  <ul class="collapse">
-  <li><a href="#整然tidyデータ" id="toc-整然tidyデータ" class="nav-link" data-scroll-target="#整然tidyデータ">⑴ 整然（tidy）データ</a></li>
-  <li><a href="#雑然messyデータ" id="toc-雑然messyデータ" class="nav-link" data-scroll-target="#雑然messyデータ">⑵ 雑然（messy）データ</a></li>
-  <li><a href="#chat-gptに聞いてみた" id="toc-chat-gptに聞いてみた" class="nav-link" data-scroll-target="#chat-gptに聞いてみた">⑶ Chat GPTに聞いてみた</a></li>
-  </ul></li>
-  <li><a href="#代入" id="toc-代入" class="nav-link" data-scroll-target="#代入">4. 代入</a></li>
-  </ul></li>
-  <li><a href="#データの型" id="toc-データの型" class="nav-link" data-scroll-target="#データの型">Ⅴ. データの型</a></li>
-  <li><a href="#実習" id="toc-実習" class="nav-link" data-scroll-target="#実習">Ⅵ. 実習</a>
-  <ul class="collapse">
-  <li><a href="#オブジェクト代入データの型" id="toc-オブジェクト代入データの型" class="nav-link" data-scroll-target="#オブジェクト代入データの型">1. オブジェクト､代入､データの型</a></li>
-  <li><a href="#コードへの忍耐とr-studioの恩恵" id="toc-コードへの忍耐とr-studioの恩恵" class="nav-link" data-scroll-target="#コードへの忍耐とr-studioの恩恵">2. コードへの忍耐とR Studioの恩恵</a></li>
-  </ul></li>
-  <li><a href="#宿題" id="toc-宿題" class="nav-link" data-scroll-target="#宿題">Ⅶ 宿題</a>
-  <ul class="collapse">
-  <li><a href="#授業の感想" id="toc-授業の感想" class="nav-link" data-scroll-target="#授業の感想">1. 授業の感想</a></li>
-  <li><a href="#可視化したいデータ" id="toc-可視化したいデータ" class="nav-link" data-scroll-target="#可視化したいデータ">2. 可視化したいデータ</a></li>
-  </ul></li>
-  <li><a href="#引用文献" id="toc-引用文献" class="nav-link" data-scroll-target="#引用文献">引用文献</a></li>
+<li><a href="#%E5%85%88%E9%80%B2%E4%BA%8B%E4%BE%8B" id="toc-先進事例" class="nav-link" data-scroll-target="#%E5%85%88%E9%80%B2%E4%BA%8B%E4%BE%8B">⑴ 先進事例</a></li>
+  <li><a href="#%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E8%BF%BD%E5%8A%A0" id="toc-パッケージのインストール追加" class="nav-link" data-scroll-target="#%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E8%BF%BD%E5%8A%A0">⑵ パッケージのインストール（追加）</a></li>
   </ul>
-</nav>
+</li>
+  </ul>
+</li>
+  <li><a href="#markdown%E3%81%A8%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF" id="toc-markdownとチャンク" class="nav-link" data-scroll-target="#markdown%E3%81%A8%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF">Ⅲ. markdownとチャンク</a></li>
+  <li>
+<a href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E6%B5%81%E3%82%8C%E3%81%A8%E7%94%A8%E8%AA%9E" id="toc-基本的な流れと用語" class="nav-link" data-scroll-target="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E6%B5%81%E3%82%8C%E3%81%A8%E7%94%A8%E8%AA%9E">Ⅳ. 基本的な流れと用語</a>
+  <ul class="collapse">
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E6%B5%81%E3%82%8Cdplyr%E3%81%A8ggplot" id="toc-基本的な流れdplyrとggplot" class="nav-link" data-scroll-target="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E6%B5%81%E3%82%8Cdplyr%E3%81%A8ggplot">1. 基本的な流れ：dplyrとggplot</a></li>
+  <li><a href="#%E7%94%A8%E8%AA%9E" id="toc-用語" class="nav-link" data-scroll-target="#%E7%94%A8%E8%AA%9E">2. 用語</a></li>
+  <li>
+<a href="#%E6%95%B4%E7%84%B6%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E9%9B%91%E7%84%B6%E3%83%87%E3%83%BC%E3%82%BF" id="toc-整然データと雑然データ" class="nav-link" data-scroll-target="#%E6%95%B4%E7%84%B6%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E9%9B%91%E7%84%B6%E3%83%87%E3%83%BC%E3%82%BF">3. 整然データと雑然データ</a>
+  <ul class="collapse">
+<li><a href="#%E6%95%B4%E7%84%B6tidy%E3%83%87%E3%83%BC%E3%82%BF" id="toc-整然tidyデータ" class="nav-link" data-scroll-target="#%E6%95%B4%E7%84%B6tidy%E3%83%87%E3%83%BC%E3%82%BF">⑴ 整然（tidy）データ</a></li>
+  <li><a href="#%E9%9B%91%E7%84%B6messy%E3%83%87%E3%83%BC%E3%82%BF" id="toc-雑然messyデータ" class="nav-link" data-scroll-target="#%E9%9B%91%E7%84%B6messy%E3%83%87%E3%83%BC%E3%82%BF">⑵ 雑然（messy）データ</a></li>
+  <li><a href="#chat-gpt%E3%81%AB%E8%81%9E%E3%81%84%E3%81%A6%E3%81%BF%E3%81%9F" id="toc-chat-gptに聞いてみた" class="nav-link" data-scroll-target="#chat-gpt%E3%81%AB%E8%81%9E%E3%81%84%E3%81%A6%E3%81%BF%E3%81%9F">⑶ Chat GPTに聞いてみた</a></li>
+  </ul>
+</li>
+  <li><a href="#%E4%BB%A3%E5%85%A5" id="toc-代入" class="nav-link" data-scroll-target="#%E4%BB%A3%E5%85%A5">4. 代入</a></li>
+  </ul>
+</li>
+  <li><a href="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%9E%8B" id="toc-データの型" class="nav-link" data-scroll-target="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%9E%8B">Ⅴ. データの型</a></li>
+  <li>
+<a href="#%E5%AE%9F%E7%BF%92" id="toc-実習" class="nav-link" data-scroll-target="#%E5%AE%9F%E7%BF%92">Ⅵ. 実習</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E4%BB%A3%E5%85%A5%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%9E%8B" id="toc-オブジェクト代入データの型" class="nav-link" data-scroll-target="#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E4%BB%A3%E5%85%A5%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%9E%8B">1. オブジェクト､代入､データの型</a></li>
+  <li><a href="#%E3%82%B3%E3%83%BC%E3%83%89%E3%81%B8%E3%81%AE%E5%BF%8D%E8%80%90%E3%81%A8r-studio%E3%81%AE%E6%81%A9%E6%81%B5" id="toc-コードへの忍耐とr-studioの恩恵" class="nav-link" data-scroll-target="#%E3%82%B3%E3%83%BC%E3%83%89%E3%81%B8%E3%81%AE%E5%BF%8D%E8%80%90%E3%81%A8r-studio%E3%81%AE%E6%81%A9%E6%81%B5">2. コードへの忍耐とR Studioの恩恵</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E5%AE%BF%E9%A1%8C" id="toc-宿題" class="nav-link" data-scroll-target="#%E5%AE%BF%E9%A1%8C">Ⅶ 宿題</a>
+  <ul class="collapse">
+<li><a href="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3" id="toc-授業の感想" class="nav-link" data-scroll-target="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3">1. 授業の感想</a></li>
+  <li><a href="#%E5%8F%AF%E8%A6%96%E5%8C%96%E3%81%97%E3%81%9F%E3%81%84%E3%83%87%E3%83%BC%E3%82%BF" id="toc-可視化したいデータ" class="nav-link" data-scroll-target="#%E5%8F%AF%E8%A6%96%E5%8C%96%E3%81%97%E3%81%9F%E3%81%84%E3%83%87%E3%83%BC%E3%82%BF">2. 可視化したいデータ</a></li>
+  </ul>
+</li>
+  <li><a href="#%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE" id="toc-引用文献" class="nav-link" data-scroll-target="#%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE">引用文献</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block page-columns page-full column-page-left" id="quarto-document-content">
-
-
-
-
-
-<div class="cell">
-
-</div>
-<section id="前回の振り返り" class="level1">
-<h1>Ⅰ. 前回の振り返り</h1>
+<main class="content quarto-banner-title-block page-columns page-full column-page-left" id="quarto-document-content"><section id="前回の振り返り" class="level1"><h1>Ⅰ. 前回の振り返り</h1>
 <ul>
 <li>前回の「授業の感想」（別紙参照）</li>
 <li><a href="Initialsurvey.html">初回アンケート</a></li>
-</ul>
-</section>
-<section id="前回の積み残し" class="level1">
-<h1>Ⅱ. 前回の積み残し</h1>
-<section id="week1" class="level2">
-<h2 class="anchored" data-anchor-id="week1">1. Week1</h2>
+</ul></section><section id="前回の積み残し" class="level1"><h1>Ⅱ. 前回の積み残し</h1>
+<section id="week1" class="level2"><h2 class="anchored" data-anchor-id="week1">1. Week1</h2>
 <ul>
-<li><a href="https://kariyach.github.io/teaching/RandQuarto/syllabus.html#学修目標到達目標">シラバス：学修目標（到達目標）</a></li>
-<li><a href="https://kariyach.github.io/teaching/RandQuarto/syllabus.html#評価の割合">シラバス：評価の割合</a></li>
-<li><a href="https://kariyach.github.io/teaching/RandQuarto/RandQuarto_w1.html#事例">なぜR（+Quarto）なのか: 事例</a></li>
-<li><a href="https://kariyach.github.io/teaching/RandQuarto/RandQuarto_w1.html#図とデータ">図とデータ</a></li>
-<li><a href="https://kariyach.github.io/teaching/RandQuarto/RandQuarto_w1.html#インストール">この教科書で使うデータセットのインストール</a></li>
-</ul>
-</section>
-<section id="補足" class="level2">
-<h2 class="anchored" data-anchor-id="補足">2. 補足</h2>
-<section id="先進事例" class="level3">
-<h3 class="anchored" data-anchor-id="先進事例">⑴ 先進事例</h3>
+<li><a href="https://kariyach.github.io/teaching/RandQuarto/syllabus.html#%E5%AD%A6%E4%BF%AE%E7%9B%AE%E6%A8%99%E5%88%B0%E9%81%94%E7%9B%AE%E6%A8%99">シラバス：学修目標（到達目標）</a></li>
+<li><a href="https://kariyach.github.io/teaching/RandQuarto/syllabus.html#%E8%A9%95%E4%BE%A1%E3%81%AE%E5%89%B2%E5%90%88">シラバス：評価の割合</a></li>
+<li><a href="https://kariyach.github.io/teaching/RandQuarto/RandQuarto_w1.html#%E4%BA%8B%E4%BE%8B">なぜR（+Quarto）なのか: 事例</a></li>
+<li><a href="https://kariyach.github.io/teaching/RandQuarto/RandQuarto_w1.html#%E5%9B%B3%E3%81%A8%E3%83%87%E3%83%BC%E3%82%BF">図とデータ</a></li>
+<li><a href="https://kariyach.github.io/teaching/RandQuarto/RandQuarto_w1.html#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">この教科書で使うデータセットのインストール</a></li>
+</ul></section><section id="補足" class="level2"><h2 class="anchored" data-anchor-id="補足">2. 補足</h2>
+<section id="先進事例" class="level3"><h3 class="anchored" data-anchor-id="先進事例">⑴ 先進事例</h3>
 <ul>
 <li><a href="https://dataingovernment.blog.gov.uk/2021/06/08/accelerating-data-visualisation/">Data in government: Accelerating public sector data science and visualisation</a></li>
 <li><a href="https://www.ons.gov.uk/releases/ukinclusiveincome2005to2021">UK inclusive income: 2005 to 2021</a></li>
 <li><a href="https://rss.org.uk/training-events/training/public-courses/software-training/automated-reports-with-r/automated-reports-with-r-virtual-classroom-onl-(2)/">The Royal Statistical Society: Automated reports with R - Virtual Classroom</a></li>
-</ul>
-</section>
-<section id="パッケージのインストール追加" class="level3">
-<h3 class="anchored" data-anchor-id="パッケージのインストール追加">⑵ パッケージのインストール（追加）</h3>
+</ul></section><section id="パッケージのインストール追加" class="level3"><h3 class="anchored" data-anchor-id="パッケージのインストール追加">⑵ パッケージのインストール（追加）</h3>
 <ul>
 <li>Consoleに以下のコードを入力して実行（Enter）</li>
 </ul>
 <pre><code>install.packages("gt")
 install.packages("skimr")
 install.packages("palmerpenguins")</code></pre>
-</section>
-</section>
-</section>
-<section id="markdownとチャンク" class="level1">
-<h1>Ⅲ. markdownとチャンク</h1>
+</section></section></section><section id="markdownとチャンク" class="level1"><h1>Ⅲ. markdownとチャンク</h1>
 <ul>
 <li>quartoの基本構成
 <ul>
 <li>YAML; markdown; チャンク</li>
-</ul></li>
+</ul>
+</li>
 <li>YAML
 <ul>
 <li>ページの出力形態などを統御（詳しくは別途説明）</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
@@ -394,15 +364,19 @@ install.packages("palmerpenguins")</code></pre>
 <ul>
 <li>ハッシュの数で見出しレベルが変わる</li>
 <li>1ハッシュが見出しレベル1</li>
-</ul></li>
+</ul>
+</li>
 <li>引用: &gt;</li>
-</ul></li>
-<li>URL: <a href="URL">文字列</a></li>
-<li>画像：<img src="ファイル名.png" class="img-fluid" alt="文字列">
-<ul>
+</ul>
+</li>
+<li>URL: <a href="URL">文字列</a>
+</li>
+<li>画像：<img src="ファイル名.png" class="img-fluid" alt="文字列"><ul>
 <li>上の2行は下記のように入力しています</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p><img src="img/markdown.png" class="img-fluid"></p>
 <div class="callout callout-style-simple callout-note">
@@ -440,35 +414,31 @@ install.packages("palmerpenguins")</code></pre>
 </blockquote>
 <ul>
 <li>➡ コードとメモをしっかりと残すことが重要</li>
-</ul>
-</section>
-<section id="基本的な流れと用語" class="level1 page-columns page-full">
-<h1>Ⅳ. 基本的な流れと用語</h1>
-<section id="基本的な流れdplyrとggplot" class="level2">
-<h2 class="anchored" data-anchor-id="基本的な流れdplyrとggplot">1. 基本的な流れ：dplyrとggplot</h2>
+</ul></section><section id="基本的な流れと用語" class="level1 page-columns page-full"><h1>Ⅳ. 基本的な流れと用語</h1>
+<section id="基本的な流れdplyrとggplot" class="level2"><h2 class="anchored" data-anchor-id="基本的な流れdplyrとggplot">1. 基本的な流れ：dplyrとggplot</h2>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
+<p></p><figure class="figure"></figure><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart TB
     A([データの加工 &lt;br&gt; &lt;strong&gt;dplyr&lt;/strong&gt; &lt;br&gt; 例 select filter]) --- B([データの可視化 &lt;br&gt; &lt;strong&gt;ggplot2&lt;/strong&gt; &lt;br&gt; 例 geom_bar])
 
 </pre>
 </div>
-<p></p></figure><p></p>
+<p></p>
 </div>
 </div>
 </div>
 <p><img src="img/dplyr.png" class="img-fluid" style="width:10.0%">　 <img src="img/ggplot2.png" class="img-fluid" style="width:10.0%"></p>
-</section>
-<section id="用語" class="level2">
-<h2 class="anchored" data-anchor-id="用語">2. 用語</h2>
+</section><section id="用語" class="level2"><h2 class="anchored" data-anchor-id="用語">2. 用語</h2>
 <ul>
 <li>パッケージとファンクション（関数）
 <ul>
-<li><a href="https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/">Posit Cheatsheets</a>（別紙）参照</li>
-</ul></li>
+<li>
+<a href="https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/">Posit Cheatsheets</a>（別紙）参照</li>
+</ul>
+</li>
 </ul>
 <div class="callout callout-style-simple callout-warning">
 <div class="callout-body d-flex">
@@ -486,8 +456,10 @@ install.packages("palmerpenguins")</code></pre>
 <li>変数（variable）</li>
 <li>読み込んだデータ</li>
 <li>関数（function）</li>
-<li><strong>代入したデータ</strong>（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン <a href="#ref-HealyK:2021book1_translJA" role="doc-biblioref">(2021)</a></span>, 「2.3.1 すべてに名前がある」）</li>
-</ul></li>
+<li>
+<strong>代入したデータ</strong>（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン <a href="#ref-HealyK:2021book1_translJA" role="doc-biblioref">(2021)</a></span>, 「2.3.1 すべてに名前がある」）</li>
+</ul>
+</li>
 <li>データフレーム（df）
 <ul>
 <li>行列からなるデータ</li>
@@ -495,14 +467,12 @@ install.packages("palmerpenguins")</code></pre>
 <ul>
 <li>例：天気「晴れ；曇り；雨；嵐」➡ character型（数字が入っていたらおかしい）</li>
 <li>例：気温「20; 25; 30」➡ numeric型（文字データが入っていたらおかしい）</li>
-</ul></li>
-</ul></li>
 </ul>
-</section>
-<section id="整然データと雑然データ" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="整然データと雑然データ">3. 整然データと雑然データ</h2>
-<section id="整然tidyデータ" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="整然tidyデータ">⑴ 整然（tidy）データ</h3>
+</li>
+</ul>
+</li>
+</ul></section><section id="整然データと雑然データ" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="整然データと雑然データ">3. 整然データと雑然データ</h2>
+<section id="整然tidyデータ" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="整然tidyデータ">⑴ 整然（tidy）データ</h3>
 <ol type="1">
 <li>各変数は独立した列で表現される</li>
 <li>観測した値は1行に記録される</li>
@@ -530,112 +500,100 @@ install.packages("palmerpenguins")</code></pre>
 </div>
 </div>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="img/data_wide.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">初回アンケート（横持ちデータ）</figcaption>
-</figure>
+<figure class="figure page-columns page-full"><p><img src="img/data_wide.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">初回アンケート（横持ちデータ）</figcaption></figure>
 </div>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="img/data_long.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">初回アンケート（縦持ちデータ）</figcaption>
-</figure>
+<figure class="figure page-columns page-full"><p><img src="img/data_long.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">初回アンケート（縦持ちデータ）</figcaption></figure>
 </div>
 <ul>
 <li>一般的なデータは横持ちデータ
 <ul>
 <li>人間にとって理解しやすい</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <div class="cell" data-code_download="true">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_初回アンケート <span class="ot">&lt;-</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read_csv</span>(<span class="st">"data/RとQuartoではじめるデータサイエンス（2024）：初回アンケート.csv"</span>) </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df_初回アンケート <span class="sc">%&gt;%</span> <span class="fu">view</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/RとQuartoではじめるデータサイエンス（2024）：初回アンケート.csv"</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> <span class="fu">view</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>コンピュータは縦持ちデータの方が理解しやすい
 <ul>
 <li>わかりやすいカラム名</li>
 <li>少ないカラム数</li>
-</ul></li>
+</ul>
+</li>
 <li>R（tidyverse）ではpivot_longer/pivot_widerを使って変換する
 <ul>
 <li>図「初回アンケート（縦持ちデータ）」は､一人の回答者データを10行に展開している</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_初回アンケート_long <span class="ot">&lt;-</span> df_初回アンケート <span class="sc">%&gt;%</span> <span class="co"># 代入（ 「&lt;-」代入演算子） </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), as.character)) <span class="sc">%&gt;%</span> <span class="co"># すべての値を文字形式にする</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"Q"</span>), <span class="co">#カラム名が「Q」から始まる列を軸に変換</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"質問"</span>, <span class="co"># カラム名から､新しく作成するカラム名</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"回答"</span> <span class="co"># 値から､新しく作成された値のカラム名</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>df_初回アンケート_long <span class="sc">%&gt;%</span> <span class="fu">view</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート_long</span> <span class="op">&lt;-</span> <span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> <span class="co"># 代入（ 「&lt;-」代入演算子） </span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">as.character</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co"># すべての値を文字形式にする</span></span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
+<span>    cols <span class="op">=</span> <span class="fu">starts_with</span><span class="op">(</span><span class="st">"Q"</span><span class="op">)</span>, <span class="co">#カラム名が「Q」から始まる列を軸に変換</span></span>
+<span>    names_to <span class="op">=</span> <span class="st">"質問"</span>, <span class="co"># カラム名から､新しく作成するカラム名</span></span>
+<span>    values_to <span class="op">=</span> <span class="st">"回答"</span> <span class="co"># 値から､新しく作成された値のカラム名</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">df_初回アンケート_long</span> <span class="op">%&gt;%</span> <span class="fu">view</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="雑然messyデータ" class="level3">
-<h3 class="anchored" data-anchor-id="雑然messyデータ">⑵ 雑然（messy）データ</h3>
+</section><section id="雑然messyデータ" class="level3"><h3 class="anchored" data-anchor-id="雑然messyデータ">⑵ 雑然（messy）データ</h3>
 <ul>
 <li>整然データではないデータ</li>
 <li>上記に加え､不要な空白行（セル）
 <ul>
 <li><a href="https://www.e-stat.go.jp/stat-search/files?page=1&amp;layout=datalist&amp;toukei=00450071&amp;tstat=000001011791&amp;cycle=1&amp;tclass1=000001027694&amp;tclass2val=0">毎月勤労統計調査</a></li>
-</ul></li>
 </ul>
-</section>
-<section id="chat-gptに聞いてみた" class="level3">
-<h3 class="anchored" data-anchor-id="chat-gptに聞いてみた">⑶ Chat GPTに聞いてみた</h3>
+</li>
+</ul></section><section id="chat-gptに聞いてみた" class="level3"><h3 class="anchored" data-anchor-id="chat-gptに聞いてみた">⑶ Chat GPTに聞いてみた</h3>
 <blockquote class="blockquote">
 <p>googleフォームで利用者アンケートを実施しました。集計結果は横持ちデータです。例示を交えて縦持ちにする方法を教えてください。r言語（tidyverse）でお願いします。またそのデータを使って､ggplotで図を作ってください。</p>
 </blockquote>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># サンプルデータの作成</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">respondent_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Q1 =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>, <span class="st">"No"</span>, <span class="st">"Yes"</span>),</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Q2 =</span> <span class="fu">c</span>(<span class="st">"No"</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span>),</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Q3 =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>, <span class="st">"No"</span>, <span class="st">"Yes"</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># データを縦持ちに変換</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>data_long <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"Q"</span>), </span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Question"</span>, </span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Answer"</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot2で棒グラフを作成</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_long, <span class="fu">aes</span>(<span class="at">x =</span> Question, <span class="at">fill =</span> Answer)) <span class="sc">+</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Survey Responses"</span>, <span class="at">x =</span> <span class="st">"Question"</span>, <span class="at">y =</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># サンプルデータの作成</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
+<span>  respondent_id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>,</span>
+<span>  Q1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Yes"</span>, <span class="st">"No"</span>, <span class="st">"Yes"</span><span class="op">)</span>,</span>
+<span>  Q2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"No"</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span><span class="op">)</span>,</span>
+<span>  Q3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Yes"</span>, <span class="st">"No"</span>, <span class="st">"Yes"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># データを縦持ちに変換</span></span>
+<span><span class="va">data_long</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"Q"</span><span class="op">)</span>, </span>
+<span>               names_to <span class="op">=</span> <span class="st">"Question"</span>, </span>
+<span>               values_to <span class="op">=</span> <span class="st">"Answer"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># ggplot2で棒グラフを作成</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">data_long</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Question</span>, fill <span class="op">=</span> <span class="va">Answer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Survey Responses"</span>, x <span class="op">=</span> <span class="st">"Question"</span>, y <span class="op">=</span> <span class="st">"Count"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="代入" class="level2">
-<h2 class="anchored" data-anchor-id="代入">4. 代入</h2>
+</section></section><section id="代入" class="level2"><h2 class="anchored" data-anchor-id="代入">4. 代入</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_初回アンケート <span class="ot">&lt;-</span> df_初回アンケート <span class="co"># オブジェクトを加工し､同じオブジェクトを上書き</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># すべてのチャンクに使うデータに加工したい場合</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df_初回アンケート_B <span class="ot">&lt;-</span> df_初回アンケート <span class="co"># オブジェクトを加工し､新しいオブジェクトを作成</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 特定の状況､チャンク内でのみデータを使いたい場合</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 代入しない場合､データの加工はそのパイプ内でのみ有効（オリジナルのオブジェクトのまま）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">&lt;-</span> <span class="va">df_初回アンケート</span> <span class="co"># オブジェクトを加工し､同じオブジェクトを上書き</span></span>
+<span><span class="co"># すべてのチャンクに使うデータに加工したい場合</span></span>
+<span></span>
+<span><span class="va">df_初回アンケート_B</span> <span class="op">&lt;-</span> <span class="va">df_初回アンケート</span> <span class="co"># オブジェクトを加工し､新しいオブジェクトを作成</span></span>
+<span><span class="co"># 特定の状況､チャンク内でのみデータを使いたい場合</span></span>
+<span></span>
+<span><span class="co"># 代入しない場合､データの加工はそのパイプ内でのみ有効（オリジナルのオブジェクトのまま）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -652,19 +610,18 @@ Tips | 代入演算子（&lt;-）のショートカット
 <ul>
 <li>Win: Alt + 「-」キー</li>
 <li>Mac: Option + 「-」キー</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-</section>
-</section>
-<section id="データの型" class="level1">
-<h1>Ⅴ. データの型</h1>
+</section></section><section id="データの型" class="level1"><h1>Ⅴ. データの型</h1>
 <ul>
 <li>すべてのオブジェクトは型（クラス）をもつ
 <ul>
 <li>R（tidyverse）がデータを読み､適切と思われる型を割り当てる</li>
-</ul></li>
+</ul>
+</li>
 <li>重要な型
 <ul>
 <li>numeric（数字）</li>
@@ -673,7 +630,8 @@ Tips | 代入演算子（&lt;-）のショートカット
 <li>logical（true / false）</li>
 <li>data.frame（baseRのテーブル形式）</li>
 <li>tibble（tidyverseのテーブル形式）</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -692,7 +650,7 @@ Note | 同じ文字でもデータの型が違う可能性がある
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span> <span class="fu">as.tibble</span>() <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/deprecated.html">as.tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [150 × 5] (S3: tbl_df/tbl/data.frame)
  $ Sepal.Length: num [1:150] 5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
@@ -706,12 +664,8 @@ Note | 同じ文字でもデータの型が違う可能性がある
 <li>Sepal.length（がく片の長さ）: numeric</li>
 <li>Sepal.Width（がく片の幅）: numeric</li>
 <li>Species（アヤメの品種）: factor with 3レベル（1. setosa, 2. versicolo, 3. virginica）</li>
-</ul>
-</section>
-<section id="実習" class="level1">
-<h1>Ⅵ. 実習</h1>
-<section id="オブジェクト代入データの型" class="level2">
-<h2 class="anchored" data-anchor-id="オブジェクト代入データの型">1. オブジェクト､代入､データの型</h2>
+</ul></section><section id="実習" class="level1"><h1>Ⅵ. 実習</h1>
+<section id="オブジェクト代入データの型" class="level2"><h2 class="anchored" data-anchor-id="オブジェクト代入データの型">1. オブジェクト､代入､データの型</h2>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -722,9 +676,7 @@ Note | 同じ文字でもデータの型が違う可能性がある
 </div>
 </div>
 </div>
-</section>
-<section id="コードへの忍耐とr-studioの恩恵" class="level2">
-<h2 class="anchored" data-anchor-id="コードへの忍耐とr-studioの恩恵">2. コードへの忍耐とR Studioの恩恵</h2>
+</section><section id="コードへの忍耐とr-studioの恩恵" class="level2"><h2 class="anchored" data-anchor-id="コードへの忍耐とr-studioの恩恵">2. コードへの忍耐とR Studioの恩恵</h2>
 <blockquote class="blockquote">
 <p>忍耐強くあることが肝心です。エラーはいつか起こるもので､心配することはありません。……コードの誤りを修正する過程で､言語の仕様を理解することにつながります（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン <a href="#ref-HealyK:2021book1_translJA" role="doc-biblioref">(2021)</a></span>, 「2.4「自分自身､Rへの忍耐」88-89ページ）</p>
 </blockquote>
@@ -732,13 +684,8 @@ Note | 同じ文字でもデータの型が違う可能性がある
 <li>シンタックスハイライト</li>
 <li>自動補完</li>
 <li>インデント</li>
-</ul>
-</section>
-</section>
-<section id="宿題" class="level1">
-<h1>Ⅶ 宿題</h1>
-<section id="授業の感想" class="level2">
-<h2 class="anchored" data-anchor-id="授業の感想">1. 授業の感想</h2>
+</ul></section></section><section id="宿題" class="level1"><h1>Ⅶ 宿題</h1>
+<section id="授業の感想" class="level2"><h2 class="anchored" data-anchor-id="授業の感想">1. 授業の感想</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -750,19 +697,21 @@ note | 回答先と締め切り
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>回答先</strong>：<a href="https://forms.gle/ZCkbPXYprjoibA8i6">Google Forms</a></li>
-<li><strong>締め切り</strong>：2024年6月21日（金）23時59分まで</li>
+<li>
+<strong>回答先</strong>：<a href="https://forms.gle/ZCkbPXYprjoibA8i6">Google Forms</a>
+</li>
+<li>
+<strong>締め切り</strong>：2024年6月21日（金）23時59分まで</li>
 </ul>
 </div>
 </div>
-</section>
-<section id="可視化したいデータ" class="level2">
-<h2 class="anchored" data-anchor-id="可視化したいデータ">2. 可視化したいデータ</h2>
+</section><section id="可視化したいデータ" class="level2"><h2 class="anchored" data-anchor-id="可視化したいデータ">2. 可視化したいデータ</h2>
 <ul>
 <li>Q1. ggplotを使って可視化したいデータをアップロードして下さい（csvかexcelファイル）
 <ul>
 <li>手元にデータがない場合は､こんなデータがある／作れそうだ､というようなことを書いて下さい</li>
-</ul></li>
+</ul>
+</li>
 <li>Q2.このデータと､このデータから作りたい図について簡単に説明して下さい</li>
 </ul>
 <div class="callout callout-style-simple callout-tip">
@@ -786,8 +735,11 @@ note | 回答先と締め切り
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>回答先</strong>：<a href="https://forms.gle/VMjdbqBu1rbcLe9j9">Google Forms</a></li>
-<li><strong>締め切り</strong>：2024年6月26日（水）10時30分まで</li>
+<li>
+<strong>回答先</strong>：<a href="https://forms.gle/VMjdbqBu1rbcLe9j9">Google Forms</a>
+</li>
+<li>
+<strong>締め切り</strong>：2024年6月26日（水）10時30分まで</li>
 </ul>
 </div>
 </div>
@@ -801,21 +753,15 @@ note | 回答先と締め切り
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="引用文献" class="level1">
+</section></section><section id="引用文献" class="level1">
 
 
 
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">引用文献</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">引用文献</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-HealyK:2021book1_translJA" class="csl-entry" role="listitem">
 ヒーリー，キーラン (2021) 『データ分析のためのデータ可視化入門』, 講談社.
 </div>
-</div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>苅谷千尋</div></div></section></div></main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>苅谷千尋</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -850,18 +796,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -893,7 +828,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/kariyach\.github\.io\/");
@@ -901,10 +858,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
           // target, if specified
           link.setAttribute("target", "_blank");
           if (link.getAttribute("rel") === null) {
@@ -948,7 +910,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1223,8 +1189,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p><span class="faux-block">© 2024 CHIHIRO KARIYA</span></p>
 </div>   
@@ -1236,8 +1201,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-
-
 
 
 <script src="../../site_libs/quarto-html/zenscroll-min.js"></script>

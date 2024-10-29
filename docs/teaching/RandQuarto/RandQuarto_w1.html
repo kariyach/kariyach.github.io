@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="苅谷 千尋">
 <meta name="keywords" content="図とデータ；Rのインストールとプロジェクトの作成">
-<title>CHIHIRO KARIYA - RとQuartoではじめるデータサイエンス：データを可視化する《2024》</title>
+<title>RとQuartoではじめるデータサイエンス：データを可視化する《2024》 – CHIHIRO KARIYA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +32,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -131,7 +131,7 @@ div.csl-indent {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -188,7 +188,7 @@ div.csl-indent {
   </li>  
 </ul>
 </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
@@ -225,7 +225,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">7, Aug, 2024</p>
+        <p class="date-modified">29, Oct, 2024</p>
       </div>
     </div>
       
@@ -317,10 +317,7 @@ div.csl-indent {
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block page-columns page-full column-page-left" id="quarto-document-content"><div class="cell">
-
-</div>
-<section id="なぜrquartoなのか" class="level1"><h1>Ⅰ. なぜR（+Quarto）なのか</h1>
+<main class="content quarto-banner-title-block page-columns page-full column-page-left" id="quarto-document-content"><section id="なぜrquartoなのか" class="level1"><h1>Ⅰ. なぜR（+Quarto）なのか</h1>
 <ul>
 <li>Cf. Microsoft Excel / SPSS / python</li>
 </ul>
@@ -679,7 +676,7 @@ div.csl-indent {
 <ul>
 <li>Cf. ジェームズ・マッキントッシュ<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
 </li>
-</ul><div class="no-row-height column-margin column-container"><p><sup>1</sup>&nbsp;政治にかかわる、莫大で複雑な組み合わせと原因を、理論に還元することは確かに可能である。しかしながら、もっとも広範囲にわたる視野と、もっとも包括的で柔軟な諸原則にもとづいて形成された理論でなければ、これらの多様性をすべて包含し、また、その急速な変転に合わせることはできない。この理論のもっとも基本的な格言は、この理論自体への不信と、実用的な慎慮への敬意である（『自然法と諸国民の法論』､1796）｡</p></div></section></section></section><section id="初回アンケート" class="level1 page-columns page-full"><h1>Ⅴ. 初回アンケート</h1>
+</ul><div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;政治にかかわる、莫大で複雑な組み合わせと原因を、理論に還元することは確かに可能である。しかしながら、もっとも広範囲にわたる視野と、もっとも包括的で柔軟な諸原則にもとづいて形成された理論でなければ、これらの多様性をすべて包含し、また、その急速な変転に合わせることはできない。この理論のもっとも基本的な格言は、この理論自体への不信と、実用的な慎慮への敬意である（『自然法と諸国民の法論』､1796）｡</p></div></div></section></section></section><section id="初回アンケート" class="level1 page-columns page-full"><h1>Ⅴ. 初回アンケート</h1>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -849,7 +846,6 @@ div.csl-indent {
 <span></span>
 <span><span class="va">gt_table</span> <span class="op">%&gt;%</span> <span class="fu">gt</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<div>
 <div id="dliiwtulfh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#dliiwtulfh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -1522,7 +1518,6 @@ div.csl-indent {
 </div>
 </div>
 </div>
-</div>
 </section><section id="c.-skim関数" class="level5"><h5 class="anchored" data-anchor-id="c.-skim関数">c.&nbsp;skim関数</h5>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
@@ -1854,7 +1849,6 @@ div.csl-indent {
 <span><span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span><span class="fu">tbl_summary</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<div>
 <div id="wqwimamrvt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#wqwimamrvt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -2600,14 +2594,12 @@ div.csl-indent {
 </div>
 </div>
 </div>
-</div>
 </section></section><section id="クロス集計" class="level4"><h4 class="anchored" data-anchor-id="クロス集計">クロス集計</h4>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q1. パソコンのスキルに自信がありますか`</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="co">#学域で分ける</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<div>
 <div id="dmecfhuixm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#dmecfhuixm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -3113,7 +3105,6 @@ div.csl-indent {
 </div>
 </div>
 </div>
-</div>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span></span>
 <span><span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q1. パソコンのスキルに自信がありますか`</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
@@ -3123,7 +3114,6 @@ div.csl-indent {
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co">#検定</span></span>
 <span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<div>
 <div id="blizmmtkkm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#blizmmtkkm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -3645,7 +3635,6 @@ div.csl-indent {
 </div>
 </div>
 </div>
-</div>
 <ul>
 <li><a href="Initialsurvey.html">初回アンケート</a></li>
 <li>
@@ -3958,18 +3947,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -4001,7 +3979,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/kariyach\.github\.io\/");
@@ -4009,10 +4009,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
           // target, if specified
           link.setAttribute("target", "_blank");
           if (link.getAttribute("rel") === null) {
@@ -4056,7 +4061,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
