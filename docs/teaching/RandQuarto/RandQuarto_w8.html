@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="苅谷 千尋">
+<meta name="keywords" content="最終成果物; YAML; CSS; テキストラベル">
+<title>RとQuartoではじめるデータサイエンス：データを可視化する《2024》 – CHIHIRO KARIYA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/favicon-16x16.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><style>html{ scroll-behavior: smooth; }</style>
+<link rel="stylesheet" href="../../style_ja.css">
+</head>
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">CHIHIRO KARIYA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../projects/index.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/index.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../events/index.html"> 
+<span class="menu-text">Events</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv/index.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../address/index.html"> 
+<span class="menu-text">Address</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
+    <a class="nav-link" href="mailto:kariyach@staff.kanazawa-u.ac.jp"> <i class="bi bi-envelope" role="img" aria-label="email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://orcid.org/0009-0008-3085-947X"> <i class="bi bi-info-circle" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/kariyach"> <i class="bi bi-github" role="img" aria-label="github">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス：データを可視化する《2024》</a></h1>
+            <p class="subtitle lead">#8 プレゼンテーション＆Visualization（5）</p>
+                      </div>
+  </div>
+    
+  <div class="quarto-title-meta-author column-page-left">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">苅谷 千尋, PhD <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              高大接続コア・センター
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta column-page-left">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Wednesday, 7, Aug, 2024</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">Thursday, 28, Nov, 2024</p>
+      </div>
+    </div>
+      
+    </div>
+    
+
+  <div>
+    <div class="keywords">
+      <div class="block-title">Keywords</div>
+      <p>最終成果物; YAML; CSS; テキストラベル</p>
+    </div>
+  </div>
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
+   
+  <ul>
+<li>
+<a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A" id="toc-前回の振り返り" class="nav-link active" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A">Ⅰ. 前回の振り返り</a>
+  <ul class="collapse">
+<li><a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3" id="toc-前回の授業の感想" class="nav-link" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3">1. 前回の「授業の感想」</a></li>
+  </ul>
+</li>
+  <li><a href="#%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3" id="toc-プレゼンテーション" class="nav-link" data-scroll-target="#%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">Ⅱ. プレゼンテーション</a></li>
+  <li>
+<a href="#%E3%83%9E%E3%83%83%E3%83%97%E9%9A%8E%E7%B4%9A%E5%8C%BA%E5%88%86%E5%9B%B3" id="toc-マップ階級区分図" class="nav-link" data-scroll-target="#%E3%83%9E%E3%83%83%E3%83%97%E9%9A%8E%E7%B4%9A%E5%8C%BA%E5%88%86%E5%9B%B3">Ⅲ. マップ（階級区分図）</a>
+  <ul class="collapse">
+<li><a href="#%E5%AE%9A%E7%BE%A9%E3%81%A8%E5%95%8F%E9%A1%8C%E7%82%B9" id="toc-定義と問題点" class="nav-link" data-scroll-target="#%E5%AE%9A%E7%BE%A9%E3%81%A8%E5%95%8F%E9%A1%8C%E7%82%B9">1. 定義と問題点</a></li>
+  <li>
+<a href="#%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E5%90%88%E8%A1%86%E5%9B%BD%E3%81%AE%E5%9C%B0%E5%9B%B3%E5%B7%9E%E5%8D%98%E4%BD%8D" id="toc-アメリカ合衆国の地図州単位" class="nav-link" data-scroll-target="#%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E5%90%88%E8%A1%86%E5%9B%BD%E3%81%AE%E5%9C%B0%E5%9B%B3%E5%B7%9E%E5%8D%98%E4%BD%8D">2. アメリカ合衆国の地図（州単位）</a>
+  <ul class="collapse">
+<li><a href="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E7%A2%BA%E8%AA%8D" id="toc-データの確認" class="nav-link" data-scroll-target="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E7%A2%BA%E8%AA%8D">⑴ データの確認</a></li>
+  <li><a href="#%E5%82%BE%E5%90%91%E3%81%AE%E6%8A%8A%E6%8F%A1" id="toc-傾向の把握" class="nav-link" data-scroll-target="#%E5%82%BE%E5%90%91%E3%81%AE%E6%8A%8A%E6%8F%A1">⑵ 傾向の把握</a></li>
+  <li><a href="#%E3%83%9E%E3%83%83%E3%83%97%E3%81%AE%E4%BD%9C%E6%88%90" id="toc-マップの作成" class="nav-link" data-scroll-target="#%E3%83%9E%E3%83%83%E3%83%97%E3%81%AE%E4%BD%9C%E6%88%90">⑶ マップの作成</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E5%90%88%E8%A1%86%E5%9B%BD%E3%81%AE%E5%9C%B0%E5%9B%B3%E5%B7%9E%E5%8D%98%E4%BD%8D%E4%BB%A5%E5%A4%96" id="toc-アメリカ合衆国の地図州単位以外" class="nav-link" data-scroll-target="#%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E5%90%88%E8%A1%86%E5%9B%BD%E3%81%AE%E5%9C%B0%E5%9B%B3%E5%B7%9E%E5%8D%98%E4%BD%8D%E4%BB%A5%E5%A4%96">3. アメリカ合衆国の地図（州単位以外）</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E3%81%AE%E4%BA%BA%E5%8F%A3%E5%AF%86%E5%BA%A6" id="toc-アメリカの人口密度" class="nav-link" data-scroll-target="#%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E3%81%AE%E4%BA%BA%E5%8F%A3%E5%AF%86%E5%BA%A6">アメリカの人口密度</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E6%97%A5%E6%9C%AC%E3%81%AE%E5%9C%B0%E5%9B%B3" id="toc-日本の地図" class="nav-link" data-scroll-target="#%E6%97%A5%E6%9C%AC%E3%81%AE%E5%9C%B0%E5%9B%B3">3. 日本の地図</a>
+  <ul class="collapse">
+<li><a href="#%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99-1" id="toc-事前準備-1" class="nav-link" data-scroll-target="#%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99-1">⑴ 事前準備</a></li>
+  <li><a href="#%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AA%E6%97%A5%E6%9C%AC%E5%9C%B0%E5%9B%B3" id="toc-シンプルな日本地図" class="nav-link" data-scroll-target="#%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AA%E6%97%A5%E6%9C%AC%E5%9C%B0%E5%9B%B3">⑵ シンプルな日本地図</a></li>
+  <li><a href="#%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AA%E6%97%A5%E6%9C%AC%E5%9C%B0%E5%9B%B3%E9%9B%A2%E5%B3%B6%E3%82%92%E9%99%A4%E5%A4%96" id="toc-シンプルな日本地図離島を除外" class="nav-link" data-scroll-target="#%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AA%E6%97%A5%E6%9C%AC%E5%9C%B0%E5%9B%B3%E9%9B%A2%E5%B3%B6%E3%82%92%E9%99%A4%E5%A4%96">⑶ シンプルな日本地図（離島を除外）</a></li>
+  <li><a href="#%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AA%E5%9C%B0%E5%9B%B3%E6%97%A5%E6%9C%AC%E4%BB%A5%E5%A4%96" id="toc-シンプルな地図日本以外" class="nav-link" data-scroll-target="#%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AA%E5%9C%B0%E5%9B%B3%E6%97%A5%E6%9C%AC%E4%BB%A5%E5%A4%96">⑷ シンプルな地図（日本以外）</a></li>
+  <li><a href="#%E5%8D%97%E8%A5%BF%E8%AB%B8%E5%B3%B6%E5%B0%8F%E7%AC%A0%E5%8E%9F%E8%AB%B8%E5%B3%B6%E3%81%AE%E4%BD%8D%E7%BD%AE%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%97%E3%81%9F%E5%9C%B0%E5%9B%B3" id="toc-南西諸島小笠原諸島の位置を変更した地図" class="nav-link" data-scroll-target="#%E5%8D%97%E8%A5%BF%E8%AB%B8%E5%B3%B6%E5%B0%8F%E7%AC%A0%E5%8E%9F%E8%AB%B8%E5%B3%B6%E3%81%AE%E4%BD%8D%E7%BD%AE%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%97%E3%81%9F%E5%9C%B0%E5%9B%B3">⑸ 南西諸島・小笠原諸島の位置を変更した地図</a></li>
+  <li><a href="#%E6%97%A5%E6%9C%AC%E5%9C%B0%E5%9B%B3%E9%83%BD%E9%81%93%E5%BA%9C%E7%9C%8C%E6%AF%8E%E3%81%AB%E4%BA%BA%E5%8F%A3%E3%81%A7%E8%89%B2%E5%88%86%E3%81%91" id="toc-日本地図都道府県毎に人口で色分け" class="nav-link" data-scroll-target="#%E6%97%A5%E6%9C%AC%E5%9C%B0%E5%9B%B3%E9%83%BD%E9%81%93%E5%BA%9C%E7%9C%8C%E6%AF%8E%E3%81%AB%E4%BA%BA%E5%8F%A3%E3%81%A7%E8%89%B2%E5%88%86%E3%81%91">⑹ 日本地図（都道府県毎に人口で色分け）</a></li>
+  <li><a href="#%E9%83%BD%E9%81%93%E5%BA%9C%E7%9C%8C%E3%81%AE%E6%8A%BD%E5%87%BA%E6%97%A5%E6%9C%AC%E5%9C%B0%E5%9B%B3%E7%9F%B3%E5%B7%9D%E7%9C%8C" id="toc-都道府県の抽出日本地図石川県" class="nav-link" data-scroll-target="#%E9%83%BD%E9%81%93%E5%BA%9C%E7%9C%8C%E3%81%AE%E6%8A%BD%E5%87%BA%E6%97%A5%E6%9C%AC%E5%9C%B0%E5%9B%B3%E7%9F%B3%E5%B7%9D%E7%9C%8C">⑺ 都道府県の抽出：日本地図（石川県）</a></li>
+  <li><a href="#%E6%97%A5%E6%9C%AC%E5%9C%B0%E5%9B%B3%E5%9F%BA%E7%A4%8E%E8%87%AA%E6%B2%BB%E4%BD%93" id="toc-日本地図基礎自治体" class="nav-link" data-scroll-target="#%E6%97%A5%E6%9C%AC%E5%9C%B0%E5%9B%B3%E5%9F%BA%E7%A4%8E%E8%87%AA%E6%B2%BB%E4%BD%93">⑻ 日本地図（基礎自治体）</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li>
+<a href="#%E8%87%AA%E4%BD%9C%E9%96%A2%E6%95%B0" id="toc-自作関数" class="nav-link" data-scroll-target="#%E8%87%AA%E4%BD%9C%E9%96%A2%E6%95%B0">Ⅳ. 自作関数</a>
+  <ul class="collapse">
+<li><a href="#%E9%96%A2%E6%95%B0%E3%81%AE%E5%AE%9A%E7%BE%A9" id="toc-関数の定義" class="nav-link" data-scroll-target="#%E9%96%A2%E6%95%B0%E3%81%AE%E5%AE%9A%E7%BE%A9">関数の定義</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E5%AE%BF%E9%A1%8C" id="toc-宿題" class="nav-link" data-scroll-target="#%E5%AE%BF%E9%A1%8C">Ⅴ. 宿題</a>
+  <ul class="collapse">
+<li><a href="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3" id="toc-授業の感想" class="nav-link" data-scroll-target="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3">1. 授業の感想</a></li>
+  <li><a href="#%E6%BC%94%E7%BF%92%E5%86%8D%E6%8F%90%E5%87%BA%E4%BB%BB%E6%84%8F" id="toc-演習再提出任意" class="nav-link" data-scroll-target="#%E6%BC%94%E7%BF%92%E5%86%8D%E6%8F%90%E5%87%BA%E4%BB%BB%E6%84%8F">2. 演習（再提出・任意）</a></li>
+  </ul>
+</li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full column-page-left" id="quarto-document-content"><section id="前回の振り返り" class="level1"><h1>Ⅰ. 前回の振り返り</h1>
+<section id="前回の授業の感想" class="level2"><h2 class="anchored" data-anchor-id="前回の授業の感想">1. 前回の「授業の感想」</h2>
+<ul>
+<li>別紙参照</li>
+</ul></section></section><section id="プレゼンテーション" class="level1"><h1>Ⅱ. プレゼンテーション</h1>
+<ul>
+<li>提出したスライド資料にもとづく口頭発表（一人5分程度）</li>
+</ul></section><section id="マップ階級区分図" class="level1 page-columns page-full"><h1>Ⅲ. マップ（階級区分図）</h1>
+<section id="定義と問題点" class="level2"><h2 class="anchored" data-anchor-id="定義と問題点">1. 定義と問題点</h2>
+<ul>
+<li><p>階級区分図 &gt; 階級区分図は興味のある変数の値を元に地理的な領域の等級分けを行い､色や陰影の違いを表現する図です（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン <a href="#ref-HealyK:2021book1_translJA" role="doc-biblioref">(2021)</a></span>, 248ページ）</p></li>
+<li>
+<p>注意点</p>
+<ul>
+<li>空間を色分けすることが適切かどうか
+<ul>
+<li>例：アメリカ大統領選挙（州単位の色分け）
+<ul>
+<li>選挙は有権者数（投票者数）が重要であって､空間（大きさ､小ささ）に意味はない</li>
+<li>➡ 見る者に誤ったインパクトを与える</li>
+<li>➡ 階級区分図は不適切に用いると誤解を招きやすい</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></section><section id="アメリカ合衆国の地図州単位" class="level2"><h2 class="anchored" data-anchor-id="アメリカ合衆国の地図州単位">2. アメリカ合衆国の地図（州単位）</h2>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>教科書7.1（251ページから）</p>
+</div>
+</div>
+</div>
+<section id="データの確認" class="level3"><h3 class="anchored" data-anchor-id="データの確認">⑴ データの確認</h3>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">election</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">state</span>, <span class="va">total_vote</span>, <span class="va">r_points</span>, <span class="va">pct_trump</span>, <span class="va">party</span>, <span class="va">census</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">slice_sample</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 6
+  state          total_vote r_points pct_trump party      census   
+  &lt;chr&gt;               &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    
+1 Minnesota         2945233    -1.51      44.9 Democratic Midwest  
+2 Hawaii             428937   -32.2       30.0 Democratic West     
+3 North Carolina    4741564     3.66      49.8 Republican South    
+4 Maine              747927    -2.96      44.9 Democratic Northeast
+5 Illinois          5594825   -16.9       38.4 Democratic Midwest  </code></pre>
+</div>
+</div>
+</section><section id="傾向の把握" class="level3"><h3 class="anchored" data-anchor-id="傾向の把握">⑵ 傾向の把握</h3>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># アメリカ主要政党のカラーコード</span></span>
+<span><span class="va">party_colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#2E74C0"</span>, <span class="st">"#CB454A"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">election</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">st</span> <span class="op">==</span> <span class="st">"DC"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">r_points</span>,</span>
+<span>             y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">state</span>, <span class="va">r_points</span><span class="op">)</span>,</span>
+<span>             color <span class="op">=</span> <span class="va">party</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_vline</span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fl">0</span>, color <span class="op">=</span> <span class="st">"gray30"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span>sizse <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="va">party_colors</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_x_continuous</span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">30</span>, <span class="op">-</span><span class="fl">20</span>, <span class="op">-</span><span class="fl">10</span>, <span class="fl">0</span>, <span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span><span class="op">)</span>,</span>
+<span>                     labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"30\n(Clinton)"</span>, <span class="st">"20"</span>, <span class="st">"10"</span>, <span class="st">"0"</span>, <span class="st">"10"</span>, <span class="st">"20"</span>, <span class="st">"30"</span>, <span class="st">"40\n(Trump)"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">census</span>, ncol <span class="op">=</span> <span class="fl">1</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Point Margin"</span>, y <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span>axis.text <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">8</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>教科書は､地図が最適な可視化とは限らないと､あらかじめ釘を刺している（そのための作図）</p>
+</div>
+</div>
+</div>
+</section><section id="マップの作成" class="level3"><h3 class="anchored" data-anchor-id="マップの作成">⑶ マップの作成</h3>
+<section id="事前準備" class="level4"><h4 class="anchored" data-anchor-id="事前準備">事前準備</h4>
+<ul>
+<li>maps()関数を読み込む（libraryに追加）</li>
+<li>データフレームの作成（と確認）</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">us_states</span> <span class="op">&lt;-</span> <span class="fu">map_data</span><span class="op">(</span><span class="st">"state"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">us_states</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       long      lat group order  region subregion
+1 -87.46201 30.38968     1     1 alabama      &lt;NA&gt;
+2 -87.48493 30.37249     1     2 alabama      &lt;NA&gt;
+3 -87.52503 30.37249     1     3 alabama      &lt;NA&gt;
+4 -87.53076 30.33239     1     4 alabama      &lt;NA&gt;
+5 -87.57087 30.32665     1     5 alabama      &lt;NA&gt;
+6 -87.58806 30.32665     1     6 alabama      &lt;NA&gt;</code></pre>
+</div>
+</div>
+</section><section id="白地図" class="level4"><h4 class="anchored" data-anchor-id="白地図">白地図</h4>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">us_states</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">long</span>, y <span class="op">=</span> <span class="va">lat</span>, group <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_polygon</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"white"</span>, color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="色分け地図州単位" class="level4"><h4 class="anchored" data-anchor-id="色分け地図州単位">色分け地図（州単位）</h4>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">us_states</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">long</span>, y <span class="op">=</span> <span class="va">lat</span>, group <span class="op">=</span> <span class="va">group</span>, fill <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_polygon</span><span class="op">(</span>color <span class="op">=</span> <span class="st">"gray90"</span>, size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">guides</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="色分け地図大統領選挙" class="level4"><h4 class="anchored" data-anchor-id="色分け地図大統領選挙">色分け地図（大統領選挙）</h4>
+<section id="データの加工" class="level5"><h5 class="anchored" data-anchor-id="データの加工">データの加工</h5>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">us_state_elec</span> <span class="op">&lt;-</span> <span class="va">election</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/chartr.html">tolower</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">left_join</span><span class="op">(</span><span class="va">us_states</span>, by <span class="op">=</span> <span class="st">"region"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">us_state_elec</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 28
+  state   st     fips total_vote vote_margin winner party    pct_margin r_points
+  &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;         &lt;dbl&gt;    &lt;dbl&gt;
+1 Alabama AL        1    2123372      588708 Trump  Republi…      0.277     27.7
+2 Alabama AL        1    2123372      588708 Trump  Republi…      0.277     27.7
+3 Alabama AL        1    2123372      588708 Trump  Republi…      0.277     27.7
+4 Alabama AL        1    2123372      588708 Trump  Republi…      0.277     27.7
+5 Alabama AL        1    2123372      588708 Trump  Republi…      0.277     27.7
+6 Alabama AL        1    2123372      588708 Trump  Republi…      0.277     27.7
+# ℹ 19 more variables: d_points &lt;dbl&gt;, pct_clinton &lt;dbl&gt;, pct_trump &lt;dbl&gt;,
+#   pct_johnson &lt;dbl&gt;, pct_other &lt;dbl&gt;, clinton_vote &lt;dbl&gt;, trump_vote &lt;dbl&gt;,
+#   johnson_vote &lt;dbl&gt;, other_vote &lt;dbl&gt;, ev_dem &lt;dbl&gt;, ev_rep &lt;dbl&gt;,
+#   ev_oth &lt;dbl&gt;, census &lt;chr&gt;, region &lt;chr&gt;, long &lt;dbl&gt;, lat &lt;dbl&gt;,
+#   group &lt;dbl&gt;, order &lt;int&gt;, subregion &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section><section id="作図" class="level5"><h5 class="anchored" data-anchor-id="作図">作図</h5>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">us_state_elec</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">long</span>, y <span class="op">=</span> <span class="va">lat</span>, group <span class="op">=</span> <span class="va">group</span>, fill <span class="op">=</span> <span class="va">party</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_polygon</span><span class="op">(</span>color <span class="op">=</span> <span class="st">"gray90"</span>, size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">coord_map</span><span class="op">(</span>projection <span class="op">=</span> <span class="st">"albers"</span>, lat0 <span class="op">=</span> <span class="fl">39</span>, lat1 <span class="op">=</span> <span class="fl">45</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_fill_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="va">party_colors</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"アメリカ大統領選挙結果 2016"</span>, fill <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_map</span><span class="op">(</span>base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">us_state_elec</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">long</span>, y <span class="op">=</span> <span class="va">lat</span>, group <span class="op">=</span> <span class="va">group</span>, fill <span class="op">=</span> <span class="va">pct_trump</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_polygon</span><span class="op">(</span>color <span class="op">=</span> <span class="st">"gray90"</span>, size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">coord_map</span><span class="op">(</span>projection <span class="op">=</span> <span class="st">"albers"</span>, lat0 <span class="op">=</span> <span class="fl">39</span>, lat1 <span class="op">=</span> <span class="fl">45</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_fill_gradient</span><span class="op">(</span>low <span class="op">=</span> <span class="st">"white"</span>, high <span class="op">=</span> <span class="st">"#CB454A"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"アメリカ大統領選挙結果 2016 トランプ得票率"</span>, fill <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_map</span><span class="op">(</span>base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section></section></section></section><section id="アメリカ合衆国の地図州単位以外" class="level2"><h2 class="anchored" data-anchor-id="アメリカ合衆国の地図州単位以外">3. アメリカ合衆国の地図（州単位以外）</h2>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>教科書7.2（260-261ページから）</p>
+</div>
+</div>
+</div>
+<section id="アメリカの人口密度" class="level3"><h3 class="anchored" data-anchor-id="アメリカの人口密度">アメリカの人口密度</h3>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">county_full</span> <span class="op">&lt;-</span> <span class="va">county_map</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">left_join</span><span class="op">(</span><span class="va">county_data</span>, by <span class="op">=</span> <span class="st">"id"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">county_full</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">long</span>, y <span class="op">=</span> <span class="va">lat</span>,</span>
+<span>         fill <span class="op">=</span> <span class="va">pop_dens</span>,</span>
+<span>         group <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_polygon</span><span class="op">(</span>color <span class="op">=</span> <span class="st">"gray90"</span>, size <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">coord_equal</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_fill_brewer</span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Blues"</span>,</span>
+<span>                    labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"0-10"</span>, <span class="st">"10-50"</span>, <span class="st">"50-100"</span>, <span class="st">"100-500"</span>, <span class="st">"500-1,000"</span>, <span class="st">"1,000-5,000"</span>, <span class="st">"&gt;5,000"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"Population per\nsquare mile"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_map</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">guides</span><span class="op">(</span>fill <span class="op">=</span> <span class="fu">guide_legend</span><span class="op">(</span>nrow <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section></section><section id="日本の地図" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="日本の地図">3. 日本の地図</h2>
+<section id="事前準備-1" class="level3"><h3 class="anchored" data-anchor-id="事前準備-1">⑴ 事前準備</h3>
+<ol type="1">
+<li>パッケージのインストールと読み込み</li>
+</ol>
+<pre><code><a href="https://r-spatial.github.io/sf/">library(sf)
+library(NipponMap)
+library(jpndistrict)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(rnaturalearthhires)</a></code></pre>
+</section><section id="シンプルな日本地図" class="level3"><h3 class="anchored" data-anchor-id="シンプルな日本地図">⑵ シンプルな日本地図</h3>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>geom_sfは地理空間データを標準化された形式で扱うためのRパッケージです。geom_polygonに比べ､より高度な地理空間データを可視化できます</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_japan_map</span> <span class="op">&lt;-</span> <span class="fu">ne_states</span><span class="op">(</span>country <span class="op">=</span> <span class="st">"Japan"</span>, returnclass <span class="op">=</span> <span class="st">"sf"</span><span class="op">)</span> <span class="co"># 日本の地図データを取得</span></span>
+<span></span>
+<span><span class="va">df_japan_map</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">df_japan_map</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span>都道府県 <span class="op">=</span> <span class="va">name_ja</span>, <span class="va">geometry</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df_japan_map</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_map</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="シンプルな日本地図離島を除外" class="level3"><h3 class="anchored" data-anchor-id="シンプルな日本地図離島を除外">⑶ シンプルな日本地図（離島を除外）</h3>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_japan_map</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ms_filter_islands</span><span class="op">(</span>min_area <span class="op">=</span> <span class="fl">1000000000</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co">#離島を除外（桁数を増やすと沖縄も除外される）</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_map</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="シンプルな地図日本以外" class="level3"><h3 class="anchored" data-anchor-id="シンプルな地図日本以外">⑷ シンプルな地図（日本以外）</h3>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_india_map</span> <span class="op">&lt;-</span> <span class="fu">ne_states</span><span class="op">(</span>country <span class="op">=</span> <span class="st">"India"</span>, returnclass <span class="op">=</span> <span class="st">"sf"</span><span class="op">)</span> <span class="co"># 各国の地理データを持つ</span></span>
+<span></span>
+<span><span class="va">df_india_map</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_map</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="南西諸島小笠原諸島の位置を変更した地図" class="level3"><h3 class="anchored" data-anchor-id="南西諸島小笠原諸島の位置を変更した地図">⑸ 南西諸島・小笠原諸島の位置を変更した地図</h3>
+<ul>
+<li>kuniezuパッケージを使用
+<ul>
+<li>CRANにパッケージがないので､以下の方法でインストール（Consoleに入力）</li>
+</ul>
+</li>
+</ul>
+<pre><code>install.packages("remotes")
+remotes::install_github("uribo/kuniezu")</code></pre>
+<div class="cell">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">jgd2011_bbox</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">move_jpn_rs</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">st_union</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co"># 県境のオン／オフ</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_jpsegment</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_map</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="日本地図都道府県毎に人口で色分け" class="level3"><h3 class="anchored" data-anchor-id="日本地図都道府県毎に人口で色分け">⑹ 日本地図（都道府県毎に人口で色分け）</h3>
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_日本の人口</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/日本の人口_2023年10月1日現在.csv"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    男性 <span class="op">=</span> <span class="va">男性</span> <span class="op">*</span> <span class="fl">1000</span>,</span>
+<span>    女性 <span class="op">=</span> <span class="va">女性</span> <span class="op">*</span> <span class="fl">1000</span>,</span>
+<span>    人口 <span class="op">=</span> <span class="va">男性</span> <span class="op">+</span> <span class="va">女性</span>,</span>
+<span>    `人口（100万人）` <span class="op">=</span> <span class="va">人口</span><span class="op">/</span><span class="fl">1000000</span></span>
+<span>  <span class="op">)</span> </span>
+<span></span>
+<span><span class="va">df_japan_map_pop</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">df_japan_map</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">left_join</span><span class="op">(</span><span class="va">df_日本の人口</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"都道府県"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df_japan_map_pop</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">人口</span><span class="op">)</span>, size <span class="op">=</span> <span class="va">.pt</span> <span class="op">/</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_fill_continuous_tableau</span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span> <span class="op">/</span> <span class="fl">1e6</span>,</span>
+<span>    guide <span class="op">=</span> <span class="fu">guide_colorbar</span><span class="op">(</span></span>
+<span>      nbin <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>  <span class="co"># 色の区分を10に設定</span></span>
+<span>    <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"人口 (100万人)"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">theme_void</span><span class="op">(</span>base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_japan_map_pop</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ms_filter_islands</span><span class="op">(</span>min_area <span class="op">=</span> <span class="fl">1000000000</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">人口</span><span class="op">)</span>, , size <span class="op">=</span> <span class="va">.pt</span> <span class="op">/</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_fill_continuous_tableau</span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span> <span class="op">/</span> <span class="fl">1e6</span>,</span>
+<span>                                guide <span class="op">=</span> <span class="fu">guide_colorbar</span><span class="op">(</span></span>
+<span>                                  nbin <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>  <span class="co"># 色の区分を10に設定</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"人口 (100万人)"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">theme_void</span><span class="op">(</span>base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_日本の人口_long</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">df_日本の人口</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
+<span>    cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"男性"</span>, <span class="st">"女性"</span><span class="op">)</span>,</span>
+<span>    names_to <span class="op">=</span> <span class="st">"性別"</span>,</span>
+<span>    values_to <span class="op">=</span> <span class="st">"人口_男女別"</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">df_japan_map_pop_long</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">df_japan_map</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">left_join</span><span class="op">(</span><span class="va">df_日本の人口_long</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"都道府県"</span><span class="op">)</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">df_japan_map_pop_long</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">人口</span><span class="op">)</span>, size <span class="op">=</span> <span class="va">.pt</span> <span class="op">/</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_fill_continuous_tableau</span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span> <span class="op">/</span> <span class="fl">1e6</span>,</span>
+<span>    guide <span class="op">=</span> <span class="fu">guide_colorbar</span><span class="op">(</span></span>
+<span>      nbin <span class="op">=</span> <span class="fl">10</span>  <span class="co"># 色の区分を5に設定</span></span>
+<span>    <span class="op">)</span></span>
+<span>                                <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"人口 (100万人)"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">性別</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_void</span><span class="op">(</span>base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="都道府県の抽出日本地図石川県" class="level3"><h3 class="anchored" data-anchor-id="都道府県の抽出日本地図石川県">⑺ 都道府県の抽出：日本地図（石川県）</h3>
+<div class="cell">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_japan_map</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">都道府県</span> <span class="op">==</span> <span class="st">"石川県"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="日本地図基礎自治体" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="日本地図基礎自治体">⑻ 日本地図（基礎自治体）</h3>
+<ul>
+<li>jpn_pref()関数は基礎自治体の情報を持つ
+<ul>
+<li>メモリ消費量が大きく､動作が不安定なため､コードだけ紹介する</li>
+</ul>
+</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_japan_map</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">47</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">map</span><span class="op">(</span><span class="op">~</span> <span class="fu">jpn_pref</span><span class="op">(</span>pref_code <span class="op">=</span> <span class="va">.</span>, district <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">reduce</span><span class="op">(</span><span class="va">rbind</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ms_simplify</span><span class="op">(</span>keep <span class="op">=</span> <span class="fl">0.01</span>, keep_shapes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df_japan_map</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="img/日本地図（基礎自治体）.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">日本地図（基礎自治体）</figcaption></figure>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="img/日本地図（基礎自治体・石川県）.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">日本地図（基礎自治体・石川県）</figcaption></figure>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>より詳しい説明を必要とする方は<a href="https://yamamoto-masashi.github.io/DSlec/chapter05.html#%E5%A1%97%E3%82%8A%E5%88%86%E3%81%91%E5%9C%B0%E5%9B%B3%E3%81%AE%E4%BD%9C%E6%88%90">データ分析入門（山本雅資）</a>を参照しましょう</p>
+</div>
+</div>
+</div>
+</section></section></section><section id="自作関数" class="level1"><h1>Ⅳ. 自作関数</h1>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>教科書A2.3（337ページから）</p>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>このやり方でコードをコピーし､流用するのは避けて下さい。代わりに関数を書きましょう。類似の処理を行うコードは関数を書くためのよい機会です（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン <a href="#ref-HealyK:2021book1_translJA" role="doc-biblioref">(2021)</a></span>, 337）</p>
+</blockquote>
+<section id="関数の定義" class="level2"><h2 class="anchored" data-anchor-id="関数の定義">関数の定義</h2>
+<ol type="1">
+<li>自作関数：データと二つのカラム（xとy）を空白（実際にはdata, x/y_column）にして､関数を定義</li>
+<li>自作関数を使ったプロット</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">function_penguin_plot</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span>, <span class="va">x_column</span>, <span class="va">y_column</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="va">penguins</span>, <span class="fu">aes_string</span><span class="op">(</span>x <span class="op">=</span> <span class="va">x_column</span>, y <span class="op">=</span> <span class="va">y_column</span>, color <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Scatter plot of"</span>, <span class="va">x_column</span>, <span class="st">"vs"</span>, <span class="va">y_column</span><span class="op">)</span>,</span>
+<span>         x <span class="op">=</span> <span class="va">x_column</span>,</span>
+<span>         y <span class="op">=</span> <span class="va">y_column</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">function_penguin_plot</span><span class="op">(</span><span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">function_penguin_plot</span><span class="op">(</span><span class="st">"flipper_length_mm"</span>, <span class="st">"body_mass_g"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>特に図の見た目を変更したいときに､元のコード（自作関数）だけを修正すれば済みます</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>以下のコードは､便宜上､function名を新しくしていますが（function_penguin_plot_2）､通常､使う場合は､function_penguin_plotのままでかまいません（同じfunction名だと､最初のコードと改良したコードの変化がわからなくなるためです）</p>
+</div>
+</div>
+</div>
+<ul>
+<li>以下のコードでは､軸のラベルとドットの色を修正している</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">function_penguin_plot_2</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span>, <span class="va">x_column</span>, <span class="va">y_column</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="va">penguins</span>, <span class="fu">aes_string</span><span class="op">(</span>x <span class="op">=</span> <span class="va">x_column</span>, y <span class="op">=</span> <span class="va">y_column</span>, color <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Scatter plot of"</span>, <span class="va">x_column</span>, <span class="st">"vs"</span>, <span class="va">y_column</span><span class="op">)</span>,</span>
+<span>         x <span class="op">=</span> <span class="st">"ペンギンのヒレの長さ(mm)"</span>,</span>
+<span>         y <span class="op">=</span> <span class="st">"ペンギンの体重(g)"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">scale_color_brewer</span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Set2"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">theme_minimal</span><span class="op">(</span>base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">function_penguin_plot_2</span><span class="op">(</span><span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">function_penguin_plot_2</span><span class="op">(</span><span class="st">"flipper_length_mm"</span>, <span class="st">"body_mass_g"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w8_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section></section><section id="宿題" class="level1"><h1>Ⅴ. 宿題</h1>
+<section id="授業の感想" class="level2"><h2 class="anchored" data-anchor-id="授業の感想">1. 授業の感想</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+note | 回答先と締め切り
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>
+<strong>回答先</strong>：<a href="https://forms.gle/ZCkbPXYprjoibA8i6">Google Forms</a>
+</li>
+<li>
+<strong>締め切り</strong>：2024年8月9日（金）23時59分まで</li>
+</ul>
+</div>
+</div>
+</section><section id="演習再提出任意" class="level2"><h2 class="anchored" data-anchor-id="演習再提出任意">2. 演習（再提出・任意）</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+note | 回答先と締め切り
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>
+<strong>回答先</strong>：<a href="https://forms.gle/VMjdbqBu1rbcLe9j9">Google Forms</a>
+</li>
+<li>
+<strong>締め切り</strong>：2024年8月9日（金）23時59分まで</li>
+<li>
+<strong>出力形式</strong>:
+<ol type="1">
+<li>R Studioで出力されたhtmlファイル</li>
+<li>PowerPoint/revealjsファイル（revealjsはhtmlファイルと「…_files」で出力されます。zipで固めて送って下さい）</li>
+</ol>
+</li>
+<li>
+<strong>ファイル名</strong>:
+<ul>
+<li>氏名_html.html</li>
+<li>氏名_スライド資料.pptx</li>
+<li>例：苅谷千尋_html.html</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>再提出する場合は8月9日（金）23:59分まで（必須ではありません）。最終版のファイルで成績を評価します</p>
+</div>
+</div>
+</div>
+
+
+
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-HealyK:2021book1_translJA" class="csl-entry" role="listitem">
+ヒーリー，キーラン (2021) 『データ分析のためのデータ可視化入門』, 講談社.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>苅谷千尋</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/kariyach\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block">© 2024 CHIHIRO KARIYA</span></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
