@@ -4,8 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.39">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="author" content="苅谷 千尋">
-<title>The Senate of Lilliput – CHIHIRO KARIYA</title>
+<title>ボードゲームで考える社会の平等と不平等 – CHIHIRO KARIYA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,8 +61,11 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style>html{ scroll-behavior: smooth; }</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
+}</script><link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><link href="../../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="../../site_libs/leaflet-1.3.1/leaflet.js"></script><link href="../../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="../../site_libs/proj4-2.6.2/proj4.min.js"></script><script src="../../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script><link href="../../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="../../site_libs/leaflet-binding-2.2.2/leaflet.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="../../style_ja.css">
 </head>
@@ -138,41 +140,16 @@ ul.task-list li input[type="checkbox"] {
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">The Senate of Lilliput</h1>
-            <p class="subtitle lead">quanteda</p>
+      <h1 class="title">ボードゲームで考える社会の平等と不平等</h1>
+            <p class="subtitle lead">金沢大学 KUGS高大接続プログラム Liveセミナー</p>
                       </div>
   </div>
     
-  <div class="quarto-title-meta-author">
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-heading">Affiliation</div>
-    
-      <div class="quarto-title-meta-contents">
-      <p class="author">苅谷 千尋, PhD <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
-    </div>
-    <div class="quarto-title-meta-contents">
-          <p class="affiliation">
-              金沢大学
-            </p>
-        </div>
-    </div>
-
+  
   <div class="quarto-title-meta">
 
-        
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">19, Mar, 2025</p>
-      </div>
-    </div>
+      
     
-      <div>
-      <div class="quarto-title-meta-heading">Modified</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date-modified">19, Mar, 2025</p>
-      </div>
-    </div>
       
     </div>
     
@@ -184,189 +161,234 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
    
   <ul>
-<li><a href="#wordcloud" id="toc-wordcloud" class="nav-link active" data-scroll-target="#wordcloud">Wordcloud</a></li>
-  <li><a href="#topfeatures" id="toc-topfeatures" class="nav-link" data-scroll-target="#topfeatures">topfeatures</a></li>
-  <li>
-<a href="#kwic" id="toc-kwic" class="nav-link" data-scroll-target="#kwic">kwic</a>
+<li>
+<a href="#%E6%A6%82%E8%A6%81" id="toc-概要" class="nav-link active" data-scroll-target="#%E6%A6%82%E8%A6%81">概要</a>
   <ul class="collapse">
-<li><a href="#interest" id="toc-interest" class="nav-link" data-scroll-target="#interest">interest</a></li>
-  <li><a href="#rhetoric" id="toc-rhetoric" class="nav-link" data-scroll-target="#rhetoric">rhetoric</a></li>
-  <li><a href="#fame" id="toc-fame" class="nav-link" data-scroll-target="#fame">fame</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#keyness" id="toc-keyness" class="nav-link" data-scroll-target="#keyness">Keyness</a>
-  <ul class="collapse">
-<li><a href="#key-adrees" id="toc-key-adrees" class="nav-link" data-scroll-target="#key-adrees">0. Key adrees</a></li>
-  <li><a href="#group-wing" id="toc-group-wing" class="nav-link" data-scroll-target="#group-wing">1. Group: Wing</a></li>
-  <li><a href="#group-tory" id="toc-group-tory" class="nav-link" data-scroll-target="#group-tory">2. Group: Tory</a></li>
-  <li><a href="#group-wing-1" id="toc-group-wing-1" class="nav-link" data-scroll-target="#group-wing-1">3. Group: Wing?</a></li>
+<li><a href="#%E6%97%A5%E6%99%82" id="toc-日時" class="nav-link" data-scroll-target="#%E6%97%A5%E6%99%82">日時</a></li>
+  <li><a href="#%E4%BC%9A%E5%A0%B4" id="toc-会場" class="nav-link" data-scroll-target="#%E4%BC%9A%E5%A0%B4">会場</a></li>
+  <li><a href="#%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3" id="toc-オンライン" class="nav-link" data-scroll-target="#%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3">オンライン</a></li>
+  <li><a href="#%E9%85%8D%E5%B8%83%E8%B3%87%E6%96%99" id="toc-配布資料" class="nav-link" data-scroll-target="#%E9%85%8D%E5%B8%83%E8%B3%87%E6%96%99">配布資料</a></li>
+  <li><a href="#%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88%E5%8F%97%E8%AC%9B%E3%81%AE%E6%84%9F%E6%83%B3%E3%81%AA%E3%81%A9" id="toc-アンケート受講の感想など" class="nav-link" data-scroll-target="#%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88%E5%8F%97%E8%AC%9B%E3%81%AE%E6%84%9F%E6%83%B3%E3%81%AA%E3%81%A9">アンケート（受講の感想など）</a></li>
+  <li><a href="#%E9%80%A3%E7%B5%A1%E5%85%88" id="toc-連絡先" class="nav-link" data-scroll-target="#%E9%80%A3%E7%B5%A1%E5%85%88">連絡先</a></li>
+  <li><a href="#%E3%81%9D%E3%81%AE%E4%BB%96" id="toc-その他" class="nav-link" data-scroll-target="#%E3%81%9D%E3%81%AE%E4%BB%96">その他</a></li>
   </ul>
 </li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><div class="callout callout-style-simple callout-warning">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content"><div class="columns">
+<div class="column" style="width:30%;">
+<p><img src="../../img/works/logo_kanazawauniversity.jpg" class="img-fluid" style="width:50.0%"></p>
+</div><div class="column" style="width:30%;">
+<p><img src="../../img/works/logo_kugs.png" class="img-fluid" style="width:60.0%"></p>
+</div><div class="column" style="width:30%;">
+<p><img src="../../img/works/icon_4-education.png" class="img-fluid" style="width:45.0%"></p>
+</div>
+</div>
+<section id="概要" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="概要">概要</h2>
+<p>一般的なボードゲームは、全員が平等な条件でゲームを始めます。しかし、このボードゲーム（「不平等なモノポリー」、フランスで教育目的に作られたもの）は違います。一部のプレイヤーは、ゲームの最初から勝つ見込みがありません。他のプレイヤーよりもコマの進みが明らかに遅いプレイヤーもいます。すなわち、最初に引いたカードによって「イージーモード」か「ハードモード」が決まってしまうのです。これほど不平等なゲームがあるでしょうか。ですが、この不平等さは現在の社会を反映するものです。</p>
+<p>セミナーでは、ゲームとディスカッション、簡単なレクチャーを通して、政治や社会のあり方について考えます。</p>
+<section id="日時" class="level3"><h3 class="anchored" data-anchor-id="日時">日時</h3>
+<ul>
+<li>2025年3月22日（土） 14:00-17:00</li>
+</ul></section><section id="会場" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="会場">会場</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>金沢大学 角間キャンパス
+<ul>
+<li>インキュベーション施設 セミナー室1（1階）</li>
+<li><a href="https://www.google.com/maps/place/%E3%80%92920-1164+%E7%9F%B3%E5%B7%9D%E7%9C%8C%E9%87%91%E6%B2%A2%E5%B8%82%E8%A7%92%E9%96%93%E7%94%BA+%E5%85%B1%E5%90%8C%E7%A0%94%E7%A9%B6%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC+%E3%82%A4%E3%83%B3%E3%82%AD%E3%83%A5%E3%83%99%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E6%96%BD%E8%A8%AD/@36.5450643,136.7083926,17z/data=!3m1!4b1!4m6!3m5!1s0x5ff8315a4e9f6101:0x85b54dbe4590a30d!8m2!3d36.5450643!4d136.7083926!16s%2Fg%2F11g0zp26gx?entry=ttu">Google Map</a></li>
+</ul>
+</li>
+<li>公共交通機関（via 北陸鉄道バス）
+<ul>
+<li>バス停（乗り口）
+<ul>
+<li>金沢駅兼六園口（東口）8番乗り場発　93・94・97金沢大学行き（兼六園下経由）</li>
+</ul>
+</li>
+<li>バス停（下車）：<strong>金沢大学自然研前</strong>
+<ul>
+<li>インキュベーション施設まで徒歩5分</li>
+</ul>
+</li>
+<li>時刻表（北陸鉄道バス 公式サイト）
+<ul>
+<li><a href="http://www.hokutetsu.co.jp/wpress/wp-content/uploads/2025/03/Kanazawa-Univ-and-Higashikanazawa-Kindai.pdf">金沢大学行き/金沢駅行き</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-897a72c513e415e93c23" style="width:100%;height:371px;"></div>
+<script type="application/json" data-for="htmlwidget-897a72c513e415e93c23">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]}],"setView":[[36.54517,136.70847],18,[]]},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+注意 | バス停から会場までのアクセス
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>北陸鉄道バスを「金沢大学自然研前」で降り、連絡橋（南アカンサスインターフェース）を渡ってください</li>
+<li>連絡橋を渡ったあとは右手に進んでください｡一番奥の建物が会場です</li>
+<li>インキュベーション施設の入り口はわかりにくく、プレートもかかっていません｡新学術創成研究機構を目指してください（建物は連結しています）</li>
+</ul>
+</div>
+</div>
+<div class="columns page-columns page-full">
+<div class="column page-columns page-full" style="width:50%;">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="../../img/works/Bridge_Interface_1.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="margin-caption">南アカンサスインターフェース（入り口）</figcaption></figure>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="../../img/works/Bridge_Interface_2.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="margin-caption">南アカンサスインターフェース</figcaption></figure>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="../../img/works/Bridge_Interface_3.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="margin-caption">南アカンサスインターフェース（出口）ここを右手に進む</figcaption></figure>
+</div>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note | キャンパスの雰囲気を味わってみよう
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>南アカンサスインターフェース（出口）を左手に進むと、もう一つ、連絡橋が出てきます（北アカンサスインターフェイス）｡橋を渡った先が、1年生の共通科目、人間社会学域のメインキャンパスです <!-- - この時期の上記エリアは新入生があふれており、大学の雰囲気を味わえます｡時間があれば、散策してみましょう --> <!-- - 大学の飲食店を利用できます｡会場最寄りの食堂は[ナカフクリ食堂](https://www.kanazawa-u.ac.jp/news/130408)です｡北アカンサスインターフェイス手前にある「中福利施設」の階段を下りてください -->
+</li>
+</ul>
+</div>
+</div>
+<div class="columns page-columns page-full">
+<div class="column page-columns page-full" style="width:50%;">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="../../img/works/Building_InstituteForFrontierScienceInitiative_1.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="margin-caption">新学術創成研究機構（右手）</figcaption></figure>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="../../img/works/Building_InstituteForFrontierScienceInitiative_2.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="margin-caption">新学術創成研究機構（正面玄関）</figcaption></figure>
+</div>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+重要 | 玄関の施錠について
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>会場の建物玄関は土日は施錠されています。13時30分以降、できるだけ玄関にいるようにしますが、私が不在、あるいは、あなたが遅刻する場合は、お手数ですがkariyach@staff.kanazawa-u.ac.jpまでメール下さい。早く到着した場合も、同様にご連絡下さい。</li>
+<li>入り口扉に、QRコード化したメールアドレスを貼っておきます。</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note | その他
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>服装の指定はありません</li>
+</ul>
+</div>
+</div>
+</section><section id="オンライン" class="level3"><h3 class="anchored" data-anchor-id="オンライン">オンライン</h3>
+<ul>
+<li>接続方法：<a href="https://kanazawa-university.zoom.us/j/89509798201?pwd=MP4N9t9fww0GCZKV2H3uGknCAVW2vD.1">ZOOM URL</a><i class="bi bi-unlock-fill"></i>
+<ul>
+<li>13:30から入室可能です<br><!-- - 接続情報は、Google フォームに登録されたメールアドレスに、当日午前中にお送りします --><!-- - メールが届かない場合は、下記の連絡先にお問い合わせください -->
+</li>
+</ul>
+</li>
+</ul>
+<div class="callout callout-style-simple callout-warning">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>This page is currently being tested.</p>
+<p>少人数のグループワークです｡ビデオオンでご参加下さい</p>
 </div>
 </div>
 </div>
-<section id="wordcloud" class="level2"><h2 class="anchored" data-anchor-id="wordcloud">Wordcloud</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+</section><section id="配布資料" class="level3"><h3 class="anchored" data-anchor-id="配布資料">配布資料</h3>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>セミナーの開催当日正午を目処に公開します</p>
 </div>
 </div>
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<ol type="1">
+<li>ウェブページ：<i class="bi bi-lock-fill"></i>
+</li>
+<li>オンラインストレージ：<i class="bi bi-lock-fill"></i>
+</li>
+</ol>
+<!-- 1. ウェブページ：<i class="bi bi-unlock-fill"></i> --><!-- [リンク](resume_readingseminar_12.html) --><!-- 2. オンラインストレージ：<i class="bi bi-unlock-fill"></i> --><!-- [Google ドライブ](https://drive.google.com/drive/folders/1ydF7G-4d7kg6I2UaQdQkZcUb9Kqkyghf?usp=sharing) <i class="bi unlock-fill"></i> --><!--     - アクセス権が必要な場合は、適宜クリックするか、以下のメールアドレスにお問い合わせ下さい --></section><section id="アンケート受講の感想など" class="level3"><h3 class="anchored" data-anchor-id="アンケート受講の感想など">アンケート（受講の感想など）</h3>
+<ul>
+<li>提出先：[Microsoft Forms] <i class="bi bi-lock-fill"></i>
+</li>
+</ul>
+<!-- - 提出先：[Microsoft Forms](https://forms.office.com/r/ANwgg19L1t) <i class="bi bi-unlock-fill"></i> --><!--   - 明日（3月23日（日）23時59分）までに回答下さい --></section><section id="連絡先" class="level3"><h3 class="anchored" data-anchor-id="連絡先">連絡先</h3>
+<ul>
+<li>担当講師（苅谷）： <a href="mailto:kariyach@staff.kanazawa-u.ac.jp">kariyach@staff.kanazawa-u.ac.jp</a>
+</li>
+<li>入試課：076-264-6082（平日開催の場合のみ繋がります）</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+重要
 </div>
 </div>
-</div>
-</section><section id="topfeatures" class="level1"><h1>topfeatures</h1>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>    lord      man      may      can     upon   minist    peopl    power 
-     281      121      116       95       83       76       75       73 
-  nation       us  without    everi   motion      yet     evid     must 
-      71       70       67       64       56       53       50       49 
-therefor   reason      one    whose 
-      47       45       45       43 </code></pre>
+<div class="callout-body-container callout-body">
+<ul>
+<li>当日、体調不良などで急きょ、参加できなくなった場合は、簡単で結構ですので、上記のメールアドレスに連絡下さい</li>
+</ul>
 </div>
 </div>
-</section><section id="kwic" class="level1"><h1>kwic</h1>
-<section id="interest" class="level2"><h2 class="anchored" data-anchor-id="interest">interest</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>Keyword-in-context with 39 matches.                                                                 
-   [SenateofLilliput.csv.1, 11]  prejudic | interest | other     
-   [SenateofLilliput.csv.1, 44]    privat | interest | sincerest 
-   [SenateofLilliput.csv.1, 77]     offic | interest | everi     
-   [SenateofLilliput.csv.1, 81] communiti | interest | duti      
-  [SenateofLilliput.csv.1, 426]      move | interest | continu   
-  [SenateofLilliput.csv.1, 590]    justic | interest | procur    
-  [SenateofLilliput.csv.1, 709]      ment | interest | prosper   
-  [SenateofLilliput.csv.1, 856]     glect | interest | Emperor   
-  [SenateofLilliput.csv.1, 890]    machin | interest | tye       
- [SenateofLilliput.csv.1, 1167]     divid | interest | Hous      
- [SenateofLilliput.csv.1, 1426]     sider | interest | circumst  
- [SenateofLilliput.csv.1, 1737]   likewis | interest | pre       
- [SenateofLilliput.csv.1, 1949]   sensibl | interest | promot    
- [SenateofLilliput.csv.1, 2595]     whose | interest | might     
-  [SenateofLilliput.csv.2, 117]   connect | interest | man       
-  [SenateofLilliput.csv.2, 124]   passion | interest | can       
-  [SenateofLilliput.csv.3, 819]    public | interest | fail      
-  [SenateofLilliput.csv.3, 881]     taken | interest | state     
- [SenateofLilliput.csv.3, 1029]    consid | interest | disposit  
- [SenateofLilliput.csv.3, 1238]  prospect | interest | love      
- [SenateofLilliput.csv.3, 1486]   Iberian | interest | trade     
-   [SenateofLilliput.csv.4, 53]    privat | interest | blind     
-  [SenateofLilliput.csv.4, 169]      Lord | interest | attend    
-  [SenateofLilliput.csv.4, 204]     whose | interest | appear    
-  [SenateofLilliput.csv.4, 542]      vers | interest | transact  
-  [SenateofLilliput.csv.4, 581]      rise | interest | whoever   
- [SenateofLilliput.csv.4, 1025]       war | interest | everi     
- [SenateofLilliput.csv.4, 1156]   neither | interest | merchant  
- [SenateofLilliput.csv.4, 1236]    affair | interest | particular
- [SenateofLilliput.csv.5, 1174]     whose | interest | con       
- [SenateofLilliput.csv.5, 1300]        us | interest | far       
- [SenateofLilliput.csv.5, 1379]     given | interest | countri   
-  [SenateofLilliput.csv.6, 148]   publick | interest | nation    
-   [SenateofLilliput.csv.7, 27]     adher | interest | corrupt   
-  [SenateofLilliput.csv.7, 132]     peopl | interest | chief     
-  [SenateofLilliput.csv.7, 216]    differ | interest | vari      
-  [SenateofLilliput.csv.8, 147]    public | interest | decay     
-  [SenateofLilliput.csv.8, 483]      real | interest | advanc'd  
-  [SenateofLilliput.csv.8, 486]      true | interest | Lord      </code></pre>
-</div>
-</div>
-</section><section id="rhetoric" class="level2"><h2 class="anchored" data-anchor-id="rhetoric">rhetoric</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>Keyword-in-context with 0 matches.</code></pre>
-</div>
-</div>
-</section><section id="fame" class="level2"><h2 class="anchored" data-anchor-id="fame">fame</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>Keyword-in-context with 28 matches.                                                           
-   [SenateofLilliput.csv.2, 23] common | fame | evid       
-   [SenateofLilliput.csv.2, 34]    mon | fame | imput      
-   [SenateofLilliput.csv.2, 50] Common | fame | Lord       
-   [SenateofLilliput.csv.2, 76]    mon | fame | great      
-  [SenateofLilliput.csv.3, 186]  blast | fame | may        
-  [SenateofLilliput.csv.3, 298] Common | fame | therefor   
-  [SenateofLilliput.csv.3, 333] common | fame | may        
- [SenateofLilliput.csv.3, 1293] common | fame | yet        
- [SenateofLilliput.csv.3, 1915]    mon | fame | unequit    
- [SenateofLilliput.csv.4, 2042] common | fame | suffici    
-   [SenateofLilliput.csv.5, 81] common | fame | common     
-   [SenateofLilliput.csv.5, 83] common | fame | least      
-  [SenateofLilliput.csv.5, 313] common | fame | much       
-  [SenateofLilliput.csv.5, 336] common | fame | can        
-  [SenateofLilliput.csv.5, 346] report | fame | necessarili
-  [SenateofLilliput.csv.5, 400] enquir | fame | fame       
-  [SenateofLilliput.csv.5, 401]   fame | fame | Lord       
-  [SenateofLilliput.csv.5, 403]   Lord | fame | err        
-  [SenateofLilliput.csv.5, 434] deceiv | fame | rather     
-  [SenateofLilliput.csv.5, 461] happen | fame | suppos     
-  [SenateofLilliput.csv.5, 469] number | fame | equal      
-  [SenateofLilliput.csv.5, 500] Common | fame | Lord       
-  [SenateofLilliput.csv.5, 546] common | fame | may        
- [SenateofLilliput.csv.5, 1003] common | fame | echo       
- [SenateofLilliput.csv.5, 1447] common | fame | ultim      
-  [SenateofLilliput.csv.7, 158]   voic | fame | regard     
-  [SenateofLilliput.csv.8, 381] common | fame | daili      
-  [SenateofLilliput.csv.11, 22]    mon | fame | opposit    </code></pre>
-</div>
-</div>
-</section></section><section id="keyness" class="level1"><h1>Keyness</h1>
-<section id="key-adrees" class="level2"><h2 class="anchored" data-anchor-id="key-adrees">0. Key adrees</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="group-wing" class="level2"><h2 class="anchored" data-anchor-id="group-wing">1. Group: Wing</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="group-tory" class="level2"><h2 class="anchored" data-anchor-id="group-tory">2. Group: Tory</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="group-wing-1" class="level2"><h2 class="anchored" data-anchor-id="group-wing-1">3. Group: Wing?</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+</section><section id="その他" class="level3"><h3 class="anchored" data-anchor-id="その他">その他</h3>
+<ul>
+<li>このプログラムは金沢大学KUGS高大接続プログラム（大学での学び）の対象です</li>
+<li>特別入試に興味がある方は<a href="https://kugspro.adm.kanazawa-u.ac.jp">公式サイト</a>をご覧下さい</li>
+</ul>
 
 
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -808,5 +830,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </footer>
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
