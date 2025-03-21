@@ -1,0 +1,48 @@
+.print-only {
+  display: none;
+  /*color: aquamarine;*/
+}
+
+@media print {
+  @page {
+    size: a4 portrait;
+    font-family: serif;
+    counter-increment: page;
+  @bottom-center {
+    content: counter(page) " / " counter(pages);
+    font-family: serif;
+    font-size: 0.8em;
+.numbers {
+    font-family: serif;
+  }
+}
+  /* タイトルなどの要素に対して改行を取り除く */
+  .title-element {
+    white-space: nowrap;
+  }
+}
+
+html {
+    font-family: serif;
+    font-size: 95%;
+}
+
+
+ h2 {
+    font-size: 115%;
+  }
+
+ h3 {
+    font-size: 110%;
+  }
+
+ h4 {
+    font-size: 105%;
+  }
+
+  .no-print {
+      display: none;
+  }
+  .print-only {
+      display: block;
+  }
