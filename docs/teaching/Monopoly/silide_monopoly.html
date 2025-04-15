@@ -1,236 +1,654 @@
 <!DOCTYPE html>
-<html lang="ja"><head>
-<link href="../../img/favicon-16x16.png" rel="icon" type="image/png">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.43">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="苅谷千尋">
+<meta name="dcterms.date" content="2025-03-22">
+<title>ボードゲームで考える社会の平等と不平等 – CHIHIRO KARIYA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/favicon-16x16.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.43">
-
-  <meta name="author" content="苅谷千尋">
-  <title>CHIHIRO KARIYA – ボードゲームで考える社会の平等と不平等</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-      vertical-align: middle;
-    }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-d4eb79cb95c9bbe51b7825d3a9ba54a6.css">
-  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/multimodal/multimodal.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
-    .reveal div.sourceCode {
-      margin: 0;
-      overflow: auto;
-    }
-    .reveal div.hanging-indent {
-      margin-left: 1em;
-      text-indent: -1em;
-    }
-    .reveal .slide:not(.center) {
-      height: 100%;
-    }
-    .reveal .slide.scrollable {
-      overflow-y: auto;
-    }
-    .reveal .footnotes {
-      height: 100%;
-      overflow-y: auto;
-    }
-    .reveal .slide .absolute {
-      position: absolute;
-      display: block;
-    }
-    .reveal .footnotes ol {
-      counter-reset: ol;
-      list-style-type: none; 
-      margin-left: 0;
-    }
-    .reveal .footnotes ol li:before {
-      counter-increment: ol;
-      content: counter(ol) ". "; 
-    }
-    .reveal .footnotes ol li > p:first-child {
-      display: inline-block;
-    }
-    .reveal .slide ul,
-    .reveal .slide ol {
-      margin-bottom: 0.5em;
-    }
-    .reveal .slide ul li,
-    .reveal .slide ol li {
-      margin-top: 0.4em;
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide ul[role="tablist"] li {
-      margin-bottom: 0;
-    }
-    .reveal .slide ul li > *:first-child,
-    .reveal .slide ol li > *:first-child {
-      margin-block-start: 0;
-    }
-    .reveal .slide ul li > *:last-child,
-    .reveal .slide ol li > *:last-child {
-      margin-block-end: 0;
-    }
-    .reveal .slide .columns:nth-child(3) {
-      margin-block-start: 0.8em;
-    }
-    .reveal blockquote {
-      box-shadow: none;
-    }
-    .reveal .tippy-content>* {
-      margin-top: 0.2em;
-      margin-bottom: 0.7em;
-    }
-    .reveal .tippy-content>*:last-child {
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide > img.stretch.quarto-figure-center,
-    .reveal .slide > img.r-stretch.quarto-figure-center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-left,
-    .reveal .slide > img.r-stretch.quarto-figure-left  {
-      display: block;
-      margin-left: 0;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-right,
-    .reveal .slide > img.r-stretch.quarto-figure-right  {
-      display: block;
-      margin-left: auto;
-      margin-right: 0; 
-    }
-  </style>
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-e302cdc0bc70a86b9822dd330df9519a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="quarto-light">
-  <div class="reveal">
-    <div class="slides">
+<body class="nav-fixed">
 
-<section id="title-slide" data-background-image="img/cover.jpg" data-background-position="90% 90%" data-background-size="35%" class="quarto-title-block center">
-  <h1 class="title">ボードゲームで考える社会の平等と不平等</h1>
-  <p class="subtitle">金沢大学 KUGS高大接続プログラム Liveセミナー</p>
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">CHIHIRO KARIYA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../projects/index.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/index.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../events/index.html"> 
+<span class="menu-text">Events</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv/index.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../address/index.html"> 
+<span class="menu-text">Address</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="https://orcid.org/0009-0008-3085-947X"> 
+<span class="menu-text"><i class="ai  ai-orcid" aria-label="orcid"></i></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:kariyach@staff.kanazawa-u.ac.jp"> <i class="bi bi-envelope" role="img" aria-label="email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/kariyach"> <i class="bi bi-github" role="img" aria-label="github">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
+   
+  <ul>
+<li>
+<a href="#%E3%82%A4%E3%83%B3%E3%83%88%E3%83%AD%E3%83%80%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3" id="toc-イントロダクション" class="nav-link active" data-scroll-target="#%E3%82%A4%E3%83%B3%E3%83%88%E3%83%AD%E3%83%80%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3">Ⅰ. イントロダクション</a>
+  <ul class="collapse">
+<li><a href="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB" id="toc-はじめに" class="nav-link" data-scroll-target="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">はじめに</a></li>
+  <li>
+<a href="#%E6%9C%AC%E6%97%A5%E3%81%AE%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB" id="toc-本日のスケジュール" class="nav-link" data-scroll-target="#%E6%9C%AC%E6%97%A5%E3%81%AE%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">本日のスケジュール</a>
+  <ul class="collapse">
+<li><a href="#%E5%89%8D%E5%8D%8A" id="toc-前半" class="nav-link" data-scroll-target="#%E5%89%8D%E5%8D%8A">前半</a></li>
+  <li><a href="#%E4%BC%91%E6%86%A91530-%E4%BC%91%E6%86%A910%E5%88%86" id="toc-休憩1530-休憩10分" class="nav-link" data-scroll-target="#%E4%BC%91%E6%86%A91530-%E4%BC%91%E6%86%A910%E5%88%86">休憩（15:30 休憩（10分））</a></li>
+  <li><a href="#%E5%BE%8C%E5%8D%8A" id="toc-後半" class="nav-link" data-scroll-target="#%E5%BE%8C%E5%8D%8A">後半</a></li>
+  </ul>
+</li>
+  <li><a href="#%E8%87%AA%E5%B7%B1%E7%B4%B9%E4%BB%8B%E8%8B%85%E8%B0%B7" id="toc-自己紹介苅谷" class="nav-link" data-scroll-target="#%E8%87%AA%E5%B7%B1%E7%B4%B9%E4%BB%8B%E8%8B%85%E8%B0%B7">自己紹介：苅谷</a></li>
+  <li><a href="#%E8%B6%A3%E6%97%A8%E8%AA%AC%E6%98%8E-live%E3%82%BB%E3%83%9F%E3%83%8A%E3%83%BC" id="toc-趣旨説明-liveセミナー" class="nav-link" data-scroll-target="#%E8%B6%A3%E6%97%A8%E8%AA%AC%E6%98%8E-live%E3%82%BB%E3%83%9F%E3%83%8A%E3%83%BC">趣旨説明 &gt; Liveセミナー</a></li>
+  <li>
+<a href="#%E8%B6%A3%E6%97%A8%E8%AA%AC%E6%98%8E-%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B2%E3%83%BC%E3%83%A0%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%82%92%E9%96%8B%E7%99%BA%E3%81%97%E3%81%9F%E7%90%86%E7%94%B1" id="toc-趣旨説明-ボードゲーム不平等なモノポリーを開発した理由" class="nav-link" data-scroll-target="#%E8%B6%A3%E6%97%A8%E8%AA%AC%E6%98%8E-%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B2%E3%83%BC%E3%83%A0%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%82%92%E9%96%8B%E7%99%BA%E3%81%97%E3%81%9F%E7%90%86%E7%94%B1">趣旨説明 &gt; ボードゲーム「不平等なモノポリー」を開発した理由</a>
+  <ul class="collapse">
+<li><a href="#%E4%BB%8A%E3%81%93%E3%81%9D%E3%83%AB%E3%83%BC%E3%83%AB%E3%82%92%E5%A4%89%E3%81%88%E3%82%8B%E3%81%A8%E3%81%8D" id="toc-今こそルールを変えるとき" class="nav-link" data-scroll-target="#%E4%BB%8A%E3%81%93%E3%81%9D%E3%83%AB%E3%83%BC%E3%83%AB%E3%82%92%E5%A4%89%E3%81%88%E3%82%8B%E3%81%A8%E3%81%8D">今こそ、ルールを変えるとき</a></li>
+  </ul>
+</li>
+  <li><a href="#%E8%B6%A3%E6%97%A8%E8%AA%AC%E6%98%8E-%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B2%E3%83%BC%E3%83%A0%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%82%92%E9%96%8B%E7%99%BA%E3%81%97%E3%81%9F%E7%90%86%E7%94%B1-1" id="toc-趣旨説明-ボードゲーム不平等なモノポリーを開発した理由-1" class="nav-link" data-scroll-target="#%E8%B6%A3%E6%97%A8%E8%AA%AC%E6%98%8E-%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B2%E3%83%BC%E3%83%A0%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%82%92%E9%96%8B%E7%99%BA%E3%81%97%E3%81%9F%E7%90%86%E7%94%B1-1">趣旨説明 &gt; ボードゲーム「不平等なモノポリー」を開発した理由</a></li>
+  <li><a href="#%E8%B6%A3%E6%97%A8%E8%AA%AC%E6%98%8E-%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B2%E3%83%BC%E3%83%A0%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%82%92%E9%96%8B%E7%99%BA%E3%81%97%E3%81%9F%E7%90%86%E7%94%B1-2" id="toc-趣旨説明-ボードゲーム不平等なモノポリーを開発した理由-2" class="nav-link" data-scroll-target="#%E8%B6%A3%E6%97%A8%E8%AA%AC%E6%98%8E-%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B2%E3%83%BC%E3%83%A0%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%82%92%E9%96%8B%E7%99%BA%E3%81%97%E3%81%9F%E7%90%86%E7%94%B1-2">趣旨説明 &gt; ボードゲーム「不平等なモノポリー」を開発した理由</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%83%AF%E3%83%BC%E3%82%AF%E2%91%A0" id="toc-グループワーク①" class="nav-link" data-scroll-target="#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%83%AF%E3%83%BC%E3%82%AF%E2%91%A0">Ⅱ. グループワーク①</a>
+  <ul class="collapse">
+<li><a href="#%E5%B9%B3%E7%AD%89%E3%81%A8%E4%B8%8D%E5%B9%B3%E7%AD%89" id="toc-平等と不平等" class="nav-link" data-scroll-target="#%E5%B9%B3%E7%AD%89%E3%81%A8%E4%B8%8D%E5%B9%B3%E7%AD%89">平等と不平等</a></li>
+  <li>
+<a href="#%E5%A4%A7%E5%AD%A6%E3%81%AE%E8%A1%8C%E6%96%B9" id="toc-大学の行方" class="nav-link" data-scroll-target="#%E5%A4%A7%E5%AD%A6%E3%81%AE%E8%A1%8C%E6%96%B9">大学の行方</a>
+  <ul class="collapse">
+<li><a href="#%E6%97%A5%E6%9C%AC%E3%81%AE%E5%B9%B3%E7%AD%89%E3%81%A8%E4%B8%8D%E5%B9%B3%E7%AD%89" id="toc-日本の平等と不平等" class="nav-link" data-scroll-target="#%E6%97%A5%E6%9C%AC%E3%81%AE%E5%B9%B3%E7%AD%89%E3%81%A8%E4%B8%8D%E5%B9%B3%E7%AD%89">⑴ 日本の平等と不平等</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E5%A4%A7%E5%AD%A6%E3%81%AE%E8%A1%8C%E6%96%B9-%E6%97%A5%E6%9C%AC%E3%81%AE%E5%B9%B3%E7%AD%89%E3%81%A8%E4%B8%8D%E5%B9%B3%E7%AD%89" id="toc-大学の行方-日本の平等と不平等" class="nav-link" data-scroll-target="#%E5%A4%A7%E5%AD%A6%E3%81%AE%E8%A1%8C%E6%96%B9-%E6%97%A5%E6%9C%AC%E3%81%AE%E5%B9%B3%E7%AD%89%E3%81%A8%E4%B8%8D%E5%B9%B3%E7%AD%89">大学の行方 &gt; 日本の平等と不平等</a>
+  <ul class="collapse">
+<li><a href="#%E6%8E%88%E6%A5%AD%E6%96%99%E3%81%AE%E6%8E%A8%E7%A7%BB" id="toc-授業料の推移" class="nav-link" data-scroll-target="#%E6%8E%88%E6%A5%AD%E6%96%99%E3%81%AE%E6%8E%A8%E7%A7%BB">授業料の推移</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%96%E7%95%8C%E4%BE%A1%E5%80%A4%E8%A6%B3%E8%AA%BF%E6%9F%BB-%E4%BA%BA%E7%94%9F%E3%81%AF%E8%87%AA%E5%88%86%E3%81%AE%E6%80%9D%E3%81%84%E9%80%9A%E3%82%8A%E3%81%AB%E3%81%AA%E3%82%8B%E3%81%8B" id="toc-世界価値観調査-人生は自分の思い通りになるか" class="nav-link" data-scroll-target="#%E4%B8%96%E7%95%8C%E4%BE%A1%E5%80%A4%E8%A6%B3%E8%AA%BF%E6%9F%BB-%E4%BA%BA%E7%94%9F%E3%81%AF%E8%87%AA%E5%88%86%E3%81%AE%E6%80%9D%E3%81%84%E9%80%9A%E3%82%8A%E3%81%AB%E3%81%AA%E3%82%8B%E3%81%8B">世界価値観調査 &gt; 人生は自分の思い通りになるか</a>
+  <ul class="collapse">
+<li><a href="#%E6%97%A5%E6%9C%AC" id="toc-日本" class="nav-link" data-scroll-target="#%E6%97%A5%E6%9C%AC">日本</a></li>
+  <li><a href="#souce-wvs-wave-7-2017-2022" id="toc-souce-wvs-wave-7-2017-2022" class="nav-link" data-scroll-target="#souce-wvs-wave-7-2017-2022">Souce: WVS Wave 7 (2017-2022)</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%96%E7%95%8C%E4%BE%A1%E5%80%A4%E8%A6%B3%E8%AA%BF%E6%9F%BB-%E7%AB%B6%E4%BA%89%E3%81%8B%E5%B9%B3%E7%AD%89%E3%81%8B" id="toc-世界価値観調査-競争か平等か" class="nav-link" data-scroll-target="#%E4%B8%96%E7%95%8C%E4%BE%A1%E5%80%A4%E8%A6%B3%E8%AA%BF%E6%9F%BB-%E7%AB%B6%E4%BA%89%E3%81%8B%E5%B9%B3%E7%AD%89%E3%81%8B">世界価値観調査 &gt; 競争か平等か</a>
+  <ul class="collapse">
+<li><a href="#%E6%97%A5%E6%9C%AC-1" id="toc-日本-1" class="nav-link" data-scroll-target="#%E6%97%A5%E6%9C%AC-1">日本</a></li>
+  <li><a href="#souce-wvs-wave-7-2017-2022-1" id="toc-souce-wvs-wave-7-2017-2022-1" class="nav-link" data-scroll-target="#souce-wvs-wave-7-2017-2022-1">Souce: WVS Wave 7 (2017-2022)</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E5%A4%A7%E5%AD%A6%E3%81%A7%E3%81%AE%E5%AD%A6%E3%81%B3" id="toc-大学での学び" class="nav-link" data-scroll-target="#%E5%A4%A7%E5%AD%A6%E3%81%A7%E3%81%AE%E5%AD%A6%E3%81%B3">大学での学び</a>
+  <ul class="collapse">
+<li><a href="#%E5%A4%A7%E5%AD%A6%E3%81%A7%E3%81%AE%E5%AD%A6%E3%81%B3-1" id="toc-大学での学び-1" class="nav-link" data-scroll-target="#%E5%A4%A7%E5%AD%A6%E3%81%A7%E3%81%AE%E5%AD%A6%E3%81%B3-1">⑵ 大学での学び</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li>
+<a href="#%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E" id="toc-モノポリールール説明" class="nav-link" data-scroll-target="#%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E">Ⅲ.「モノポリー」ルール説明</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E" id="toc-オリジナルモノポリールール説明" class="nav-link" data-scroll-target="#%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E">「（オリジナル）モノポリー」ルール説明</a></li>
+  <li>
+<a href="#%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-1" id="toc-オリジナルモノポリールール説明-1" class="nav-link" data-scroll-target="#%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-1">「（オリジナル）モノポリー」ルール説明</a>
+  <ul class="collapse">
+<li><a href="#%E3%83%8B%E3%83%BC%E3%82%A2%E3%83%AB%E3%83%95%E3%82%A1%E3%83%BC%E3%82%AC%E3%82%B9%E3%83%B3%E3%83%9E%E3%83%8D%E3%83%BC%E3%81%AE%E9%80%B2%E5%8C%96%E5%8F%B2" id="toc-ニーアルファーガスンマネーの進化史" class="nav-link" data-scroll-target="#%E3%83%8B%E3%83%BC%E3%82%A2%E3%83%AB%E3%83%95%E3%82%A1%E3%83%BC%E3%82%AC%E3%82%B9%E3%83%B3%E3%83%9E%E3%83%8D%E3%83%BC%E3%81%AE%E9%80%B2%E5%8C%96%E5%8F%B2">ニーアル・ファーガスン『マネーの進化史』</a></li>
+  </ul>
+</li>
+  <li><a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E" id="toc-不平等なモノポリールール説明" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E">「不平等なモノポリー」ルール説明</a></li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-1" id="toc-不平等なモノポリールール説明-1" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-1">「不平等なモノポリー」ルール説明</a>
+  <ul class="collapse">
+<li><a href="#%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC" id="toc-プレイヤー" class="nav-link" data-scroll-target="#%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC">1. プレイヤー</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC" id="toc-不平等なモノポリールール説明-プレイヤー" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC">「不平等なモノポリー」ルール説明 &gt; プレイヤー</a>
+  <ul class="collapse">
+<li><a href="#a%E7%BE%A4" id="toc-a群" class="nav-link" data-scroll-target="#a%E7%BE%A4">A群</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC-1" id="toc-不平等なモノポリールール説明-プレイヤー-1" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC-1">「不平等なモノポリー」ルール説明 &gt; プレイヤー</a>
+  <ul class="collapse">
+<li><a href="#b%E7%BE%A4" id="toc-b群" class="nav-link" data-scroll-target="#b%E7%BE%A4">B群</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC-2" id="toc-不平等なモノポリールール説明-プレイヤー-2" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC-2">「不平等なモノポリー」ルール説明 &gt; プレイヤー</a>
+  <ul class="collapse">
+<li><a href="#c%E7%BE%A4" id="toc-c群" class="nav-link" data-scroll-target="#c%E7%BE%A4">C群</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-2" id="toc-不平等なモノポリールール説明-2" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-2">「不平等なモノポリー」ルール説明</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E6%89%8B%E9%A0%86" id="toc-ゲームの手順" class="nav-link" data-scroll-target="#%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E6%89%8B%E9%A0%86">2. ゲームの手順</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-3" id="toc-不平等なモノポリールール説明-3" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-3">「不平等なモノポリー」ルール説明</a>
+  <ul class="collapse">
+<li><a href="#%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%82%BF%E3%83%BC%E3%83%B3" id="toc-あなたのターン" class="nav-link" data-scroll-target="#%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%82%BF%E3%83%BC%E3%83%B3">3. あなたのターン</a></li>
+  </ul>
+</li>
+  <li><a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%82%BF%E3%83%BC%E3%83%B3" id="toc-不平等なモノポリールール説明-あなたのターン" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%82%BF%E3%83%BC%E3%83%B3">「不平等なモノポリー」ルール説明 &gt; あなたのターン</a></li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-4" id="toc-不平等なモノポリールール説明-4" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-4">「不平等なモノポリー」ルール説明</a>
+  <ul class="collapse">
+<li><a href="#%E3%83%9E%E3%82%B9%E3%81%AE%E6%84%8F%E5%91%B3" id="toc-マスの意味" class="nav-link" data-scroll-target="#%E3%83%9E%E3%82%B9%E3%81%AE%E6%84%8F%E5%91%B3">4. マスの意味</a></li>
+  </ul>
+</li>
+  <li><a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%83%9E%E3%82%B9%E3%81%AE%E6%84%8F%E5%91%B3" id="toc-不平等なモノポリールール説明-マスの意味" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%83%9E%E3%82%B9%E3%81%AE%E6%84%8F%E5%91%B3">「不平等なモノポリー」ルール説明 &gt; マスの意味</a></li>
+  <li><a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%83%9E%E3%82%B9%E3%81%AE%E6%84%8F%E5%91%B3-1" id="toc-不平等なモノポリールール説明-マスの意味-1" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%83%9E%E3%82%B9%E3%81%AE%E6%84%8F%E5%91%B3-1">「不平等なモノポリー」ルール説明 &gt; マスの意味</a></li>
+  <li><a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%83%9E%E3%82%B9%E3%81%AE%E6%84%8F%E5%91%B3-2" id="toc-不平等なモノポリールール説明-マスの意味-2" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%83%9E%E3%82%B9%E3%81%AE%E6%84%8F%E5%91%B3-2">「不平等なモノポリー」ルール説明 &gt; マスの意味</a></li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89" id="toc-不平等なモノポリールール説明-イベントカード" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%891-promotion%E6%98%87%E9%80%B2" id="toc-イベントカード1-promotion昇進" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%891-promotion%E6%98%87%E9%80%B2">イベントカード1: Promotion（昇進）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-1" id="toc-不平等なモノポリールール説明-イベントカード-1" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-1">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%892-dipl%C3%B4me%E5%8D%92%E6%A5%AD" id="toc-イベントカード2-diplôme卒業" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%892-dipl%C3%B4me%E5%8D%92%E6%A5%AD">イベントカード2: Diplôme（卒業）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-2" id="toc-不平等なモノポリールール説明-イベントカード-2" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-2">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%893-h%C3%A9ritage%E9%81%BA%E7%94%A3%E7%9B%B8%E7%B6%9A" id="toc-イベントカード3-héritage遺産相続" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%893-h%C3%A9ritage%E9%81%BA%E7%94%A3%E7%9B%B8%E7%B6%9A">イベントカード3: Héritage（遺産相続）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-3" id="toc-不平等なモノポリールール説明-イベントカード-3" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-3">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%894-pr%C3%A9carit%C3%A9%E4%B8%8D%E5%AE%89%E5%AE%9A%E3%81%AA%E9%9B%87%E7%94%A8" id="toc-イベントカード4-précarité不安定な雇用" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%894-pr%C3%A9carit%C3%A9%E4%B8%8D%E5%AE%89%E5%AE%9A%E3%81%AA%E9%9B%87%E7%94%A8">イベントカード4: Précarité（不安定な雇用）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-4" id="toc-不平等なモノポリールール説明-イベントカード-4" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-4">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%895-ascensionsociale%E7%A4%BE%E4%BC%9A%E7%9A%84%E6%98%87%E9%80%B2" id="toc-イベントカード5-ascensionsociale社会的昇進" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%895-ascensionsociale%E7%A4%BE%E4%BC%9A%E7%9A%84%E6%98%87%E9%80%B2">イベントカード5: Ascensionsociale（社会的昇進）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-5" id="toc-不平等なモノポリールール説明-イベントカード-5" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-5">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%896-cest-la-crise%E5%8D%B1%E6%A9%9F%E3%81%A7%E3%81%99" id="toc-イベントカード6-cest-la-crise危機です" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%896-cest-la-crise%E5%8D%B1%E6%A9%9F%E3%81%A7%E3%81%99">イベントカード6: C’est la crise!（危機です）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-6" id="toc-不平等なモノポリールール説明-イベントカード-6" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-6">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%897-gr%C3%A2ce-pr%C3%A9sidentielle%E5%A4%A7%E7%B5%B1%E9%A0%98%E6%81%A9%E8%B5%A6" id="toc-イベントカード7-grâce-présidentielle大統領恩赦" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%897-gr%C3%A2ce-pr%C3%A9sidentielle%E5%A4%A7%E7%B5%B1%E9%A0%98%E6%81%A9%E8%B5%A6">イベントカード7: Grâce présidentielle（大統領恩赦）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-7" id="toc-不平等なモノポリールール説明-イベントカード-7" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-7">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%898-cest-du-g%C3%A9nie%E5%A4%A9%E6%89%8D%E7%9A%84" id="toc-イベントカード8-cest-du-génie天才的" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%898-cest-du-g%C3%A9nie%E5%A4%A9%E6%89%8D%E7%9A%84">イベントカード8: C’est du génie!（天才的！）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-8" id="toc-不平等なモノポリールール説明-イベントカード-8" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-8">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%899-piston%E3%83%94%E3%82%B9%E3%83%88%E3%83%B3" id="toc-イベントカード9-pistonピストン" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%899-piston%E3%83%94%E3%82%B9%E3%83%88%E3%83%B3">イベントカード9: Piston!（ピストン）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-9" id="toc-不平等なモノポリールール説明-イベントカード-9" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-9">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8910-si-tu-prends-ma-place%E3%82%82%E3%81%97%E7%A7%81%E3%81%AE%E5%A0%B4%E6%89%80%E3%82%92%E5%8F%96%E3%81%A3%E3%81%9F%E3%82%89" id="toc-イベントカード10-si-tu-prends-ma-placeもし私の場所を取ったら" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8910-si-tu-prends-ma-place%E3%82%82%E3%81%97%E7%A7%81%E3%81%AE%E5%A0%B4%E6%89%80%E3%82%92%E5%8F%96%E3%81%A3%E3%81%9F%E3%82%89">イベントカード10: Si tu prends ma place…（もし私の場所を取ったら…）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-10" id="toc-不平等なモノポリールール説明-イベントカード-10" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-10">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8911-gr%C3%A8ve-g%C3%A9n%C3%A9rale%E3%82%B9%E3%83%88%E3%83%A9%E3%82%A4%E3%82%AD" id="toc-イベントカード11-grève-généraleストライキ" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8911-gr%C3%A8ve-g%C3%A9n%C3%A9rale%E3%82%B9%E3%83%88%E3%83%A9%E3%82%A4%E3%82%AD">イベントカード11: Grève générale（ストライキ）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-11" id="toc-不平等なモノポリールール説明-イベントカード-11" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-11">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8912-culture%E6%96%87%E5%8C%96" id="toc-イベントカード12-culture文化" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8912-culture%E6%96%87%E5%8C%96">イベントカード12: Culture（文化）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-12" id="toc-不平等なモノポリールール説明-イベントカード-12" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-12">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8913-cest-la-rentr%C3%A9e-%E6%96%B0%E5%AD%A6%E6%9C%9F%E3%81%A7%E3%81%99" id="toc-イベントカード13-cest-la-rentrée-新学期です" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8913-cest-la-rentr%C3%A9e-%E6%96%B0%E5%AD%A6%E6%9C%9F%E3%81%A7%E3%81%99">イベントカード13: C’est la rentrée !（新学期です！）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-13" id="toc-不平等なモノポリールール説明-イベントカード-13" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-13">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8914-illectronisme%E9%9B%BB%E5%AD%90%E6%A9%9F%E5%99%A8" id="toc-イベントカード14-illectronisme電子機器" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8914-illectronisme%E9%9B%BB%E5%AD%90%E6%A9%9F%E5%99%A8">イベントカード14: Illectronisme（電子機器）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-14" id="toc-不平等なモノポリールール説明-イベントカード-14" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-14">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8915-dipl%C3%B4me%E5%9B%BD%E9%9A%9B%E7%9A%84%E3%81%AA%E9%80%A3%E5%B8%AF" id="toc-イベントカード15-diplôme国際的な連帯" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8915-dipl%C3%B4me%E5%9B%BD%E9%9A%9B%E7%9A%84%E3%81%AA%E9%80%A3%E5%B8%AF">イベントカード15: Diplôme（国際的な連帯）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-15" id="toc-不平等なモノポリールール説明-イベントカード-15" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-15">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8916-cest-les-vacances-%E4%BC%91%E6%9A%87%E3%81%A7%E3%81%99" id="toc-イベントカード16-cest-les-vacances-休暇です" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8916-cest-les-vacances-%E4%BC%91%E6%9A%87%E3%81%A7%E3%81%99">イベントカード16: C’est les vacances !（休暇です！）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-16" id="toc-不平等なモノポリールール説明-イベントカード-16" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-16">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8917-sant%C3%A9%E5%81%A5%E5%BA%B7" id="toc-イベントカード17-santé健康" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8917-sant%C3%A9%E5%81%A5%E5%BA%B7">イベントカード17: Santé（健康）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-17" id="toc-不平等なモノポリールール説明-イベントカード-17" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-17">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8918-jackpot%E3%82%B8%E3%83%A3%E3%83%83%E3%82%AF%E3%83%9D%E3%83%83%E3%83%88" id="toc-イベントカード18-jackpotジャックポット" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8918-jackpot%E3%82%B8%E3%83%A3%E3%83%83%E3%82%AF%E3%83%9D%E3%83%83%E3%83%88">イベントカード18: Jackpot!（ジャックポット！）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-18" id="toc-不平等なモノポリールール説明-イベントカード-18" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-18">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8919-job-d-%C3%A9t%C3%A9%E5%A4%8F%E3%81%AE%E4%BB%95%E4%BA%8B" id="toc-イベントカード19-job-d-été夏の仕事" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8919-job-d-%C3%A9t%C3%A9%E5%A4%8F%E3%81%AE%E4%BB%95%E4%BA%8B">イベントカード19: Job d’ été（夏の仕事）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-19" id="toc-不平等なモノポリールール説明-イベントカード-19" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-19">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8920-un-peu-trop-%C3%A0-l%C3%A9troit%E5%B0%91%E3%81%97%E6%89%8B%E7%8B%AD" id="toc-イベントカード20-un-peu-trop-à-létroit少し手狭" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8920-un-peu-trop-%C3%A0-l%C3%A9troit%E5%B0%91%E3%81%97%E6%89%8B%E7%8B%AD">イベントカード20: Un peu trop à l’étroit（少し手狭）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-20" id="toc-不平等なモノポリールール説明-イベントカード-20" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-20">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8921-nationalit%C3%A9%E5%9B%BD%E7%B1%8D" id="toc-イベントカード21-nationalité国籍" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8921-nationalit%C3%A9%E5%9B%BD%E7%B1%8D">イベントカード21: Nationalité（国籍）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-21" id="toc-不平等なモノポリールール説明-イベントカード-21" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-21">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8922-solidarit%C3%A9%E9%80%A3%E5%B8%AF" id="toc-イベントカード22-solidarité連帯" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8922-solidarit%C3%A9%E9%80%A3%E5%B8%AF">イベントカード22: Solidarité（連帯）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-22" id="toc-不平等なモノポリールール説明-イベントカード-22" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-22">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8923-racisme%E4%BA%BA%E7%A8%AE%E5%B7%AE%E5%88%A5" id="toc-イベントカード23-racisme人種差別" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8923-racisme%E4%BA%BA%E7%A8%AE%E5%B7%AE%E5%88%A5">イベントカード23: Racisme（人種差別）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-23" id="toc-不平等なモノポリールール説明-イベントカード-23" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-23">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8924-mal-logement%E4%B8%8D%E9%81%A9%E5%88%87%E3%81%AA%E4%BD%8F%E5%AE%85" id="toc-イベントカード24-mal-logement不適切な住宅" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8924-mal-logement%E4%B8%8D%E9%81%A9%E5%88%87%E3%81%AA%E4%BD%8F%E5%AE%85">イベントカード24: Mal-logement（不適切な住宅）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-24" id="toc-不平等なモノポリールール説明-イベントカード-24" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-24">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8925-transphobie%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%95%E3%82%A9%E3%83%93%E3%82%A2" id="toc-イベントカード25-transphobieトランスフォビア" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8925-transphobie%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%95%E3%82%A9%E3%83%93%E3%82%A2">イベントカード25: Transphobie（トランスフォビア）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-25" id="toc-不平等なモノポリールール説明-イベントカード-25" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-25">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8926-m%C3%A9nage-de-printemps%E6%8E%83%E9%99%A4%E3%81%AE%E6%99%82%E9%96%93%E3%81%A7%E3%81%99" id="toc-イベントカード26-ménage-de-printemps掃除の時間です" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8926-m%C3%A9nage-de-printemps%E6%8E%83%E9%99%A4%E3%81%AE%E6%99%82%E9%96%93%E3%81%A7%E3%81%99">イベントカード26: Ménage de printemps（掃除の時間です！）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-26" id="toc-不平等なモノポリールール説明-イベントカード-26" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-26">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8927-outing%E3%82%A2%E3%82%A6%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0" id="toc-イベントカード27-outingアウティング" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8927-outing%E3%82%A2%E3%82%A6%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0">イベントカード27: Outing（アウティング）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-27" id="toc-不平等なモノポリールール説明-イベントカード-27" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-27">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8928-travail-p%C3%A9nible%E9%81%8E%E9%85%B7%E3%81%AA%E5%8A%B4%E5%83%8D" id="toc-イベントカード28-travail-pénible過酷な労働" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8928-travail-p%C3%A9nible%E9%81%8E%E9%85%B7%E3%81%AA%E5%8A%B4%E5%83%8D">イベントカード28: Travail pénible（過酷な労働）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-28" id="toc-不平等なモノポリールール説明-イベントカード-28" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-28">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8929-maternit%C3%A9%E5%87%BA%E7%94%A3" id="toc-イベントカード29-maternité出産" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8929-maternit%C3%A9%E5%87%BA%E7%94%A3">イベントカード29: Maternité（出産）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-29" id="toc-不平等なモノポリールール説明-イベントカード-29" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-29">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8930-harc%C3%A8lement-sexuel%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A3%E3%83%AB%E3%83%8F%E3%83%A9%E3%82%B9%E3%83%A1%E3%83%B3%E3%83%88" id="toc-イベントカード30-harcèlement-sexuelセクシャルハラスメント" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8930-harc%C3%A8lement-sexuel%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A3%E3%83%AB%E3%83%8F%E3%83%A9%E3%82%B9%E3%83%A1%E3%83%B3%E3%83%88">イベントカード30: Harcèlement sexuel（セクシャル・ハラスメント）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-30" id="toc-不平等なモノポリールール説明-イベントカード-30" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-30">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8931-coming-out%E3%82%AB%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%A6%E3%83%88" id="toc-イベントカード31-coming-outカミングアウト" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8931-coming-out%E3%82%AB%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%A6%E3%83%88">イベントカード31: Coming out（カミングアウト）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-31" id="toc-不平等なモノポリールール説明-イベントカード-31" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-31">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8932-accident%E4%BA%8B%E6%95%85" id="toc-イベントカード32-accident事故" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8932-accident%E4%BA%8B%E6%95%85">イベントカード32: Accident（事故）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-32" id="toc-不平等なモノポリールール説明-イベントカード-32" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-32">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8933-homophobie-dans-lentreprise%E8%81%B7%E5%A0%B4%E3%81%A7%E3%81%AE%E3%83%9B%E3%83%A2%E3%83%95%E3%82%A9%E3%83%93%E3%82%A2" id="toc-イベントカード33-homophobie-dans-lentreprise職場でのホモフォビア" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8933-homophobie-dans-lentreprise%E8%81%B7%E5%A0%B4%E3%81%A7%E3%81%AE%E3%83%9B%E3%83%A2%E3%83%95%E3%82%A9%E3%83%93%E3%82%A2">イベントカード33: Homophobie dans l’entreprise（職場でのホモフォビア）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-33" id="toc-不平等なモノポリールール説明-イベントカード-33" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-33">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8934-insulteraciste%E4%BA%BA%E7%A8%AE%E5%B7%AE%E5%88%A5%E7%9A%84%E4%BE%AE%E8%BE%B1" id="toc-イベントカード34-insulteraciste人種差別的侮辱" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8934-insulteraciste%E4%BA%BA%E7%A8%AE%E5%B7%AE%E5%88%A5%E7%9A%84%E4%BE%AE%E8%BE%B1">イベントカード34: Insulteraciste（人種差別的侮辱）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-34" id="toc-不平等なモノポリールール説明-イベントカード-34" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-34">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8935-discrimination-li%C3%A9e-%C3%A0-la-religion%E5%AE%97%E6%95%99%E3%81%AB%E9%96%A2%E9%80%A3%E3%81%99%E3%82%8B%E5%B7%AE%E5%88%A5" id="toc-イベントカード35-discrimination-liée-à-la-religion宗教に関連する差別" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8935-discrimination-li%C3%A9e-%C3%A0-la-religion%E5%AE%97%E6%95%99%E3%81%AB%E9%96%A2%E9%80%A3%E3%81%99%E3%82%8B%E5%B7%AE%E5%88%A5">イベントカード35: Discrimination liée à la religion（宗教に関連する差別）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-35" id="toc-不平等なモノポリールール説明-イベントカード-35" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-35">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8936-ch%C3%B4mage%E5%A4%B1%E6%A5%AD" id="toc-イベントカード36-chômage失業" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8936-ch%C3%B4mage%E5%A4%B1%E6%A5%AD">イベントカード36: Chômage（失業）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-36" id="toc-不平等なモノポリールール説明-イベントカード-36" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-36">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8937-changer-une-r%C3%A8gle-du-jeu%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%AB%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B" id="toc-イベントカード37-changer-une-règle-du-jeuゲームのルールを変更する" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8937-changer-une-r%C3%A8gle-du-jeu%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%AB%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B">イベントカード37: Changer une règle du jeu（ゲームのルールを変更する）</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-37" id="toc-不平等なモノポリールール説明-イベントカード-37" class="nav-link" data-scroll-target="#%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC%E3%83%AB%E3%83%BC%E3%83%AB%E8%AA%AC%E6%98%8E-%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89-37">「不平等なモノポリー」ルール説明 &gt; イベントカード</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8938-encadrement-des-loyers%E5%AE%B6%E8%B3%83%E3%81%AE%E8%AA%BF%E6%95%B4" id="toc-イベントカード38-encadrement-des-loyers家賃の調整" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%BC%E3%83%8938-encadrement-des-loyers%E5%AE%B6%E8%B3%83%E3%81%AE%E8%AA%BF%E6%95%B4">イベントカード38: Encadrement des loyers（家賃の調整）</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li>
+<a href="#%E5%AE%9F%E8%B7%B5%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC" id="toc-実践不平等なモノポリー" class="nav-link" data-scroll-target="#%E5%AE%9F%E8%B7%B5%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC">Ⅳ. 実践「不平等なモノポリー」</a>
+  <ul class="collapse">
+<li><a href="#%E5%AE%9F%E8%B7%B5%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC-1" id="toc-実践不平等なモノポリー-1" class="nav-link" data-scroll-target="#%E5%AE%9F%E8%B7%B5%E4%B8%8D%E5%B9%B3%E7%AD%89%E3%81%AA%E3%83%A2%E3%83%8E%E3%83%9D%E3%83%AA%E3%83%BC-1">実践「不平等なモノポリー」</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#v.-%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%83%AF%E3%83%BC%E3%82%AF%E2%91%A1" id="toc-v.-グループワーク②" class="nav-link" data-scroll-target="#v.-%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%83%AF%E3%83%BC%E3%82%AF%E2%91%A1">V. グループワーク②</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%83%AF%E3%83%BC%E3%82%AF%E2%91%A1" id="toc-グループワーク②" class="nav-link" data-scroll-target="#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%83%AF%E3%83%BC%E3%82%AF%E2%91%A1">グループワーク②</a></li>
+  <li>
+<a href="#%E6%94%BF%E6%B2%BB%E5%AD%A6%E8%80%85%E3%81%AE%E8%80%83%E3%81%88%E3%82%8B%E5%B9%B3%E7%AD%89%E3%81%A8%E4%B8%8D%E5%B9%B3%E7%AD%89" id="toc-政治学者の考える平等と不平等" class="nav-link" data-scroll-target="#%E6%94%BF%E6%B2%BB%E5%AD%A6%E8%80%85%E3%81%AE%E8%80%83%E3%81%88%E3%82%8B%E5%B9%B3%E7%AD%89%E3%81%A8%E4%B8%8D%E5%B9%B3%E7%AD%89">政治学者の考える平等と不平等</a>
+  <ul class="collapse">
+<li><a href="#%E3%83%9E%E3%82%A4%E3%82%B1%E3%83%AB%E3%82%B5%E3%83%B3%E3%83%87%E3%83%AB%E8%83%BD%E5%8A%9B%E4%B8%BB%E7%BE%A9-vs-%E8%B2%B4%E6%97%8F%E4%B8%BB%E7%BE%A9" id="toc-マイケルサンデル能力主義-vs-貴族主義" class="nav-link" data-scroll-target="#%E3%83%9E%E3%82%A4%E3%82%B1%E3%83%AB%E3%82%B5%E3%83%B3%E3%83%87%E3%83%AB%E8%83%BD%E5%8A%9B%E4%B8%BB%E7%BE%A9-vs-%E8%B2%B4%E6%97%8F%E4%B8%BB%E7%BE%A9">マイケル・サンデル：能力主義 vs 貴族主義</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E6%94%BF%E6%B2%BB%E5%AD%A6%E8%80%85%E3%81%AE%E8%80%83%E3%81%88%E3%82%8B%E5%B9%B3%E7%AD%89%E3%81%A8%E4%B8%8D%E5%B9%B3%E7%AD%89-1" id="toc-政治学者の考える平等と不平等-1" class="nav-link" data-scroll-target="#%E6%94%BF%E6%B2%BB%E5%AD%A6%E8%80%85%E3%81%AE%E8%80%83%E3%81%88%E3%82%8B%E5%B9%B3%E7%AD%89%E3%81%A8%E4%B8%8D%E5%B9%B3%E7%AD%89-1">政治学者の考える平等と不平等</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%AB%E3%82%BA%E7%84%A1%E7%9F%A5%E3%81%AE%E3%83%B4%E3%82%A7%E3%83%BC%E3%83%AB" id="toc-ジョンロールズ無知のヴェール" class="nav-link" data-scroll-target="#%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%AB%E3%82%BA%E7%84%A1%E7%9F%A5%E3%81%AE%E3%83%B4%E3%82%A7%E3%83%BC%E3%83%AB">ジョン・ロールズ：無知のヴェール</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E7%A4%BE%E4%BC%9A%E5%AD%A6%E8%80%85%E3%81%AE%E8%80%83%E3%81%88%E3%82%8B%E6%97%A5%E6%9C%AC%E3%81%AE%E5%88%86%E6%96%AD" id="toc-社会学者の考える日本の分断" class="nav-link" data-scroll-target="#%E7%A4%BE%E4%BC%9A%E5%AD%A6%E8%80%85%E3%81%AE%E8%80%83%E3%81%88%E3%82%8B%E6%97%A5%E6%9C%AC%E3%81%AE%E5%88%86%E6%96%AD">社会学者の考える日本の分断</a>
+  <ul class="collapse">
+<li><a href="#%E5%90%89%E5%B7%9D%E5%BE%B9%E6%97%A5%E6%9C%AC%E3%81%AE%E5%88%86%E6%96%AD%E5%88%87%E3%82%8A%E9%9B%A2%E3%81%95%E3%82%8C%E3%82%8B%E9%9D%9E%E5%A4%A7%E5%8D%92%E8%8B%A5%E8%80%85%E3%81%9F%E3%81%A1" id="toc-吉川徹日本の分断切り離される非大卒若者たち" class="nav-link" data-scroll-target="#%E5%90%89%E5%B7%9D%E5%BE%B9%E6%97%A5%E6%9C%AC%E3%81%AE%E5%88%86%E6%96%AD%E5%88%87%E3%82%8A%E9%9B%A2%E3%81%95%E3%82%8C%E3%82%8B%E9%9D%9E%E5%A4%A7%E5%8D%92%E8%8B%A5%E8%80%85%E3%81%9F%E3%81%A1">吉川徹『日本の分断：切り離される非大卒若者たち』</a></li>
+  </ul>
+</li>
+  <li><a href="#%E7%A4%BE%E4%BC%9A%E5%AD%A6%E8%80%85%E3%81%AE%E8%80%83%E3%81%88%E3%82%8B%E6%97%A5%E6%9C%AC%E3%81%AE%E5%88%86%E6%96%AD-%E5%90%89%E5%B7%9D%E5%BE%B9%E6%97%A5%E6%9C%AC%E3%81%AE%E5%88%86%E6%96%AD" id="toc-社会学者の考える日本の分断-吉川徹日本の分断" class="nav-link" data-scroll-target="#%E7%A4%BE%E4%BC%9A%E5%AD%A6%E8%80%85%E3%81%AE%E8%80%83%E3%81%88%E3%82%8B%E6%97%A5%E6%9C%AC%E3%81%AE%E5%88%86%E6%96%AD-%E5%90%89%E5%B7%9D%E5%BE%B9%E6%97%A5%E6%9C%AC%E3%81%AE%E5%88%86%E6%96%AD">社会学者の考える日本の分断 &gt; 吉川徹『日本の分断』</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#v.-%E3%81%BE%E3%81%A8%E3%82%81" id="toc-v.-まとめ" class="nav-link" data-scroll-target="#v.-%E3%81%BE%E3%81%A8%E3%82%81">V. まとめ</a>
+  <ul class="collapse">
+<li><a href="#%E9%AB%98%E5%A4%A7%E6%8E%A5%E7%B6%9A%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%A4%A7%E5%AD%A6%E3%81%A7%E3%81%AE%E5%AD%A6%E3%81%B3%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88" id="toc-高大接続プログラム大学での学びレポート" class="nav-link" data-scroll-target="#%E9%AB%98%E5%A4%A7%E6%8E%A5%E7%B6%9A%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%A4%A7%E5%AD%A6%E3%81%A7%E3%81%AE%E5%AD%A6%E3%81%B3%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88">高大接続プログラム「大学での学び」レポート</a></li>
+  <li>
+<a href="#%E9%AB%98%E5%A4%A7%E6%8E%A5%E7%B6%9A%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%A4%A7%E5%AD%A6%E3%81%A7%E3%81%AE%E5%AD%A6%E3%81%B3%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88-1" id="toc-高大接続プログラム大学での学びレポート-1" class="nav-link" data-scroll-target="#%E9%AB%98%E5%A4%A7%E6%8E%A5%E7%B6%9A%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%A4%A7%E5%AD%A6%E3%81%A7%E3%81%AE%E5%AD%A6%E3%81%B3%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88-1">高大接続プログラム「大学での学び」レポート</a>
+  <ul class="collapse">
+<li><a href="#%E8%AA%B2%E9%A1%8C%E5%86%85%E5%AE%B9" id="toc-課題内容" class="nav-link" data-scroll-target="#%E8%AA%B2%E9%A1%8C%E5%86%85%E5%AE%B9">課題内容</a></li>
+  <li><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85" id="toc-注意事項" class="nav-link" data-scroll-target="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85">注意事項</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E9%AB%98%E5%A4%A7%E6%8E%A5%E7%B6%9A%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%A4%A7%E5%AD%A6%E3%81%A7%E3%81%AE%E5%AD%A6%E3%81%B3%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88-2" id="toc-高大接続プログラム大学での学びレポート-2" class="nav-link" data-scroll-target="#%E9%AB%98%E5%A4%A7%E6%8E%A5%E7%B6%9A%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%A4%A7%E5%AD%A6%E3%81%A7%E3%81%AE%E5%AD%A6%E3%81%B3%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88-2">高大接続プログラム「大学での学び」レポート</a>
+  <ul class="collapse">
+<li><a href="#%E9%AB%98%E5%A4%A7%E6%8E%A5%E7%B6%9A%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0-%E3%83%95%E3%83%AD%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC%E3%83%88" id="toc-高大接続プログラム-フローチャート" class="nav-link" data-scroll-target="#%E9%AB%98%E5%A4%A7%E6%8E%A5%E7%B6%9A%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0-%E3%83%95%E3%83%AD%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC%E3%83%88">高大接続プログラム フローチャート</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E6%84%9F%E6%83%B3%E3%81%A8%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88" id="toc-感想とアンケート" class="nav-link" data-scroll-target="#%E6%84%9F%E6%83%B3%E3%81%A8%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88">感想とアンケート</a>
+  <ul class="collapse">
+<li><a href="#%E6%84%9F%E6%83%B3" id="toc-感想" class="nav-link" data-scroll-target="#%E6%84%9F%E6%83%B3">感想</a></li>
+  <li><a href="#%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88" id="toc-アンケート" class="nav-link" data-scroll-target="#%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88">アンケート</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li>
+<a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE" id="toc-参考文献" class="nav-link" data-scroll-target="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</a>
+  <ul class="collapse">
+<li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-1" id="toc-参考文献-1" class="nav-link" data-scroll-target="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-1">参考文献</a></li>
+  </ul>
+</li>
+  </ul><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="silide_monopoly.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">ボードゲームで考える社会の平等と不平等</h1>
+<p class="subtitle lead">金沢大学 KUGS高大接続プログラム Liveセミナー</p>
+</div>
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
-</div>
-<div class="quarto-title-author-email">
-<a href="mailto:kariyach@staff.kanazawa-u.ac.jp">kariyach@staff.kanazawa-u.ac.jp</a>
-</div>
-        <p class="quarto-title-affiliation">
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">苅谷千尋 <a href="mailto:kariyach@staff.kanazawa-u.ac.jp" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
             金沢大学
           </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 22, 2025</p>
     </div>
-</div>
+  </div>
+  
+    
+  </div>
+  
 
-  <p class="date">2025年3月22日</p>
-</section><section id="TOC">
-<nav role="doc-toc"> 
-<h2 id="toc-title">目次</h2>
-<ul>
-<li><a href="#/イントロダクション" id="/toc-イントロダクション">Ⅰ. イントロダクション</a></li>
-<li><a href="#/グループワーク①" id="/toc-グループワーク①">Ⅱ. グループワーク①</a></li>
-<li><a href="#/モノポリールール説明" id="/toc-モノポリールール説明">Ⅲ.「モノポリー」ルール説明</a></li>
-<li><a href="#/実践不平等なモノポリー" id="/toc-実践不平等なモノポリー">Ⅳ. 実践「不平等なモノポリー」</a></li>
-<li><a href="#/v.-グループワーク②" id="/toc-v.-グループワーク②">V. グループワーク②</a></li>
-<li><a href="#/v.-まとめ" id="/toc-v.-まとめ">V. まとめ</a></li>
-<li><a href="#/参考文献" id="/toc-参考文献">参考文献</a></li>
-</ul>
-</nav>
-</section>
-<section>
-<section id="イントロダクション" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
-<h1>Ⅰ. イントロダクション</h1>
 
-</section>
-<section id="はじめに" class="slide level2">
-<h2>はじめに</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
+</header><section id="イントロダクション" class="level1" data-background-color="#113758" data-background-transition="slide"><h1 data-background-color="#113758" data-background-transition="slide">Ⅰ. イントロダクション</h1>
+<section id="はじめに" class="level2"><h2 class="anchored" data-anchor-id="はじめに">はじめに</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>お願い</strong></p>
+<div class="callout-title-container flex-fill">
+お願い
 </div>
-<div class="callout-content">
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>オンライン参加者はビデオオンでご参加下さい</li>
 </ul>
 </div>
 </div>
-</div>
-</section>
-<section id="本日のスケジュール" class="slide level2">
-<h2>本日のスケジュール</h2>
-<h3 id="前半">前半</h3>
+</section><section id="本日のスケジュール" class="level2"><h2 class="anchored" data-anchor-id="本日のスケジュール">本日のスケジュール</h2>
+<section id="前半" class="level3"><h3 class="anchored" data-anchor-id="前半">前半</h3>
 <ul>
 <li>14:00-14:05 趣旨説明と目標</li>
 <li>14:05-14:10 自己紹介</li>
 <li>14:10-14:20 グループワーク①</li>
 <li>14:20-14:40 「モノポリー」「不平等なモノポリー」ルール説明</li>
 <li>14:40-15:30 「不平等なモノポリー」第1ラウンド</li>
-</ul>
-<h3 id="休憩1530-休憩10分">休憩（15:30 休憩（10分））</h3>
-<h3 id="後半">後半</h3>
+</ul></section><section id="休憩1530-休憩10分" class="level3"><h3 class="anchored" data-anchor-id="休憩1530-休憩10分">休憩（15:30 休憩（10分））</h3>
+</section><section id="後半" class="level3"><h3 class="anchored" data-anchor-id="後半">後半</h3>
 <ul>
 <li>15:40-16:30 「不平等なモノポリー」第2ラウンド</li>
 <li>16:30-16:45 グループワーク②</li>
 <li>16:30 まとめ
 <ul>
 <li>高大接続プログラム「大学での学び」レポート / 感想 / アンケート</li>
-</ul></li>
-<li>17:00 終了</li>
 </ul>
-</section>
-<section id="自己紹介苅谷" class="slide level2">
-<h2>自己紹介：苅谷</h2>
+</li>
+<li>17:00 終了</li>
+</ul></section></section><section id="自己紹介苅谷" class="level2"><h2 class="anchored" data-anchor-id="自己紹介苅谷">自己紹介：苅谷</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
@@ -239,315 +657,270 @@
 <li>18世紀イギリスの議会政治</li>
 <li>18世紀におけるレトリック受容</li>
 <li>18世紀における主権概念と国際法、帝国</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 </div><div class="column" style="width:40%;">
-<p><img data-src="img/Burke.jpg"></p>
-</div></div>
-</section>
-<section id="趣旨説明-liveセミナー" class="slide level2">
-<h2>趣旨説明 &gt; Liveセミナー</h2>
+<p><img src="img/Burke.jpg" class="img-fluid"></p>
+</div>
+</div>
+</section><section id="趣旨説明-liveセミナー" class="level2"><h2 class="anchored" data-anchor-id="趣旨説明-liveセミナー">趣旨説明 &gt; Liveセミナー</h2>
 <p>一般的なボードゲームは、全員が平等な条件でゲームを始めます。しかし、このボードゲーム（「不平等なモノポリー」、フランスで教育目的に作られたもの）は違います。一部のプレイヤーは、ゲームの最初から勝つ見込みがありません。他のプレイヤーよりもコマの進みが明らかに遅いプレイヤーもいます。すなわち、最初に引いたカードによって「イージーモード」か「ハードモード」が決まってしまうのです。これほど不平等なゲームがあるでしょうか。ですが、この不平等さは現在の社会を反映するものです。</p>
 <p>セミナーでは、ゲームとディスカッション、簡単なレクチャーを通して、政治や社会のあり方について考えます。</p>
-</section>
-<section id="趣旨説明-ボードゲーム不平等なモノポリーを開発した理由" class="slide level2">
-<h2>趣旨説明 &gt; ボードゲーム「不平等なモノポリー」を開発した理由</h2>
-<h3 id="今こそルールを変えるとき">今こそ、ルールを変えるとき</h3>
+</section><section id="趣旨説明-ボードゲーム不平等なモノポリーを開発した理由" class="level2"><h2 class="anchored" data-anchor-id="趣旨説明-ボードゲーム不平等なモノポリーを開発した理由">趣旨説明 &gt; ボードゲーム「不平等なモノポリー」を開発した理由</h2>
+<section id="今こそルールを変えるとき" class="level3"><h3 class="anchored" data-anchor-id="今こそルールを変えるとき">今こそ、ルールを変えるとき</h3>
 <p>「どうすれば、深刻な格差を伝えつつも、ただ絶望させるのではなく、行動につなげられるのか？」――これが、今あなたの手元にあるこのツールキット〔「不平等なモノポリー」〕を作るきっかけとなった問いでした。社会的正義を求めるならば、私たちの社会に存在する分断を明るみに出さなければなりません。それによって、一部の人々が目を背けたがるような不公平さが浮き彫りになることもあるでしょう。例えば、裕福な人と貧しい人の間にある圧倒的な格差、今なお根強く残る性差別や人種差別などが挙げられます。しかし、ただ事実を伝えるだけでは、「どうせ何をしても変わらない」という諦めを助長してしまう恐れがあります。特に、すでに多くの困難に直面している人々が「こんなに不平等なら、自分には何の希望もない」と感じてしまえば、問題を解決するどころか、むしろ逆効果になってしまうのです。</p>
-</section>
-<section id="趣旨説明-ボードゲーム不平等なモノポリーを開発した理由-1" class="slide level2">
-<h2>趣旨説明 &gt; ボードゲーム「不平等なモノポリー」を開発した理由</h2>
+</section></section><section id="趣旨説明-ボードゲーム不平等なモノポリーを開発した理由-1" class="level2"><h2 class="anchored" data-anchor-id="趣旨説明-ボードゲーム不平等なモノポリーを開発した理由-1">趣旨説明 &gt; ボードゲーム「不平等なモノポリー」を開発した理由</h2>
 <p>不平等や差別について意識を高めることは、とても繊細な作業であり、私たちは常にバランスを取りながら進まなければなりません。「やる気さえあればできる」という単純な考え方に陥ると、失敗をすべて個人の責任に押し付けてしまうことになります。一方で、「不平等という仕組みによって、恵まれない人々は最初から報われない運命にある」と決めつけるのも避けなければなりません。こうした極端な考え方から抜け出すために、私たちのツールキットでは、ゲーム、討論、深い思考の機会を提供できるさまざまな教材を用意しています。話し合いを通じて、普段あまり考えないような問いに向き合うことができます。たとえば、「人生の成功とは何か？」「お金持ちとはどういうことか？」「私は恵まれているのか？それは誰と比べて？」といった問いです。</p>
-</section>
-<section id="趣旨説明-ボードゲーム不平等なモノポリーを開発した理由-2" class="slide level2">
-<h2>趣旨説明 &gt; ボードゲーム「不平等なモノポリー」を開発した理由</h2>
+</section><section id="趣旨説明-ボードゲーム不平等なモノポリーを開発した理由-2" class="level2"><h2 class="anchored" data-anchor-id="趣旨説明-ボードゲーム不平等なモノポリーを開発した理由-2">趣旨説明 &gt; ボードゲーム「不平等なモノポリー」を開発した理由</h2>
 <p>社会の中での役割に対する固定観念が、不平等を生み出す一因となっています。私たちは、「違う未来もあり得る」ということを伝えたいのです。統計の数字の裏には、実にさまざまな生き方があるということも。そして、私たちは周りから支えを受けることができるということも。みんなで力を合わせれば、社会のルールを変えることだって可能なのです。実際のところ、人は決して一人だけで成功したり、失敗したりするわけではありません。</p>
 <p>不平等観測所（Observatoire des inégalités）コンスタンス・モニエ（ディレクター）</p>
-</section></section>
-<section>
-<section id="グループワーク①" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
-<h1>Ⅱ. グループワーク①</h1>
-
-</section>
-<section id="平等と不平等" class="slide level2">
-<h2>平等と不平等</h2>
+</section></section><section id="グループワーク①" class="level1" data-background-color="#113758" data-background-transition="slide"><h1 data-background-color="#113758" data-background-transition="slide">Ⅱ. グループワーク①</h1>
+<section id="平等と不平等" class="level2"><h2 class="anchored" data-anchor-id="平等と不平等">平等と不平等</h2>
 <ul>
 <li>不平等だと感じるのはどんなときですか？
 <ul>
 <li>実体験</li>
 <li>社会</li>
-</ul></li>
+</ul>
+</li>
 <li>平等と感じるのはどんなときですか？
 <ul>
 <li>実体験</li>
 <li>社会</li>
-</ul></li>
-<li>日本の社会は平等だと思いますか？不平等だと思いますか？</li>
 </ul>
-</section>
-<section id="大学の行方" class="slide level2">
-<h2>大学の行方</h2>
-<h3 id="日本の平等と不平等">⑴ 日本の平等と不平等</h3>
+</li>
+<li>日本の社会は平等だと思いますか？不平等だと思いますか？</li>
+</ul></section><section id="大学の行方" class="level2"><h2 class="anchored" data-anchor-id="大学の行方">大学の行方</h2>
+<section id="日本の平等と不平等" class="level3"><h3 class="anchored" data-anchor-id="日本の平等と不平等">⑴ 日本の平等と不平等</h3>
 <ul>
 <li>「教育格差を考える　海城中学入試問題から」（朝日新聞、2025年3月20日）
 <ul>
 <li>松岡亮二（教育社会学）</li>
 <li>本田由紀（教育社会学）</li>
-</ul></li>
+</ul>
+</li>
 <li>「ハーバード大学、世帯年収3000万円まで学費免除へ　多様性確保」（日本経済新聞、2025年3月18日）</li>
-</ul>
-</section>
-<section id="大学の行方-日本の平等と不平等" class="slide level2">
-<h2>大学の行方 &gt; 日本の平等と不平等</h2>
-<h3 id="授業料の推移">授業料の推移</h3>
-
-<img data-src="silide_monopoly_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"><ul>
-<li>出典：<a href="https://www.mext.go.jp/content/20231226-mxt_sigakujo-000033159_4.pdf">文部科学省</a></li>
-</ul>
-</section>
-<section id="世界価値観調査-人生は自分の思い通りになるか" class="slide level2">
-<h2>世界価値観調査 &gt; 人生は自分の思い通りになるか</h2>
+</ul></section></section><section id="大学の行方-日本の平等と不平等" class="level2"><h2 class="anchored" data-anchor-id="大学の行方-日本の平等と不平等">大学の行方 &gt; 日本の平等と不平等</h2>
+<section id="授業料の推移" class="level3"><h3 class="anchored" data-anchor-id="授業料の推移">授業料の推移</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="silide_monopoly_files/figure-revealjs/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>出典：<a href="https://www.mext.go.jp/content/20231226-mxt_sigakujo-000033159_4.pdf">文部科学省</a>
+</li>
+</ul></section></section><section id="世界価値観調査-人生は自分の思い通りになるか" class="level2"><h2 class="anchored" data-anchor-id="世界価値観調査-人生は自分の思い通りになるか">世界価値観調査 &gt; 人生は自分の思い通りになるか</h2>
 <!-- ### 主要6カ国：世帯収入・世帯収入別集計 -->
-
-<img data-src="silide_monopoly_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><h3 id="日本">日本</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="silide_monopoly_files/figure-revealjs/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="日本" class="level3"><h3 class="anchored" data-anchor-id="日本">日本</h3>
 <ul>
 <li>高収入だからといって、人生が思い通りになるとは思わない人が多い</li>
 <li>他国と比較して、全体に、人生は思い通りにならないと思っている人が多い</li>
-</ul>
-<h3 id="souce-wvs-wave-7-2017-2022">Souce: <a href="https://www.worldvaluessurvey.org/WVSDocumentationWV7.jsp" data-modal-type="iframe">WVS Wave 7 (2017-2022)</a></h3>
-</section>
-<section id="世界価値観調査-競争か平等か" class="slide level2">
-<h2>世界価値観調査 &gt; 競争か平等か</h2>
+</ul></section><section id="souce-wvs-wave-7-2017-2022" class="level3"><h3 class="anchored" data-anchor-id="souce-wvs-wave-7-2017-2022">Souce: <a href="https://www.worldvaluessurvey.org/WVSDocumentationWV7.jsp" data-modal-type="iframe">WVS Wave 7 (2017-2022)</a>
+</h3>
+</section></section><section id="世界価値観調査-競争か平等か" class="level2"><h2 class="anchored" data-anchor-id="世界価値観調査-競争か平等か">世界価値観調査 &gt; 競争か平等か</h2>
 <!-- ### 主要6カ国：世帯収入・世帯収入別集計 -->
 <!-- :::{.callout-note appearance="simple"} -->
 <!-- - 赤色：平等な所得を是認する者 -->
 <!-- - 緑色：大きな所得格差を是認する者 -->
 <!-- ::: -->
-
-<img data-src="silide_monopoly_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><h3 id="日本-1">日本</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="silide_monopoly_files/figure-revealjs/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="日本-1" class="level3"><h3 class="anchored" data-anchor-id="日本-1">日本</h3>
 <ul>
 <li>全体に平等志向が少ない</li>
 <li>所得と価値（平等志向、競争志向）に関係性が見られない</li>
 </ul>
-<!-- ### アメリカ -->
-<!-- - 所得を問わず、平等志向と競争志向が拮抗している -->
-<h3 id="souce-wvs-wave-7-2017-2022-1">Souce: <a href="https://www.worldvaluessurvey.org/WVSDocumentationWV7.jsp" data-modal-type="iframe">WVS Wave 7 (2017-2022)</a></h3>
-</section>
-<section id="大学での学び" class="slide level2">
-<h2>大学での学び</h2>
-<h3 id="大学での学び-1">⑵ 大学での学び</h3>
+<!-- ### アメリカ --><!-- - 所得を問わず、平等志向と競争志向が拮抗している --></section><section id="souce-wvs-wave-7-2017-2022-1" class="level3"><h3 class="anchored" data-anchor-id="souce-wvs-wave-7-2017-2022-1">Souce: <a href="https://www.worldvaluessurvey.org/WVSDocumentationWV7.jsp" data-modal-type="iframe">WVS Wave 7 (2017-2022)</a>
+</h3>
+</section></section><section id="大学での学び" class="level2"><h2 class="anchored" data-anchor-id="大学での学び">大学での学び</h2>
+<section id="大学での学び-1" class="level3"><h3 class="anchored" data-anchor-id="大学での学び-1">⑵ 大学での学び</h3>
 <ul>
 <li>情報×方法×<strong>問題意識</strong>あるいは<strong>知的好奇心</strong>
 <ul>
 <li>情報や方法は勉強である程度どうにかできるが・・・</li>
-</ul></li>
+</ul>
+</li>
 <li>知性：グラデーションを認識する力（善か悪か，ゼロかイチかではない）</li>
 <li>大学は中間地点</li>
-</ul>
-</section></section>
-<section>
-<section id="モノポリールール説明" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
-<h1>Ⅲ.「モノポリー」ルール説明</h1>
-
-</section>
-<section id="オリジナルモノポリールール説明" class="slide level2">
-<h2>「（オリジナル）モノポリー」ルール説明</h2>
+</ul></section></section></section><section id="モノポリールール説明" class="level1 page-columns page-full" data-background-color="#113758" data-background-transition="slide"><h1 data-background-color="#113758" data-background-transition="slide">Ⅲ.「モノポリー」ルール説明</h1>
+<section id="オリジナルモノポリールール説明" class="level2"><h2 class="anchored" data-anchor-id="オリジナルモノポリールール説明">「（オリジナル）モノポリー」ルール説明</h2>
 <ul>
 <li>物件を占有し、他のプレイヤーを破産させるゲーム
 <ul>
 <li>自分が所有している物件に相手が止まるとお金を奪える</li>
 <li>相手が所有している物件に自分が止まるとお金を取られる</li>
-</ul></li>
+</ul>
+</li>
 <li>動画
 <ul>
-<li>公式動画（タカラトミー）<a href="https://www.youtube.com/watch?v=i2xrdi6iNEA">via YouTube</a></li>
-<li>ボドゲ紹介チャンネル<a href="https://www.youtube.com/shorts/Zx0HXkVXiYI">via YouTube</a></li>
-</ul></li>
+<li>公式動画（タカラトミー）<a href="https://www.youtube.com/watch?v=i2xrdi6iNEA">via YouTube</a>
+</li>
+<li>ボドゲ紹介チャンネル<a href="https://www.youtube.com/shorts/Zx0HXkVXiYI">via YouTube</a>
+</li>
 </ul>
-</section>
-<section id="オリジナルモノポリールール説明-1" class="slide level2">
-<h2>「（オリジナル）モノポリー」ルール説明</h2>
-<h3 id="ニーアルファーガスンマネーの進化史">ニーアル・ファーガスン『マネーの進化史』</h3>
-<blockquote>
-<p>このゲームを作ったそもそもの動機は、ひと握りの地主が着地人から徴収した地代で儲ける、社会制度の不平等を暴くところにあった。〔略〕現実の世界は辛くても、モノポリーで遊んでいるときは、通りをまるごと買い占める夢さえ見られる。このゲームが教えてくれるのは、最初の考案者が意図した点とはまったく逆で、「不動産を所有するのは賢い」ということだ。持てば持つほど、カネになる。とく に洗語酒では、被資するなら家屋に勝るものはないことが、万人の認める真理になった（<span class="citation" data-cites="FergusonN:2015book_translJA">ファーガソン，ニーアル と 仙名 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2015</a>)</span>, 319-322）。</p>
+</li>
+</ul></section><section id="オリジナルモノポリールール説明-1" class="level2"><h2 class="anchored" data-anchor-id="オリジナルモノポリールール説明-1">「（オリジナル）モノポリー」ルール説明</h2>
+<section id="ニーアルファーガスンマネーの進化史" class="level3"><h3 class="anchored" data-anchor-id="ニーアルファーガスンマネーの進化史">ニーアル・ファーガスン『マネーの進化史』</h3>
+<blockquote class="blockquote">
+<p>このゲームを作ったそもそもの動機は、ひと握りの地主が着地人から徴収した地代で儲ける、社会制度の不平等を暴くところにあった。〔略〕現実の世界は辛くても、モノポリーで遊んでいるときは、通りをまるごと買い占める夢さえ見られる。このゲームが教えてくれるのは、最初の考案者が意図した点とはまったく逆で、「不動産を所有するのは賢い」ということだ。持てば持つほど、カネになる。とく に洗語酒では、被資するなら家屋に勝るものはないことが、万人の認める真理になった（<span class="citation" data-cites="FergusonN:2015book_translJA">ファーガソン，ニーアル and 仙名 (<a href="#ref-FergusonN:2015book_translJA" role="doc-biblioref">2015</a>)</span>, 319-322）。</p>
 </blockquote>
-</section>
-<section id="不平等なモノポリールール説明" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明</h2>
+</section></section><section id="不平等なモノポリールール説明" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明">「不平等なモノポリー」ルール説明</h2>
 <ul>
 <li>基本的なルールは「（オリジナル）モノポリー」と同様</li>
 <li>主な変更点は、<strong>プレイヤーの初期条件が大きく異なり</strong>、また、<strong>ゲーム内のルールもプレイヤーによって異なる</strong>点</li>
 <li>動画
 <ul>
-<li>公式動画（全体）<a href="https://www.bing.com/videos/riverview/relatedvideo?q=Observatoire%20des%20inégalités%20monopoly&amp;mid=A36AADC1731B43D503D9A36AADC1731B43D503D9&amp;ajaxhist=0">via YouTube</a></li>
-<li>公式動画（児童）<a href="https://www.bing.com/videos/riverview/relatedvideo?q=Observatoire+des+inégalités+monopoly&amp;mid=3550A98EADF822A592BE3550A98EADF822A592BE&amp;mcid=8DDAFFFAC3074D719CB5B430390DE8CA&amp;FORM=VIRE">via YouTube</a></li>
-</ul></li>
+<li>公式動画（全体）<a href="https://www.bing.com/videos/riverview/relatedvideo?q=Observatoire%20des%20in%C3%A9galit%C3%A9s%20monopoly&amp;mid=A36AADC1731B43D503D9A36AADC1731B43D503D9&amp;ajaxhist=0">via YouTube</a>
+</li>
+<li>公式動画（児童）<a href="https://www.bing.com/videos/riverview/relatedvideo?q=Observatoire+des+in%C3%A9galit%C3%A9s+monopoly&amp;mid=3550A98EADF822A592BE3550A98EADF822A592BE&amp;mcid=8DDAFFFAC3074D719CB5B430390DE8CA&amp;FORM=VIRE">via YouTube</a>
+</li>
 </ul>
-</section>
-<section id="不平等なモノポリールール説明-1" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明</h2>
-<h3 id="プレイヤー">1. プレイヤー</h3>
+</li>
+</ul></section><section id="不平等なモノポリールール説明-1" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-1">「不平等なモノポリー」ルール説明</h2>
+<section id="プレイヤー" class="level3"><h3 class="anchored" data-anchor-id="プレイヤー">1. プレイヤー</h3>
 <ul>
 <li>3つのカテゴリーに分かれており、サイコロの数が違うなど、<strong>ゲームのルールがそれぞれで異なります</strong>
 <ul>
 <li>A群＝「上級国民」</li>
 <li>B群＝「中流階級」</li>
 <li>C群＝「下級国民」</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <p>ゲームは、各プレイヤーが異なる財産（金銭や財産）を持っている状態でスタートします。銀行係は、キャラクターカードに記入されたカテゴリーと性別に基づいて、各プレイヤーの財産を分配して下さい。</p>
-</section>
-<section id="不平等なモノポリールール説明-プレイヤー" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; プレイヤー</h2>
-<h3 id="a群">A群</h3>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center" style="display: block; margin: 0 auto">
-<figure>
-<p><img data-src="img/Aurel.jpg" style="width:40.0%"></p>
-<figcaption>オレル</figcaption>
-</figure>
+</section></section><section id="不平等なモノポリールール説明-プレイヤー" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-プレイヤー">「不平等なモノポリー」ルール説明 &gt; プレイヤー</h2>
+<section id="a群" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="a群">A群</h3>
+<div class="columns page-columns page-full">
+<div class="column page-columns page-full" style="width:50%;">
+<div class="quarto-figure quarto-figure-center page-columns page-full" style="display: block; margin: 0 auto">
+<figure class="figure page-columns page-full"><p><img src="img/Aurel.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption class="margin-caption">オレル</figcaption></figure>
 </div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center" style="display: block; margin: 0 auto">
-<figure>
-<p><img data-src="img/Louise.jpg" style="width:40.0%"></p>
-<figcaption>ルイーズ</figcaption>
-</figure>
+</div><div class="column page-columns page-full" style="width:50%;">
+<div class="quarto-figure quarto-figure-center page-columns page-full" style="display: block; margin: 0 auto">
+<figure class="figure page-columns page-full"><p><img src="img/Louise.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption class="margin-caption">ルイーズ</figcaption></figure>
 </div>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-プレイヤー-1" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; プレイヤー</h2>
-<h3 id="b群">B群</h3>
-<div class="columns">
-<div class="column" style="width:25%;">
-<div class="quarto-figure quarto-figure-center" style="display: block; margin: 0 auto">
-<figure>
-<p><img data-src="img/Lucas.jpg" style="width:70.0%"></p>
-<figcaption>リュカ</figcaption>
-</figure>
 </div>
-</div><div class="column" style="width:25%;">
-<div class="quarto-figure quarto-figure-center" style="display: block; margin: 0 auto">
-<figure>
-<p><img data-src="img/Meriem.jpg" style="width:70.0%"></p>
-<figcaption>メリエム</figcaption>
-</figure>
 </div>
-</div><div class="column" style="width:25%;">
-<div class="quarto-figure quarto-figure-center" style="display: block; margin: 0 auto">
-<figure>
-<p><img data-src="img/Sarah.jpg" style="width:70.0%"></p>
-<figcaption>サラ</figcaption>
-</figure>
+</section></section><section id="不平等なモノポリールール説明-プレイヤー-1" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-プレイヤー-1">「不平等なモノポリー」ルール説明 &gt; プレイヤー</h2>
+<section id="b群" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="b群">B群</h3>
+<div class="columns page-columns page-full">
+<div class="column page-columns page-full" style="width:25%;">
+<div class="quarto-figure quarto-figure-center page-columns page-full" style="display: block; margin: 0 auto">
+<figure class="figure page-columns page-full"><p><img src="img/Lucas.jpg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="margin-caption">リュカ</figcaption></figure>
 </div>
-</div><div class="column" style="width:25%;">
-<div class="quarto-figure quarto-figure-center" style="display: block; margin: 0 auto">
-<figure>
-<p><img data-src="img/Tom.jpg" style="width:70.0%"></p>
-<figcaption>トム</figcaption>
-</figure>
+</div><div class="column page-columns page-full" style="width:25%;">
+<div class="quarto-figure quarto-figure-center page-columns page-full" style="display: block; margin: 0 auto">
+<figure class="figure page-columns page-full"><p><img src="img/Meriem.jpg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="margin-caption">メリエム</figcaption></figure>
 </div>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-プレイヤー-2" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; プレイヤー</h2>
-<h3 id="c群">C群</h3>
-<div class="columns">
-<div class="column" style="width:25%;">
-<div class="quarto-figure quarto-figure-center" style="display: block; margin: 0 auto">
-<figure>
-<p><img data-src="img/Mohamed.jpg" style="width:70.0%"></p>
-<figcaption>モハメド</figcaption>
-</figure>
+</div><div class="column page-columns page-full" style="width:25%;">
+<div class="quarto-figure quarto-figure-center page-columns page-full" style="display: block; margin: 0 auto">
+<figure class="figure page-columns page-full"><p><img src="img/Sarah.jpg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="margin-caption">サラ</figcaption></figure>
 </div>
-</div><div class="column" style="width:25%;">
-<div class="quarto-figure quarto-figure-center" style="display: block; margin: 0 auto">
-<figure>
-<p><img data-src="img/Louis.jpg" style="width:70.0%"></p>
-<figcaption>ルイ</figcaption>
-</figure>
+</div><div class="column page-columns page-full" style="width:25%;">
+<div class="quarto-figure quarto-figure-center page-columns page-full" style="display: block; margin: 0 auto">
+<figure class="figure page-columns page-full"><p><img src="img/Tom.jpg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="margin-caption">トム</figcaption></figure>
 </div>
-</div><div class="column" style="width:25%;">
-<div class="quarto-figure quarto-figure-center" style="display: block; margin: 0 auto">
-<figure>
-<p><img data-src="img/Aude.jpg" style="width:70.0%"></p>
-<figcaption>オード</figcaption>
-</figure>
 </div>
-</div><div class="column" style="width:25%;">
-<div class="quarto-figure quarto-figure-center" style="display: block; margin: 0 auto">
-<figure>
-<p><img data-src="img/Angela.jpg" style="width:70.0%"></p>
-<figcaption>アンジェラ</figcaption>
-</figure>
 </div>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-2" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明</h2>
-<h3 id="ゲームの手順">2. ゲームの手順</h3>
+</section></section><section id="不平等なモノポリールール説明-プレイヤー-2" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-プレイヤー-2">「不平等なモノポリー」ルール説明 &gt; プレイヤー</h2>
+<section id="c群" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="c群">C群</h3>
+<div class="columns page-columns page-full">
+<div class="column page-columns page-full" style="width:25%;">
+<div class="quarto-figure quarto-figure-center page-columns page-full" style="display: block; margin: 0 auto">
+<figure class="figure page-columns page-full"><p><img src="img/Mohamed.jpg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="margin-caption">モハメド</figcaption></figure>
+</div>
+</div><div class="column page-columns page-full" style="width:25%;">
+<div class="quarto-figure quarto-figure-center page-columns page-full" style="display: block; margin: 0 auto">
+<figure class="figure page-columns page-full"><p><img src="img/Louis.jpg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="margin-caption">ルイ</figcaption></figure>
+</div>
+</div><div class="column page-columns page-full" style="width:25%;">
+<div class="quarto-figure quarto-figure-center page-columns page-full" style="display: block; margin: 0 auto">
+<figure class="figure page-columns page-full"><p><img src="img/Aude.jpg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="margin-caption">オード</figcaption></figure>
+</div>
+</div><div class="column page-columns page-full" style="width:25%;">
+<div class="quarto-figure quarto-figure-center page-columns page-full" style="display: block; margin: 0 auto">
+<figure class="figure page-columns page-full"><p><img src="img/Angela.jpg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="margin-caption">アンジェラ</figcaption></figure>
+</div>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-2" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-2">「不平等なモノポリー」ルール説明</h2>
+<section id="ゲームの手順" class="level3"><h3 class="anchored" data-anchor-id="ゲームの手順">2. ゲームの手順</h3>
 <ol type="1">
 <li>このゲームは、社会で見られる不平等をテーマにしています。そのため、最も裕福な白人男性のキャラクター（すなわち、Aurel）を引いた方からスタートします。</li>
 <li>以降の順序は時計回りです</li>
-</ol>
-</section>
-<section id="不平等なモノポリールール説明-3" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明</h2>
-<h3 id="あなたのターン">3. あなたのターン</h3>
+</ol></section></section><section id="不平等なモノポリールール説明-3" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-3">「不平等なモノポリー」ルール説明</h2>
+<section id="あなたのターン" class="level3"><h3 class="anchored" data-anchor-id="あなたのターン">3. あなたのターン</h3>
 <ol type="1">
 <li>各プレイヤーはカードに書かれたサイコロの数を振って下さい。つまり、あるプレイヤーにはチャンスが多く、他の人には少ないのです（カテゴリーCは、サイコロを一つしか振れません）。それは不公平では？はい、分かっています</li>
 <li>サイコロの出目だけ自分の駒を時計回りに進めて下さい。<strong>注意</strong>：障がいをもつプレイヤーは、サイコロの目をそれぞれ2点ずつ減点して下さい</li>
 <li>止まったマスが、あなたが何をしなければならないかを決めます（下記「マスの意味」を参照）</li>
-</ol>
-</section>
-<section id="不平等なモノポリールール説明-あなたのターン" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; あなたのターン</h2>
+</ol></section></section><section id="不平等なモノポリールール説明-あなたのターン" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-あなたのターン">「不平等なモノポリー」ルール説明 &gt; あなたのターン</h2>
 <ol start="4" type="1">
-<li>サイコロでゾロ目（ふたつとも同じ目）が出た場合、もう一度、サイコロを振ってください。止まったマスでアクションを行ったうえで、その後、もう一度、サイコロを振ります（ステップ1～4を繰り返す、ということです）。ただし、ゾロ目を3回以上出すと、すぐに「刑務所に入る」ことになります（ただし、Aカテゴリのプレイヤーを除く）<sup>1</sup></li>
+<li>サイコロでゾロ目（ふたつとも同じ目）が出た場合、もう一度、サイコロを振ってください。止まったマスでアクションを行ったうえで、その後、もう一度、サイコロを振ります（ステップ1～4を繰り返す、ということです）。ただし、ゾロ目を3回以上出すと、すぐに「刑務所に入る」ことになります（ただし、Aカテゴリのプレイヤーを除く）<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
+</li>
 <li>自分の順番が終了したら、左隣の人にサイコロを渡して下さい</li>
-</ol>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>ゾロ目が連続して出続けることにより、運の要素が過剰に強調されてしまいます。このルールを設けることで、あまりにも運が偏りすぎることを避け、プレイヤー同士の戦略や交渉がもっと重要になるようにしています</p></li></ol></aside></section>
-<section id="不平等なモノポリールール説明-4" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明</h2>
-<h3 id="マスの意味">4. マスの意味</h3>
+</ol><div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;ゾロ目が連続して出続けることにより、運の要素が過剰に強調されてしまいます。このルールを設けることで、あまりにも運が偏りすぎることを避け、プレイヤー同士の戦略や交渉がもっと重要になるようにしています</p></div></div></section><section id="不平等なモノポリールール説明-4" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-4">「不平等なモノポリー」ルール説明</h2>
+<section id="マスの意味" class="level3"><h3 class="anchored" data-anchor-id="マスの意味">4. マスの意味</h3>
 <ol type="1">
-<li><em>月初め（DÉBUT DU MOIS）</em>：月初めのマス目に停止またはそこを通過すると、銀行から給料が支払われます</li>
-<li><em>駅（Gare）</em>：駅は移動するために使います（オリジナル・モノポリーは駅は資産ですが、「不平等なモノポリー」ではそうではありません）。自分が選んだ別の駅に行くことができ、戻ることはできません。最寄りの駅に行くには20ユーロ、2番目の駅には40ユーロ、3番目の駅には60ユーロを銀行に支払います（例：あるプレイヤーがモンパルナス駅に止まった場合、20ユーロでリヨン駅に行くことができ、40ユーロでノール駅、60ユーロでサン・ラザール駅に行くことができます）。「月初め」マスを通過した場合、給料を受け取ります。<strong>注意</strong>：障害を持つキャラクターは駅を利用できません。すなわち、駅マスに止まっても意味がありません。</li>
-</ol>
-</section>
-<section id="不平等なモノポリールール説明-マスの意味" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; マスの意味</h2>
+<li>
+<em>月初め（DÉBUT DU MOIS）</em>：月初めのマス目に停止またはそこを通過すると、銀行から給料が支払われます</li>
+<li>
+<em>駅（Gare）</em>：駅は移動するために使います（オリジナル・モノポリーは駅は資産ですが、「不平等なモノポリー」ではそうではありません）。自分が選んだ別の駅に行くことができ、戻ることはできません。最寄りの駅に行くには20ユーロ、2番目の駅には40ユーロ、3番目の駅には60ユーロを銀行に支払います（例：あるプレイヤーがモンパルナス駅に止まった場合、20ユーロでリヨン駅に行くことができ、40ユーロでノール駅、60ユーロでサン・ラザール駅に行くことができます）。「月初め」マスを通過した場合、給料を受け取ります。<strong>注意</strong>：障害を持つキャラクターは駅を利用できません。すなわち、駅マスに止まっても意味がありません。</li>
+</ol></section></section><section id="不平等なモノポリールール説明-マスの意味" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-マスの意味">「不平等なモノポリー」ルール説明 &gt; マスの意味</h2>
 <ol start="3" type="1">
-<li><em>刑務所に入る（ALLEZ EN PRISON）</em>：このマスに止まった場合、自分のコマを「刑務所」のマスに移動しなければなりません。給料は受け取れません。あなたのターンは終了です。サイコロを次のプレイヤーに渡して下さい。<strong>注意</strong>：ルーカスとモハメッドが「刑務所に行く」のマスを通過するとき（通常は止まる必要はありません）、彼らは警察のチェックを受けるために止まらなければならず、その順番はそこでストップします。彼らは刑務所には行く必要はありませんが、次の順番が回ってくるまで待たなければなりません（このルールは確かに滑稽ですが、人種的プロファイリングと偏見の問題を提起することができます）</li>
-<li><em>面会中（SIMPLE VISITE）</em>：ここに止まっても刑務所には行きません。自分のコマを「面会中（SIMPLE VISITE）」のエリアに置いて、何も起こりません。</li>
-<li><em>イベント（ÉVÈNEMENT）</em>のマスに止まったら、カードを1枚引き、全文を声に出して読みます。その後、カードに書かれたアクションを実行してください。アクションを終えたら、そのカードを自分のそばに置き、次のプレイヤーに順番を譲って下さい。</li>
-</ol>
-</section>
-<section id="不平等なモノポリールール説明-マスの意味-1" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; マスの意味</h2>
+<li>
+<em>刑務所に入る（ALLEZ EN PRISON）</em>：このマスに止まった場合、自分のコマを「刑務所」のマスに移動しなければなりません。給料は受け取れません。あなたのターンは終了です。サイコロを次のプレイヤーに渡して下さい。<strong>注意</strong>：ルーカスとモハメッドが「刑務所に行く」のマスを通過するとき（通常は止まる必要はありません）、彼らは警察のチェックを受けるために止まらなければならず、その順番はそこでストップします。彼らは刑務所には行く必要はありませんが、次の順番が回ってくるまで待たなければなりません（このルールは確かに滑稽ですが、人種的プロファイリングと偏見の問題を提起することができます）</li>
+<li>
+<em>面会中（SIMPLE VISITE）</em>：ここに止まっても刑務所には行きません。自分のコマを「面会中（SIMPLE VISITE）」のエリアに置いて、何も起こりません。</li>
+<li>
+<em>イベント（ÉVÈNEMENT）</em>のマスに止まったら、カードを1枚引き、全文を声に出して読みます。その後、カードに書かれたアクションを実行してください。アクションを終えたら、そのカードを自分のそばに置き、次のプレイヤーに順番を譲って下さい。</li>
+</ol></section><section id="不平等なモノポリールール説明-マスの意味-1" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-マスの意味-1">「不平等なモノポリー」ルール説明 &gt; マスの意味</h2>
 <ol start="6" type="1">
-<li><em>再分配（REDISTRIBUTION）</em>：Aカテゴリのプレイヤーが「再分配（REDISTRIBUTION）」のマスに止まるか通過すると、Cカテゴリのプレイヤー全員にそれぞれ100ユーロを支払わなければなりません。ただし、電車を利用すればこのマスを避けることができます。Bカテゴリのプレイヤーは再分配に参加しません。また、「社会的上昇（Ascension sociale）」のイベントカードを持っているプレイヤーも同様です。</li>
-<li><em>土地（PROPRIÉTÉ、地名が印刷されているマス）</em>：土地は22箇所あります。ここに駒が止まり、<strong>まだ所有者がいない場合は、ボードに印刷されている価格で銀行からその土地を購入できます</strong>。購入したプレイヤーは、所有権を示す権利書を受けとり表を向けて自分の前に置きます。もし、<strong>そのプレイヤーがその土地を買いたくないと宣言した場合は、銀行によって競売にかけられ、もっとも高い金額を提示したプレイヤーに販売されます</strong>。ボードに印刷されている価格で購入を拒否したプレイヤーも競売に参加できます。入札価格(売りに出される時の最初の価格)は、いくらからスタートしてもかまいませんが、通常は印刷されている額の半分からはじめます。 また、<strong>駒の止まったマスにすでに所有者がいた場合は、その土地のレンタル料を所有者に支払わなければなりません</strong>。</li>
-</ol>
-</section>
-<section id="不平等なモノポリールール説明-マスの意味-2" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; マスの意味</h2>
-<h4 id="土地に関する権利書の見方">土地に関する権利書の見方</h4>
+<li>
+<em>再分配（REDISTRIBUTION）</em>：Aカテゴリのプレイヤーが「再分配（REDISTRIBUTION）」のマスに止まるか通過すると、Cカテゴリのプレイヤー全員にそれぞれ100ユーロを支払わなければなりません。ただし、電車を利用すればこのマスを避けることができます。Bカテゴリのプレイヤーは再分配に参加しません。また、「社会的上昇（Ascension sociale）」のイベントカードを持っているプレイヤーも同様です。</li>
+<li>
+<em>土地（PROPRIÉTÉ、地名が印刷されているマス）</em>：土地は22箇所あります。ここに駒が止まり、<strong>まだ所有者がいない場合は、ボードに印刷されている価格で銀行からその土地を購入できます</strong>。購入したプレイヤーは、所有権を示す権利書を受けとり表を向けて自分の前に置きます。もし、<strong>そのプレイヤーがその土地を買いたくないと宣言した場合は、銀行によって競売にかけられ、もっとも高い金額を提示したプレイヤーに販売されます</strong>。ボードに印刷されている価格で購入を拒否したプレイヤーも競売に参加できます。入札価格(売りに出される時の最初の価格)は、いくらからスタートしてもかまいませんが、通常は印刷されている額の半分からはじめます。 また、<strong>駒の止まったマスにすでに所有者がいた場合は、その土地のレンタル料を所有者に支払わなければなりません</strong>。</li>
+</ol></section><section id="不平等なモノポリールール説明-マスの意味-2" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-マスの意味-2">「不平等なモノポリー」ルール説明 &gt; マスの意味</h2>
+<section id="土地に関する権利書の見方" class="level4"><h4 class="anchored" data-anchor-id="土地に関する権利書の見方">土地に関する権利書の見方</h4>
 <ul>
 <li>あるプレイヤーが、他のプレイヤーの所有している土地に止まったら、所有者に権利書にあるレンタル料を支払います</li>
 <li><strong>同色の土地を同じプレイヤーが独占して所有している場合は、止まった土地の2倍のレンタル料を支払わなければなりません</strong></li>
 <li>ただし、その土地が抵当(抵当の項目を参照)に入っている場合は、レンタル料は徴収できません</li>
 <li>もし所有者がレンタル料の請求を忘れても、次の次のプレイヤーがサイコロを振る前までに請求すれば、レンタル料は受け取れます。次の次のプレイヤーがサイコロを振ってしまうともうレンタル料は請求できません</li>
-</ul>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード1-promotion昇進">イベントカード1: Promotion（昇進）</h3>
+</ul></section></section><section id="不平等なモノポリールール説明-イベントカード" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード1-promotion昇進" class="level3"><h3 class="anchored" data-anchor-id="イベントカード1-promotion昇進">イベントカード1: Promotion（昇進）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_1.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_1.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>おめでとうございます！給料が上がりました！毎月のはじめに「DEBUT DU MOIS」のマスを通過するたびに、</p>
 <ul>
@@ -556,1011 +929,971 @@
 <li>C: 50ユーロを受け取ります</li>
 </ul>
 <p>このカードを保管してください。ゲームの間ずっと有効です。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-1" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード2-diplôme卒業">イベントカード2: Diplôme（卒業）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-1" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-1">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード2-diplôme卒業" class="level3"><h3 class="anchored" data-anchor-id="イベントカード2-diplôme卒業">イベントカード2: Diplôme（卒業）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_2.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_2.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたは勉強を再開し、卒業しました！給料を50ユーロ増やしてください。 ゲームの間ずっと有効です。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-2" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード3-héritage遺産相続">イベントカード3: Héritage（遺産相続）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-2" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-2">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード3-héritage遺産相続" class="level3"><h3 class="anchored" data-anchor-id="イベントカード3-héritage遺産相続">イベントカード3: Héritage（遺産相続）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_3.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_3.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたの祖父が亡くなり、不動産を相続しました。 - A: 好きな空いている土地を選んでください。 - BとC: 「プロパティ」カードをランダムに1枚引いてください（赤い土地まで含まれます）。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-3" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード4-précarité不安定な雇用">イベントカード4: Précarité（不安定な雇用）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-3" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-3">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード4-précarité不安定な雇用" class="level3"><h3 class="anchored" data-anchor-id="イベントカード4-précarité不安定な雇用">イベントカード4: Précarité（不安定な雇用）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_4.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_4.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <ul>
 <li>C: あなたの労働契約は不安定で、次に「DEBUT DU MOIS」のマスを通過するまで土地を購入できません。</li>
 <li>A &amp; B: 新しいカードを1枚引いてください。</li>
 </ul>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-4" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード5-ascensionsociale社会的昇進">イベントカード5: Ascensionsociale（社会的昇進）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-4" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-4">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード5-ascensionsociale社会的昇進" class="level3"><h3 class="anchored" data-anchor-id="イベントカード5-ascensionsociale社会的昇進">イベントカード5: Ascensionsociale（社会的昇進）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_5.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_5.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <ul>
 <li>C: あなたは社会的階層が上がり、今後はカテゴリーBのルールが適用されます。</li>
 <li>B: あなたはカテゴリーAに昇格します。</li>
 <li>A: もう一度プレイしてください。</li>
 </ul>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-5" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード6-cest-la-crise危機です">イベントカード6: C’est la crise!（危機です）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-5" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-5">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード6-cest-la-crise危機です" class="level3"><h3 class="anchored" data-anchor-id="イベントカード6-cest-la-crise危機です">イベントカード6: C’est la crise!（危機です）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_6.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_6.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>株式市場で多くのお金を失いました。</p>
 <ul>
 <li>A: 土地を売却して銀行に返済しなければなりません。最も高価な2つの不動産を銀行に返してください（何も受け取らずに返却）。</li>
 <li>B&amp;C: 新しいカードを1枚引いてください。</li>
 </ul>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-6" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード7-grâce-présidentielle大統領恩赦">イベントカード7: Grâce présidentielle（大統領恩赦）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-6" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-6">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード7-grâce-présidentielle大統領恩赦" class="level3"><h3 class="anchored" data-anchor-id="イベントカード7-grâce-présidentielle大統領恩赦">イベントカード7: Grâce présidentielle（大統領恩赦）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_7.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_7.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <ul>
 <li>A: このカードを保管しておくと、すぐに刑務所を出ることができ、すぐにプレイを再開できます。一度限り有効です。</li>
 <li>B&amp;C: 新しいカードを1枚引いてください。</li>
 </ul>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-7" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード8-cest-du-génie天才的">イベントカード8: C’est du génie!（天才的！）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-7" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-7">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード8-cest-du-génie天才的" class="level3"><h3 class="anchored" data-anchor-id="イベントカード8-cest-du-génie天才的">イベントカード8: C’est du génie!（天才的！）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_8.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_8.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたはスポーツウェアのブランドを立ち上げ、成功しました！ サイコロを振って、その結果を100倍してあなたの利益を計算してください。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-8" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード9-pistonピストン">イベントカード9: Piston!（ピストン）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-8" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-8">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード9-pistonピストン" class="level3"><h3 class="anchored" data-anchor-id="イベントカード9-pistonピストン">イベントカード9: Piston!（ピストン）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_9.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_9.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>新しい仕事を探しています。</p>
 <ul>
 <li>A: 友人に話をしたところ、その友人がちょうど採用をしている企業の社長を知っていました。もう一度プレイしてください！</li>
 <li>BとC: 新しいカードを1枚引いてください。</li>
 </ul>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-9" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード10-si-tu-prends-ma-placeもし私の場所を取ったら">イベントカード10: Si tu prends ma place…（もし私の場所を取ったら…）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-9" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-9">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード10-si-tu-prends-ma-placeもし私の場所を取ったら" class="level3"><h3 class="anchored" data-anchor-id="イベントカード10-si-tu-prends-ma-placeもし私の場所を取ったら">イベントカード10: Si tu prends ma place…（もし私の場所を取ったら…）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_10.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_10.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>駐車スペースを探しています。</p>
 <ul>
 <li>あなたは障害を持っていないのに、「急いでいるから」と言って障害者専用の駐車スペースに停めました：150ユーロを支払ってください。</li>
 <li>あなたが障害を持っている場合、誰かがあなたの専用駐車スペースに停めている：3マス戻ります。</li>
 </ul>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-10" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード11-grève-généraleストライキ">イベントカード11: Grève générale（ストライキ）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-10" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-10">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード11-grève-généraleストライキ" class="level3"><h3 class="anchored" data-anchor-id="イベントカード11-grève-généraleストライキ">イベントカード11: Grève générale（ストライキ）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_11.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_11.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>社会運動により、カテゴリーCのキャラクターの給料が20ユーロ増加しました。ゲームの間ずっと有効です。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-11" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード12-culture文化">イベントカード12: Culture（文化）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-11" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-11">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード12-culture文化" class="level3"><h3 class="anchored" data-anchor-id="イベントカード12-culture文化">イベントカード12: Culture（文化）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_12.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_12.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <ul>
 <li>A: あなたはよく劇場に行き、あなたの一般教養が雇用主に感銘を与えました。次に「DEBUT DU MOIS」のマスを通過する際に、200ユーロを追加で得られます。ゲームの間ずっと有効です。</li>
 <li>B&amp;C: 新しいカードを1枚引いてください。</li>
 </ul>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-12" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード13-cest-la-rentrée-新学期です">イベントカード13: C’est la rentrée !（新学期です！）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-12" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-12">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード13-cest-la-rentrée-新学期です" class="level3"><h3 class="anchored" data-anchor-id="イベントカード13-cest-la-rentrée-新学期です">イベントカード13: C’est la rentrée !（新学期です！）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_13.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_13.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>お子さんの学校用品を購入しなければなりません。</p>
 <ul>
 <li>C: あなたは給与が少ないので、費用を支払うために50ユーロを受け取ります。</li>
 <li>A&amp;B: 50ユーロを支払ってください。</li>
 </ul>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-13" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード14-illectronisme電子機器">イベントカード14: Illectronisme（電子機器）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-13" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-13">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード14-illectronisme電子機器" class="level3"><h3 class="anchored" data-anchor-id="イベントカード14-illectronisme電子機器">イベントカード14: Illectronisme（電子機器）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_14.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_14.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>駅の窓口が閉まっており、インターネットでチケットを購入できません。「DEBUT DU MOIS」のマスを通過するまで、電車に乗ることができません。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-14" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード15-diplôme国際的な連帯">イベントカード15: Diplôme（国際的な連帯）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-14" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-14">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード15-diplôme国際的な連帯" class="level3"><h3 class="anchored" data-anchor-id="イベントカード15-diplôme国際的な連帯">イベントカード15: Diplôme（国際的な連帯）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_15.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_15.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>フランスは世界の飢餓との戦いに参加することを決定しました。各プレイヤーは収入に応じて寄付する必要があります。 - A: 銀行に100ユーロを寄付してください。 - B: 75ユーロ - C: 50ユーロ</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-15" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード16-cest-les-vacances-休暇です">イベントカード16: C’est les vacances !（休暇です！）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-15" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-15">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード16-cest-les-vacances-休暇です" class="level3"><h3 class="anchored" data-anchor-id="イベントカード16-cest-les-vacances-休暇です">イベントカード16: C’est les vacances !（休暇です！）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_16.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_16.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>休暇に出かけるために200ユーロを支払って、もう一度プレイしてください。</p>
 <ul>
 <li>A: あなたは何も支払わず、友達がサントロペの家を貸してくれるので、もう一度プレイしてください！</li>
 </ul>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-16" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード17-santé健康">イベントカード17: Santé（健康）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-16" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-16">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード17-santé健康" class="level3"><h3 class="anchored" data-anchor-id="イベントカード17-santé健康">イベントカード17: Santé（健康）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_17.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_17.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたは病気です。たとえ経済的に厳しくても、治療費は社会保障によって全額カバーされます。このカードを読み終えたら、回復します。もう一度プレイしてください！</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-17" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード18-jackpotジャックポット">イベントカード18: Jackpot!（ジャックポット！）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-17" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-17">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード18-jackpotジャックポット" class="level3"><h3 class="anchored" data-anchor-id="イベントカード18-jackpotジャックポット">イベントカード18: Jackpot!（ジャックポット！）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_18.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_18.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたの給料と同額のボーナスをすぐに受け取ります。失業中の場合は適用されません。一度限り有効です。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-18" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード19-job-d-été夏の仕事">イベントカード19: Job d’ été（夏の仕事）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-18" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-18">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード19-job-d-été夏の仕事" class="level3"><h3 class="anchored" data-anchor-id="イベントカード19-job-d-été夏の仕事">イベントカード19: Job d’ été（夏の仕事）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_19.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_19.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>収入を補うために夏の仕事を探しています。 - もし25歳未満なら、ミッションロカールが手続きをサポートしてくれます：200ユーロを一度受け取ります。 - もし25歳以上なら、新しいカードを1枚引いてください。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-19" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード20-un-peu-trop-à-létroit少し手狭">イベントカード20: Un peu trop à l’étroit（少し手狭）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-19" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-19">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード20-un-peu-trop-à-létroit少し手狭" class="level3"><h3 class="anchored" data-anchor-id="イベントカード20-un-peu-trop-à-létroit少し手狭">イベントカード20: Un peu trop à l’étroit（少し手狭）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_20.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_20.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたの住居は狭すぎます。お子さんは宿題をするのに苦労しており、その影響が成績に表れています。 - B&amp;C: 50ユーロを支払ってください。 - A: 新しいカードを1枚引いてください。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-20" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード21-nationalité国籍">イベントカード21: Nationalité（国籍）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-20" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-20">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード21-nationalité国籍" class="level3"><h3 class="anchored" data-anchor-id="イベントカード21-nationalité国籍">イベントカード21: Nationalité（国籍）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_21.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_21.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたはフランス国籍を持っておらず、EU外で生まれたため、仕事を拒否されました。次のターンはプレイできません。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-21" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード22-solidarité連帯">イベントカード22: Solidarité（連帯）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-21" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-21">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード22-solidarité連帯" class="level3"><h3 class="anchored" data-anchor-id="イベントカード22-solidarité連帯">イベントカード22: Solidarité（連帯）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_22.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_22.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <ul>
 <li>C: ある団体が、あなたが社会住宅にアクセスできるように書類作成をサポートします。50ユーロを支払うことで、茶色と水色のマスにある土地を引くことができます。</li>
 <li>A&amp;B: 新しいカードを1枚引いてください。</li>
 </ul>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-22" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード23-racisme人種差別">イベントカード23: Racisme（人種差別）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-22" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-22">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード23-racisme人種差別" class="level3"><h3 class="anchored" data-anchor-id="イベントカード23-racisme人種差別">イベントカード23: Racisme（人種差別）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_23.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_23.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたが黒人または北アフリカ人であれば、今月の初めのボックスを再び通過するまで、家を買うことはできなくなります。あなたが白人であれば、何も起こりません。新しいカードを引いてください。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-23" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード24-mal-logement不適切な住宅">イベントカード24: Mal-logement（不適切な住宅）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-23" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-23">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード24-mal-logement不適切な住宅" class="level3"><h3 class="anchored" data-anchor-id="イベントカード24-mal-logement不適切な住宅">イベントカード24: Mal-logement（不適切な住宅）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_24.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_24.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたの住居は質が悪いです。修理のために200ユーロを支払ってください。 このルールは、茶色または水色の土地を所有している場合にのみ適用されます。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-24" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード25-transphobieトランスフォビア">イベントカード25: Transphobie（トランスフォビア）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-24" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-24">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード25-transphobieトランスフォビア" class="level3"><h3 class="anchored" data-anchor-id="イベントカード25-transphobieトランスフォビア">イベントカード25: Transphobie（トランスフォビア）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_25.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_25.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたはトランスジェンダーの女性の雇用を拒否しました。彼女は差別を訴えました。刑務所に直行し、銀行に100ユーロを支払って下さい。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-25" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード26-ménage-de-printemps掃除の時間です">イベントカード26: Ménage de printemps（掃除の時間です！）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-25" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-25">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード26-ménage-de-printemps掃除の時間です" class="level3"><h3 class="anchored" data-anchor-id="イベントカード26-ménage-de-printemps掃除の時間です">イベントカード26: Ménage de printemps（掃除の時間です！）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_26.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_26.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>もしあなたが女性なら、次のターンを掃除に費やすためにスキップしてください。</p>
 <p>もしあなたが男性なら、もう一度プレイしてください。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-26" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード27-outingアウティング">イベントカード27: Outing（アウティング）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-26" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-26">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード27-outingアウティング" class="level3"><h3 class="anchored" data-anchor-id="イベントカード27-outingアウティング">イベントカード27: Outing（アウティング）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_27.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_27.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたは同性愛者で、あなたの周囲の人々がそのことを、あなたの許可なく他の誰かによって知らされてしまいます。状況は全くうまくいかず、あなたの家族はあなたを拒絶します。その結果、あなたは自分の土地の一つを銀行に渡さなければならなくなります。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-27" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード28-travail-pénible過酷な労働">イベントカード28: Travail pénible（過酷な労働）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-27" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-27">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード28-travail-pénible過酷な労働" class="level3"><h3 class="anchored" data-anchor-id="イベントカード28-travail-pénible過酷な労働">イベントカード28: Travail pénible（過酷な労働）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_28.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_28.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <ul>
 <li>C: あなたは仕事で重い荷物を持ち運ぶため、背中に問題を抱えています。次のターンは休憩を取ってください。</li>
 <li>A&amp;B: あなたたちは元気です、なぜなら仕事が身体的に疲れるものではないからです。もう一度プレイしてください。</li>
 </ul>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-28" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード29-maternité出産">イベントカード29: Maternité（出産）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-28" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-28">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード29-maternité出産" class="level3"><h3 class="anchored" data-anchor-id="イベントカード29-maternité出産">イベントカード29: Maternité（出産）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_29.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_29.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたは子供を持つことになります。もしあなたが女性なら、産休を取ります。次に月初めのマスを通るとき、給与の半分だけを受け取ります。</p>
 <p>もしあなたが男性なら、もう一度プレイしてください。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-29" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード30-harcèlement-sexuelセクシャルハラスメント">イベントカード30: Harcèlement sexuel（セクシャル・ハラスメント）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-29" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-29">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード30-harcèlement-sexuelセクシャルハラスメント" class="level3"><h3 class="anchored" data-anchor-id="イベントカード30-harcèlement-sexuelセクシャルハラスメント">イベントカード30: Harcèlement sexuel（セクシャル・ハラスメント）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_30.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_30.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>もしあなたが女性なら、公共交通機関で男性からセクシャルハラスメントを受けます。あなたは告訴し、裁判に勝ちます：150ユーロを受け取ります。</p>
 <p>もしあなたが男性なら、その場面を目撃して介入することを決めます。素晴らしい！</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-30" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード31-coming-outカミングアウト">イベントカード31: Coming out（カミングアウト）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-30" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-30">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード31-coming-outカミングアウト" class="level3"><h3 class="anchored" data-anchor-id="イベントカード31-coming-outカミングアウト">イベントカード31: Coming out（カミングアウト）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_31.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_31.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたは自分の同性愛者であることを周囲に告白することを決めます。うまくいきます！もう一度プレイしてください。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-31" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード32-accident事故">イベントカード32: Accident（事故）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-31" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-31">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード32-accident事故" class="level3"><h3 class="anchored" data-anchor-id="イベントカード32-accident事故">イベントカード32: Accident（事故）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_32.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_32.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたは重大な自動車事故に遭い、生涯にわたって、身体的な障がいをもつことになります。障がいに関連する規則があなたに適用されます。もしすでに障がいを抱えている場合は、新しいカードを引いてください。ゲーム全体に適用されます。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-32" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード33-homophobie-dans-lentreprise職場でのホモフォビア">イベントカード33: Homophobie dans l’entreprise（職場でのホモフォビア）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-32" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-32">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード33-homophobie-dans-lentreprise職場でのホモフォビア" class="level3"><h3 class="anchored" data-anchor-id="イベントカード33-homophobie-dans-lentreprise職場でのホモフォビア">イベントカード33: Homophobie dans l’entreprise（職場でのホモフォビア）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_33.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_33.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたは数日間、同性愛者であることを理由に同僚からハラスメントを受けています。あなたの上司はあなたのお願いにもかかわらず、反応しません。あなたは疲れて落ち込んだ状態で家に帰ります。次のターンを進めてください。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-33" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード34-insulteraciste人種差別的侮辱">イベントカード34: Insulteraciste（人種差別的侮辱）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-33" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-33">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード34-insulteraciste人種差別的侮辱" class="level3"><h3 class="anchored" data-anchor-id="イベントカード34-insulteraciste人種差別的侮辱">イベントカード34: Insulteraciste（人種差別的侮辱）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_34.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_34.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたは再び、同僚の出身地を理由に侮辱します。彼は差別で告訴します。直ちに刑務所に行き、銀行に100ユーロを支払ってください。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-34" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード35-discrimination-liée-à-la-religion宗教に関連する差別">イベントカード35: Discrimination liée à la religion（宗教に関連する差別）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-34" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-34">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード35-discrimination-liée-à-la-religion宗教に関連する差別" class="level3"><h3 class="anchored" data-anchor-id="イベントカード35-discrimination-liée-à-la-religion宗教に関連する差別">イベントカード35: Discrimination liée à la religion（宗教に関連する差別）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_35.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_35.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたは宗教的なシンボルを身につけています。街で侮辱されます。次のターンを進めてください。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-35" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード36-chômage失業">イベントカード36: Chômage（失業）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-35" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-35">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード36-chômage失業" class="level3"><h3 class="anchored" data-anchor-id="イベントカード36-chômage失業">イベントカード36: Chômage（失業）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_36.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_36.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたは職を失いました。現在、あなたは失業中です。次回、月初めの時に通過する場合、通常の給料の代わりに、Aは200ユーロ、Bは100ユーロ、Cは50ユーロを受け取ります。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-36" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード37-changer-une-règle-du-jeuゲームのルールを変更する">イベントカード37: Changer une règle du jeu（ゲームのルールを変更する）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-36" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-36">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード37-changer-une-règle-du-jeuゲームのルールを変更する" class="level3"><h3 class="anchored" data-anchor-id="イベントカード37-changer-une-règle-du-jeuゲームのルールを変更する">イベントカード37: Changer une règle du jeu（ゲームのルールを変更する）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_37.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_37.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>あなたにはゲームのバランスを再調整するチャンスがあります！ キャラクター間の差を縮めるために、変更したい不公平なルールをみんなで選んでください。</p>
-</div></div>
-</section>
-<section id="不平等なモノポリールール説明-イベントカード-37" class="slide level2">
-<h2>「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
-<h3 id="イベントカード38-encadrement-des-loyers家賃の調整">イベントカード38: Encadrement des loyers（家賃の調整）</h3>
+</div>
+</div>
+</section></section><section id="不平等なモノポリールール説明-イベントカード-37" class="level2"><h2 class="anchored" data-anchor-id="不平等なモノポリールール説明-イベントカード-37">「不平等なモノポリー」ルール説明 &gt; イベントカード</h2>
+<section id="イベントカード38-encadrement-des-loyers家賃の調整" class="level3"><h3 class="anchored" data-anchor-id="イベントカード38-encadrement-des-loyers家賃の調整">イベントカード38: Encadrement des loyers（家賃の調整）</h3>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="img/eventcard_38.jpg" style="display: block; margin: 0 auto;width:100.0%"></p>
+<p><img src="img/eventcard_38.jpg" class="img-fluid" style="display: block; margin: 0 auto;width:100.0%"></p>
 </div><div class="column" style="width:60%;">
 <p>市役所は困難な状況にある人々のために家賃を引き下げます。</p>
 <ul>
 <li>C: 月初めの時までに支払うべき家賃を半分にしてください。</li>
 <li>A&amp;B: 新しいカードを引いてください。</li>
 </ul>
-</div></div>
-</section></section>
-<section>
-<section id="実践不平等なモノポリー" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
-<h1>Ⅳ. 実践「不平等なモノポリー」</h1>
-
-</section>
-<section id="実践不平等なモノポリー-1" class="slide level2">
-<h2>実践「不平等なモノポリー」</h2>
+</div>
+</div>
+</section></section></section><section id="実践不平等なモノポリー" class="level1" data-background-color="#113758" data-background-transition="slide"><h1 data-background-color="#113758" data-background-transition="slide">Ⅳ. 実践「不平等なモノポリー」</h1>
+<section id="実践不平等なモノポリー-1" class="level2"><h2 class="anchored" data-anchor-id="実践不平等なモノポリー-1">実践「不平等なモノポリー」</h2>
 <ul>
 <li>「不平等なモノポリー」第1ラウンド
 <ul>
 <li>14:40-15:30</li>
-</ul></li>
+</ul>
+</li>
 <li>「不平等なモノポリー」第2ラウンド
 <ul>
 <li>15:40-16:30</li>
-</ul></li>
-<li>第1ラウンドと第2ラウンドではカテゴリーを替えましょう</li>
 </ul>
-</section></section>
-<section>
-<section id="v.-グループワーク②" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
-<h1>V. グループワーク②</h1>
-
-</section>
-<section id="グループワーク②" class="slide level2">
-<h2>グループワーク②</h2>
+</li>
+<li>第1ラウンドと第2ラウンドではカテゴリーを替えましょう</li>
+</ul></section></section><section id="v.-グループワーク②" class="level1" data-background-color="#113758" data-background-transition="slide"><h1 data-background-color="#113758" data-background-transition="slide">V. グループワーク②</h1>
+<section id="グループワーク②" class="level2"><h2 class="anchored" data-anchor-id="グループワーク②">グループワーク②</h2>
 <ol type="1">
 <li>「不平等なモノポリー」を体験した感想を自由に言い合おう</li>
 <li>日本に置き換えたとき、どのようなプレイヤーを登場させるべきだと思いますか？</li>
 <li>日本に置き換えたとき、どのようなイベントがあると現代の日本社会を表現できると思いますか？</li>
-</ol>
-</section>
-<section id="政治学者の考える平等と不平等" class="slide level2">
-<h2>政治学者の考える平等と不平等</h2>
-<h3 id="マイケルサンデル能力主義-vs-貴族主義">マイケル・サンデル：能力主義 vs 貴族主義</h3>
-<blockquote>
-<p><em>あなたが貴族社会の上位層に生まれていれば、自分の特権は幸運のおかげであり、自分自身の手柄ではないとわかるだろう。一方、努力と才能によって能力主義社会の頂点に登り詰めたとすれば、自分の成功は受け継いだものではなく、自ら勝ち取ったものだという事実を誇りにできる。貴族社会における特権とは異なり、能力主義社会における成功は、自力で地位を手にしたという達成感をもたらす</em>。こうした観点からすると、貴族社会よりも能力主義社会において裕福であるほうが好ましい。 同様の理由で、能力主義社会において貧しいことは自信喪失につながる。封建社会で農奴の身分に生まれれば、生活は厳しいだろう。だが、従属的地位にあるのは自分の責任だと考えて苦しむこともないはずだ。また、自分が苦役に耐えながら仕えている地主は、自分より有能で才覚があるおかげでその地位を手に入れたなどと思い込んで悩む必要もない。地主は自分よりもその地位にふさわしいわけではなく、運がいいにすぎないことがわかっているはずだからだ。 対照的に、<em>能力主義社会の最下層に落ち込めば、どうしてもこうした考えにとらわれてしまう。すなわち、自分の恵まれない状況は、少なくとも部分的には自ら招いたものであり、出世するための才能とやる気を十分に発揮できなかった結果なのだと。人びとの出世を可能にし、称賛する社会では、出世できない者は厳しい判決を宣告されるのである</em>（<span class="citation" data-cites="SandelJM:2021book1_translJA">サンデル，マイケル と 鬼澤忍（訳） (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2021</a>)</span>, 210-211）。</p>
+</ol></section><section id="政治学者の考える平等と不平等" class="level2"><h2 class="anchored" data-anchor-id="政治学者の考える平等と不平等">政治学者の考える平等と不平等</h2>
+<section id="マイケルサンデル能力主義-vs-貴族主義" class="level3"><h3 class="anchored" data-anchor-id="マイケルサンデル能力主義-vs-貴族主義">マイケル・サンデル：能力主義 vs 貴族主義</h3>
+<blockquote class="blockquote">
+<p><em>あなたが貴族社会の上位層に生まれていれば、自分の特権は幸運のおかげであり、自分自身の手柄ではないとわかるだろう。一方、努力と才能によって能力主義社会の頂点に登り詰めたとすれば、自分の成功は受け継いだものではなく、自ら勝ち取ったものだという事実を誇りにできる。貴族社会における特権とは異なり、能力主義社会における成功は、自力で地位を手にしたという達成感をもたらす</em>。こうした観点からすると、貴族社会よりも能力主義社会において裕福であるほうが好ましい。 同様の理由で、能力主義社会において貧しいことは自信喪失につながる。封建社会で農奴の身分に生まれれば、生活は厳しいだろう。だが、従属的地位にあるのは自分の責任だと考えて苦しむこともないはずだ。また、自分が苦役に耐えながら仕えている地主は、自分より有能で才覚があるおかげでその地位を手に入れたなどと思い込んで悩む必要もない。地主は自分よりもその地位にふさわしいわけではなく、運がいいにすぎないことがわかっているはずだからだ。 対照的に、<em>能力主義社会の最下層に落ち込めば、どうしてもこうした考えにとらわれてしまう。すなわち、自分の恵まれない状況は、少なくとも部分的には自ら招いたものであり、出世するための才能とやる気を十分に発揮できなかった結果なのだと。人びとの出世を可能にし、称賛する社会では、出世できない者は厳しい判決を宣告されるのである</em>（<span class="citation" data-cites="SandelJM:2021book1_translJA">サンデル，マイケル and 鬼澤忍（訳） (<a href="#ref-SandelJM:2021book1_translJA" role="doc-biblioref">2021</a>)</span>, 210-211）。</p>
 </blockquote>
-</section>
-<section id="政治学者の考える平等と不平等-1" class="slide level2">
-<h2>政治学者の考える平等と不平等</h2>
-<h3 id="ジョンロールズ無知のヴェール">ジョン・ロールズ：無知のヴェール</h3>
-<blockquote>
-<p>原初状態はもちろん、実際に起こった歴史的事態としてみなされるものではないし、ましてや文化が生まれる原始的条件でもない。それは，正義の一定の構想を導くために特徴付けられる、純粋に仮想的な状況として理解されるものだ。<em>この状況の本質的特徴には、いかなる者も社会における自分の地位、すなわち階級的立場ないし社会的地位を知らないということ、いかなる者も知性や強さといった自然的資産や能力の配分上の無形の財産について知らないということなどが含まれる</em>。私は、当事者が自身の善の構想やおのおのに特有の心理的な性向についても知らないということさえも仮定する。正義の原理は、無知のヴェールの背後で選ばれるのである。このことが原理の選択の際に、誰もが自然のチャンスの結果や社会環境の偶然性によって利益ないし不利益を被らない、ということを保証するのである。<em>すべての人間が同じような状況に置かれ、誰も自分の特定の条件に有利なように原理を企図できないがゆえに、正義の原理は公正な合意や交渉の結果となる。というのも、全成員の相互の関係が対称性を有しているという原初状態を所与とすれば、こうした初期状況は道徳的人格とされる諸々の個人にとって公正なものとなるからだ</em>。ここで道徳的人格とは、自分自身の目的をもち、正義感覚を発揮うることが想定される合理的存在のことである（<span class="citation" data-cites="RawlsJ:2010book1_translJA">ロールズ，ジョン と 川本隆史・福間聡・神島裕子（訳） (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2010</a>)</span>, 18）</p>
+</section></section><section id="政治学者の考える平等と不平等-1" class="level2"><h2 class="anchored" data-anchor-id="政治学者の考える平等と不平等-1">政治学者の考える平等と不平等</h2>
+<section id="ジョンロールズ無知のヴェール" class="level3"><h3 class="anchored" data-anchor-id="ジョンロールズ無知のヴェール">ジョン・ロールズ：無知のヴェール</h3>
+<blockquote class="blockquote">
+<p>原初状態はもちろん、実際に起こった歴史的事態としてみなされるものではないし、ましてや文化が生まれる原始的条件でもない。それは，正義の一定の構想を導くために特徴付けられる、純粋に仮想的な状況として理解されるものだ。<em>この状況の本質的特徴には、いかなる者も社会における自分の地位、すなわち階級的立場ないし社会的地位を知らないということ、いかなる者も知性や強さといった自然的資産や能力の配分上の無形の財産について知らないということなどが含まれる</em>。私は、当事者が自身の善の構想やおのおのに特有の心理的な性向についても知らないということさえも仮定する。正義の原理は、無知のヴェールの背後で選ばれるのである。このことが原理の選択の際に、誰もが自然のチャンスの結果や社会環境の偶然性によって利益ないし不利益を被らない、ということを保証するのである。<em>すべての人間が同じような状況に置かれ、誰も自分の特定の条件に有利なように原理を企図できないがゆえに、正義の原理は公正な合意や交渉の結果となる。というのも、全成員の相互の関係が対称性を有しているという原初状態を所与とすれば、こうした初期状況は道徳的人格とされる諸々の個人にとって公正なものとなるからだ</em>。ここで道徳的人格とは、自分自身の目的をもち、正義感覚を発揮うることが想定される合理的存在のことである（<span class="citation" data-cites="RawlsJ:2010book1_translJA">ロールズ，ジョン and 川本隆史・福間聡・神島裕子（訳） (<a href="#ref-RawlsJ:2010book1_translJA" role="doc-biblioref">2010</a>)</span>, 18）</p>
 </blockquote>
-</section>
-<section id="社会学者の考える日本の分断" class="slide level2">
-<h2>社会学者の考える日本の分断</h2>
-<h3 id="吉川徹日本の分断切り離される非大卒若者たち">吉川徹『日本の分断：切り離される非大卒若者たち』</h3>
-<blockquote>
+</section></section><section id="社会学者の考える日本の分断" class="level2"><h2 class="anchored" data-anchor-id="社会学者の考える日本の分断">社会学者の考える日本の分断</h2>
+<section id="吉川徹日本の分断切り離される非大卒若者たち" class="level3"><h3 class="anchored" data-anchor-id="吉川徹日本の分断切り離される非大卒若者たち">吉川徹『日本の分断：切り離される非大卒若者たち』</h3>
+<blockquote class="blockquote">
 <p>なかでも現代日本の特徴である大卒層と非大卒層の分断の深刻さに注目。<em>同世代の5割を占め、日本社会の底堅さを支える非大卒若者（レッグス）を社会の宝と捉え、配慮と共生を図ることの重要性を訴える</em>。</p>
 </blockquote>
-<blockquote>
-<p>しかし、この図のような分断社会日本の実像は、多くの人にはみえていません。それは、<em>現代日本社会が、大学に行かずに20歳前後で社会に出た若い男性労働者たちを、直視していない</em>からです。そもそも、わたしたちは彼らを呼ぶ名前をもっていません。名前のないもの ごとは、可視化することも、問題性を論じることもできません。〔原文改行〕<em>現代日本は、学歴分断を言葉にすることをタブーとみなしている社会なのですから、社会集団としての彼らに、固有の呼び名がないのは当然といえば当然かもしれません</em>。考えてみると、<em>「非大卒」というのは、本来望まれる大学進学をしなかった人たち……という消極的な意味しかもたない言葉</em>です。まさに、極めつきの「○○じゃないやつ」なのです。〔略〕レッグス(脚)という言葉には、日本社会を下支えしている人たちという含みもあります。〔225〕<em>わたしたちが直面している分断とは、日本社会の1割強にあたるこのレッグスたちが、まさに「足切り」されようとしているという問題</em>なのです（<span class="citation" data-cites="KikkawaT:2019book1">吉川 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2018</a>)</span>, 221-225）。</p>
+<blockquote class="blockquote">
+<p>しかし、この図のような分断社会日本の実像は、多くの人にはみえていません。それは、<em>現代日本社会が、大学に行かずに20歳前後で社会に出た若い男性労働者たちを、直視していない</em>からです。そもそも、わたしたちは彼らを呼ぶ名前をもっていません。名前のないもの ごとは、可視化することも、問題性を論じることもできません。〔原文改行〕<em>現代日本は、学歴分断を言葉にすることをタブーとみなしている社会なのですから、社会集団としての彼らに、固有の呼び名がないのは当然といえば当然かもしれません</em>。考えてみると、<em>「非大卒」というのは、本来望まれる大学進学をしなかった人たち……という消極的な意味しかもたない言葉</em>です。まさに、極めつきの「○○じゃないやつ」なのです。〔略〕レッグス(脚)という言葉には、日本社会を下支えしている人たちという含みもあります。〔225〕<em>わたしたちが直面している分断とは、日本社会の1割強にあたるこのレッグスたちが、まさに「足切り」されようとしているという問題</em>なのです（<span class="citation" data-cites="KikkawaT:2019book1">吉川 (<a href="#ref-KikkawaT:2019book1" role="doc-biblioref">2018</a>)</span>, 221-225）。</p>
 </blockquote>
-</section>
-<section id="社会学者の考える日本の分断-吉川徹日本の分断" class="slide level2">
-<h2>社会学者の考える日本の分断 &gt; 吉川徹『日本の分断』</h2>
-<blockquote>
-<p>ここで、現代日本の時代の流れのなかでの、レッグスたちの位置づけを論じ直しておきましょう。そうしなければ、レッグスという言葉は、ことによると、あらぬ方向に向かって一人歩きしかねません。〔原文改行〕まず、<em>彼らが世代を超えて再生産される筋道をたどっておきます</em>。〔原文改行〕現代日本社会の現役世代の夫婦の内訳は、大卒同類婚が約35%、非大卒同類婚が約35%で、合わせてほぼ7割、<em>夫と妻の学歴が異なる夫婦は全体の約3割にとどまります</em>。学歴の世代間関係をみると、レッグスたちの両親は、8割以上が同じ非大卒、しかもほとんどが非大卒同類婚であり、ここには強い学歴再生産傾向をみることができます。〔原文改行〕つまり、レッグスたちは、非大卒同類婚の両親を出自とし、非大卒学歴の世代間継承を経て、自らも非大卒同類婚をして、その子どもたちも再び非大卒層となる……という家族形成の流れのなかにあるのです。こうした学歴再生産の流れは、大卒層のほうでも同様にみられます（<span class="citation" data-cites="KikkawaT:2019book1">吉川 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2018</a>)</span>, 225-226）。</p>
+</section></section><section id="社会学者の考える日本の分断-吉川徹日本の分断" class="level2"><h2 class="anchored" data-anchor-id="社会学者の考える日本の分断-吉川徹日本の分断">社会学者の考える日本の分断 &gt; 吉川徹『日本の分断』</h2>
+<blockquote class="blockquote">
+<p>ここで、現代日本の時代の流れのなかでの、レッグスたちの位置づけを論じ直しておきましょう。そうしなければ、レッグスという言葉は、ことによると、あらぬ方向に向かって一人歩きしかねません。〔原文改行〕まず、<em>彼らが世代を超えて再生産される筋道をたどっておきます</em>。〔原文改行〕現代日本社会の現役世代の夫婦の内訳は、大卒同類婚が約35%、非大卒同類婚が約35%で、合わせてほぼ7割、<em>夫と妻の学歴が異なる夫婦は全体の約3割にとどまります</em>。学歴の世代間関係をみると、レッグスたちの両親は、8割以上が同じ非大卒、しかもほとんどが非大卒同類婚であり、ここには強い学歴再生産傾向をみることができます。〔原文改行〕つまり、レッグスたちは、非大卒同類婚の両親を出自とし、非大卒学歴の世代間継承を経て、自らも非大卒同類婚をして、その子どもたちも再び非大卒層となる……という家族形成の流れのなかにあるのです。こうした学歴再生産の流れは、大卒層のほうでも同様にみられます（<span class="citation" data-cites="KikkawaT:2019book1">吉川 (<a href="#ref-KikkawaT:2019book1" role="doc-biblioref">2018</a>)</span>, 225-226）。</p>
 </blockquote>
-</section></section>
-<section>
-<section id="v.-まとめ" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
-<h1>V. まとめ</h1>
-
-</section>
-<section id="高大接続プログラム大学での学びレポート" class="slide level2">
-<h2>高大接続プログラム「大学での学び」レポート</h2>
+</section></section><section id="v.-まとめ" class="level1 page-columns page-full" data-background-color="#113758" data-background-transition="slide"><h1 data-background-color="#113758" data-background-transition="slide">V. まとめ</h1>
+<section id="高大接続プログラム大学での学びレポート" class="level2"><h2 class="anchored" data-anchor-id="高大接続プログラム大学での学びレポート">高大接続プログラム「大学での学び」レポート</h2>
 <ul>
 <li>このプログラムは金沢大学KUGS高大接続プログラム（大学での学び）の対象です
 <ul>
 <li>KUGS高大接続プログラム（の修了）</li>
 <li>➡ 「KUGS特別入試」の出願資格要件</li>
-</ul></li>
-<li>締め切り：開催日(本日)から<strong>1か月以内</strong></li>
-<li>特別入試に興味がある方は<a href="https://kugspro.adm.kanazawa-u.ac.jp">公式サイト</a>をご覧下さい</li>
 </ul>
-</section>
-<section id="高大接続プログラム大学での学びレポート-1" class="slide level2">
-<h2>高大接続プログラム「大学での学び」レポート</h2>
-<h3 id="課題内容">課題内容</h3>
+</li>
+<li>締め切り：開催日(本日)から<strong>1か月以内</strong>
+</li>
+<li>特別入試に興味がある方は<a href="https://kugspro.adm.kanazawa-u.ac.jp">公式サイト</a>をご覧下さい</li>
+</ul></section><section id="高大接続プログラム大学での学びレポート-1" class="level2"><h2 class="anchored" data-anchor-id="高大接続プログラム大学での学びレポート-1">高大接続プログラム「大学での学び」レポート</h2>
+<section id="課題内容" class="level3"><h3 class="anchored" data-anchor-id="課題内容">課題内容</h3>
 <ul>
-<li><strong>題名</strong>:「あなたが受講した個別プログラム名」</li>
-<li><strong>本文</strong>:
+<li>
+<strong>題名</strong>:「あなたが受講した個別プログラム名」</li>
+<li>
+<strong>本文</strong>:
 <ol type="1">
 <li>「受講した個別プログラムの要約」</li>
 <li>「受講して気づいた課題(問題)」</li>
 <li>「その課題(問題)を解決するために必要と思われる方策」について，あなた自身の考えを根拠に基づき具体的に記してください。</li>
-</ol></li>
-</ul>
-<h3 id="注意事項">注意事項</h3>
+</ol>
+</li>
+</ul></section><section id="注意事項" class="level3"><h3 class="anchored" data-anchor-id="注意事項">注意事項</h3>
 <ul>
 <li>要約はこのセミナーに参加していない者が読んでもわかるように書きましょう</li>
 <li>感想文にならないように注意しましょう</li>
-<li><strong>受講して気付いた課題</strong>を明確に書けるかどうかが鍵です</li>
+<li>
+<strong>受講して気付いた課題</strong>を明確に書けるかどうかが鍵です</li>
 <li>課題は内容にかかわる社会的な事柄（自分の事柄ではない）にしましょう</li>
-</ul>
-</section>
-<section id="高大接続プログラム大学での学びレポート-2" class="slide level2">
-<h2>高大接続プログラム「大学での学び」レポート</h2>
-<h3 id="高大接続プログラム-フローチャート">高大接続プログラム フローチャート</h3>
+</ul></section></section><section id="高大接続プログラム大学での学びレポート-2" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="高大接続プログラム大学での学びレポート-2">高大接続プログラム「大学での学び」レポート</h2>
+<section id="高大接続プログラム-フローチャート" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="高大接続プログラム-フローチャート">高大接続プログラム フローチャート</h3>
 <!-- - 別紙参照 -->
-
-<img data-src="../../img/works/高大接続プログラムチャート図2.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p class="caption">フローチャート</p></section>
-<section id="感想とアンケート" class="slide level2">
-<h2>感想とアンケート</h2>
-<h3 id="感想">感想</h3>
-<h3 id="アンケート">アンケート</h3>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="../../img/works/高大接続プログラムチャート図2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="margin-caption">フローチャート</figcaption></figure>
+</div>
+</section></section><section id="感想とアンケート" class="level2"><h2 class="anchored" data-anchor-id="感想とアンケート">感想とアンケート</h2>
+<section id="感想" class="level3"><h3 class="anchored" data-anchor-id="感想">感想</h3>
+</section><section id="アンケート" class="level3"><h3 class="anchored" data-anchor-id="アンケート">アンケート</h3>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
-<li>提出先：<a href="https://forms.office.com/r/PiTpihRSQa">Microsoft Forms</a></li>
+<li>提出先：<a href="https://forms.office.com/r/PiTpihRSQa">Microsoft Forms</a>
+</li>
 <li>締め切り：明日（3月23日（日）23時59分）</li>
 </ul>
 </div><div class="column" style="width:40%;">
-<p><img data-src="img/QR_アンケート_モノポリー.png" style="width:80.0%"> 　</p>
-</div></div>
-</section></section>
-<section>
-<section id="参考文献" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
-<h1>参考文献</h1>
-
-</section>
-<section id="参考文献-1" class="slide level2 smaller scrollable">
-<h2>参考文献</h2>
+<p><img src="img/QR_アンケート_モノポリー.png" class="img-fluid" style="width:80.0%"> 　</p>
+</div>
+</div>
+</section></section></section><section id="参考文献" class="level1" data-background-color="#113758" data-background-transition="slide"><h1 data-background-color="#113758" data-background-transition="slide">参考文献</h1>
+<section id="参考文献-1" class="level2">
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">参考文献</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-SandelJM:2021book1_translJA" class="csl-entry" role="listitem">
+サンデル，マイケル, 鬼澤忍（訳）, 2021. 実力も運のうち: 能力主義は正義か？. 早川書房.
+</div>
 <div id="ref-FergusonN:2015book_translJA" class="csl-entry" role="listitem">
 ファーガソン，ニーアル, 仙名紀(訳)., 2015. マネーの進化史. 早川書房.
-</div>
-<div id="ref-KikkawaT:2019book1" class="csl-entry" role="listitem">
-吉川徹., 2018. 日本の分断：切り離される非大卒若者たち. 光文社.
 </div>
 <div id="ref-RawlsJ:2010book1_translJA" class="csl-entry" role="listitem">
 ロールズ，ジョン, 川本隆史・福間聡・神島裕子（訳）, 2010. 正義論（改訂版）. 紀伊國屋書店.
 </div>
-<div id="ref-SandelJM:2021book1_translJA" class="csl-entry" role="listitem">
-サンデル，マイケル, 鬼澤忍（訳）, 2021. 実力も運のうち: 能力主義は正義か？. 早川書房.
+<div id="ref-KikkawaT:2019book1" class="csl-entry" role="listitem">
+吉川徹., 2018. 日本の分断：切り離される非大卒若者たち. 光文社.
 </div>
-</div>
-</section></section>
+</div></section></div></main><!-- /main --><script>
+  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+  // slide changes (different for each slide format).
+  (function () {
+    // dispatch for htmlwidgets
+    function fireSlideEnter() {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    }
 
-    </div>
-  <div class="quarto-auto-generated-content" style="display: none;">
-<div class="footer footer-default">
+    function fireSlideChanged(previousSlide, currentSlide) {
+      fireSlideEnter();
 
-</div>
-</div></div>
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
+    }
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
-  <script src="../../site_libs/revealjs/plugin/multimodal/multimodal.js"></script>
-  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
-
-      // Full list of configuration options available at:
-      // https://revealjs.com/config/
-      Reveal.initialize({
-'controlsAuto': true,
-'previewLinksAuto': false,
-'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
-'autoAnimateUnmatched': true,
-'jumpToSlide': true,
-'scrollProgress': "true",
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true,"width":"wide","numbers":true},
-'chalkboard': {"buttons":false},
-'pointer': {"key":"q","color":"red","pointerSize":16,"alwaysVisible":false},
-'smaller': false,
- 
-        // Display controls in the bottom right corner
-        controls: false,
-
-        // Help the user learn the controls by providing hints, for example by
-        // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: true,
-
-        // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'bottom-right',
-
-        // Visibility rule for backwards navigation arrows; "faded", "hidden"
-        // or "visible"
-        controlsBackArrows: 'faded',
-
-        // Display a presentation progress bar
-        progress: true,
-
-        // Display the page number of the current slide
-        slideNumber: 'h.v',
-
-        // 'all', 'print', or 'speaker'
-        showSlideNumber: 'all',
-
-        // Add the current slide number to the URL hash so that reloading the
-        // page/copying the URL will return you to the same slide
-        hash: true,
-
-        // Start with 1 for the hash rather than 0
-        hashOneBasedIndex: false,
-
-        // Flags if we should monitor the hash and change slides accordingly
-        respondToHashChanges: true,
-
-        // Push each slide change to the browser history
-        history: true,
-
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-
-        // Enable the slide overview mode
-        overview: true,
-
-        // Disables the default reveal.js slide layout (scaling and centering)
-        // so that you can use custom CSS layout
-        disableLayout: false,
-
-        // Vertical centering of slides
-        center: false,
-
-        // Enables touch navigation on devices with touch input
-        touch: true,
-
-        // Loop the presentation
-        loop: false,
-
-        // Change the presentation direction to be RTL
-        rtl: false,
-
-        // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'default',
-
-        // Randomizes the order of slides each time the presentation loads
-        shuffle: false,
-
-        // Turns fragments on and off globally
-        fragments: true,
-
-        // Flags whether to include the current fragment in the URL,
-        // so that reloading brings you to the same fragment position
-        fragmentInURL: false,
-
-        // Flags if the presentation is running in an embedded mode,
-        // i.e. contained within a limited portion of the screen
-        embedded: false,
-
-        // Flags if we should show a help overlay when the questionmark
-        // key is pressed
-        help: true,
-
-        // Flags if it should be possible to pause the presentation (blackout)
-        pause: true,
-
-        // Flags if speaker notes should be visible to all viewers
-        showNotes: false,
-
-        // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: null,
-
-        // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
-
-        // Number of milliseconds between automatically proceeding to the
-        // next slide, disabled when set to 0, this value can be overwritten
-        // by using a data-autoslide attribute on your slides
-        autoSlide: 0,
-
-        // Stop auto-sliding after user input
-        autoSlideStoppable: true,
-
-        // Use this method for navigation when auto-sliding
-        autoSlideMethod: null,
-
-        // Specify the average time in seconds that you think you will spend
-        // presenting each slide. This is used to show a pacing timer in the
-        // speaker view
-        defaultTiming: null,
-
-        // Enable slide navigation via mouse wheel
-        mouseWheel: false,
-
-        // The display mode that will be used to show slides
-        display: 'block',
-
-        // Hide cursor if inactive
-        hideInactiveCursor: true,
-
-        // Time before the cursor is hidden (in ms)
-        hideCursorTime: 5000,
-
-        // Opens links in an iframe preview overlay
-        previewLinks: false,
-
-        // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
-
-        // Transition speed (default/fast/slow)
-        transitionSpeed: 'default',
-
-        // Transition style for full page slide backgrounds
-        // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'fade',
-
-        // Number of slides away from the current that are visible
-        viewDistance: 3,
-
-        // Number of slides away from the current that are visible on mobile
-        // devices. It is advisable to set this to a lower number than
-        // viewDistance in order to save resources.
-        mobileViewDistance: 2,
-
-        // The "normal" size of the presentation, aspect ratio will be preserved
-        // when the presentation is scaled to fit different resolutions. Can be
-        // specified using percentage units.
-        width: 1050,
-
-        height: 700,
-
-        // Factor of the display size that should remain empty around the content
-        margin: 0.1,
-
-        math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
-
-        // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, Multimodal, QuartoSupport,
-
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
-        ]
+    // hookup for slidy
+    if (window.w3c_slidy) {
+      window.w3c_slidy.add_observer(function (slide_num) {
+        // slide_num starts at position 1
+        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
       });
-    </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
+    }
 
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
+  })();
+</script><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/kariyach\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
           }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
-    <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
+          // default icon
+          link.classList.add("external");
       }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
-          }
-        }
-        return false;
-      }
-      const onCopySuccess = function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "コピーしました");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "コピーしました");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
-      });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/kariyach\.github\.io\/");
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
-          });
-        }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
       }
     });
-    </script>
-    
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block">© 2024 CHIHIRO KARIYA</span></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Made with <i class="fa-brands fa-r-project" aria-label="R Project"></i> and <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
 
 </body></html>
