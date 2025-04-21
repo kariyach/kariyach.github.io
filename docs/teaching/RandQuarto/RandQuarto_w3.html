@@ -5,8 +5,8 @@
 <meta name="generator" content="quarto-1.6.43">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="苅谷 千尋">
-<meta name="keywords" content="データの読み込み；ggplot2；マッピングとレイヤー">
-<title>RとQuartoではじめるデータサイエンス：データを可視化する《2024》 – CHIHIRO KARIYA</title>
+<meta name="keywords" content="ggplot2；マッピングとレイヤー；データの読み込み">
+<title>RとQuartoではじめるデータサイエンス：データを可視化する《2025》 – CHIHIRO KARIYA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,6 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script><style>html{ scroll-behavior: smooth; }</style>
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script><script src="../../site_libs/quarto-diagram/mermaid-init.js"></script><link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="../../style_ja.css">
@@ -193,7 +192,7 @@ div.csl-indent {
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス：データを可視化する《2024》</a></h1>
+      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス：データを可視化する《2025》</a></h1>
             <p class="subtitle lead">#3 Visualization (1)</p>
                       </div>
   </div>
@@ -218,14 +217,14 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">26, Jun, 2024</p>
+        <p class="date">Fri, 25, Apr, 2025</p>
       </div>
     </div>
     
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">21, Apr, 2025</p>
+        <p class="date-modified">Mon, 21, Apr, 2025</p>
       </div>
     </div>
       
@@ -235,7 +234,7 @@ div.csl-indent {
   <div>
     <div class="keywords">
       <div class="block-title">Keywords</div>
-      <p>データの読み込み；ggplot2；マッピングとレイヤー</p>
+      <p>ggplot2；マッピングとレイヤー；データの読み込み</p>
     </div>
   </div>
   
@@ -249,29 +248,27 @@ div.csl-indent {
 <li>
 <a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A" id="toc-前回の振り返り" class="nav-link active" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A">Ⅰ. 前回の振り返り</a>
   <ul class="collapse">
-<li><a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3" id="toc-前回の授業の感想" class="nav-link" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3">1. 前回の「授業の感想」</a></li>
-  <li><a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E8%A3%9C%E8%B6%B3%E5%A4%9A%E6%A7%98%E3%81%AA%E6%95%B0%E5%AD%97%E3%81%AE%E5%9E%8B" id="toc-前回の補足多様な数字の型" class="nav-link" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E8%A3%9C%E8%B6%B3%E5%A4%9A%E6%A7%98%E3%81%AA%E6%95%B0%E5%AD%97%E3%81%AE%E5%9E%8B">2. 前回の補足：多様な数字の型</a></li>
-  <li><a href="#%E6%95%99%E5%93%A1%E3%81%AE%E4%BD%9C%E6%A5%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%85%B1%E6%9C%89" id="toc-教員の作業ファイルの共有" class="nav-link" data-scroll-target="#%E6%95%99%E5%93%A1%E3%81%AE%E4%BD%9C%E6%A5%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%85%B1%E6%9C%89">3. 教員の作業ファイルの共有</a></li>
-  <li><a href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E6%B5%81%E3%82%8Cdplyr%E3%81%A8ggplot" id="toc-基本的な流れdplyrとggplot" class="nav-link" data-scroll-target="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E6%B5%81%E3%82%8Cdplyr%E3%81%A8ggplot">4. 基本的な流れ：dplyrとggplot</a></li>
+<li><a href="#%E3%83%91%E3%82%A4%E3%83%97%E3%81%AA%E3%81%97" id="toc-パイプなし" class="nav-link" data-scroll-target="#%E3%83%91%E3%82%A4%E3%83%97%E3%81%AA%E3%81%97">1. パイプなし</a></li>
+  <li><a href="#%E3%83%91%E3%82%A4%E3%83%97%E3%81%82%E3%82%8A" id="toc-パイプあり" class="nav-link" data-scroll-target="#%E3%83%91%E3%82%A4%E3%83%97%E3%81%82%E3%82%8A">2. パイプあり</a></li>
   </ul>
 </li>
   <li>
-<a href="#%E5%AE%9F%E7%BF%92%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E7%A2%BA%E8%AA%8D" id="toc-実習ファイルの確認" class="nav-link" data-scroll-target="#%E5%AE%9F%E7%BF%92%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E7%A2%BA%E8%AA%8D">Ⅱ. 実習ファイルの確認</a>
+<a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E8%A3%9C%E8%B6%B3%E3%81%A8%E7%A9%8D%E3%81%BF%E6%AE%8B%E3%81%97" id="toc-前回の補足と積み残し" class="nav-link" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E8%A3%9C%E8%B6%B3%E3%81%A8%E7%A9%8D%E3%81%BF%E6%AE%8B%E3%81%97">Ⅱ. 前回の補足と積み残し</a>
   <ul class="collapse">
-<li><a href="#%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF%E3%81%AE%E4%BD%9C%E6%88%90%E8%A8%AD%E5%AE%9A" id="toc-セットアップチャンクの作成設定" class="nav-link" data-scroll-target="#%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF%E3%81%AE%E4%BD%9C%E6%88%90%E8%A8%AD%E5%AE%9A">1. セットアップチャンクの作成（設定）</a></li>
-  <li><a href="#%E7%A9%BA%E7%99%BD%E6%96%87%E5%AD%97%E3%81%AE%E5%8F%AF%E8%A6%96%E5%8C%96" id="toc-空白文字の可視化" class="nav-link" data-scroll-target="#%E7%A9%BA%E7%99%BD%E6%96%87%E5%AD%97%E3%81%AE%E5%8F%AF%E8%A6%96%E5%8C%96">2. 空白文字の可視化</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF" id="toc-データの読み込み" class="nav-link" data-scroll-target="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF">Ⅲ. データの読み込み</a>
+<li>
+<a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E8%A3%9C%E8%B6%B3" id="toc-前回の補足" class="nav-link" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E8%A3%9C%E8%B6%B3">1. 前回の補足</a>
   <ul class="collapse">
-<li><a href="#csv-read_csv%E9%96%A2%E6%95%B0" id="toc-csv-read_csv関数" class="nav-link" data-scroll-target="#csv-read_csv%E9%96%A2%E6%95%B0">1. csv: read_csv()関数</a></li>
-  <li><a href="#%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-readxl%E9%96%A2%E6%95%B0" id="toc-エクセルファイル-readxl関数" class="nav-link" data-scroll-target="#%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-readxl%E9%96%A2%E6%95%B0">2. エクセルファイル: readxl()関数</a></li>
-  <li><a href="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%E3%81%A8%E5%9E%8B" id="toc-データの読み込みと型" class="nav-link" data-scroll-target="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%E3%81%A8%E5%9E%8B">3. データの読み込みと型</a></li>
+<li><a href="#%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0render%E3%81%A8run" id="toc-レンダリングrenderとrun" class="nav-link" data-scroll-target="#%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0render%E3%81%A8run">⑴ レンダリング（render）とrun</a></li>
+  <li><a href="#markdown%E3%81%A8rcode" id="toc-markdownとrcode" class="nav-link" data-scroll-target="#markdown%E3%81%A8rcode">⑵ markdownとrcode</a></li>
+  <li><a href="#%E5%A4%9A%E6%A7%98%E3%81%AA%E6%95%B0%E5%AD%97%E3%81%AE%E5%9E%8B" id="toc-多様な数字の型" class="nav-link" data-scroll-target="#%E5%A4%9A%E6%A7%98%E3%81%AA%E6%95%B0%E5%AD%97%E3%81%AE%E5%9E%8B">⑶ 多様な数字の型</a></li>
+  <li><a href="#%E6%95%99%E5%93%A1%E3%81%AE%E4%BD%9C%E6%A5%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%85%B1%E6%9C%89" id="toc-教員の作業ファイルの共有" class="nav-link" data-scroll-target="#%E6%95%99%E5%93%A1%E3%81%AE%E4%BD%9C%E6%A5%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%85%B1%E6%9C%89">⑷ 教員の作業ファイルの共有</a></li>
+  </ul>
+</li>
+  <li><a href="#%E7%A9%8D%E3%81%BF%E6%AE%8B%E3%81%97" id="toc-積み残し" class="nav-link" data-scroll-target="#%E7%A9%8D%E3%81%BF%E6%AE%8B%E3%81%97">1. 積み残し</a></li>
   </ul>
 </li>
   <li>
-<a href="#%E5%9B%B3%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B" id="toc-図を作ってみる" class="nav-link" data-scroll-target="#%E5%9B%B3%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B">Ⅳ. 図を作ってみる</a>
+<a href="#%E5%9B%B3%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B" id="toc-図を作ってみる" class="nav-link" data-scroll-target="#%E5%9B%B3%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B">Ⅲ. 図を作ってみる</a>
   <ul class="collapse">
 <li><a href="#%E6%9C%80%E5%88%9D%E3%81%AE%E5%9B%B3%E3%82%92%E4%BD%9C%E3%82%8D%E3%81%86" id="toc-最初の図を作ろう" class="nav-link" data-scroll-target="#%E6%9C%80%E5%88%9D%E3%81%AE%E5%9B%B3%E3%82%92%E4%BD%9C%E3%82%8D%E3%81%86">1. 最初の図を作ろう</a></li>
   <li><a href="#ggplot%E3%81%AF%E3%81%A9%E3%81%86%E3%82%84%E3%81%A3%E3%81%A6%E5%8B%95%E3%81%8F%E3%81%AE%E3%81%8B" id="toc-ggplotはどうやって動くのか" class="nav-link" data-scroll-target="#ggplot%E3%81%AF%E3%81%A9%E3%81%86%E3%82%84%E3%81%A3%E3%81%A6%E5%8B%95%E3%81%8F%E3%81%AE%E3%81%8B">2. ggplotはどうやって動くのか</a></li>
@@ -288,8 +285,17 @@ div.csl-indent {
   <li><a href="#%E7%9B%B8%E9%96%A2%E4%BF%82%E6%95%B0%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B" id="toc-相関係数を追加する" class="nav-link" data-scroll-target="#%E7%9B%B8%E9%96%A2%E4%BF%82%E6%95%B0%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B">⑵ 相関係数を追加する</a></li>
   <li><a href="#%E3%83%A9%E3%83%99%E3%83%AB%E5%9B%BD%E5%90%8D%E3%82%92%E8%B6%B3%E3%81%99" id="toc-ラベル国名を足す" class="nav-link" data-scroll-target="#%E3%83%A9%E3%83%99%E3%83%AB%E5%9B%BD%E5%90%8D%E3%82%92%E8%B6%B3%E3%81%99">⑶ ラベル（国名）を足す</a></li>
   <li><a href="#%E6%9D%A1%E4%BB%B6%E3%82%92%E6%BA%80%E3%81%9F%E3%81%99%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%82%92%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%99%E3%82%8B" id="toc-条件を満たすオブジェクトをハイライトする" class="nav-link" data-scroll-target="#%E6%9D%A1%E4%BB%B6%E3%82%92%E6%BA%80%E3%81%9F%E3%81%99%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%82%92%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%99%E3%82%8B">⑷ 条件を満たすオブジェクトをハイライトする</a></li>
+  <li><a href="#%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E8%A8%AD%E5%AE%9A" id="toc-オプション設定" class="nav-link" data-scroll-target="#%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E8%A8%AD%E5%AE%9A">⑸ オプション設定</a></li>
   </ul>
 </li>
+  </ul>
+</li>
+  <li>
+<a href="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF" id="toc-データの読み込み" class="nav-link" data-scroll-target="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF">Ⅳ. データの読み込み</a>
+  <ul class="collapse">
+<li><a href="#csv-read_csv%E9%96%A2%E6%95%B0" id="toc-csv-read_csv関数" class="nav-link" data-scroll-target="#csv-read_csv%E9%96%A2%E6%95%B0">1. csv: read_csv()関数</a></li>
+  <li><a href="#%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-readxl%E9%96%A2%E6%95%B0" id="toc-エクセルファイル-readxl関数" class="nav-link" data-scroll-target="#%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-readxl%E9%96%A2%E6%95%B0">2. エクセルファイル: readxl()関数</a></li>
+  <li><a href="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%E3%81%A8%E5%9E%8B" id="toc-データの読み込みと型" class="nav-link" data-scroll-target="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%E3%81%A8%E5%9E%8B">3. データの読み込みと型</a></li>
   </ul>
 </li>
   <li>
@@ -303,7 +309,8 @@ div.csl-indent {
 <a href="#%E5%AE%BF%E9%A1%8C" id="toc-宿題" class="nav-link" data-scroll-target="#%E5%AE%BF%E9%A1%8C">Ⅵ. 宿題</a>
   <ul class="collapse">
 <li><a href="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3" id="toc-授業の感想" class="nav-link" data-scroll-target="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3">1. 授業の感想</a></li>
-  <li><a href="#%E5%8F%AF%E8%A6%96%E5%8C%96%E3%81%97%E3%81%9F%E3%81%84%E3%83%87%E3%83%BC%E3%82%BF" id="toc-可視化したいデータ" class="nav-link" data-scroll-target="#%E5%8F%AF%E8%A6%96%E5%8C%96%E3%81%97%E3%81%9F%E3%81%84%E3%83%87%E3%83%BC%E3%82%BF">2. 可視化したいデータ</a></li>
+  <li><a href="#%E6%BC%94%E7%BF%92" id="toc-演習" class="nav-link" data-scroll-target="#%E6%BC%94%E7%BF%92">2. 演習</a></li>
+  <li><a href="#%E5%8F%AF%E8%A6%96%E5%8C%96%E3%81%97%E3%81%9F%E3%81%84%E3%83%87%E3%83%BC%E3%82%BF" id="toc-可視化したいデータ" class="nav-link" data-scroll-target="#%E5%8F%AF%E8%A6%96%E5%8C%96%E3%81%97%E3%81%9F%E3%81%84%E3%83%87%E3%83%BC%E3%82%BF">3. 可視化したいデータ</a></li>
   </ul>
 </li>
   <li><a href="#%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE" id="toc-引用文献" class="nav-link" data-scroll-target="#%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE">引用文献</a></li>
@@ -311,10 +318,83 @@ div.csl-indent {
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block page-columns page-full column-page-left" id="quarto-document-content"><section id="前回の振り返り" class="level1"><h1>Ⅰ. 前回の振り返り</h1>
-<section id="前回の授業の感想" class="level2"><h2 class="anchored" data-anchor-id="前回の授業の感想">1. 前回の「授業の感想」</h2>
 <ul>
-<li>別紙参照</li>
-</ul></section><section id="前回の補足多様な数字の型" class="level2"><h2 class="anchored" data-anchor-id="前回の補足多様な数字の型">2. 前回の補足：多様な数字の型</h2>
+<li>前回の「授業の感想」（別紙参照）</li>
+<li>Q. 齊藤さんの質問「viewの後の（）が空欄であるのは，なぜなのでしょうか？」
+<ul>
+<li>A. コードの冒頭で、使用するデータフレームを指定しているからです</li>
+<li>コードの都合上、head関数を使っていますが、view関数や他の関数でも同じです</li>
+</ul>
+</li>
+</ul>
+<section id="パイプなし" class="level2"><h2 class="anchored" data-anchor-id="パイプなし">1. パイプなし</h2>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">penguins</span><span class="op">)</span> <span class="co"># ()内の最初の引数は、本来は（パイプを使わない場合は）「データフレーム」を指定します</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+1 Adelie  Torgersen           39.1          18.7               181        3750
+2 Adelie  Torgersen           39.5          17.4               186        3800
+3 Adelie  Torgersen           40.3          18                 195        3250
+4 Adelie  Torgersen           NA            NA                  NA          NA
+5 Adelie  Torgersen           36.7          19.3               193        3450
+6 Adelie  Torgersen           39.3          20.6               190        3650
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+</div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 関数のたびにデータを指定する必要があります</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>データフレームを加工し、図を描画する場合、その都度、代入する必要がある（処理をつなげられない）</li>
+</ul></section><section id="パイプあり" class="level2"><h2 class="anchored" data-anchor-id="パイプあり">2. パイプあり</h2>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># headの()の空白は、データフレームをパイプ（head関数に渡す前に）ですでに指示済みであることを意味します</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+1 Adelie  Torgersen           39.1          18.7               181        3750
+2 Adelie  Torgersen           39.5          17.4               186        3800
+3 Adelie  Torgersen           40.3          18                 195        3250
+4 Adelie  Torgersen           NA            NA                  NA          NA
+5 Adelie  Torgersen           36.7          19.3               193        3450
+6 Adelie  Torgersen           39.3          20.6               190        3650
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+</div>
+</div>
+<ul>
+<li>データフレームを別の形で保存したいなどの場合を除き、代入不要（処理をつなげられる）</li>
+<li>特定の指示をする場合、()に何か入れることはありますが、データは指定しません。headの第2引数は表示する行数の指定です（デフォルトは6行）</li>
+<li>headの第1引数で、あらためてデータフレームを指定すると、2重にデータフレームを指定したことになり、エラーになる</li>
+</ul>
+<p><img src="img/第1引数エラー.png" class="img-fluid"></p>
+</section></section><section id="前回の補足と積み残し" class="level1"><h1>Ⅱ. 前回の補足と積み残し</h1>
+<section id="前回の補足" class="level2"><h2 class="anchored" data-anchor-id="前回の補足">1. 前回の補足</h2>
+<section id="レンダリングrenderとrun" class="level3"><h3 class="anchored" data-anchor-id="レンダリングrenderとrun">⑴ レンダリング（render）とrun</h3>
+<ul>
+<li>render：描画。YAMLのformatで設定した形式のファイルが出力される
+<ul>
+<li>すべてのrのコードを実行し、ファイルを出力</li>
+<li>出力先：quartoと同じフォルダ</li>
+<li>Viewer画面でも確認できる</li>
+<li>自動的にブラウザが開く場合もある（設定？）</li>
+</ul>
+</li>
+<li>run：rの実行
+<ul>
+<li>図や表の出力に関数する関数がある場合、chunkの下に描画される</li>
+</ul>
+</li>
+</ul></section><section id="markdownとrcode" class="level3"><h3 class="anchored" data-anchor-id="markdownとrcode">⑵ markdownとrcode</h3>
+<ul>
+<li>YAMLとrchunkで囲んだ箇所以外は、rmarkdownのコード領域です</li>
+<li>特に<code>#</code>記号（ハッシュ）のもつ意味が、rchunkとrmarkdownで異なります
+<ul>
+<li>rchunk: コメントアウト（コードを実行しない領域）</li>
+<li>rmarkdown: 見出し</li>
+</ul>
+</li>
+</ul></section><section id="多様な数字の型" class="level3"><h3 class="anchored" data-anchor-id="多様な数字の型">⑶ 多様な数字の型</h3>
 <ul>
 <li>num: numeric, 数値
 <ul>
@@ -340,88 +420,472 @@ integer型とdouble型
 </ul>
 </div>
 </div>
-</section><section id="教員の作業ファイルの共有" class="level2"><h2 class="anchored" data-anchor-id="教員の作業ファイルの共有">3. 教員の作業ファイルの共有</h2>
+</section><section id="教員の作業ファイルの共有" class="level3"><h3 class="anchored" data-anchor-id="教員の作業ファイルの共有">⑷ 教員の作業ファイルの共有</h3>
 <ul>
-<li>毎回授業後に、教員の作業ファイルをアップロードします。何をどうしたのか、わからない場合はこのファイルを使って確認して下さい</li>
-<li><a href="https://drive.google.com/drive/folders/17TQGy7zkHA6ZMUYMS0yhoZ7tHuGlebMi?usp=sharing">Google Drive</a></li>
+<li>毎回授業後に、教員の作業ファイルをアップロードします。何をどうしたのか、わからない場合はこのファイルを使って確認して下さい（欠席者も確認ください）
+<ul>
+<li><a href="https://drive.google.com/drive/folders/1vHq0Zjhfso5VP-FACcw2UXwkYfIh7-5Y?usp=share_link">Google Drive</a></li>
 </ul>
+</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ファイルとフォルダ
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>授業用.qmdだけでなく、フォルダ（例：dataフォルダやimgフォルダ）も必ずダウンロードしてください</li>
+<li>たとえば、qmdでimgフォルダ内の画像を指定しているため、フォルダも一緒にダウンロードしなければエラーがおこります
+<ul>
+<li>エラー「imgファイルがありません」</li>
+</ul>
+</li>
+<li>その他、再現できない可能性があるとすれば、packageをインストールしていない場合です（エラーが出るのでわかるはずです）</li>
+</ul>
+</div>
+</div>
+</section></section><section id="積み残し" class="level2"><h2 class="anchored" data-anchor-id="積み残し">1. 積み残し</h2>
+<ul>
+<li>
+<a href="RandQuarto_w2.html#実習">Ⅷ. 実習</a>
+<ul>
+<li>「3. （時間に余裕がある人だけ）：横持ちデータと縦持ちデータ」は除く</li>
+</ul>
+</li>
+</ul></section></section><section id="図を作ってみる" class="level1"><h1>Ⅲ. 図を作ってみる</h1>
+<section id="最初の図を作ろう" class="level2"><h2 class="anchored" data-anchor-id="最初の図を作ろう">1. 最初の図を作ろう</h2>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>教科書93-94ページにしたがって作業して下さい</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>gapminderは、スウェーデンの非営利団体が提供するデータセットです。各国の社会状況のわかるデータが収められています。無料で利用できます（<a href="https://www.gapminder.org">公式サイト</a>）。</p>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>setupチャンクに、library()関数を使って、gapminderを読み込む（先週までのsetupチャンクに書き足せばよい）</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>新しいチャンクを作って、データを確認する</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 最初の6行のみ出力</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  country     continent  year lifeExp      pop gdpPercap
+  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+1 Afghanistan Asia       1952    28.8  8425333      779.
+2 Afghanistan Asia       1957    30.3  9240934      821.
+3 Afghanistan Asia       1962    32.0 10267083      853.
+4 Afghanistan Asia       1967    34.0 11537966      836.
+5 Afghanistan Asia       1972    36.1 13079460      740.
+6 Afghanistan Asia       1977    38.4 14880372      786.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">view</span><span class="op">(</span><span class="op">)</span> <span class="co"># view()関数をつかって、データを確認</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>skim(), head(), view()関数は、データを確認するうえでとても重要です。いま、自分が何をしているのか、またエラーが出て対処できなくなったときは、まずデータを確認する癖をつけましょう</p>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>図を作ってみましょう。まずは値が数字の二つのカラムから散布図を作ろう。 上と同じチャンクに以下のコードを書いてみましょう</li>
+</ol>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>教科書とは異なり、パイプを使ってコードを書いています。また、省略可能な関数は省略しています（教科書は原則を教えるために、まずパイプなしの書き方を教えていますが、実際はパイプを使ったコードを推奨しています）</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>カラム名を指定して操作している点に注意（わかりやすく、短いカラム名にすることが大事）</p>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>余裕がある受講生は、他のカラムも使って図を作ってみましょう。散布図はデータの型が数字である二つのデータが必要です</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">pop</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">pop</span><span class="op">)</span> <span class="op">|&gt;</span>  </span>
+<span>  <span class="fu">corr.test</span><span class="op">(</span><span class="op">)</span> <span class="co">#相関係数</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="ggplotはどうやって動くのか" class="level2"><h2 class="anchored" data-anchor-id="ggplotはどうやって動くのか">2. ggplotはどうやって動くのか</h2>
+<blockquote class="blockquote">
+<p>ggplotを使う上で最も大切なことは、ggplotを使って作りたい<strong>プロットの論理的な構造を考えること</strong>です。あなたが記述するコードはデータにある変数（群）と、色・点・形状といったスクリーンに表示される要素を結びつけます。ggplotでは、こうしたデータとプロット要素の接続性は、審美的要素のマッピング (aesthetic mappings) もしくは単に審美的要素（エセティクス, aesthetics） と呼ばれます。プロットを作り始めるには、常に、まずggplot()関数を使って<strong>どのデータを使うのか、データの中のどの変数をプロットの審美的要素として論理的にマップするのか</strong>を指定します。その結果を受けてから、作りたいグラフの種類（散布図、箱ひげ図、棒グラフなど）を指定します。ggplotではこうしたプロットのタイプはgeom（ジオム）と呼ばれます。それぞれのgeomには対応する作図関数があります。例えば、geom_point()関数は散布図を、geom_bar()関数は棒グラフを、geom_boxplot()関数は箱ひげ図を作るといった具合です（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン <a href="#ref-HealyK:2021book1_translJA" role="doc-biblioref">(2021)</a></span>, 99-100ページ）</p>
+</blockquote>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>図3.1は、ggplotの仕組みが端的に表現されており、とても重要です。ggplotの理解が怪しい場合、わからなくなった場合は、常にこの図に立ち戻ってください</p>
+</div>
+</div>
+</div>
+</section><section id="マッピングとデータ" class="level2"><h2 class="anchored" data-anchor-id="マッピングとデータ">3. マッピングとデータ</h2>
+<section id="ggplotが必要とするもの" class="level3"><h3 class="anchored" data-anchor-id="ggplotが必要とするもの">⑴ ggplotが必要とするもの</h3>
+<ol type="1">
+<li>図にする対象のデータフレーム
+<ul>
+<li>dataで指定（パイプを使う場合は省略）</li>
+</ul>
+</li>
+<li>データフレームのうちの、図にするデータ（カラム）
+<ul>
+<li>mappingで指定（mappingという文字は省略可能）</li>
+<li>x軸とy軸の指定</li>
+</ul>
+</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 教科書に沿った説明（パイプを使わない場合）</span></span>
+<span><span class="co"># 次にパイプを使ったコードを紹介します</span></span>
+<span></span>
+<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">gapminder</span>, <span class="co"># ggplotの引数で、データを指定</span></span>
+<span>            mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span></span>
+<span>            <span class="op">)</span> <span class="co"># ggplot関数を用いてx軸とy軸を描きます。それをpというオブジェクトに入れます</span></span>
+<span></span>
+<span><span class="va">p</span> <span class="co"># pというオブジェクトを出力します</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>コードが横に長くなる場合は、適宜、改行を入れて、読みやすいコードを書く癖をつけること</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 上のコードは、パイプを使うと以下のように省略可能</span></span>
+<span></span>
+<span><span class="va">gapminder</span> <span class="op">|&gt;</span> <span class="co"># gapminderというオブジェクトを使います</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="co"># ggplotでx軸とy軸を描きます</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># xとyも、指定しなくても、ggplotがいいように考えてくれます</span></span>
+<span><span class="co"># ただしレイヤーを重ねるような複雑な図を作る場合は、xとyを指定した方がいいでしょう（私は基本的にxとyを指定します）</span></span>
+<span></span>
+<span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>geom_関数の指定</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="co">#散布図の関数</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-warning">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>授業用.qmdだけでなく、フォルダ（例：imgフォルダ）も必ずダウンロードしてください。たとえば、qmdでimgフォルダ内の画像を指定しているため、フォルダも一緒にダウンロードしなければエラーがおこります（エラー「imgファイルがありません」）</p>
+<p>図に適さないオブジェクト（カラム名）を指定しても、意味のある図は作成できない</p>
 </div>
 </div>
-</div>
-</section><section id="基本的な流れdplyrとggplot" class="level2"><h2 class="anchored" data-anchor-id="基本的な流れdplyrとggplot">4. 基本的な流れ：dplyrとggplot</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"></figure><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TB
-    A([データの加工 &lt;br&gt; &lt;strong&gt;dplyr&lt;/strong&gt; &lt;br&gt; 例 select filter]) --- B([データの可視化 &lt;br&gt; &lt;strong&gt;ggplot2&lt;/strong&gt; &lt;br&gt; 例 geom_bar])
-
-</pre>
-</div>
-<p></p>
-</div>
-</div>
-</div>
-<p><img src="img/dplyr.png" class="img-fluid" style="width:10.0%">　 <img src="img/ggplot2.png" class="img-fluid" style="width:10.0%"></p>
-</section></section><section id="実習ファイルの確認" class="level1 page-columns page-full"><h1>Ⅱ. 実習ファイルの確認</h1>
-<section id="セットアップチャンクの作成設定" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="セットアップチャンクの作成設定">1. セットアップチャンクの作成（設定）</h2>
-<ul>
-<li>実習ファイルのYAML（—で囲まれた次の箇所）以下を次の状態にして下さい（setupチャンクの作成）
-<ul>
-<li>パッケージやデータの読み込みのために使うチャンクです（個々のチャンクのすべてにかかわるものに使います）</li>
-<li>#コメントアウト以降は必須ではありません</li>
-<li>備忘として必要な方は入力して下さい</li>
-</ul>
-</li>
-</ul>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full"><p><img src="img/setupチャンク.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">setupチャンク</figcaption></figure>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 基本パッケージ</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> <span class="co"># tidyなデータにするためのパッケージ群（ggplotも入っている）</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span> <span class="co"># 表</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/skimr/">skimr</a></span><span class="op">)</span> <span class="co"># 統計量の要約</span></span>
-<span></span>
-<span><span class="co"># 練習のためのデータセット（普通は不要）</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://kjhealy.github.io/socviz/">socviz</a></span><span class="op">)</span> <span class="co"># 教科書のデータセット</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span> <span class="co"># 最近よく使われるデータセット（ペンギン）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">country</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co"># countryはカテゴリー変数（数字ではない） </span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="co"># おかしな図になる（今回は無理やり出力したが、エラーで出ない場合もある）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
+</div>
+</div>
+</section></section><section id="レイヤーを足す" class="level2"><h2 class="anchored" data-anchor-id="レイヤーを足す">4. レイヤーを足す</h2>
 <ul>
-<li>以下のコードを先のチャンクの冒頭に加えて、上記の画像と同じ状態にして下さい</li>
+<li>レイヤーを重ねて図を作成する
+<ul>
+<li>重ねる際は「 |&gt; または %&gt;%」（パイプ）ではなく「+」を使う</li>
 </ul>
-<pre><code>#| echo: false #ソースコードを表示しない
-#| output: false # 出力結果を表示しない
-</code></pre>
-</section><section id="空白文字の可視化" class="level2"><h2 class="anchored" data-anchor-id="空白文字の可視化">2. 空白文字の可視化</h2>
-<p><img src="img/global_option.png" class="img-fluid" alt="設定変更（globaloption）"><img src="img/空白の可視化.png" class="img-fluid" alt="空白の可視化"></p>
-</section></section><section id="データの読み込み" class="level1"><h1>Ⅲ. データの読み込み</h1>
+</li>
+<li>mappingで指定したデータをgeom_関数は継承する</li>
+<li>➡ 複数のgeom関数に共通するデータはmappingで指定する</li>
+</ul>
+<section id="平滑化曲線を足す" class="level3"><h3 class="anchored" data-anchor-id="平滑化曲線を足す">⑴ 平滑化曲線を足す</h3>
+<div class="cell">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_smooth</span><span class="op">(</span><span class="op">)</span> <span class="co"># 平滑化曲線関数</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>実践を重ねて、レイヤーを重ねるイメージを掴もう</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>ここから先は授業時間に余裕がある受講生だけ取り組んで下さい（授業時間内にできない場合は、各自で取り組んで下さい）</p>
+</div>
+</div>
+</div>
+</section><section id="相関係数を追加する" class="level3"><h3 class="anchored" data-anchor-id="相関係数を追加する">⑵ 相関係数を追加する</h3>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+パッケージの追加
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>ggpubrはggplotパッケージに入っていません</li>
+<li>試してみたい場合は、ggpubrを追加して下さい</li>
+</ul>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_smooth</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">stat_cor</span><span class="op">(</span>method <span class="op">=</span> <span class="st">"pearson"</span>, label.x <span class="op">=</span> <span class="fl">60000</span>, label.y <span class="op">=</span> <span class="fl">30</span><span class="op">)</span> <span class="co"># 相関係数を析出（ピアソン）。label.xとlabel.yは析出結果をプロットする位置を指す</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="ラベル国名を足す" class="level3"><h3 class="anchored" data-anchor-id="ラベル国名を足す">⑶ ラベル（国名）を足す</h3>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+パッケージの追加
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>geom_text_repelはggplotパッケージに入っていません</li>
+<li>試してみたい場合は、ggrepelを追加して下さい</li>
+</ul>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, label <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co"># countryは文字型ベクトルなのでラベルとして使用できる</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_text_repel</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, max.overlaps <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="co"># sizeは文字サイズ、max.overlapsはテキストの重なりの最大値</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>？？？クエートが複数ある（データフレームを確認すると、yearは複数年の情報がある）</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="st">"2007"</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co"># dplyerを使ったデータの加工（次回説明します）</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, label <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_text_repel</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, max.overlaps <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="条件を満たすオブジェクトをハイライトする" class="level3"><h3 class="anchored" data-anchor-id="条件を満たすオブジェクトをハイライトする">⑷ 条件を満たすオブジェクトをハイライトする</h3>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+パッケージの追加
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>gghighlightはggplotパッケージに入っていません</li>
+<li>試してみたい場合は、gghighlightを追加して下さい</li>
+</ul>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="st">"2007"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, label <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span>colour <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># ポイントを赤にする</span></span>
+<span>  <span class="fu">geom_text_repel</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, max.overlaps <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">gghighlight</span><span class="op">(</span><span class="va">country</span> <span class="op">==</span> <span class="st">"Japan"</span><span class="op">)</span> <span class="co"># 条件を満たしたデータをハイライトする（他をグレーアウトする）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="st">"2007"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, label <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span>colour <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># ポイントを赤にする</span></span>
+<span>  <span class="fu">geom_text_repel</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, max.overlaps <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">gghighlight</span><span class="op">(</span><span class="va">lifeExp</span> <span class="op">&gt;</span> <span class="fl">80</span><span class="op">)</span> <span class="co"># 条件を満たしたデータをハイライトする（他をグレーアウトする）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="オプション設定" class="level3"><h3 class="anchored" data-anchor-id="オプション設定">⑸ オプション設定</h3>
+<ul>
+<li>pointや線の見た目は簡単に変えられます
+<ol type="1">
+<li>コンソール（左下のパネルに）?関数名を入れると、右下のパネルにヘルプが出ます（Run examples）で、何がどう変化するか、わかります</li>
+<li>chatGPTに聞いてみよう</li>
+</ol>
+<blockquote class="blockquote">
+<p>ggplotで散布図を作っています。ドットの大きさを変える方法がわかりません。サンプルのデータフレームを作って教えて下さい</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="img/chatGPT_散布図.png" class="img-fluid"></p>
+</section></section></section><section id="データの読み込み" class="level1"><h1>Ⅳ. データの読み込み</h1>
 <section id="csv-read_csv関数" class="level2"><h2 class="anchored" data-anchor-id="csv-read_csv関数">1. csv: read_csv()関数</h2>
 <ol type="1">
 <li>
-<a href="https://drive.google.com/drive/folders/17TQGy7zkHA6ZMUYMS0yhoZ7tHuGlebMi?usp=sharing">Google Drive</a>「データ」から、sampleデータ（sample.csv）を入手（初回アンケートから10,000人分のサンプルデータを作成）</li>
-<li>qmdファイルと同じ階層に「data」フォルダを作り、sample.csvを収納</li>
+<a href="https://drive.google.com/drive/folders/17TQGy7zkHA6ZMUYMS0yhoZ7tHuGlebMi?usp=sharing">Google Drive</a>「データ」から、sampleデータ（survey_2025-04-23.csv）を入手（初回アンケートから100人分のサンプルデータを作成）</li>
+<li>qmdファイルと同じ階層に「data」フォルダを作り、survey_2025-04-23.csvを収納</li>
 <li>新しくRチャンクを作り、read_csv（）関数を使ってデータを読み込む</li>
 <li>データフレームの型とデータの型を確認</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_アンケート</span> <span class="op">&lt;-</span> <span class="co"># 以下のコードで読み込んだデータを、df_アンケートというオブジェクトに格納</span></span>
-<span>  <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/sample.csv"</span><span class="op">)</span> <span class="co"># read_csv()関数を使ってデータを読み込み</span></span>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_アンケート</span> <span class="op">&lt;-</span> <span class="co"># 以下のコードで読み込んだデータを、df_アンケートというオブジェクトに格納</span></span>
+<span>  <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/survey_2025-04-23.csv"</span><span class="op">)</span> <span class="co"># read_csv()関数を使ってデータを読み込み</span></span>
 <span>  </span>
-<span><span class="va">df_アンケート</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="co"># データフレームを指定</span></span>
+<span><span class="va">df_アンケート</span> <span class="op">|&gt;</span>  <span class="co"># データフレームを指定</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 最初の10行を出力し、データフレームの型とデータの型を確認</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
-  学域         学年  Q1.パソコンのスキルに自信がありますか…¹… Q2.R言語を知っていますか.…²…
+  学域         学年  Q1..パソコンのスキルに自信がありますか…¹… Q2..R言語を知っていますか.…²…
   &lt;chr&gt;        &lt;chr&gt;                                &lt;dbl&gt;                  &lt;dbl&gt;
 1 理工学域     2年生                                    2                      4
 2 人間社会学域 3年生                                    2                      2
@@ -429,10 +893,10 @@ integer型とdouble型
 4 融合学域     3年生                                    1                      3
 5 融合学域     3年生                                    1                      4
 6 人間社会学域 4年生                                    5                      2
-# ℹ abbreviated names: ¹​Q1.パソコンのスキルに自信がありますか,
-#   ²​Q2.R言語を知っていますか.
-# ℹ 2 more variables: Q3.プログラム言語を使ったことはありますか &lt;dbl&gt;,
-#   Q4.可視化したいデータはありますか &lt;chr&gt;</code></pre>
+# ℹ abbreviated names: ¹​Q1..パソコンのスキルに自信がありますか,
+#   ²​Q2..R言語を知っていますか.
+# ℹ 2 more variables: Q3..プログラム言語を使ったことはありますか &lt;dbl&gt;,
+#   Q4..可視化したいデータはありますか &lt;chr&gt;</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -489,6 +953,7 @@ Note
 <ul>
 <li>Windows標準（日本）のCP932形式（Shift_JIS）で作成されたファイルを読み込むには、文字コードを指定する必要あり（文字化けの原因のほとんどは文字コードに起因する）</li>
 <li>現在の世界標準の文字コードはユニコード(UTF-8)（特別の指定なく読み込める）</li>
+<li>エディタで文字コードを変更するのではなく、読み込みの段階で文字コードを変更する癖をつけましょう（元ファイルは触らないのが原則）</li>
 </ul>
 </div>
 </div>
@@ -510,14 +975,14 @@ library(readxl)
 <li>新しくRチャンクを作り、以下のコードを実行</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_アンケート_エクセルファイル</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="fu">read_excel</span><span class="op">(</span><span class="st">"data/sample.xlsx"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_アンケート_エクセルファイル</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">read_excel</span><span class="op">(</span><span class="st">"data/survey_2025-04-23.xlsx"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">df_アンケート_エクセルファイル</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="co"># データフレームを指定</span></span>
+<span><span class="va">df_アンケート_エクセルファイル</span> <span class="op">|&gt;</span> <span class="co"># データフレームを指定</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 最初の10行を出力し、データフレームの型とデータの型を確認</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
-  学域         学年  Q1.パソコンのスキルに自信がありますか…¹… Q2.R言語を知っていますか.…²…
+  学域         学年  Q1..パソコンのスキルに自信がありますか…¹… Q2..R言語を知っていますか.…²…
   &lt;chr&gt;        &lt;chr&gt;                                &lt;dbl&gt;                  &lt;dbl&gt;
 1 理工学域     2年生                                    2                      4
 2 人間社会学域 3年生                                    2                      2
@@ -525,10 +990,10 @@ library(readxl)
 4 融合学域     3年生                                    1                      3
 5 融合学域     3年生                                    1                      4
 6 人間社会学域 4年生                                    5                      2
-# ℹ abbreviated names: ¹​Q1.パソコンのスキルに自信がありますか,
-#   ²​Q2.R言語を知っていますか.
-# ℹ 2 more variables: Q3.プログラム言語を使ったことはありますか &lt;dbl&gt;,
-#   Q4.可視化したいデータはありますか &lt;chr&gt;</code></pre>
+# ℹ abbreviated names: ¹​Q1..パソコンのスキルに自信がありますか,
+#   ²​Q2..R言語を知っていますか.
+# ℹ 2 more variables: Q3..プログラム言語を使ったことはありますか &lt;dbl&gt;,
+#   Q4..可視化したいデータはありますか &lt;chr&gt;</code></pre>
 </div>
 </div>
 <div class="callout callout-style-simple callout-note">
@@ -576,11 +1041,12 @@ library(readxl)
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://cdn.rawgit.com/kjhealy/viz-organdata/master/organdonation.csv"</span></span>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://cdn.rawgit.com/kjhealy/viz-organdata/master/organdonation.csv"</span></span>
 <span></span>
-<span><span class="va">organs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="va">url</span><span class="op">)</span></span>
+<span><span class="va">organs</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span>file <span class="op">=</span> <span class="va">url</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">organs</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">organs</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">skim</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
@@ -592,396 +1058,16 @@ library(readxl)
 </div>
 </div>
 </div>
-</section></section><section id="図を作ってみる" class="level1"><h1>Ⅳ. 図を作ってみる</h1>
-<section id="最初の図を作ろう" class="level2"><h2 class="anchored" data-anchor-id="最初の図を作ろう">1. 最初の図を作ろう</h2>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>教科書93-94ページにしたがって作業して下さい</p>
-</div>
-</div>
-</div>
-<ol type="1">
-<li>setupチャンクに、library()関数を使って、gapmainderを読み込む</li>
-</ol>
-<div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ol start="2" type="1">
-<li>新しいチャンクを作って、データを確認する</li>
-</ol>
-<div class="cell">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 最初の10行のみ出力</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 6
-  country     continent  year lifeExp      pop gdpPercap
-  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
-1 Afghanistan Asia       1952    28.8  8425333      779.
-2 Afghanistan Asia       1957    30.3  9240934      821.
-3 Afghanistan Asia       1962    32.0 10267083      853.
-4 Afghanistan Asia       1967    34.0 11537966      836.
-5 Afghanistan Asia       1972    36.1 13079460      740.
-6 Afghanistan Asia       1977    38.4 14880372      786.</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/view.html">view</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># view()関数をつかって、データを確認</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>skim(), head(), view()関数は、データを確認するうえでとても重要です。いま、自分が何をしているのか、またエラーが出て対処できなくなったときは、まずデータを確認する癖をつけましょう</p>
-</div>
-</div>
-</div>
-<ol start="3" type="1">
-<li>図を作ってみましょう。上と同じチャンクに以下のコードを書いてみましょう</li>
-</ol>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>教科書とは異なり、パイプを使ってコードを書いています。また、省略可能な関数は省略しています（教科書は原則を教えるために、まずパイプなしの書き方を教えていますが、実際はパイプを使ったコードを推奨しています）</p>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>カラム名を指定して操作している点に注意（わかりやすく、短いカラム名にすることが大事）</p>
-</div>
-</div>
-</div>
-<ol start="4" type="1">
-<li>余裕がある受講生は、他のカラムも使って図を作ってみましょう。散布図はデータの型が数字である二つのデータが必要です</li>
-</ol>
-<div class="cell">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">pop</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">pop</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu">corr.test</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="ggplotはどうやって動くのか" class="level2"><h2 class="anchored" data-anchor-id="ggplotはどうやって動くのか">2. ggplotはどうやって動くのか</h2>
-<blockquote class="blockquote">
-<p>ggplotを使う上で最も大切なことは、ggplotを使って作りたい<strong>プロットの論理的な構造を考えること</strong>です。あなたが記述するコードはデータにある変数（群）と、色・点・形状といったスクリーンに表示される要素を結びつけます。ggplotでは、こうしたデータとプロット要素の接続性は、審美的要素のマッピング (aesthetic mappings) もしくは単に審美的要素（エセティクス, aesthetics） と呼ばれます。プロットを作り始めるには、常に、まずggplot()関数を使って<strong>どのデータを使うのか、データの中のどの変数をプロットの審美的要素として論理的にマップするのか</strong>を指定します。その結果を受けてから、作りたいグラフの種類（散布図、箱ひげ図、棒グラフなど）を指定します。ggplotではこうしたプロットのタイプはgeom（ジオム）と呼ばれます。それぞれのgeomには対応する作図関数があります。例えば、geom_point()関数は散布図を、geom_bar()関数は棒グラフを、geom_boxplot()関数は箱ひげ図を作るといった具合です（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン <a href="#ref-HealyK:2021book1_translJA" role="doc-biblioref">(2021)</a></span>, 99-100ページ）</p>
-</blockquote>
-<div class="callout callout-style-simple callout-important">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>図3.1は、ggplotの仕組みが端的に表現されており、とても重要です。ggplotの理解が怪しい場合、わからなくなった場合は、常にこの図に立ち戻ってください</p>
-</div>
-</div>
-</div>
-</section><section id="マッピングとデータ" class="level2"><h2 class="anchored" data-anchor-id="マッピングとデータ">3. マッピングとデータ</h2>
-<section id="ggplotが必要とするもの" class="level3"><h3 class="anchored" data-anchor-id="ggplotが必要とするもの">⑴ ggplotが必要とするもの</h3>
-<ol type="1">
-<li>図にする対象のデータフレーム
-<ul>
-<li>dataで指定（パイプを使う場合は省略）</li>
-</ul>
-</li>
-<li>データフレームのうちの、図にするデータ（カラム）
-<ul>
-<li>mappingで指定（mappingという文字は省略可能）</li>
-<li>x軸とy軸の指定</li>
-</ul>
-</li>
-</ol>
-<div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">gapminder</span>,</span>
-<span>            mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span></span>
-<span>            <span class="op">)</span></span>
-<span></span>
-<span><span class="va">p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>コードが横に長くなる場合は、適宜、改行を入れて、読みやすいコードを書く癖をつけること</p>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 以下のように省略可能</span></span>
-<span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># xとyも、指定しなくても、ggplotがよしなに考えてくれる</span></span>
-<span><span class="co"># ただしレイヤーを重ねるような複雑な図を作る場合は、xとyを指定した方がいい</span></span>
-<span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<ol start="3" type="1">
-<li>geom_関数の指定</li>
-</ol>
-<div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-warning">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>図に適さないオブジェクト（カラム名）を指定しても、意味のある図は作成できない</p>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section></section><section id="レイヤーを足す" class="level2"><h2 class="anchored" data-anchor-id="レイヤーを足す">4. レイヤーを足す</h2>
-<ul>
-<li>レイヤーを重ねて図を作成する
-<ul>
-<li>重ねる際は「%&gt;%」（パイプ）ではなく「+」を使う</li>
-</ul>
-</li>
-<li>mappingで指定したデータをgeom_関数は継承する</li>
-<li>➡ 複数のgeom関数に共通するデータはmappingで指定する</li>
-</ul>
-<section id="平滑化曲線を足す" class="level3"><h3 class="anchored" data-anchor-id="平滑化曲線を足す">⑴ 平滑化曲線を足す</h3>
-<div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>実践を重ねて、レイヤーを重ねるイメージを掴もう</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-important">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>ここから先は授業時間に余裕がある受講生だけ取り組んで下さい（授業時間内にできない場合は、各自で取り組んで下さい）</p>
-</div>
-</div>
-</div>
-</section><section id="相関係数を追加する" class="level3"><h3 class="anchored" data-anchor-id="相関係数を追加する">⑵ 相関係数を追加する</h3>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-パッケージの追加
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>ggpubrはggplotパッケージに入っていません</li>
-<li>試してみたい場合は、ggpubrを追加して下さい</li>
-</ul>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">stat_cor</span><span class="op">(</span>method <span class="op">=</span> <span class="st">"pearson"</span>, label.x <span class="op">=</span> <span class="fl">60000</span>, label.y <span class="op">=</span> <span class="fl">30</span><span class="op">)</span> <span class="co"># 相関係数を析出（ピアソン）。label.xとlabel.yは析出結果をプロットする位置を指す</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="ラベル国名を足す" class="level3"><h3 class="anchored" data-anchor-id="ラベル国名を足す">⑶ ラベル（国名）を足す</h3>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-パッケージの追加
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>geom_text_repelはggplotパッケージに入っていません</li>
-<li>試してみたい場合は、ggrepelを追加して下さい</li>
-</ul>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, label <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co"># countryは文字型ベクトルなのでラベルとして使用できる</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_text_repel</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, max.overlaps <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="co"># sizeは文字サイズ、max.overlapsはテキストの重なりの最大値</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-warning">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>？？？クエートが複数ある（データフレームを確認すると、yearは複数年の情報がある）</p>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="st">"2007"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="co"># dplyerを使ったデータの加工（次回説明します）</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, label <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_text_repel</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, max.overlaps <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="条件を満たすオブジェクトをハイライトする" class="level3"><h3 class="anchored" data-anchor-id="条件を満たすオブジェクトをハイライトする">⑷ 条件を満たすオブジェクトをハイライトする</h3>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-パッケージの追加
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>gghighlightはggplotパッケージに入っていません</li>
-<li>試してみたい場合は、gghighlightを追加して下さい</li>
-</ul>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="st">"2007"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, label <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># ポイントを赤にする</span></span>
-<span>  <span class="fu">geom_text_repel</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, max.overlaps <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">gghighlight</span><span class="op">(</span><span class="va">country</span> <span class="op">==</span> <span class="st">"Japan"</span><span class="op">)</span> <span class="co"># 条件を満たしたデータをハイライトする（他をグレーアウトする）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="st">"2007"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, label <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># ポイントを赤にする</span></span>
-<span>  <span class="fu">geom_text_repel</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, max.overlaps <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">gghighlight</span><span class="op">(</span><span class="va">lifeExp</span> <span class="op">&gt;</span> <span class="fl">80</span><span class="op">)</span> <span class="co"># 条件を満たしたデータをハイライトする（他をグレーアウトする）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section></section></section><section id="実習" class="level1 page-columns page-full"><h1>Ⅴ. 実習</h1>
+</section></section><section id="実習" class="level1 page-columns page-full"><h1>Ⅴ. 実習</h1>
 <ul>
 <li>持参したデータで上記のコードを復習してみよう</li>
 <li>データがない場合は
-<ol type="1">
+<ul>
 <li>
-<a href="https://allisonhorst.github.io/palmerpenguins/">penguinsデータセット</a>を使ってみよう（csvの読み込みはありません）</li>
-<li>本日、冒頭に読み込み作業した「初回アンケート」のサンプルデータを使ってみよう（ただしこのデータは散布図には向いていません）</li>
-</ol>
+<a href="https://allisonhorst.github.io/palmerpenguins/">penguinsデータセット</a>（csvの読み込みはありません）</li>
+<li>本日、冒頭に読み込み作業した「初回アンケート」のサンプルデータ（ただしこのデータは散布図には向いていません）</li>
+<li>gapminder（ただし、例示以外のカラム名（変数）を使うこと） のいずれかを使ってみましょう</li>
+</ul>
 </li>
 </ul>
 <section id="palmerpenguins" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="palmerpenguins">1. palmerpenguins</h2>
@@ -1002,7 +1088,8 @@ library(readxl)
 <pre><code><a href="https://allisonhorst.github.io/palmerpenguins/">library(palmerpenguins) 
 </a></code></pre>
 <div class="cell">
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
@@ -1018,12 +1105,12 @@ library(readxl)
 </div>
 </section><section id="初回アンケートサンプルデータ" class="level2"><h2 class="anchored" data-anchor-id="初回アンケートサンプルデータ">2. 初回アンケートサンプルデータ</h2>
 <div class="cell">
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_アンケート</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">`Q1.パソコンのスキルに自信がありますか`</span>, y <span class="op">=</span> <span class="va">`Q2.R言語を知っていますか.`</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_アンケート</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">`Q1..パソコンのスキルに自信がありますか`</span>, y <span class="op">=</span> <span class="va">`Q2..R言語を知っていますか.`</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1039,12 +1126,12 @@ library(readxl)
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_アンケート</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">`Q1.パソコンのスキルに自信がありますか`</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 散布図は不向きなため、棒グラフを作ってみる。棒グラフは、図の性質上、一つのオブジェクトしか取れない</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_アンケート</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">`Q1..パソコンのスキルに自信がありますか`</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="op">)</span> <span class="co"># 散布図は不向きなため、棒グラフを作ってみる。棒グラフは、図の性質上、一つのオブジェクトしか取れない</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w3_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1063,19 +1150,19 @@ note | 回答先と締め切り
 <div class="callout-body-container callout-body">
 <ul>
 <li>
-<strong>回答先</strong>：<a href="https://forms.gle/ZCkbPXYprjoibA8i6">Google Forms</a>
+<strong>回答先</strong>：<a href="https://forms.gle/tibqGnJAYwYC6kYq8">Google Forms</a>
 </li>
 <li>
-<strong>締め切り</strong>：2024年6月28日（金）23時59分まで</li>
+<strong>締め切り</strong>：2025年4月25日（金）23時59分まで</li>
 </ul>
 </div>
 </div>
-</section><section id="可視化したいデータ" class="level2"><h2 class="anchored" data-anchor-id="可視化したいデータ">2. 可視化したいデータ</h2>
+</section><section id="演習" class="level2"><h2 class="anchored" data-anchor-id="演習">2. 演習</h2>
 <ul>
-<li>データを用意できていない受講生のみ</li>
-<li>アンケートを実施する予定の人は、テスト的に実施して下さい
+<li>持参したデータで今日の授業のコードを復習してみよう
 <ul>
-<li>カテゴリ（属性：性別（「男性」「女性」）など）と数字からなるアンケートにしましょう</li>
+<li>qmdファイル</li>
+<li>出力ファイル（htmlもしくはpng、難しければスクリーンショット）</li>
 </ul>
 </li>
 </ul>
@@ -1091,10 +1178,33 @@ note | 回答先と締め切り
 <div class="callout-body-container callout-body">
 <ul>
 <li>
-<strong>回答先</strong>：<a href="https://forms.gle/VMjdbqBu1rbcLe9j9">Google Forms</a>
+<strong>回答先</strong>：<a href="https://forms.gle/LP6zjJUmbTzqqcxp9">Google Forms</a>
 </li>
 <li>
-<strong>締め切り</strong>：2024年7月3日（水）10時30分まで</li>
+<strong>締め切り</strong>：2025年4月30日（水）10時30分まで</li>
+</ul>
+</div>
+</div>
+</section><section id="可視化したいデータ" class="level2"><h2 class="anchored" data-anchor-id="可視化したいデータ">3. 可視化したいデータ</h2>
+<ul>
+<li>データを用意できていない受講生のみ</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+note | 回答先と締め切り
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>
+<strong>回答先</strong>：<a href="https://forms.gle/LP6zjJUmbTzqqcxp9">Google Forms</a>
+</li>
+<li>
+<strong>締め切り</strong>：2025年4月30日（水）10時30分まで</li>
 </ul>
 </div>
 </div>
