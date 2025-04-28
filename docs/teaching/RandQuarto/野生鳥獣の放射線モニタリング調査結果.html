@@ -259,8 +259,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># ggplotのデフォルト設定の調整</span></span>
-<span><span class="co"># フォントファミリとサイズ</span></span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># ggplotのデフォルト設定の調整 ----</span></span>
+<span><span class="co">## フォントファミリとサイズ</span></span>
 <span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_get</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>text <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>family <span class="op">=</span> <span class="st">"HiraginoSans-W3"</span>, size <span class="op">=</span> <span class="fl">9</span><span class="op">)</span><span class="op">)</span></span>
@@ -277,39 +277,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>family <span class="op">=</span> <span class="st">"HiraginoSans-W3"</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> <span class="co"># データ加工</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span> <span class="co"># 図</span></span>
+<span><span class="co"># パッケージの読み込み ----</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> <span class="co"># tidyverse</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span> <span class="co"># エクセルファイルの読み込み</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/skimr/">skimr</a></span><span class="op">)</span> <span class="co"># 統計量の要約</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://scales.r-lib.org">scales</a></span><span class="op">)</span> <span class="co"># スケール</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span> <span class="co"># 表</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/skimr/">skimr</a></span><span class="op">)</span> <span class="co"># 統計量の要約</span></span>
-<span></span>
-<span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggrepel.slowkow.com/">ggrepel</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yutannihilation.github.io/gghighlight/">gghighlight</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://kjhealy.github.io/socviz/">socviz</a></span><span class="op">)</span> <span class="co"># 教科書のデータセット</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span> <span class="co"># 教科書のデータセット</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span> <span class="co"># 最近よく使われるデータセット（ペンギン）</span></span>
-<span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://zoo.R-Forge.R-project.org/">zoo</a></span><span class="op">)</span>  <span class="co"># rollmean()を使うために必要</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span> <span class="co"># ggplot系の追加パッケージ</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggrepel.slowkow.com/">ggrepel</a></span><span class="op">)</span>　<span class="co"># ggplot系の追加パッケージ</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yutannihilation.github.io/gghighlight/">gghighlight</a></span><span class="op">)</span> <span class="co"># ggplot系の追加パッケージ</span></span>
 <span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://uribo.github.io/zipangu/">zipangu</a></span><span class="op">)</span> <span class="co"># 元号を西暦に変換するために使用</span></span>
 <span></span>
-<span><span class="co"># データの読み込み</span></span>
+<span><span class="co"># データの読み込みと加工 ----</span></span>
+<span></span>
+<span><span class="co">## もともとのデータが動物ごとに作成されている。それぞれの動物ごとにデータフレームを作成し、結合するという手順をとる</span></span>
+<span></span>
 <span><span class="va">df_イノシシ</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/野生鳥獣の放射線モニタリング調査結果_イノシシ.csv"</span>, </span>
 <span>           <span class="co"># col_names = FALSE,</span></span>
 <span>           skip <span class="op">=</span> <span class="fl">1</span>,</span>
-<span>           locale <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/locale.html">locale</a></span><span class="op">(</span>encoding <span class="op">=</span> <span class="st">"cp932"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>           locale <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/locale.html">locale</a></span><span class="op">(</span>encoding <span class="op">=</span> <span class="st">"cp932"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="co">#文字コード</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">2320</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">検査月日</span>, into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"和暦"</span>, <span class="st">"月"</span>, <span class="st">"日"</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">"\\."</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">検査月日</span>, into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"和暦"</span>, <span class="st">"月"</span>, <span class="st">"日"</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">"\\."</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="co"># 検査月日から年月日を抽出</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
 <span>    .before <span class="op">=</span> <span class="va">和暦</span>,</span>
-<span>    西暦 <span class="op">=</span> <span class="fu"><a href="https://uribo.github.io/zipangu/reference/convert_jyear.html">convert_jyear</a></span><span class="op">(</span><span class="va">和暦</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    西暦 <span class="op">=</span> <span class="fu"><a href="https://uribo.github.io/zipangu/reference/convert_jyear.html">convert_jyear</a></span><span class="op">(</span><span class="va">和暦</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="co"># 和暦から西暦に変換</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="fl">5</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">No.</span>, <span class="va">方部</span>, <span class="va">捕獲地点</span>, <span class="va">西暦</span>, <span class="va">月</span>, <span class="va">日</span>, セシウム <span class="op">=</span> <span class="va">`核種濃度\n(セシウム)\nBq/kg`</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
@@ -319,13 +316,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
 <span>    セシウム <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">","</span>, <span class="st">""</span>, <span class="va">セシウム</span><span class="op">)</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>検出有無 <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"検出せず"</span>, <span class="va">セシウム</span><span class="op">)</span>, <span class="st">"検出せず"</span>, <span class="st">"検出"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>検出有無 <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"検出せず"</span>, <span class="va">セシウム</span><span class="op">)</span>, <span class="st">"検出せず"</span>, <span class="st">"検出"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="co"># 既存のデータから「検出有無」というカラムを作成</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
 <span>    .after <span class="op">=</span> <span class="va">No.</span>,</span>
 <span>    動物 <span class="op">=</span> <span class="st">"イノシシ"</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="va">df_ツキノワグマ</span> <span class="op">&lt;-</span></span>
+<span><span class="va">df_ツキノワグマ</span> <span class="op">&lt;-</span> <span class="co"># 補足については上記を参照</span></span>
 <span>  <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/野生鳥獣の放射線モニタリング調査結果_ツキノワグマ.csv"</span>, </span>
 <span>           <span class="co"># col_names = FALSE,</span></span>
 <span>           skip <span class="op">=</span> <span class="fl">1</span>,</span>
@@ -351,7 +348,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    動物 <span class="op">=</span> <span class="st">"ツキノワグマ"</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="va">df_野生鳥獣</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="va">df_イノシシ</span>, <span class="va">df_ツキノワグマ</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df_野生鳥獣</span> <span class="op">&lt;-</span> <span class="co"># イノシシのデータフレームとツキノワグマのデータフレームを結合＝ggplotに渡すデータフレームを作成</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="va">df_イノシシ</span>, <span class="va">df_ツキノワグマ</span><span class="op">)</span></span>
 <span></span>
 <span></span>
 <span><span class="va">df_野生鳥獣</span> <span class="op">&lt;-</span> </span>
@@ -372,23 +371,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="foaraecydg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#foaraecydg table {
+<div id="eovwxctptk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eovwxctptk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#foaraecydg thead, #foaraecydg tbody, #foaraecydg tfoot, #foaraecydg tr, #foaraecydg td, #foaraecydg th {
+#eovwxctptk thead, #eovwxctptk tbody, #eovwxctptk tfoot, #eovwxctptk tr, #eovwxctptk td, #eovwxctptk th {
   border-style: none;
 }
 
-#foaraecydg p {
+#eovwxctptk p {
   margin: 0;
   padding: 0;
 }
 
-#foaraecydg .gt_table {
+#eovwxctptk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -414,12 +413,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#foaraecydg .gt_caption {
+#eovwxctptk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#foaraecydg .gt_title {
+#eovwxctptk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -431,7 +430,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#foaraecydg .gt_subtitle {
+#eovwxctptk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -443,7 +442,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#foaraecydg .gt_heading {
+#eovwxctptk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -455,13 +454,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#foaraecydg .gt_bottom_border {
+#eovwxctptk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#foaraecydg .gt_col_headings {
+#eovwxctptk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -476,7 +475,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#foaraecydg .gt_col_heading {
+#eovwxctptk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -496,7 +495,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#foaraecydg .gt_column_spanner_outer {
+#eovwxctptk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -508,15 +507,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#foaraecydg .gt_column_spanner_outer:first-child {
+#eovwxctptk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#foaraecydg .gt_column_spanner_outer:last-child {
+#eovwxctptk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#foaraecydg .gt_column_spanner {
+#eovwxctptk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -528,11 +527,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#foaraecydg .gt_spanner_row {
+#eovwxctptk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#foaraecydg .gt_group_heading {
+#eovwxctptk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -558,7 +557,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#foaraecydg .gt_empty_group_heading {
+#eovwxctptk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -573,15 +572,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#foaraecydg .gt_from_md > :first-child {
+#eovwxctptk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#foaraecydg .gt_from_md > :last-child {
+#eovwxctptk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#foaraecydg .gt_row {
+#eovwxctptk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -600,7 +599,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#foaraecydg .gt_stub {
+#eovwxctptk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -613,7 +612,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#foaraecydg .gt_stub_row_group {
+#eovwxctptk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -627,15 +626,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#foaraecydg .gt_row_group_first td {
+#eovwxctptk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#foaraecydg .gt_row_group_first th {
+#eovwxctptk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#foaraecydg .gt_summary_row {
+#eovwxctptk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -645,16 +644,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#foaraecydg .gt_first_summary_row {
+#eovwxctptk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#foaraecydg .gt_first_summary_row.thick {
+#eovwxctptk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#foaraecydg .gt_last_summary_row {
+#eovwxctptk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -664,7 +663,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#foaraecydg .gt_grand_summary_row {
+#eovwxctptk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -674,7 +673,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#foaraecydg .gt_first_grand_summary_row {
+#eovwxctptk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -684,7 +683,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#foaraecydg .gt_last_grand_summary_row_top {
+#eovwxctptk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -694,11 +693,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#foaraecydg .gt_striped {
+#eovwxctptk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#foaraecydg .gt_table_body {
+#eovwxctptk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -707,7 +706,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#foaraecydg .gt_footnotes {
+#eovwxctptk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -721,7 +720,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#foaraecydg .gt_footnote {
+#eovwxctptk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -730,7 +729,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#foaraecydg .gt_sourcenotes {
+#eovwxctptk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -744,7 +743,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#foaraecydg .gt_sourcenote {
+#eovwxctptk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -752,72 +751,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#foaraecydg .gt_left {
+#eovwxctptk .gt_left {
   text-align: left;
 }
 
-#foaraecydg .gt_center {
+#eovwxctptk .gt_center {
   text-align: center;
 }
 
-#foaraecydg .gt_right {
+#eovwxctptk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#foaraecydg .gt_font_normal {
+#eovwxctptk .gt_font_normal {
   font-weight: normal;
 }
 
-#foaraecydg .gt_font_bold {
+#eovwxctptk .gt_font_bold {
   font-weight: bold;
 }
 
-#foaraecydg .gt_font_italic {
+#eovwxctptk .gt_font_italic {
   font-style: italic;
 }
 
-#foaraecydg .gt_super {
+#eovwxctptk .gt_super {
   font-size: 65%;
 }
 
-#foaraecydg .gt_footnote_marks {
+#eovwxctptk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#foaraecydg .gt_asterisk {
+#eovwxctptk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#foaraecydg .gt_indent_1 {
+#eovwxctptk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#foaraecydg .gt_indent_2 {
+#eovwxctptk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#foaraecydg .gt_indent_3 {
+#eovwxctptk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#foaraecydg .gt_indent_4 {
+#eovwxctptk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#foaraecydg .gt_indent_5 {
+#eovwxctptk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#foaraecydg .katex-display {
+#eovwxctptk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#foaraecydg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#eovwxctptk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
