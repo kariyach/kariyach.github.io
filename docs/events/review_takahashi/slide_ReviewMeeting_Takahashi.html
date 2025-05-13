@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<link href="../../img/favicon-16x16.png" rel="icon" type="image/png">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.43">
+
+  <meta name="author" content="苅谷千尋">
+  <title>CHIHIRO KARIYA – コメント：高橋和則著『エドマンド・バークの国制論』(法政大学出版局、2024年）</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-d4eb79cb95c9bbe51b7825d3a9ba54a6.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/multimodal/multimodal.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="エドマンド・バークの国制論.jpg" data-background-position="90% 90%" data-background-size="20%" class="quarto-title-block center">
+  <h1 class="title">コメント：高橋和則著『エドマンド・バークの国制論』(法政大学出版局、2024年）</h1>
+  <p class="subtitle">合評会（中央大学茗荷谷キャンパス）</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:kariyach@staff.kanazawa-u.ac.jp">kariyach@staff.kanazawa-u.ac.jp</a>
+</div>
+        <p class="quarto-title-affiliation">
+            金沢大学
+          </p>
+    </div>
+</div>
+
+  <p class="date">2025年3月12日</p>
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">目次</h2>
+<ul>
+<li><a href="#/評価" id="/toc-評価">Ⅰ. 評価</a></li>
+<li><a href="#/要点" id="/toc-要点">Ⅱ. 要点</a></li>
+<li><a href="#/論点" id="/toc-論点">Ⅲ. 論点</a></li>
+<li><a href="#/参考文献" id="/toc-参考文献">参考文献</a></li>
+</ul>
+</nav>
+</section>
+<section>
+<section id="評価" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
+<h1>Ⅰ. 評価</h1>
+
+</section>
+<section id="評価-1" class="slide level2">
+<h2>評価</h2>
+<ol type="1">
+<li>バーク研究にとどまらない広範囲の研究者の関心を誘う研究書
+<ul>
+<li>国制の言説史：バーク、ペイン、プライス、シィエス（Cf. <span class="citation" data-cites="KariyaCh:2025review1">苅谷 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2025</a>)</span>）</li>
+<li>ロックを中心とする近代思想史（布置連関の把握）のオルタナティブ（Cf. <span class="citation" data-cites="InuzukaH_ed:2014book1">犬塚 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2014a</a>)</span>）</li>
+</ul></li>
+<li>バーク研究史への貢献：ふたつの難点の克服
+<ol type="1">
+<li>法や国制についてのテクストに着目することで、議員になる前と後の一貫性問題を克服</li>
+<li>国制の把握の特性を明らかにすることで、アメリカ革命とフランス革命の対応の相違を説得的に説明</li>
+</ol></li>
+<li>政治思想史への貢献
+<ul>
+<li>伸縮自在に解されやすい国制言説の歴史的コンテクストおよび制約を明らかに</li>
+<li>バーク国制論のアップデート</li>
+</ul>
+<blockquote>
+<p>バークの説くconstitutionは形而上学的な背景を失い、政治社会についてのあらわなイデオロギーとならざるを得ない（<span class="citation" data-cites="FukudaKi:1985book1">福田 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">1985</a>)</span>, 450）</p>
+</blockquote></li>
+</ol>
+</section>
+<section id="評価-注記-福田歓一政治学史" class="slide level2">
+<h2>評価 &gt; 注記 &gt; 福田歓一『政治学史』</h2>
+<blockquote>
+<p>伝統や慣習が優越するところでは立法は不可能であるとした、バークはルソーとはまったく逆に過去から伝えられた慣習や先入見や人間の感情の自然、すなわち所与のものをconstitutionの支えとしてそのまま受け入れようとする。したがってバークはこのconstitutionという伝統的所与を自然の名で呼び、さらに神の摂理providenceに引照して聖別する。いうまでもなく、社会体制を自然の秩序とし、神の摂理に引照するのは、中世では最も普通の思想であった。ただそのときには、この社会体制の理解は、中世の世界観・宇宙像と結びついていた、けれども、バークの活動した18世紀末には宇宙像そのものがまったく変わってしまって、近代自然科学のうちたてた新しい世界像に移っている。したがってバークの説くconstitutionは形而上学的な背景を失い、政治社会についてのあらわなイデオロギーとならざるを得ない（<span class="citation" data-cites="FukudaKi:1985book1">福田 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">1985</a>)</span>, 450）。</p>
+</blockquote>
+</section></section>
+<section>
+<section id="要点" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
+<h1>Ⅱ. 要点</h1>
+
+</section>
+<section id="要点-1" class="slide level2">
+<h2>要点</h2>
+<ol start="0" type="1">
+<li>前提
+<ul>
+<li>西洋近代思想を理解する鍵概念として同意論（契約論）を解す</li>
+<li>18世紀の政治言語における「契約」という語彙が果たす役割と重み（Cf. <span class="citation" data-cites="ManinB:1997book1">Manin (<a href="#/参考文献-1" role="doc-biblioref" onclick="">1997</a>)</span>）</li>
+</ul></li>
+<li>複数の同意論（契約論）
+<ol type="1">
+<li>ロック的同意論：フィクションに依拠</li>
+<li>コモン・ロー的同意論：歴史に依拠</li>
+</ol></li>
+<li>統治権力の正当性の論拠と、統治権力の抑制
+<ul>
+<li>普遍性（自然法；キリスト教；理性）</li>
+<li>歴史性（コモン・ロー）</li>
+<li>声（世論）</li>
+<li>➡ 言説のレベルで見たとき、必ずしも相互排他的ではない</li>
+<li>➡ 統治権力を抑制する必要性については共有</li>
+<li>➡ その組み合わせ、濃淡が政論家、思想家を分ける</li>
+</ul></li>
+</ol>
+</section>
+<section id="要点-注記-manin-歴史に依拠" class="slide level2">
+<h2>要点 &gt; 注記 &gt; Manin / 歴史に依拠</h2>
+<blockquote>
+<p>最後に､フランスでは､トゥーレThouret──フランス革命の最初の数ヶ月の鍵となる人物──が､1789年8月初めに権利宣言の草稿を公表した。この草稿には､次の条項が含まれている。「市民はみな､個人的であれ､自分たちの代表を通してであれ､法の形成に同意する権利と､自分たちが自由に同意した者にのみ服従する権利をもつ」。〔原文改行〕同意が正統な権威の唯一の源泉を成し､また政治的義務の基礎を構成するというこの信念は､グロティウスからルソーに至るすべての自然法学者に共有されていたものであり､この中には､ホッブズ､プーフェンドルフ､ロックも含まれる」（<span class="citation" data-cites="ManinB:1997book1">Manin (<a href="#/参考文献-1" role="doc-biblioref" onclick="">1997</a>)</span>, 84）。</p>
+</blockquote>
+<blockquote>
+<p>ヘイルが法を見る時に重視しているのは、その拘束力と拘束力の源泉であった。この拘束力の源泉は、法の源泉ではない。つまりこの引用で言えば「どこに、何に基づいているか」ということには関わらないのである。重要なのは「何故」拘束されるのかという点に限られる。そして、その源泉は「同意」に求められている。当時のイギリス社会が「承認し受容し」同意したから、その法は拘束力を持つ。「主権者の命令」としての法命令説とは異なり、その法を権威づけるのは主権者でなく、イギリス人民であり、イギリス社会であることになる。「同意」はこれまでの法と矛盾していないことの現われと解釈することができる。こうして拘束力を重視する法の見方が要請されたのである（<span class="citation" data-cites="TakahashiKn:2024book1">高橋 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2024</a>)</span>, 57）。</p>
+</blockquote>
+</section></section>
+<section>
+<section id="論点" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
+<h1>Ⅲ. 論点</h1>
+
+</section>
+<section id="論点-1" class="slide level2">
+<h2>論点</h2>
+<ol type="1">
+<li>アメリカ革命が国制理解に与えた影響</li>
+<li>バークのcivil soceity</li>
+<li>バークのconstitutionにかかわるテクストの選択</li>
+<li>同意・契約論の政治哲学的含意</li>
+</ol>
+</section>
+<section id="論点①-アメリカ革命が国制理解に与えた影響" class="slide level2">
+<h2>論点① アメリカ革命が国制理解に与えた影響</h2>
+<ul>
+<li><p>アメリカ独立宣言、合衆国憲法やそれをめぐる議論が、国制理解の変化に果たした役割は？（1780年代の言説分析が必要？）</p>
+<ul>
+<li>合衆国憲法という国制の特徴（<span class="citation" data-cites="MachidoriSs:2015book1">待鳥 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2015</a>)</span>, <span class="citation" data-cites="Doiyn:2007dictionary">土井 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2007</a>)</span>）
+<ul>
+<li>不文憲法から成文憲法へ</li>
+<li>ネガティヴ・リストからポジティブ・リストへ</li>
+</ul></li>
+</ul></li>
+<li><p>本書で紹介される1790年代の議論は、1780年代のフェデラリスツとアンチ・フェデラリスツの再現・再演のようにもみえる</p></li>
+<li><p>バークは独立宣言や憲法について沈黙するが、ペイン、プライスは？</p>
+<ul>
+<li>➡ 以下のテクストは本書においてどのように活用されたのか？
+<ul>
+<li>Pain, American Crisis, No.&nbsp;13, 1783（139頁に言及あり）</li>
+<li>Price, Importance of the American Revoltion, 1785</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="論点①-アメリカ革命が国制理解に与えた影響-補助線と注記" class="slide level2">
+<h2>論点① &gt; アメリカ革命が国制理解に与えた影響 &gt; 補助線と注記</h2>
+<ul>
+<li>Price, Importance of the American Revoltion, 1785</li>
+</ul>
+<blockquote>
+<p>連合規約の第9条のような規定は、性急で偏った決定を大いに防ぐだろう。第5条で定められた輪番制は、権力を長期間にわたって握ることによってほぼ不可避的に生じる人格の腐敗を防ぐだろう</p>
+</blockquote>
+<blockquote>
+<p>I am very sensible that it will be difficult to guard such a power against abuse; and, perhaps, better means of answering this end are discoverable. In human affairs, however, the choice generally offered us is of two evils—to take the least. We choose the restraint of civil government because it is a lesser evil than anarchy; and, in like manner, in the present instance, the danger of the abuse of power, and of its being employed sometimes to enforce wrong decisions, must be submitted to, because it is a lesser evil than the misery of intestine wars. Much, however, may be done to lessen this danger. <em>Such regulations as those in the ninth of the Articles of Confederation will, in a great measure, prevent hasty and partial decisions. The rotation established by the fifth article will prevent that corruption of character which seldom fails to be produced by the long possession of power</em>; and the right reserved to every State of recalling its Delegates when dissatisfied with them will keep them constantly responsible and cautious（<span class="citation" data-cites="PriceR:1785book1">Price (<a href="#/参考文献-1" role="doc-biblioref" onclick="">1785</a>)</span>, 17）.</p>
+</blockquote>
+</section>
+<section id="論点①-アメリカ革命が国制理解に与えた影響-注記" class="slide level2">
+<h2>論点① &gt; アメリカ革命が国制理解に与えた影響 &gt; 注記</h2>
+<blockquote>
+<p>彼〔バーク〕は独立宣言について詳しく論評せず、合衆国憲法の生成過程についてはまったく言及しなかった。彼がアメリカ革命の経験について何を考えたのか、我々はほとんど知らないし、それゆえ、彼がアメリカ革命とフランス革命をどう区別したのかという問題は空想の産物かもしれないのである（<span class="citation" data-cites="PocockJGA:1987a1">Pocock (<a href="#/参考文献-1" role="doc-biblioref" onclick="">1987</a>)</span>, xv）</p>
+</blockquote>
+</section>
+<section id="論点②-バークのcivil-society" class="slide level2">
+<h2>論点② バークのcivil society</h2>
+<ul>
+<li><p>バークのcivil societyが文脈によって訳し分けられている（<span class="citation" data-cites="TakahashiKn:2024book1">高橋 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2024</a>)</span>, 238-249）。</p>
+<blockquote>
+<p>その問い〔現存する協定を何故絶対視するのか〕に強く関係しているのが、文明社会という概念であると思われる。しかしここで一つの混乱が生じるであろう。この概念と市民社会という概念の関係はいかなるものか。まずそれを検討しておこう。〔原文改行〕バークの議論におけるその関係は、結論から言えば明確ではない（<span class="citation" data-cites="TakahashiKn:2024book1">高橋 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2024</a>)</span>, 242）。</p>
+</blockquote></li>
+<li><p>それぞれの定義や要件は何か？</p>
+<ul>
+<li><strong>市民社会</strong>＝国家＝国制？：【要件】正義と法的秩序？peopleの自律性は不問？</li>
+<li><strong>政治社会</strong>：ロック的？（解釈権の譲渡を引き換えとする、統治権力によるプロパティの保護？）</li>
+<li><strong>文明社会</strong>：反野蛮・反暴政・反専制な市民社会の一形態？（消極的定義）</li>
+</ul></li>
+</ul>
+</section>
+<section id="論点③-バークのconstitutionにかかわるテクストの選択" class="slide level2">
+<h2>論点③ バークのconstitutionにかかわるテクストの選択</h2>
+<ul>
+<li>本書はバークの国制論の内実を分析するに当たって、主に『省察』に依拠しているが、先行研究は、
+<ul>
+<li>「庶民院代表の状況についての調査委員会演説」（1782年）</li>
+<li>『フランス国民議会議員への手紙』（1791年）</li>
+<li>『新ウィッグから旧ウィッグへの訴え』（1791年）</li>
+</ul></li>
+</ul>
+<p>　　などのテクストも重視してきた。</p>
+<ul>
+<li><p>これらのテクストと『省察』の国制論の関係、あるいは本書の解釈との整合性は？</p></li>
+<li><p>ペイン、プライス、シィエスとの論戦あるいは比較のなかでは必ずしも優先的な意味をもちにくいテクスト群？</p></li>
+</ul>
+</section>
+<section id="論点③-バークのconstitutionにかかわるテクストの選択-1" class="slide level2">
+<h2>論点③ バークのconstitutionにかかわるテクストの選択</h2>
+<ul>
+<li><p>「調査委員会演説」：国制と国民の関係</p>
+<blockquote>
+<p>私たちの国制は長年の慣行によって認められた（prescriptive）国制である。〔略〕国民（nation）〔という概念〕は〔個々の〕選択よりもはるかに優れた国制により作られる。また国民〔という概念〕は、人民（people）の置かれた特定の状況、出来事、気質、性格、そして道徳的、市民的、社会的な習慣によって作られ、長い時間をかけて初めて明らかになるのである。</p>
+</blockquote>
+<blockquote>
+<p><em>Our Constitution is a prescriptive constitution…it is a constitution, made by what is ten thousand times better than choice; it is made by the peculiar circumstances, occasions, tempers, dispositions, and moral, civil, and social habitudes of the people, which, disclose themselves only in a long space of time</em>.（<span class="citation" data-cites="BurkeE:Woldall">Burke (<a href="#/参考文献-1" role="doc-biblioref" onclick="">1865-1867</a>)</span>, VI, 94-95</p>
+</blockquote>
+<ul>
+<li>➡ 岸本はこの一節にバークの保守主義思想を看取する（<span class="citation" data-cites="KishimotoHs:2000book1">岸本 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2000</a>)</span>, 417-424）。David Craigはこのような主張がバークのみならず、William Paley, ‘The Princples of Moral and Political Philosophy’ (London, 1785) にも見られると指摘する（<span class="citation" data-cites="CraigD:2012a1">Craig (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2012</a>)</span>, 106）</li>
+</ul></li>
+</ul>
+</section>
+<section id="論点③-バークのconstitutionにかかわるテクストの選択-2" class="slide level2">
+<h2>論点③ バークのconstitutionにかかわるテクストの選択</h2>
+<ul>
+<li><p>『手紙』：国制は次第に発展</p>
+<blockquote>
+<p>私たちの国制の各部門は、長い時間をかけてほとんど気づかれないほどに少しずつお互いに調和し、それぞれの目的だけでなく共通の目的に適応してきた。しかし、競合する部門について私たちがこのように調和できたのは、ただ一つの即時的な取り決めによってではない。</p>
+</blockquote>
+<blockquote>
+<p><em>The parts of our Constitution have gradually, and almost insensibly, in a long course of time, accommodated themselves to each other, and to their common as well as to their separate purposes. But this adaptation of contending parts, as it has not been in ours, so it can never be in yours, or in any country, the effect of a single instantaneous regulation</em>, and no sound heads could ever think of doing it in that manner.(<span class="citation" data-cites="BurkeE:WSVIII">Burke (<a href="#/参考文献-1" role="doc-biblioref" onclick="">1990</a>)</span>, 331)</p>
+</blockquote></li>
+</ul>
+</section>
+<section id="論点③-バークのconstitutionにかかわるテクストの選択-3" class="slide level2">
+<h2>論点③ バークのconstitutionにかかわるテクストの選択</h2>
+<ul>
+<li><p>『訴え』：共通契約によって人民と成す</p>
+<blockquote>
+<p>未開な自然状態においては、人民というものは存在しない。〔略〕人民は全面的に人為的であり、他のすべての法的擬制と同じく、共通の契約によって作られる。この契約の特性はその社会が作られてきた形態から推測される。</p>
+</blockquote></li>
+<li><p>『訴え』：国制契約の拘束性</p>
+<blockquote>
+<p>国制は、暗黙であれ明示であれ、いったん何らかの合意によって定められられると、それを変更するための力は存在せず、その変更は契約を破るか、すべての当事者の同意なしには行えない。　<!-- 中野訳652 --></p>
+</blockquote>
+<ul>
+<li>➡ J. C. D. Clarkはこの一節も参照しながら、バークの契約論は「市民社会と君主との間の契約」「いったん結ばれた契約は永久に拘束力を有する」と解す（<span class="citation" data-cites="ClarkJCD:2001a1">Clark (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2001</a>)</span>, 42）</li>
+</ul></li>
+</ul>
+</section>
+<section id="論点③-バークのconstitutionにかかわるテクストの選択-訴え" class="slide level2">
+<h2>論点③ バークのconstitutionにかかわるテクストの選択 &gt; 『訴え』</h2>
+<blockquote>
+<p>未開な自然状態においては、人民というものは存在しない。〔略〕人民は全面的に人為的であり、他のすべての法的擬制と同じく、共通の契約によって作られる。この契約の特性はその社会が作られてきた形態から推測される。</p>
+</blockquote>
+<blockquote>
+<p><em>In a state of rude Nature there is no such thing as a people</em>. A number of men in themselves have no collective capacity. The idea of a people is the idea of a corporation. <em>It is wholly artificial, and made, like all other legal fictions, by common agreement. What the particular nature of that agreement was is collected from the form into which the particular society has been cast</em>. Any other is not their covenant. When men, therefore, break up the original compact or agreement which gives its corporate form and capacity to a state, they are no longer a people,―they have no longer a corporate existence,―they have no longer a legal coactive force to bind within, nor a claim to be recognized abroad. They are a number of vague, loose individuals, and nothing more. With them all is to begin again. Alas! they little know how many a weary step is to be taken before they can form themselves into a mass which has a true politic personality.(<span class="citation" data-cites="BurkeE:WSIV">Burke (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2015</a>)</span>, 445)</p>
+</blockquote>
+</section>
+<section id="論点③-バークのconstitutionにかかわるテクストの選択-4" class="slide level2">
+<h2>論点③ バークのconstitutionにかかわるテクストの選択</h2>
+<blockquote>
+<p>国制は、暗黙であれ明示であれ、いったん何らかの合意によって定められられると、それを変更するための力は存在せず、その変更は契約を破るか、すべての当事者の同意なしには行えない。</p>
+</blockquote>
+<blockquote>
+<p><em>Neither the few nor the many have a right to act merely by their will, in any matter connected with duty, trust, engagement, or obligation. The constitution of a country being once settled upon some compact, tacit or expressed, there is no power existing of force to alter it, without the breach of the covenant, or the consent of all the parties</em>. Such is the nature of a contract. And the votes of a majority of the people, whatever their infamous flatterers may teach in order to corrupt their minds, cannot alter the moral any more than they can alter the physical essence of things.(<span class="citation" data-cites="BurkeE:WSIV">Burke (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2015</a>)</span>, 440)</p>
+</blockquote>
+</section>
+<section id="論点④-同意契約論の政治哲学的含意" class="slide level2">
+<h2>論点④ 同意・契約論の政治哲学的含意</h2>
+<ul>
+<li>同意や契約といった日常的な語彙が政治的な鍵概念として使われ、それが論争の機軸の一つであったことから引き出せるインプリケーションはないか？（意見、声といった、当事者間の関係性を問わない語彙との違いは？コンテクスト主義との関係も含めて）</li>
+</ul>
+<h3 id="補助線">補助線</h3>
+<ul>
+<li><p>歴史的テクストと一般化</p>
+<blockquote>
+<p>『フランス革命の省察』が保守思想の古典とされるのは、社会秩序を解体しようとする思想に対する批判を、バークが用いたウィッグ特有の言語から別の言葉へと置き換えても通じるような形で述べられているからである（<span class="citation" data-cites="PocockJGA:1987a1">Pocock (<a href="#/参考文献-1" role="doc-biblioref" onclick="">1987</a>)</span>, xiv）。</p>
+</blockquote></li>
+</ul>
+</section>
+<section id="論点④-同意契約論の政治哲学的含意-補助線" class="slide level2">
+<h2>論点④ 同意・契約論の政治哲学的含意 &gt; 補助線</h2>
+<ul>
+<li><p>政治思想史のリヴィジョニズムと政治哲学の模索</p>
+<blockquote>
+<p>政治思想史研究の歴史学的転回の結果として、政治思想史研究がいかなる意味で政治哲学なのかは必ずしも自明ではなくなっている（<span class="citation" data-cites="InuzukaH:2014book1_preface">犬塚 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2014b</a>)</span>, xi）。</p>
+</blockquote></li>
+<li><p>半澤の「丸山・福田パラダイムへの知的懐疑」と現代的意義</p>
+<blockquote>
+<p>私に彼ら〔ケンブリッジ学派〕の主張への共感を抱かせたバネは、明らかに丸山・福田パラダイムへの知的懐疑の経験であったが、正確には私にとっての問題は、彼らにおけるような「伝統」ではなく、戦後日本社会科学の世界に特有と思われる「近代」信仰であった（<span class="citation" data-cites="HanzawaTm:2017a1">半澤 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2017</a>)</span>, 228）。</p>
+</blockquote></li>
+<li><p>コンテクスト主義への懸念と言語の普遍的意義の問いかけ</p>
+<blockquote>
+<p>まったく時代も背景も異なるテクストが、身につまされるものとして心に迫ってくることがある。それはなぜかが、文脈主義では見えてこない（<span class="citation" data-cites="NoharaSj:2023a1">野原 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2023</a>)</span>, 48）。</p>
+</blockquote></li>
+</ul>
+</section>
+<section id="論点④-同意契約論の政治哲学的含意-補助線-1" class="slide level2">
+<h2>論点④ 同意・契約論の政治哲学的含意 &gt; 補助線</h2>
+<ul>
+<li><p>社会契約に着目する現代的な意味</p>
+<blockquote>
+<p>1945年の敗戦後、新たに社会を作っていくとき、社会契約論は戦後日本を導く一つの 道しるべとなった（<span class="citation" data-cites="OmodaSe:2013book1">重田 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2013</a>)</span>, 13）。</p>
+</blockquote></li>
+<li><p>政治空間における国民の同意の縮小傾向</p>
+<blockquote>
+<p>国民の同意という国家の権威が成立する余地が、急速に縮小している。もちろん、そのもっとも大きな理由は、現実政治のレベルで、国家が社会問題の解決に職務を果たせなくなってきたということである（<span class="citation" data-cites="UkaiTf:2013book1">鵜飼 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2013</a>)</span>, 41）。</p>
+</blockquote></li>
+</ul>
+</section>
+<section id="論点④-同意契約論の政治哲学的含意-注記-犬塚" class="slide level2">
+<h2>論点④ 同意・契約論の政治哲学的含意 &gt; 注記 &gt; 犬塚</h2>
+<blockquote>
+<p>こうしたリヴィジョニズムは、政治思想史研究の有意性やアイデンティティを揺るがしている。かつて日本での西洋政治思想史研究は、西洋近代の政治思想のなかに目指すべきリベラル・デモクラシーのモデルを見出すかたちで、政治哲学・政治学としての有意性やアイデンティティを示してきた。そうした研究の伝統が、20世紀後半の日本の政治学史のなかで担った歴史的役割は小さくない。しかし近年のリヴィジョニズムによってかつての思想史像はそのままでは維持しがたくなり、つまりは政治思想史研究の歴史学的転回の結果として、政治思想史研究がいかなる意味で政治哲学なのかは必ずしも自明ではなくなっている。〔略〕過去に目指すべきモデルを見失ったなかで、政治思想史研究はどのような意味で政治哲学と言えるのか」〔略〕「政治哲学が、出来合いのイデオロギーに分類することでなく、政治について原理的に検討する営みを意味するならば、後世のイデオロギーには分類しきれない過去の思想を明らかにする作業は、政治哲学とも無関係でないはずである。禁欲的に歴史研究の手続きに従うことは、過去に知的資源を見出しえないこと、見出さないことを意味するわけではない（<span class="citation" data-cites="InuzukaH:2014book1_preface">犬塚 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2014b</a>)</span>, x-xii）。</p>
+</blockquote>
+</section>
+<section id="論点④-同意契約論の政治哲学的含意-注記-半澤" class="slide level2">
+<h2>論点④ 同意・契約論の政治哲学的含意 &gt; 注記 &gt; 半澤</h2>
+<blockquote>
+<p>改めて言わなければならないが、ここに述べたことは、「ケンブリッジ学派」問題がすでに歴史的過去に入ったと見てよい現在の私の判断である。だが、7、80年代の私について一歩踏み込んで反省してみれば、彼らの発想の根拠と、私の共感のそれとは必ずしも同じではなかった。私に彼らの主張への共感を抱かせたバネは、明らかに丸山・福田パラダイムへの知的懐疑の経験であったが、正確には私にとっての問題は、彼らにおけるような「伝統」ではなく、戦後日本社会科学の世界に特有と思われる「近代」信仰であった。私は、両者の重ね合わせをほとんど直観的に行ったようである。しかし、その違いのためか、あらぬか、一方スキナーは、批判された伝統的な思想史をすべて「神話」として全否定したが、他方私は、古典の中に「現代的意義」を求める議論を「歴史」と呼ぶことはスキナーと同じく拒否したけれども、同時に、それ自体は歴史研究とは別の、独自の意味を持つ合理的な政治的行為と考えた（<span class="citation" data-cites="HanzawaTm:2017a1">半澤 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2017</a>)</span>, 228）。</p>
+</blockquote>
+</section>
+<section id="論点④-同意契約論の政治哲学的含意-注記-野原" class="slide level2">
+<h2>論点④ 同意・契約論の政治哲学的含意 &gt; 注記 &gt; 野原</h2>
+<blockquote>
+<p>そもそも、言語そのものが、一定の抽象性を持つ。すなわち、まったく時代も背景も異なるテクストが、身につまされるものとして心に迫ってくることがある。それはなぜかが、文脈主義では見えてこない。たとえば、セネカのテクストを読むと、少なからぬ現代人は自らの人生への警句として身につまされるものを感じる。〔略〕言葉は抽象的でありうるのであり、同じ言葉・観念であっても、時代により浮かべる具体的内容は異なりうる。しかし、同じ表現が用いられることを通じて、人は時代を超えて言語・観念表現を現実的なものとして受け取るのである。そして、そうであるからこそ、言語は、時代・社会を超えて、影響しうるのである。コンテクスト主義者はこの言語の可能性を見損なっている（<span class="citation" data-cites="NoharaSj:2023a1">野原 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2023</a>)</span>, 48）。</p>
+</blockquote>
+</section>
+<section id="論点④-同意契約論の政治哲学的含意-注記-重田" class="slide level2">
+<h2>論点④ 同意・契約論の政治哲学的含意 &gt; 注記 &gt; 重田</h2>
+<blockquote>
+<p>1945年の敗戦後、新たに社会を作っていくとき、社会契約論は戦後日本を導く一つの 道しるべとなった。〔略〕そこで社会契約論は、何よりも「民主主義における国家権力への歯止め」を示す思想として理解された。個人にはいくつかの侵すことのできない権利があり、それは他の個人の権利を侵害しないかぎり制限されたり取り上げられたりしてはならない。したがって、国家は個人に何でもさせられるわけではなく、国家の要求にしたがって命を捨てることは当然ではない。〔略〕ところが遅くとも1980年代には、戦後啓蒙思想は急速にその勢いを失う。ここでは一つひとつ理由を述べる余裕はないが、言ってしまえば時代にそぐわなくなって顧みられなくなったのだ。それと同時に、社会契約論そのものもあまり読まれなくなった。〔略〕いま社会契約論を読むには、新たな読み方、戦後啓蒙思想が時代と格闘する中で発見したのとは別の読み方が必要なのだ。過去の人々が固有の時代背景からこの思想を読み解いたように、いま、この現在の状況から、新たに社会契約論を読み解き、読者にその魅力を示さなければならない（<span class="citation" data-cites="OmodaSe:2013book1">重田 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2013</a>)</span>, 13-16）。</p>
+</blockquote>
+</section>
+<section id="論点④-同意契約論の政治哲学的含意-注記-鵜飼" class="slide level2">
+<h2>論点④ 同意・契約論の政治哲学的含意 &gt; 注記 &gt; 鵜飼</h2>
+<blockquote>
+<p>国民の同意という国家の権威が成立する余地が、急速に縮小している。もちろん、そのもっとも大きな理由は、現実政治のレベルで、国家が社会問題の解決に職務を果たせなくなってきたということである。国家が国民の同意を拡張させてきた近代史における正当性の正の連鎖とはまったく逆に、国家の正当性の減退が新たな減退を招くような負の連鎖に陥っている。国家が多様化する社会問題に対して無力であるという幻滅感は共通認識となりつつある。反面、国家はより強力で広範囲にわたる国民の同意を獲得するために、生権力のいやおうなき行使に活路を見出すようになってきている（<span class="citation" data-cites="UkaiTf:2013book1">鵜飼 (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2013</a>)</span>, 41）。</p>
+</blockquote>
+</section>
+<section id="論点-2" class="slide level2">
+<h2>論点</h2>
+<ol type="1">
+<li>アメリカ革命が国制理解に与えた影響</li>
+<li>バークのcivil soceity</li>
+<li>バークのconstitutionにかかわるテクストの選択</li>
+<li>同意・契約論の政治哲学的含意</li>
+</ol>
+</section></section>
+<section>
+<section id="参考文献" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
+<h1>参考文献</h1>
+
+</section>
+<section id="参考文献-1" class="slide level2 smaller scrollable">
+<h2>参考文献</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-BurkeE:WSIV" class="csl-entry" role="listitem">
+Burke, E.Marshall, P.J., Bryant, D., Langford, P. (編), 2015. The Writings and Speeches of Edmund Burke: Volume IV: Party, Parliament, and the Dividing of the Whigs, 1780-1794. Oxford University Press, Oxford.
+</div>
+<div id="ref-BurkeE:WSVIII" class="csl-entry" role="listitem">
+Burke, E.Mitchell, L.G. (編), 1990. The Writings and Speeches of Edmund Burke Volume VIII: The French Revolution 1790-1794. Oxford University Press, Oxford.
+</div>
+<div id="ref-BurkeE:Woldall" class="csl-entry" role="listitem">
+Burke, E.Nimmo C., J. (編), 1865-1867. The Works of the Right Honourable Edmund Burke. T. M’Lean, London.
+</div>
+<div id="ref-ClarkJCD:2001a1" class="csl-entry" role="listitem">
+Clark, J.C.D., 2001. Introduction of Reflections on the Revolution in FranceClark, J.C.D. (編), Reflections on the Revolution in France: A Critical Edition. Stanford University Press, Redwood, CA.
+</div>
+<div id="ref-CraigD:2012a1" class="csl-entry" role="listitem">
+Craig, D., 2012. Burke and the ConstitutionDwan, D., Insole, C.J. (編), The Cambridge Companion to Edmund Burke, Cambridge Companions to Literature. Cambridge University Press, Cambridge, pp. 104–116.
+</div>
+<div id="ref-ManinB:1997book1" class="csl-entry" role="listitem">
+Manin, B., 1997. The Principles of Representative Government. Cambridge University Press, Cambridge.
+</div>
+<div id="ref-PocockJGA:1987a1" class="csl-entry" role="listitem">
+Pocock, J.G.A., 1987. IntroductionPocock, J.G.A. (編), Reflections on the Revolution in France. Hackett Pub. Co., Indianapolis, Ind.
+</div>
+<div id="ref-PriceR:1785book1" class="csl-entry" role="listitem">
+Price, R., 1785. Observations on the Importance of the American Revolution, and the Means of Making it a Benefit to the World. Printed for T. Cadell, London.
+</div>
+<div id="ref-HanzawaTm:2017a1" class="csl-entry" role="listitem">
+半澤孝麿., 2017. <a href="http://ci.nii.ac.jp/naid/40021170912/">回想の「ケンブリッジ学派」：政治学徒の同時代思想史物語</a>. 思想 (1117), 206–233.
+</div>
+<div id="ref-Doiyn:2007dictionary" class="csl-entry" role="listitem">
+土井美徳., 2007. 憲法典日本イギリス哲学会 (編), イギリス哲学・思想事典. 研究社, pp. 156–159.
+</div>
+<div id="ref-KishimotoHs:2000book1" class="csl-entry" role="listitem">
+岸本広司., 2000. バーク政治思想の展開. 御茶の水書房.
+</div>
+<div id="ref-MachidoriSs:2015book1" class="csl-entry" role="listitem">
+待鳥聡史., 2015. 代議制民主主義：「民意」と「政治家」を問い直す. 中央公論新社.
+</div>
+<div id="ref-InuzukaH:2014book1_preface" class="csl-entry" role="listitem">
+犬塚元., 2014b. 序論　啓蒙・改革・革命犬塚元. (編), 啓蒙・改革・革命 (岩波講座 政治哲学 第2巻). 岩波書店.
+</div>
+<div id="ref-InuzukaH_ed:2014book1" class="csl-entry" role="listitem">
+犬塚元. (編), 2014a. 啓蒙・改革・革命 (岩波講座 政治哲学 第2巻). 岩波書店.
+</div>
+<div id="ref-FukudaKi:1985book1" class="csl-entry" role="listitem">
+福田歓一., 1985. 政治学史. 東京大学出版会.
+</div>
+<div id="ref-KariyaCh:2025review1" class="csl-entry" role="listitem">
+苅谷千尋., 2025. 書評『エドマンド・バークの国制論』（高橋和則著、法政大学出版局、2024年). 図書新聞 (3672).
+</div>
+<div id="ref-OmodaSe:2013book1" class="csl-entry" role="listitem">
+重田園江., 2013. 社会契約論：ホッブズ、ヒューム、ルソー、ロールズ. 筑摩書房.
+</div>
+<div id="ref-NoharaSj:2023a1" class="csl-entry" role="listitem">
+野原慎司., 2023. スキナーとポーコックおよび思想史叙述の問題小谷英生., 網谷壮介., 飯田賢穂., 上村剛. (編), 歴史を書くとはどういうことか：初期近代ヨーロッパの歴史叙述. 勁草書房.
+</div>
+<div id="ref-TakahashiKn:2024book1" class="csl-entry" role="listitem">
+高橋和則., 2024. エドマンド・バークの国制論. 法政大学出版局.
+</div>
+<div id="ref-UkaiTf:2013book1" class="csl-entry" role="listitem">
+鵜飼健史., 2013. 人民主権について. 法政大学出版局.
+</div>
+</div>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="../../site_libs/revealjs/plugin/multimodal/multimodal.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'scrollProgress': "true",
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true,"width":"wide","numbers":true},
+'chalkboard': {"buttons":false},
+'pointer': {"key":"q","color":"red","pointerSize":16,"alwaysVisible":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'h.v',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, Multimodal, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "コピーしました");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "コピーしました");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/kariyach\.github\.io\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.43">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="苅谷 千尋">
+
 <title>The Senate of Lilliput – CHIHIRO KARIYA</title>
 <style>
 code{white-space: pre-wrap;}
@@ -19,6 +22,7 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
+
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -37,7 +41,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-e302cdc0bc70a86b9822dd330df9519a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -62,15 +67,21 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style>html{ scroll-behavior: smooth; }</style>
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="../../style_ja.css">
 </head>
+
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">CHIHIRO KARIYA</span>
@@ -82,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-<li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="../../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
@@ -111,8 +122,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
-<ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
     <a class="nav-link" href="https://orcid.org/0009-0008-3085-947X"> 
 <span class="menu-text"><i class="ai  ai-orcid" aria-label="orcid"></i></span></a>
   </li>  
@@ -132,11 +143,15 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-</div> <!-- /navcollapse -->
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">The Senate of Lilliput</h1>
             <p class="subtitle lead">quanteda</p>
@@ -163,14 +178,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">30, Apr, 2025</p>
+        <p class="date">13, May, 2025</p>
       </div>
     </div>
     
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">30, Apr, 2025</p>
+        <p class="date-modified">13, May, 2025</p>
       </div>
     </div>
       
@@ -181,32 +196,36 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
    
   <ul>
-<li><a href="#wordcloud" id="toc-wordcloud" class="nav-link active" data-scroll-target="#wordcloud">Wordcloud</a></li>
+  <li><a href="#wordcloud" id="toc-wordcloud" class="nav-link active" data-scroll-target="#wordcloud">Wordcloud</a></li>
   <li><a href="#topfeatures" id="toc-topfeatures" class="nav-link" data-scroll-target="#topfeatures">topfeatures</a></li>
-  <li>
-<a href="#kwic" id="toc-kwic" class="nav-link" data-scroll-target="#kwic">kwic</a>
+  <li><a href="#kwic" id="toc-kwic" class="nav-link" data-scroll-target="#kwic">kwic</a>
   <ul class="collapse">
-<li><a href="#interest" id="toc-interest" class="nav-link" data-scroll-target="#interest">interest</a></li>
+  <li><a href="#interest" id="toc-interest" class="nav-link" data-scroll-target="#interest">interest</a></li>
   <li><a href="#rhetoric" id="toc-rhetoric" class="nav-link" data-scroll-target="#rhetoric">rhetoric</a></li>
   <li><a href="#fame" id="toc-fame" class="nav-link" data-scroll-target="#fame">fame</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#keyness" id="toc-keyness" class="nav-link" data-scroll-target="#keyness">Keyness</a>
+  </ul></li>
+  <li><a href="#keyness" id="toc-keyness" class="nav-link" data-scroll-target="#keyness">Keyness</a>
   <ul class="collapse">
-<li><a href="#key-adrees" id="toc-key-adrees" class="nav-link" data-scroll-target="#key-adrees">0. Key adrees</a></li>
+  <li><a href="#key-adrees" id="toc-key-adrees" class="nav-link" data-scroll-target="#key-adrees">0. Key adrees</a></li>
   <li><a href="#group-wing" id="toc-group-wing" class="nav-link" data-scroll-target="#group-wing">1. Group: Wing</a></li>
   <li><a href="#group-tory" id="toc-group-tory" class="nav-link" data-scroll-target="#group-tory">2. Group: Tory</a></li>
   <li><a href="#group-wing-1" id="toc-group-wing-1" class="nav-link" data-scroll-target="#group-wing-1">3. Group: Wing?</a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul></nav>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><div class="callout callout-style-simple callout-warning">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<div class="callout callout-style-simple callout-warning">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -216,11 +235,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<section id="wordcloud" class="level2"><h2 class="anchored" data-anchor-id="wordcloud">Wordcloud</h2>
+<section id="wordcloud" class="level2">
+<h2 class="anchored" data-anchor-id="wordcloud">Wordcloud</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure">
+<p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -228,12 +249,15 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure">
+<p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="topfeatures" class="level1"><h1>topfeatures</h1>
+</section>
+<section id="topfeatures" class="level1">
+<h1>topfeatures</h1>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>    lord      man      may      can     upon   minist    peopl    power 
@@ -244,8 +268,11 @@ therefor   reason      one    whose
       47       45       45       43 </code></pre>
 </div>
 </div>
-</section><section id="kwic" class="level1"><h1>kwic</h1>
-<section id="interest" class="level2"><h2 class="anchored" data-anchor-id="interest">interest</h2>
+</section>
+<section id="kwic" class="level1">
+<h1>kwic</h1>
+<section id="interest" class="level2">
+<h2 class="anchored" data-anchor-id="interest">interest</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Keyword-in-context with 39 matches.                                                                 
@@ -290,13 +317,17 @@ therefor   reason      one    whose
   [SenateofLilliput.csv.8, 486]      true | interest | Lord      </code></pre>
 </div>
 </div>
-</section><section id="rhetoric" class="level2"><h2 class="anchored" data-anchor-id="rhetoric">rhetoric</h2>
+</section>
+<section id="rhetoric" class="level2">
+<h2 class="anchored" data-anchor-id="rhetoric">rhetoric</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Keyword-in-context with 0 matches.</code></pre>
 </div>
 </div>
-</section><section id="fame" class="level2"><h2 class="anchored" data-anchor-id="fame">fame</h2>
+</section>
+<section id="fame" class="level2">
+<h2 class="anchored" data-anchor-id="fame">fame</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Keyword-in-context with 28 matches.                                                           
@@ -330,46 +361,64 @@ therefor   reason      one    whose
   [SenateofLilliput.csv.11, 22]    mon | fame | opposit    </code></pre>
 </div>
 </div>
-</section></section><section id="keyness" class="level1"><h1>Keyness</h1>
-<section id="key-adrees" class="level2"><h2 class="anchored" data-anchor-id="key-adrees">0. Key adrees</h2>
+</section>
+</section>
+<section id="keyness" class="level1">
+<h1>Keyness</h1>
+<section id="key-adrees" class="level2">
+<h2 class="anchored" data-anchor-id="key-adrees">0. Key adrees</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure">
+<p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="group-wing" class="level2"><h2 class="anchored" data-anchor-id="group-wing">1. Group: Wing</h2>
+</section>
+<section id="group-wing" class="level2">
+<h2 class="anchored" data-anchor-id="group-wing">1. Group: Wing</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure">
+<p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="group-tory" class="level2"><h2 class="anchored" data-anchor-id="group-tory">2. Group: Tory</h2>
+</section>
+<section id="group-tory" class="level2">
+<h2 class="anchored" data-anchor-id="group-tory">2. Group: Tory</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure">
+<p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="group-wing-1" class="level2"><h2 class="anchored" data-anchor-id="group-wing-1">3. Group: Wing?</h2>
+</section>
+<section id="group-wing-1" class="level2">
+<h2 class="anchored" data-anchor-id="group-wing-1">3. Group: Wing?</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure">
+<p><img src="SenateofLilliput_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -794,7 +843,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p><span class="faux-block">© 2024 CHIHIRO KARIYA</span></p>
 </div>   
@@ -806,6 +856,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
+
+
 
 
 <script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
