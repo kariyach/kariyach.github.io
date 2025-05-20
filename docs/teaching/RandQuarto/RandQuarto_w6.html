@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.43">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="苅谷 千尋">
 <meta name="keywords" content="プロットを整える；色とラベル；横持ちデータと縦持ちデータ；チャンクオプション">
-
-<title>RとQuartoではじめるデータサイエンス：データを可視化する《2024》 – CHIHIRO KARIYA</title>
+<title>RとQuartoではじめるデータサイエンス：データを可視化する《2025》 – CHIHIRO KARIYA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,7 +74,6 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -95,8 +91,7 @@ div.csl-indent {
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-e302cdc0bc70a86b9822dd330df9519a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -121,21 +116,15 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
-
-
+}</script><style>html{ scroll-behavior: smooth; }</style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="../../style_ja.css">
 </head>
-
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">CHIHIRO KARIYA</span>
@@ -147,7 +136,7 @@ div.csl-indent {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
@@ -176,8 +165,8 @@ div.csl-indent {
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
     <a class="nav-link" href="https://orcid.org/0009-0008-3085-947X"> 
 <span class="menu-text"><i class="ai  ai-orcid" aria-label="orcid"></i></span></a>
   </li>  
@@ -197,17 +186,13 @@ div.csl-indent {
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス：データを可視化する《2024》</a></h1>
+      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス：データを可視化する《2025》</a></h1>
             <p class="subtitle lead">#6 Visualization（3）</p>
                       </div>
   </div>
@@ -232,14 +217,14 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Wednesday, 24, Jul, 2024</p>
+        <p class="date">Wednesday, 21, May, 2025</p>
       </div>
     </div>
     
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">Tuesday, 13, May, 2025</p>
+        <p class="date-modified">Tuesday, 20, May, 2025</p>
       </div>
     </div>
       
@@ -257,84 +242,85 @@ div.csl-indent {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#前回の振り返り" id="toc-前回の振り返り" class="nav-link active" data-scroll-target="#前回の振り返り">Ⅰ. 前回の振り返り</a>
+<li>
+<a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A" id="toc-前回の振り返り" class="nav-link active" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A">Ⅰ. 前回の振り返り</a>
   <ul class="collapse">
-  <li><a href="#前回の授業の感想" id="toc-前回の授業の感想" class="nav-link" data-scroll-target="#前回の授業の感想">1. 前回の「授業の感想」</a></li>
-  </ul></li>
-  <li><a href="#データの整形ラベルメモの追加-part-ii" id="toc-データの整形ラベルメモの追加-part-ii" class="nav-link" data-scroll-target="#データの整形ラベルメモの追加-part-ii">Ⅱ. データの整形・ラベル・メモの追加 part II</a>
-  <ul class="collapse">
-  <li><a href="#図内への描画と書き込み" id="toc-図内への描画と書き込み" class="nav-link" data-scroll-target="#図内への描画と書き込み">1. 図内への描画と書き込み</a>
-  <ul class="collapse">
-  <li><a href="#図に注釈を加えるannotate関数" id="toc-図に注釈を加えるannotate関数" class="nav-link" data-scroll-target="#図に注釈を加えるannotate関数">図に注釈を加える：annotate()関数</a></li>
-  </ul></li>
-  <li><a href="#scale_関数guides関数" id="toc-scale_関数guides関数" class="nav-link" data-scroll-target="#scale_関数guides関数">2. scale_関数・guides()関数</a>
-  <ul class="collapse">
-  <li><a href="#目盛りの調整" id="toc-目盛りの調整" class="nav-link" data-scroll-target="#目盛りの調整">⑴ 目盛りの調整</a></li>
-  <li><a href="#凡例" id="toc-凡例" class="nav-link" data-scroll-target="#凡例">⑵ 凡例</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#プロットを整える" id="toc-プロットを整える" class="nav-link" data-scroll-target="#プロットを整える">Ⅲ. プロットを整える</a>
-  <ul class="collapse">
-  <li><a href="#色を使いこなす" id="toc-色を使いこなす" class="nav-link" data-scroll-target="#色を使いこなす">1. 色を使いこなす</a></li>
-  <li><a href="#連続変数と離散変数に合った色" id="toc-連続変数と離散変数に合った色" class="nav-link" data-scroll-target="#連続変数と離散変数に合った色">2. 連続変数と離散変数に合った色</a>
-  <ul class="collapse">
-  <li><a href="#連続変数" id="toc-連続変数" class="nav-link" data-scroll-target="#連続変数">⑴ 連続変数</a></li>
-  <li><a href="#離散変数" id="toc-離散変数" class="nav-link" data-scroll-target="#離散変数">2 離散変数</a></li>
-  </ul></li>
-  <li><a href="#theme関数" id="toc-theme関数" class="nav-link" data-scroll-target="#theme関数">3. theme()関数</a>
-  <ul class="collapse">
-  <li><a href="#凡例の位置" id="toc-凡例の位置" class="nav-link" data-scroll-target="#凡例の位置">⑴ 凡例の位置</a></li>
-  <li><a href="#図の見た目" id="toc-図の見た目" class="nav-link" data-scroll-target="#図の見た目">⑵ 図の見た目</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#横持ちデータと縦持ちデータ" id="toc-横持ちデータと縦持ちデータ" class="nav-link" data-scroll-target="#横持ちデータと縦持ちデータ">Ⅳ. 横持ちデータと縦持ちデータ</a>
-  <ul class="collapse">
-  <li><a href="#準備" id="toc-準備" class="nav-link" data-scroll-target="#準備">0. 準備</a></li>
-  <li><a href="#縦持ちデータへの変換" id="toc-縦持ちデータへの変換" class="nav-link" data-scroll-target="#縦持ちデータへの変換">1. 縦持ちデータへの変換</a></li>
-  <li><a href="#縦持ちデータを使った図の作成" id="toc-縦持ちデータを使った図の作成" class="nav-link" data-scroll-target="#縦持ちデータを使った図の作成">2. 縦持ちデータを使った図の作成</a>
-  <ul class="collapse">
-  <li><a href="#棒グラフ" id="toc-棒グラフ" class="nav-link" data-scroll-target="#棒グラフ">⑴ 棒グラフ</a></li>
-  <li><a href="#帯グラフ" id="toc-帯グラフ" class="nav-link" data-scroll-target="#帯グラフ">⑵ 帯グラフ</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#チャンクオプション" id="toc-チャンクオプション" class="nav-link" data-scroll-target="#チャンクオプション">Ⅴ. チャンクオプション</a></li>
-  <li><a href="#演習と個別相談" id="toc-演習と個別相談" class="nav-link" data-scroll-target="#演習と個別相談">Ⅴ. 演習と個別相談</a>
-  <ul class="collapse">
-  <li><a href="#サンプル最終成果物として提出して欲しいレポートのかたち再掲" id="toc-サンプル最終成果物として提出して欲しいレポートのかたち再掲" class="nav-link" data-scroll-target="#サンプル最終成果物として提出して欲しいレポートのかたち再掲">サンプル（最終成果物として提出して欲しいレポートのかたち）・再掲</a></li>
-  </ul></li>
-  <li><a href="#宿題" id="toc-宿題" class="nav-link" data-scroll-target="#宿題">Ⅵ. 宿題</a>
-  <ul class="collapse">
-  <li><a href="#授業の感想" id="toc-授業の感想" class="nav-link" data-scroll-target="#授業の感想">1. 授業の感想</a></li>
-  <li><a href="#演習" id="toc-演習" class="nav-link" data-scroll-target="#演習">2. 演習</a></li>
-  </ul></li>
-  <li><a href="#引用文献" id="toc-引用文献" class="nav-link" data-scroll-target="#引用文献">引用文献</a></li>
+<li><a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3" id="toc-前回の授業の感想" class="nav-link" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3">1. 前回の「授業の感想」</a></li>
   </ul>
-</nav>
+</li>
+  <li>
+<a href="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E6%95%B4%E5%BD%A2%E3%83%A9%E3%83%99%E3%83%AB%E3%83%A1%E3%83%A2%E3%81%AE%E8%BF%BD%E5%8A%A0-part-ii" id="toc-データの整形ラベルメモの追加-part-ii" class="nav-link" data-scroll-target="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E6%95%B4%E5%BD%A2%E3%83%A9%E3%83%99%E3%83%AB%E3%83%A1%E3%83%A2%E3%81%AE%E8%BF%BD%E5%8A%A0-part-ii">Ⅱ. データの整形・ラベル・メモの追加 part II</a>
+  <ul class="collapse">
+<li>
+<a href="#%E5%9B%B3%E5%86%85%E3%81%B8%E3%81%AE%E6%8F%8F%E7%94%BB%E3%81%A8%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF" id="toc-図内への描画と書き込み" class="nav-link" data-scroll-target="#%E5%9B%B3%E5%86%85%E3%81%B8%E3%81%AE%E6%8F%8F%E7%94%BB%E3%81%A8%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF">1. 図内への描画と書き込み</a>
+  <ul class="collapse">
+<li><a href="#%E5%9B%B3%E3%81%AB%E6%B3%A8%E9%87%88%E3%82%92%E5%8A%A0%E3%81%88%E3%82%8Bannotate%E9%96%A2%E6%95%B0" id="toc-図に注釈を加えるannotate関数" class="nav-link" data-scroll-target="#%E5%9B%B3%E3%81%AB%E6%B3%A8%E9%87%88%E3%82%92%E5%8A%A0%E3%81%88%E3%82%8Bannotate%E9%96%A2%E6%95%B0">図に注釈を加える：annotate()関数</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#scale_%E9%96%A2%E6%95%B0guides%E9%96%A2%E6%95%B0" id="toc-scale_関数guides関数" class="nav-link" data-scroll-target="#scale_%E9%96%A2%E6%95%B0guides%E9%96%A2%E6%95%B0">2. scale_関数・guides()関数</a>
+  <ul class="collapse">
+<li><a href="#%E7%9B%AE%E7%9B%9B%E3%82%8A%E3%81%AE%E8%AA%BF%E6%95%B4" id="toc-目盛りの調整" class="nav-link" data-scroll-target="#%E7%9B%AE%E7%9B%9B%E3%82%8A%E3%81%AE%E8%AA%BF%E6%95%B4">⑴ 目盛りの調整</a></li>
+  <li><a href="#%E5%87%A1%E4%BE%8B" id="toc-凡例" class="nav-link" data-scroll-target="#%E5%87%A1%E4%BE%8B">⑵ 凡例</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li>
+<a href="#%E3%83%97%E3%83%AD%E3%83%83%E3%83%88%E3%82%92%E6%95%B4%E3%81%88%E3%82%8B" id="toc-プロットを整える" class="nav-link" data-scroll-target="#%E3%83%97%E3%83%AD%E3%83%83%E3%83%88%E3%82%92%E6%95%B4%E3%81%88%E3%82%8B">Ⅲ. プロットを整える</a>
+  <ul class="collapse">
+<li><a href="#%E8%89%B2%E3%82%92%E4%BD%BF%E3%81%84%E3%81%93%E3%81%AA%E3%81%99" id="toc-色を使いこなす" class="nav-link" data-scroll-target="#%E8%89%B2%E3%82%92%E4%BD%BF%E3%81%84%E3%81%93%E3%81%AA%E3%81%99">1. 色を使いこなす</a></li>
+  <li>
+<a href="#%E9%80%A3%E7%B6%9A%E5%A4%89%E6%95%B0%E3%81%A8%E9%9B%A2%E6%95%A3%E5%A4%89%E6%95%B0%E3%81%AB%E5%90%88%E3%81%A3%E3%81%9F%E8%89%B2" id="toc-連続変数と離散変数に合った色" class="nav-link" data-scroll-target="#%E9%80%A3%E7%B6%9A%E5%A4%89%E6%95%B0%E3%81%A8%E9%9B%A2%E6%95%A3%E5%A4%89%E6%95%B0%E3%81%AB%E5%90%88%E3%81%A3%E3%81%9F%E8%89%B2">2. 連続変数と離散変数に合った色</a>
+  <ul class="collapse">
+<li><a href="#%E9%80%A3%E7%B6%9A%E5%A4%89%E6%95%B0" id="toc-連続変数" class="nav-link" data-scroll-target="#%E9%80%A3%E7%B6%9A%E5%A4%89%E6%95%B0">⑴ 連続変数</a></li>
+  <li><a href="#%E9%9B%A2%E6%95%A3%E5%A4%89%E6%95%B0" id="toc-離散変数" class="nav-link" data-scroll-target="#%E9%9B%A2%E6%95%A3%E5%A4%89%E6%95%B0">2 離散変数</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#theme%E9%96%A2%E6%95%B0" id="toc-theme関数" class="nav-link" data-scroll-target="#theme%E9%96%A2%E6%95%B0">3. theme()関数</a>
+  <ul class="collapse">
+<li><a href="#%E5%87%A1%E4%BE%8B%E3%81%AE%E4%BD%8D%E7%BD%AE" id="toc-凡例の位置" class="nav-link" data-scroll-target="#%E5%87%A1%E4%BE%8B%E3%81%AE%E4%BD%8D%E7%BD%AE">⑴ 凡例の位置</a></li>
+  <li><a href="#%E5%9B%B3%E3%81%AE%E8%A6%8B%E3%81%9F%E7%9B%AE" id="toc-図の見た目" class="nav-link" data-scroll-target="#%E5%9B%B3%E3%81%AE%E8%A6%8B%E3%81%9F%E7%9B%AE">⑵ 図の見た目</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li>
+<a href="#%E6%A8%AA%E6%8C%81%E3%81%A1%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E7%B8%A6%E6%8C%81%E3%81%A1%E3%83%87%E3%83%BC%E3%82%BF" id="toc-横持ちデータと縦持ちデータ" class="nav-link" data-scroll-target="#%E6%A8%AA%E6%8C%81%E3%81%A1%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E7%B8%A6%E6%8C%81%E3%81%A1%E3%83%87%E3%83%BC%E3%82%BF">Ⅳ. 横持ちデータと縦持ちデータ</a>
+  <ul class="collapse">
+<li><a href="#%E6%BA%96%E5%82%99" id="toc-準備" class="nav-link" data-scroll-target="#%E6%BA%96%E5%82%99">0. 準備</a></li>
+  <li><a href="#%E7%B8%A6%E6%8C%81%E3%81%A1%E3%83%87%E3%83%BC%E3%82%BF%E3%81%B8%E3%81%AE%E5%A4%89%E6%8F%9B" id="toc-縦持ちデータへの変換" class="nav-link" data-scroll-target="#%E7%B8%A6%E6%8C%81%E3%81%A1%E3%83%87%E3%83%BC%E3%82%BF%E3%81%B8%E3%81%AE%E5%A4%89%E6%8F%9B">1. 縦持ちデータへの変換</a></li>
+  <li>
+<a href="#%E7%B8%A6%E6%8C%81%E3%81%A1%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E5%9B%B3%E3%81%AE%E4%BD%9C%E6%88%90" id="toc-縦持ちデータを使った図の作成" class="nav-link" data-scroll-target="#%E7%B8%A6%E6%8C%81%E3%81%A1%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E5%9B%B3%E3%81%AE%E4%BD%9C%E6%88%90">2. 縦持ちデータを使った図の作成</a>
+  <ul class="collapse">
+<li><a href="#%E6%A3%92%E3%82%B0%E3%83%A9%E3%83%95" id="toc-棒グラフ" class="nav-link" data-scroll-target="#%E6%A3%92%E3%82%B0%E3%83%A9%E3%83%95">⑴ 棒グラフ</a></li>
+  <li><a href="#%E5%B8%AF%E3%82%B0%E3%83%A9%E3%83%95" id="toc-帯グラフ" class="nav-link" data-scroll-target="#%E5%B8%AF%E3%82%B0%E3%83%A9%E3%83%95">⑵ 帯グラフ</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li><a href="#%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3" id="toc-チャンクオプション" class="nav-link" data-scroll-target="#%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">Ⅴ. チャンクオプション</a></li>
+  <li>
+<a href="#%E5%AE%BF%E9%A1%8C" id="toc-宿題" class="nav-link" data-scroll-target="#%E5%AE%BF%E9%A1%8C">Ⅵ. 宿題</a>
+  <ul class="collapse">
+<li><a href="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3" id="toc-授業の感想" class="nav-link" data-scroll-target="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3">1. 授業の感想</a></li>
+  <li><a href="#%E6%BC%94%E7%BF%92" id="toc-演習" class="nav-link" data-scroll-target="#%E6%BC%94%E7%BF%92">2. 演習</a></li>
+  </ul>
+</li>
+  <li><a href="#%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE" id="toc-引用文献" class="nav-link" data-scroll-target="#%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE">引用文献</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block page-columns page-full column-page-left" id="quarto-document-content">
-
-
-
-
-
-<section id="前回の振り返り" class="level1">
-<h1>Ⅰ. 前回の振り返り</h1>
-<section id="前回の授業の感想" class="level2">
-<h2 class="anchored" data-anchor-id="前回の授業の感想">1. 前回の「授業の感想」</h2>
+<main class="content quarto-banner-title-block page-columns page-full column-page-left" id="quarto-document-content"><section id="前回の振り返り" class="level1"><h1>Ⅰ. 前回の振り返り</h1>
+<section id="前回の授業の感想" class="level2"><h2 class="anchored" data-anchor-id="前回の授業の感想">1. 前回の「授業の感想」</h2>
 <ul>
 <li>別紙参照</li>
-</ul>
-</section>
-</section>
-<section id="データの整形ラベルメモの追加-part-ii" class="level1">
-<h1>Ⅱ. データの整形・ラベル・メモの追加 part II</h1>
-<section id="図内への描画と書き込み" class="level2">
-<h2 class="anchored" data-anchor-id="図内への描画と書き込み">1. 図内への描画と書き込み</h2>
+</ul></section></section><section id="データの整形ラベルメモの追加-part-ii" class="level1"><h1>Ⅱ. データの整形・ラベル・メモの追加 part II</h1>
+<section id="図内への描画と書き込み" class="level2"><h2 class="anchored" data-anchor-id="図内への描画と書き込み">1. 図内への描画と書き込み</h2>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -345,50 +331,47 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<section id="図に注釈を加えるannotate関数" class="level3">
-<h3 class="anchored" data-anchor-id="図に注釈を加えるannotate関数">図に注釈を加える：annotate()関数</h3>
+<section id="図に注釈を加えるannotate関数" class="level3"><h3 class="anchored" data-anchor-id="図に注釈を加えるannotate関数">図に注釈を加える：annotate()関数</h3>
 <ul>
 <li>socvizパッケージのインストールと読み込み（まだの場合）</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors)) <span class="sc">+</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">geom =</span> <span class="st">"text"</span>, <span class="co"># 注釈の形態にテキストを指定</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">91</span>, <span class="at">y =</span> <span class="dv">33</span>, <span class="co"># 注釈を挿入する座標軸を指定</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="st">"A surpriseingly high </span><span class="sc">\n</span><span class="st"> recovery rate"</span>, <span class="co"># 注釈の文字</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">hjust =</span> <span class="dv">0</span> <span class="co"># テキストの水平位置を調整。0の場合､テキストの左端が指定されたx座標に揃えられる</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">annotate</span><span class="op">(</span></span>
+<span>    geom <span class="op">=</span> <span class="st">"text"</span>, <span class="co"># 注釈の形態にテキストを指定</span></span>
+<span>    x <span class="op">=</span> <span class="fl">91</span>, y <span class="op">=</span> <span class="fl">33</span>, <span class="co"># 注釈を挿入する座標軸を指定</span></span>
+<span>    label <span class="op">=</span> <span class="st">"A surpriseingly high \n recovery rate"</span>, <span class="co"># 注釈の文字</span></span>
+<span>    hjust <span class="op">=</span> <span class="fl">0</span> <span class="co"># テキストの水平位置を調整。0の場合､テキストの左端が指定されたx座標に揃えられる</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors)) <span class="sc">+</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">geom =</span> <span class="st">"rect"</span>, <span class="co"># 注釈の形態にrectangle（矩形）を指定</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">xmin =</span> <span class="dv">125</span>, <span class="at">xmax =</span> <span class="dv">155</span>, <span class="co"># 矩形の左端と右端</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymin =</span> <span class="dv">30</span>, <span class="at">ymax=</span> <span class="dv">35</span>, <span class="co"># 矩形の下端と上端</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"red"</span>, <span class="co"># 矩形の色を指定</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.2</span>  <span class="co"># 色の透過度を指定（デフォルト値1では見にくくなるため）</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>   <span class="fu">annotate</span>(</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">geom =</span> <span class="st">"text"</span>,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">157</span>, <span class="at">y =</span> <span class="dv">33</span>,</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="st">"A surpriseingly high </span><span class="sc">\n</span><span class="st"> recovery rate"</span>, </span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">hjust =</span> <span class="dv">0</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">annotate</span><span class="op">(</span></span>
+<span>    geom <span class="op">=</span> <span class="st">"rect"</span>, <span class="co"># 注釈の形態にrectangle（矩形）を指定</span></span>
+<span>    xmin <span class="op">=</span> <span class="fl">125</span>, xmax <span class="op">=</span> <span class="fl">155</span>, <span class="co"># 矩形の左端と右端</span></span>
+<span>    ymin <span class="op">=</span> <span class="fl">30</span>, ymax<span class="op">=</span> <span class="fl">35</span>, <span class="co"># 矩形の下端と上端</span></span>
+<span>    fill <span class="op">=</span> <span class="st">"red"</span>, <span class="co"># 矩形の色を指定</span></span>
+<span>    alpha <span class="op">=</span> <span class="fl">0.2</span>  <span class="co"># 色の透過度を指定（デフォルト値1では見にくくなるため）</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>   <span class="fu">annotate</span><span class="op">(</span></span>
+<span>    geom <span class="op">=</span> <span class="st">"text"</span>,</span>
+<span>    x <span class="op">=</span> <span class="fl">157</span>, y <span class="op">=</span> <span class="fl">33</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"A surpriseingly high \n recovery rate"</span>, </span>
+<span>    hjust <span class="op">=</span> <span class="fl">0</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -409,35 +392,34 @@ div.csl-indent {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>以下のデータフレームに興味がある場合は､<a href="https://kariyach.github.io/teaching/RandQuarto/金沢広域急病センター利用者数.html">サンプル：金沢広域急病センター利用者数</a>を参照下さい</p>
+<p>以下のデータフレームに興味がある場合は､<a href="https://kariyach.github.io/teaching/RandQuarto/%E9%87%91%E6%B2%A2%E5%BA%83%E5%9F%9F%E6%80%A5%E7%97%85%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E5%88%A9%E7%94%A8%E8%80%85%E6%95%B0.html">サンプル：金沢広域急病センター利用者数</a>を参照下さい</p>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 矩形のデータフレームを作成</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>rects <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">xmin =</span> <span class="fu">as.Date</span>(<span class="st">"2020-04-16"</span>),</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">xmax =</span> <span class="fu">as.Date</span>(<span class="st">"2021-09-30"</span>),</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">"緊急事態宣言"</span>  <span class="co"># 凡例に表示するラベル</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>df_hospital_long <span class="sc">%&gt;%</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(日付) <span class="sc">%&gt;%</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(専門) <span class="sc">%&gt;%</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(移動平均 <span class="ot">=</span> <span class="fu">rollmean</span>(利用者数, <span class="at">k =</span> <span class="dv">90</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> <span class="st">"right"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 日付, <span class="at">y =</span> 移動平均, <span class="at">color =</span> 専門, <span class="at">group =</span> 専門)) <span class="sc">+</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rect</span>(<span class="at">data =</span> rects, <span class="fu">aes</span>(<span class="at">xmin =</span> xmin, <span class="at">xmax =</span> xmax, <span class="at">ymin =</span> ymin, <span class="at">ymax =</span> ymax, <span class="at">fill =</span> label), <span class="at">alpha =</span> <span class="fl">0.05</span>,<span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="st">"red"</span>, <span class="at">name =</span> <span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">base_family =</span> <span class="st">"HiraginoSans-W3"</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 矩形のデータフレームを作成</span></span>
+<span><span class="va">rects</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
+<span>  xmin <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2020-04-16"</span><span class="op">)</span>,</span>
+<span>  xmax <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2021-09-30"</span><span class="op">)</span>,</span>
+<span>  ymin <span class="op">=</span> <span class="op">-</span><span class="cn">Inf</span>,</span>
+<span>  ymax <span class="op">=</span> <span class="cn">Inf</span>,</span>
+<span>  label <span class="op">=</span> <span class="st">"緊急事態宣言"</span>  <span class="co"># 凡例に表示するラベル</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df_hospital_long</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">arrange</span><span class="op">(</span><span class="va">日付</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">専門</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>移動平均 <span class="op">=</span> <span class="fu">rollmean</span><span class="op">(</span><span class="va">利用者数</span>, k <span class="op">=</span> <span class="fl">90</span>, fill <span class="op">=</span> <span class="cn">NA</span>, align <span class="op">=</span> <span class="st">"right"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">日付</span>, y <span class="op">=</span> <span class="va">移動平均</span>, color <span class="op">=</span> <span class="va">専門</span>, group <span class="op">=</span> <span class="va">専門</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_line</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_rect</span><span class="op">(</span>data <span class="op">=</span> <span class="va">rects</span>, <span class="fu">aes</span><span class="op">(</span>xmin <span class="op">=</span> <span class="va">xmin</span>, xmax <span class="op">=</span> <span class="va">xmax</span>, ymin <span class="op">=</span> <span class="va">ymin</span>, ymax <span class="op">=</span> <span class="va">ymax</span>, fill <span class="op">=</span> <span class="va">label</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">0.05</span>,inherit.aes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_fill_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="st">"red"</span>, name <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_minimal</span><span class="op">(</span></span>
+<span>  base_family <span class="op">=</span> <span class="st">"HiraginoSans-W3"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -448,14 +430,11 @@ div.csl-indent {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>さらに学習したい場合は､<a href="https://kariyach.github.io/teaching/RandQuarto/usefulsite.html#アノテーション">役立つサイト&gt;アノテーション</a>を参照下さい</p>
+<p>さらに学習したい場合は､<a href="https://kariyach.github.io/teaching/RandQuarto/usefulsite.html#%E3%82%A2%E3%83%8E%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">役立つサイト&gt;アノテーション</a>を参照下さい</p>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="scale_関数guides関数" class="level2">
-<h2 class="anchored" data-anchor-id="scale_関数guides関数">2. scale_関数・guides()関数</h2>
+</section></section><section id="scale_関数guides関数" class="level2"><h2 class="anchored" data-anchor-id="scale_関数guides関数">2. scale_関数・guides()関数</h2>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -466,31 +445,30 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<section id="目盛りの調整" class="level3">
-<h3 class="anchored" data-anchor-id="目盛りの調整">⑴ 目盛りの調整</h3>
+<section id="目盛りの調整" class="level3"><h3 class="anchored" data-anchor-id="目盛りの調整">⑴ 目盛りの調整</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="co"># X軸を線形軸から対数軸に</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_x_log10</span><span class="op">(</span><span class="op">)</span> <span class="co"># X軸を線形軸から対数軸に</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span><span class="co"># X軸を線形軸から対数軸に</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">15</span>, <span class="dv">25</span>)) <span class="co"># 間隔を直接指定する</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_x_log10</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span><span class="co"># X軸を線形軸から対数軸に</span></span>
+<span>  <span class="fu">scale_y_continuous</span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">15</span>, <span class="fl">25</span><span class="op">)</span><span class="op">)</span> <span class="co"># 間隔を直接指定する</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -506,67 +484,79 @@ div.csl-indent {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span><span class="co"># X軸を線形軸から対数軸に</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">30</span>, <span class="at">by =</span> <span class="dv">10</span>)) <span class="co"># 最小値､最大値､目盛りの単位を指定</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_x_log10</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span><span class="co"># X軸を線形軸から対数軸に</span></span>
+<span>  <span class="fu">scale_y_continuous</span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">30</span>, by <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span> <span class="co"># 最小値､最大値､目盛りの単位を指定</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span> <span class="co"># X軸を線形軸から対数軸に</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">n.breaks =</span> <span class="dv">10</span>) <span class="co"># y軸の目盛りを10にする（ggplot2が自動的に目盛りの位置を調整するのを助ける）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_x_log10</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="co"># X軸を線形軸から対数軸に</span></span>
+<span>  <span class="fu">scale_y_continuous</span><span class="op">(</span></span>
+<span>                     n.breaks <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="co"># y軸の目盛りを10にする（ggplot2が自動的に目盛りの位置を調整するのを助ける）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span> <span class="co"># X軸を線形軸から対数軸に</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">15</span>, <span class="dv">25</span>),</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Five"</span>, <span class="st">"Fifteen"</span>, <span class="st">"Twenty Five"</span>) <span class="co"># ラベルを上書き</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_x_log10</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="co"># X軸を線形軸から対数軸に</span></span>
+<span>  <span class="fu">scale_y_continuous</span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">15</span>, <span class="fl">25</span><span class="op">)</span>,</span>
+<span>                     labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Five"</span>, <span class="st">"Fifteen"</span>, <span class="st">"Twenty Five"</span><span class="op">)</span> <span class="co"># ラベルを上書き</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="凡例" class="level3">
-<h3 class="anchored" data-anchor-id="凡例">⑵ 凡例</h3>
+<ul>
+<li>桁にカンマを入れる</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"コーポラティスト"</span>, <span class="st">"リベラル"</span>, <span class="st">"社会民主主義"</span>, <span class="st">"未分類"</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> <span class="co"># 凡例内のラベルを書き換える</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"交通事故死者数"</span>, <span class="co"># 凡例（X軸）</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"臓器提供数"</span>, <span class="co"># 凡例（Y軸）</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"福祉国家体制"</span>) <span class="co"># 凡例（色分け）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, y <span class="op">=</span> <span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span> <span class="op">*</span> <span class="fl">1000</span><span class="op">)</span>, <span class="fu">aes</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_col</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_y_continuous</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">label_comma</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="凡例" class="level3"><h3 class="anchored" data-anchor-id="凡例">⑵ 凡例</h3>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_discrete</span><span class="op">(</span></span>
+<span>    labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"コーポラティスト"</span>, <span class="st">"リベラル"</span>, <span class="st">"社会民主主義"</span>, <span class="st">"未分類"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span> <span class="co"># 凡例内のラベルを書き換える</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"交通事故死者数"</span>, <span class="co"># 凡例（X軸）</span></span>
+<span>       y <span class="op">=</span> <span class="st">"臓器提供数"</span>, <span class="co"># 凡例（Y軸）</span></span>
+<span>       color <span class="op">=</span> <span class="st">"福祉国家体制"</span><span class="op">)</span> <span class="co"># 凡例（色分け）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -582,63 +572,68 @@ div.csl-indent {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"コーポラティスト"</span>, <span class="st">"リベラル"</span>, <span class="st">"社会民主主義"</span>, <span class="st">"未分類"</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> <span class="co"># 凡例内のラベルを書き換える</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="co"># 凡例（X軸）を消す</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>, <span class="co"># 凡例（Y軸）を消す</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"福祉国家体制"</span>) <span class="co"># 凡例（色分け）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_discrete</span><span class="op">(</span></span>
+<span>    labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"コーポラティスト"</span>, <span class="st">"リベラル"</span>, <span class="st">"社会民主主義"</span>, <span class="st">"未分類"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span> <span class="co"># 凡例内のラベルを書き換える</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, <span class="co"># 凡例（X軸）を消す</span></span>
+<span>       y <span class="op">=</span> <span class="st">""</span>, <span class="co"># 凡例（Y軸）を消す</span></span>
+<span>       color <span class="op">=</span> <span class="st">"福祉国家体制"</span><span class="op">)</span> <span class="co"># 凡例（色分け）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"コーポラティスト"</span>, <span class="st">"リベラル"</span>, <span class="st">"社会民主主義"</span>, <span class="st">"未分類"</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> <span class="co"># 凡例内のラベルを書き換える</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"交通事故死者数"</span>, <span class="co"># 凡例（X軸）</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"臓器提供数"</span>) <span class="sc">+</span> <span class="co"># 凡例（Y軸）</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>) <span class="co"># 凡例を消す</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_discrete</span><span class="op">(</span></span>
+<span>    labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"コーポラティスト"</span>, <span class="st">"リベラル"</span>, <span class="st">"社会民主主義"</span>, <span class="st">"未分類"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span> <span class="co"># 凡例内のラベルを書き換える</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"交通事故死者数"</span>, <span class="co"># 凡例（X軸）</span></span>
+<span>       y <span class="op">=</span> <span class="st">"臓器提供数"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># 凡例（Y軸）</span></span>
+<span>  <span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="co"># 凡例を消す</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>⑶ ラベルの傾き</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>以下の図では意味をもちませんが、長いラベルの場合に必須です</p>
+</div>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span> </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="co"># x軸の値のラベルの傾きを調整</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_x_log10</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="co"># x軸の値のラベルの傾きを調整</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="プロットを整える" class="level1">
-<h1>Ⅲ. プロットを整える</h1>
-<section id="色を使いこなす" class="level2">
-<h2 class="anchored" data-anchor-id="色を使いこなす">1. 色を使いこなす</h2>
+</section></section></section><section id="プロットを整える" class="level1"><h1>Ⅲ. プロットを整える</h1>
+<section id="色を使いこなす" class="level2"><h2 class="anchored" data-anchor-id="色を使いこなす">1. 色を使いこなす</h2>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -663,40 +658,40 @@ div.csl-indent {
 <p>カラーパレットは、プロットに用いるデータを表現する能力 に基づいて選ぶのがよいでしょう。例えば国や性別など、順序なしのカテゴリカル変数を表すには、簡単に混同されないよ うな､はっきり区別できる色が必要です。その一方で、教育レベルといったような順序付きカテゴリカル変数では、大小や早い遅いなど段階的に変化する色の枠組みが必要です。それ以外にも変数の種類があります。例えば、順序付き変数でも、リッ カート尺度 (Likert scale)のように中間的な点から双方向に広がるにつれて離れていくような尺度を取り扱う場合はどうすればよいでしょうか。繰り返しになりますが、この質問は色の尺度で変数をマッピングする場合にどうやって正確さや忠実さを確保するのかという問題です。手元のデータの構造を反映したパレットを選ぶように注意してください。例えば、連続的な変化をカテゴリカルなパレットでマッピングしないように、また、双方向パレットを使う場合は中間点がはっきりしない変数には用いないようにしましょう（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン <a href="#ref-HealyK:2021book1_translJA" role="doc-biblioref">(2021)</a></span>, 283ページ）。</p>
 </blockquote>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_brewer</span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Set2"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Pastel2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_brewer</span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Pastel2"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_brewer</span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Dark2"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -712,21 +707,29 @@ div.csl-indent {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">palmerpenguins</span><span class="fu">::</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/reference/penguins.html">penguins</a></span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">bill_length_mm</span>, fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_histogram</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_fill_brewer</span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Dark2"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="連続変数と離散変数に合った色" class="level2">
-<h2 class="anchored" data-anchor-id="連続変数と離散変数に合った色">2. 連続変数と離散変数に合った色</h2>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>R4.5.0でpenguinsのデータセットがbase Rに入りましたが、レンダリングがうまくいかないので、palmerpenguinsのパッケージを使っています。「palmerpenguins::penguins」のような::表記は、関数名が衝突する場合、パッケージを指定するために使います</p>
+</div>
+</div>
+</div>
+</section><section id="連続変数と離散変数に合った色" class="level2"><h2 class="anchored" data-anchor-id="連続変数と離散変数に合った色">2. 連続変数と離散変数に合った色</h2>
 <ul>
 <li>RColorBrewerをインストールし､ライブラリで読み込む</li>
 </ul>
@@ -740,40 +743,34 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<section id="連続変数" class="level3">
-<h3 class="anchored" data-anchor-id="連続変数">⑴ 連続変数</h3>
+<section id="連続変数" class="level3"><h3 class="anchored" data-anchor-id="連続変数">⑴ 連続変数</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"RColorBrewer"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.all</span>(<span class="at">type=</span><span class="st">"seq"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"RColorBrewer"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.all</a></span><span class="op">(</span>type<span class="op">=</span><span class="st">"seq"</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="離散変数" class="level3">
-<h3 class="anchored" data-anchor-id="離散変数">2 離散変数</h3>
+</section><section id="離散変数" class="level3"><h3 class="anchored" data-anchor-id="離散変数">2 離散変数</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"RColorBrewer"</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.all</span>(<span class="at">type=</span><span class="st">"div"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"RColorBrewer"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.all</a></span><span class="op">(</span>type<span class="op">=</span><span class="st">"div"</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"RColorBrewer"</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.all</span>(<span class="at">colorblindFriendly =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"RColorBrewer"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.all</a></span><span class="op">(</span>colorblindFriendly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -782,14 +779,14 @@ div.csl-indent {
 <li>上記を確認の上､パレットに「Paired」を選択</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Paired"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_brewer</span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Paired"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -818,64 +815,58 @@ div.csl-indent {
 <li>paletteerをインストールし､セットアップチャンクに読み込む</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"DresdenColor::briefcases"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"DresdenColor::briefcases"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="theme関数" class="level2">
-<h2 class="anchored" data-anchor-id="theme関数">3. theme()関数</h2>
-<section id="凡例の位置" class="level3">
-<h3 class="anchored" data-anchor-id="凡例の位置">⑴ 凡例の位置</h3>
+</section></section><section id="theme関数" class="level2"><h2 class="anchored" data-anchor-id="theme関数">3. theme()関数</h2>
+<section id="凡例の位置" class="level3"><h3 class="anchored" data-anchor-id="凡例の位置">⑴ 凡例の位置</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"コーポラティスト"</span>, <span class="st">"リベラル"</span>, <span class="st">"社会民主主義"</span>, <span class="st">"未分類"</span>)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> <span class="co"># 凡例内のラベルを書き換える</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"交通事故死者数"</span>, <span class="co"># 凡例（X軸）</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"臓器提供数"</span>, <span class="co"># 凡例（Y軸）</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"福祉国家体制"</span>) <span class="sc">+</span> <span class="co"># 凡例（色分け）</span></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="co"># 凡例を下にしたい</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_discrete</span><span class="op">(</span></span>
+<span>    labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"コーポラティスト"</span>, <span class="st">"リベラル"</span>, <span class="st">"社会民主主義"</span>, <span class="st">"未分類"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span> <span class="co"># 凡例内のラベルを書き換える</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"交通事故死者数"</span>, <span class="co"># 凡例（X軸）</span></span>
+<span>       y <span class="op">=</span> <span class="st">"臓器提供数"</span>, <span class="co"># 凡例（Y軸）</span></span>
+<span>       color <span class="op">=</span> <span class="st">"福祉国家体制"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># 凡例（色分け）</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span> <span class="co"># 凡例を下にしたい</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="図の見た目" class="level3">
-<h3 class="anchored" data-anchor-id="図の見た目">⑵ 図の見た目</h3>
+</section><section id="図の見た目" class="level3"><h3 class="anchored" data-anchor-id="図の見た目">⑵ 図の見た目</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>organdata <span class="sc">%&gt;%</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> roads, <span class="at">y =</span> donors, <span class="at">color =</span> world)) <span class="sc">+</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"コーポラティスト"</span>, <span class="st">"リベラル"</span>, <span class="st">"社会民主主義"</span>, <span class="st">"未分類"</span>)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> <span class="co"># 凡例内のラベルを書き換える</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"交通事故死者数"</span>, <span class="co"># 凡例（X軸）</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"臓器提供数"</span>, <span class="co"># 凡例（Y軸）</span></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"福祉国家体制"</span>) <span class="sc">+</span> <span class="co"># 凡例（色分け）</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span> <span class="co"># 凡例を下にしたい</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>( <span class="co">#シンプルな見た目にする</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">base_family =</span> <span class="st">"HiraginoSans-W3"</span> <span class="co"># フォントを直接指定しないと豆腐（□）になる。Windowsユーザーは"Meiryo"を指定して下さい</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">organdata</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">if_any</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">is.na</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">roads</span>, y <span class="op">=</span> <span class="va">donors</span>, color <span class="op">=</span> <span class="va">world</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_discrete</span><span class="op">(</span></span>
+<span>    labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"コーポラティスト"</span>, <span class="st">"リベラル"</span>, <span class="st">"社会民主主義"</span>, <span class="st">"未分類"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span> <span class="co"># 凡例内のラベルを書き換える</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"交通事故死者数"</span>, <span class="co"># 凡例（X軸）</span></span>
+<span>       y <span class="op">=</span> <span class="st">"臓器提供数"</span>, <span class="co"># 凡例（Y軸）</span></span>
+<span>       color <span class="op">=</span> <span class="st">"福祉国家体制"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># 凡例（色分け）</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># 凡例を下にしたい</span></span>
+<span>  <span class="fu">theme_minimal</span><span class="op">(</span> <span class="co">#シンプルな見た目にする</span></span>
+<span>  base_family <span class="op">=</span> <span class="st">"HiraginoSans-W3"</span> <span class="co"># フォントを直接指定しないと豆腐（□）になる。Windowsユーザーは"Meiryo"を指定して下さい</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -890,33 +881,30 @@ div.csl-indent {
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="横持ちデータと縦持ちデータ" class="level1">
-<h1>Ⅳ. 横持ちデータと縦持ちデータ</h1>
+</section></section></section><section id="横持ちデータと縦持ちデータ" class="level1"><h1>Ⅳ. 横持ちデータと縦持ちデータ</h1>
 <ul>
-<li>横持ちデータと縦持ちデータについては､第2回目の授業で簡単に紹介しました（<a href="https://kariyach.github.io/teaching/RandQuarto/RandQuarto_w2.html#整然データと雑然データ">リンク</a>）</li>
+<li>横持ちデータと縦持ちデータについては､第2回目の授業で簡単に紹介しました（<a href="https://kariyach.github.io/teaching/RandQuarto/RandQuarto_w2.html#%E6%95%B4%E7%84%B6%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E9%9B%91%E7%84%B6%E3%83%87%E3%83%BC%E3%82%BF">リンク</a>）</li>
 <li>今回は､変換の具体的な方法を説明します</li>
 </ul>
-<section id="準備" class="level3">
-<h3 class="anchored" data-anchor-id="準備">0. 準備</h3>
+<section id="準備" class="level3"><h3 class="anchored" data-anchor-id="準備">0. 準備</h3>
 <ol type="1">
-<li><a href="https://drive.google.com/drive/folders/17TQGy7zkHA6ZMUYMS0yhoZ7tHuGlebMi?usp=sharing">Google Drive</a>「データ」から以下のファイルをダウンロード
+<li>
+<a href="https://drive.google.com/drive/folders/17TQGy7zkHA6ZMUYMS0yhoZ7tHuGlebMi?usp=sharing">Google Drive</a>「データ」から以下のファイルをダウンロード
 <ul>
 <li>候補者別得票数_開票区別.csv</li>
-</ul></li>
+</ul>
+</li>
 <li>各自の「data」フォルダに収納</li>
-<li>read_csv()関数でデータを読み込み、オブジェクトに入れる(困ったら、<a href="https://kariyach.github.io/teaching/RandQuarto/RandQuarto_w3.html#csv-read_csv関数">第3回目のウェブページ</a>を参照しましょう)</li>
+<li>read_csv()関数でデータを読み込み、オブジェクトに入れる(困ったら、<a href="https://kariyach.github.io/teaching/RandQuarto/RandQuarto_w3.html#csv-read_csv%E9%96%A2%E6%95%B0">第3回目のウェブページ</a>を参照しましょう)</li>
 <li>データを確認しましょう（head()関数など）</li>
 <li>以下のコードを参考に､縦持ちデータを横持ちデータに変換しましょう</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df_東京都知事選挙_候補者別得票数 <span class="ot">&lt;-</span> </span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read_csv</span>(<span class="st">"data/候補者別得票数_開票区別.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_東京都知事選挙_候補者別得票数</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/候補者別得票数_開票区別.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df_東京都知事選挙_候補者別得票数 <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_東京都知事選挙_候補者別得票数</span> <span class="op">|&gt;</span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 13
   選挙        年 開票区名 小池ゆりこ 石丸伸二 安野たかひろ 清水国明 ＡＩメイヤー
@@ -941,17 +929,15 @@ div.csl-indent {
 </div>
 </div>
 </div>
-</section>
-<section id="縦持ちデータへの変換" class="level2">
-<h2 class="anchored" data-anchor-id="縦持ちデータへの変換">1. 縦持ちデータへの変換</h2>
+</section><section id="縦持ちデータへの変換" class="level2"><h2 class="anchored" data-anchor-id="縦持ちデータへの変換">1. 縦持ちデータへの変換</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df_東京都知事選挙_候補者別得票数_longer <span class="ot">&lt;-</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  df_東京都知事選挙_候補者別得票数 <span class="sc">%&gt;%</span> </span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">13</span>, <span class="co"># 対象とする列を指定（すべて候補者）</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"候補者名"</span>, <span class="co"># 縦持ちデータに変換した場合の列名</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"投票者数"</span> <span class="co"># 縦持ちデータに変換した場合の値の列名</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_東京都知事選挙_候補者別得票数_long</span> <span class="op">&lt;-</span></span>
+<span>  <span class="va">df_東京都知事選挙_候補者別得票数</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
+<span>    cols <span class="op">=</span> <span class="fl">4</span><span class="op">:</span><span class="fl">13</span>, <span class="co"># 対象とする列を指定（すべて候補者）</span></span>
+<span>    names_to <span class="op">=</span> <span class="st">"候補者名"</span>, <span class="co"># 縦持ちデータに変換した場合の列名</span></span>
+<span>    values_to <span class="op">=</span> <span class="st">"投票者数"</span> <span class="co"># 縦持ちデータに変換した場合の値の列名</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
@@ -959,45 +945,39 @@ div.csl-indent {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>縦持ちデータへの変換については､<a href="https://kariyach.github.io/teaching/RandQuarto/Initialsurvey.html">初回アンケート集計</a>や<a href="https://kariyach.github.io/teaching/RandQuarto/金沢広域急病センター利用者数.html">サンプル：金沢広域急病センター利用者数</a>も参照下さい。この変換方法については､ChatGPTはおおむね､正しい返答をしてくれるので､お試し下さい。</p>
+<p>縦持ちデータへの変換については､<a href="https://kariyach.github.io/teaching/RandQuarto/Initialsurvey.html">初回アンケート集計</a>や<a href="https://kariyach.github.io/teaching/RandQuarto/%E9%87%91%E6%B2%A2%E5%BA%83%E5%9F%9F%E6%80%A5%E7%97%85%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E5%88%A9%E7%94%A8%E8%80%85%E6%95%B0.html">サンプル：金沢広域急病センター利用者数</a>も参照下さい。この変換方法については､ChatGPTはおおむね､正しい返答をしてくれるので､お試し下さい。</p>
 </div>
 </div>
 </div>
-</section>
-<section id="縦持ちデータを使った図の作成" class="level2">
-<h2 class="anchored" data-anchor-id="縦持ちデータを使った図の作成">2. 縦持ちデータを使った図の作成</h2>
-<section id="棒グラフ" class="level3">
-<h3 class="anchored" data-anchor-id="棒グラフ">⑴ 棒グラフ</h3>
+</section><section id="縦持ちデータを使った図の作成" class="level2"><h2 class="anchored" data-anchor-id="縦持ちデータを使った図の作成">2. 縦持ちデータを使った図の作成</h2>
+<section id="棒グラフ" class="level3"><h3 class="anchored" data-anchor-id="棒グラフ">⑴ 棒グラフ</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>df_東京都知事選挙_候補者別得票数_longer <span class="sc">%&gt;%</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(年 <span class="sc">==</span> <span class="dv">2024</span>) <span class="sc">%&gt;%</span> <span class="co"># 2024年の選挙結果に限定</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(候補者名) <span class="sc">%&gt;%</span> <span class="co"># 開票区別のデータから候補者別の集計に加工する</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(投票者数 <span class="ot">=</span> <span class="fu">sum</span>(投票者数, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">得票数（千人）</span><span class="st">`</span> <span class="ot">=</span> 投票者数<span class="sc">/</span><span class="dv">1000</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">得票数（千人）</span><span class="st">`</span>, <span class="at">y =</span> <span class="fu">reorder</span>(候補者名,  <span class="st">`</span><span class="at">得票数（千人）</span><span class="st">`</span>)) <span class="co"># 得票数の高い順に並べ替える</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>,</span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> comma) <span class="sc">+</span> <span class="co"># 3桁ごとにカンマを挿入</span></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"得票数（単位：千人）"</span></span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1000</span>, </span>
-<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"red"</span>) <span class="co"># 100万人ラインに赤線を引く</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_東京都知事選挙_候補者別得票数_long</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">年</span> <span class="op">==</span> <span class="fl">2024</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co"># 2024年の選挙結果に限定</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">候補者名</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co"># 開票区別のデータから候補者別の集計に加工する</span></span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>投票者数 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">投票者数</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    `得票数（千人）` <span class="op">=</span> <span class="va">投票者数</span><span class="op">/</span><span class="fl">1000</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">`得票数（千人）`</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">候補者名</span>,  <span class="va">`得票数（千人）`</span><span class="op">)</span><span class="op">)</span> <span class="co"># 得票数の高い順に並べ替える</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span>,</span>
+<span>           position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_x_continuous</span><span class="op">(</span>labels <span class="op">=</span> <span class="va">comma</span><span class="op">)</span> <span class="op">+</span> <span class="co"># 3桁ごとにカンマを挿入</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span></span>
+<span>    y <span class="op">=</span> <span class="st">""</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"得票数（単位：千人）"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_vline</span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fl">1000</span>, </span>
+<span>             color <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span> <span class="co"># 100万人ラインに赤線を引く</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="帯グラフ" class="level3">
-<h3 class="anchored" data-anchor-id="帯グラフ">⑵ 帯グラフ</h3>
+</section><section id="帯グラフ" class="level3"><h3 class="anchored" data-anchor-id="帯グラフ">⑵ 帯グラフ</h3>
 <div class="callout callout-style-simple callout-warning">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1009,55 +989,51 @@ div.csl-indent {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df_東京都知事選挙_候補者別得票数_longer <span class="sc">%&gt;%</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(年 <span class="sc">==</span> <span class="dv">2024</span>) <span class="sc">%&gt;%</span> <span class="co"># 2024年の選挙結果に限定</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(候補者名) <span class="sc">%&gt;%</span> <span class="co"># 開票区別のデータから候補者別の集計に加工する</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(投票者数 <span class="ot">=</span> <span class="fu">sum</span>(投票者数, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">得票数（千人）</span><span class="st">`</span> <span class="ot">=</span> 投票者数<span class="sc">/</span><span class="dv">1000</span> <span class="co"># 桁数が多すぎるため</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="st">`</span><span class="at">得票数（千人）</span><span class="st">`</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span>  <span class="co"># 上位5名に絞り込む</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(候補者名 <span class="ot">=</span> <span class="fu">factor</span>(候補者名, <span class="at">levels =</span> <span class="fu">unique</span>(候補者名))) <span class="sc">%&gt;%</span> </span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    得票率 <span class="ot">=</span> scales<span class="sc">::</span><span class="fu">percent</span>(<span class="st">`</span><span class="at">得票数（千人）</span><span class="st">`</span><span class="sc">/</span><span class="fu">sum</span>(<span class="st">`</span><span class="at">得票数（千人）</span><span class="st">`</span>), <span class="at">accuracy =</span> <span class="fl">0.1</span>)) <span class="sc">%&gt;%</span> <span class="co"># 比率（得票率）を算出</span></span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(得票率 <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">"%"</span>, <span class="st">""</span>, 得票率))) <span class="sc">%&gt;%</span></span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 得票率, <span class="at">y =</span> <span class="st">""</span>, <span class="at">fill =</span> 候補者名)</span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>,</span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(得票率, <span class="st">"%"</span>)),</span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_fill</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">reverse =</span> <span class="cn">FALSE</span>),</span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span> <span class="co"># 得票率を図に貼り付ける</span></span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(</span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>()</span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span> <span class="co"># 比率表示に適したX軸に変換</span></span>
-<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"得票率"</span></span>
-<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_paletteer_d</span>(<span class="st">"PrettyCols::Fun"</span>) <span class="sc">+</span></span>
-<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(</span>
-<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">base_family =</span> <span class="st">"HiraginoSans-W3"</span></span>
-<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_東京都知事選挙_候補者別得票数_long</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">年</span> <span class="op">==</span> <span class="fl">2024</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co"># 2024年の選挙結果に限定</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">候補者名</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co"># 開票区別のデータから候補者別の集計に加工する</span></span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>投票者数 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">投票者数</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    `得票数（千人）` <span class="op">=</span> <span class="va">投票者数</span><span class="op">/</span><span class="fl">1000</span> <span class="co"># 桁数が多すぎるため</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">`得票数（千人）`</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">slice_head</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">|&gt;</span>   <span class="co"># 上位5名に絞り込む</span></span>
+<span>    <span class="fu">mutate</span><span class="op">(</span>候補者名 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">候補者名</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">候補者名</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    得票率 <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent</a></span><span class="op">(</span><span class="va">`得票数（千人）`</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">`得票数（千人）`</span><span class="op">)</span>, accuracy <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co"># 比率（得票率）を算出</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>得票率 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">"%"</span>, <span class="st">""</span>, <span class="va">得票率</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">得票率</span>, y <span class="op">=</span> <span class="st">""</span>, fill <span class="op">=</span> <span class="va">候補者名</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span>,</span>
+<span>           position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_text</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">得票率</span>, <span class="st">"%"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>            position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span>vjust <span class="op">=</span> <span class="fl">0.5</span>, reverse <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>,</span>
+<span>            color <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># 得票率を図に貼り付ける</span></span>
+<span>  <span class="fu">scale_x_continuous</span><span class="op">(</span></span>
+<span>    labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">+</span> <span class="co"># 比率表示に適したX軸に変換</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span></span>
+<span>    y <span class="op">=</span> <span class="st">""</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"得票率"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_fill_paletteer_d</span><span class="op">(</span><span class="st">"PrettyCols::Fun"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_minimal</span><span class="op">(</span></span>
+<span>    base_family <span class="op">=</span> <span class="st">"HiraginoSans-W3"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="チャンクオプション" class="level1 page-columns page-full">
-<h1>Ⅴ. チャンクオプション</h1>
+</section></section></section><section id="チャンクオプション" class="level1 page-columns page-full"><h1>Ⅴ. チャンクオプション</h1>
 <ul>
 <li>チャンクを実行しない
 <ul>
 <li>一部のチャンクだけ動かないなどの理由で､レンダリングやすべてのチャンクの実行から除外したい場合に有効</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <p><img src="img/チャンクオプション（実行しない）.png" class="img-fluid"></p>
 <ul>
@@ -1067,71 +1043,46 @@ div.csl-indent {
 </ul>
 <p><img src="img/チャンクオプション（タイトル､図の縦横比､コードを折り畳む）.png" class="img-fluid"></p>
 <div class="cell page-columns page-full">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df_東京都知事選挙_候補者別得票数_longer <span class="sc">%&gt;%</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(年 <span class="sc">==</span> <span class="dv">2024</span>) <span class="sc">%&gt;%</span> <span class="co"># 2024年の選挙結果に限定</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(候補者名) <span class="sc">%&gt;%</span> <span class="co"># 開票区別のデータから候補者別の集計に加工する</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(投票者数 <span class="ot">=</span> <span class="fu">sum</span>(投票者数, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">得票数（千人）</span><span class="st">`</span> <span class="ot">=</span> 投票者数<span class="sc">/</span><span class="dv">1000</span> <span class="co"># 桁数が多すぎるため</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="st">`</span><span class="at">得票数（千人）</span><span class="st">`</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span>  <span class="co"># 上位5名に絞り込む</span></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(候補者名 <span class="ot">=</span> <span class="fu">factor</span>(候補者名, <span class="at">levels =</span> <span class="fu">unique</span>(候補者名))) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>    得票率 <span class="ot">=</span> scales<span class="sc">::</span><span class="fu">percent</span>(<span class="st">`</span><span class="at">得票数（千人）</span><span class="st">`</span><span class="sc">/</span><span class="fu">sum</span>(<span class="st">`</span><span class="at">得票数（千人）</span><span class="st">`</span>), <span class="at">accuracy =</span> <span class="fl">0.1</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(得票率 <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">"%"</span>, <span class="st">""</span>, 得票率))) <span class="sc">%&gt;%</span></span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 得票率, <span class="at">y =</span> <span class="st">""</span>, <span class="at">fill =</span> 候補者名)</span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>,</span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
-<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(得票率, <span class="st">"%"</span>)),</span>
-<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_fill</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">reverse =</span> <span class="cn">FALSE</span>),</span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(</span>
-<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>()</span>
-<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"得票率"</span></span>
-<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_paletteer_d</span>(<span class="st">"PrettyCols::Fun"</span>) <span class="sc">+</span></span>
-<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(</span>
-<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">base_family =</span> <span class="st">"HiraginoSans-W3"</span></span>
-<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display page-columns page-full">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_東京都知事選挙_候補者別得票数_long</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">年</span> <span class="op">==</span> <span class="fl">2024</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co"># 2024年の選挙結果に限定</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">候補者名</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co"># 開票区別のデータから候補者別の集計に加工する</span></span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>投票者数 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">投票者数</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    `得票数（千人）` <span class="op">=</span> <span class="va">投票者数</span><span class="op">/</span><span class="fl">1000</span> <span class="co"># 桁数が多すぎるため</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">`得票数（千人）`</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">slice_head</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">|&gt;</span>   <span class="co"># 上位5名に絞り込む</span></span>
+<span>    <span class="fu">mutate</span><span class="op">(</span>候補者名 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">候補者名</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">候補者名</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    得票率 <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent</a></span><span class="op">(</span><span class="va">`得票数（千人）`</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">`得票数（千人）`</span><span class="op">)</span>, accuracy <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>得票率 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">"%"</span>, <span class="st">""</span>, <span class="va">得票率</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">得票率</span>, y <span class="op">=</span> <span class="st">""</span>, fill <span class="op">=</span> <span class="va">候補者名</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span>,</span>
+<span>           position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_text</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">得票率</span>, <span class="st">"%"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>            position <span class="op">=</span> <span class="fu">position_fill</span><span class="op">(</span>vjust <span class="op">=</span> <span class="fl">0.5</span>, reverse <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>,</span>
+<span>            color <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_x_continuous</span><span class="op">(</span></span>
+<span>    labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span></span>
+<span>    y <span class="op">=</span> <span class="st">""</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"得票率"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_fill_paletteer_d</span><span class="op">(</span><span class="st">"PrettyCols::Fun"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_minimal</span><span class="op">(</span></span>
+<span>    base_family <span class="op">=</span> <span class="st">"HiraginoSans-W3"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="margin-caption">帯グラフ（東京都知事選挙（2024）候補者別得票数）</figcaption>
-</figure>
+<figure class="figure page-columns page-full"><p><img src="RandQuarto_w6_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="margin-caption">帯グラフ（東京都知事選挙（2024）候補者別得票数）</figcaption></figure>
 </div>
 </div>
 </div>
-</section>
-<section id="演習と個別相談" class="level1">
-<h1>Ⅴ. 演習と個別相談</h1>
-<section id="サンプル最終成果物として提出して欲しいレポートのかたち再掲" class="level2">
-<h2 class="anchored" data-anchor-id="サンプル最終成果物として提出して欲しいレポートのかたち再掲">サンプル（最終成果物として提出して欲しいレポートのかたち）・再掲</h2>
-<ul>
-<li><a href="金沢広域急病センター利用者数.html">金沢広域急病センター利用者数</a>
-<ul>
-<li>データ入手先：<a href="https://catalog-data.city.kanazawa.ishikawa.jp/dataset/172014-kouikikyubyocenter_riyousyasuu/resource/246ad33b-8141-4672-b5ec-f6e52ae4263b">URL</a></li>
-</ul></li>
-<li><a href="野生鳥獣の放射線モニタリング調査結果.html">野生鳥獣の放射線モニタリング調査結果</a>
-<ul>
-<li>データ入手先：<a href="https://www.pref.fukushima.lg.jp/site/portal/wildlife-radiationmonitoring1.html">URL</a></li>
-</ul></li>
-<li><a href="Initialsurvey.html">初回アンケート集計</a></li>
-</ul>
-</section>
-</section>
-<section id="宿題" class="level1">
-<h1>Ⅵ. 宿題</h1>
-<section id="授業の感想" class="level2">
-<h2 class="anchored" data-anchor-id="授業の感想">1. 授業の感想</h2>
+</section><section id="宿題" class="level1"><h1>Ⅵ. 宿題</h1>
+<section id="授業の感想" class="level2"><h2 class="anchored" data-anchor-id="授業の感想">1. 授業の感想</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1143,14 +1094,15 @@ note | 回答先と締め切り
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>回答先</strong>：<a href="https://forms.gle/ZCkbPXYprjoibA8i6">Google Forms</a></li>
-<li><strong>締め切り</strong>：2024年7月26日（金）23時59分まで</li>
+<li>
+<strong>回答先</strong>：<a href="https://forms.gle/tibqGnJAYwYC6kYq8">Google Forms</a>
+</li>
+<li>
+<strong>締め切り</strong>：2025年5月23日（金）23時59分まで</li>
 </ul>
 </div>
 </div>
-</section>
-<section id="演習" class="level2">
-<h2 class="anchored" data-anchor-id="演習">2. 演習</h2>
+</section><section id="演習" class="level2"><h2 class="anchored" data-anchor-id="演習">2. 演習</h2>
 <ul>
 <li>自分のデータで作った図（最低3つ）を見直し､ラベル､目盛りや色を変えて下さい</li>
 </ul>
@@ -1165,30 +1117,38 @@ note | 回答先と締め切り
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>回答先</strong>：<a href="https://forms.gle/VMjdbqBu1rbcLe9j9">Google Forms</a></li>
-<li><strong>締め切り</strong>：2024年7月31日（水）10時30分まで</li>
-<li><strong>形式</strong>: R Studioで出力されたhtmlファイル</li>
+<li>
+<strong>回答先</strong>：<a href="https://forms.gle/LP6zjJUmbTzqqcxp9">Google Forms</a>
+</li>
+<li>
+<strong>締め切り</strong>：2025年<strong>5月27日（火）23時59分まで</strong>
+</li>
+<li>
+<strong>形式</strong>:（以下のいずれか）
+<ul>
+<li>（<strong>推奨</strong>）quartroファイル＋データ
+<ul>
+<li>データについては、一度でも提出してあれば、再提出不要です</li>
+</ul>
+</li>
+<li>R Studioで出力されたhtmlファイル</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <!-- ```{r} -->
 <!-- system_fonts() -->
 <!-- ``` -->
-</section>
-</section>
-<section id="引用文献" class="level1">
+</section></section><section id="引用文献" class="level1">
 
 
 
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">引用文献</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">引用文献</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-HealyK:2021book1_translJA" class="csl-entry" role="listitem">
 ヒーリー，キーラン (2021) 『データ分析のためのデータ可視化入門』, 講談社.
 </div>
-</div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>苅谷千尋</div></div></section></div></main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>苅谷千尋</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1613,8 +1573,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p><span class="faux-block">© 2024 CHIHIRO KARIYA</span></p>
 </div>   
@@ -1626,8 +1585,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-
-
 
 
 <script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
