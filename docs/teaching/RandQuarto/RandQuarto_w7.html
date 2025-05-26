@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.7.31">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="苅谷 千尋">
-<meta name="keywords" content="最終成果物; YAML; CSS; テキストラベル; 自作関数">
+<meta name="keywords" content="レポート課題; YAML; CSS; テキストラベル; 自作関数；インタラクティブな図">
 <title>RとQuartoではじめるデータサイエンス：データを可視化する《2025》 – CHIHIRO KARIYA</title>
 <style>
 code{white-space: pre-wrap;}
@@ -123,7 +123,10 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script><style>html{ scroll-behavior: smooth; }</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
+<link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="../../site_libs/plotly-binding-4.10.4/plotly.js"></script><script src="../../site_libs/typedarray-0.1/typedarray.min.js"></script><script src="../../site_libs/jquery-3.5.1/jquery.min.js"></script><link href="../../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="../../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><link href="../../site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="../../site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="../../style_ja.css">
 </head>
@@ -393,7 +396,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">Thursday, 22, May, 2025</p>
+        <p class="date-modified">Monday, 26, May, 2025</p>
       </div>
     </div>
       
@@ -403,7 +406,7 @@ div.csl-indent {
   <div>
     <div class="keywords">
       <div class="block-title">Keywords</div>
-      <p>最終成果物; YAML; CSS; テキストラベル; 自作関数</p>
+      <p>レポート課題; YAML; CSS; テキストラベル; 自作関数；インタラクティブな図</p>
     </div>
   </div>
   
@@ -421,18 +424,19 @@ div.csl-indent {
   </ul>
 </li>
   <li>
-<a href="#%E6%9C%80%E7%B5%82%E6%8F%90%E5%87%BA%E7%89%A9" id="toc-最終提出物" class="nav-link" data-scroll-target="#%E6%9C%80%E7%B5%82%E6%8F%90%E5%87%BA%E7%89%A9">Ⅱ. 最終提出物</a>
+<a href="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E8%AA%B2%E9%A1%8C%E6%9C%80%E7%B5%82%E6%8F%90%E5%87%BA%E7%89%A9" id="toc-レポート課題最終提出物" class="nav-link" data-scroll-target="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E8%AA%B2%E9%A1%8C%E6%9C%80%E7%B5%82%E6%8F%90%E5%87%BA%E7%89%A9">Ⅱ. レポート課題（最終提出物）</a>
   <ul class="collapse">
-<li>
-<a href="#%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%BD%A2%E5%BC%8F" id="toc-ファイル形式" class="nav-link" data-scroll-target="#%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%BD%A2%E5%BC%8F">1. ファイル形式</a>
+<li><a href="#%E6%8F%90%E5%87%BA%E7%89%A9" id="toc-提出物" class="nav-link" data-scroll-target="#%E6%8F%90%E5%87%BA%E7%89%A9">1. 提出物</a></li>
+  <li><a href="#%E6%8F%90%E5%87%BA%E5%85%88%E3%81%A8%E7%B7%A0%E3%82%81%E5%88%87%E3%82%8A" id="toc-提出先と締め切り" class="nav-link" data-scroll-target="#%E6%8F%90%E5%87%BA%E5%85%88%E3%81%A8%E7%B7%A0%E3%82%81%E5%88%87%E3%82%8A">2. 提出先と締め切り</a></li>
+  <li><a href="#%E5%87%BA%E5%8A%9B%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E8%A8%AD%E5%AE%9A" id="toc-出力ファイルの設定" class="nav-link" data-scroll-target="#%E5%87%BA%E5%8A%9B%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E8%A8%AD%E5%AE%9A">3. 出力ファイルの設定</a></li>
+  <li>
+<a href="#%E5%86%85%E5%AE%B9" id="toc-内容" class="nav-link" data-scroll-target="#%E5%86%85%E5%AE%B9">4. 内容</a>
   <ul class="collapse">
-<li><a href="#html%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E6%8F%90%E5%87%BA" id="toc-htmlファイルを提出" class="nav-link" data-scroll-target="#html%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E6%8F%90%E5%87%BA">1. htmlファイルを提出</a></li>
-  <li><a href="#%E3%82%B9%E3%83%A9%E3%82%A4%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB" id="toc-スライドファイル" class="nav-link" data-scroll-target="#%E3%82%B9%E3%83%A9%E3%82%A4%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB">2. スライドファイル</a></li>
+<li><a href="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E6%9C%80%E7%B5%82%E6%88%90%E6%9E%9C%E7%89%A9%E3%81%AE%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB" id="toc-レポート最終成果物のサンプル" class="nav-link" data-scroll-target="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E6%9C%80%E7%B5%82%E6%88%90%E6%9E%9C%E7%89%A9%E3%81%AE%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB">レポート（最終成果物）のサンプル</a></li>
   </ul>
 </li>
-  <li><a href="#%E5%86%85%E5%AE%B9" id="toc-内容" class="nav-link" data-scroll-target="#%E5%86%85%E5%AE%B9">2. 内容</a></li>
   <li>
-<a href="#%E3%83%AB%E3%83%BC%E3%83%96%E3%83%AA%E3%83%83%E3%82%AF" id="toc-ルーブリック" class="nav-link" data-scroll-target="#%E3%83%AB%E3%83%BC%E3%83%96%E3%83%AA%E3%83%83%E3%82%AF">3. ルーブリック</a>
+<a href="#%E8%A9%95%E4%BE%A1%E5%9F%BA%E6%BA%96%E3%83%AB%E3%83%BC%E3%83%96%E3%83%AA%E3%83%83%E3%82%AF" id="toc-評価基準ルーブリック" class="nav-link" data-scroll-target="#%E8%A9%95%E4%BE%A1%E5%9F%BA%E6%BA%96%E3%83%AB%E3%83%BC%E3%83%96%E3%83%AA%E3%83%83%E3%82%AF">5. 評価基準（ルーブリック）</a>
   <ul class="collapse">
 <li><a href="#%E5%AD%A6%E4%BF%AE%E7%9B%AE%E6%A8%99%E5%88%B0%E9%81%94%E7%9B%AE%E6%A8%99%E5%86%8D%E6%8E%B2" id="toc-学修目標到達目標再掲" class="nav-link" data-scroll-target="#%E5%AD%A6%E4%BF%AE%E7%9B%AE%E6%A8%99%E5%88%B0%E9%81%94%E7%9B%AE%E6%A8%99%E5%86%8D%E6%8E%B2">学修目標（到達目標）（再掲）</a></li>
   </ul>
@@ -476,8 +480,9 @@ div.csl-indent {
 </li>
   </ul>
 </li>
+  <li><a href="#%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96%E3%81%AA%E5%9B%B3%E3%82%92%E4%BD%9C%E3%82%8B" id="toc-インタラクティブな図を作る" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96%E3%81%AA%E5%9B%B3%E3%82%92%E4%BD%9C%E3%82%8B">Ⅷ. インタラクティブな図を作る</a></li>
   <li>
-<a href="#%E5%AE%BF%E9%A1%8C" id="toc-宿題" class="nav-link" data-scroll-target="#%E5%AE%BF%E9%A1%8C">Ⅷ. 宿題</a>
+<a href="#%E5%AE%BF%E9%A1%8C" id="toc-宿題" class="nav-link" data-scroll-target="#%E5%AE%BF%E9%A1%8C">Ⅸ. 宿題</a>
   <ul class="collapse">
 <li><a href="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3" id="toc-授業の感想" class="nav-link" data-scroll-target="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3">1. 授業の感想</a></li>
   <li><a href="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E6%9C%80%E7%B5%82%E6%88%90%E6%9E%9C%E7%89%A9" id="toc-レポート最終成果物" class="nav-link" data-scroll-target="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E6%9C%80%E7%B5%82%E6%88%90%E6%9E%9C%E7%89%A9">2. レポート（最終成果物）</a></li>
@@ -490,21 +495,92 @@ div.csl-indent {
 <section id="前回の授業の感想" class="level2"><h2 class="anchored" data-anchor-id="前回の授業の感想">1. 前回の「授業の感想」</h2>
 <ul>
 <li>別紙参照</li>
-</ul></section></section><section id="最終提出物" class="level1"><h1>Ⅱ. 最終提出物</h1>
-<section id="ファイル形式" class="level2"><h2 class="anchored" data-anchor-id="ファイル形式">1. ファイル形式</h2>
+</ul></section></section><section id="レポート課題最終提出物" class="level1"><h1>Ⅱ. レポート課題（最終提出物）</h1>
+<section id="提出物" class="level2"><h2 class="anchored" data-anchor-id="提出物">1. 提出物</h2>
+<ol type="1">
+<li>レポート（最終成果物）の出力ファイル
 <ul>
-<li>以下のいずれにファイルも次のように設定して下さい（設定方法は以下を参照）</li>
+<li>html / revealjs / docx / pptx のいずれか</li>
+<li>第8週のプレゼンテーションも上記のファイルにもとづいて行ってもらいます</li>
+</ul>
+</li>
+</ol>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>html / revealjs / docx / pptxの見た目の変更（cssやテンプレート）については、<a href="RandQuarto_w7.html#cssと出力テンプレート">以下</a>を参照</p>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>quartoファイル
+<ul>
+<li>qmd</li>
+</ul>
+</li>
+<li>データファイル（すべて）
+<ul>
+<li>csv / xlsx / xls</li>
+</ul>
+</li>
+</ol></section><section id="提出先と締め切り" class="level2"><h2 class="anchored" data-anchor-id="提出先と締め切り">2. 提出先と締め切り</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+note | 提出先と締め切り
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>
+<strong>回答先</strong>：<a href="https://forms.gle/YDwY1p6bAWgWQZaM7">Google Forms</a>
+</li>
+<li>
+<strong>締め切り</strong>：2025年6月4日（水）10時30分まで</li>
+<li>
+<strong>出力形式</strong>:</li>
+</ul>
+<ol type="1">
+<li>レポート（最終成果物）の出力ファイル</li>
+<li>レポート（最終成果物）のquartoファイル</li>
+<li>レポート（最終成果物）で用いたデータファイル（すべて）</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>アップロードするすべてのファイル名のどこかに氏名を入れて下さい</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>再提出する場合は6月6日（金）23:59分まで</em>に提出して下さい（必須ではありません）。最終版のファイルで成績を評価します</p>
+</div>
+</div>
+</div>
+</section><section id="出力ファイルの設定" class="level2"><h2 class="anchored" data-anchor-id="出力ファイルの設定">3. 出力ファイルの設定</h2>
+<ul>
+<li>出力ファイル（html / revealjs / docx / pptx）は次のように設定して下さい（設定方法は<a href="RandQuarto_w7.html#ファイル全体に設定">以下</a>を参照）</li>
 </ul>
 <ol type="1">
 <li>エラーメッセージと警告メッセージは非表示にすること</li>
 <li>コードは折り畳むこと</li>
-</ol>
-<section id="htmlファイルを提出" class="level3"><h3 class="anchored" data-anchor-id="htmlファイルを提出">1. htmlファイルを提出</h3>
-</section><section id="スライドファイル" class="level3"><h3 class="anchored" data-anchor-id="スライドファイル">2. スライドファイル</h3>
-<ul>
-<li>PowerPoint または revealjs（revealjsファイルについては「<a href="RandQuarto_w7.html#演習">宿題&gt;演習</a>」を参照）を提出</li>
-<li>忘れた人は<a href="RandQuarto_w5.html#プレゼンテーション">第5週目教材</a>で復習して下さい</li>
-</ul></section></section><section id="内容" class="level2"><h2 class="anchored" data-anchor-id="内容">2. 内容</h2>
+</ol></section><section id="内容" class="level2"><h2 class="anchored" data-anchor-id="内容">4. 内容</h2>
 <ol type="1">
 <li>タイトルと見出し</li>
 <li>分析の対象と分析の目的</li>
@@ -517,9 +593,26 @@ div.csl-indent {
 <li>ただし､Rやggplotの使い方､作成に関する出典は記載しない</li>
 </ul>
 </li>
-</ol></section><section id="ルーブリック" class="level2"><h2 class="anchored" data-anchor-id="ルーブリック">3. ルーブリック</h2>
+</ol>
+<section id="レポート最終成果物のサンプル" class="level3"><h3 class="anchored" data-anchor-id="レポート最終成果物のサンプル">レポート（最終成果物）のサンプル</h3>
 <ul>
-<li><a href="img/ルーブリック_RとQuarto_2024.pdf">ルーブリック</a></li>
+<li>
+<a href="金沢広域急病センター利用者数.html">金沢広域急病センター利用者数</a>
+<ul>
+<li>データ入手先：<a href="https://catalog-data.city.kanazawa.ishikawa.jp/dataset/172014-kouikikyubyocenter_riyousyasuu/resource/246ad33b-8141-4672-b5ec-f6e52ae4263b">URL</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="野生鳥獣の放射線モニタリング調査結果.html">野生鳥獣の放射線モニタリング調査結果</a>
+<ul>
+<li>データ入手先：<a href="https://www.pref.fukushima.lg.jp/site/portal/wildlife-radiationmonitoring1.html">URL</a>
+</li>
+</ul>
+</li>
+</ul></section></section><section id="評価基準ルーブリック" class="level2"><h2 class="anchored" data-anchor-id="評価基準ルーブリック">5. 評価基準（ルーブリック）</h2>
+<ul>
+<li><a href="rubric.pdf">ルーブリック</a></li>
 </ul>
 <section id="学修目標到達目標再掲" class="level3"><h3 class="anchored" data-anchor-id="学修目標到達目標再掲">学修目標（到達目標）（再掲）</h3>
 <ol type="1">
@@ -528,7 +621,7 @@ div.csl-indent {
 <li>受講生が、自分の関心のあるテーマにかかわるデータから適切な図を作成できる</li>
 </ol></section></section></section><section id="プレゼンテーションの内容" class="level1"><h1>Ⅲ. プレゼンテーションの内容</h1>
 <ul>
-<li>Ⅱ-2にもとづき､一人5分程度､口頭発表</li>
+<li>Ⅱ-1（レポート（最終成果物）の出力ファイル）にもとづき､一人5分程度で口頭発表</li>
 </ul></section><section id="チャンクオプション" class="level1"><h1>Ⅳ. チャンクオプション</h1>
 <section id="チャンクごとに設定" class="level2"><h2 class="anchored" data-anchor-id="チャンクごとに設定">1. チャンクごとに設定</h2>
 <ul>
@@ -664,11 +757,11 @@ format:
 <a href="https://drive.google.com/drive/folders/1vHq0Zjhfso5VP-FACcw2UXwkYfIh7-5Y?usp=sharing">Google Drive</a>「w6」の「w6_revealjs_kariyacss」ファイル一式も参考</li>
 </ul></section></section><section id="テキストラベル" class="level1"><h1>Ⅵ. テキストラベル</h1>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">|&gt;</span>  </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span> </span>
 <span>    個数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span>, y <span class="op">=</span> <span class="va">個数</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_col</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_text</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>label <span class="op">=</span> <span class="va">個数</span><span class="op">)</span>, vjust <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span>,</span>
@@ -681,14 +774,14 @@ format:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">|&gt;</span>  </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span> </span>
 <span>    個数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span></span>
 <span>    比率 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">個数</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">個数</span><span class="op">)</span> <span class="op">*</span><span class="fl">100</span>, <span class="fl">1</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span>  </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span>, y <span class="op">=</span> <span class="va">比率</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_col</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_text</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>label <span class="op">=</span> <span class="va">比率</span><span class="op">)</span>, vjust <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span>,</span>
@@ -701,14 +794,14 @@ format:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">|&gt;</span>  </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span> </span>
 <span>    個数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span></span>
 <span>    比率 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">個数</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">個数</span><span class="op">)</span> <span class="op">*</span><span class="fl">100</span>, <span class="fl">1</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span>  </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span>, y <span class="op">=</span> <span class="va">比率</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_col</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_text</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">比率</span>, <span class="st">"%"</span><span class="op">)</span><span class="op">)</span>, vjust <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span>,</span>
@@ -836,7 +929,45 @@ format:
 </div>
 </div>
 </div>
-</section></section></section><section id="宿題" class="level1"><h1>Ⅷ. 宿題</h1>
+</section></section></section><section id="インタラクティブな図を作る" class="level1"><h1>Ⅷ. インタラクティブな図を作る</h1>
+<ul>
+<li><p><a href="https://plotly.com/ggplot2/getting-started/">ggplot</a>を使って簡単にインタラクティブな図に変換できます</p></li>
+<li><p>パッケージのインストールと読み込み</p></li>
+</ul>
+<pre><code>install.packages("plotly")
+</code></pre>
+<pre><code><a href="https://plotly-r.com">library("plotly")</a></code></pre>
+<ul>
+<li>図のコードをggplotly()で囲むだけ！</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplotly</span><span class="op">(</span></span>
+<span>  <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span>, fill <span class="op">=</span> <span class="va">island</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"島ごとのペンギンの種類の分布"</span>,</span>
+<span>       x <span class="op">=</span> <span class="st">"ペンギンの種類"</span>,</span>
+<span>       y <span class="op">=</span> <span class="st">"個体数"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span></span>
+<span>    axis.text.x <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="co"># x軸の値のラベルの傾きを調整（angleやhjustで微調整可能）</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-59e01cac213e037bc2f8" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-59e01cac213e037bc2f8">{"x":{"data":[{"orientation":"v","width":[0.30000000000000004,0.90000000000000036],"base":[0,0],"x":[0.69999999999999996,3],"y":[44,124],"text":["count:  44<br />species: Adelie<br />island: Biscoe","count: 124<br />species: Gentoo<br />island: Biscoe"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Biscoe","legendgroup":"Biscoe","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.29999999999999993,0.90000000000000013],"base":[0,0],"x":[1,2],"y":[56,68],"text":["count:  56<br />species: Adelie<br />island: Dream","count:  68<br />species: Chinstrap<br />island: Dream"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,186,56,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Dream","legendgroup":"Dream","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.29999999999999982,"base":0,"x":[1.3],"y":[52],"text":"count:  52<br />species: Adelie<br />island: Torgersen","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(97,156,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Torgersen","legendgroup":"Torgersen","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":40.574512245745119,"r":7.3059360730593621,"b":48.997095490676479,"l":37.260273972602747},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":11.955168119551681},"title":{"text":"島ごとのペンギンの種類の分布","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":14.346201743462013},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["Adelie","Chinstrap","Gentoo"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["Adelie","Chinstrap","Gentoo"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"HiraginoSans-W3","size":9.5641344956413477},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"ペンギンの種類","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":11.955168119551681}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-6.2000000000000002,130.19999999999999],"tickmode":"array","ticktext":["0","40","80","120"],"tickvals":[0,40,80,120],"categoryorder":"array","categoryarray":["0","40","80","120"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"HiraginoSans-W3","size":9.5641344956413477},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"個体数","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":11.955168119551681}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":9.5641344956413477},"title":{"text":"island","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":11.955168119551681}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"610158ca4f6e":{"x":{},"fill":{},"type":"bar"}},"cur_data":"610158ca4f6e","visdat":{"610158ca4f6e":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>ggplotly() は stat_cor()の出力を正しく処理できない場合があるため、散布図には向かないかもしれません</p>
+</div>
+</div>
+</div>
+</section><section id="宿題" class="level1"><h1>Ⅸ. 宿題</h1>
 <section id="授業の感想" class="level2"><h2 class="anchored" data-anchor-id="授業の感想">1. 授業の感想</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -853,7 +984,7 @@ note | 回答先と締め切り
 <strong>回答先</strong>：<a href="https://forms.gle/tibqGnJAYwYC6kYq8">Google Forms</a>
 </li>
 <li>
-<strong>締め切り</strong>：2025年5月23日（金）23時59分まで</li>
+<strong>締め切り</strong>：2025年5月30日（金）23時59分まで</li>
 </ul>
 </div>
 </div>
@@ -900,7 +1031,7 @@ note | 提出先と締め切り
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>再提出する場合は6月6日（金）23:59分まで（必須ではありません）。最終版のファイルで成績を評価します</p>
+<p><em>再提出する場合は6月6日（金）23:59分まで</em>に提出して下さい（必須ではありません）。最終版のファイルで成績を評価します</p>
 </div>
 </div>
 </div>
