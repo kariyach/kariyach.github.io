@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.7.31">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="苅谷 千尋">
-<meta name="keywords" content="レポート課題; YAML; CSS; テキストラベル; 自作関数；インタラクティブな図">
+<meta name="keywords" content="レポート課題; YAML; CSS; テキストラベル; 自作関数；インタラクティブな図；Callout Blocks">
 <title>RとQuartoではじめるデータサイエンス：データを可視化する《2025》 – CHIHIRO KARIYA</title>
 <style>
 code{white-space: pre-wrap;}
@@ -406,7 +406,7 @@ div.csl-indent {
   <div>
     <div class="keywords">
       <div class="block-title">Keywords</div>
-      <p>レポート課題; YAML; CSS; テキストラベル; 自作関数；インタラクティブな図</p>
+      <p>レポート課題; YAML; CSS; テキストラベル; 自作関数；インタラクティブな図；Callout Blocks</p>
     </div>
   </div>
   
@@ -481,8 +481,9 @@ div.csl-indent {
   </ul>
 </li>
   <li><a href="#%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96%E3%81%AA%E5%9B%B3%E3%82%92%E4%BD%9C%E3%82%8B" id="toc-インタラクティブな図を作る" class="nav-link" data-scroll-target="#%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96%E3%81%AA%E5%9B%B3%E3%82%92%E4%BD%9C%E3%82%8B">Ⅷ. インタラクティブな図を作る</a></li>
+  <li><a href="#callout-blocks" id="toc-callout-blocks" class="nav-link" data-scroll-target="#callout-blocks">Ⅸ. Callout Blocks</a></li>
   <li>
-<a href="#%E5%AE%BF%E9%A1%8C" id="toc-宿題" class="nav-link" data-scroll-target="#%E5%AE%BF%E9%A1%8C">Ⅸ. 宿題</a>
+<a href="#%E5%AE%BF%E9%A1%8C" id="toc-宿題" class="nav-link" data-scroll-target="#%E5%AE%BF%E9%A1%8C">Ⅹ. 宿題</a>
   <ul class="collapse">
 <li><a href="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3" id="toc-授業の感想" class="nav-link" data-scroll-target="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3">1. 授業の感想</a></li>
   <li><a href="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E6%9C%80%E7%B5%82%E6%88%90%E6%9E%9C%E7%89%A9" id="toc-レポート最終成果物" class="nav-link" data-scroll-target="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E6%9C%80%E7%B5%82%E6%88%90%E6%9E%9C%E7%89%A9">2. レポート（最終成果物）</a></li>
@@ -953,8 +954,8 @@ format:
 <span>  <span class="op">)</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-59e01cac213e037bc2f8" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-59e01cac213e037bc2f8">{"x":{"data":[{"orientation":"v","width":[0.30000000000000004,0.90000000000000036],"base":[0,0],"x":[0.69999999999999996,3],"y":[44,124],"text":["count:  44<br />species: Adelie<br />island: Biscoe","count: 124<br />species: Gentoo<br />island: Biscoe"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Biscoe","legendgroup":"Biscoe","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.29999999999999993,0.90000000000000013],"base":[0,0],"x":[1,2],"y":[56,68],"text":["count:  56<br />species: Adelie<br />island: Dream","count:  68<br />species: Chinstrap<br />island: Dream"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,186,56,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Dream","legendgroup":"Dream","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.29999999999999982,"base":0,"x":[1.3],"y":[52],"text":"count:  52<br />species: Adelie<br />island: Torgersen","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(97,156,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Torgersen","legendgroup":"Torgersen","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":40.574512245745119,"r":7.3059360730593621,"b":48.997095490676479,"l":37.260273972602747},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":11.955168119551681},"title":{"text":"島ごとのペンギンの種類の分布","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":14.346201743462013},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["Adelie","Chinstrap","Gentoo"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["Adelie","Chinstrap","Gentoo"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"HiraginoSans-W3","size":9.5641344956413477},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"ペンギンの種類","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":11.955168119551681}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-6.2000000000000002,130.19999999999999],"tickmode":"array","ticktext":["0","40","80","120"],"tickvals":[0,40,80,120],"categoryorder":"array","categoryarray":["0","40","80","120"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"HiraginoSans-W3","size":9.5641344956413477},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"個体数","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":11.955168119551681}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":9.5641344956413477},"title":{"text":"island","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":11.955168119551681}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"610158ca4f6e":{"x":{},"fill":{},"type":"bar"}},"cur_data":"610158ca4f6e","visdat":{"610158ca4f6e":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-ac3726040f0dcb6703f0" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-ac3726040f0dcb6703f0">{"x":{"data":[{"orientation":"v","width":[0.30000000000000004,0.90000000000000036],"base":[0,0],"x":[0.69999999999999996,3],"y":[44,124],"text":["count:  44<br />species: Adelie<br />island: Biscoe","count: 124<br />species: Gentoo<br />island: Biscoe"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Biscoe","legendgroup":"Biscoe","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.29999999999999993,0.90000000000000013],"base":[0,0],"x":[1,2],"y":[56,68],"text":["count:  56<br />species: Adelie<br />island: Dream","count:  68<br />species: Chinstrap<br />island: Dream"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,186,56,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Dream","legendgroup":"Dream","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.29999999999999982,"base":0,"x":[1.3],"y":[52],"text":"count:  52<br />species: Adelie<br />island: Torgersen","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(97,156,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Torgersen","legendgroup":"Torgersen","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":40.574512245745119,"r":7.3059360730593621,"b":48.997095490676479,"l":37.260273972602747},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":11.955168119551681},"title":{"text":"島ごとのペンギンの種類の分布","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":14.346201743462013},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["Adelie","Chinstrap","Gentoo"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["Adelie","Chinstrap","Gentoo"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"HiraginoSans-W3","size":9.5641344956413477},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"ペンギンの種類","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":11.955168119551681}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-6.2000000000000002,130.19999999999999],"tickmode":"array","ticktext":["0","40","80","120"],"tickvals":[0,40,80,120],"categoryorder":"array","categoryarray":["0","40","80","120"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"HiraginoSans-W3","size":9.5641344956413477},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"個体数","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":11.955168119551681}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":9.5641344956413477},"title":{"text":"island","font":{"color":"rgba(0,0,0,1)","family":"HiraginoSans-W3","size":11.955168119551681}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"9cae6db0bbca":{"x":{},"fill":{},"type":"bar"}},"cur_data":"9cae6db0bbca","visdat":{"9cae6db0bbca":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="callout callout-style-simple callout-warning">
@@ -967,7 +968,44 @@ format:
 </div>
 </div>
 </div>
-</section><section id="宿題" class="level1"><h1>Ⅸ. 宿題</h1>
+</section><section id="callout-blocks" class="level1"><h1>Ⅸ. Callout Blocks</h1>
+<ul>
+<li>読み手の注意喚起のための文字領域</li>
+<li>quartoファイルのRチャンク以外の領域に以下のように入力すると、</li>
+</ul>
+<pre><code>:::{.callout-note}
+## Note | テスト
+テスト
+:::
+</code></pre>
+<p>以下のように出力される</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note | テスト
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>テスト</p>
+</div>
+</div>
+<ul>
+<li>5種類用意されている。詳しくは<a href="https://quarto.org/docs/authoring/callouts.html">リンク</a>を参照</li>
+</ul>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Callout Blocksは、pptxまたはdocxの出力形式には対応していません</p>
+</div>
+</div>
+</div>
+</section><section id="宿題" class="level1"><h1>Ⅹ. 宿題</h1>
 <section id="授業の感想" class="level2"><h2 class="anchored" data-anchor-id="授業の感想">1. 授業の感想</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
