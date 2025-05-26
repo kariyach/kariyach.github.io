@@ -428,7 +428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># ggplotのデフォルト設定の調整 ----</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># ggplotのデフォルト設定の調整 ----</span></span>
 <span><span class="co">## フォントファミリとサイズ</span></span>
 <span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_get</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
@@ -533,30 +533,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    動物 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">動物</span><span class="op">)</span>,</span>
 <span>    検出有無 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">検出有無</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="全体" class="level2"><h2 class="anchored" data-anchor-id="全体">全体</h2>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_野生鳥獣</span> <span class="op">|&gt;</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_野生鳥獣</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="tizsewdvki" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tizsewdvki table {
+</details><div class="cell-output-display">
+<div id="kntktyjoeg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kntktyjoeg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tizsewdvki thead, #tizsewdvki tbody, #tizsewdvki tfoot, #tizsewdvki tr, #tizsewdvki td, #tizsewdvki th {
+#kntktyjoeg thead, #kntktyjoeg tbody, #kntktyjoeg tfoot, #kntktyjoeg tr, #kntktyjoeg td, #kntktyjoeg th {
   border-style: none;
 }
 
-#tizsewdvki p {
+#kntktyjoeg p {
   margin: 0;
   padding: 0;
 }
 
-#tizsewdvki .gt_table {
+#kntktyjoeg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -582,12 +583,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#tizsewdvki .gt_caption {
+#kntktyjoeg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tizsewdvki .gt_title {
+#kntktyjoeg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -599,7 +600,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#tizsewdvki .gt_subtitle {
+#kntktyjoeg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -611,7 +612,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#tizsewdvki .gt_heading {
+#kntktyjoeg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -623,13 +624,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#tizsewdvki .gt_bottom_border {
+#kntktyjoeg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tizsewdvki .gt_col_headings {
+#kntktyjoeg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -644,7 +645,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#tizsewdvki .gt_col_heading {
+#kntktyjoeg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -664,7 +665,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#tizsewdvki .gt_column_spanner_outer {
+#kntktyjoeg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -676,15 +677,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#tizsewdvki .gt_column_spanner_outer:first-child {
+#kntktyjoeg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tizsewdvki .gt_column_spanner_outer:last-child {
+#kntktyjoeg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tizsewdvki .gt_column_spanner {
+#kntktyjoeg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -696,11 +697,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#tizsewdvki .gt_spanner_row {
+#kntktyjoeg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tizsewdvki .gt_group_heading {
+#kntktyjoeg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -726,7 +727,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#tizsewdvki .gt_empty_group_heading {
+#kntktyjoeg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -741,15 +742,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#tizsewdvki .gt_from_md > :first-child {
+#kntktyjoeg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tizsewdvki .gt_from_md > :last-child {
+#kntktyjoeg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tizsewdvki .gt_row {
+#kntktyjoeg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -768,7 +769,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#tizsewdvki .gt_stub {
+#kntktyjoeg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -781,7 +782,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tizsewdvki .gt_stub_row_group {
+#kntktyjoeg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -795,15 +796,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#tizsewdvki .gt_row_group_first td {
+#kntktyjoeg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tizsewdvki .gt_row_group_first th {
+#kntktyjoeg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tizsewdvki .gt_summary_row {
+#kntktyjoeg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -813,16 +814,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tizsewdvki .gt_first_summary_row {
+#kntktyjoeg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tizsewdvki .gt_first_summary_row.thick {
+#kntktyjoeg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tizsewdvki .gt_last_summary_row {
+#kntktyjoeg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -832,7 +833,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#tizsewdvki .gt_grand_summary_row {
+#kntktyjoeg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -842,7 +843,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tizsewdvki .gt_first_grand_summary_row {
+#kntktyjoeg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -852,7 +853,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#tizsewdvki .gt_last_grand_summary_row_top {
+#kntktyjoeg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -862,11 +863,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#tizsewdvki .gt_striped {
+#kntktyjoeg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tizsewdvki .gt_table_body {
+#kntktyjoeg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -875,7 +876,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#tizsewdvki .gt_footnotes {
+#kntktyjoeg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -889,7 +890,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#tizsewdvki .gt_footnote {
+#kntktyjoeg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -898,7 +899,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tizsewdvki .gt_sourcenotes {
+#kntktyjoeg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -912,7 +913,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#tizsewdvki .gt_sourcenote {
+#kntktyjoeg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -920,72 +921,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tizsewdvki .gt_left {
+#kntktyjoeg .gt_left {
   text-align: left;
 }
 
-#tizsewdvki .gt_center {
+#kntktyjoeg .gt_center {
   text-align: center;
 }
 
-#tizsewdvki .gt_right {
+#kntktyjoeg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tizsewdvki .gt_font_normal {
+#kntktyjoeg .gt_font_normal {
   font-weight: normal;
 }
 
-#tizsewdvki .gt_font_bold {
+#kntktyjoeg .gt_font_bold {
   font-weight: bold;
 }
 
-#tizsewdvki .gt_font_italic {
+#kntktyjoeg .gt_font_italic {
   font-style: italic;
 }
 
-#tizsewdvki .gt_super {
+#kntktyjoeg .gt_super {
   font-size: 65%;
 }
 
-#tizsewdvki .gt_footnote_marks {
+#kntktyjoeg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tizsewdvki .gt_asterisk {
+#kntktyjoeg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tizsewdvki .gt_indent_1 {
+#kntktyjoeg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tizsewdvki .gt_indent_2 {
+#kntktyjoeg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tizsewdvki .gt_indent_3 {
+#kntktyjoeg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tizsewdvki .gt_indent_4 {
+#kntktyjoeg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tizsewdvki .gt_indent_5 {
+#kntktyjoeg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tizsewdvki .katex-display {
+#kntktyjoeg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tizsewdvki div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#kntktyjoeg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1283,7 +1284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">基準値</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>yintercept <span class="op">=</span> <span class="fl">100</span>, Lines <span class="op">=</span> <span class="st">'基準値'</span><span class="op">)</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">基準値</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>yintercept <span class="op">=</span> <span class="fl">100</span>, Lines <span class="op">=</span> <span class="st">'基準値'</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">df_野生鳥獣</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">セシウム</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -1294,7 +1295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_hline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>yintercept <span class="op">=</span> <span class="va">yintercept</span>, linetype <span class="op">=</span> <span class="st">"基準値"</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"red"</span>, data <span class="op">=</span> <span class="va">基準値</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"動物"</span>, linetype <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="野生鳥獣の放射線モニタリング調査結果_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
@@ -1306,7 +1307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>基準値を超えているものが多い。ただし、2020年以降はおおむね基準値に収まっている</li>
 </ul></section><section id="イノシシ" class="level2"><h2 class="anchored" data-anchor-id="イノシシ">イノシシ</h2>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_野生鳥獣</span> <span class="op">|&gt;</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_野生鳥獣</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">セシウム</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">動物</span> <span class="op">==</span> <span class="st">"イノシシ"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">方部</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -1314,7 +1315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_hline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>yintercept <span class="op">=</span> <span class="va">yintercept</span>, linetype <span class="op">=</span> <span class="va">Lines</span><span class="op">)</span>, <span class="va">基準値</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="野生鳥獣の放射線モニタリング調査結果_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
@@ -1327,7 +1328,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>2020年以降は減少傾向にあるが、外れ値に留意</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_野生鳥獣</span> <span class="op">|&gt;</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_野生鳥獣</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">動物</span> <span class="op">==</span> <span class="st">"イノシシ"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">セシウム</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">方部</span>, <span class="va">西暦</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -1338,7 +1339,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_linetype_manual</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">""</span>, values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"基準値"</span> <span class="op">=</span> <span class="st">"dashed"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">西暦</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="野生鳥獣の放射線モニタリング調査結果_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
@@ -1346,7 +1347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_野生鳥獣</span> <span class="op">|&gt;</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_野生鳥獣</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">動物</span> <span class="op">==</span> <span class="st">"イノシシ"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">セシウム</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">方部</span>, <span class="va">西暦</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -1359,7 +1360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">方部</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="野生鳥獣の放射線モニタリング調査結果_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
@@ -1368,7 +1369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="方部相双" class="level3"><h3 class="anchored" data-anchor-id="方部相双">方部「相双」</h3>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_野生鳥獣</span> <span class="op">|&gt;</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_野生鳥獣</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">動物</span> <span class="op">==</span> <span class="st">"イノシシ"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">セシウム</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">方部</span> <span class="op">==</span> <span class="st">"相双"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -1381,7 +1382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="va">comma</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="野生鳥獣の放射線モニタリング調査結果_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
