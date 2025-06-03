@@ -393,7 +393,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">Monday, 2, Jun, 2025</p>
+        <p class="date-modified">Tuesday, 3, Jun, 2025</p>
       </div>
     </div>
       
@@ -523,13 +523,13 @@ div.csl-indent {
 <span>  <span class="fu">slice_sample</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 6
-  state          total_vote r_points pct_trump party      census 
-  &lt;chr&gt;               &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;  
-1 Arizona           2604657     3.5       48.1 Republican West   
-2 North Carolina    4741564     3.66      49.8 Republican South  
-3 Minnesota         2945233    -1.51      44.9 Democratic Midwest
-4 Tennessee         2508027    26         60.7 Republican South  
-5 Delaware           443814   -11.4       41.7 Democratic South  </code></pre>
+  state                total_vote r_points pct_trump party      census   
+  &lt;chr&gt;                     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    
+1 North Carolina          4741564     3.66     49.8  Republican South    
+2 District of Columbia     311268   -86.8       4.09 Democratic South    
+3 Maine                    747927    -2.96     44.9  Democratic Northeast
+4 South Dakota             370093    29.8      61.5  Republican Midwest  
+5 New Jersey              3906723   -14.0      41    Democratic Northeast</code></pre>
 </div>
 </div>
 </section><section id="傾向の把握" class="level3"><h3 class="anchored" data-anchor-id="傾向の把握">⑵ 傾向の把握</h3>
@@ -941,7 +941,7 @@ remotes::install_github("uribo/kuniezu")</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>options:        ENCODING=cp932 
 Reading layer `P34-14_17' from data source 
-  `/private/var/folders/9s/7hsrcd3j2g94k9xw7prl70100000gn/T/Rtmp4vYScK/P34-14_17_GML/P34-14_17.shp' 
+  `/private/var/folders/9s/7hsrcd3j2g94k9xw7prl70100000gn/T/RtmpYsGuyj/P34-14_17_GML/P34-14_17.shp' 
   using driver `ESRI Shapefile'
 Simple feature collection with 46 features and 4 fields
 Geometry type: POINT
@@ -952,23 +952,23 @@ Geodetic CRS:  JGD2000</code></pre>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ishikawa_cities</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">gt</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fyulrkjyos" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fyulrkjyos table {
+<div id="nraftozvyf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nraftozvyf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fyulrkjyos thead, #fyulrkjyos tbody, #fyulrkjyos tfoot, #fyulrkjyos tr, #fyulrkjyos td, #fyulrkjyos th {
+#nraftozvyf thead, #nraftozvyf tbody, #nraftozvyf tfoot, #nraftozvyf tr, #nraftozvyf td, #nraftozvyf th {
   border-style: none;
 }
 
-#fyulrkjyos p {
+#nraftozvyf p {
   margin: 0;
   padding: 0;
 }
 
-#fyulrkjyos .gt_table {
+#nraftozvyf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -994,12 +994,12 @@ Geodetic CRS:  JGD2000</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#fyulrkjyos .gt_caption {
+#nraftozvyf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fyulrkjyos .gt_title {
+#nraftozvyf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1011,7 +1011,7 @@ Geodetic CRS:  JGD2000</code></pre>
   border-bottom-width: 0;
 }
 
-#fyulrkjyos .gt_subtitle {
+#nraftozvyf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1023,7 +1023,7 @@ Geodetic CRS:  JGD2000</code></pre>
   border-top-width: 0;
 }
 
-#fyulrkjyos .gt_heading {
+#nraftozvyf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1035,13 +1035,13 @@ Geodetic CRS:  JGD2000</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#fyulrkjyos .gt_bottom_border {
+#nraftozvyf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fyulrkjyos .gt_col_headings {
+#nraftozvyf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1056,7 +1056,7 @@ Geodetic CRS:  JGD2000</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#fyulrkjyos .gt_col_heading {
+#nraftozvyf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1076,7 +1076,7 @@ Geodetic CRS:  JGD2000</code></pre>
   overflow-x: hidden;
 }
 
-#fyulrkjyos .gt_column_spanner_outer {
+#nraftozvyf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1088,15 +1088,15 @@ Geodetic CRS:  JGD2000</code></pre>
   padding-right: 4px;
 }
 
-#fyulrkjyos .gt_column_spanner_outer:first-child {
+#nraftozvyf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fyulrkjyos .gt_column_spanner_outer:last-child {
+#nraftozvyf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fyulrkjyos .gt_column_spanner {
+#nraftozvyf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1108,11 +1108,11 @@ Geodetic CRS:  JGD2000</code></pre>
   width: 100%;
 }
 
-#fyulrkjyos .gt_spanner_row {
+#nraftozvyf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fyulrkjyos .gt_group_heading {
+#nraftozvyf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1138,7 +1138,7 @@ Geodetic CRS:  JGD2000</code></pre>
   text-align: left;
 }
 
-#fyulrkjyos .gt_empty_group_heading {
+#nraftozvyf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1153,15 +1153,15 @@ Geodetic CRS:  JGD2000</code></pre>
   vertical-align: middle;
 }
 
-#fyulrkjyos .gt_from_md > :first-child {
+#nraftozvyf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fyulrkjyos .gt_from_md > :last-child {
+#nraftozvyf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fyulrkjyos .gt_row {
+#nraftozvyf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1180,7 +1180,7 @@ Geodetic CRS:  JGD2000</code></pre>
   overflow-x: hidden;
 }
 
-#fyulrkjyos .gt_stub {
+#nraftozvyf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1193,7 +1193,7 @@ Geodetic CRS:  JGD2000</code></pre>
   padding-right: 5px;
 }
 
-#fyulrkjyos .gt_stub_row_group {
+#nraftozvyf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1207,15 +1207,15 @@ Geodetic CRS:  JGD2000</code></pre>
   vertical-align: top;
 }
 
-#fyulrkjyos .gt_row_group_first td {
+#nraftozvyf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fyulrkjyos .gt_row_group_first th {
+#nraftozvyf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fyulrkjyos .gt_summary_row {
+#nraftozvyf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1225,16 +1225,16 @@ Geodetic CRS:  JGD2000</code></pre>
   padding-right: 5px;
 }
 
-#fyulrkjyos .gt_first_summary_row {
+#nraftozvyf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fyulrkjyos .gt_first_summary_row.thick {
+#nraftozvyf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fyulrkjyos .gt_last_summary_row {
+#nraftozvyf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1244,7 +1244,7 @@ Geodetic CRS:  JGD2000</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#fyulrkjyos .gt_grand_summary_row {
+#nraftozvyf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1254,7 +1254,7 @@ Geodetic CRS:  JGD2000</code></pre>
   padding-right: 5px;
 }
 
-#fyulrkjyos .gt_first_grand_summary_row {
+#nraftozvyf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1264,7 +1264,7 @@ Geodetic CRS:  JGD2000</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#fyulrkjyos .gt_last_grand_summary_row_top {
+#nraftozvyf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1274,11 +1274,11 @@ Geodetic CRS:  JGD2000</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#fyulrkjyos .gt_striped {
+#nraftozvyf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fyulrkjyos .gt_table_body {
+#nraftozvyf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1287,7 +1287,7 @@ Geodetic CRS:  JGD2000</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#fyulrkjyos .gt_footnotes {
+#nraftozvyf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1301,7 +1301,7 @@ Geodetic CRS:  JGD2000</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#fyulrkjyos .gt_footnote {
+#nraftozvyf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1310,7 +1310,7 @@ Geodetic CRS:  JGD2000</code></pre>
   padding-right: 5px;
 }
 
-#fyulrkjyos .gt_sourcenotes {
+#nraftozvyf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1324,7 +1324,7 @@ Geodetic CRS:  JGD2000</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#fyulrkjyos .gt_sourcenote {
+#nraftozvyf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1332,72 +1332,72 @@ Geodetic CRS:  JGD2000</code></pre>
   padding-right: 5px;
 }
 
-#fyulrkjyos .gt_left {
+#nraftozvyf .gt_left {
   text-align: left;
 }
 
-#fyulrkjyos .gt_center {
+#nraftozvyf .gt_center {
   text-align: center;
 }
 
-#fyulrkjyos .gt_right {
+#nraftozvyf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fyulrkjyos .gt_font_normal {
+#nraftozvyf .gt_font_normal {
   font-weight: normal;
 }
 
-#fyulrkjyos .gt_font_bold {
+#nraftozvyf .gt_font_bold {
   font-weight: bold;
 }
 
-#fyulrkjyos .gt_font_italic {
+#nraftozvyf .gt_font_italic {
   font-style: italic;
 }
 
-#fyulrkjyos .gt_super {
+#nraftozvyf .gt_super {
   font-size: 65%;
 }
 
-#fyulrkjyos .gt_footnote_marks {
+#nraftozvyf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fyulrkjyos .gt_asterisk {
+#nraftozvyf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fyulrkjyos .gt_indent_1 {
+#nraftozvyf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fyulrkjyos .gt_indent_2 {
+#nraftozvyf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fyulrkjyos .gt_indent_3 {
+#nraftozvyf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fyulrkjyos .gt_indent_4 {
+#nraftozvyf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fyulrkjyos .gt_indent_5 {
+#nraftozvyf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fyulrkjyos .katex-display {
+#nraftozvyf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fyulrkjyos div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nraftozvyf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1854,14 +1854,20 @@ Geodetic CRS:  JGD2000</code></pre>
 </ul>
 </li>
 </ul>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p><a href="https://httr2.r-lib.org">httr2</a>や<a href="https://rvest.tidyverse.org/articles/rvest.html">rvest</a>といったパッケージを使っています</p>
+<div class="callout-title-container flex-fill">
+パッケージ
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>スクレイピングには、<a href="https://httr2.r-lib.org">httr2</a>や<a href="https://rvest.tidyverse.org/articles/rvest.html">rvest</a>といったパッケージを使っています</li>
+<li>テキスト分析には、<a href="https://quanteda.io">quanteda</a>をベースに、形態素解析器に<a href="http://rmecab.jp/wiki/index.php?RMeCab">RMeCab</a>を用いています。quantedaの他、<a href="https://github.com/juliasilge/tidytext?tab=readme-ov-file">tidytext</a>が著名です（ただし日本語非対応）</li>
+</ul>
 </div>
 </div>
 </section><section id="宿題" class="level1"><h1>Ⅵ. 宿題</h1>
