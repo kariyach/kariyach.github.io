@@ -4,8 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.31">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="author" content="苅谷 千尋">
-<title>RとQuartoではじめるデータサイエンス：データを可視化する《2025》 – CHIHIRO KARIYA</title>
+<title>金沢大学 高大接続 リーディングセミナー – CHIHIRO KARIYA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,8 +66,11 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style>html{ scroll-behavior: smooth; }</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
+}</script><link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><link href="../../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="../../site_libs/leaflet-1.3.1/leaflet.js"></script><link href="../../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="../../site_libs/proj4-2.6.2/proj4.min.js"></script><script src="../../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script><link href="../../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="../../site_libs/leaflet-binding-2.2.2/leaflet.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="../../style_ja.css">
 </head>
@@ -306,41 +308,16 @@ ul.task-list li input[type="checkbox"] {
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス：データを可視化する《2025》</a></h1>
-            <p class="subtitle lead">ルーブリック</p>
+      <h1 class="title">金沢大学 高大接続 リーディングセミナー</h1>
+            <p class="subtitle lead">第16回リーディングセミナー：朝日新聞取材班『8がけ社会：消える労働者 朽ちるインフラ』(朝日新書、2024)</p>
                       </div>
   </div>
     
-  <div class="quarto-title-meta-author">
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-heading">Affiliation</div>
-    
-      <div class="quarto-title-meta-contents">
-      <p class="author">苅谷 千尋, PhD <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
-    </div>
-    <div class="quarto-title-meta-contents">
-          <p class="affiliation">
-              高大接続コア・センター
-            </p>
-        </div>
-    </div>
-
+  
   <div class="quarto-title-meta">
 
-        
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">Tue, 1, Apr, 2025</p>
-      </div>
-    </div>
+      
     
-      <div>
-      <div class="quarto-title-meta-heading">Modified</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date-modified">Fri, 1, Aug, 2025</p>
-      </div>
-    </div>
       
     </div>
     
@@ -348,520 +325,200 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
+   
+  <ul>
+<li>
+<a href="#%E6%A6%82%E8%A6%81" id="toc-概要" class="nav-link active" data-scroll-target="#%E6%A6%82%E8%A6%81">Ⅰ. 概要</a>
+  <ul class="collapse">
+<li><a href="#%E6%97%A5%E6%99%82" id="toc-日時" class="nav-link" data-scroll-target="#%E6%97%A5%E6%99%82">1. 日時</a></li>
+  <li><a href="#%E4%BA%8B%E5%89%8D%E8%AA%B2%E9%A1%8C" id="toc-事前課題" class="nav-link" data-scroll-target="#%E4%BA%8B%E5%89%8D%E8%AA%B2%E9%A1%8C">2. 事前課題</a></li>
+  <li><a href="#%E4%BC%9A%E5%A0%B4%E5%AF%BE%E9%9D%A2%E5%8F%82%E5%8A%A0%E8%80%85" id="toc-会場対面参加者" class="nav-link" data-scroll-target="#%E4%BC%9A%E5%A0%B4%E5%AF%BE%E9%9D%A2%E5%8F%82%E5%8A%A0%E8%80%85">3. 会場（対面参加者）</a></li>
+  </ul>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><div class="cell">
-<div class="cell-output-display">
-<div id="haxdjnojdo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#haxdjnojdo table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#haxdjnojdo thead, #haxdjnojdo tbody, #haxdjnojdo tfoot, #haxdjnojdo tr, #haxdjnojdo td, #haxdjnojdo th {
-  border-style: none;
-}
-
-#haxdjnojdo p {
-  margin: 0;
-  padding: 0;
-}
-
-#haxdjnojdo .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#haxdjnojdo .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#haxdjnojdo .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#haxdjnojdo .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#haxdjnojdo .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#haxdjnojdo .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#haxdjnojdo .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#haxdjnojdo .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#haxdjnojdo .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#haxdjnojdo .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#haxdjnojdo .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#haxdjnojdo .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#haxdjnojdo .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#haxdjnojdo .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#haxdjnojdo .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#haxdjnojdo .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#haxdjnojdo .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#haxdjnojdo .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#haxdjnojdo .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#haxdjnojdo .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#haxdjnojdo .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#haxdjnojdo .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#haxdjnojdo .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#haxdjnojdo .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#haxdjnojdo .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#haxdjnojdo .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#haxdjnojdo .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#haxdjnojdo .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#haxdjnojdo .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#haxdjnojdo .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#haxdjnojdo .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#haxdjnojdo .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#haxdjnojdo .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#haxdjnojdo .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#haxdjnojdo .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#haxdjnojdo .gt_left {
-  text-align: left;
-}
-
-#haxdjnojdo .gt_center {
-  text-align: center;
-}
-
-#haxdjnojdo .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#haxdjnojdo .gt_font_normal {
-  font-weight: normal;
-}
-
-#haxdjnojdo .gt_font_bold {
-  font-weight: bold;
-}
-
-#haxdjnojdo .gt_font_italic {
-  font-style: italic;
-}
-
-#haxdjnojdo .gt_super {
-  font-size: 65%;
-}
-
-#haxdjnojdo .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#haxdjnojdo .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#haxdjnojdo .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#haxdjnojdo .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#haxdjnojdo .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#haxdjnojdo .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#haxdjnojdo .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#haxdjnojdo .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#haxdjnojdo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings header">
-<th id="評価項目" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">評価項目</th>
-<th id="不十分" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">不十分</th>
-<th id="初歩的" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">初歩的</th>
-<th id="発展途上" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">発展途上</th>
-<th id="達成" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">達成</th>
-<th id="模範的" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">模範的</th>
-</tr></thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="評価項目" style="font-weight: bold">データの取得と整形にかかわるプログラミング能力</td>
-<td class="gt_row gt_left" headers="不十分">教員の助言を得ても、Rの解析に適したデータを探すことができない / 整然データと雑然データを区別できない / データの整形にかかわるコマンドを一切、習得していない</td>
-<td class="gt_row gt_left" headers="初歩的">教員の助言があれば、Rの解析に適したデータを探すことができる / 整然データと雑然データを区別しようとしている / データの整形にかかわるコマンドを習得しようとしている</td>
-<td class="gt_row gt_left" headers="発展途上">教員の助言があれば、Rの解析に適したデータを探すことができる / 整然データと雑然データを区別できる / データの整形にかかわる基本的なコマンドを習得している</td>
-<td class="gt_row gt_left" headers="達成" style="background-color: #F0F8FF; font-weight: bold">独力でRの解析に適したデータを探すことができる / 整然データと雑然データを区別し、データを部分的に加工できる / データの整形にかかわる基本的なコマンドを習得している</td>
-<td class="gt_row gt_left" headers="模範的">「達成」を全て満たしている / データ結合や、横持ちデータと縦持ちデータの変換を自在に行うことができる / 自作関数を用いてコードを簡略化できる</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="評価項目" style="font-weight: bold">作図にかかわるプログラミング能力</td>
-<td class="gt_row gt_left" headers="不十分">Rを使って、5 Named Graphs(棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ）を１つも作成できない</td>
-<td class="gt_row gt_left" headers="初歩的">Rを使って、5 Named Graphsを最低１種は作成できる</td>
-<td class="gt_row gt_left" headers="発展途上">Rを使って、5 Named Graphsを2種は作成できる</td>
-<td class="gt_row gt_left" headers="達成" style="background-color: #F0F8FF; font-weight: bold">Rを使って、5 Named Graphsを3種は作成できる</td>
-<td class="gt_row gt_left" headers="模範的">Rを使って、5 Named Graphsを自在に作図できる</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="評価項目" style="font-weight: bold">図の見やすさに関するプログラミング能力</td>
-<td class="gt_row gt_left" headers="不十分">デフォルトの設定のままで、見やすさを考慮していない</td>
-<td class="gt_row gt_left" headers="初歩的">色やラベルの変更を試みているが、不適切な設定（例：コントラストが悪い、ラベルが重なる）になっている</td>
-<td class="gt_row gt_left" headers="発展途上">軸ラベルや凡例の調整が一部できているが、統一感や適切さに欠けることがある</td>
-<td class="gt_row gt_left" headers="達成" style="background-color: #F0F8FF; font-weight: bold">適切な色の選択やラベル配置により、視認性が十分に確保されている</td>
-<td class="gt_row gt_left" headers="模範的">読み手を意識した工夫が随所に見られ、データの特徴が一目で理解しやすいグラフになっている / YAMLを変更して出力形態を自在に変えることができる</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="評価項目" style="font-weight: bold">分析のアイデア・視角</td>
-<td class="gt_row gt_left" headers="不十分">分析の視点が欠けており、アイデアもほとんど見られない / 表面的な記述にとどまる</td>
-<td class="gt_row gt_left" headers="初歩的">基本的な視点はあるが、分析が浅く、独自のアイデアが乏しい / 論理の飛躍や矛盾が見られる</td>
-<td class="gt_row gt_left" headers="発展途上">一般的な視点を用いた分析ができているが、アイデアの独創性や深みには欠ける / 論理の流れは概ね理解できる</td>
-<td class="gt_row gt_left" headers="達成" style="background-color: #F0F8FF; font-weight: bold">適切な視点で分析し、説得力のあるアイデアを提示できている / 論理的な一貫性があり、深い考察が見られる</td>
-<td class="gt_row gt_left" headers="模範的">独創的で鋭い視点から分析し、新たな視点を提示できている / 論理構成が優れており、深く掘り下げられた考察が展開されている</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="評価項目" style="font-weight: bold">分析力・説明力</td>
-<td class="gt_row gt_left" headers="不十分">Rで作図した図について、説明が不明瞭で読み手は理解できない / 分析の結果が示す意味を作成者が理解できていない</td>
-<td class="gt_row gt_left" headers="初歩的">Rで作図した図について、分析の結果に対する解釈が表面的で、いくつかの重要な点が欠けている</td>
-<td class="gt_row gt_left" headers="発展途上">Rで作図した図について、図に対する説明は比較的明確で、主要なポイントについて言及されているが、詳細が不足している</td>
-<td class="gt_row gt_left" headers="達成" style="background-color: #F0F8FF; font-weight: bold">Rで作図した図について、図の説明は明確で、読み手が理解しやすい / 重要な要素が適切に強調され、論理的に整理されている</td>
-<td class="gt_row gt_left" headers="模範的">Rで作図した図について、図とその説明が一貫しており、読み手が図を通じて分析の全体像を瞬時に把握できるよう工夫されている</td>
-</tr>
-</tbody>
-</table>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><div class="columns">
+<div class="column" style="width:30%;">
+<p><img src="../../img/works/logo_kanazawauniversity.jpg" class="img-fluid" style="width:50.0%"></p>
+</div><div class="column" style="width:30%;">
+<p><img src="../../img/works/logo_kugs.png" class="img-fluid" style="width:60.0%"></p>
+</div><div class="column" style="width:30%;">
+<p><img src="../../img/works/icon_4-education.png" class="img-fluid" style="width:45.0%"></p>
+</div>
+</div>
+<section id="概要" class="level2"><h2 class="anchored" data-anchor-id="概要">Ⅰ. 概要</h2>
+<p>リーディングセミナーでは、近年、⼤学界隈において話題の、⾼校⽣向けに書かれた(または⾼校⽣にも考えて欲しい)、新書や⽂庫を1冊、取り上げ、参加者で読書体験を共有します。</p>
+<ul>
+<li><a href="https://kugspro.adm.kanazawa-u.ac.jp/?page_id=3250">趣旨とこれまでの模様</a></li>
+</ul>
+<p>今回は､朝日新聞取材班『<a href="https://publications.asahi.com/product/25006.html">８がけ社会：消える労働者 朽ちるインフラ</a>』(朝日新書、2024)。少子高齢化社会への危機感が叫ばれ、すでに30年が経過しました。子どもが少なくなり、高齢者が多くなることによってどのような問題が生じるのでしょうか。「現役世代が2割減る」ことによって生じる（そして、すでに生じている）各地の問題を朝日新聞の記者が取材しました。数字だけでは見えてこない社会の問題を本書から探り、その対処法を考えてみましょう。</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+重要
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>図書は各自、書店や図書館で入手して下さい</li>
+</ul>
+</div>
+</div>
+<section id="日時" class="level3"><h3 class="anchored" data-anchor-id="日時">1. 日時</h3>
+<ul>
+<li>2025年8月5日（火） 13:00-17:00</li>
+</ul></section><section id="事前課題" class="level3"><h3 class="anchored" data-anchor-id="事前課題">2. 事前課題</h3>
+<ul>
+<li>提出先：<a href="https://forms.gle/kewCAAGMxzeMx6mx8">Google Form</a><i class="bi bi-unlock-fill"></i>
+<ul>
+<li>開催日前日（8月4日（火）23時59分）までに、課題に答えてください</li>
+<li>当日は、事前課題をもとに、参加者で議論し、紹介文を作成します</li>
+</ul>
+</li>
+</ul></section><section id="会場対面参加者" class="level3"><h3 class="anchored">3. 会場（対面参加者）</h3>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>金沢大学 角間キャンパス
+<ul>
+<li>中央図書館 グループスタジオA（2F）</li>
+<li><a href="https://maps.app.goo.gl/PdECX975k1YJSynN7">Google Map</a></li>
+</ul>
+</li>
+<li>公共交通機関（via 北陸鉄道バス）
+<ul>
+<li>バス停（乗り口）
+<ul>
+<li>金沢駅兼六園口（東口）8番乗り場発　93・94・97金沢大学行き（兼六園下経由）</li>
+</ul>
+</li>
+<li>バス停（下車）：<em>金沢大学中央バス停</em>
+<ul>
+<li>中央図書館まで徒歩約5分</li>
+</ul>
+</li>
+<li>時刻表（北陸鉄道バス 公式サイト）
+<ul>
+<li>
+<a href="https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2025/06/20250622_Kanazawa-Univ-and-Higashikanazawa-2.pdf">金沢大学行き/金沢駅行き</a>
+<ul>
+<li><em>開催日（8月5日）は「学期休み期間」ではありません</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-3c360d4e78d8b397a404" style="width:100%;height:371px;"></div>
+<script type="application/json" data-for="htmlwidget-3c360d4e78d8b397a404">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]}],"setView":[[36.54888,136.71153],18,[]]},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note | その他
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>服装の指定はありません。暑いですので、過ごしやすい服装でお越し下さい</li>
+</ul>
+</div>
+</div>
+<section id="zoomオンライン参加者" class="level3"><h3 class="anchored" data-anchor-id="zoomオンライン参加者">4. Zoom（オンライン参加者）</h3>
+<ul>
+<li>接続方法：<a href="https://kanazawa-university.zoom.us/j/89257143292?pwd=mXaPTIpA61zARu0KQzVYjcFG9vxaY6.1">ZOOM URL</a><i class="bi bi-unlock-fill"></i>
+<ul>
+<li>12:30から入室可能です<br><!-- - 接続情報は、Google フォームに登録されたメールアドレスに、当日午前中にお送りします --><!-- - メールが届かない場合は、下記の連絡先にお問い合わせください -->
+</li>
+</ul>
+</li>
+</ul>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>少人数のグループワークです｡できるだけビデオオンでご参加下さい</p>
 </div>
 </div>
 </div>
+</section><section id="配布資料" class="level2"><h2 class="anchored" data-anchor-id="配布資料">Ⅱ. 配布資料</h2>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>リーディングセミナーの開催当日正午を目処に公開します</p>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>レジュメ：<i class="bi bi-lock-fill"></i> <!-- - [リンク](resume_readingseminar_15.html) -->
+</li>
+<li>スライド：<i class="bi bi-lock-fill"></i> <!-- - [リンク](slide_readingseminar_15.html) --> <!-- - 内容はレジュメと同じです -->
+</li>
+<li>追加資料：<i class="bi bi-lock-fill"></i> <!-- - [Google ドライブ](https://drive.google.com/drive/folders/1nElT-7I8TNisw912lA8WrmoxOHCm0skp?usp=sharing)<i class="bi bi-unlock-fill"></i> -->
+</li>
+</ol>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>アクセス権が必要な場合は、適宜クリックするか、以下のメールアドレスにお問い合わせ下さい</p>
+</div>
+</div>
+</div>
+<section id="セミナー後アンケート" class="level3"><h3 class="anchored" data-anchor-id="セミナー後アンケート">セミナー後アンケート <i class="bi bi-lock-fill"></i>
+</h3>
+<!-- - 提出先：[Google Forms](https://forms.gle/afpJaWvegRzf5NzE9) -->
+<!--   - セミナーの翌日（8月6日（水）23時59分）までに回答下さい -->
+</section></section><section id="連絡先" class="level2"><h2 class="anchored" data-anchor-id="連絡先">Ⅲ. 連絡先</h2>
+<ul>
+<li>担当講師（苅谷）： <a href="mailto:kariyach@staff.kanazawa-u.ac.jp">kariyach@staff.kanazawa-u.ac.jp</a>
+</li>
+<li>研究室：076-264-5814（セミナー開催中は会場にいるため対応できません）</li>
+<li>入試課：076-264-6082（平日開催の場合のみ繋がります）</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+重要
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>当日、体調不良などで急きょ、参加できなくなった場合は、簡単で結構ですので、上記のメールアドレスに連絡下さい</li>
+</ul>
+</div>
+</div>
+</section><section id="その他" class="level2"><h2 class="anchored" data-anchor-id="その他">Ⅳ. その他</h2>
+<ul>
+<li>このプログラムは金沢大学KUGS高大接続プログラム（大学での学び）の対象です</li>
+<li>特別入試に興味がある方は<a href="https://kugspro.adm.kanazawa-u.ac.jp">公式サイト</a>をご覧下さい</li>
+</ul>
 
 
-
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+</div>
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1295,5 +952,4 @@ ul.task-list li input[type="checkbox"] {
 </footer>
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
