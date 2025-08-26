@@ -1544,7 +1544,7 @@
     "href": "projects/reception_18th-century/ngram.html",
     "title": "Google Ngram Trends:",
     "section": "",
-    "text": "This page was created to test the functionality of the R package ngramr. The ngramr package is very flexible in handling the Google Books Ngram API’s capability of returning multiple words at once, allowing users to display the results of multiple search terms in a single figure.\n\n\n\n\nwords &lt;- c(\"Cicero\", \"Tacitus\", \"Sallust\",\"Plutarch\", \"Aristotle\", \"Shakespeare\", \"Milton\")\n\ndf &lt;- map_dfr(words, ~ngram(.x, corpus = \"eng_gb_2019\", year_start = 1500, year_end = 2020))\n\n# Ngram data table\n# Phrases:      \n# Case-sensitive:   \n# Corpuses:     \n# Smoothing:        \n# Years:        1500-2020\n\n  Year Phrase Frequency Corpus Parent  type\n1 1500 Cicero         0     en        NGRAM\n2 1501 Cicero         0     en        NGRAM\n3 1502 Cicero         0     en        NGRAM\n4 1503 Cicero         0     en        NGRAM\n5 1504 Cicero         0     en        NGRAM\n6 1505 Cicero         0     en        NGRAM\n\n\n# Ngram data table\n# Phrases:      \n# Case-sensitive:   \n# Corpuses:     \n# Smoothing:        \n# Years:        1500-2020\n\n  Year  Phrase Frequency Corpus Parent  type\n1 1500 Tacitus         0     en        NGRAM\n2 1501 Tacitus         0     en        NGRAM\n3 1502 Tacitus         0     en        NGRAM\n4 1503 Tacitus         0     en        NGRAM\n5 1504 Tacitus         0     en        NGRAM\n6 1505 Tacitus         0     en        NGRAM\n\n\n# Ngram data table\n# Phrases:      \n# Case-sensitive:   \n# Corpuses:     \n# Smoothing:        \n# Years:        1500-2020\n\n  Year  Phrase Frequency Corpus Parent  type\n1 1500 Sallust         0     en        NGRAM\n2 1501 Sallust         0     en        NGRAM\n3 1502 Sallust         0     en        NGRAM\n4 1503 Sallust         0     en        NGRAM\n5 1504 Sallust         0     en        NGRAM\n6 1505 Sallust         0     en        NGRAM\n\n\n# Ngram data table\n# Phrases:      \n# Case-sensitive:   \n# Corpuses:     \n# Smoothing:        \n# Years:        1500-2020\n\n  Year   Phrase Frequency Corpus Parent  type\n1 1500 Plutarch         0     en        NGRAM\n2 1501 Plutarch         0     en        NGRAM\n3 1502 Plutarch         0     en        NGRAM\n4 1503 Plutarch         0     en        NGRAM\n5 1504 Plutarch         0     en        NGRAM\n6 1505 Plutarch         0     en        NGRAM\n\n\n# Ngram data table\n# Phrases:      \n# Case-sensitive:   \n# Corpuses:     \n# Smoothing:        \n# Years:        1500-2020\n\n  Year    Phrase Frequency Corpus Parent  type\n1 1500 Aristotle         0     en        NGRAM\n2 1501 Aristotle         0     en        NGRAM\n3 1502 Aristotle         0     en        NGRAM\n4 1503 Aristotle         0     en        NGRAM\n5 1504 Aristotle         0     en        NGRAM\n6 1505 Aristotle         0     en        NGRAM\n\n\n# Ngram data table\n# Phrases:      \n# Case-sensitive:   \n# Corpuses:     \n# Smoothing:        \n# Years:        1500-2020\n\n  Year      Phrase Frequency Corpus Parent  type\n1 1500 Shakespeare         0     en        NGRAM\n2 1501 Shakespeare         0     en        NGRAM\n3 1502 Shakespeare         0     en        NGRAM\n4 1503 Shakespeare         0     en        NGRAM\n5 1504 Shakespeare         0     en        NGRAM\n6 1505 Shakespeare         0     en        NGRAM\n\n\n# Ngram data table\n# Phrases:      \n# Case-sensitive:   \n# Corpuses:     \n# Smoothing:        \n# Years:        1500-2020\n\n  Year Phrase    Frequency Corpus Parent  type\n1 1500 Milton 2.597958e-06     en        NGRAM\n2 1501 Milton 2.078367e-06     en        NGRAM\n3 1502 Milton 1.731972e-06     en        NGRAM\n4 1503 Milton 1.484548e-06     en        NGRAM\n5 1504 Milton 5.218032e-07     en        NGRAM\n6 1505 Milton 0.000000e+00     en        NGRAM\n\ndf |&gt; \n  ggplot(aes(x = Year, y = Frequency, color = Phrase)) +\n  geom_line() +\n  scale_color_paletteer_d(\"ggthemr::solarized\") +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  labs(title = \"Google Ngram Trends\", y = \"Frequency (%)\", x = \"\")"
+    "text": "This page was created to test the functionality of the R package ngramr. The ngramr package is very flexible in handling the Google Books Ngram API’s capability of returning multiple words at once, allowing users to display the results of multiple search terms in a single figure.\n\n\n\n\nwords &lt;- c(\"Cicero\", \"Tacitus\", \"Sallust\",\"Plutarch\", \"Aristotle\", \"Shakespeare\", \"Milton\")\n\ndf &lt;- map_dfr(words, ~ngram(.x, corpus = \"eng_gb_2019\", year_start = 1500, year_end = 2020))\n\ndf |&gt; \n  ggplot(aes(x = Year, y = Frequency, color = Phrase)) +\n  geom_line() +\n  scale_color_paletteer_d(\"ggthemr::solarized\") +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  labs(title = \"Google Ngram Trends\", y = \"Frequency (%)\", x = \"\")"
   },
   {
     "objectID": "projects/speech_pm_jp/speech_kishida.html",
@@ -1598,63 +1598,63 @@
   {
     "objectID": "projects/britishmagazines_18th-century/SenateofLilliput.html",
     "href": "projects/britishmagazines_18th-century/SenateofLilliput.html",
-    "title": "The Senate of Lilliput",
+    "title": "Debates in the Senate of Lilliput (Samuel Johnson)",
     "section": "",
     "text": "This page is currently being tested."
   },
   {
     "objectID": "projects/britishmagazines_18th-century/SenateofLilliput.html#wordcloud",
     "href": "projects/britishmagazines_18th-century/SenateofLilliput.html#wordcloud",
-    "title": "The Senate of Lilliput",
+    "title": "Debates in the Senate of Lilliput (Samuel Johnson)",
     "section": "Wordcloud",
     "text": "Wordcloud"
   },
   {
     "objectID": "projects/britishmagazines_18th-century/SenateofLilliput.html#interest",
     "href": "projects/britishmagazines_18th-century/SenateofLilliput.html#interest",
-    "title": "The Senate of Lilliput",
+    "title": "Debates in the Senate of Lilliput (Samuel Johnson)",
     "section": "interest",
     "text": "interest\n\n\nKeyword-in-context with 39 matches.                                                                 \n   [SenateofLilliput.csv.1, 11]  prejudic | interest | other     \n   [SenateofLilliput.csv.1, 44]    privat | interest | sincerest \n   [SenateofLilliput.csv.1, 77]     offic | interest | everi     \n   [SenateofLilliput.csv.1, 81] communiti | interest | duti      \n  [SenateofLilliput.csv.1, 426]      move | interest | continu   \n  [SenateofLilliput.csv.1, 590]    justic | interest | procur    \n  [SenateofLilliput.csv.1, 709]      ment | interest | prosper   \n  [SenateofLilliput.csv.1, 856]     glect | interest | Emperor   \n  [SenateofLilliput.csv.1, 890]    machin | interest | tye       \n [SenateofLilliput.csv.1, 1167]     divid | interest | Hous      \n [SenateofLilliput.csv.1, 1426]     sider | interest | circumst  \n [SenateofLilliput.csv.1, 1737]   likewis | interest | pre       \n [SenateofLilliput.csv.1, 1949]   sensibl | interest | promot    \n [SenateofLilliput.csv.1, 2595]     whose | interest | might     \n  [SenateofLilliput.csv.2, 117]   connect | interest | man       \n  [SenateofLilliput.csv.2, 124]   passion | interest | can       \n  [SenateofLilliput.csv.3, 819]    public | interest | fail      \n  [SenateofLilliput.csv.3, 881]     taken | interest | state     \n [SenateofLilliput.csv.3, 1029]    consid | interest | disposit  \n [SenateofLilliput.csv.3, 1238]  prospect | interest | love      \n [SenateofLilliput.csv.3, 1486]   Iberian | interest | trade     \n   [SenateofLilliput.csv.4, 53]    privat | interest | blind     \n  [SenateofLilliput.csv.4, 169]      Lord | interest | attend    \n  [SenateofLilliput.csv.4, 204]     whose | interest | appear    \n  [SenateofLilliput.csv.4, 542]      vers | interest | transact  \n  [SenateofLilliput.csv.4, 581]      rise | interest | whoever   \n [SenateofLilliput.csv.4, 1025]       war | interest | everi     \n [SenateofLilliput.csv.4, 1156]   neither | interest | merchant  \n [SenateofLilliput.csv.4, 1236]    affair | interest | particular\n [SenateofLilliput.csv.5, 1174]     whose | interest | con       \n [SenateofLilliput.csv.5, 1300]        us | interest | far       \n [SenateofLilliput.csv.5, 1379]     given | interest | countri   \n  [SenateofLilliput.csv.6, 148]   publick | interest | nation    \n   [SenateofLilliput.csv.7, 27]     adher | interest | corrupt   \n  [SenateofLilliput.csv.7, 132]     peopl | interest | chief     \n  [SenateofLilliput.csv.7, 216]    differ | interest | vari      \n  [SenateofLilliput.csv.8, 147]    public | interest | decay     \n  [SenateofLilliput.csv.8, 483]      real | interest | advanc'd  \n  [SenateofLilliput.csv.8, 486]      true | interest | Lord"
   },
   {
     "objectID": "projects/britishmagazines_18th-century/SenateofLilliput.html#rhetoric",
     "href": "projects/britishmagazines_18th-century/SenateofLilliput.html#rhetoric",
-    "title": "The Senate of Lilliput",
+    "title": "Debates in the Senate of Lilliput (Samuel Johnson)",
     "section": "rhetoric",
     "text": "rhetoric\n\n\nKeyword-in-context with 0 matches."
   },
   {
     "objectID": "projects/britishmagazines_18th-century/SenateofLilliput.html#fame",
     "href": "projects/britishmagazines_18th-century/SenateofLilliput.html#fame",
-    "title": "The Senate of Lilliput",
+    "title": "Debates in the Senate of Lilliput (Samuel Johnson)",
     "section": "fame",
     "text": "fame\n\n\nKeyword-in-context with 28 matches.                                                           \n   [SenateofLilliput.csv.2, 23] common | fame | evid       \n   [SenateofLilliput.csv.2, 34]    mon | fame | imput      \n   [SenateofLilliput.csv.2, 50] Common | fame | Lord       \n   [SenateofLilliput.csv.2, 76]    mon | fame | great      \n  [SenateofLilliput.csv.3, 186]  blast | fame | may        \n  [SenateofLilliput.csv.3, 298] Common | fame | therefor   \n  [SenateofLilliput.csv.3, 333] common | fame | may        \n [SenateofLilliput.csv.3, 1293] common | fame | yet        \n [SenateofLilliput.csv.3, 1915]    mon | fame | unequit    \n [SenateofLilliput.csv.4, 2042] common | fame | suffici    \n   [SenateofLilliput.csv.5, 81] common | fame | common     \n   [SenateofLilliput.csv.5, 83] common | fame | least      \n  [SenateofLilliput.csv.5, 313] common | fame | much       \n  [SenateofLilliput.csv.5, 336] common | fame | can        \n  [SenateofLilliput.csv.5, 346] report | fame | necessarili\n  [SenateofLilliput.csv.5, 400] enquir | fame | fame       \n  [SenateofLilliput.csv.5, 401]   fame | fame | Lord       \n  [SenateofLilliput.csv.5, 403]   Lord | fame | err        \n  [SenateofLilliput.csv.5, 434] deceiv | fame | rather     \n  [SenateofLilliput.csv.5, 461] happen | fame | suppos     \n  [SenateofLilliput.csv.5, 469] number | fame | equal      \n  [SenateofLilliput.csv.5, 500] Common | fame | Lord       \n  [SenateofLilliput.csv.5, 546] common | fame | may        \n [SenateofLilliput.csv.5, 1003] common | fame | echo       \n [SenateofLilliput.csv.5, 1447] common | fame | ultim      \n  [SenateofLilliput.csv.7, 158]   voic | fame | regard     \n  [SenateofLilliput.csv.8, 381] common | fame | daili      \n  [SenateofLilliput.csv.11, 22]    mon | fame | opposit"
   },
   {
     "objectID": "projects/britishmagazines_18th-century/SenateofLilliput.html#key-adrees",
     "href": "projects/britishmagazines_18th-century/SenateofLilliput.html#key-adrees",
-    "title": "The Senate of Lilliput",
+    "title": "Debates in the Senate of Lilliput (Samuel Johnson)",
     "section": "0. Key adrees",
     "text": "0. Key adrees"
   },
   {
     "objectID": "projects/britishmagazines_18th-century/SenateofLilliput.html#group-wing",
     "href": "projects/britishmagazines_18th-century/SenateofLilliput.html#group-wing",
-    "title": "The Senate of Lilliput",
+    "title": "Debates in the Senate of Lilliput (Samuel Johnson)",
     "section": "1. Group: Wing",
     "text": "1. Group: Wing"
   },
   {
     "objectID": "projects/britishmagazines_18th-century/SenateofLilliput.html#group-tory",
     "href": "projects/britishmagazines_18th-century/SenateofLilliput.html#group-tory",
-    "title": "The Senate of Lilliput",
+    "title": "Debates in the Senate of Lilliput (Samuel Johnson)",
     "section": "2. Group: Tory",
     "text": "2. Group: Tory"
   },
   {
     "objectID": "projects/britishmagazines_18th-century/SenateofLilliput.html#group-wing-1",
     "href": "projects/britishmagazines_18th-century/SenateofLilliput.html#group-wing-1",
-    "title": "The Senate of Lilliput",
+    "title": "Debates in the Senate of Lilliput (Samuel Johnson)",
     "section": "3. Group: Wing?",
     "text": "3. Group: Wing?"
   },
