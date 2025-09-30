@@ -22,7 +22,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -386,31 +405,39 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#高大接続ビブリオバトル入門構想中" id="toc-高大接続ビブリオバトル入門構想中" class="nav-link" data-scroll-target="#高大接続ビブリオバトル入門構想中">⑷ 高大接続ビブリオバトル入門（構想中）</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#ビブリオバトル公式の説明" id="toc-ビブリオバトル公式の説明" class="nav-link" data-scroll-target="#ビブリオバトル公式の説明">Ⅱ. ビブリオバトル公式の説明</a></li>
+  <li><a href="#ビブリオバトル公式ガイド" id="toc-ビブリオバトル公式ガイド" class="nav-link" data-scroll-target="#ビブリオバトル公式ガイド">Ⅱ. ビブリオバトル公式ガイド</a>
+  <ul class="collapse">
+  <li><a href="#コンセプト" id="toc-コンセプト" class="nav-link" data-scroll-target="#コンセプト">1. コンセプト</a></li>
+  <li><a href="#ルール" id="toc-ルール" class="nav-link" data-scroll-target="#ルール">2. ルール</a></li>
+  <li><a href="#成り立ち" id="toc-成り立ち" class="nav-link" data-scroll-target="#成り立ち">3. 成り立ち</a></li>
+  <li><a href="#ビブリオバトル公式大会" id="toc-ビブリオバトル公式大会" class="nav-link" data-scroll-target="#ビブリオバトル公式大会">4. ビブリオバトル公式大会</a></li>
+  </ul></li>
   <li><a href="#ビブリオバトル入門の構成" id="toc-ビブリオバトル入門の構成" class="nav-link" data-scroll-target="#ビブリオバトル入門の構成">Ⅲ. ビブリオバトル入門の構成</a></li>
   <li><a href="#シラバス" id="toc-シラバス" class="nav-link" data-scroll-target="#シラバス">Ⅳ. シラバス</a></li>
   <li><a href="#毎回の授業構成" id="toc-毎回の授業構成" class="nav-link" data-scroll-target="#毎回の授業構成">Ⅴ. 毎回の授業構成</a></li>
-  <li><a href="#成績評価対象" id="toc-成績評価対象" class="nav-link" data-scroll-target="#成績評価対象">Ⅵ. 成績評価対象</a>
+  <li><a href="#成績評価" id="toc-成績評価" class="nav-link" data-scroll-target="#成績評価">Ⅵ. 成績評価</a>
   <ul class="collapse">
-  <li><a href="#宿題" id="toc-宿題" class="nav-link" data-scroll-target="#宿題">宿題</a>
+  <li><a href="#宿題" id="toc-宿題" class="nav-link" data-scroll-target="#宿題">1. 宿題</a>
   <ul class="collapse">
-  <li><a href="#ブックカード" id="toc-ブックカード" class="nav-link" data-scroll-target="#ブックカード">1. ブックカード</a></li>
-  <li><a href="#授業の感想" id="toc-授業の感想" class="nav-link" data-scroll-target="#授業の感想">2. 授業の感想</a></li>
-  <li><a href="#学期末振り返りレポート" id="toc-学期末振り返りレポート" class="nav-link" data-scroll-target="#学期末振り返りレポート">3. 学期末振り返りレポート</a></li>
+  <li><a href="#ブックカード" id="toc-ブックカード" class="nav-link" data-scroll-target="#ブックカード">⑴ ブックカード</a></li>
+  <li><a href="#授業の感想" id="toc-授業の感想" class="nav-link" data-scroll-target="#授業の感想">⑵ 授業の感想</a></li>
+  <li><a href="#学期末振り返りレポート" id="toc-学期末振り返りレポート" class="nav-link" data-scroll-target="#学期末振り返りレポート">⑶ 学期末振り返りレポート</a></li>
   </ul></li>
-  <li><a href="#その他" id="toc-その他" class="nav-link" data-scroll-target="#その他">その他</a>
+  <li><a href="#その他" id="toc-その他" class="nav-link" data-scroll-target="#その他">2. その他</a>
   <ul class="collapse">
-  <li><a href="#受講態度" id="toc-受講態度" class="nav-link" data-scroll-target="#受講態度">1. 受講態度</a></li>
-  <li><a href="#プレゼンテーション" id="toc-プレゼンテーション" class="nav-link" data-scroll-target="#プレゼンテーション">2. プレゼンテーション</a></li>
+  <li><a href="#受講態度" id="toc-受講態度" class="nav-link" data-scroll-target="#受講態度">⑴ 受講態度</a></li>
+  <li><a href="#プレゼンテーション" id="toc-プレゼンテーション" class="nav-link" data-scroll-target="#プレゼンテーション">⑵ プレゼンテーション</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#新聞書評と出版会社pr誌" id="toc-新聞書評と出版会社pr誌" class="nav-link" data-scroll-target="#新聞書評と出版会社pr誌">Ⅶ. 新聞書評と出版会社PR誌</a></li>
   <li><a href="#グループ交流会" id="toc-グループ交流会" class="nav-link" data-scroll-target="#グループ交流会">Ⅷ. グループ交流会</a></li>
+  <li><a href="#宿題と次回の持参物" id="toc-宿題と次回の持参物" class="nav-link" data-scroll-target="#宿題と次回の持参物">Ⅸ. 宿題と次回の持参物</a></li>
+  <li><a href="#参考文献" id="toc-参考文献" class="nav-link" data-scroll-target="#参考文献">参考文献</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="biblio-battle_w1.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
@@ -432,7 +459,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>専門：政治思想史
 <ul>
-<li>18世紀イギリスの議会政治；レトリック受容</li>
+<li>18世紀イギリスの議会政治と議会ジャーナリズム</li>
+<li>レトリックの受容史：キケロ；サルスティウス；タキトゥス</li>
 </ul></li>
 <li>最近の興味関心
 <ul>
@@ -473,21 +501,96 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 </section>
-<section id="ビブリオバトル公式の説明" class="level1">
-<h1>Ⅱ. ビブリオバトル公式の説明</h1>
+<section id="ビブリオバトル公式ガイド" class="level1 page-columns page-full">
+<h1>Ⅱ. ビブリオバトル公式ガイド</h1>
+<section id="コンセプト" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="コンセプト">1. コンセプト</h2>
+<ol type="1">
+<li>本のフットサル（のように気軽に楽しむ）</li>
+<li>本を通して人を知る　人を通して本を知る<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
+<ul>
+<li><span class="citation" data-cites="BiblioBattleCommittee:2013book">ビブリオバトル普及委員会 <a href="#ref-BiblioBattleCommittee:2013book" role="doc-biblioref">(2013), pp.5–6</a></span></li>
+</ul></li>
+</ol>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;「読書のパラドックスは自分自身に至るためには書物を経由しなければならないが、書物はあくまで通過点でなければならないという点にある。良い読者が実践するのはさまざまな書物を横断することである。良い読者は、書物の各々が自分自身の一部を抱えて持っており、もし書物そのものに足を止めてしまわないよう賢明さを持ち合わせていれば、その自分自身に未知を拓いてくれるということを知っているのだ」（<span class="citation" data-cites="BayardP:2016book_translJA">バイヤール，ピエール <a href="#ref-BayardP:2016book_translJA" role="doc-biblioref">(2016), pp.263–264</a></span>）</p></div><div id="fn2"><p><sup>2</sup>&nbsp;「ある本についての会話は、ほとんどの場合、見かけに反して、その本だけについてではなく、もっと広い範囲の一まとまりの本について交わされる。それは、ある時点で、ある文化の方向性を決定づけている一連の重要書の全体である。私はここでそれを（共有図書館&gt;と呼びたいと思うが、ほんとうに大事なのはこれである。この共有図書館＞を把握しているということが、書物について語るときの決め手となるのである」（<span class="citation" data-cites="BayardP:2016book_translJA">バイヤール，ピエール <a href="#ref-BayardP:2016book_translJA" role="doc-biblioref">(2016), pp.35–36</a></span>）</p></div></div></section>
+<section id="ルール" class="level2">
+<h2 class="anchored" data-anchor-id="ルール">2. ルール</h2>
+<ol type="1">
+<li>発表参加者が読んで面白いと思った本を持って集まる</li>
+<li>順番に一人5分間で本を紹介する</li>
+<li>それぞれの発表の後に参加者全員でその発表に関するディスカッションを2〜3分行う</li>
+<li>全ての発表が終了した後に「どの本が一番読みたくなったか？」を基準とした投票を参加者全員1票で行い、最多票を集めたものを「チャンプ本」とする
+<ul>
+<li><span class="citation" data-cites="BiblioBattleCommittee:2013book">ビブリオバトル普及委員会 <a href="#ref-BiblioBattleCommittee:2013book" role="doc-biblioref">(2013), p.7</a></span></li>
+</ul></li>
+</ol>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>本講義もこの公式ルールに準拠しますが、<a href="https://kariyach.github.io/teaching/Biblio-battle/biblio-battle_w1.html#ブックカード">ブックカード</a>を<em>適度に参照することは可</em>とします（公式ルールはメモを見る行為自体不可）。ただし、常時、ブックカードを見る、ブックカードのメモを読み上げる行為は禁止します。あくまで、記憶の助けとして利用下さい</p>
+</div>
+</div>
+</div>
+</section>
+<section id="成り立ち" class="level2">
+<h2 class="anchored" data-anchor-id="成り立ち">3. 成り立ち</h2>
+<blockquote class="blockquote">
+<p>ここで補足すると、一般に大学の理系研究室のゼミでは、大きな方向性の中で同じテーマを持って研究しており、メンバーの研究テーマや関心は比較的似た分野となります。ですから、勉強会となると、ある程度の知識を前提として、参考文献（書籍や論文）を読んできて考えを発表するか、自身の研究発表の進捗を報告するのが普通です。ですが、私たちが所属していた当時の共生システム論研究室は、「システム論」という非常に抽象的なテーマのもとに、多くのテーマで研究を進めており、したがってメンバーの関心は非常に幅広いものでした。加えて、大学院から当研究室に入ってくる学生も多く、テーマによって前提となる知識のレベルにも差がありました。いま思えば、この多様性の中でコミュニケーションを深める方法を考える必要があったことが、のちにビブリオバトルを生み出すに至った遠因にあります（<span class="citation" data-cites="BiblioBattleCommittee:2013book">ビブリオバトル普及委員会 <a href="#ref-BiblioBattleCommittee:2013book" role="doc-biblioref">(2013), p.21</a></span>）。</p>
+</blockquote>
+</section>
+<section id="ビブリオバトル公式大会" class="level2">
+<h2 class="anchored" data-anchor-id="ビブリオバトル公式大会">4. ビブリオバトル公式大会</h2>
+<ul>
+<li>全国大学ビブリオバトル2025
+<ul>
+<li><a href="https://library.kanazawa-u.ac.jp/?p=51742">金沢大学図書館ビブリオバトル2025（兼 全国大学ビブリオバトル2025ブロック予選）</a>
+<ul>
+<li>開催日時：2025年10月10日（金）16時30分～17時10分</li>
+<li>会場：附属図書館 中央図書館ブックラウンジ（ほん和かふぇ。）</li>
+</ul></li>
+<li><a href="https://zenkoku.bibliobattle.jp/qualifying/hokuriku">北陸Aブロック</a>
+<ul>
+<li>開催日時：2025年10月18日（土）14:30～</li>
+<li>会場：石川県立図書館 だんだん広場</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
 </section>
 <section id="ビブリオバトル入門の構成" class="level1">
 <h1>Ⅲ. ビブリオバトル入門の構成</h1>
 <ol type="1">
-<li>好きな本を紹介しよう</li>
-<li>研究分野の本を紹介しよう</li>
-<li>研究分野と（少し）外れた本を紹介しよう</li>
+<li><strong>好きな本を紹介しよう</strong>：
+<ul>
+<li>好きな本（ジャンルを問わない※マンガは除く）</li>
+</ul></li>
+<li><strong>研究分野の本を紹介しよう</strong>：
+<ul>
+<li>専攻する研究にかかわる本</li>
+</ul></li>
+<li><strong>研究分野と（少し）外れた本を紹介しよう</strong>：
+<ul>
+<li>研究分野とはまったく違う（人文科学系が自然科学系や医学系の本を選ぶ）、もしくは少し外れた本（日本史専攻者が中国史の本を選ぶ）など</li>
+</ul></li>
 </ol>
 <ul>
-<li>以上の3つの本について、グループを変えて、計4回、報告して下さい（ラウンド1、ラウンド2、と表記、表現します）</li>
-<li>グループは3〜4人の少人数で編成します（トランプを配り、ランダムで編成します）</li>
+<li>以上の3つの本について、グループを変えて、計2回、報告して下さい（第1ラウンド1、第2ラウンドと表記、表現します）
+<ul>
+<li>第1ラウンドの反省を第2ラウンドでは活かして下さい
+<ul>
+<li>本を読み直す、<a href="https://kariyach.github.io/teaching/Biblio-battle/biblio-battle_w1.html#ブックカード">ブックカード</a>を書き足す、など</li>
+</ul></li>
+<li>第2ラウンドではブックカードへの依存を減らしましょう</li>
+</ul></li>
+<li>グループは3〜4人の少人数で編成します
+<ul>
+<li>トランプを配り、ランダムで編成します</li>
+</ul></li>
 <li>授業内で紹介する本を事前に読み、紹介の仕方について授業までに考えてきて下さい（<a href="https://kariyach.github.io/teaching/Biblio-battle/#ブックカード">ブックカード</a>参照）</li>
-<li><em>この授業のためにわざわざ本を選び、読む必要はありません</em>（再読は必要かもしれませんが）。趣味で読んでいる本、この授業以外の授業あるいは研究のために読んだ本でかまいません</li>
+<li><em>この授業のためにわざわざ本を選び、読む必要はありません</em>（再読は必要かもしれません）。趣味で読んでいる本、この授業以外の授業あるいは研究のために読んだ本でかまいません</li>
 </ul>
 </section>
 <section id="シラバス" class="level1">
@@ -510,7 +613,7 @@ ul.task-list li input[type="checkbox"] {
 <li>質疑応答</li>
 <li>アフターセッション（チャンプ本の決定を含む）</li>
 </ol></li>
-<li>チャンプ本のプレゼンテーション（2名程度・ランダム）</li>
+<li>チャンプ本プレゼンテーション（2名程度・ランダム）</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -530,63 +633,82 @@ Note | 補足
 </div>
 </div>
 </section>
-<section id="成績評価対象" class="level1">
-<h1>Ⅵ. 成績評価対象</h1>
-<section id="宿題" class="level2">
-<h2 class="anchored" data-anchor-id="宿題">宿題</h2>
-<section id="ブックカード" class="level3">
-<h3 class="anchored" data-anchor-id="ブックカード">1. ブックカード</h3>
+<section id="成績評価" class="level1 page-columns page-full">
+<h1>Ⅵ. 成績評価</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+重要 | 成績評価
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>出席自体は評価対象ではありません</li>
+<li>受講生全員に<em>（最低でも）A評価</em>を付けられるように、成績評価物、成績評価基準を設けています
+<ul>
+<li>特に、提出すれば機械的に点数が付くものを落とさないようにして下さい</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<section id="宿題" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="宿題">1. 宿題</h2>
+<section id="ブックカード" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="ブックカード">⑴ ブックカード</h3>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>シラバスではブックシートと表記していましたが、要点だけを書いて欲しいので、カードにあらためています</p>
+<p>公式サイトに掲載のシラバスではブックシートと表記していましたが、要点だけを書いて欲しいので、ブックカードにあらためています</p>
 </div>
 </div>
 </div>
 <ul>
-<li>情報カードを配布します。情報カード一枚に以下の2点について、箇条書き的にメモして、当日に臨んで下さい
+<li><a href="https://www.kokuyo-st.co.jp/search/1_detail.php?sid=100107494">情報カード</a><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>を配布します。情報カード一枚に以下の2点について、箇条書き的にメモして、当日に臨んで下さい
 <ol type="1">
-<li>書評本の内容や構成などに関するメモ</li>
+<li>書評本の内容や構成などに関するメモや重要な一節の抜書き</li>
 <li>書評者の書評本に対する評価、考え、意見などに関するメモ</li>
 </ol></li>
-<li>ビブリオバトルの基本的な考え方は、メモを読み上げるのではなく、アドリブ的に紹介することです。ですので、<em>情報カードに読み上げ原稿を書くなどの行為は禁止</em>します。あくまで、何をどのような手順で話すか、など、メモ程度の記述として下さい</li>
+<li>ビブリオバトルの基本的な考え方は、メモを読み上げるのではなく、アドリブ的に紹介することです。ですので、<em>情報カードに読み上げ原稿を書くなどの行為は禁止</em>します。あくまで、何をどのような手順で話すか、など、メモ程度の記述<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>として下さい</li>
 <li><em>情報カード裏面は他の受講生から受けた質問などをメモするためだけ</em>に使って下さい</li>
-<li>情報カードは、1. 好きな本を紹介しよう、2. 研究分野の本を紹介しよう、3. 研究分野と（少し）外れた本を紹介しよう、の3回、提出して下さい</li>
+<li>ブックカードは、1. 好きな本を紹介しよう、2. 研究分野の本を紹介しよう、3. 研究分野と（少し）外れた本を紹介しよう、の3回、提出して下さい</li>
 <li>情報カードそのものは回収しませんが、予習確認のために、写真に撮ってGoogle フォームより送って下さい（提出先は<a href="https://kariyach.github.io/teaching/Biblio-battle/#ブックカード">こちら</a>）</li>
-<li>各10点、計30点</li>
+<li>各10点、計30点（どのようなまとめかたをするかは人それぞれですので、質的な評価はしません。提出すれば機械的に10点を付けます）</li>
 </ul>
-</section>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;情報カードは、ある時期まで、京都大学の研究者、学生を中心に、積極的に利用されていた。文化人類学者・梅棹忠夫の『知的生産の技術』が著名。「学校では知識は教えるけれど知識の獲得のしかたはあまり教えてくれない。メモのとり方、カードの利用法、原稿の書き方など基本的技術の訓練不足が研究能力の低下をもたらすと考える著者は、長年にわたる模索の体験と共同討論の中から確信をえて、創造的な知的生産を行なうための実践的技術についての提案を試みる」（出版社の紹介文）（<span class="citation" data-cites="UmesaoTo:1969book1">梅棹忠夫 <a href="#ref-UmesaoTo:1969book1" role="doc-biblioref">(1969)</a></span>）</p></div><div id="fn4"><p><sup>4</sup>&nbsp;「さまざまな機会に出会う書物のひとつひとつについては、詳しすぎることを言ってその意味を狭めることは慎み、むしろ、その潜在的可能性がいささかも失われないよう、そのポリフォニーを最大限に尊重する方向でそれを迎え入れなければならない。…われわれが書物と取り結ぶプライベートな関係についてわれわれに言えることが力をもつのは、われわれがそれについてあまり考えず、無意識がわれわれのうちで自己を表現するにまかせるときである。無意識は、言語が開放されたこの特権的な時間において、われわれを書物へ、そして書物をとおしてわれわれ自身へと結びつける秘密の関係を明かしてくれるのである。 このあいまいさは、書物については自分の意見に自信をもち、それを押しつけるべきだというバルザックの教えと矛盾するものではない。むしろこの教えの別の側面だといえる。それは、この言語空間の特殊性と各発言者の個別性を理解したということを示すひとつの方法なのである。もし各人が話題にしているのが一個のへ遷酸製としての書物）であるのなら、〔演技と遊戯の〕共用空間は破壊しないほうがいい。そしてわれわれの会話に立ち現れる＜幻想としての書物）についていえば、自分にも他人にも「読まない」可能性、「夢みる」可能性を残しておく方がいいのである」（<span class="citation" data-cites="BayardP:2016book_translJA">バイヤール，ピエール <a href="#ref-BayardP:2016book_translJA" role="doc-biblioref">(2016), pp.244–255</a></span>）</p></div></div></section>
 <section id="授業の感想" class="level3">
-<h3 class="anchored" data-anchor-id="授業の感想">2. 授業の感想</h3>
+<h3 class="anchored" data-anchor-id="授業の感想">⑵ 授業の感想</h3>
 <ul>
 <li>毎回、重要だと思った点や面白いと思った点など、自由に授業の感想をまとめて下さい（150字から200字程度）。</li>
 <li>初回と最終授業については、授業についてのアンケートも付しています</li>
-<li>各3点、8回実施、全て提出した者は＋6点、一度提出しなかった者は＋3点、その他は加点なし、計30点</li>
+<li>各3点、8回実施、全て提出した者は＋6点、一度提出しなかった者は＋3点、その他は加点なし、計30点（質的な評価はしません。規定字数に達していない、あるいは毎回、同じ内容の感想を書いている、他人の感想を書き写しているなどのようなものでなければ、提出すれば機械的に3点を付けます）</li>
 <li>提出先は<a href="https://kariyach.github.io/teaching/Biblio-battle/#授業の感想">こちら</a></li>
 </ul>
 </section>
 <section id="学期末振り返りレポート" class="level3">
-<h3 class="anchored" data-anchor-id="学期末振り返りレポート">3. 学期末振り返りレポート</h3>
+<h3 class="anchored" data-anchor-id="学期末振り返りレポート">⑶ 学期末振り返りレポート</h3>
 <ul>
 <li>内容は別途、連絡します</li>
-<li>10点（基準点：7点）</li>
+<li>10点（基準点：7点、ルーブリックに準拠します）</li>
 </ul>
 </section>
 </section>
 <section id="その他" class="level2">
-<h2 class="anchored" data-anchor-id="その他">その他</h2>
+<h2 class="anchored" data-anchor-id="その他">2. その他</h2>
 <section id="受講態度" class="level3">
-<h3 class="anchored" data-anchor-id="受講態度">1. 受講態度</h3>
+<h3 class="anchored" data-anchor-id="受講態度">⑴ 受講態度</h3>
 <ul>
-<li>グループワークへの貢献度、参加度（10点、基準点：7点）</li>
+<li>グループワークへの貢献度、参加度（10点、基準点：7点、ルーブリックに準拠します）</li>
 <li>グループワークにおいてチャンプ本に選ばれた回数に応じて加点（各2点、最高10点まで）</li>
 </ul>
 </section>
 <section id="プレゼンテーション" class="level3">
-<h3 class="anchored" data-anchor-id="プレゼンテーション">2. プレゼンテーション</h3>
+<h3 class="anchored" data-anchor-id="プレゼンテーション">⑵ プレゼンテーション</h3>
 <ul>
 <li>実施日：
 <ul>
@@ -596,7 +718,7 @@ Note | 補足
 <li>評価：
 <ul>
 <li>本の紹介及び質疑応答の受け答え</li>
-<li>10点（基準点：7点）</li>
+<li>10点（基準点：7点、ルーブリックに準拠します）</li>
 </ul></li>
 <li>全てのプレゼンテーション実施後に、ビブリオバトル入門《2025》のチャンプ本を決定します（投票）
 <ul>
@@ -611,14 +733,16 @@ Note | 補足
 <ul>
 <li>新聞書評の勧め
 <ul>
-<li>読売新聞</li>
-<li>朝日新聞</li>
-<li>日経新聞</li>
+<li>読売新聞「<a href="https://www.yomiuri.co.jp/culture/book">本よみうり堂</a>」</li>
+<li>朝日新聞「<a href="https://book.asahi.com/reviews/">好書好日</a>」</li>
+<li>日経新聞「<a href="https://www.nikkei.com/topics/21110901">日経の書評</a>」</li>
+<li>版元ドットコム「<a href="https://www.hanmoto.com/shohyo/">書評に載った本</a>」</li>
+<li><a href="https://iihon.boo.jp/np/">いい本のまとめ</a></li>
 </ul></li>
 <li>PR誌の勧め
 <ul>
-<li>東京大学学術出版会「UP」</li>
-<li>有斐閣「書斎の窓」</li>
+<li>東京大学出版会「<a href="https://www.utp.or.jp/up/">UP</a>」</li>
+<li>有斐閣「<a href="https://www.yuhikaku.co.jp/shosai">書斎の窓</a>」</li>
 </ul></li>
 </ul>
 </section>
@@ -637,11 +761,47 @@ Note | 補足
 <li>これまで金沢大学で受講した授業で好きな授業名とその理由</li>
 </ol></li>
 </ul>
+</section>
+<section id="宿題と次回の持参物" class="level1">
+<h1>Ⅸ. 宿題と次回の持参物</h1>
+<ul>
+<li>宿題：
+<ol type="1">
+<li>授業の感想</li>
+<li>ブックカード</li>
+</ol></li>
+<li>持参物：ブックカードと、選択した本</li>
+</ul>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>今回の授業で説明した通りです。特別の変更がない限り、次回からは案内しません</p>
+</div>
+</div>
+</div>
+</section>
+<section id="参考文献" class="level1">
+
+
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">参考文献</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-BayardP:2016book_translJA" class="csl-entry" role="listitem">
+バイヤール，ピエール (2016) 『読んでいない本について堂々と語る方法』, 筑摩書房.
+</div>
+<div id="ref-BiblioBattleCommittee:2013book" class="csl-entry" role="listitem">
+ビブリオバトル普及委員会 (2013) 『ビブリオバトル入門 : 本を通して人を知る・人を通して本を知る』, 情報科学技術協会.
+</div>
+<div id="ref-UmesaoTo:1969book1" class="csl-entry" role="listitem">
+梅棹忠夫 (1969) 『知的生産の技術』, 岩波書店.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
