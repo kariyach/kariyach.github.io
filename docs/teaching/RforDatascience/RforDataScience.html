@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.7.31">
 
   <meta name="author" content="苅谷千尋">
-  <meta name="dcterms.date" content="2025-09-30">
+  <meta name="dcterms.date" content="2025-10-01">
   <title>CHIHIRO KARIYA – 高校生のためのRではじめるデータサイエンス入門</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -117,7 +117,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-a00f5e91374bdbaeee92f91e386d684b.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-b324a5198b0cfb9e38723fd2c316d7c3.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -238,70 +238,117 @@
     </div>
 </div>
 
-  <p class="date">September 30, 2025</p>
+  <p class="date">October 1, 2025</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a href="#/データサイエンスとは何か" id="/toc-データサイエンスとは何か">データサイエンスとは何か</a></li>
-<li><a href="#/情報の高大接続" id="/toc-情報の高大接続">情報の高大接続</a></li>
-<li><a href="#/なぜrなのか" id="/toc-なぜrなのか">なぜRなのか</a></li>
-<li><a href="#/rの実例" id="/toc-rの実例">Rの実例</a></li>
+<li><a href="#/この講義で学べること" id="/toc-この講義で学べること">0. この講義で学べること</a></li>
+<li><a href="#/データサイエンスとは何か" id="/toc-データサイエンスとは何か">Ⅰ. データサイエンスとは何か</a></li>
+<li><a href="#/情報の高大接続" id="/toc-情報の高大接続">Ⅱ. 「情報」の高大接続</a></li>
+<li><a href="#/なぜrなのか" id="/toc-なぜrなのか">Ⅲ. なぜRなのか</a></li>
+<li><a href="#/rの実例" id="/toc-rの実例">Ⅳ. Rの実例</a></li>
 <li><a href="#/作図" id="/toc-作図">作図</a></li>
 <li><a href="#/スクレイピング" id="/toc-スクレイピング">スクレイピング</a></li>
-<li><a href="#/rを動かしてみよう" id="/toc-rを動かしてみよう">Rを動かしてみよう</a></li>
-<li><a href="#/基本的な流れと用語" id="/toc-基本的な流れと用語">Ⅴ. 基本的な流れと用語</a></li>
+<li><a href="#/rを動かしてみよう" id="/toc-rを動かしてみよう">Ⅴ. Rを動かしてみよう</a></li>
+<li><a href="#/基本的な流れと用語" id="/toc-基本的な流れと用語">Ⅵ. 基本的な流れと用語</a></li>
 <li><a href="#/データの入手先お勧め" id="/toc-データの入手先お勧め">Ⅶ データの入手先（お勧め）</a></li>
 <li><a href="#/引用文献" id="/toc-引用文献">引用文献</a></li>
 </ul>
 </nav>
 </section>
 <section>
+<section id="この講義で学べること" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
+<h1>0. この講義で学べること</h1>
+
+</section>
+<section id="この講義で学べること-1" class="slide level2">
+<h2>この講義で学べること</h2>
+<ul>
+<li>データサイエンスとは何か</li>
+<li>Rの何がよいのか、Rで何ができるか</li>
+</ul>
+</section>
+<section id="この講義で学べないこと" class="slide level2">
+<h2>この講義で学べないこと</h2>
+<ul>
+<li>Rのコード習得（簡単な案内のみ）</li>
+</ul>
+</section></section>
+<section>
 <section id="データサイエンスとは何か" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
-<h1>データサイエンスとは何か</h1>
+<h1>Ⅰ. データサイエンスとは何か</h1>
 
 </section>
 <section id="既知のデータから未知の知見を得る" class="slide level2">
 <h2>既知のデータから未知の知見を得る</h2>
 <ul>
-<li>教科書や政府統計などの図
+<li>社会の要請：
 <ul>
-<li>新しい解釈を生みにくい</li>
+<li>エビデンスベースの思考、政策提案・政策決定</li>
 </ul></li>
-<li>➡ 生データを新たに作る ➡ 難しい</li>
-<li>➡ 生データから新しい図を作る ➡ 簡単ではないがチャレンジ可能！</li>
-</ul>
-</section>
-<section id="既知のデータから未知の知見を得る-1" class="slide level2">
-<h2>既知のデータから未知の知見を得る</h2>
-<ul>
-<li>ビッグデータ
+<li>ビッグデータの利活用：
 <ul>
 <li>個々のデータを結合、集積させる</li>
+<li><em>個々のデータは既知でも、結合させることによって新たしいデータ分析が可能</em>に（<mark>Rが得意なこと</mark>）</li>
+<li>例：健康に関するデータと学習成績に関するデータ</li>
 </ul></li>
-<li>エビデンスベースの○○</li>
 </ul>
 </section></section>
 <section>
 <section id="情報の高大接続" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
-<h1>情報の高大接続</h1>
+<h1>Ⅱ. 「情報」の高大接続</h1>
 
+</section>
+<section id="情報の高大接続-1" class="slide level2">
+<h2>「情報」の高大接続</h2>
+<ul>
+<li>高校教育：
+<ul>
+<li>第三者が作った図を正確に読み取る力が求められる</li>
+</ul></li>
+<li>高等教育：
+<ul>
+<li><em>既知のデータから新たな図を作り、新しい解釈を下す</em>力が求められる（<mark>Rが得意なこと</mark>）</li>
+<li>データを新たに収集し、新たな図を作り、新しい解釈を下す力が求められる</li>
+</ul></li>
+</ul>
 </section>
 <section id="学習指導要領" class="slide level2">
 <h2>学習指導要領</h2>
 <blockquote>
-<p>イ（ウ） データの収集，整理，分析及び結果の表現の方法を適切に選択し，実行し，評価し改善することでは，データを問題の発見・解決に活用するために，必要なデータの収集について，選択，判断する力，それに応じて適切なデータの整理や変換の方法を判断する力，分析の目的に応じた方法を選択，処理する力，その結果について多面的な可視化を行うことにより，データに含まれる傾向を見いだす力を養う。 また，データの傾向に関して評価するために，客観的な指標を基に判断する力，生徒自身の考えを基にした適正な解釈を行う力を養う。 更に，地域や学校の実態及び生徒の状況に応じて，数学科と連携し，データを収集する前に，分析の構想を練り紐付ける項目を洗い出したり，外れ値の扱いについて確認したり，データの傾向について評価するために仮説検定の考え方などを取り扱ったりすることも考えられる。</p>
+<p>イ（ウ） データの収集，整理，分析及び結果の表現の方法を適切に選択し，実行し，評価し改善することでは，データを問題の発見・解決に活用するために，<em>必要なデータの収集について，選択，判断する力，それに応じて適切なデータの整理や変換の方法を判断する力，分析の目的に応じた方法を選択，処理する力，その結果について多面的な可視化を行う</em>ことにより，データに含まれる傾向を見いだす力を養う。 また，データの傾向に関して評価するために，客観的な指標を基に判断する力，生徒自身の考えを基にした適正な解釈を行う力を養う。 更に，地域や学校の実態及び生徒の状況に応じて，数学科と連携し，データを収集する前に，分析の構想を練り紐付ける項目を洗い出したり，外れ値の扱いについて確認したり，データの傾向について評価するために仮説検定の考え方などを取り扱ったりすることも考えられる。</p>
 </blockquote>
+<ul>
+<li>表計算アプリでできなくはないが、総じて、高校生に過剰な能力を求めている</li>
+</ul>
 </section>
 <section id="学習指導要領-1" class="slide level2">
 <h2>学習指導要領</h2>
 <blockquote>
-<p>例えば，データの型式に関しては，表形式以外の時系列データ，SNS などにおいて個人と個人の繋つながりを表現するためのデータ，項目（キー）と値（バリュー）をセットにして値を格納するキー・バリュー形式のデータを扱うことが考えられる。 また，気象データ，総務省統計局のデータ及び国や地方公共団体などが提供しているオープンデータなどについて扱い，データ収集の偏りについても考え，それらのデータを表計算ソフトウェアや統計ソフトウェアで扱うことができるように整理，加工し，適切な分析や分かりやすい可視化の方法について話し合い，これらを選択して実施し，その結果に関する生徒個々人の解釈をグループで協議し，評価する学習活動などが考えられる。 更に，テキストマイニングの学習として，新聞記事や小説などをテキストデータとして読み込み，適当な整形等を行った上で，単語の出現頻度について調べさせ，出現頻度に応じた文字の大きさで単語を一覧表示したタグクラウドを作らせ，単語の重要度や他の単語との関係性を捉える学習活動などが考えられる。英語と日本語では，テキストマイニングをする際にどのような部分に違いがあるのかについて討論したり，実際にテキストマイニングを行って比較したりする活動なども考えられる。</p>
+<p>例えば，データの型式に関しては，表形式以外の時系列データ，SNS などにおいて<em>個人と個人の繋つながりを表現するためのデータ，項目（キー）と値（バリュー）をセットにして値を格納するキー・バリュー形式のデータを扱う</em>ことが考えられる。</p>
 </blockquote>
+<ul>
+<li>Rのようなプログラム言語を習得しなければ困難</li>
+</ul>
+</section>
+<section id="学習指導要領-2" class="slide level2">
+<h2>学習指導要領</h2>
+<p>また，気象データ，<em>総務省統計局のデータ及び国や地方公共団体などが提供しているオープンデータなどについて扱い</em>，データ収集の偏りについても考え，それらのデータを表計算ソフトウェアや統計ソフトウェアで扱うことができるように整理，加工し，適切な分析や分かりやすい可視化の方法について話し合い，これらを選択して実施し，その結果に関する生徒個々人の解釈をグループで協議し，評価する学習活動などが考えられる。</p>
+<ul>
+<li>総務省統計局のデータ及び国や地方公共団体などが提供しているオープンデータ：人間にとって見やすい形で提供されており、コンピュータには理解できない（こうしたデータの加工も<mark>Rが得意なこと</mark>）</li>
+</ul>
+</section>
+<section id="学習指導要領-3" class="slide level2">
+<h2>学習指導要領</h2>
+<p>更に，テキストマイニングの学習として，新聞記事や小説などをテキストデータとして読み込み，適当な整形等を行った上で，<em>単語の出現頻度について調べさせ，出現頻度に応じた文字の大きさで単語を一覧表示したタグクラウドを作らせ，単語の重要度や他の単語との関係性を捉える学習活動</em>などが考えられる。英語と日本語では，テキストマイニングをする際にどのような部分に違いがあるのかについて討論したり，実際にテキストマイニングを行って比較したりする活動なども考えられる。</p>
+<ul>
+<li>Rのようなプログラム言語を習得しなければ困難</li>
+</ul>
 </section></section>
 <section>
 <section id="なぜrなのか" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
-<h1>なぜRなのか</h1>
+<h1>Ⅲ. なぜRなのか</h1>
 
 </section>
 <section id="なぜrなのか-1" class="slide level2">
@@ -323,7 +370,7 @@
 <li><strong>ミスも再現できる</strong></li>
 </ul></li>
 <li>使い回せる</li>
-<li>作業の効率化
+<li>反復性（作業の効率化）
 <ul>
 <li><strong>図を使ったコミュニケーションや分析自体に時間を使える</strong></li>
 </ul></li>
@@ -376,7 +423,7 @@
 </section></section>
 <section>
 <section id="rの実例" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
-<h1>Rの実例</h1>
+<h1>Ⅳ. Rの実例</h1>
 
 </section>
 <section id="rでできること" class="slide level2">
@@ -858,23 +905,23 @@
 <span id="cb16-12"><a></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="vrbatfzbic" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vrbatfzbic table {
+<div id="xsgqqcusuu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xsgqqcusuu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vrbatfzbic thead, #vrbatfzbic tbody, #vrbatfzbic tfoot, #vrbatfzbic tr, #vrbatfzbic td, #vrbatfzbic th {
+#xsgqqcusuu thead, #xsgqqcusuu tbody, #xsgqqcusuu tfoot, #xsgqqcusuu tr, #xsgqqcusuu td, #xsgqqcusuu th {
   border-style: none;
 }
 
-#vrbatfzbic p {
+#xsgqqcusuu p {
   margin: 0;
   padding: 0;
 }
 
-#vrbatfzbic .gt_table {
+#xsgqqcusuu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -900,12 +947,12 @@
   border-left-color: #D3D3D3;
 }
 
-#vrbatfzbic .gt_caption {
+#xsgqqcusuu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vrbatfzbic .gt_title {
+#xsgqqcusuu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -917,7 +964,7 @@
   border-bottom-width: 0;
 }
 
-#vrbatfzbic .gt_subtitle {
+#xsgqqcusuu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -929,7 +976,7 @@
   border-top-width: 0;
 }
 
-#vrbatfzbic .gt_heading {
+#xsgqqcusuu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -941,13 +988,13 @@
   border-right-color: #D3D3D3;
 }
 
-#vrbatfzbic .gt_bottom_border {
+#xsgqqcusuu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vrbatfzbic .gt_col_headings {
+#xsgqqcusuu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -962,7 +1009,7 @@
   border-right-color: #D3D3D3;
 }
 
-#vrbatfzbic .gt_col_heading {
+#xsgqqcusuu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -982,7 +1029,7 @@
   overflow-x: hidden;
 }
 
-#vrbatfzbic .gt_column_spanner_outer {
+#xsgqqcusuu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -994,15 +1041,15 @@
   padding-right: 4px;
 }
 
-#vrbatfzbic .gt_column_spanner_outer:first-child {
+#xsgqqcusuu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vrbatfzbic .gt_column_spanner_outer:last-child {
+#xsgqqcusuu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vrbatfzbic .gt_column_spanner {
+#xsgqqcusuu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1014,11 +1061,11 @@
   width: 100%;
 }
 
-#vrbatfzbic .gt_spanner_row {
+#xsgqqcusuu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vrbatfzbic .gt_group_heading {
+#xsgqqcusuu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1044,7 +1091,7 @@
   text-align: left;
 }
 
-#vrbatfzbic .gt_empty_group_heading {
+#xsgqqcusuu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1059,15 +1106,15 @@
   vertical-align: middle;
 }
 
-#vrbatfzbic .gt_from_md > :first-child {
+#xsgqqcusuu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vrbatfzbic .gt_from_md > :last-child {
+#xsgqqcusuu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vrbatfzbic .gt_row {
+#xsgqqcusuu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1086,7 +1133,7 @@
   overflow-x: hidden;
 }
 
-#vrbatfzbic .gt_stub {
+#xsgqqcusuu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1099,7 +1146,7 @@
   padding-right: 5px;
 }
 
-#vrbatfzbic .gt_stub_row_group {
+#xsgqqcusuu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1113,15 +1160,15 @@
   vertical-align: top;
 }
 
-#vrbatfzbic .gt_row_group_first td {
+#xsgqqcusuu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vrbatfzbic .gt_row_group_first th {
+#xsgqqcusuu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vrbatfzbic .gt_summary_row {
+#xsgqqcusuu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1131,16 +1178,16 @@
   padding-right: 5px;
 }
 
-#vrbatfzbic .gt_first_summary_row {
+#xsgqqcusuu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vrbatfzbic .gt_first_summary_row.thick {
+#xsgqqcusuu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vrbatfzbic .gt_last_summary_row {
+#xsgqqcusuu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1150,7 +1197,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#vrbatfzbic .gt_grand_summary_row {
+#xsgqqcusuu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1160,7 +1207,7 @@
   padding-right: 5px;
 }
 
-#vrbatfzbic .gt_first_grand_summary_row {
+#xsgqqcusuu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1170,7 +1217,7 @@
   border-top-color: #D3D3D3;
 }
 
-#vrbatfzbic .gt_last_grand_summary_row_top {
+#xsgqqcusuu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1180,11 +1227,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#vrbatfzbic .gt_striped {
+#xsgqqcusuu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vrbatfzbic .gt_table_body {
+#xsgqqcusuu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1193,7 +1240,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#vrbatfzbic .gt_footnotes {
+#xsgqqcusuu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1207,7 +1254,7 @@
   border-right-color: #D3D3D3;
 }
 
-#vrbatfzbic .gt_footnote {
+#xsgqqcusuu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1216,7 +1263,7 @@
   padding-right: 5px;
 }
 
-#vrbatfzbic .gt_sourcenotes {
+#xsgqqcusuu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1230,7 +1277,7 @@
   border-right-color: #D3D3D3;
 }
 
-#vrbatfzbic .gt_sourcenote {
+#xsgqqcusuu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1238,72 +1285,72 @@
   padding-right: 5px;
 }
 
-#vrbatfzbic .gt_left {
+#xsgqqcusuu .gt_left {
   text-align: left;
 }
 
-#vrbatfzbic .gt_center {
+#xsgqqcusuu .gt_center {
   text-align: center;
 }
 
-#vrbatfzbic .gt_right {
+#xsgqqcusuu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vrbatfzbic .gt_font_normal {
+#xsgqqcusuu .gt_font_normal {
   font-weight: normal;
 }
 
-#vrbatfzbic .gt_font_bold {
+#xsgqqcusuu .gt_font_bold {
   font-weight: bold;
 }
 
-#vrbatfzbic .gt_font_italic {
+#xsgqqcusuu .gt_font_italic {
   font-style: italic;
 }
 
-#vrbatfzbic .gt_super {
+#xsgqqcusuu .gt_super {
   font-size: 65%;
 }
 
-#vrbatfzbic .gt_footnote_marks {
+#xsgqqcusuu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vrbatfzbic .gt_asterisk {
+#xsgqqcusuu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vrbatfzbic .gt_indent_1 {
+#xsgqqcusuu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vrbatfzbic .gt_indent_2 {
+#xsgqqcusuu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vrbatfzbic .gt_indent_3 {
+#xsgqqcusuu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vrbatfzbic .gt_indent_4 {
+#xsgqqcusuu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vrbatfzbic .gt_indent_5 {
+#xsgqqcusuu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vrbatfzbic .katex-display {
+#xsgqqcusuu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vrbatfzbic div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xsgqqcusuu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1532,7 +1579,7 @@
 </section></section>
 <section>
 <section id="rを動かしてみよう" class="title-slide slide level1 center" data-background-color="#113758" data-background-transition="slide">
-<h1>Rを動かしてみよう</h1>
+<h1>Ⅴ. Rを動かしてみよう</h1>
 
 </section>
 <section id="インストール" class="slide level2">
@@ -1586,23 +1633,23 @@
 <h2>ペンギン</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="lfaxruvpcx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lfaxruvpcx table {
+<div id="ilydxgafwd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ilydxgafwd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lfaxruvpcx thead, #lfaxruvpcx tbody, #lfaxruvpcx tfoot, #lfaxruvpcx tr, #lfaxruvpcx td, #lfaxruvpcx th {
+#ilydxgafwd thead, #ilydxgafwd tbody, #ilydxgafwd tfoot, #ilydxgafwd tr, #ilydxgafwd td, #ilydxgafwd th {
   border-style: none;
 }
 
-#lfaxruvpcx p {
+#ilydxgafwd p {
   margin: 0;
   padding: 0;
 }
 
-#lfaxruvpcx .gt_table {
+#ilydxgafwd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1628,12 +1675,12 @@
   border-left-color: #D3D3D3;
 }
 
-#lfaxruvpcx .gt_caption {
+#ilydxgafwd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lfaxruvpcx .gt_title {
+#ilydxgafwd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1645,7 +1692,7 @@
   border-bottom-width: 0;
 }
 
-#lfaxruvpcx .gt_subtitle {
+#ilydxgafwd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1657,7 +1704,7 @@
   border-top-width: 0;
 }
 
-#lfaxruvpcx .gt_heading {
+#ilydxgafwd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1669,13 +1716,13 @@
   border-right-color: #D3D3D3;
 }
 
-#lfaxruvpcx .gt_bottom_border {
+#ilydxgafwd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lfaxruvpcx .gt_col_headings {
+#ilydxgafwd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1690,7 +1737,7 @@
   border-right-color: #D3D3D3;
 }
 
-#lfaxruvpcx .gt_col_heading {
+#ilydxgafwd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1710,7 +1757,7 @@
   overflow-x: hidden;
 }
 
-#lfaxruvpcx .gt_column_spanner_outer {
+#ilydxgafwd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1722,15 +1769,15 @@
   padding-right: 4px;
 }
 
-#lfaxruvpcx .gt_column_spanner_outer:first-child {
+#ilydxgafwd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lfaxruvpcx .gt_column_spanner_outer:last-child {
+#ilydxgafwd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lfaxruvpcx .gt_column_spanner {
+#ilydxgafwd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1742,11 +1789,11 @@
   width: 100%;
 }
 
-#lfaxruvpcx .gt_spanner_row {
+#ilydxgafwd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lfaxruvpcx .gt_group_heading {
+#ilydxgafwd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1772,7 +1819,7 @@
   text-align: left;
 }
 
-#lfaxruvpcx .gt_empty_group_heading {
+#ilydxgafwd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1787,15 +1834,15 @@
   vertical-align: middle;
 }
 
-#lfaxruvpcx .gt_from_md > :first-child {
+#ilydxgafwd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lfaxruvpcx .gt_from_md > :last-child {
+#ilydxgafwd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lfaxruvpcx .gt_row {
+#ilydxgafwd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1814,7 +1861,7 @@
   overflow-x: hidden;
 }
 
-#lfaxruvpcx .gt_stub {
+#ilydxgafwd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1827,7 +1874,7 @@
   padding-right: 5px;
 }
 
-#lfaxruvpcx .gt_stub_row_group {
+#ilydxgafwd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1841,15 +1888,15 @@
   vertical-align: top;
 }
 
-#lfaxruvpcx .gt_row_group_first td {
+#ilydxgafwd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lfaxruvpcx .gt_row_group_first th {
+#ilydxgafwd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lfaxruvpcx .gt_summary_row {
+#ilydxgafwd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1859,16 +1906,16 @@
   padding-right: 5px;
 }
 
-#lfaxruvpcx .gt_first_summary_row {
+#ilydxgafwd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#lfaxruvpcx .gt_first_summary_row.thick {
+#ilydxgafwd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lfaxruvpcx .gt_last_summary_row {
+#ilydxgafwd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1878,7 +1925,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#lfaxruvpcx .gt_grand_summary_row {
+#ilydxgafwd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1888,7 +1935,7 @@
   padding-right: 5px;
 }
 
-#lfaxruvpcx .gt_first_grand_summary_row {
+#ilydxgafwd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1898,7 +1945,7 @@
   border-top-color: #D3D3D3;
 }
 
-#lfaxruvpcx .gt_last_grand_summary_row_top {
+#ilydxgafwd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1908,11 +1955,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#lfaxruvpcx .gt_striped {
+#ilydxgafwd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lfaxruvpcx .gt_table_body {
+#ilydxgafwd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1921,7 +1968,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#lfaxruvpcx .gt_footnotes {
+#ilydxgafwd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1935,7 +1982,7 @@
   border-right-color: #D3D3D3;
 }
 
-#lfaxruvpcx .gt_footnote {
+#ilydxgafwd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1944,7 +1991,7 @@
   padding-right: 5px;
 }
 
-#lfaxruvpcx .gt_sourcenotes {
+#ilydxgafwd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1958,7 +2005,7 @@
   border-right-color: #D3D3D3;
 }
 
-#lfaxruvpcx .gt_sourcenote {
+#ilydxgafwd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1966,72 +2013,72 @@
   padding-right: 5px;
 }
 
-#lfaxruvpcx .gt_left {
+#ilydxgafwd .gt_left {
   text-align: left;
 }
 
-#lfaxruvpcx .gt_center {
+#ilydxgafwd .gt_center {
   text-align: center;
 }
 
-#lfaxruvpcx .gt_right {
+#ilydxgafwd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lfaxruvpcx .gt_font_normal {
+#ilydxgafwd .gt_font_normal {
   font-weight: normal;
 }
 
-#lfaxruvpcx .gt_font_bold {
+#ilydxgafwd .gt_font_bold {
   font-weight: bold;
 }
 
-#lfaxruvpcx .gt_font_italic {
+#ilydxgafwd .gt_font_italic {
   font-style: italic;
 }
 
-#lfaxruvpcx .gt_super {
+#ilydxgafwd .gt_super {
   font-size: 65%;
 }
 
-#lfaxruvpcx .gt_footnote_marks {
+#ilydxgafwd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lfaxruvpcx .gt_asterisk {
+#ilydxgafwd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lfaxruvpcx .gt_indent_1 {
+#ilydxgafwd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lfaxruvpcx .gt_indent_2 {
+#ilydxgafwd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lfaxruvpcx .gt_indent_3 {
+#ilydxgafwd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lfaxruvpcx .gt_indent_4 {
+#ilydxgafwd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lfaxruvpcx .gt_indent_5 {
+#ilydxgafwd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#lfaxruvpcx .katex-display {
+#ilydxgafwd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#lfaxruvpcx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ilydxgafwd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2445,7 +2492,7 @@
 </section></section>
 <section>
 <section id="基本的な流れと用語" class="title-slide slide level1 center">
-<h1>Ⅴ. 基本的な流れと用語</h1>
+<h1>Ⅵ. 基本的な流れと用語</h1>
 
 </section>
 <section id="基本的な流れdplyrとggplot" class="slide level2">
