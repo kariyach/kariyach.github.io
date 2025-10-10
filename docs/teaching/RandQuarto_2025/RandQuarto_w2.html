@@ -1,0 +1,2521 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="苅谷 千尋">
+<meta name="keywords" content="YAML；setupチャンク；代理演算子；整然データ（tidy data）と雑然データ (messy data)；データの型">
+<title>RとQuartoではじめるデータサイエンス：データを可視化する《2025》 – CHIHIRO KARIYA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/favicon-16x16.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-29124b29be36714fa140da1b7eaa6547.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-5b53d57d5b6f866a11eac50cfbd76017.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-29124b29be36714fa140da1b7eaa6547.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><style>html{ scroll-behavior: smooth; }</style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script><script src="../../site_libs/quarto-diagram/mermaid-init.js"></script><link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="../../style_ja.css">
+</head>
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">CHIHIRO KARIYA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../projects/index.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/index.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../events/index.html"> 
+<span class="menu-text">Events</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv/index.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../address/index.html"> 
+<span class="menu-text">Address</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="https://orcid.org/0009-0008-3085-947X"> 
+<span class="menu-text"><i class="ai  ai-orcid" aria-label="orcid"></i></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:kariyach@staff.kanazawa-u.ac.jp"> <i class="bi bi-envelope" role="img" aria-label="email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/kariyach"> <i class="bi bi-github" role="img" aria-label="github">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス：データを可視化する《2025》</a></h1>
+            <p class="subtitle lead">#2 Rの基本的な操作方法（1）</p>
+                      </div>
+  </div>
+    
+  <div class="quarto-title-meta-author column-page-left">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">苅谷 千尋, PhD <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              高大接続コア・センター
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta column-page-left">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Wed, 16, Apr, 2025</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">Fri, 10, Oct, 2025</p>
+      </div>
+    </div>
+      
+    </div>
+    
+
+  <div>
+    <div class="keywords">
+      <div class="block-title">Keywords</div>
+      <p>YAML；setupチャンク；代理演算子；整然データ（tidy data）と雑然データ (messy data)；データの型</p>
+    </div>
+  </div>
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
+   
+  <ul>
+<li><a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A" id="toc-前回の振り返り" class="nav-link active" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A">Ⅰ. 前回の振り返り</a></li>
+  <li>
+<a href="#%E5%89%8D%E5%9B%9E%E3%81%AE%E7%A9%8D%E3%81%BF%E6%AE%8B%E3%81%97%E3%81%A8%E3%81%8A%E3%81%95%E3%82%89%E3%81%84" id="toc-前回の積み残しとおさらい" class="nav-link" data-scroll-target="#%E5%89%8D%E5%9B%9E%E3%81%AE%E7%A9%8D%E3%81%BF%E6%AE%8B%E3%81%97%E3%81%A8%E3%81%8A%E3%81%95%E3%82%89%E3%81%84">Ⅱ. 前回の積み残しとおさらい</a>
+  <ul class="collapse">
+<li><a href="#%E7%A9%8D%E3%81%BF%E6%AE%8B%E3%81%97" id="toc-積み残し" class="nav-link" data-scroll-target="#%E7%A9%8D%E3%81%BF%E6%AE%8B%E3%81%97">1. 積み残し</a></li>
+  <li><a href="#%E3%81%8A%E3%81%95%E3%82%89%E3%81%84" id="toc-おさらい" class="nav-link" data-scroll-target="#%E3%81%8A%E3%81%95%E3%82%89%E3%81%84">2. おさらい</a></li>
+  </ul>
+</li>
+  <li><a href="#r-studio%E3%81%AE%E8%A6%8B%E3%81%9F%E7%9B%AE%E3%82%92%E5%A4%89%E3%81%88%E3%82%88%E3%81%86%E3%82%BD%E3%83%BC%E3%82%B9%E3%83%9A%E3%82%A4%E3%83%B3" id="toc-r-studioの見た目を変えようソースペイン" class="nav-link" data-scroll-target="#r-studio%E3%81%AE%E8%A6%8B%E3%81%9F%E7%9B%AE%E3%82%92%E5%A4%89%E3%81%88%E3%82%88%E3%81%86%E3%82%BD%E3%83%BC%E3%82%B9%E3%83%9A%E3%82%A4%E3%83%B3">Ⅲ. R Studioの見た目を変えよう（ソースペイン）</a></li>
+  <li>
+<a href="#markdown%E3%81%A8%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF" id="toc-markdownとチャンク" class="nav-link" data-scroll-target="#markdown%E3%81%A8%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF">Ⅳ. markdownとチャンク</a>
+  <ul class="collapse">
+<li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">1. YAML</a></li>
+  <li><a href="#markdown" id="toc-markdown" class="nav-link" data-scroll-target="#markdown">2. markdown</a></li>
+  <li><a href="#setup%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF" id="toc-setupチャンク" class="nav-link" data-scroll-target="#setup%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF">3. setupチャンク</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E6%B5%81%E3%82%8C%E3%81%A8%E7%94%A8%E8%AA%9E" id="toc-基本的な流れと用語" class="nav-link" data-scroll-target="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E6%B5%81%E3%82%8C%E3%81%A8%E7%94%A8%E8%AA%9E">Ⅴ. 基本的な流れと用語</a>
+  <ul class="collapse">
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E6%B5%81%E3%82%8Cdplyr%E3%81%A8ggplot" id="toc-基本的な流れdplyrとggplot" class="nav-link" data-scroll-target="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E6%B5%81%E3%82%8Cdplyr%E3%81%A8ggplot">1. 基本的な流れ：dplyrとggplot</a></li>
+  <li><a href="#%E7%94%A8%E8%AA%9E" id="toc-用語" class="nav-link" data-scroll-target="#%E7%94%A8%E8%AA%9E">2. 用語</a></li>
+  <li>
+<a href="#%E4%BB%A3%E5%85%A5" id="toc-代入" class="nav-link" data-scroll-target="#%E4%BB%A3%E5%85%A5">3. 代入</a>
+  <ul class="collapse">
+<li><a href="#palmerpenguins%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E3%82%BB%E3%83%83%E3%83%88%E3%81%A7%E5%AE%9F%E8%B7%B5" id="toc-palmerpenguinsのデータセットで実践" class="nav-link" data-scroll-target="#palmerpenguins%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E3%82%BB%E3%83%83%E3%83%88%E3%81%A7%E5%AE%9F%E8%B7%B5">palmerpenguinsのデータセットで実践</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E6%95%B4%E7%84%B6%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E9%9B%91%E7%84%B6%E3%83%87%E3%83%BC%E3%82%BF" id="toc-整然データと雑然データ" class="nav-link" data-scroll-target="#%E6%95%B4%E7%84%B6%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E9%9B%91%E7%84%B6%E3%83%87%E3%83%BC%E3%82%BF">4. 整然データと雑然データ</a>
+  <ul class="collapse">
+<li><a href="#%E6%95%B4%E7%84%B6tidy%E3%83%87%E3%83%BC%E3%82%BF" id="toc-整然tidyデータ" class="nav-link" data-scroll-target="#%E6%95%B4%E7%84%B6tidy%E3%83%87%E3%83%BC%E3%82%BF">⑴ 整然（tidy）データ</a></li>
+  <li><a href="#%E9%9B%91%E7%84%B6messy%E3%83%87%E3%83%BC%E3%82%BF" id="toc-雑然messyデータ" class="nav-link" data-scroll-target="#%E9%9B%91%E7%84%B6messy%E3%83%87%E3%83%BC%E3%82%BF">⑵ 雑然（messy）データ</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li><a href="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%9E%8B" id="toc-データの型" class="nav-link" data-scroll-target="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%9E%8B">Ⅵ. データの型</a></li>
+  <li>
+<a href="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%85%A5%E6%89%8B%E5%85%88%E3%81%8A%E5%8B%A7%E3%82%81" id="toc-データの入手先お勧め" class="nav-link" data-scroll-target="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%85%A5%E6%89%8B%E5%85%88%E3%81%8A%E5%8B%A7%E3%82%81">Ⅶ データの入手先（お勧め）</a>
+  <ul class="collapse">
+<li>
+<a href="#ckan%E3%82%B7%E3%83%BC%E3%82%AB%E3%83%B3" id="toc-ckanシーカン" class="nav-link" data-scroll-target="#ckan%E3%82%B7%E3%83%BC%E3%82%AB%E3%83%B3">1. ckan（シーカン）</a>
+  <ul class="collapse">
+<li><a href="#ckan-%E9%87%91%E6%B2%A2%E5%B8%82" id="toc-ckan-金沢市" class="nav-link" data-scroll-target="#ckan-%E9%87%91%E6%B2%A2%E5%B8%82">⑴ ckan: 金沢市</a></li>
+  <li><a href="#%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6%E6%89%80" id="toc-東京大学社会科学研究所" class="nav-link" data-scroll-target="#%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6%E7%A0%94%E7%A9%B6%E6%89%80">⑵ 東京大学社会科学研究所</a></li>
+  <li><a href="#%E6%96%87%E9%83%A8%E7%A7%91%E5%AD%A6%E7%9C%81" id="toc-文部科学省" class="nav-link" data-scroll-target="#%E6%96%87%E9%83%A8%E7%A7%91%E5%AD%A6%E7%9C%81">⑶ 文部科学省</a></li>
+  <li><a href="#%E7%B5%B1%E8%A8%88%E5%B1%80" id="toc-統計局" class="nav-link" data-scroll-target="#%E7%B5%B1%E8%A8%88%E5%B1%80">⑷ 統計局</a></li>
+  <li><a href="#resas%E5%9C%B0%E5%9F%9F%E7%B5%8C%E6%B8%88%E5%88%86%E6%9E%90%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0" id="toc-resas地域経済分析システム" class="nav-link" data-scroll-target="#resas%E5%9C%B0%E5%9F%9F%E7%B5%8C%E6%B8%88%E5%88%86%E6%9E%90%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0">⑸ RESAS地域経済分析システム</a></li>
+  </ul>
+</li>
+  <li><a href="#%E8%A6%B3%E6%B8%AC%E5%AE%9F%E9%A8%93%E8%A3%85%E7%BD%AE" id="toc-観測実験装置" class="nav-link" data-scroll-target="#%E8%A6%B3%E6%B8%AC%E5%AE%9F%E9%A8%93%E8%A3%85%E7%BD%AE">2. 観測・実験装置</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E5%AE%9F%E7%BF%92" id="toc-実習" class="nav-link" data-scroll-target="#%E5%AE%9F%E7%BF%92">Ⅷ. 実習</a>
+  <ul class="collapse">
+<li><a href="#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E4%BB%A3%E5%85%A5%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%9E%8B" id="toc-オブジェクト代入データの型" class="nav-link" data-scroll-target="#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E4%BB%A3%E5%85%A5%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%9E%8B">1. オブジェクト､代入､データの型</a></li>
+  <li><a href="#%E3%82%B3%E3%83%BC%E3%83%89%E3%81%B8%E3%81%AE%E5%BF%8D%E8%80%90%E3%81%A8r-studio%E3%81%AE%E6%81%A9%E6%81%B5" id="toc-コードへの忍耐とr-studioの恩恵" class="nav-link" data-scroll-target="#%E3%82%B3%E3%83%BC%E3%83%89%E3%81%B8%E3%81%AE%E5%BF%8D%E8%80%90%E3%81%A8r-studio%E3%81%AE%E6%81%A9%E6%81%B5">2. コードへの忍耐とR Studioの恩恵</a></li>
+  <li><a href="#%E6%99%82%E9%96%93%E3%81%AB%E4%BD%99%E8%A3%95%E3%81%8C%E3%81%82%E3%82%8B%E4%BA%BA%E3%81%A0%E3%81%91%E6%A8%AA%E6%8C%81%E3%81%A1%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E7%B8%A6%E6%8C%81%E3%81%A1%E3%83%87%E3%83%BC%E3%82%BF" id="toc-時間に余裕がある人だけ横持ちデータと縦持ちデータ" class="nav-link" data-scroll-target="#%E6%99%82%E9%96%93%E3%81%AB%E4%BD%99%E8%A3%95%E3%81%8C%E3%81%82%E3%82%8B%E4%BA%BA%E3%81%A0%E3%81%91%E6%A8%AA%E6%8C%81%E3%81%A1%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E7%B8%A6%E6%8C%81%E3%81%A1%E3%83%87%E3%83%BC%E3%82%BF">3. （時間に余裕がある人だけ）：横持ちデータと縦持ちデータ</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E5%AE%BF%E9%A1%8C" id="toc-宿題" class="nav-link" data-scroll-target="#%E5%AE%BF%E9%A1%8C">Ⅸ. 宿題</a>
+  <ul class="collapse">
+<li><a href="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3" id="toc-授業の感想" class="nav-link" data-scroll-target="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3">1. 授業の感想</a></li>
+  <li><a href="#%E5%8F%AF%E8%A6%96%E5%8C%96%E3%81%97%E3%81%9F%E3%81%84%E3%83%87%E3%83%BC%E3%82%BF" id="toc-可視化したいデータ" class="nav-link" data-scroll-target="#%E5%8F%AF%E8%A6%96%E5%8C%96%E3%81%97%E3%81%9F%E3%81%84%E3%83%87%E3%83%BC%E3%82%BF">2. 可視化したいデータ</a></li>
+  </ul>
+</li>
+  <li><a href="#%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE" id="toc-引用文献" class="nav-link" data-scroll-target="#%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE">引用文献</a></li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full column-page-left" id="quarto-document-content"><section id="前回の振り返り" class="level1"><h1>Ⅰ. 前回の振り返り</h1>
+<ul>
+<li>前回の「授業の感想」（別紙参照）</li>
+<li><a href="Initialsurvey.html">初回アンケート</a></li>
+</ul></section><section id="前回の積み残しとおさらい" class="level1"><h1>Ⅱ. 前回の積み残しとおさらい</h1>
+<section id="積み残し" class="level2"><h2 class="anchored" data-anchor-id="積み残し">1. 積み残し</h2>
+<ul>
+<li><a href="https://kariyach.github.io/teaching/RandQuarto/RandQuarto_w1.html#%E6%95%99%E7%A7%91%E6%9B%B8%E3%83%87%E3%83%BC%E3%82%BF%E5%88%86%E6%9E%90%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E5%8F%AF%E8%A6%96%E5%8C%96%E5%85%A5%E9%96%80">教科書『データ分析のためのデータ可視化入門』</a></li>
+<li><a href="https://kariyach.github.io/teaching/RandQuarto/RandQuarto_w1.html#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%90%BD%E3%81%A8%E3%81%97%E7%A9%B4">データの落とし穴</a></li>
+</ul></section><section id="おさらい" class="level2"><h2 class="anchored" data-anchor-id="おさらい">2. おさらい</h2>
+<ul>
+<li>パッケージを追加して、使ってみよう</li>
+</ul>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Console（左下のパネル）に以下のコードを入力して実行（Enter）</p>
+</div>
+</div>
+</div>
+<pre><code>install.packages("gt")
+install.packages("skimr")
+install.packages("palmerpenguins")</code></pre>
+<ul>
+<li>
+<a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a>: 今日の標準的なサンプルデータセットです
+<ul>
+<li>base Rに標準搭載されているiris（前回、散布図作成に使ったもの）は、カラム名に.が入っていたり、欠損値がないなどの理由で、学習用にはふさわしくないと判断されています</li>
+</ul>
+</li>
+<li>
+<a href="https://gt.rstudio.com/articles/gt.html">gt</a>): 簡単に表が作れます</li>
+<li>
+<a href="https://docs.ropensci.org/skimr/">skimr</a>: 簡単にデータの特徴を確認できます</li>
+</ul>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Souce Pane（左上のパネル）に以下のコードを入力して実行（Enter）。入力が不慣れな人はコピー＆ペーストでもオッケー</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># パッケージの読み込み ---- #「# ○○-----」と書いておくと、Outlineに表示されてみやすい</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> <span class="co">#「モダンなデータ分析」を行うためのパッケージ群</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span> <span class="co">#データセット</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/skimr/">skimr</a></span><span class="op">)</span> <span class="co">#データの要約パッケージ</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span> <span class="co">#表パッケージ</span></span>
+<span></span>
+<span><span class="va">penguins</span> <span class="op">|&gt;</span> <span class="co"># ペンギンについてのデータを分析します</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">island</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="co"># ペンギンが住んでいる島ごとに分けます</span></span>
+<span>  <span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="co"># データを要約します</span></span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 表にします</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="zwndybtdkf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zwndybtdkf table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#zwndybtdkf thead, #zwndybtdkf tbody, #zwndybtdkf tfoot, #zwndybtdkf tr, #zwndybtdkf td, #zwndybtdkf th {
+  border-style: none;
+}
+
+#zwndybtdkf p {
+  margin: 0;
+  padding: 0;
+}
+
+#zwndybtdkf .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#zwndybtdkf .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#zwndybtdkf .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#zwndybtdkf .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#zwndybtdkf .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zwndybtdkf .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zwndybtdkf .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zwndybtdkf .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#zwndybtdkf .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#zwndybtdkf .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#zwndybtdkf .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#zwndybtdkf .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#zwndybtdkf .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#zwndybtdkf .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#zwndybtdkf .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#zwndybtdkf .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#zwndybtdkf .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#zwndybtdkf .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#zwndybtdkf .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwndybtdkf .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#zwndybtdkf .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#zwndybtdkf .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#zwndybtdkf .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwndybtdkf .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#zwndybtdkf .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#zwndybtdkf .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zwndybtdkf .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwndybtdkf .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#zwndybtdkf .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zwndybtdkf .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#zwndybtdkf .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zwndybtdkf .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zwndybtdkf .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwndybtdkf .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zwndybtdkf .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwndybtdkf .gt_left {
+  text-align: left;
+}
+
+#zwndybtdkf .gt_center {
+  text-align: center;
+}
+
+#zwndybtdkf .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#zwndybtdkf .gt_font_normal {
+  font-weight: normal;
+}
+
+#zwndybtdkf .gt_font_bold {
+  font-weight: bold;
+}
+
+#zwndybtdkf .gt_font_italic {
+  font-style: italic;
+}
+
+#zwndybtdkf .gt_super {
+  font-size: 65%;
+}
+
+#zwndybtdkf .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#zwndybtdkf .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#zwndybtdkf .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#zwndybtdkf .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#zwndybtdkf .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#zwndybtdkf .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#zwndybtdkf .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#zwndybtdkf .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#zwndybtdkf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings header">
+<th id="skim_type" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">skim_type</th>
+<th id="skim_variable" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">skim_variable</th>
+<th id="island" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">island</th>
+<th id="n_missing" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">n_missing</th>
+<th id="complete_rate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">complete_rate</th>
+<th id="factor.ordered" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">factor.ordered</th>
+<th id="factor.n_unique" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">factor.n_unique</th>
+<th id="factor.top_counts" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">factor.top_counts</th>
+<th id="numeric.mean" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">numeric.mean</th>
+<th id="numeric.sd" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">numeric.sd</th>
+<th id="numeric.p0" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">numeric.p0</th>
+<th id="numeric.p25" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">numeric.p25</th>
+<th id="numeric.p50" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">numeric.p50</th>
+<th id="numeric.p75" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">numeric.p75</th>
+<th id="numeric.p100" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">numeric.p100</th>
+<th id="numeric.hist" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">numeric.hist</th>
+</tr></thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="skim_type">factor</td>
+<td class="gt_row gt_left" headers="skim_variable">species</td>
+<td class="gt_row gt_center" headers="island">Biscoe</td>
+<td class="gt_row gt_right" headers="n_missing">0</td>
+<td class="gt_row gt_right" headers="complete_rate">1.0000000</td>
+<td class="gt_row gt_center" headers="factor.ordered">FALSE</td>
+<td class="gt_row gt_right" headers="factor.n_unique">2</td>
+<td class="gt_row gt_left" headers="factor.top_counts">Gen: 124, Ade: 44, Chi: 0</td>
+<td class="gt_row gt_right" headers="numeric.mean">NA</td>
+<td class="gt_row gt_right" headers="numeric.sd">NA</td>
+<td class="gt_row gt_right" headers="numeric.p0">NA</td>
+<td class="gt_row gt_right" headers="numeric.p25">NA</td>
+<td class="gt_row gt_right" headers="numeric.p50">NA</td>
+<td class="gt_row gt_right" headers="numeric.p75">NA</td>
+<td class="gt_row gt_right" headers="numeric.p100">NA</td>
+<td class="gt_row gt_left" headers="numeric.hist">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="skim_type">factor</td>
+<td class="gt_row gt_left" headers="skim_variable">species</td>
+<td class="gt_row gt_center" headers="island">Dream</td>
+<td class="gt_row gt_right" headers="n_missing">0</td>
+<td class="gt_row gt_right" headers="complete_rate">1.0000000</td>
+<td class="gt_row gt_center" headers="factor.ordered">FALSE</td>
+<td class="gt_row gt_right" headers="factor.n_unique">2</td>
+<td class="gt_row gt_left" headers="factor.top_counts">Chi: 68, Ade: 56, Gen: 0</td>
+<td class="gt_row gt_right" headers="numeric.mean">NA</td>
+<td class="gt_row gt_right" headers="numeric.sd">NA</td>
+<td class="gt_row gt_right" headers="numeric.p0">NA</td>
+<td class="gt_row gt_right" headers="numeric.p25">NA</td>
+<td class="gt_row gt_right" headers="numeric.p50">NA</td>
+<td class="gt_row gt_right" headers="numeric.p75">NA</td>
+<td class="gt_row gt_right" headers="numeric.p100">NA</td>
+<td class="gt_row gt_left" headers="numeric.hist">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="skim_type">factor</td>
+<td class="gt_row gt_left" headers="skim_variable">species</td>
+<td class="gt_row gt_center" headers="island">Torgersen</td>
+<td class="gt_row gt_right" headers="n_missing">0</td>
+<td class="gt_row gt_right" headers="complete_rate">1.0000000</td>
+<td class="gt_row gt_center" headers="factor.ordered">FALSE</td>
+<td class="gt_row gt_right" headers="factor.n_unique">1</td>
+<td class="gt_row gt_left" headers="factor.top_counts">Ade: 52, Chi: 0, Gen: 0</td>
+<td class="gt_row gt_right" headers="numeric.mean">NA</td>
+<td class="gt_row gt_right" headers="numeric.sd">NA</td>
+<td class="gt_row gt_right" headers="numeric.p0">NA</td>
+<td class="gt_row gt_right" headers="numeric.p25">NA</td>
+<td class="gt_row gt_right" headers="numeric.p50">NA</td>
+<td class="gt_row gt_right" headers="numeric.p75">NA</td>
+<td class="gt_row gt_right" headers="numeric.p100">NA</td>
+<td class="gt_row gt_left" headers="numeric.hist">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="skim_type">factor</td>
+<td class="gt_row gt_left" headers="skim_variable">sex</td>
+<td class="gt_row gt_center" headers="island">Biscoe</td>
+<td class="gt_row gt_right" headers="n_missing">5</td>
+<td class="gt_row gt_right" headers="complete_rate">0.9702381</td>
+<td class="gt_row gt_center" headers="factor.ordered">FALSE</td>
+<td class="gt_row gt_right" headers="factor.n_unique">2</td>
+<td class="gt_row gt_left" headers="factor.top_counts">mal: 83, fem: 80</td>
+<td class="gt_row gt_right" headers="numeric.mean">NA</td>
+<td class="gt_row gt_right" headers="numeric.sd">NA</td>
+<td class="gt_row gt_right" headers="numeric.p0">NA</td>
+<td class="gt_row gt_right" headers="numeric.p25">NA</td>
+<td class="gt_row gt_right" headers="numeric.p50">NA</td>
+<td class="gt_row gt_right" headers="numeric.p75">NA</td>
+<td class="gt_row gt_right" headers="numeric.p100">NA</td>
+<td class="gt_row gt_left" headers="numeric.hist">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="skim_type">factor</td>
+<td class="gt_row gt_left" headers="skim_variable">sex</td>
+<td class="gt_row gt_center" headers="island">Dream</td>
+<td class="gt_row gt_right" headers="n_missing">1</td>
+<td class="gt_row gt_right" headers="complete_rate">0.9919355</td>
+<td class="gt_row gt_center" headers="factor.ordered">FALSE</td>
+<td class="gt_row gt_right" headers="factor.n_unique">2</td>
+<td class="gt_row gt_left" headers="factor.top_counts">mal: 62, fem: 61</td>
+<td class="gt_row gt_right" headers="numeric.mean">NA</td>
+<td class="gt_row gt_right" headers="numeric.sd">NA</td>
+<td class="gt_row gt_right" headers="numeric.p0">NA</td>
+<td class="gt_row gt_right" headers="numeric.p25">NA</td>
+<td class="gt_row gt_right" headers="numeric.p50">NA</td>
+<td class="gt_row gt_right" headers="numeric.p75">NA</td>
+<td class="gt_row gt_right" headers="numeric.p100">NA</td>
+<td class="gt_row gt_left" headers="numeric.hist">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="skim_type">factor</td>
+<td class="gt_row gt_left" headers="skim_variable">sex</td>
+<td class="gt_row gt_center" headers="island">Torgersen</td>
+<td class="gt_row gt_right" headers="n_missing">5</td>
+<td class="gt_row gt_right" headers="complete_rate">0.9038462</td>
+<td class="gt_row gt_center" headers="factor.ordered">FALSE</td>
+<td class="gt_row gt_right" headers="factor.n_unique">2</td>
+<td class="gt_row gt_left" headers="factor.top_counts">fem: 24, mal: 23</td>
+<td class="gt_row gt_right" headers="numeric.mean">NA</td>
+<td class="gt_row gt_right" headers="numeric.sd">NA</td>
+<td class="gt_row gt_right" headers="numeric.p0">NA</td>
+<td class="gt_row gt_right" headers="numeric.p25">NA</td>
+<td class="gt_row gt_right" headers="numeric.p50">NA</td>
+<td class="gt_row gt_right" headers="numeric.p75">NA</td>
+<td class="gt_row gt_right" headers="numeric.p100">NA</td>
+<td class="gt_row gt_left" headers="numeric.hist">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">bill_length_mm</td>
+<td class="gt_row gt_center" headers="island">Biscoe</td>
+<td class="gt_row gt_right" headers="n_missing">1</td>
+<td class="gt_row gt_right" headers="complete_rate">0.9940476</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">45.25749</td>
+<td class="gt_row gt_right" headers="numeric.sd">4.7727314</td>
+<td class="gt_row gt_right" headers="numeric.p0">34.5</td>
+<td class="gt_row gt_right" headers="numeric.p25">42.00</td>
+<td class="gt_row gt_right" headers="numeric.p50">45.80</td>
+<td class="gt_row gt_right" headers="numeric.p75">48.70</td>
+<td class="gt_row gt_right" headers="numeric.p100">59.6</td>
+<td class="gt_row gt_left" headers="numeric.hist">▂▅▇▃▁</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">bill_length_mm</td>
+<td class="gt_row gt_center" headers="island">Dream</td>
+<td class="gt_row gt_right" headers="n_missing">0</td>
+<td class="gt_row gt_right" headers="complete_rate">1.0000000</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">44.16774</td>
+<td class="gt_row gt_right" headers="numeric.sd">5.9535266</td>
+<td class="gt_row gt_right" headers="numeric.p0">32.1</td>
+<td class="gt_row gt_right" headers="numeric.p25">39.15</td>
+<td class="gt_row gt_right" headers="numeric.p50">44.65</td>
+<td class="gt_row gt_right" headers="numeric.p75">49.85</td>
+<td class="gt_row gt_right" headers="numeric.p100">58.0</td>
+<td class="gt_row gt_left" headers="numeric.hist">▅▇▆▇▁</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">bill_length_mm</td>
+<td class="gt_row gt_center" headers="island">Torgersen</td>
+<td class="gt_row gt_right" headers="n_missing">1</td>
+<td class="gt_row gt_right" headers="complete_rate">0.9807692</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">38.95098</td>
+<td class="gt_row gt_right" headers="numeric.sd">3.0253180</td>
+<td class="gt_row gt_right" headers="numeric.p0">33.5</td>
+<td class="gt_row gt_right" headers="numeric.p25">36.65</td>
+<td class="gt_row gt_right" headers="numeric.p50">38.90</td>
+<td class="gt_row gt_right" headers="numeric.p75">41.10</td>
+<td class="gt_row gt_right" headers="numeric.p100">46.0</td>
+<td class="gt_row gt_left" headers="numeric.hist">▅▆▇▆▂</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">bill_depth_mm</td>
+<td class="gt_row gt_center" headers="island">Biscoe</td>
+<td class="gt_row gt_right" headers="n_missing">1</td>
+<td class="gt_row gt_right" headers="complete_rate">0.9940476</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">15.87485</td>
+<td class="gt_row gt_right" headers="numeric.sd">1.8207214</td>
+<td class="gt_row gt_right" headers="numeric.p0">13.1</td>
+<td class="gt_row gt_right" headers="numeric.p25">14.50</td>
+<td class="gt_row gt_right" headers="numeric.p50">15.50</td>
+<td class="gt_row gt_right" headers="numeric.p75">17.00</td>
+<td class="gt_row gt_right" headers="numeric.p100">21.1</td>
+<td class="gt_row gt_left" headers="numeric.hist">▇▇▃▃▁</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">bill_depth_mm</td>
+<td class="gt_row gt_center" headers="island">Dream</td>
+<td class="gt_row gt_right" headers="n_missing">0</td>
+<td class="gt_row gt_right" headers="complete_rate">1.0000000</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">18.34435</td>
+<td class="gt_row gt_right" headers="numeric.sd">1.1331159</td>
+<td class="gt_row gt_right" headers="numeric.p0">15.5</td>
+<td class="gt_row gt_right" headers="numeric.p25">17.50</td>
+<td class="gt_row gt_right" headers="numeric.p50">18.40</td>
+<td class="gt_row gt_right" headers="numeric.p75">19.00</td>
+<td class="gt_row gt_right" headers="numeric.p100">21.2</td>
+<td class="gt_row gt_left" headers="numeric.hist">▁▃▇▅▁</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">bill_depth_mm</td>
+<td class="gt_row gt_center" headers="island">Torgersen</td>
+<td class="gt_row gt_right" headers="n_missing">1</td>
+<td class="gt_row gt_right" headers="complete_rate">0.9807692</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">18.42941</td>
+<td class="gt_row gt_right" headers="numeric.sd">1.3394468</td>
+<td class="gt_row gt_right" headers="numeric.p0">15.9</td>
+<td class="gt_row gt_right" headers="numeric.p25">17.35</td>
+<td class="gt_row gt_right" headers="numeric.p50">18.40</td>
+<td class="gt_row gt_right" headers="numeric.p75">19.25</td>
+<td class="gt_row gt_right" headers="numeric.p100">21.5</td>
+<td class="gt_row gt_left" headers="numeric.hist">▃▇▆▃▃</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">flipper_length_mm</td>
+<td class="gt_row gt_center" headers="island">Biscoe</td>
+<td class="gt_row gt_right" headers="n_missing">1</td>
+<td class="gt_row gt_right" headers="complete_rate">0.9940476</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">209.70659</td>
+<td class="gt_row gt_right" headers="numeric.sd">14.1422683</td>
+<td class="gt_row gt_right" headers="numeric.p0">172.0</td>
+<td class="gt_row gt_right" headers="numeric.p25">199.50</td>
+<td class="gt_row gt_right" headers="numeric.p50">214.00</td>
+<td class="gt_row gt_right" headers="numeric.p75">220.00</td>
+<td class="gt_row gt_right" headers="numeric.p100">231.0</td>
+<td class="gt_row gt_left" headers="numeric.hist">▁▃▁▇▅</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">flipper_length_mm</td>
+<td class="gt_row gt_center" headers="island">Dream</td>
+<td class="gt_row gt_right" headers="n_missing">0</td>
+<td class="gt_row gt_right" headers="complete_rate">1.0000000</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">193.07258</td>
+<td class="gt_row gt_right" headers="numeric.sd">7.5073659</td>
+<td class="gt_row gt_right" headers="numeric.p0">178.0</td>
+<td class="gt_row gt_right" headers="numeric.p25">187.75</td>
+<td class="gt_row gt_right" headers="numeric.p50">193.00</td>
+<td class="gt_row gt_right" headers="numeric.p75">198.00</td>
+<td class="gt_row gt_right" headers="numeric.p100">212.0</td>
+<td class="gt_row gt_left" headers="numeric.hist">▃▇▇▅▂</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">flipper_length_mm</td>
+<td class="gt_row gt_center" headers="island">Torgersen</td>
+<td class="gt_row gt_right" headers="n_missing">1</td>
+<td class="gt_row gt_right" headers="complete_rate">0.9807692</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">191.19608</td>
+<td class="gt_row gt_right" headers="numeric.sd">6.2322375</td>
+<td class="gt_row gt_right" headers="numeric.p0">176.0</td>
+<td class="gt_row gt_right" headers="numeric.p25">187.00</td>
+<td class="gt_row gt_right" headers="numeric.p50">191.00</td>
+<td class="gt_row gt_right" headers="numeric.p75">195.00</td>
+<td class="gt_row gt_right" headers="numeric.p100">210.0</td>
+<td class="gt_row gt_left" headers="numeric.hist">▂▅▇▃▁</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">body_mass_g</td>
+<td class="gt_row gt_center" headers="island">Biscoe</td>
+<td class="gt_row gt_right" headers="n_missing">1</td>
+<td class="gt_row gt_right" headers="complete_rate">0.9940476</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">4716.01796</td>
+<td class="gt_row gt_right" headers="numeric.sd">782.8557429</td>
+<td class="gt_row gt_right" headers="numeric.p0">2850.0</td>
+<td class="gt_row gt_right" headers="numeric.p25">4200.00</td>
+<td class="gt_row gt_right" headers="numeric.p50">4775.00</td>
+<td class="gt_row gt_right" headers="numeric.p75">5325.00</td>
+<td class="gt_row gt_right" headers="numeric.p100">6300.0</td>
+<td class="gt_row gt_left" headers="numeric.hist">▂▅▇▇▃</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">body_mass_g</td>
+<td class="gt_row gt_center" headers="island">Dream</td>
+<td class="gt_row gt_right" headers="n_missing">0</td>
+<td class="gt_row gt_right" headers="complete_rate">1.0000000</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">3712.90323</td>
+<td class="gt_row gt_right" headers="numeric.sd">416.6441116</td>
+<td class="gt_row gt_right" headers="numeric.p0">2700.0</td>
+<td class="gt_row gt_right" headers="numeric.p25">3400.00</td>
+<td class="gt_row gt_right" headers="numeric.p50">3687.50</td>
+<td class="gt_row gt_right" headers="numeric.p75">3956.25</td>
+<td class="gt_row gt_right" headers="numeric.p100">4800.0</td>
+<td class="gt_row gt_left" headers="numeric.hist">▂▆▇▃▂</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">body_mass_g</td>
+<td class="gt_row gt_center" headers="island">Torgersen</td>
+<td class="gt_row gt_right" headers="n_missing">1</td>
+<td class="gt_row gt_right" headers="complete_rate">0.9807692</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">3706.37255</td>
+<td class="gt_row gt_right" headers="numeric.sd">445.1079402</td>
+<td class="gt_row gt_right" headers="numeric.p0">2900.0</td>
+<td class="gt_row gt_right" headers="numeric.p25">3337.50</td>
+<td class="gt_row gt_right" headers="numeric.p50">3700.00</td>
+<td class="gt_row gt_right" headers="numeric.p75">4000.00</td>
+<td class="gt_row gt_right" headers="numeric.p100">4700.0</td>
+<td class="gt_row gt_left" headers="numeric.hist">▅▇▇▅▂</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">year</td>
+<td class="gt_row gt_center" headers="island">Biscoe</td>
+<td class="gt_row gt_right" headers="n_missing">0</td>
+<td class="gt_row gt_right" headers="complete_rate">1.0000000</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">2008.09524</td>
+<td class="gt_row gt_right" headers="numeric.sd">0.7833453</td>
+<td class="gt_row gt_right" headers="numeric.p0">2007.0</td>
+<td class="gt_row gt_right" headers="numeric.p25">2007.00</td>
+<td class="gt_row gt_right" headers="numeric.p50">2008.00</td>
+<td class="gt_row gt_right" headers="numeric.p75">2009.00</td>
+<td class="gt_row gt_right" headers="numeric.p100">2009.0</td>
+<td class="gt_row gt_left" headers="numeric.hist">▆▁▇▁▇</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">year</td>
+<td class="gt_row gt_center" headers="island">Dream</td>
+<td class="gt_row gt_right" headers="n_missing">0</td>
+<td class="gt_row gt_right" headers="complete_rate">1.0000000</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">2007.98387</td>
+<td class="gt_row gt_right" headers="numeric.sd">0.8552456</td>
+<td class="gt_row gt_right" headers="numeric.p0">2007.0</td>
+<td class="gt_row gt_right" headers="numeric.p25">2007.00</td>
+<td class="gt_row gt_right" headers="numeric.p50">2008.00</td>
+<td class="gt_row gt_right" headers="numeric.p75">2009.00</td>
+<td class="gt_row gt_right" headers="numeric.p100">2009.0</td>
+<td class="gt_row gt_left" headers="numeric.hist">▇▁▆▁▇</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="skim_type">numeric</td>
+<td class="gt_row gt_left" headers="skim_variable">year</td>
+<td class="gt_row gt_center" headers="island">Torgersen</td>
+<td class="gt_row gt_right" headers="n_missing">0</td>
+<td class="gt_row gt_right" headers="complete_rate">1.0000000</td>
+<td class="gt_row gt_center" headers="factor.ordered">NA</td>
+<td class="gt_row gt_right" headers="factor.n_unique">NA</td>
+<td class="gt_row gt_left" headers="factor.top_counts">NA</td>
+<td class="gt_row gt_right" headers="numeric.mean">2007.92308</td>
+<td class="gt_row gt_right" headers="numeric.sd">0.8365699</td>
+<td class="gt_row gt_right" headers="numeric.p0">2007.0</td>
+<td class="gt_row gt_right" headers="numeric.p25">2007.00</td>
+<td class="gt_row gt_right" headers="numeric.p50">2008.00</td>
+<td class="gt_row gt_right" headers="numeric.p75">2009.00</td>
+<td class="gt_row gt_right" headers="numeric.p100">2009.0</td>
+<td class="gt_row gt_left" headers="numeric.hist">▇▁▆▁▆</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section></section><section id="r-studioの見た目を変えようソースペイン" class="level1"><h1>Ⅲ. R Studioの見た目を変えよう（ソースペイン）</h1>
+<ul>
+<li>コードを書くうえで、<em>視認性はとても大切</em>です</li>
+<li>文字の配色を変えられます
+<ul>
+<li>メニュ &gt; Tools &gt; Global Options &gt; Appearance &gt; Editor Theme
+<ul>
+<li>私は<a href="https://github.com/max-alletsee/rstudio-themes">rstudio-themes</a>からダウンロードしたrscodeioをaddで追加しています</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>不可視文字を表示できます
+<ul>
+<li>メニュ &gt; Tools &gt; Global Options &gt; Code &gt; Display &gt; Show whitespace charactersにチェック / Indentation guides:から適当なものを選択</li>
+<li>themeによってはIndentation guidesが適用されません（rscodeioも適用対象外）</li>
+</ul>
+</li>
+</ul>
+<p><img src="img/global_option.png" class="img-fluid" alt="Global Options"><img src="img/theme.png" class="img-fluid" alt="theme"><img src="img/空白の可視化.png" class="img-fluid" alt="空白の可視化"></p>
+</section><section id="markdownとチャンク" class="level1 page-columns page-full"><h1>Ⅳ. markdownとチャンク</h1>
+<ul>
+<li>quartoの基本構成
+<ul>
+<li>YAML; markdown; チャンク</li>
+</ul>
+</li>
+<li>YAML
+<ul>
+<li>タイトルだけでなく、ページの出力形態などを統御（詳しくは別途説明）</li>
+</ul>
+</li>
+</ul>
+<section id="yaml" class="level2"><h2 class="anchored" data-anchor-id="yaml">1. YAML</h2>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>YAMLを改変して､目次を表示させよう（目次を付けると見出しレベルを意識しやすくなり､論理的な構成になります）</p>
+</div>
+</div>
+</div>
+<p><img src="img/YAML_toc.png" class="img-fluid"></p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>YAMLを改変して､氏名と日付を入れましょう</p>
+</div>
+</div>
+</div>
+<p><img src="img/YAML_author_date.png" class="img-fluid"></p>
+</section><section id="markdown" class="level2"><h2 class="anchored" data-anchor-id="markdown">2. markdown</h2>
+<ul>
+<li>markdown:
+<ul>
+<li>YAMLとチャンク以外はmarkdownエリア</li>
+<li>簡易的記述法 cf.&nbsp;markup (html言語)
+<ul>
+<li>箇条書き（数字またはハイフン）</li>
+<li>見出し（ハッシュ#）
+<ul>
+<li>ハッシュの数で見出しレベルが変わる</li>
+<li>1ハッシュが見出しレベル1</li>
+</ul>
+</li>
+<li>引用: &gt;</li>
+</ul>
+</li>
+<li>URL: <a href="URL">文字列</a>
+</li>
+<li>画像：<img src="ファイル名.png" class="img-fluid" alt="文字列"><ul>
+<li>上の2行は下記のように入力しています</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="img/markdown.png" class="img-fluid"></p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>教科書69ページ図2.1を参照しながら､適当に見出しを入れて､Outline（画面右上）を表示させてみよう</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>チャンク内でハッシュはコメントアウト（プログラムの一部を無効化する；メモとする）を意味します</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>見出しのフォントサイズや強調のフォント色などは､CSSで統御します。別途説明します</p>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>ほとんどの場合､解析結果を再現したいと思う人は､今から半年か一年後の自分自身です（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン <a href="#ref-HealyK:2021book1_translJA" role="doc-biblioref">(2021)</a></span>）</p>
+</blockquote>
+<ul>
+<li>➡ コードとメモをしっかりと残すことが重要</li>
+</ul></section><section id="setupチャンク" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="setupチャンク">3. setupチャンク</h2>
+<ul>
+<li>一つのquartoファイルのなかでグローバル（すべてのchunk）に適用したいものがあります。library関数やデータの読み込みなどがその典型です。通常のchunkとは別にセットアップ用のチャンクを作ります</li>
+<li>YAMLの次にsetupチャンクを作るのが一般的です</li>
+<li>
+<a href="RandQuarto_w2.html#おさらい">おさらい</a>で作ったチャンクをsetupチャンクに変えよう
+<ul>
+<li>「penguins |&gt; # ペンギンについてのデータを分析します」以降はデータを分析しているコードなので、独立したチャンクに入れ直そう</li>
+</ul>
+</li>
+</ul>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="img/setupchunk.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">setupチャンク</figcaption></figure>
+</div>
+<ul>
+<li>「r半角アキsetup」とするだけ</li>
+<li>（シャープと縦棒＊違う動作をしてしまうので入力しません）echo: false：「コードは実行されますが、出力にはコード本体を表示しない」オプション（通常、setupチャンクはコードを示す必要がないため）</li>
+<li>（シャープと縦棒）output: false：「出力（結果）を非表示にする」オプション」</li>
+<li>➡ コードも表示されない、実行結果も表示されない。でも、<strong>実際には裏でちゃんと実行されている</strong>
+</li>
+</ul></section></section><section id="基本的な流れと用語" class="level1 page-columns page-full"><h1>Ⅴ. 基本的な流れと用語</h1>
+<section id="基本的な流れdplyrとggplot" class="level2"><h2 class="anchored" data-anchor-id="基本的な流れdplyrとggplot">1. 基本的な流れ：dplyrとggplot</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"></figure><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    A([データの加工 &lt;br&gt; &lt;strong&gt;dplyr&lt;/strong&gt; &lt;br&gt; 例 select filter]) --- B([データの可視化 &lt;br&gt; &lt;strong&gt;ggplot2&lt;/strong&gt; &lt;br&gt; 例 geom_bar])
+
+</pre>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p><img src="img/dplyr.png" class="img-fluid" style="width:10.0%">　 <img src="img/ggplot2.png" class="img-fluid" style="width:10.0%"></p>
+</section><section id="用語" class="level2"><h2 class="anchored" data-anchor-id="用語">2. 用語</h2>
+<ul>
+<li>パッケージとファンクション（関数）
+<ul>
+<li>
+<a href="https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/">Posit Cheatsheets</a>（別紙）参照</li>
+</ul>
+</li>
+</ul>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>上記のサイトのチートシートには､日本語化されているものもあるが､情報が古いので注意</p>
+</div>
+</div>
+</div>
+<ul>
+<li>オブジェクト
+<ul>
+<li>変数（variable）</li>
+<li>読み込んだデータ</li>
+<li>関数（function）</li>
+<li>
+<strong>代入したデータ</strong>（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン <a href="#ref-HealyK:2021book1_translJA" role="doc-biblioref">(2021)</a></span>, 「2.3.1 すべてに名前がある」）</li>
+</ul>
+</li>
+<li>データフレーム（df）
+<ul>
+<li>行列からなるデータ</li>
+<li>ある列のデータの型（後述）は一つのみ
+<ul>
+<li>例：天気「晴れ；曇り；雨；嵐」➡ character型（数字が入っていたらおかしい）</li>
+<li>例：気温「20; 25; 30」➡ numeric型（文字データが入っていたらおかしい）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></section><section id="代入" class="level2"><h2 class="anchored" data-anchor-id="代入">3. 代入</h2>
+<ul>
+<li>「&lt;-」はデータを加工して新しいオブジェクトを作ることを意味します</li>
+<li>同じオブジェクト名を指定する場合、オブジェクトを上書きすることを意味します</li>
+</ul>
+<section id="palmerpenguinsのデータセットで実践" class="level3"><h3 class="anchored" data-anchor-id="palmerpenguinsのデータセットで実践">palmerpenguinsのデータセットで実践</h3>
+<ul>
+<li>palmerpenguinsのデータから’island’の列だけを取り出します（view関数で確認）
+<ul>
+<li>代入していませんので、selectしたpenguinsのデータはパイプが切れたところで終わりです（新しくpenguinsオブジェクトを操作すると、すべてのデータからはじまります）</li>
+</ul>
+</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">island</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/view.html">view</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>palmerpenguinsのデータから’island’の列だけを取り出し、penguins_islandに代入します（view関数で確認）
+<ul>
+<li>penguins_island はselectされたデータフレームになりました</li>
+<li>penguinsはそのままです</li>
+</ul>
+</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins_island</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">island</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">penguins_island</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/view.html">view</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">penguins</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/view.html">view</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>palmerpenguinsのデータから’island’の列だけを取り出し、penguinsに代入します（view関数で確認）
+<ul>
+<li>データを上書きしました（メモリ上）</li>
+<li>元データを読み込みし直さないと元データどおりになりません
+<ul>
+<li>packageの場合はpackageの読み込み</li>
+<li>csvやexcelファイルの場合はファイルの読み込み</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">island</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">penguins</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/view.html">view</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/view.html">view</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>元のデータに戻すには明示的に再代入する必要があります</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">&lt;-</span> <span class="fu">palmerpenguins</span><span class="fu">::</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/reference/penguins.html">penguins</a></span> <span class="co">#palmerpenguinsパッケージのpenguinsというデータセットをpenguinsに代入</span></span>
+<span></span>
+<span><span class="va">penguins</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/view.html">view</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tips | 代入演算子（&lt;-）のショートカット
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>チャンク内で
+<ul>
+<li>Win: Alt + 「-」キー</li>
+<li>Mac: Option + 「-」キー</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</section></section><section id="整然データと雑然データ" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="整然データと雑然データ">4. 整然データと雑然データ</h2>
+<section id="整然tidyデータ" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="整然tidyデータ">⑴ 整然（tidy）データ</h3>
+<ol type="1">
+<li>各変数は独立した列で表現される</li>
+<li>観測した値は1行に記録される</li>
+<li>観測データの集合はテーブルを表現する</li>
+</ol>
+<p>（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン <a href="#ref-HealyK:2021book1_translJA" role="doc-biblioref">(2021)</a></span>, 「付録A.1.3「Tidyデータ」329-332ページ）</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>表A.1, A.2, A.3を見比べてみよう（カラム名に注目）</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>以下の二つの表も見比べてみよう（カラム名に注目）</p>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="img/data_wide.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">初回アンケート（横持ちデータ）</figcaption></figure>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="img/data_long.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">初回アンケート（縦持ちデータ）</figcaption></figure>
+</div>
+<ul>
+<li>一般的なデータは横持ちデータ
+<ul>
+<li>人間にとって理解しやすい</li>
+</ul>
+</li>
+</ul>
+<div class="cell" data-code_download="true">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/survey_2025-04-16.csv"</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/view.html">view</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>コンピュータは縦持ちデータの方が理解しやすい
+<ul>
+<li>わかりやすいカラム名</li>
+<li>少ないカラム数</li>
+</ul>
+</li>
+<li>R（tidyverse）では<strong>pivot_longer</strong>/<strong>pivot_wider関数</strong>を使って変換する
+<ul>
+<li>図「初回アンケート（縦持ちデータ）」は､一人の回答者データを10行に展開している</li>
+</ul>
+</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート_long</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="va">df_初回アンケート</span> <span class="op">|&gt;</span>  <span class="co"># 代入（ 「&lt;-」代入演算子） </span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html">everything</a></span><span class="op">(</span><span class="op">)</span>, <span class="va">as.character</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="co"># すべての値を文字形式にする</span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span></span>
+<span>    cols <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"Q"</span><span class="op">)</span>, <span class="co">#カラム名が「Q」から始まる列を軸に変換</span></span>
+<span>    names_to <span class="op">=</span> <span class="st">"質問"</span>, <span class="co"># カラム名から､新しく作成するカラム名</span></span>
+<span>    values_to <span class="op">=</span> <span class="st">"回答"</span> <span class="co"># 値から､新しく作成された値のカラム名</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">df_初回アンケート_long</span> <span class="op">|&gt;</span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/view.html">view</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>横持ちデータかた縦持ちデータに変換した場合、データフレームが大きく変更していますので、新しいオブジェクト（代入）するのが一般的です。また、オブジェクト名に「_long」とするのが一般的です</li>
+</ul>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>この操作は難しいので、いま理解できなくてもまったく問題ありません。差し当たり、コンピュータが理解しやすいデータと、人間が理解しやすいデータ（表）が違うことだけ理解しましょう</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Chat GPTを活用しよう
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>googleフォームで利用者アンケートを実施しました。集計結果は横持ちデータです。例示を交えて縦持ちにする方法を教えてください。r言語（tidyverse）でお願いします。またそのデータを使って､ggplotで図を作ってください。</p>
+</div>
+</div>
+<ul>
+<li>以下のコードはChat GPTが教えてくれたものです</li>
+</ul>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># サンプルデータの作成</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
+<span>  respondent_id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>,</span>
+<span>  Q1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Yes"</span>, <span class="st">"No"</span>, <span class="st">"Yes"</span><span class="op">)</span>,</span>
+<span>  Q2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"No"</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span><span class="op">)</span>,</span>
+<span>  Q3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Yes"</span>, <span class="st">"No"</span>, <span class="st">"Yes"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># データを縦持ちに変換</span></span>
+<span><span class="va">data_long</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"Q"</span><span class="op">)</span>, </span>
+<span>               names_to <span class="op">=</span> <span class="st">"Question"</span>, </span>
+<span>               values_to <span class="op">=</span> <span class="st">"Answer"</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="co"># ggplot2で棒グラフを作成</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">data_long</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Question</span>, fill <span class="op">=</span> <span class="va">Answer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Survey Responses"</span>, x <span class="op">=</span> <span class="st">"Question"</span>, y <span class="op">=</span> <span class="st">"Count"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="RandQuarto_w2_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="雑然messyデータ" class="level3"><h3 class="anchored" data-anchor-id="雑然messyデータ">⑵ 雑然（messy）データ</h3>
+<ul>
+<li>整然データではないデータ</li>
+<li>上記に加え､不要な空白行（セル）
+<ul>
+<li><a href="https://www.e-stat.go.jp/stat-search/files?page=1&amp;layout=datalist&amp;toukei=00450071&amp;tstat=000001011791&amp;cycle=1&amp;tclass1=000001027694&amp;tclass2val=0">毎月勤労統計調査</a></li>
+</ul>
+</li>
+</ul>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>コンピュータが理解できるデータ形式は、<em>1行目がカラム名、2行目以降が値</em>であることを特に覚えておきましょう。Rに限りませんが、Rなどのプログラム系の統計ソフトで指示する対象は「カラム名」です。例えば一つのデータに同じカラム名があると動かない、もしくは強制的にカラム名が変更（メモリ上。元ファイルはそのまま）されます</p>
+</div>
+</div>
+</div>
+</section></section></section><section id="データの型" class="level1"><h1>Ⅵ. データの型</h1>
+<ul>
+<li>すべてのオブジェクトは型（クラス）をもつ
+<ul>
+<li>R（tidyverse）がデータを読み､適切と思われる型を割り当てる</li>
+</ul>
+</li>
+<li>重要な型
+<ul>
+<li>numeric（数字）</li>
+<li>character（文字）</li>
+<li>factor（ファクター（因子）：レベルを設定できる）</li>
+<li>logical（true / false）</li>
+<li>data.frame（baseRのテーブル形式）</li>
+<li>tibble（tidyverseのテーブル形式）</li>
+</ul>
+</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+同じ文字でもデータの型が違う可能性がある
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>numeric/character/factor</li>
+<li>ggplotで特に問題になります
+<ul>
+<li>例えば散布図はnumeric（数字）であることが基本なので、数字以外の型の場合、プロットできません</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [344 × 8] (S3: tbl_df/tbl/data.frame)
+ $ species          : Factor w/ 3 levels "Adelie","Chinstrap",..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ island           : Factor w/ 3 levels "Biscoe","Dream",..: 3 3 3 3 3 3 3 3 3 3 ...
+ $ bill_length_mm   : num [1:344] 39.1 39.5 40.3 NA 36.7 39.3 38.9 39.2 34.1 42 ...
+ $ bill_depth_mm    : num [1:344] 18.7 17.4 18 NA 19.3 20.6 17.8 19.6 18.1 20.2 ...
+ $ flipper_length_mm: int [1:344] 181 186 195 NA 193 190 181 195 193 190 ...
+ $ body_mass_g      : int [1:344] 3750 3800 3250 NA 3450 3650 3625 4675 3475 4250 ...
+ $ sex              : Factor w/ 2 levels "female","male": 2 1 1 NA 1 2 1 2 NA NA ...
+ $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...</code></pre>
+</div>
+</div>
+<ul>
+<li>species（ペンギンの種類）: Factor w/ 3 levels “Adelie”,“Chinstrap”</li>
+<li>bill_length_mm（ペンギンのくちばしの先端から根元までの長さ（ミリ単位））: num(numeric)；[1:344] このベクトルには全部で344個の値が入っている
+<ul>
+<li>NA：欠損値（データが取れないことはよくあります。NAがある場合、特殊な操作が必要になる（NAをどう扱うか明示的にコードを書く必要がある）ので気をつけましょう）</li>
+</ul>
+</li>
+<li>year：int（整数型）</li>
+</ul></section><section id="データの入手先お勧め" class="level1"><h1>Ⅶ データの入手先（お勧め）</h1>
+<section id="ckanシーカン" class="level2"><h2 class="anchored" data-anchor-id="ckanシーカン">1. ckan（シーカン）</h2>
+<ul>
+<li><a href="https://ckan.org">ckan</a></li>
+<li><a href="https://ckan.open-governmentdata.org/about">ckan: 日本の自治体</a></li>
+</ul>
+<blockquote class="blockquote">
+<p>CKANは世界をリードするオープンソースのデータポータルプラットホームです。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>CKANはデータをアクセス可能で使用可能にするための完全に枠を超えたソフトウェアソリューションです。データをストリームラインで公開、共有、発見、使用するためのツールを提供しています(データストレージや頑強なデータAPIの提供も含みます)。CKANはデータをオープンにして公開したいと思っているデータ公開者(国や地方行政、会社や組織)のために作られています。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>CKANは世界中の行政やユーザグループによって使用されています。イギリスの data.gov.uk、EUの publicdata.eu、ブラジルの dados.gov.br、オランダの政府ポータル、US、UK、アルゼンチン、フィンランド等の地方自治体のように、地方、国、国際的な行政を含む、様々な公的あるいはコミュニティのデータポータルの力となっています。</p>
+</blockquote>
+<ul>
+<li>Cf. 「CKANについて - data.go.jp」（加藤文彦）<a href="https://fumi.me/2013/12/22/ckan/">Link</a>
+</li>
+</ul>
+<section id="ckan-金沢市" class="level3"><h3 class="anchored" data-anchor-id="ckan-金沢市">⑴ <a href="https://catalog-data.city.kanazawa.ishikawa.jp/organization/kanazawa">ckan: 金沢市</a>
+</h3>
+<ul>
+<li>tidyなデータ例：
+<ul>
+<li><a href="https://catalog-data.city.kanazawa.ishikawa.jp/dataset/172014-touhyoukekka">金沢市 投票所別の投票結果</a></li>
+<li><a href="https://catalog-data.city.kanazawa.ishikawa.jp/dataset/172014-ihangomi">金沢市 違反ごみ件数</a></li>
+<li><a href="https://catalog-data.city.kanazawa.ishikawa.jp/dataset/172014-kouikikyubyocenter_riyousyasuu/resource/246ad33b-8141-4672-b5ec-f6e52ae4263b">金沢広域急病センター利用者数</a></li>
+</ul>
+</li>
+</ul>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://portal.data.metro.tokyo.lg.jp">東京都のckan</a>も充実しています。特にcsvファイルで提供されているデータは、tidyデータで、情報量が多く、よいものが多いです</p>
+</div>
+</div>
+</div>
+</section><section id="東京大学社会科学研究所" class="level3"><h3 class="anchored" data-anchor-id="東京大学社会科学研究所">⑵ 東京大学社会科学研究所</h3>
+<ul>
+<li>
+<a href="https://csrda.iss.u-tokyo.ac.jp/infrastructure/">SSJデータアーカイブ</a>＊要申請</li>
+<li><a href="https://csrda.iss.u-tokyo.ac.jp/infrastructure/urd/jlps/">若年パネル調査の非制限公開疑似データ</a></li>
+<li><a href="https://csrda.iss.u-tokyo.ac.jp/infrastructure/urd/ssm/">2015年SSM調査の非制限公開疑似データ</a></li>
+</ul></section><section id="文部科学省" class="level3"><h3 class="anchored" data-anchor-id="文部科学省">⑶ 文部科学省</h3>
+<ul>
+<li><a href="https://www.mext.go.jp/a_menu/shotou/gakuryoku-chousa/sonota/1404609.htm">全国的な学力調査（全国学力・学習状況調査等＊擬似データ）</a></li>
+</ul></section><section id="統計局" class="level3"><h3 class="anchored" data-anchor-id="統計局">⑷ 統計局</h3>
+<ul>
+<li><a href="https://www.nstac.go.jp/statcompe/">統計データ分析コンペティション</a></li>
+</ul></section><section id="resas地域経済分析システム" class="level3"><h3 class="anchored" data-anchor-id="resas地域経済分析システム">⑸ RESAS地域経済分析システム</h3>
+<ul>
+<li>
+<a href="https://resas.go.jp">RESAS地域経済分析システム</a>
+<ul>
+<li>ダッシュボードが基本。「ダウンロード」が表示されるもののみデータ入手可能
+<ul>
+<li>データ自体は有益だが、地域別に集計することが前提とされているため、使い勝手はよくない</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></section></section><section id="観測実験装置" class="level2"><h2 class="anchored" data-anchor-id="観測実験装置">2. 観測・実験装置</h2>
+<ul>
+<li>
+<p><a href="https://www.pref.fukushima.lg.jp/site/portal/wildlife-radiationmonitoring1.html">野生鳥獣の放射線モニタリング調査結果</a></p>
+<blockquote class="blockquote">
+<p>福島県では、東京電力福島第一原子力発電所の事故後、原子力災害本部長から福島県知事に対し野生鳥獣（イノシシ、ツキノワグマ、キジ、ヤマドリ、カルガモ、ノウサギ）の肉の摂取及び出荷制限の指示があり、県内で捕獲された野生鳥獣の体内における放射性核種濃度測定調査の結果についてお知らせをしています。</p>
+</blockquote>
+</li>
+<li>
+<p><a href="https://qiita.com/SEKITAKE/items/08a044b663ba4f856e31">生態学的研究の上で便利なオープンデータ集</a></p>
+<ul>
+<li>生態学にかかわるオープンデータのリンクがまとめられています。アカウント登録が必要なサイトがほとんどですが、よいデータが集まっているような印象を受けました。研究分野が近い受講生はアカウント登録をしてデータを入手する価値があるのではないかと思います。</li>
+</ul>
+</li>
+</ul></section></section><section id="実習" class="level1"><h1>Ⅷ. 実習</h1>
+<section id="オブジェクト代入データの型" class="level2"><h2 class="anchored" data-anchor-id="オブジェクト代入データの型">1. オブジェクト､代入､データの型</h2>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>教科書77ページから87ページのコード（緑色の背景をもつ直前の文字列）を入力し､実行してみよう</p>
+</div>
+</div>
+</div>
+<ul>
+<li>代入は以下のコードのように水準を設定したい場合にも便利です（setupチャンクに一度書けば、続くチャンクはこのオブジェクトを）</li>
+</ul>
+<pre><code>回答_身につく_levels &lt;- c("かなり身についた", "ある程度身についた", "あまり身につかなかった", "身につかなかった")</code></pre>
+</section><section id="コードへの忍耐とr-studioの恩恵" class="level2"><h2 class="anchored" data-anchor-id="コードへの忍耐とr-studioの恩恵">2. コードへの忍耐とR Studioの恩恵</h2>
+<blockquote class="blockquote">
+<p>忍耐強くあることが肝心です。エラーはいつか起こるもので､心配することはありません。……コードの誤りを修正する過程で､言語の仕様を理解することにつながります（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン <a href="#ref-HealyK:2021book1_translJA" role="doc-biblioref">(2021)</a></span>, 「2.4「自分自身､Rへの忍耐」88-89ページ）</p>
+</blockquote>
+<ul>
+<li>シンタックスハイライト</li>
+<li>自動補完</li>
+<li>インデント</li>
+</ul></section><section id="時間に余裕がある人だけ横持ちデータと縦持ちデータ" class="level2"><h2 class="anchored" data-anchor-id="時間に余裕がある人だけ横持ちデータと縦持ちデータ">3. （時間に余裕がある人だけ）：横持ちデータと縦持ちデータ</h2>
+<ul>
+<li>
+<a href="RandQuarto_w2.html#整然tidyデータ">整然（tidy）データ</a>を実践してみよう
+<ul>
+<li>サンプルデータは<a href="https://drive.google.com/drive/folders/1xZ0jfeU7oQBvbv4NN7xHLeUyZcf2vaTf?usp=sharing">Google Drive</a>から入手できます</li>
+</ul>
+</li>
+</ul></section></section><section id="宿題" class="level1"><h1>Ⅸ. 宿題</h1>
+<section id="授業の感想" class="level2"><h2 class="anchored" data-anchor-id="授業の感想">1. 授業の感想</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+note | 回答先と締め切り
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>
+<strong>回答先</strong>：<a href="https://forms.gle/tibqGnJAYwYC6kYq8">Google Forms</a>
+</li>
+<li>
+<strong>締め切り</strong>：2025年4月20日（金）23時59分まで</li>
+</ul>
+</div>
+</div>
+</section><section id="可視化したいデータ" class="level2"><h2 class="anchored" data-anchor-id="可視化したいデータ">2. 可視化したいデータ</h2>
+<ul>
+<li>Q1. ggplotを使って可視化したいデータをアップロードして下さい（csvかexcelファイル）
+<ul>
+<li>手元にデータがない場合は､こんなデータがある／作れそうだ､というようなことを書いて下さい</li>
+<li>1行目はカラム名、2行目以降が値のみのもの（2行目にカラム名の補則や空き行などあると、操作が難しくなります）</li>
+<li>「データの入手先（お勧め）」を参考にして下さい</li>
+</ul>
+</li>
+<li>Q2.このデータと､このデータから作りたい図について簡単に説明して下さい</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+note | 回答先と締め切り
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>
+<strong>回答先</strong>：<a href="https://forms.gle/LP6zjJUmbTzqqcxp9">Google Forms</a>
+</li>
+<li>
+<strong>締め切り</strong>：2025年4月23日（水）10時30分まで</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>可視化したいデータについて見当がつかない場合は､早め（できれば今日の授業後）に教員に相談してください</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://exts.ggplot2.tidyverse.org/gallery/">ggplot2 extensions - gallery</a>や<a href="https://r-graph-gallery.com">The R Graph Gallery</a>を見て､作りたい図のイメージを膨らませて下さい</p>
+</div>
+</div>
+</div>
+</section></section><section id="引用文献" class="level1">
+
+
+
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">引用文献</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-HealyK:2021book1_translJA" class="csl-entry" role="listitem">
+ヒーリー，キーラン (2021) 『データ分析のためのデータ可視化入門』, 講談社.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>苅谷千尋</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/kariyach\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block">© 2024 CHIHIRO KARIYA</span></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Made with <i class="fa-brands fa-r-project" aria-label="R Project"></i> and <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
