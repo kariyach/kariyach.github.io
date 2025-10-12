@@ -30,6 +30,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -51,7 +117,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-40ccd1a52fc214c51a6dcab276746ad2.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-7e5775daa20986451d51911c937ce694.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -175,14 +241,31 @@
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of contents</h2>
 <ul>
+<li><a href="#/test" id="/toc-test">0. test</a></li>
 <li><a href="#/自己紹介" id="/toc-自己紹介">Ⅰ. 自己紹介</a></li>
 <li><a href="#/シラバス" id="/toc-シラバス">Ⅱ. シラバス</a></li>
-<li><a href="#/中学の公民高校の公共大学の政治学" id="/toc-中学の公民高校の公共大学の政治学">Ⅲ. 中学の「公民」／高校の「公共」／大学の「政治学」</a></li>
-<li><a href="#/おすすめのニュース系番組記事と教科書" id="/toc-おすすめのニュース系番組記事と教科書">Ⅳ. おすすめのニュース系番組・記事と教科書</a></li>
+<li><a href="#/公民公共政治学" id="/toc-公民公共政治学">Ⅲ. 「公民」/「公共」/「政治学」</a></li>
+<li><a href="#/おすすめの番組記事本" id="/toc-おすすめの番組記事本">Ⅳ. おすすめの番組・記事・本</a></li>
 <li><a href="#/引用文献" id="/toc-引用文献">引用文献</a></li>
 </ul>
 </nav>
 </section>
+<section>
+<section id="test" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758, #6A5ACD)" data-background-transition="slide" data-background-color="#113758">
+<h1>0. test</h1>
+
+</section>
+<section id="test-1" class="slide level2">
+<h2>test</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb1-3"><a></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"bar"</span>) <span class="sc">+</span></span>
+<span id="cb1-4"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-5"><a></a>    <span class="at">x =</span> <span class="st">"種類"</span>,</span>
+<span id="cb1-6"><a></a>    <span class="at">y =</span> <span class="st">"体重 (g)"</span></span>
+<span id="cb1-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<img data-src="slide_politics1_w1_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="自己紹介" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758, #6A5ACD)" data-background-transition="slide" data-background-color="#113758">
 <h1>Ⅰ. 自己紹介</h1>
@@ -242,116 +325,492 @@
 </section>
 <section id="シラバス-成績評価の方法およびその基準" class="slide level2">
 <h2>シラバス &gt; 成績評価の方法およびその基準</h2>
+<p><br><br></p>
 <div class="cell">
 <div class="cell-output-display">
-<!-- preamble start -->
+<div id="ncduphgusv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ncduphgusv table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-    <script>
+#ncduphgusv thead, #ncduphgusv tbody, #ncduphgusv tfoot, #ncduphgusv tr, #ncduphgusv td, #ncduphgusv th {
+  border-style: none;
+}
 
-      function styleCell_pmwnr2xbf68f3rprjy4y(i, j, css_id) {
-          var table = document.getElementById("tinytable_pmwnr2xbf68f3rprjy4y");
-          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
-          if (cell) {
-              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
-              cell.classList.add(css_id);
-          } else {
-              console.warn(`Cell at (${i}, ${j}) not found.`);
-          }
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_pmwnr2xbf68f3rprjy4y');
-        var newRow = table.insertRow(i);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
-      function spanCell_pmwnr2xbf68f3rprjy4y(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_pmwnr2xbf68f3rprjy4y");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
-        for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
-            }
-          }
-        }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
-      }
-      // tinytable span after
-      window.addEventListener('load', function () {
-          var cellsToStyle = [
-            // tinytable style arrays after
-          { positions: [ { i: 4, j: 0 }, { i: 4, j: 1 }, { i: 4, j: 2 },  ], css_id: 'tinytable_css_wcy2xn0nt8dgg2h3w8jl',}, 
-          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_qpip7vlyiowqdqkuyuf3',}, 
-          ];
+#ncduphgusv p {
+  margin: 0;
+  padding: 0;
+}
 
-          // Loop over the arrays to style the cells
-          cellsToStyle.forEach(function (group) {
-              group.positions.forEach(function (cell) {
-                  styleCell_pmwnr2xbf68f3rprjy4y(cell.i, cell.j, group.css_id);
-              });
-          });
-      });
-    </script>
+#ncduphgusv .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 40px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
 
-    <style>
-      /* tinytable css entries after */
-      .table td.tinytable_css_wcy2xn0nt8dgg2h3w8jl, .table th.tinytable_css_wcy2xn0nt8dgg2h3w8jl { border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_qpip7vlyiowqdqkuyuf3, .table th.tinytable_css_qpip7vlyiowqdqkuyuf3 { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-    </style>
-    <div class="container">
-      <table class="table table-borderless" id="tinytable_pmwnr2xbf68f3rprjy4y" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
-        
-              <tr>
-                <th scope="col">項目</th>
-                <th scope="col">比率</th>
-                <th scope="col">到達目標</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td>リーディング・アサインメント</td>
-                  <td>30</td>
-                  <td>4</td>
-                </tr>
-                <tr>
-                  <td>授業の感想</td>
-                  <td>30</td>
-                  <td>1;2</td>
-                </tr>
-                <tr>
-                  <td>レポート（2種）</td>
-                  <td>30</td>
-                  <td>1; 2; 3; 4; 5</td>
-                </tr>
-                <tr>
-                  <td>ディスカッション（受講態度を含む）</td>
-                  <td>10</td>
-                  <td>1; 2</td>
-                </tr>
-        </tbody>
-      </table>
-    </div>
-<!-- hack to avoid NA insertion in last line -->
+#ncduphgusv .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ncduphgusv .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ncduphgusv .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ncduphgusv .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ncduphgusv .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ncduphgusv .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ncduphgusv .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ncduphgusv .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ncduphgusv .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ncduphgusv .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ncduphgusv .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ncduphgusv .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ncduphgusv .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ncduphgusv .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ncduphgusv .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ncduphgusv .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ncduphgusv .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ncduphgusv .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ncduphgusv .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ncduphgusv .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ncduphgusv .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ncduphgusv .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ncduphgusv .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ncduphgusv .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ncduphgusv .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ncduphgusv .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ncduphgusv .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ncduphgusv .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ncduphgusv .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ncduphgusv .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ncduphgusv .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ncduphgusv .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ncduphgusv .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ncduphgusv .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ncduphgusv .gt_left {
+  text-align: left;
+}
+
+#ncduphgusv .gt_center {
+  text-align: center;
+}
+
+#ncduphgusv .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ncduphgusv .gt_font_normal {
+  font-weight: normal;
+}
+
+#ncduphgusv .gt_font_bold {
+  font-weight: bold;
+}
+
+#ncduphgusv .gt_font_italic {
+  font-style: italic;
+}
+
+#ncduphgusv .gt_super {
+  font-size: 65%;
+}
+
+#ncduphgusv .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ncduphgusv .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ncduphgusv .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ncduphgusv .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ncduphgusv .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ncduphgusv .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ncduphgusv .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#ncduphgusv .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ncduphgusv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="a項目" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">項目</th>
+<th id="a比率" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">比率</th>
+<th id="a到達目標" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">到達目標</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="項目">リーディング・アサインメント</td>
+<td class="gt_row gt_right" headers="比率">30</td>
+<td class="gt_row gt_left" headers="到達目標">4</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="項目">授業の感想</td>
+<td class="gt_row gt_right" headers="比率">30</td>
+<td class="gt_row gt_left" headers="到達目標">1;2</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="項目">レポート（2種）</td>
+<td class="gt_row gt_right" headers="比率">30</td>
+<td class="gt_row gt_left" headers="到達目標">1; 2; 3; 4; 5</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="項目">ディスカッション（受講態度を含む）</td>
+<td class="gt_row gt_right" headers="比率">10</td>
+<td class="gt_row gt_left" headers="到達目標">1; 2</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 </div>
 </div>
 </section>
@@ -467,23 +926,23 @@
 <h2>スケジュール</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="nmljlzzelf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nmljlzzelf table {
+<div id="szxorwnkzc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#szxorwnkzc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nmljlzzelf thead, #nmljlzzelf tbody, #nmljlzzelf tfoot, #nmljlzzelf tr, #nmljlzzelf td, #nmljlzzelf th {
+#szxorwnkzc thead, #szxorwnkzc tbody, #szxorwnkzc tfoot, #szxorwnkzc tr, #szxorwnkzc td, #szxorwnkzc th {
   border-style: none;
 }
 
-#nmljlzzelf p {
+#szxorwnkzc p {
   margin: 0;
   padding: 0;
 }
 
-#nmljlzzelf .gt_table {
+#szxorwnkzc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -509,12 +968,12 @@
   border-left-color: #D3D3D3;
 }
 
-#nmljlzzelf .gt_caption {
+#szxorwnkzc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nmljlzzelf .gt_title {
+#szxorwnkzc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -526,7 +985,7 @@
   border-bottom-width: 0;
 }
 
-#nmljlzzelf .gt_subtitle {
+#szxorwnkzc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -538,7 +997,7 @@
   border-top-width: 0;
 }
 
-#nmljlzzelf .gt_heading {
+#szxorwnkzc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -550,13 +1009,13 @@
   border-right-color: #D3D3D3;
 }
 
-#nmljlzzelf .gt_bottom_border {
+#szxorwnkzc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nmljlzzelf .gt_col_headings {
+#szxorwnkzc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -571,7 +1030,7 @@
   border-right-color: #D3D3D3;
 }
 
-#nmljlzzelf .gt_col_heading {
+#szxorwnkzc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -591,7 +1050,7 @@
   overflow-x: hidden;
 }
 
-#nmljlzzelf .gt_column_spanner_outer {
+#szxorwnkzc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -603,15 +1062,15 @@
   padding-right: 4px;
 }
 
-#nmljlzzelf .gt_column_spanner_outer:first-child {
+#szxorwnkzc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nmljlzzelf .gt_column_spanner_outer:last-child {
+#szxorwnkzc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nmljlzzelf .gt_column_spanner {
+#szxorwnkzc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -623,11 +1082,11 @@
   width: 100%;
 }
 
-#nmljlzzelf .gt_spanner_row {
+#szxorwnkzc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nmljlzzelf .gt_group_heading {
+#szxorwnkzc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -653,7 +1112,7 @@
   text-align: left;
 }
 
-#nmljlzzelf .gt_empty_group_heading {
+#szxorwnkzc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -668,15 +1127,15 @@
   vertical-align: middle;
 }
 
-#nmljlzzelf .gt_from_md > :first-child {
+#szxorwnkzc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nmljlzzelf .gt_from_md > :last-child {
+#szxorwnkzc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nmljlzzelf .gt_row {
+#szxorwnkzc .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -695,7 +1154,7 @@
   overflow-x: hidden;
 }
 
-#nmljlzzelf .gt_stub {
+#szxorwnkzc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -708,7 +1167,7 @@
   padding-right: 5px;
 }
 
-#nmljlzzelf .gt_stub_row_group {
+#szxorwnkzc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -722,15 +1181,15 @@
   vertical-align: top;
 }
 
-#nmljlzzelf .gt_row_group_first td {
+#szxorwnkzc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nmljlzzelf .gt_row_group_first th {
+#szxorwnkzc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nmljlzzelf .gt_summary_row {
+#szxorwnkzc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -740,16 +1199,16 @@
   padding-right: 5px;
 }
 
-#nmljlzzelf .gt_first_summary_row {
+#szxorwnkzc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nmljlzzelf .gt_first_summary_row.thick {
+#szxorwnkzc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nmljlzzelf .gt_last_summary_row {
+#szxorwnkzc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -759,7 +1218,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#nmljlzzelf .gt_grand_summary_row {
+#szxorwnkzc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -769,7 +1228,7 @@
   padding-right: 5px;
 }
 
-#nmljlzzelf .gt_first_grand_summary_row {
+#szxorwnkzc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -779,7 +1238,7 @@
   border-top-color: #D3D3D3;
 }
 
-#nmljlzzelf .gt_last_grand_summary_row_top {
+#szxorwnkzc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -789,11 +1248,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#nmljlzzelf .gt_striped {
+#szxorwnkzc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nmljlzzelf .gt_table_body {
+#szxorwnkzc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -802,7 +1261,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#nmljlzzelf .gt_footnotes {
+#szxorwnkzc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -816,7 +1275,7 @@
   border-right-color: #D3D3D3;
 }
 
-#nmljlzzelf .gt_footnote {
+#szxorwnkzc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -825,7 +1284,7 @@
   padding-right: 5px;
 }
 
-#nmljlzzelf .gt_sourcenotes {
+#szxorwnkzc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -839,7 +1298,7 @@
   border-right-color: #D3D3D3;
 }
 
-#nmljlzzelf .gt_sourcenote {
+#szxorwnkzc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -847,72 +1306,72 @@
   padding-right: 5px;
 }
 
-#nmljlzzelf .gt_left {
+#szxorwnkzc .gt_left {
   text-align: left;
 }
 
-#nmljlzzelf .gt_center {
+#szxorwnkzc .gt_center {
   text-align: center;
 }
 
-#nmljlzzelf .gt_right {
+#szxorwnkzc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nmljlzzelf .gt_font_normal {
+#szxorwnkzc .gt_font_normal {
   font-weight: normal;
 }
 
-#nmljlzzelf .gt_font_bold {
+#szxorwnkzc .gt_font_bold {
   font-weight: bold;
 }
 
-#nmljlzzelf .gt_font_italic {
+#szxorwnkzc .gt_font_italic {
   font-style: italic;
 }
 
-#nmljlzzelf .gt_super {
+#szxorwnkzc .gt_super {
   font-size: 65%;
 }
 
-#nmljlzzelf .gt_footnote_marks {
+#szxorwnkzc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nmljlzzelf .gt_asterisk {
+#szxorwnkzc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nmljlzzelf .gt_indent_1 {
+#szxorwnkzc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nmljlzzelf .gt_indent_2 {
+#szxorwnkzc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nmljlzzelf .gt_indent_3 {
+#szxorwnkzc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nmljlzzelf .gt_indent_4 {
+#szxorwnkzc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nmljlzzelf .gt_indent_5 {
+#szxorwnkzc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nmljlzzelf .katex-display {
+#szxorwnkzc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nmljlzzelf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#szxorwnkzc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1081,23 +1540,23 @@
 <h2>リーディングアサインメント</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="yedlvrkctr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yedlvrkctr table {
+<div id="cildjhbgiu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cildjhbgiu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yedlvrkctr thead, #yedlvrkctr tbody, #yedlvrkctr tfoot, #yedlvrkctr tr, #yedlvrkctr td, #yedlvrkctr th {
+#cildjhbgiu thead, #cildjhbgiu tbody, #cildjhbgiu tfoot, #cildjhbgiu tr, #cildjhbgiu td, #cildjhbgiu th {
   border-style: none;
 }
 
-#yedlvrkctr p {
+#cildjhbgiu p {
   margin: 0;
   padding: 0;
 }
 
-#yedlvrkctr .gt_table {
+#cildjhbgiu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1123,12 +1582,12 @@
   border-left-color: #D3D3D3;
 }
 
-#yedlvrkctr .gt_caption {
+#cildjhbgiu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yedlvrkctr .gt_title {
+#cildjhbgiu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1140,7 +1599,7 @@
   border-bottom-width: 0;
 }
 
-#yedlvrkctr .gt_subtitle {
+#cildjhbgiu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1152,7 +1611,7 @@
   border-top-width: 0;
 }
 
-#yedlvrkctr .gt_heading {
+#cildjhbgiu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1164,13 +1623,13 @@
   border-right-color: #D3D3D3;
 }
 
-#yedlvrkctr .gt_bottom_border {
+#cildjhbgiu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yedlvrkctr .gt_col_headings {
+#cildjhbgiu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1185,7 +1644,7 @@
   border-right-color: #D3D3D3;
 }
 
-#yedlvrkctr .gt_col_heading {
+#cildjhbgiu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1205,7 +1664,7 @@
   overflow-x: hidden;
 }
 
-#yedlvrkctr .gt_column_spanner_outer {
+#cildjhbgiu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1217,15 +1676,15 @@
   padding-right: 4px;
 }
 
-#yedlvrkctr .gt_column_spanner_outer:first-child {
+#cildjhbgiu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yedlvrkctr .gt_column_spanner_outer:last-child {
+#cildjhbgiu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yedlvrkctr .gt_column_spanner {
+#cildjhbgiu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1237,11 +1696,11 @@
   width: 100%;
 }
 
-#yedlvrkctr .gt_spanner_row {
+#cildjhbgiu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yedlvrkctr .gt_group_heading {
+#cildjhbgiu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1267,7 +1726,7 @@
   text-align: left;
 }
 
-#yedlvrkctr .gt_empty_group_heading {
+#cildjhbgiu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1282,15 +1741,15 @@
   vertical-align: middle;
 }
 
-#yedlvrkctr .gt_from_md > :first-child {
+#cildjhbgiu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yedlvrkctr .gt_from_md > :last-child {
+#cildjhbgiu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yedlvrkctr .gt_row {
+#cildjhbgiu .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1309,7 +1768,7 @@
   overflow-x: hidden;
 }
 
-#yedlvrkctr .gt_stub {
+#cildjhbgiu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1322,7 +1781,7 @@
   padding-right: 5px;
 }
 
-#yedlvrkctr .gt_stub_row_group {
+#cildjhbgiu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1336,15 +1795,15 @@
   vertical-align: top;
 }
 
-#yedlvrkctr .gt_row_group_first td {
+#cildjhbgiu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yedlvrkctr .gt_row_group_first th {
+#cildjhbgiu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yedlvrkctr .gt_summary_row {
+#cildjhbgiu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1354,16 +1813,16 @@
   padding-right: 5px;
 }
 
-#yedlvrkctr .gt_first_summary_row {
+#cildjhbgiu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yedlvrkctr .gt_first_summary_row.thick {
+#cildjhbgiu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yedlvrkctr .gt_last_summary_row {
+#cildjhbgiu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1373,7 +1832,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#yedlvrkctr .gt_grand_summary_row {
+#cildjhbgiu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1383,7 +1842,7 @@
   padding-right: 5px;
 }
 
-#yedlvrkctr .gt_first_grand_summary_row {
+#cildjhbgiu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1393,7 +1852,7 @@
   border-top-color: #D3D3D3;
 }
 
-#yedlvrkctr .gt_last_grand_summary_row_top {
+#cildjhbgiu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1403,11 +1862,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#yedlvrkctr .gt_striped {
+#cildjhbgiu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yedlvrkctr .gt_table_body {
+#cildjhbgiu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1416,7 +1875,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#yedlvrkctr .gt_footnotes {
+#cildjhbgiu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1430,7 +1889,7 @@
   border-right-color: #D3D3D3;
 }
 
-#yedlvrkctr .gt_footnote {
+#cildjhbgiu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1439,7 +1898,7 @@
   padding-right: 5px;
 }
 
-#yedlvrkctr .gt_sourcenotes {
+#cildjhbgiu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1453,7 +1912,7 @@
   border-right-color: #D3D3D3;
 }
 
-#yedlvrkctr .gt_sourcenote {
+#cildjhbgiu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1461,72 +1920,72 @@
   padding-right: 5px;
 }
 
-#yedlvrkctr .gt_left {
+#cildjhbgiu .gt_left {
   text-align: left;
 }
 
-#yedlvrkctr .gt_center {
+#cildjhbgiu .gt_center {
   text-align: center;
 }
 
-#yedlvrkctr .gt_right {
+#cildjhbgiu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yedlvrkctr .gt_font_normal {
+#cildjhbgiu .gt_font_normal {
   font-weight: normal;
 }
 
-#yedlvrkctr .gt_font_bold {
+#cildjhbgiu .gt_font_bold {
   font-weight: bold;
 }
 
-#yedlvrkctr .gt_font_italic {
+#cildjhbgiu .gt_font_italic {
   font-style: italic;
 }
 
-#yedlvrkctr .gt_super {
+#cildjhbgiu .gt_super {
   font-size: 65%;
 }
 
-#yedlvrkctr .gt_footnote_marks {
+#cildjhbgiu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yedlvrkctr .gt_asterisk {
+#cildjhbgiu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yedlvrkctr .gt_indent_1 {
+#cildjhbgiu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yedlvrkctr .gt_indent_2 {
+#cildjhbgiu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yedlvrkctr .gt_indent_3 {
+#cildjhbgiu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yedlvrkctr .gt_indent_4 {
+#cildjhbgiu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yedlvrkctr .gt_indent_5 {
+#cildjhbgiu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yedlvrkctr .katex-display {
+#cildjhbgiu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yedlvrkctr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#cildjhbgiu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1534,111 +1993,104 @@
 <table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
-<th id="a回" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">回</th>
 <th id="a授業日" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">授業日</th>
 <th id="a著者" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">著者</th>
 <th id="aタイトル" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">タイトル</th>
 <th id="a〆切" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">〆切</th>
+<th id="URL" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">URL</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_right" headers="回">1</td>
 <td class="gt_row gt_right" headers="授業日">12-03</td>
 <td class="gt_row gt_left" headers="著者">テレ東BIZ</td>
 <td class="gt_row gt_left" headers="タイトル">春風亭一之輔の1票の流儀(動画コンテンツ)</td>
-<td class="gt_row gt_right" headers="〆切">-</td>
+<td class="gt_row gt_right" headers="〆切">2025-12-01</td>
+<td class="gt_row gt_left" headers="URL"><a href="https://txbiz.tv-tokyo.co.jp/original2/vod/post_320845">URL</a></td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right gt_striped" headers="回">2</td>
 <td class="gt_row gt_right gt_striped" headers="授業日">12-17</td>
 <td class="gt_row gt_left gt_striped" headers="著者">上野千鶴子ら</td>
 <td class="gt_row gt_left gt_striped" headers="タイトル">座談会 経産省 次官・若手プロジェクト「不安な個人、立ちすくむ国家」をめぐって</td>
 <td class="gt_row gt_right gt_striped" headers="〆切">2025-12-15</td>
+<td class="gt_row gt_left gt_striped" headers="URL"><a href="https://moodle.cerd.shimane-u.ac.jp/moodle_2025/">URL</a></td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="回">3</td>
 <td class="gt_row gt_right" headers="授業日">01-07</td>
 <td class="gt_row gt_left" headers="著者">原武史ら</td>
 <td class="gt_row gt_left" headers="タイトル">座談会 これからの象徴天皇制を考える</td>
-<td class="gt_row gt_right" headers="〆切">01-05</td>
+<td class="gt_row gt_right" headers="〆切">2025-01-05</td>
+<td class="gt_row gt_left" headers="URL"><a href="https://moodle.cerd.shimane-u.ac.jp/moodle_2025/">URL</a></td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right gt_striped" headers="回">4</td>
 <td class="gt_row gt_right gt_striped" headers="授業日">01-21</td>
 <td class="gt_row gt_left gt_striped" headers="著者">-</td>
 <td class="gt_row gt_left gt_striped" headers="タイトル">-</td>
-<td class="gt_row gt_right gt_striped" headers="〆切">01-19</td>
+<td class="gt_row gt_right gt_striped" headers="〆切">2025-01-19</td>
+<td class="gt_row gt_left gt_striped" headers="URL"><a href="https://moodle.cerd.shimane-u.ac.jp/moodle_2025/">URL</a></td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="回">5</td>
 <td class="gt_row gt_right" headers="授業日">02-02</td>
 <td class="gt_row gt_left" headers="著者">-</td>
 <td class="gt_row gt_left" headers="タイトル">-</td>
-<td class="gt_row gt_right" headers="〆切">01-30</td>
+<td class="gt_row gt_right" headers="〆切">2025-01-30</td>
+<td class="gt_row gt_left" headers="URL"><a href="https://moodle.cerd.shimane-u.ac.jp/moodle_2025/">URL</a></td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right gt_striped" headers="回">6</td>
 <td class="gt_row gt_right gt_striped" headers="授業日">02-02</td>
 <td class="gt_row gt_left gt_striped" headers="著者">-</td>
 <td class="gt_row gt_left gt_striped" headers="タイトル">-</td>
-<td class="gt_row gt_right gt_striped" headers="〆切">01-30</td>
+<td class="gt_row gt_right gt_striped" headers="〆切">2025-01-30</td>
+<td class="gt_row gt_left gt_striped" headers="URL"><a href="https://moodle.cerd.shimane-u.ac.jp/moodle_2025/">URL</a></td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="回">7</td>
 <td class="gt_row gt_right" headers="授業日">02-03</td>
 <td class="gt_row gt_left" headers="著者">TBSラジオ「セイジドウラク」</td>
 <td class="gt_row gt_left" headers="タイトル">Ep.11「澤田記者が参議院を好きすぎる件」（音声コンテンツ）</td>
-<td class="gt_row gt_right" headers="〆切">-</td>
+<td class="gt_row gt_right" headers="〆切">2025-01-30</td>
+<td class="gt_row gt_left" headers="URL"><a href="https://www.youtube.com/watch?v=0nRr9E-qfYQ&amp;pp=0gcJCfwJAYcqIYzv">URL</a></td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right gt_striped" headers="回">8</td>
 <td class="gt_row gt_right gt_striped" headers="授業日">02-05</td>
 <td class="gt_row gt_left gt_striped" headers="著者">朝日新聞</td>
 <td class="gt_row gt_left gt_striped" headers="タイトル">子犬・子猫、健やかに育つために（2019年9月25日）</td>
-<td class="gt_row gt_right gt_striped" headers="〆切">01-30</td>
+<td class="gt_row gt_right gt_striped" headers="〆切">2025-01-30</td>
+<td class="gt_row gt_left gt_striped" headers="URL"><a href="https://moodle.cerd.shimane-u.ac.jp/moodle_2025/">URL</a></td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="回">9</td>
 <td class="gt_row gt_right" headers="授業日">02-05</td>
 <td class="gt_row gt_left" headers="著者">-</td>
 <td class="gt_row gt_left" headers="タイトル">-</td>
-<td class="gt_row gt_right" headers="〆切">-</td>
+<td class="gt_row gt_right" headers="〆切">2025-02-03</td>
+<td class="gt_row gt_left" headers="URL"><a href="https://moodle.cerd.shimane-u.ac.jp/moodle_2025/">URL</a></td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right gt_striped" headers="回">10</td>
 <td class="gt_row gt_right gt_striped" headers="授業日">02-05</td>
 <td class="gt_row gt_left gt_striped" headers="著者">真渕勝</td>
 <td class="gt_row gt_left gt_striped" headers="タイトル">公共的人間</td>
-<td class="gt_row gt_right gt_striped" headers="〆切">02-03</td>
+<td class="gt_row gt_right gt_striped" headers="〆切">2025-02-03</td>
+<td class="gt_row gt_left gt_striped" headers="URL"><a href="https://moodle.cerd.shimane-u.ac.jp/moodle_2025/">URL</a></td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="回">11</td>
 <td class="gt_row gt_right" headers="授業日">02-06</td>
 <td class="gt_row gt_left" headers="著者">-</td>
 <td class="gt_row gt_left" headers="タイトル">-</td>
-<td class="gt_row gt_right" headers="〆切">02-03</td>
+<td class="gt_row gt_right" headers="〆切">2025-02-03</td>
+<td class="gt_row gt_left" headers="URL"><a href="https://moodle.cerd.shimane-u.ac.jp/moodle_2025/">URL</a></td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right gt_striped" headers="回">12</td>
 <td class="gt_row gt_right gt_striped" headers="授業日">02-06</td>
-<td class="gt_row gt_left gt_striped" headers="著者">金井利之</td>
-<td class="gt_row gt_left gt_striped" headers="タイトル">財政調整制度と「ふるさと納税」制度</td>
-<td class="gt_row gt_right gt_striped" headers="〆切">02-03</td>
+<td class="gt_row gt_left gt_striped" headers="著者">朝日新聞ポッドキャスト</td>
+<td class="gt_row gt_left gt_striped" headers="タイトル">「地方の維持はコスト、消滅しても問題ない」…えっ？　8がけ社会を語ろう</td>
+<td class="gt_row gt_right gt_striped" headers="〆切">2025-02-03</td>
+<td class="gt_row gt_left gt_striped" headers="URL"><a href="https://www.asahi.com/special/podcasts/item/?itemid=80801ac2-e6dc-42dc-8085-b28b00654b4a&amp;page=1&amp;iref=pc_special_podcasts&amp;pgid=hachigakeshakai">URL</a></td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="回">13</td>
 <td class="gt_row gt_right" headers="授業日">02-07</td>
 <td class="gt_row gt_left" headers="著者">読売新聞</td>
 <td class="gt_row gt_left" headers="タイトル">［平成時代］大合併　残した課題（2019年4月9日）</td>
-<td class="gt_row gt_right" headers="〆切">02-03</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right gt_striped" headers="回">14</td>
-<td class="gt_row gt_right gt_striped" headers="授業日">02-07</td>
-<td class="gt_row gt_left gt_striped" headers="著者">-</td>
-<td class="gt_row gt_left gt_striped" headers="タイトル">-</td>
-<td class="gt_row gt_right gt_striped" headers="〆切">-</td>
+<td class="gt_row gt_right" headers="〆切">2025-02-03</td>
+<td class="gt_row gt_left" headers="URL"><a href="https://moodle.cerd.shimane-u.ac.jp/moodle_2025/">URL</a></td>
 </tr>
 </tbody>
 </table>
@@ -1653,8 +2105,8 @@
 </div>
 <div class="callout-content">
 <ul>
-<li>上記の指定文献は、著作権の都合上、<a href="https://moodle.cerd.shimane-u.ac.jp/moodle_2024/">Moodle</a>上に置いておきます</li>
-<li>提出先は<a href="https://forms.gle/zqBkQCE2kWwzLRCj8" data-modal-type="iframe">Googleフォーム</a>です</li>
+<li>各文献、メディアには、URLからアクセスして下さい</li>
+<li>提出先は<a href="https://forms.gle/zqBkQCE2kWwzLRCj8">Googleフォーム</a>です</li>
 <li>各回3点。2月13日23:59まで遅延提出を認めますが、得点は1点となります</li>
 </ul>
 </div>
@@ -1662,12 +2114,12 @@
 </div>
 </section></section>
 <section>
-<section id="中学の公民高校の公共大学の政治学" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758, #6A5ACD)" data-background-transition="slide" data-background-color="#113758">
-<h1>Ⅲ. 中学の「公民」／高校の「公共」／大学の「政治学」</h1>
+<section id="公民公共政治学" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758, #6A5ACD)" data-background-transition="slide" data-background-color="#113758">
+<h1>Ⅲ. 「公民」/「公共」/「政治学」</h1>
 
 </section>
-<section id="公民公共政治学中等教育と高等教育の違い" class="slide level2">
-<h2>「公民」／「公共」／「政治学」：中等教育と高等教育の違い</h2>
+<section id="公民公共政治学-中等教育と高等教育の違い" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 ＞ 中等教育と高等教育の違い</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="中等教育">中等教育：</h3>
@@ -1716,8 +2168,8 @@
 <!-- > 「公民」である私たちには、競争と共生、自己主張と自己をこえるものへの愛を、ともに実現させながら生きることが求められる（清水書院） -->
 <!-- > 知識や体験をばらばらな情報として受け入れるだけではなく、それを自分のなかでまとめて、意味づけてみよう。そうしてはじめて、あなたたちは、社会を「知る」ことができる（清水書院） -->
 </section>
-<section id="公民公共政治学政治的中立性" class="slide level2">
-<h2>「公民」／「公共」／「政治学」：政治的中立性</h2>
+<section id="公民公共政治学-政治的中立性" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 ＞政治的中立性</h2>
 <h3 id="学校における政治的中立性についての政府公式見解">学校における政治的中立性についての政府公式見解</h3>
 <blockquote>
 <p>〔教育基本法第14条〕第2項は、「公の性質」を有する学校においては、その政治的中立性を確保するため、教育内容に一党一派の政治的な主義・主張が持ち込まれたり、学校が政治的活動の舞台となるようなことは厳に避けなくてはならないことから、<em>学校教育における党派的政治教育の禁止</em>を規定するものである</p>
@@ -1752,8 +2204,8 @@
 </div>
 </div>
 </section>
-<section id="公民公共政治学試験の政治的中立性" class="slide level2">
-<h2>「公民」／「公共」／「政治学」：試験の「政治的中立性」</h2>
+<section id="公民公共政治学-試験の政治的中立性" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 ＞ 試験の「政治的中立性」</h2>
 <div class="columns">
 <div class="column" style="width:65%;">
 <p>Q1. 現在の首相の氏名を漢字で書きなさい</p>
@@ -1777,8 +2229,8 @@
 <p>出典：<a href="https://twitter.com/kishida230/status/1303288227218911233">kishida230</a>（旧Twitter）</p>
 </div></div>
 </section>
-<section id="公民公共政治学歴史教育の場合" class="slide level2">
-<h2>「公民」／「公共」／「政治学」：歴史教育の場合</h2>
+<section id="公民公共政治学-歴史教育の場合" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 ＞ 歴史教育の場合</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <h3 id="映画教育と愛国">映画『教育と愛国』</h3>
@@ -1797,8 +2249,8 @@
 <p><a href="https://www.youtube.com/watch?v=GkuFbWxHDrM"><img data-src="https://img.youtube.com/vi/GkuFbWxHDrM/0.jpg" style="width:100.0%"></a></p>
 </div></div>
 </section>
-<section id="公民公共政治学政治的中立性の研究" class="slide level2">
-<h2>「公民」／「公共」／「政治学」：「政治的中立性」の研究</h2>
+<section id="公民公共政治学-政治的中立性の研究" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 ＞ 「政治的中立性」の研究</h2>
 <h3 id="政治的中立性を遵守すべきか">「政治的中立性」を遵守すべきか</h3>
 <ol type="1">
 <li>国際比較</li>
@@ -1820,16 +2272,16 @@
 </ol></li>
 </ul>
 </section>
-<section id="公民公共政治学政治学者ってどんな人" class="slide level2">
-<h2>「公民」／「公共」／「政治学」：政治学者ってどんな人？</h2>
+<section id="公民公共政治学-政治学者ってどんな人" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 ＞ 政治学者ってどんな人？</h2>
 <h3 id="政治学者の共通点">1. 政治学者の共通点</h3>
 <ol type="1">
 <li>素直じゃない（簡単には信じない）</li>
 <li>（新しい事実・解釈を面白がる）</li>
 </ol>
 </section>
-<section id="公民公共政治学政治学者ってどんな人-1" class="slide level2">
-<h2>「公民」／「公共」／「政治学」：政治学者ってどんな人？</h2>
+<section id="公民公共政治学-政治学者ってどんな人-1" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 ＞ 政治学者ってどんな人？</h2>
 <h3 id="政治経験政治史の共有">2. 政治経験（政治史）の共有</h3>
 <ol type="1">
 <li>ソクラテスの民主主義批判</li>
@@ -1852,8 +2304,8 @@
 </ul></li>
 </ul>
 </section>
-<section id="公民公共政治学政治学者ってどんな人-2" class="slide level2">
-<h2>「公民」／「公共」／「政治学」：政治学者ってどんな人？</h2>
+<section id="公民公共政治学-政治学者ってどんな人-2" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 ＞ 政治学者ってどんな人？</h2>
 <h3 id="規範と実証をめぐる政治学者の対立">3. 規範と実証をめぐる政治学者の対立</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -1888,8 +2340,8 @@
 </ul>
 </div></div>
 </section>
-<section id="公民公共政治学" class="slide level2">
-<h2>「公民」／「公共」／「政治学」</h2>
+<section id="公民公共政治学-1" class="slide level2">
+<h2>「公民」/「公共」/「政治学」</h2>
 <ul>
 <li>外来語という厄介な問題
 <ul>
@@ -1923,8 +2375,8 @@
 </div>
 </section></section>
 <section>
-<section id="おすすめのニュース系番組記事と教科書" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758, #6A5ACD)" data-background-transition="slide" data-background-color="#113758">
-<h1>Ⅳ. おすすめのニュース系番組・記事と教科書</h1>
+<section id="おすすめの番組記事本" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758, #6A5ACD)" data-background-transition="slide" data-background-color="#113758">
+<h1>Ⅳ. おすすめの番組・記事・本</h1>
 
 </section>
 <section id="おすすめのニュース系番組" class="slide level2">
