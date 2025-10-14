@@ -51,7 +51,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-7e5775daa20986451d51911c937ce694.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-c27b255b728024f9fc987a3430b333c0.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -1697,6 +1697,8 @@
               if (link.dataset.originalHref !== undefined) {
                 link.href = link.dataset.originalHref;
               }
+                // default icon
+                link.classList.add("external");
             }
           }
         function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
