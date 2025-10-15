@@ -2643,7 +2643,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#rを動かしてみよう訪日外客数の推移-1",
     "title": "初心者向けR Studioの使い方",
     "section": "Rを動かしてみよう：訪日外客数の推移",
-    "text": "Rを動かしてみよう：訪日外客数の推移\n\nデータの読み込み：read_csv()関数\n\n\n\n\n\n\n\nread.csv関数が補完入力されるかもしれません。read.csv関数はbase Rの関数で、今日では標準ではありません（.ドットと_アンダースコアの違い）\n\n\n\n\n\nCode\ndf_inbound &lt;-\n  read_csv(\"data/inbound_travelers.csv\")\n\ndf_inbound |&gt; \n  ggplot(aes(x = Year, y = `Visitor Arrivals`)) +\n  geom_line() +\n  scale_x_continuous(\n    breaks = seq(1964, 2025, by = 5)  # 5年刻み\n  ) +\n  labs(x = \"年\",\n       y = \"訪日外国人客数\") +\n  scale_y_continuous(\n    labels = label_number(big.mark = \",\", accuracy = 1)\n  ) # 指数表記を通常表記に（指数表記をあらためるためには、scalesパッケージを追加する必要があります）"
+    "text": "Rを動かしてみよう：訪日外客数の推移\n\nデータの読み込み：read_csv()関数\n\n\n\n\n\n\n\nread.csv関数が補完入力されるかもしれません。read.csv関数はbase Rの関数で、今日では標準ではありません（.ドットと_アンダースコアの違い）\n\n\n\n\n\nCode\ndf_inbound &lt;-\n  read_csv(\"data/inbound_travelers.csv\")\n\ndf_inbound |&gt; \n  ggplot(aes(x = Year, y = `Visitor Arrivals`)) + # カラム名に空白や記号が含まれている場合は、バッククォート（`）で囲む\n  geom_line() +\n  scale_x_continuous(\n    breaks = seq(1964, 2025, by = 5)  # 5年刻み\n  ) +\n  labs(x = \"年\",\n       y = \"訪日外国人客数\") +\n  scale_y_continuous(\n    labels = label_number(big.mark = \",\", accuracy = 1)\n  ) # 指数表記を通常表記に（指数表記をあらためるためには、scalesパッケージを追加する必要があります）"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rを動かしてみようデータの読み込み",
