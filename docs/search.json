@@ -2433,7 +2433,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#準備パッケージの読み込み",
     "title": "初心者向けR Studioの使い方",
     "section": "準備：パッケージの読み込み",
-    "text": "準備：パッケージの読み込み\n\n先に作成したSetup Chunkで、Modern Rの基本パッケージ群tidyverseを読み込む\n\nSouceペイン内で作業\n# パッケージの読み込み ---- #「# ○○-----」と書いておくと、Outlineに表示されてみやすい\nlibrary(tidyverse) # modern Rの基本パッケージ\n\n\n\n\n\n\nR Chunk内では # をコードの前につけると、その行は実行されずにメモとして残せます。また、# より右側の文字も Rでは実行されません（コメントアウトと呼びます）"
+    "text": "準備：パッケージの読み込み\n\n先に作成したSetup Chunkで、Modern Rの基本パッケージ群tidyverseを読み込む\n\nSouceペイン内で作業\n# パッケージの読み込み ---- #「# ○○-----」と書いておくと、Outlineに表示されてみやすい\nlibrary(tidyverse) # modern Rの基本パッケージ\n\n\n\n\n\n\nR Chunk内では # をコードの前につけると、その行は実行されずにメモとして残せます。また、# より右側の文字もRでは実行されません（コメントアウトと呼びます）。特定のコード（行）が動かない、問題を特定したい場合も有効です"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#準備日本語表示mac",
@@ -2443,11 +2443,11 @@
     "text": "準備：日本語表示（Mac）\n\nggplot（作図パッケージ）は初期設定のままでは日本語を表示できません\nYAMLに以下のコードを書いて下さい\n\n# 描画設定 -----\n# フォントファミリとサイズ\nggplot2::theme_set(\n  ggplot2::theme_get() +\n    ggplot2::theme(text = ggplot2::element_text(family = \"HiraginoSans-W3\", size = 8))\n)\n\n## text/labelのフォントファミリとサイズ\nggplot2::update_geom_defaults(\n  \"text\",\n  list(family = \"HiraginoSans-W3\", size = 6)\n)\n\nggplot2::update_geom_defaults(\n  \"label\",\n  list(family = \"HiraginoSans-W3\", size = 6)\n)"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#準備日本語対応windown",
-    "href": "teaching/RforDatascience/RforDataScience.html#準備日本語対応windown",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#準備日本語対応windows",
+    "href": "teaching/RforDatascience/RforDataScience.html#準備日本語対応windows",
     "title": "初心者向けR Studioの使い方",
-    "section": "準備：日本語対応（Windown）",
-    "text": "準備：日本語対応（Windown）\n\nggplot（作図パッケージ）は初期設定のままでは日本語を表示できません\nYAMLに以下のコードを書いて下さい\n\n# 描画設定 -----\n# フォントファミリとサイズ\nggplot2::theme_set(\n  ggplot2::theme_get() +\n    ggplot2::theme(text = ggplot2::element_text(family = \"Meiryo\", size = 8))\n)\n\n## text/labelのフォントファミリとサイズ\nggplot2::update_geom_defaults(\n  \"text\",\n  list(family = \"Meiryo\", size = 6)\n)\n\nggplot2::update_geom_defaults(\n  \"label\",\n  list(family = \"Meiryo\", size = 6)\n)\n\n文字が表示されない（＝日本語が□で表示されたら）教えてください"
+    "section": "準備：日本語対応（Windows）",
+    "text": "準備：日本語対応（Windows）\n\nggplot（作図パッケージ）は初期設定のままでは日本語を表示できません\nYAMLに以下のコードを書いて下さい\n\n# 描画設定 -----\n# フォントファミリとサイズ\nggplot2::theme_set(\n  ggplot2::theme_get() +\n    ggplot2::theme(text = ggplot2::element_text(family = \"Meiryo\", size = 8))\n)\n\n## text/labelのフォントファミリとサイズ\nggplot2::update_geom_defaults(\n  \"text\",\n  list(family = \"Meiryo\", size = 6)\n)\n\nggplot2::update_geom_defaults(\n  \"label\",\n  list(family = \"Meiryo\", size = 6)\n)\n\n文字が表示されない（＝日本語が□で表示されたら）教えてください"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-1",
@@ -2468,7 +2468,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-3",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\nデータを確認しよう\nview()関数\n\n「データを表にして見やすく開く関数」。データ全体をチェックしたり、列名や値をざっと確認するときに便利\n\n\npenguins |&gt; \n  view()\n\nhead()関数\n\nデータフレームやベクトルの先頭の数行（デフォルトは6行）だけを表示する\n\n\npenguins |&gt; \n  head()"
+    "text": "Rにふれてみよう：palmer penguins\nデータを確認しよう\n\n関数：Rに「こういう処理をしてね」とお願いする命令書\n\nview()関数\n\n「データを表にして見やすく開く関数」。データ全体をチェックしたり、列名や値をざっと確認するときに便利\n\n\npenguins |&gt; \n  view()\n\nhead()関数\n\nデータフレームやベクトルの先頭の数行（デフォルトは6行）だけを表示する\n\n\npenguins |&gt; \n  head()"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-4",
@@ -2489,116 +2489,130 @@
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-6",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\nパッケージの一括インストール\n\nパッケージは各自の必要に応じてインストールすべきですが、時間の都合上、以下のスライドで使用するコードを一括でインストールしましょう。どのパッケージも今日、標準的なものです\n任意のR Chunkで操作（インストール後に削除可）\n\n\n# インストールするパッケージをまとめて指定\npackages &lt;- c(\n  \"readxl\",   # Excelファイルの読み込み\n  \"stringi\",  # 文字列操作\n  \"gt\",       # 表作成\n  \"skimr\",    # データ要約\n  \"scales\",   # 軸やラベルのスケール調整\n  \"zipangu\",  # 元号を西暦に変換\n  \"rvest\",    # Webスクレイピング\n  \"httr2\",    # HTTPリクエスト\n  \"xml2\",     # XML解析\n  \"maps\",      # アメリカの地図情報（地理データ）\n  \"socviz\", # 政治・社会・教育に関連するデータセットが中心（初学者の演習や可視化の教材として便利）\n  \"paletteer\", # カラーパレット\n  \"ngramr\", # Google Ngram Trends\n)"
+    "text": "Rにふれてみよう：palmer penguins\nパイプ（|&gt; または %&gt;%）\n\nmodern Rの大きな特徴の一つ\n処理を連続させるための記号\n\nより正確には「前の結果を次の関数に渡して、処理を順番につなげるための記号」\n\nRを初めて学ぶ人、あるいは他のプログラミング言語に慣れた人にとって つまずきやすく、でももっとも大切な考え方\n\n\nデータ |&gt;\n  処理A() |&gt;\n  処理B()\n\n\n料理で喩えると：「材料を選んで → 炒めて → 味付けする」"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-7",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-7",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\nパッケージの一括インストール\n\n以下のコードをコンソールに入力して実行\n\n\n# 一括インストール\ninstall.packages(packages)"
+    "text": "Rにふれてみよう：palmer penguins\nパイプを使った書き方（modern R）\n\npenguins |&gt; # ペンギンというデータ（正確には「オブジェクト」と表現します）を使って\n  group_by(species) |&gt; # 種類ごとにグループを分けて\n  summarize(mean_body_mass = mean(body_mass, na.rm = TRUE)) # 平均の体重を計算する（na.rm = TRUEは、欠損値を除外する指示）\n\n\nオブジェクトをどう処理したいのかが書きやすい（読みやすい）\n\nパイプを使わない書き方（base R）\n\nsummarize(\n  group_by(penguins, species),\n  mean_body_mass = mean(body_mass, na.rm = TRUE)\n)\n\n\n関数が入れ子構造（ネスト）になり、どこからどこまでが特定の関数なのかわかりにくい\n処理の順番が分かりにくくなり、かっこの対応も見づらい"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-8",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-8",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\nパッケージの一括インストール\n\n以下のコードをSetup Chunkに入力して実行（Run）\n\n\n# パッケージの読み込み\nlibrary(readxl)    # Excelファイルの読み込み\nlibrary(stringi)   # 文字列操作\nlibrary(gt)        # 表作成\nlibrary(skimr)     # データ要約\nlibrary(scales)    # 軸やラベルのスケール調整\nlibrary(zipangu)   # 元号を西暦に変換\nlibrary(rvest)     # Webスクレイピング\nlibrary(httr2)     # HTTPリクエスト\nlibrary(xml2)      # XML解析\nlibrary(maps)      # アメリカの地図情報\nlibrary(socviz)    # 社会・政治・教育関連データセット\nlibrary(paletteer) # カラーパレット\nlibrary(ngramr)    # Google Ngram Trends"
+    "text": "Rにふれてみよう：palmer penguins\nパッケージの一括インストール\n\nパッケージは各自の必要に応じてインストールすべきですが、時間の都合上、以下のスライドで使用するコードを一括でインストールしましょう。どのパッケージも今日、標準的なものです\n任意のR Chunkで操作（インストール後に削除可）\n\n\n# インストールするパッケージをまとめて指定\npackages &lt;- c(\n  \"readxl\",   # Excelファイルの読み込み\n  \"stringi\",  # 文字列操作\n  \"gt\",       # 表作成\n  \"skimr\",    # データ要約\n  \"scales\",   # 軸やラベルのスケール調整\n  \"zipangu\",  # 元号を西暦に変換\n  \"rvest\",    # Webスクレイピング\n  \"httr2\",    # HTTPリクエスト\n  \"xml2\",     # XML解析\n  \"maps\",      # アメリカの地図情報（地理データ）\n  \"socviz\", # 政治・社会・教育に関連するデータセットが中心（初学者の演習や可視化の教材として便利）\n  \"paletteer\", # カラーパレット\n  \"ngramr\", # Google Ngram Trends\n)"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-9",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-9",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\nショートカット\n\nR Chunkは頻繁に使います。ショートカットを覚えましょう\n\n\n\n\n\n\n\nTips | R Chunkのショートカット\n\n\n\nWin: Ctrl + Alt + I\n\nMac: Command + option + I\n\n日本語キーボード：Shift + @ / 英語キーボード：数字の1の左\n\n\n\n\n\n\nインデントを揃える癖をつけましょう\n\n\n\n\n\n\n\nTips | インデントの調整のショートカット\n\n\n\nWin: Ctrl + I / Mac: Command + I"
+    "text": "Rにふれてみよう：palmer penguins\nパッケージの一括インストール\n\n以下のコードをコンソールに入力して実行\n\n\n# 一括インストール\ninstall.packages(packages)"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-10",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-10",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\nデータの型\n\nすべてのオブジェクトは型（クラス）をもつ\n\nR（tidyverse）がデータを読み､適切と思われる型を割り当てる\n\n重要な型\n\nnumeric（数字）\ncharacter（文字）\nfactor（ファクター（因子）：レベルを設定できる）\nlogical（true / false）\ndata.frame（baseRのテーブル形式）\ntibble（tidyverseのテーブル形式）"
+    "text": "Rにふれてみよう：palmer penguins\nパッケージの一括インストール\n\n以下のコードをSetup Chunkに入力して実行（Run）\n\n\n# パッケージの読み込み\nlibrary(readxl)    # Excelファイルの読み込み\nlibrary(stringi)   # 文字列操作\nlibrary(gt)        # 表作成\nlibrary(skimr)     # データ要約\nlibrary(scales)    # 軸やラベルのスケール調整\nlibrary(zipangu)   # 元号を西暦に変換\nlibrary(rvest)     # Webスクレイピング\nlibrary(httr2)     # HTTPリクエスト\nlibrary(xml2)      # XML解析\nlibrary(maps)      # アメリカの地図情報\nlibrary(socviz)    # 社会・政治・教育関連データセット\nlibrary(paletteer) # カラーパレット\nlibrary(ngramr)    # Google Ngram Trends"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-11",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-11",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\nデータの型\n\n\n\n\n\n\n同じ文字でもデータの型が違う可能性がある\n\n\n\nnumeric/character/factor\nggplot（作図）で特に問題になります\n\n例えば散布図はnumeric（数字）であることが基本なので、数字以外の型の場合、プロットできません"
+    "text": "Rにふれてみよう：palmer penguins\nショートカット\n\nR Chunkは頻繁に作成します。ショートカットを覚えましょう\n\n\n\n\n\n\n\nTips | R Chunkのショートカット\n\n\n\nWin: Ctrl + Alt + I\n\nMac: Command + option + I\n\n日本語キーボード：Shift + @ / 英語キーボード：数字の1の左\n\n\n\n\n\n\nインデントを揃える癖をつけましょう\n\n\n\n\n\n\n\nTips | インデントの調整のショートカット\n\n\n\nWin: Ctrl + I / Mac: Command + I"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-12",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-12",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\nデータを要約する\n\npenguins |&gt; \n  filter(!if_any(everything(), is.na)) |&gt; # データの中で、1つでも欠損値（NA）がある行を削除する\n  group_by(species) |&gt; # speciesで分類する\n  summarise( # データを要約する\n    max = max(bill_len), # 「bill_len」の列の最大値\n    min = min(bill_len), # 「bill_len」の列の最小値\n    mean = round(mean(bill_len), 2), # 「bill_len」の列の平均、round関数で小数点以下2桁に丸める\n    sd = sd(bill_len) # 「bill_len」の列の標準偏差、roundしないとこうなる\n  ) |&gt; \n  gt() # 以上の集計結果を表にする\n\n\n\n\n\n\n\nspecies\nmax\nmin\nmean\nsd\n\n\n\n\nAdelie\n46.0\n32.1\n38.82\n2.662597\n\n\nChinstrap\n58.0\n40.9\n48.83\n3.339256\n\n\nGentoo\n59.6\n40.9\n47.57\n3.106116\n\n\n\n\n\n\n\n\n\n\n\n\n\ngt()はスライドに表示するために書いています gt()はtidyveseに入っていないパッケージです。tidyverseと同じように、インストールと読み込み（library）が必要です。標準的なパッケージですので、インストールを推奨します"
+    "text": "Rにふれてみよう：palmer penguins\nデータの型\n\nすべてのオブジェクトは型（クラス）をもつ\n\nR（tidyverse）がデータを読み､適切と思われる型を割り当てる\n\n重要な型\n\nnumeric（数字）\ncharacter（文字）\nfactor（ファクター（因子）：レベルを設定できる）\nlogical（true / false）\ndata.frame（baseRのテーブル形式）\ntibble（tidyverseのテーブル形式）"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-13",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-13",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\n\n\n\n\n\n\n生成AI活用の勧め\n\n\n\n以降のコードは初学者にはやや難しく、また時間的に丁寧に解説できません（英語なので直感的には理解できるとは思いますが）\nコードをそのまま貼り付け、解説を求めましょう\n\n\n\n\n出力例\n\n① filter(!if_any(everything(), is.na))\n\n意味：欠損値（NA）が含まれている行をすべて取り除きます。\neverything() は「すべての列」を意味します。\nif_any(…, is.na)は「どの列か1つでもNAがあるか？」を判定します。! は「〜でない」という否定なので、「NAがない行だけ残す」ことになります。\n👉 欠損のない完全なデータだけを残す処理。"
+    "text": "Rにふれてみよう：palmer penguins\nデータの型\n\n\n\n\n\n\n同じ文字でもデータの型が違う可能性がある\n\n\n\nnumeric/character/factor\nggplot（作図）で特に問題になります\n\n例えば散布図はnumeric（数字）であることが基本なので、数字以外の型の場合、プロットできません"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-14",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-14",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\n図を作る：ggplotに渡した後にデータを計算する\n\npenguins |&gt;\n  ggplot(aes(x = species, y = body_mass, fill = species)) +  # ggplotでグラフ作成、x軸に種類、y軸に体重、棒の色を種類ごとに分ける\n  stat_summary(fun = mean, geom = \"bar\") +                  # 各種類の体重の平均を計算して棒グラフにする\n  labs(\n    x = \"種類\",                                             # x軸のラベルを「種類」に変更\n    y = \"体重 (g)\"                                         # y軸のラベルを「体重 (g)」に変更\n  )"
+    "text": "Rにふれてみよう：palmer penguins\nデータを要約する\n\npenguins |&gt; \n  filter(!if_any(everything(), is.na)) |&gt; # データの中で、1つでも欠損値（NA）がある行を削除する\n  group_by(species) |&gt; # speciesで分類する\n  summarise( # データを要約する\n    max = max(bill_len), # 「bill_len」の列の最大値\n    min = min(bill_len), # 「bill_len」の列の最小値\n    mean = round(mean(bill_len), 2), # 「bill_len」の列の平均、round関数で小数点以下2桁に丸める\n    sd = sd(bill_len) # 「bill_len」の列の標準偏差、roundしないとこうなる\n  ) |&gt; \n  gt() # 以上の集計結果を表にする\n\n\n\n\n\n\n\nspecies\nmax\nmin\nmean\nsd\n\n\n\n\nAdelie\n46.0\n32.1\n38.82\n2.662597\n\n\nChinstrap\n58.0\n40.9\n48.83\n3.339256\n\n\nGentoo\n59.6\n40.9\n47.57\n3.106116\n\n\n\n\n\n\n\n\n\n\n\n\n\ngt()はスライドに表示するために書いています gt()はtidyveseに入っていないパッケージです。tidyverseと同じように、インストールと読み込み（library）が必要です。標準的なパッケージですので、インストールを推奨します"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-15",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-15",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\n図を作る：ggplotに渡す前にデータを整形する\n\npenguins |&gt; \n  group_by(species) |&gt; \n  summarise(mean_body_mass = mean(body_mass, na.rm = TRUE)) |&gt; \n  ggplot(aes(x = species, y = mean_body_mass, fill = species)) +\n  geom_col() +   # geom_colはデータに渡されたyをそのまま棒の高さに使う\n  labs(\n    x = \"種類\",\n    y = \"体重 (g)\"\n  )"
+    "text": "Rにふれてみよう：palmer penguins\n\n\n\n\n\n\n生成AI活用の勧め\n\n\n\n以降のコードは初学者にはやや難しく、また時間的に丁寧に解説できません（関数はシンプルな英語なので直感的には理解できるとは思いますが）\nコードをそのまま貼り付け、解説を求めましょう\n\n\n\n\n出力例\n\n① filter(!if_any(everything(), is.na))\n\n意味：欠損値（NA）が含まれている行をすべて取り除きます。\neverything() は「すべての列」を意味します。\nif_any(…, is.na)は「どの列か1つでもNAがあるか？」を判定します。! は「〜でない」という否定なので、「NAがない行だけ残す」ことになります。\n👉 欠損のない完全なデータだけを残す処理。"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-16",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-16",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\n相関係数の算出\n\nbill_len: くちばしの長さ（ミリメートル）\n\n魚をつかまえたり、巣材をくわえたりすることに関わる\n\nbill_dep: くちばしの高さ（ミリメートル）\n\nくちばしの太さや力強さの目安になる\n\n\n\npenguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;\n  group_by(species) |&gt;\n  summarise(\n    cor_bill = round(cor(bill_len, bill_dep), 3)\n  ) |&gt; gt()\n\n\n\n\n\n\n\nspecies\ncor_bill\n\n\n\n\nAdelie\n0.386\n\n\nChinstrap\n0.654\n\n\nGentoo\n0.654"
+    "text": "Rにふれてみよう：palmer penguins\n図を作る：ggplotに渡した後にデータを計算する\n\npenguins |&gt;\n  ggplot(aes(x = species, y = body_mass, fill = species)) +  # ggplotでグラフ作成、x軸に種類、y軸に体重、棒の色を種類ごとに分ける\n  stat_summary(fun = mean, geom = \"bar\") +                  # 各種類の体重の平均を計算して棒グラフにする\n  labs(\n    x = \"種類\",                                             # x軸のラベルを「種類」に変更\n    y = \"体重 (g)\"                                         # y軸のラベルを「体重 (g)」に変更\n  )"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-17",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-17",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\n散布図の作成\n\npenguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;  \n  ggplot(aes(x = bill_len, y = bill_dep, colour = species)) +\n  geom_point()"
+    "text": "Rにふれてみよう：palmer penguins\n図を作る：ggplotに渡す前にデータを整形する\n\npenguins |&gt; \n  group_by(species) |&gt; \n  summarise(mean_body_mass = mean(body_mass, na.rm = TRUE)) |&gt; \n  ggplot(aes(x = species, y = mean_body_mass, fill = species)) +\n  geom_col() +   # geom_colはデータに渡されたyをそのまま棒の高さに使う\n  labs(\n    x = \"種類\",\n    y = \"体重 (g)\"\n  )"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-18",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-18",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\n見比べる\n\nspecies（種）とisland（島）に関係はあるの？\n\n\npenguins |&gt; \n  group_by(species, island) |&gt; # グルーピングに住んでいる島を追加\n  summarise(mean_body_mass = mean(body_mass, na.rm = TRUE)) |&gt; \n  ggplot(aes(x = species, y = mean_body_mass, fill = species)) +\n  geom_col() +\n  labs(\n    x = \"種類\",\n    y = \"体重 (g)\"\n  ) +\n  facet_wrap(~island) #指定の変数(カラム名、ここではisland)によって小さなグラフを作って並べる"
+    "text": "Rにふれてみよう：palmer penguins\n相関係数の算出\n\nbill_len: くちばしの長さ（ミリメートル）\n\n魚をつかまえたり、巣材をくわえたりすることに関わる\n\nbill_dep: くちばしの高さ（ミリメートル）\n\nくちばしの太さや力強さの目安になる\n\n\n\npenguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;\n  group_by(species) |&gt;\n  summarise(\n    cor_bill = round(cor(bill_len, bill_dep), 3)\n  ) |&gt; gt()\n\n\n\n\n\n\n\nspecies\ncor_bill\n\n\n\n\nAdelie\n0.386\n\n\nChinstrap\n0.654\n\n\nGentoo\n0.654"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-19",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-19",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\nクロス集計\n\ngtsummaryパッケージを追加（インストール後、Setup Chunkで読み込み）\n\n\n\n\npenguins |&gt; \n  select(species, island) |&gt; \n  tbl_cross(\n    row = species, # rowに行変数\n    col = island, # colに列変数を指定\n    percent = \"row\" # 行ごとの割合を表示\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nisland\n\nTotal\n\n\nBiscoe\nDream\nTorgersen\n\n\n\n\nspecies\n\n\n\n\n\n\n\n\n\n\n    Adelie\n44 (29%)\n56 (37%)\n52 (34%)\n152 (100%)\n\n\n    Chinstrap\n0 (0%)\n68 (100%)\n0 (0%)\n68 (100%)\n\n\n    Gentoo\n124 (100%)\n0 (0%)\n0 (0%)\n124 (100%)\n\n\nTotal\n168 (49%)\n124 (36%)\n52 (15%)\n344 (100%)\n\n\n\n\n\n\n\n\n\n件数と割合を自動計算して表にしてくれる\n見やすく整形され、発表資料にも向く"
+    "text": "Rにふれてみよう：palmer penguins\n散布図の作成\n\npenguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;  \n  ggplot(aes(x = bill_len, y = bill_dep, colour = species)) +\n  geom_point()"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-20",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-20",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\nクロス集計\n\nadd_p()を加えるだけでカイ二乗検定（またはFisher検定）を自動で実行してくれる\n\n\n\nCode\npenguins |&gt;\n  select(species, island) |&gt;\n  tbl_cross(\n    row = species,\n    col = island,\n    percent = \"row\"\n  ) |&gt;\n  add_p()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nisland\n\nTotal\np-value1\n\n\nBiscoe\nDream\nTorgersen\n\n\n\n\nspecies\n\n\n\n\n\n\n\n\n&lt;0.001\n\n\n    Adelie\n44 (29%)\n56 (37%)\n52 (34%)\n152 (100%)\n\n\n\n\n    Chinstrap\n0 (0%)\n68 (100%)\n0 (0%)\n68 (100%)\n\n\n\n\n    Gentoo\n124 (100%)\n0 (0%)\n0 (0%)\n124 (100%)\n\n\n\n\nTotal\n168 (49%)\n124 (36%)\n52 (15%)\n344 (100%)\n\n\n\n\n\n1 Pearson’s Chi-squared test"
+    "text": "Rにふれてみよう：palmer penguins\n見比べる\n\nspecies（種）とisland（島）に関係はあるの？\n\n\npenguins |&gt; \n  group_by(species, island) |&gt; # グルーピングに住んでいる島を追加\n  summarise(mean_body_mass = mean(body_mass, na.rm = TRUE)) |&gt; \n  ggplot(aes(x = species, y = mean_body_mass, fill = species)) +\n  geom_col() +\n  labs(\n    x = \"種類\",\n    y = \"体重 (g)\"\n  ) +\n  facet_wrap(~island) #指定の変数(カラム名、ここではisland)によって小さなグラフを作って並べる"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-21",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-21",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\n代入\n\n代入 = 値や計算結果を変数や列に「入れる」こと\nR では &lt;-（左向き矢印）が一般的\n\n新しいオブジェクトを作る\n\npenguins2 &lt;-\n  penguins |&gt; \n  mutate(body_mass_kg = body_mass / 1000)  # g → kg に変換して新しい列に代入\n\nオブジェクトを上書きする\n\npenguins &lt;-\n  penguins |&gt; # 同じオブジェクト名を指定\n  filter(!is.na(body_mass))  # NA を除いたデータに上書き\n\n\n\n\n\n\n\n元のpenguinsは NAを含む元のデータではなくなります"
+    "text": "Rにふれてみよう：palmer penguins\nクロス集計\n\ngtsummaryパッケージを追加（インストール後、Setup Chunkで読み込み）\n\n\n\n\npenguins |&gt; \n  select(species, island) |&gt; \n  tbl_cross(\n    row = species, # rowに行変数\n    col = island, # colに列変数を指定\n    percent = \"row\" # 行ごとの割合を表示\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nisland\n\nTotal\n\n\nBiscoe\nDream\nTorgersen\n\n\n\n\nspecies\n\n\n\n\n\n\n\n\n\n\n    Adelie\n44 (29%)\n56 (37%)\n52 (34%)\n152 (100%)\n\n\n    Chinstrap\n0 (0%)\n68 (100%)\n0 (0%)\n68 (100%)\n\n\n    Gentoo\n124 (100%)\n0 (0%)\n0 (0%)\n124 (100%)\n\n\nTotal\n168 (49%)\n124 (36%)\n52 (15%)\n344 (100%)\n\n\n\n\n\n\n\n\n\n件数と割合を自動計算して表にしてくれる\n見やすく整形され、発表資料にも向く"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-22",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-22",
+    "title": "初心者向けR Studioの使い方",
+    "section": "Rにふれてみよう：palmer penguins",
+    "text": "Rにふれてみよう：palmer penguins\nクロス集計\n\nadd_p()を加えるだけでカイ二乗検定（またはFisher検定）を自動で実行してくれる\n\n\n\nCode\npenguins |&gt;\n  select(species, island) |&gt;\n  tbl_cross(\n    row = species,\n    col = island,\n    percent = \"row\"\n  ) |&gt;\n  add_p()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nisland\n\nTotal\np-value1\n\n\nBiscoe\nDream\nTorgersen\n\n\n\n\nspecies\n\n\n\n\n\n\n\n\n&lt;0.001\n\n\n    Adelie\n44 (29%)\n56 (37%)\n52 (34%)\n152 (100%)\n\n\n\n\n    Chinstrap\n0 (0%)\n68 (100%)\n0 (0%)\n68 (100%)\n\n\n\n\n    Gentoo\n124 (100%)\n0 (0%)\n0 (0%)\n124 (100%)\n\n\n\n\nTotal\n168 (49%)\n124 (36%)\n52 (15%)\n344 (100%)\n\n\n\n\n\n1 Pearson’s Chi-squared test"
+  },
+  {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-23",
+    "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-23",
+    "title": "初心者向けR Studioの使い方",
+    "section": "Rにふれてみよう：palmer penguins",
+    "text": "Rにふれてみよう：palmer penguins\n代入\n\n代入 = 値や計算結果を変数や列に「入れる」こと\nR では &lt;-（左向き矢印）が一般的\n\n新しいオブジェクトを作る\n\npenguins2 &lt;-\n  penguins |&gt; \n  mutate(body_mass_kg = body_mass / 1000)  # g → kg に変換して新しい列に代入\n\nオブジェクトを上書きする\n\npenguins &lt;-\n  penguins |&gt; # 同じオブジェクト名を指定\n  filter(!is.na(body_mass))  # NA を除いたデータに上書き\n\n\n\n\n\n\n\n元のpenguinsは NAを含む元のデータではなくなります"
+  },
+  {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-24",
+    "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-24",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
     "text": "Rにふれてみよう：palmer penguins\n\n\n\n\n\n\nTips | 代入演算子（&lt;-）のショートカット\n\n\n\nチャンク内で\n\nWin: Alt + 「-」キー\nMac: Option + 「-」キー\n\n\n\n\n\n\n\n\n\n\n\nTips | 特定のチャンクが動かない\n\n\n\n原因がすぐにわからないエラーが出ても安心です（よくあることです）\nそのチャンクだけ実行をスキップできるので、レポート全体のレンダリングに影響しません（冒頭に「#| eval: false」と書く）"
@@ -2772,11 +2786,11 @@
     "text": "データ\ne-statの処理\n\nRで日本の統計データを効率的に取得しよう\nみんなのデータサイエンス：e-Stat\nRでe-statからxls（xlsx）ファイルをダウンロードするときにうまくいかなかったときに対処したメモ\n国勢調査データのクレンジング\nsimplecensus\n\n政治に関わる諸データ\n\n総務省トップ &gt; 政策 &gt; 選挙・政治資金制度 &gt; 選挙 &gt; 選挙関連資料\n加藤言人ゼミナール &gt; Rによる無料データの入手と利用"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#学部生向け授業教材",
-    "href": "teaching/RforDatascience/RforDataScience.html#学部生向け授業教材",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#教材",
+    "href": "teaching/RforDatascience/RforDataScience.html#教材",
     "title": "初心者向けR Studioの使い方",
-    "section": "学部生向け授業教材",
-    "text": "学部生向け授業教材\n学部生向け授業教材\n\nRとQuartoではじめるデータサイエンス：データを可視化する《2025》\n\n私（苅谷）が授業に作成した教材です。本論で挙げたものが多いですが、可視化の体裁変更などは参考になると思います"
+    "section": "教材",
+    "text": "教材\n学部生向け授業教材\n\nRとQuartoではじめるデータサイエンス：データを可視化する《2025》\n\n私（苅谷）が授業に作成した教材です。本論で挙げたものが多いですが、可視化の体裁変更などは参考になると思います\n\n\n初学者向け教材\n\nR初学者のためのtidyverse100本ノック"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#引用文献-1",
