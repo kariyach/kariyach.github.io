@@ -2489,14 +2489,14 @@
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-6",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\nパイプ（|&gt; または %&gt;%）\n\nmodern Rの大きな特徴の一つ\n処理を連続させるための記号\n\nより正確には「前の結果を次の関数に渡して、処理を順番につなげるための記号」\n\nRを初めて学ぶ人、あるいは他のプログラミング言語に慣れた人にとって つまずきやすく、でももっとも大切な考え方\n\n\nデータ |&gt;\n  処理A() |&gt;\n  処理B()\n\n\n料理で喩えると：「材料を選んで → 炒めて → 味付けする」"
+    "text": "Rにふれてみよう：palmer penguins\nパイプ\n\n|&gt; または %&gt;%\nmodern Rの大きな特徴の一つ\n処理を連続させるための記号\n\nより正確には「前の結果を次の関数に渡して、処理を順番につなげるための記号」\n\nRを初めて学ぶ人、あるいは他のプログラミング言語に慣れた人にとって つまずきやすく、でも、もっとも大切な考え方\n\n\nデータ |&gt;\n  処理A() |&gt;\n  処理B()\n\n\n料理で喩えると：「材料を選んで → 炒めて → 味付けする」"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-7",
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-7",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\nパイプを使った書き方（modern R）\n\npenguins |&gt; # ペンギンというデータ（正確には「オブジェクト」と表現します）を使って\n  group_by(species) |&gt; # 種類ごとにグループを分けて\n  summarize(mean_body_mass = mean(body_mass, na.rm = TRUE)) # 平均の体重を計算する（na.rm = TRUEは、欠損値を除外する指示）\n\n\nオブジェクトをどう処理したいのかが書きやすい（読みやすい）\n\nパイプを使わない書き方（base R）\n\nsummarize(\n  group_by(penguins, species),\n  mean_body_mass = mean(body_mass, na.rm = TRUE)\n)\n\n\n関数が入れ子構造（ネスト）になり、どこからどこまでが特定の関数なのかわかりにくい\n処理の順番が分かりにくくなり、かっこの対応も見づらい"
+    "text": "Rにふれてみよう：palmer penguins\nパイプを使った書き方（modern R）\n\npenguins |&gt; # ペンギンというデータ（正確には「オブジェクト」と表現します）を使って\n  group_by(species) |&gt; # 種類ごとにグループを分けて\n  summarize(mean_body_mass = mean(body_mass, na.rm = TRUE)) # 平均の体重を計算する（na.rm = TRUEは、欠損値を除外する指示）\n\n\nオブジェクトをどう処理したいのかが書きやすい（読みやすい）\n\nパイプを使わない書き方（base R）\n\nsummarize(\n  group_by(penguins, species),\n  mean_body_mass = mean(body_mass, na.rm = TRUE)\n)\n\n\n関数が入れ子構造（ネスト）になり、どこからどこまでが特定の関数なのかわかりにくい\n処理の順番がわかりにくく、かっこの対応関係も見づらい"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-8",
@@ -2608,7 +2608,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-23",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\n代入\n\n代入 = 値や計算結果を変数や列に「入れる」こと\nR では &lt;-（左向き矢印）が一般的\n\n新しいオブジェクトを作る\n\npenguins2 &lt;-\n  penguins |&gt; \n  mutate(body_mass_kg = body_mass / 1000)  # g → kg に変換して新しい列に代入\n\nオブジェクトを上書きする\n\npenguins &lt;-\n  penguins |&gt; # 同じオブジェクト名を指定\n  filter(!is.na(body_mass))  # NA を除いたデータに上書き\n\n\n\n\n\n\n\n元のpenguinsは NAを含む元のデータではなくなります"
+    "text": "Rにふれてみよう：palmer penguins\n代入\n\n代入 = 値や計算結果を変数や列に「入れる」こと\nRでは「&lt;-」（左向き矢印）が一般的\n\n新しいオブジェクトを作る\n\npenguins2 &lt;-\n  penguins |&gt; \n  mutate(body_mass_kg = body_mass / 1000)  # g → kg に変換して新しい列に代入\n\nオブジェクトを上書きする\n\npenguins &lt;-\n  penguins |&gt; # 同じオブジェクト名を指定\n  filter(!is.na(body_mass))  # NA を除いたデータに上書き\n\n\n\n\n\n\n\n元のpenguinsは NAを含む元のデータではなくなります"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-24",
