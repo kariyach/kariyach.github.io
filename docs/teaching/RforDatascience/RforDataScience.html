@@ -117,7 +117,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-c27b255b728024f9fc987a3430b333c0.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-73de0b3c4ac470fe1e45f26a233f94f0.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -350,7 +350,7 @@
 <h3 id="学べないこと">学べないこと</h3>
 <ul>
 <li>データの形を整える操作（前処理）の詳細</li>
-<li>ggplotで作図した図の見た目（文字の大きさや背景など）を細かく変える方法</li>
+<li>ggplotで作図した図の見た目（文字の大きさなど）を細かく変える方法</li>
 <li>専門性の高いパッケージ</li>
 <li>専門性の高い分析手法（回帰分析の発展的手法、パス解析、因子分析、多重指標モデルなど）</li>
 </ul>
@@ -465,7 +465,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
     B --&gt; C2[統計分析・モデル構築:&lt;br&gt; lm, glm, 因果推論]
     C1 --&gt; D[結果の評価・解釈:&lt;br&gt; broom, modelsummary, performance]
     C2 --&gt; D
-    D --&gt; End([レポート作成（レンダリング）:&lt;br&gt; knitr / rmarkdown&lt;br&gt;（pdf; reveal.js; webpage; docx; pptx; pdf）])
+    D --&gt; End([レポート作成（レンダー）:&lt;br&gt; knitr / rmarkdown&lt;br&gt;（pdf; reveal.js; webpage; docx; pptx; pdf）])
 
     %% 色付け
     style Start fill:#a2d4f1,stroke:#333,stroke-width:2px
@@ -506,7 +506,13 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>コンピュータが理解できるデータ形式は、<em>1行目がカラム名、2行目以降が値</em>であることを特に覚えておきましょう。Rに限りませんが、Rなどのプログラム系の統計ソフトで指示する対象は「カラム名」です。例えば一つのデータに同じカラム名があると動かない、もしくは強制的にカラム名が変更（メモリ上。元ファイルはそのまま）されます</p>
+<ul>
+<li>コンピュータが理解できるデータ形式は、<em>1行目がカラム名、2行目以降が値</em>であることを特に覚えておきましょう</li>
+<li>Rに限りませんが、Rなどのプログラム系の統計ソフトで<em>指示する対象は「カラム名」</em>（実質的には変数）です
+<ul>
+<li>例えば一つのデータに同じカラム名があると動かない、もしくは強制的にカラム名が変更（メモリ上。元ファイルはそのまま）されます</li>
+</ul></li>
+</ul>
 </div>
 </div>
 </div>
@@ -536,7 +542,10 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <li>拡張子qmd</li>
 <li>コード（R Chunk）と文章（Markdown）をひとつのファイルにまとめて書き、実行結果つきのレポートやスライドを自動で作成できる
 <ul>
-<li>HTML, PDF, Reveal.js, docx, pptx など、多様な出力が可能</li>
+<li>YAMLのformatを書き換えるだけで多様な出力が可能
+<ul>
+<li>HTML, PDF, Reveal.js, docx, pptx など</li>
+</ul></li>
 <li>R Markdown（拡張子Rmd）の拡張版</li>
 </ul></li>
 </ul>
@@ -569,7 +578,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>ファイル名は<em>念のため英数のみ</em>として下さい</p>
+<p>ファイル名は<em>念のため英数のみ</em>とし、また<em>空白文字を使わない</em>で下さい</p>
 </div>
 </div>
 </div>
@@ -590,7 +599,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <li>メニュー &gt; File &gt; Quarto Document &gt; Create</li>
 <li>Title: 任意</li>
 <li>HTML / PDF / Word → HTMLにチェック</li>
-<li>「Editor: Use visual markdown editor」のチェックを外す</li>
+<li>「Editor: Use visual markdown editor」のチェックを外す（外れていることを確認する）</li>
 <li>名前をつけて保存</li>
 </ul>
 <div class="callout callout-warning callout-style-simple">
@@ -599,7 +608,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>ファイル名は<em>念のため英数のみ</em>として下さい</p>
+<p>ファイル名は<em>念のため英数のみ</em>とし、また<em>空白文字を使わない</em>で下さい</p>
 </div>
 </div>
 </div>
@@ -628,14 +637,18 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <h2>準備：R Studio（ソースペイン）の外観の変更</h2>
 <ul>
 <li>コードを書くうえで、<em>視認性はとても重要</em></li>
-<li>文字の配色の変更
+</ul>
+<h3 id="文字の配色の変更">文字の配色の変更</h3>
 <ul>
-<li>メニュー &gt; Tools &gt; Global Options &gt; Appearance &gt; Editor Theme</li>
+<li>メニュー &gt; Tools &gt; Global Options &gt; Appearance &gt; Editor Theme
+<ul>
 <li>私（苅谷）は<a href="https://github.com/max-alletsee/rstudio-themes">rstudio-themes</a>からダウンロードしたrscodeioをaddで追加しています</li>
 </ul></li>
-<li>不可視文字を表示
+</ul>
+<h3 id="不可視文字を表示">不可視文字を表示</h3>
 <ul>
-<li>メニュー &gt; Tools &gt; Global Options &gt; Code &gt; Display &gt; Show whitespace charactersにチェック / Indentation guides:から適当なものを選択</li>
+<li>メニュー &gt; Tools &gt; Global Options &gt; Code &gt; Display &gt; Show whitespace charactersにチェック / Indentation guides:から適当なものを選択
+<ul>
 <li>themeによってはIndentation guidesが適用されない（rscodeioも適用対象外）</li>
 </ul></li>
 </ul>
@@ -667,7 +680,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 </div>
 <div class="callout-content">
 <ul>
-<li>YAMLは構文エラーに非常に敏感</li>
+<li>YAMLは構文が厳格で、エラーが起きやすいです</li>
 <li>YAML領域では、半角と全角の違いに注意し、インデントや記号（: ハイフンなど）は<em>全て半角</em>で入力すること</li>
 <li>「toc:」と「true」の間に<em>半角空きあり</em></li>
 <li>YAML領域は「—」で始まり「—」で終わります。<em>「—」を消さないこと</em></li>
@@ -693,7 +706,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <section id="準備パッケージの追加tidyverse" class="slide level2">
 <h2>準備：パッケージの追加（tidyverse）</h2>
 <ul>
-<li><p>Modern Rは、tidyverseによって代表されるスタイルで成り立つ</p></li>
+<li><p>modern Rは、tidyverse（整然としたデータ世界）という思想からなるパッケージ群</p></li>
 <li><p>base Rには組み込まれていないので、パッケージとして追加することが必要</p></li>
 <li><p>tidyverseの中身</p>
 <ul>
@@ -786,7 +799,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <section id="準備パッケージの読み込み" class="slide level2">
 <h2>準備：パッケージの読み込み</h2>
 <ul>
-<li>先に作成したSetup Chunkで、Modern Rの基本パッケージ群tidyverseを読み込む</li>
+<li>先に作成したSetup Chunkで、modern Rの基本パッケージ群tidyverseを読み込む</li>
 </ul>
 <h3 id="souceペイン内で作業">Souceペイン内で作業</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># パッケージの読み込み ---- #「# ○○-----」と書いておくと、Outlineに表示されてみやすい</span></span>
@@ -797,7 +810,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>R Chunk内では # をコードの前につけると、その行は実行されずにメモとして残せます。また、# より右側の文字もRでは実行されません（コメントアウトと呼びます）。特定のコード（行）が動かない、問題を特定したい場合も有効です</p>
+<ul>
+<li>R Chunk内では #（ハッシュ）をコードの前につけると、その行は実行されずにメモとして残せます</li>
+<li><h1 id="より右側の文字もrでは実行されませんコメントアウトと呼びます">より右側の文字もRでは実行されません（コメントアウトと呼びます）</h1></li>
+<li>特定のコード（行）が動かないなどの理由で、問題を特定したい場合にも便利です</li>
+</ul>
 </div>
 </div>
 </div>
@@ -900,7 +917,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 </ul>
 <h4 id="view関数">view()関数</h4>
 <ul>
-<li>「データを表にして見やすく開く関数」。データ全体をチェックしたり、列名や値をざっと確認するときに便利</li>
+<li>データを表にして見やすく開く関数。データ全体をチェックしたり、列名や値をざっと確認するときに便利</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
@@ -922,7 +939,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <img data-src="img/データの型.png" class="r-stretch"></section>
 <section id="rにふれてみようpalmer-penguins-5" class="slide level2">
 <h2>Rにふれてみよう：palmer penguins</h2>
-<h3 id="レンダリングrenderとrun">レンダリング（render）とrun</h3>
+<h3 id="レンダーrenderとrun">レンダー（render）とrun</h3>
 <ul>
 <li>render：描画
 <ul>
@@ -989,20 +1006,22 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># インストールするパッケージをまとめて指定</span></span>
 <span id="cb11-2"><a></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb11-3"><a></a>  <span class="st">"readxl"</span>,   <span class="co"># Excelファイルの読み込み</span></span>
-<span id="cb11-4"><a></a>  <span class="st">"stringi"</span>,  <span class="co"># 文字列操作</span></span>
-<span id="cb11-5"><a></a>  <span class="st">"gt"</span>,       <span class="co"># 表作成</span></span>
-<span id="cb11-6"><a></a>  <span class="st">"skimr"</span>,    <span class="co"># データ要約</span></span>
-<span id="cb11-7"><a></a>  <span class="st">"scales"</span>,   <span class="co"># 軸やラベルのスケール調整</span></span>
-<span id="cb11-8"><a></a>  <span class="st">"zipangu"</span>,  <span class="co"># 元号を西暦に変換</span></span>
-<span id="cb11-9"><a></a>  <span class="st">"rvest"</span>,    <span class="co"># Webスクレイピング</span></span>
-<span id="cb11-10"><a></a>  <span class="st">"httr2"</span>,    <span class="co"># HTTPリクエスト</span></span>
-<span id="cb11-11"><a></a>  <span class="st">"xml2"</span>,     <span class="co"># XML解析</span></span>
-<span id="cb11-12"><a></a>  <span class="st">"maps"</span>,      <span class="co"># アメリカの地図情報（地理データ）</span></span>
-<span id="cb11-13"><a></a>  <span class="st">"socviz"</span>, <span class="co"># 政治・社会・教育に関連するデータセットが中心（初学者の演習や可視化の教材として便利）</span></span>
-<span id="cb11-14"><a></a>  <span class="st">"paletteer"</span>, <span class="co"># カラーパレット</span></span>
-<span id="cb11-15"><a></a>  <span class="st">"ngramr"</span>, <span class="co"># Google Ngram Trends</span></span>
-<span id="cb11-16"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-3"><a></a>  <span class="st">"readxl"</span>,     <span class="co"># Excelファイルの読み込み</span></span>
+<span id="cb11-4"><a></a>  <span class="st">"conflicted"</span>, <span class="co"># 複数のパッケージで同じ関数名があるとき、使う方を選べるようにする</span></span>
+<span id="cb11-5"><a></a>  <span class="st">"stringi"</span>,    <span class="co"># 文字列操作</span></span>
+<span id="cb11-6"><a></a>  <span class="st">"gt"</span>,         <span class="co"># 表作成</span></span>
+<span id="cb11-7"><a></a>  <span class="st">"crosstable"</span>, <span class="co"># クロス表</span></span>
+<span id="cb11-8"><a></a>  <span class="st">"skimr"</span>,      <span class="co"># データ要約</span></span>
+<span id="cb11-9"><a></a>  <span class="st">"scales"</span>,     <span class="co"># 軸やラベルのスケール調整</span></span>
+<span id="cb11-10"><a></a>  <span class="st">"zipangu"</span>,    <span class="co"># 元号を西暦に変換</span></span>
+<span id="cb11-11"><a></a>  <span class="st">"rvest"</span>,      <span class="co"># Webスクレイピング</span></span>
+<span id="cb11-12"><a></a>  <span class="st">"httr2"</span>,      <span class="co"># HTTPリクエスト</span></span>
+<span id="cb11-13"><a></a>  <span class="st">"xml2"</span>,       <span class="co"># XML解析</span></span>
+<span id="cb11-14"><a></a>  <span class="st">"maps"</span>,       <span class="co"># アメリカの地図情報（地理データ）</span></span>
+<span id="cb11-15"><a></a>  <span class="st">"socviz"</span>,     <span class="co"># 政治・社会・教育に関連するデータセットが中心（初学者の演習や可視化の教材として便利）</span></span>
+<span id="cb11-16"><a></a>  <span class="st">"paletteer"</span>,  <span class="co"># カラーパレット</span></span>
+<span id="cb11-17"><a></a>  <span class="st">"ngramr"</span>,     <span class="co"># Google Ngram Trends</span></span>
+<span id="cb11-18"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="rにふれてみようpalmer-penguins-9" class="slide level2">
@@ -1025,18 +1044,21 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># パッケージの読み込み</span></span>
 <span id="cb13-2"><a></a><span class="fu">library</span>(readxl)    <span class="co"># Excelファイルの読み込み</span></span>
-<span id="cb13-3"><a></a><span class="fu">library</span>(stringi)   <span class="co"># 文字列操作</span></span>
-<span id="cb13-4"><a></a><span class="fu">library</span>(gt)        <span class="co"># 表作成</span></span>
-<span id="cb13-5"><a></a><span class="fu">library</span>(skimr)     <span class="co"># データ要約</span></span>
-<span id="cb13-6"><a></a><span class="fu">library</span>(scales)    <span class="co"># 軸やラベルのスケール調整</span></span>
-<span id="cb13-7"><a></a><span class="fu">library</span>(zipangu)   <span class="co"># 元号を西暦に変換</span></span>
-<span id="cb13-8"><a></a><span class="fu">library</span>(rvest)     <span class="co"># Webスクレイピング</span></span>
-<span id="cb13-9"><a></a><span class="fu">library</span>(httr2)     <span class="co"># HTTPリクエスト</span></span>
-<span id="cb13-10"><a></a><span class="fu">library</span>(xml2)      <span class="co"># XML解析</span></span>
-<span id="cb13-11"><a></a><span class="fu">library</span>(maps)      <span class="co"># アメリカの地図情報</span></span>
-<span id="cb13-12"><a></a><span class="fu">library</span>(socviz)    <span class="co"># 社会・政治・教育関連データセット</span></span>
-<span id="cb13-13"><a></a><span class="fu">library</span>(paletteer) <span class="co"># カラーパレット</span></span>
-<span id="cb13-14"><a></a><span class="fu">library</span>(ngramr)    <span class="co"># Google Ngram Trends</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-3"><a></a><span class="fu">library</span>(conflicted)<span class="co"># 名前空間の衝突を防ぐ</span></span>
+<span id="cb13-4"><a></a><span class="fu">conflicts_prefer</span>(dplyr<span class="sc">::</span>filter) <span class="co"># filter関数はdplyrを優先</span></span>
+<span id="cb13-5"><a></a><span class="fu">library</span>(stringi)   <span class="co"># 文字列操作</span></span>
+<span id="cb13-6"><a></a><span class="fu">library</span>(gt)        <span class="co"># 表作成</span></span>
+<span id="cb13-7"><a></a><span class="fu">library</span>(crosstable)<span class="co"># クロス表</span></span>
+<span id="cb13-8"><a></a><span class="fu">library</span>(skimr)     <span class="co"># データ要約</span></span>
+<span id="cb13-9"><a></a><span class="fu">library</span>(scales)    <span class="co"># 軸やラベルのスケール調整</span></span>
+<span id="cb13-10"><a></a><span class="fu">library</span>(zipangu)   <span class="co"># 元号を西暦に変換</span></span>
+<span id="cb13-11"><a></a><span class="fu">library</span>(rvest)     <span class="co"># Webスクレイピング</span></span>
+<span id="cb13-12"><a></a><span class="fu">library</span>(httr2)     <span class="co"># HTTPリクエスト</span></span>
+<span id="cb13-13"><a></a><span class="fu">library</span>(xml2)      <span class="co"># XML解析</span></span>
+<span id="cb13-14"><a></a><span class="fu">library</span>(maps)      <span class="co"># アメリカの地図情報</span></span>
+<span id="cb13-15"><a></a><span class="fu">library</span>(socviz)    <span class="co"># 社会・政治・教育関連データセット</span></span>
+<span id="cb13-16"><a></a><span class="fu">library</span>(paletteer) <span class="co"># カラーパレット</span></span>
+<span id="cb13-17"><a></a><span class="fu">library</span>(ngramr)    <span class="co"># Google Ngram Trends</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="rにふれてみようpalmer-penguins-11" class="slide level2">
@@ -1141,23 +1163,23 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <span id="cb14-9"><a></a>  ) <span class="sc">|&gt;</span> </span>
 <span id="cb14-10"><a></a>  <span class="fu">gt</span>() <span class="co"># 以上の集計結果を表にする</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="bcfkkupsvh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bcfkkupsvh table {
+<div id="nrhbybxper" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nrhbybxper table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bcfkkupsvh thead, #bcfkkupsvh tbody, #bcfkkupsvh tfoot, #bcfkkupsvh tr, #bcfkkupsvh td, #bcfkkupsvh th {
+#nrhbybxper thead, #nrhbybxper tbody, #nrhbybxper tfoot, #nrhbybxper tr, #nrhbybxper td, #nrhbybxper th {
   border-style: none;
 }
 
-#bcfkkupsvh p {
+#nrhbybxper p {
   margin: 0;
   padding: 0;
 }
 
-#bcfkkupsvh .gt_table {
+#nrhbybxper .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1183,12 +1205,12 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-left-color: #D3D3D3;
 }
 
-#bcfkkupsvh .gt_caption {
+#nrhbybxper .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bcfkkupsvh .gt_title {
+#nrhbybxper .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1200,7 +1222,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-width: 0;
 }
 
-#bcfkkupsvh .gt_subtitle {
+#nrhbybxper .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1212,7 +1234,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-width: 0;
 }
 
-#bcfkkupsvh .gt_heading {
+#nrhbybxper .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1224,13 +1246,13 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#bcfkkupsvh .gt_bottom_border {
+#nrhbybxper .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bcfkkupsvh .gt_col_headings {
+#nrhbybxper .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1245,7 +1267,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#bcfkkupsvh .gt_col_heading {
+#nrhbybxper .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1265,7 +1287,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#bcfkkupsvh .gt_column_spanner_outer {
+#nrhbybxper .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1277,15 +1299,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 4px;
 }
 
-#bcfkkupsvh .gt_column_spanner_outer:first-child {
+#nrhbybxper .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bcfkkupsvh .gt_column_spanner_outer:last-child {
+#nrhbybxper .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bcfkkupsvh .gt_column_spanner {
+#nrhbybxper .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1297,11 +1319,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   width: 100%;
 }
 
-#bcfkkupsvh .gt_spanner_row {
+#nrhbybxper .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bcfkkupsvh .gt_group_heading {
+#nrhbybxper .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1327,7 +1349,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   text-align: left;
 }
 
-#bcfkkupsvh .gt_empty_group_heading {
+#nrhbybxper .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1342,15 +1364,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: middle;
 }
 
-#bcfkkupsvh .gt_from_md > :first-child {
+#nrhbybxper .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bcfkkupsvh .gt_from_md > :last-child {
+#nrhbybxper .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bcfkkupsvh .gt_row {
+#nrhbybxper .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1369,7 +1391,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#bcfkkupsvh .gt_stub {
+#nrhbybxper .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1382,7 +1404,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#bcfkkupsvh .gt_stub_row_group {
+#nrhbybxper .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1396,15 +1418,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: top;
 }
 
-#bcfkkupsvh .gt_row_group_first td {
+#nrhbybxper .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bcfkkupsvh .gt_row_group_first th {
+#nrhbybxper .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bcfkkupsvh .gt_summary_row {
+#nrhbybxper .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1414,16 +1436,16 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#bcfkkupsvh .gt_first_summary_row {
+#nrhbybxper .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bcfkkupsvh .gt_first_summary_row.thick {
+#nrhbybxper .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bcfkkupsvh .gt_last_summary_row {
+#nrhbybxper .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1433,7 +1455,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#bcfkkupsvh .gt_grand_summary_row {
+#nrhbybxper .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1443,7 +1465,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#bcfkkupsvh .gt_first_grand_summary_row {
+#nrhbybxper .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1453,7 +1475,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-color: #D3D3D3;
 }
 
-#bcfkkupsvh .gt_last_grand_summary_row_top {
+#nrhbybxper .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1463,11 +1485,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#bcfkkupsvh .gt_striped {
+#nrhbybxper .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bcfkkupsvh .gt_table_body {
+#nrhbybxper .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1476,7 +1498,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#bcfkkupsvh .gt_footnotes {
+#nrhbybxper .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1490,7 +1512,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#bcfkkupsvh .gt_footnote {
+#nrhbybxper .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1499,7 +1521,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#bcfkkupsvh .gt_sourcenotes {
+#nrhbybxper .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1513,7 +1535,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#bcfkkupsvh .gt_sourcenote {
+#nrhbybxper .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1521,72 +1543,72 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#bcfkkupsvh .gt_left {
+#nrhbybxper .gt_left {
   text-align: left;
 }
 
-#bcfkkupsvh .gt_center {
+#nrhbybxper .gt_center {
   text-align: center;
 }
 
-#bcfkkupsvh .gt_right {
+#nrhbybxper .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bcfkkupsvh .gt_font_normal {
+#nrhbybxper .gt_font_normal {
   font-weight: normal;
 }
 
-#bcfkkupsvh .gt_font_bold {
+#nrhbybxper .gt_font_bold {
   font-weight: bold;
 }
 
-#bcfkkupsvh .gt_font_italic {
+#nrhbybxper .gt_font_italic {
   font-style: italic;
 }
 
-#bcfkkupsvh .gt_super {
+#nrhbybxper .gt_super {
   font-size: 65%;
 }
 
-#bcfkkupsvh .gt_footnote_marks {
+#nrhbybxper .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bcfkkupsvh .gt_asterisk {
+#nrhbybxper .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bcfkkupsvh .gt_indent_1 {
+#nrhbybxper .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bcfkkupsvh .gt_indent_2 {
+#nrhbybxper .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bcfkkupsvh .gt_indent_3 {
+#nrhbybxper .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bcfkkupsvh .gt_indent_4 {
+#nrhbybxper .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bcfkkupsvh .gt_indent_5 {
+#nrhbybxper .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bcfkkupsvh .katex-display {
+#nrhbybxper .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bcfkkupsvh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nrhbybxper div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1658,28 +1680,34 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 </div>
 </div>
 </div>
-<h3 id="出力例">出力例</h3>
-<ul>
-<li>① filter(!if_any(everything(), is.na))
-<ul>
-<li>意味：欠損値（NA）が含まれている行をすべて取り除きます。</li>
-<li>everything() は「すべての列」を意味します。</li>
-<li>if_any(…, is.na)は「どの列か1つでもNAがあるか？」を判定します。! は「〜でない」という否定なので、「NAがない行だけ残す」ことになります。</li>
-<li>👉 欠損のない完全なデータだけを残す処理。</li>
-</ul></li>
-</ul>
+<h4 id="出力例chatgpt">出力例（ChatGPT）</h4>
+<pre><code>- ① filter(!if_any(everything(), is.na))
+  - 意味：欠損値（NA）が含まれている行をすべて取り除きます。
+  - everything() は「すべての列」を意味します。
+  - if_any(..., is.na)は「どの列か1つでもNAがあるか？」を判定します。! は「〜でない」という否定なので、「NAがない行だけ残す」ことになります。
+  - 👉 欠損のない完全なデータだけを残す処理。</code></pre>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><a href="https://dplyr.tidyverse.org">dplyr</a>も生成AIを導入しました（右上のAsk AI）。日本語にも対応しています</p>
+</div>
+</div>
+</div>
 </section>
 <section id="rにふれてみようpalmer-penguins-16" class="slide level2">
 <h2>Rにふれてみよう：palmer penguins</h2>
 <h3 id="図を作るggplotに渡した後にデータを計算する">図を作る：ggplotに渡した後にデータを計算する</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span>  <span class="co"># ggplotでグラフ作成、x軸に種類、y軸に体重、棒の色を種類ごとに分ける</span></span>
-<span id="cb15-3"><a></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"bar"</span>) <span class="sc">+</span>                  <span class="co"># 各種類の体重の平均を計算して棒グラフにする</span></span>
-<span id="cb15-4"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb15-5"><a></a>    <span class="at">x =</span> <span class="st">"種類"</span>,                                             <span class="co"># x軸のラベルを「種類」に変更</span></span>
-<span id="cb15-6"><a></a>    <span class="at">y =</span> <span class="st">"体重 (g)"</span>                                         <span class="co"># y軸のラベルを「体重 (g)」に変更</span></span>
-<span id="cb15-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span>  <span class="co"># ggplotでグラフ作成、x軸に種類、y軸に体重、棒の色を種類ごとに分ける</span></span>
+<span id="cb16-3"><a></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"bar"</span>) <span class="sc">+</span>                  <span class="co"># 各種類の体重の平均を計算して棒グラフにする</span></span>
+<span id="cb16-4"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb16-5"><a></a>    <span class="at">x =</span> <span class="st">"種類"</span>,                                             <span class="co"># x軸のラベルを「種類」に変更</span></span>
+<span id="cb16-6"><a></a>    <span class="at">y =</span> <span class="st">"体重 (g)"</span>                                         <span class="co"># y軸のラベルを「体重 (g)」に変更</span></span>
+<span id="cb16-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
@@ -1687,15 +1715,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <h2>Rにふれてみよう：palmer penguins</h2>
 <h3 id="図を作るggplotに渡す前にデータを整形する">図を作る：ggplotに渡す前にデータを整形する</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb16-2"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
-<span id="cb16-3"><a></a>  <span class="fu">summarise</span>(<span class="at">mean_body_mass =</span> <span class="fu">mean</span>(body_mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb16-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> mean_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb16-5"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span>   <span class="co"># geom_colはデータに渡されたyをそのまま棒の高さに使う</span></span>
-<span id="cb16-6"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb16-7"><a></a>    <span class="at">x =</span> <span class="st">"種類"</span>,</span>
-<span id="cb16-8"><a></a>    <span class="at">y =</span> <span class="st">"体重 (g)"</span></span>
-<span id="cb16-9"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a></a>  <span class="fu">summarise</span>(<span class="at">mean_body_mass =</span> <span class="fu">mean</span>(body_mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb17-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> mean_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb17-5"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span>   <span class="co"># geom_colはデータに渡されたyをそのまま棒の高さに使う</span></span>
+<span id="cb17-6"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb17-7"><a></a>    <span class="at">x =</span> <span class="st">"種類"</span>,</span>
+<span id="cb17-8"><a></a>    <span class="at">y =</span> <span class="st">"体重 (g)"</span></span>
+<span id="cb17-9"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
@@ -1703,40 +1731,40 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <h2>Rにふれてみよう：palmer penguins</h2>
 <h3 id="相関係数の算出">相関係数の算出</h3>
 <ul>
-<li>bill_len: くちばしの長さ（ミリメートル）
+<li>bill_len: くちばしの長さ
 <ul>
 <li>魚をつかまえたり、巣材をくわえたりすることに関わる</li>
 </ul></li>
-<li>bill_dep: くちばしの高さ（ミリメートル）
+<li>bill_dep: くちばしの奥行き
 <ul>
 <li>くちばしの太さや力強さの目安になる</li>
 </ul></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb17-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">if_any</span>(<span class="fu">everything</span>(), is.na)) <span class="sc">|&gt;</span></span>
-<span id="cb17-3"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span></span>
-<span id="cb17-4"><a></a>  <span class="fu">summarise</span>(</span>
-<span id="cb17-5"><a></a>    <span class="at">cor_bill =</span> <span class="fu">round</span>(<span class="fu">cor</span>(bill_len, bill_dep), <span class="dv">3</span>)</span>
-<span id="cb17-6"><a></a>  ) <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">if_any</span>(<span class="fu">everything</span>(), is.na)) <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span></span>
+<span id="cb18-4"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb18-5"><a></a>    <span class="at">cor_bill =</span> <span class="fu">round</span>(<span class="fu">cor</span>(bill_len, bill_dep), <span class="dv">3</span>)</span>
+<span id="cb18-6"><a></a>  ) <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="qeyeatcexk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qeyeatcexk table {
+<div id="dyhjpqhott" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dyhjpqhott table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qeyeatcexk thead, #qeyeatcexk tbody, #qeyeatcexk tfoot, #qeyeatcexk tr, #qeyeatcexk td, #qeyeatcexk th {
+#dyhjpqhott thead, #dyhjpqhott tbody, #dyhjpqhott tfoot, #dyhjpqhott tr, #dyhjpqhott td, #dyhjpqhott th {
   border-style: none;
 }
 
-#qeyeatcexk p {
+#dyhjpqhott p {
   margin: 0;
   padding: 0;
 }
 
-#qeyeatcexk .gt_table {
+#dyhjpqhott .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1762,12 +1790,12 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-left-color: #D3D3D3;
 }
 
-#qeyeatcexk .gt_caption {
+#dyhjpqhott .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qeyeatcexk .gt_title {
+#dyhjpqhott .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1779,7 +1807,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-width: 0;
 }
 
-#qeyeatcexk .gt_subtitle {
+#dyhjpqhott .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1791,7 +1819,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-width: 0;
 }
 
-#qeyeatcexk .gt_heading {
+#dyhjpqhott .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1803,13 +1831,13 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#qeyeatcexk .gt_bottom_border {
+#dyhjpqhott .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qeyeatcexk .gt_col_headings {
+#dyhjpqhott .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1824,7 +1852,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#qeyeatcexk .gt_col_heading {
+#dyhjpqhott .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1844,7 +1872,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#qeyeatcexk .gt_column_spanner_outer {
+#dyhjpqhott .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1856,15 +1884,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 4px;
 }
 
-#qeyeatcexk .gt_column_spanner_outer:first-child {
+#dyhjpqhott .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qeyeatcexk .gt_column_spanner_outer:last-child {
+#dyhjpqhott .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qeyeatcexk .gt_column_spanner {
+#dyhjpqhott .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1876,11 +1904,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   width: 100%;
 }
 
-#qeyeatcexk .gt_spanner_row {
+#dyhjpqhott .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qeyeatcexk .gt_group_heading {
+#dyhjpqhott .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1906,7 +1934,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   text-align: left;
 }
 
-#qeyeatcexk .gt_empty_group_heading {
+#dyhjpqhott .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1921,15 +1949,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: middle;
 }
 
-#qeyeatcexk .gt_from_md > :first-child {
+#dyhjpqhott .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qeyeatcexk .gt_from_md > :last-child {
+#dyhjpqhott .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qeyeatcexk .gt_row {
+#dyhjpqhott .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1948,7 +1976,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#qeyeatcexk .gt_stub {
+#dyhjpqhott .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1961,7 +1989,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#qeyeatcexk .gt_stub_row_group {
+#dyhjpqhott .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1975,15 +2003,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: top;
 }
 
-#qeyeatcexk .gt_row_group_first td {
+#dyhjpqhott .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qeyeatcexk .gt_row_group_first th {
+#dyhjpqhott .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qeyeatcexk .gt_summary_row {
+#dyhjpqhott .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1993,16 +2021,16 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#qeyeatcexk .gt_first_summary_row {
+#dyhjpqhott .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qeyeatcexk .gt_first_summary_row.thick {
+#dyhjpqhott .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qeyeatcexk .gt_last_summary_row {
+#dyhjpqhott .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2012,7 +2040,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#qeyeatcexk .gt_grand_summary_row {
+#dyhjpqhott .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2022,7 +2050,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#qeyeatcexk .gt_first_grand_summary_row {
+#dyhjpqhott .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2032,7 +2060,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-color: #D3D3D3;
 }
 
-#qeyeatcexk .gt_last_grand_summary_row_top {
+#dyhjpqhott .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2042,11 +2070,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#qeyeatcexk .gt_striped {
+#dyhjpqhott .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qeyeatcexk .gt_table_body {
+#dyhjpqhott .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2055,7 +2083,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#qeyeatcexk .gt_footnotes {
+#dyhjpqhott .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2069,7 +2097,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#qeyeatcexk .gt_footnote {
+#dyhjpqhott .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2078,7 +2106,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#qeyeatcexk .gt_sourcenotes {
+#dyhjpqhott .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2092,7 +2120,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#qeyeatcexk .gt_sourcenote {
+#dyhjpqhott .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2100,72 +2128,72 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#qeyeatcexk .gt_left {
+#dyhjpqhott .gt_left {
   text-align: left;
 }
 
-#qeyeatcexk .gt_center {
+#dyhjpqhott .gt_center {
   text-align: center;
 }
 
-#qeyeatcexk .gt_right {
+#dyhjpqhott .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qeyeatcexk .gt_font_normal {
+#dyhjpqhott .gt_font_normal {
   font-weight: normal;
 }
 
-#qeyeatcexk .gt_font_bold {
+#dyhjpqhott .gt_font_bold {
   font-weight: bold;
 }
 
-#qeyeatcexk .gt_font_italic {
+#dyhjpqhott .gt_font_italic {
   font-style: italic;
 }
 
-#qeyeatcexk .gt_super {
+#dyhjpqhott .gt_super {
   font-size: 65%;
 }
 
-#qeyeatcexk .gt_footnote_marks {
+#dyhjpqhott .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qeyeatcexk .gt_asterisk {
+#dyhjpqhott .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qeyeatcexk .gt_indent_1 {
+#dyhjpqhott .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qeyeatcexk .gt_indent_2 {
+#dyhjpqhott .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qeyeatcexk .gt_indent_3 {
+#dyhjpqhott .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qeyeatcexk .gt_indent_4 {
+#dyhjpqhott .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qeyeatcexk .gt_indent_5 {
+#dyhjpqhott .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qeyeatcexk .katex-display {
+#dyhjpqhott .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qeyeatcexk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dyhjpqhott div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2201,10 +2229,10 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <h2>Rにふれてみよう：palmer penguins</h2>
 <h3 id="散布図の作成">散布図の作成</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb18-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">if_any</span>(<span class="fu">everything</span>(), is.na)) <span class="sc">|&gt;</span>  </span>
-<span id="cb18-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> bill_dep, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
-<span id="cb18-4"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">if_any</span>(<span class="fu">everything</span>(), is.na)) <span class="sc">|&gt;</span>  </span>
+<span id="cb19-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> bill_dep, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
+<span id="cb19-4"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
@@ -2215,16 +2243,16 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <li>species（種）とisland（島）に関係はあるの？</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb19-2"><a></a>  <span class="fu">group_by</span>(species, island) <span class="sc">|&gt;</span> <span class="co"># グルーピングに住んでいる島を追加</span></span>
-<span id="cb19-3"><a></a>  <span class="fu">summarise</span>(<span class="at">mean_body_mass =</span> <span class="fu">mean</span>(body_mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb19-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> mean_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb19-5"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb19-6"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb19-7"><a></a>    <span class="at">x =</span> <span class="st">"種類"</span>,</span>
-<span id="cb19-8"><a></a>    <span class="at">y =</span> <span class="st">"体重 (g)"</span></span>
-<span id="cb19-9"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb19-10"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>island) <span class="co">#指定の変数(カラム名、ここではisland)によって小さなグラフを作って並べる</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a></a>  <span class="fu">group_by</span>(species, island) <span class="sc">|&gt;</span> <span class="co"># グルーピングに住んでいる島を追加</span></span>
+<span id="cb20-3"><a></a>  <span class="fu">summarise</span>(<span class="at">mean_body_mass =</span> <span class="fu">mean</span>(body_mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb20-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> mean_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb20-5"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb20-6"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb20-7"><a></a>    <span class="at">x =</span> <span class="st">"種類"</span>,</span>
+<span id="cb20-8"><a></a>    <span class="at">y =</span> <span class="st">"体重 (g)"</span></span>
+<span id="cb20-9"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb20-10"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>island) <span class="co">#指定の変数(カラム名、ここではisland)によって小さなグラフを作って並べる</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
@@ -2237,31 +2265,31 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb20-2"><a></a>  <span class="fu">select</span>(species, island) <span class="sc">|&gt;</span> </span>
-<span id="cb20-3"><a></a>  <span class="fu">tbl_cross</span>(</span>
-<span id="cb20-4"><a></a>    <span class="at">row =</span> species, <span class="co"># rowに行変数</span></span>
-<span id="cb20-5"><a></a>    <span class="at">col =</span> island, <span class="co"># colに列変数を指定</span></span>
-<span id="cb20-6"><a></a>    <span class="at">percent =</span> <span class="st">"row"</span> <span class="co"># 行ごとの割合を表示</span></span>
-<span id="cb20-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a></a>  <span class="fu">select</span>(species, island) <span class="sc">|&gt;</span> </span>
+<span id="cb21-3"><a></a>  <span class="fu">tbl_cross</span>(</span>
+<span id="cb21-4"><a></a>    <span class="at">row =</span> species, <span class="co"># rowに行変数</span></span>
+<span id="cb21-5"><a></a>    <span class="at">col =</span> island, <span class="co"># colに列変数を指定</span></span>
+<span id="cb21-6"><a></a>    <span class="at">percent =</span> <span class="st">"row"</span> <span class="co"># 行ごとの割合を表示</span></span>
+<span id="cb21-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="rudmfolpav" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rudmfolpav table {
+<div id="dwnqozrihb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dwnqozrihb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rudmfolpav thead, #rudmfolpav tbody, #rudmfolpav tfoot, #rudmfolpav tr, #rudmfolpav td, #rudmfolpav th {
+#dwnqozrihb thead, #dwnqozrihb tbody, #dwnqozrihb tfoot, #dwnqozrihb tr, #dwnqozrihb td, #dwnqozrihb th {
   border-style: none;
 }
 
-#rudmfolpav p {
+#dwnqozrihb p {
   margin: 0;
   padding: 0;
 }
 
-#rudmfolpav .gt_table {
+#dwnqozrihb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2287,12 +2315,12 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-left-color: #D3D3D3;
 }
 
-#rudmfolpav .gt_caption {
+#dwnqozrihb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rudmfolpav .gt_title {
+#dwnqozrihb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2304,7 +2332,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-width: 0;
 }
 
-#rudmfolpav .gt_subtitle {
+#dwnqozrihb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2316,7 +2344,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-width: 0;
 }
 
-#rudmfolpav .gt_heading {
+#dwnqozrihb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2328,13 +2356,13 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#rudmfolpav .gt_bottom_border {
+#dwnqozrihb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rudmfolpav .gt_col_headings {
+#dwnqozrihb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2349,7 +2377,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#rudmfolpav .gt_col_heading {
+#dwnqozrihb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2369,7 +2397,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#rudmfolpav .gt_column_spanner_outer {
+#dwnqozrihb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2381,15 +2409,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 4px;
 }
 
-#rudmfolpav .gt_column_spanner_outer:first-child {
+#dwnqozrihb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rudmfolpav .gt_column_spanner_outer:last-child {
+#dwnqozrihb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rudmfolpav .gt_column_spanner {
+#dwnqozrihb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2401,11 +2429,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   width: 100%;
 }
 
-#rudmfolpav .gt_spanner_row {
+#dwnqozrihb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rudmfolpav .gt_group_heading {
+#dwnqozrihb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2431,7 +2459,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   text-align: left;
 }
 
-#rudmfolpav .gt_empty_group_heading {
+#dwnqozrihb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2446,15 +2474,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: middle;
 }
 
-#rudmfolpav .gt_from_md > :first-child {
+#dwnqozrihb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rudmfolpav .gt_from_md > :last-child {
+#dwnqozrihb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rudmfolpav .gt_row {
+#dwnqozrihb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2473,7 +2501,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#rudmfolpav .gt_stub {
+#dwnqozrihb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2486,7 +2514,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#rudmfolpav .gt_stub_row_group {
+#dwnqozrihb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2500,15 +2528,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: top;
 }
 
-#rudmfolpav .gt_row_group_first td {
+#dwnqozrihb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rudmfolpav .gt_row_group_first th {
+#dwnqozrihb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rudmfolpav .gt_summary_row {
+#dwnqozrihb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2518,16 +2546,16 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#rudmfolpav .gt_first_summary_row {
+#dwnqozrihb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rudmfolpav .gt_first_summary_row.thick {
+#dwnqozrihb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rudmfolpav .gt_last_summary_row {
+#dwnqozrihb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2537,7 +2565,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#rudmfolpav .gt_grand_summary_row {
+#dwnqozrihb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2547,7 +2575,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#rudmfolpav .gt_first_grand_summary_row {
+#dwnqozrihb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2557,7 +2585,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-color: #D3D3D3;
 }
 
-#rudmfolpav .gt_last_grand_summary_row_top {
+#dwnqozrihb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2567,11 +2595,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#rudmfolpav .gt_striped {
+#dwnqozrihb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rudmfolpav .gt_table_body {
+#dwnqozrihb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2580,7 +2608,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#rudmfolpav .gt_footnotes {
+#dwnqozrihb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2594,7 +2622,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#rudmfolpav .gt_footnote {
+#dwnqozrihb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2603,7 +2631,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#rudmfolpav .gt_sourcenotes {
+#dwnqozrihb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2617,7 +2645,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#rudmfolpav .gt_sourcenote {
+#dwnqozrihb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2625,72 +2653,72 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#rudmfolpav .gt_left {
+#dwnqozrihb .gt_left {
   text-align: left;
 }
 
-#rudmfolpav .gt_center {
+#dwnqozrihb .gt_center {
   text-align: center;
 }
 
-#rudmfolpav .gt_right {
+#dwnqozrihb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rudmfolpav .gt_font_normal {
+#dwnqozrihb .gt_font_normal {
   font-weight: normal;
 }
 
-#rudmfolpav .gt_font_bold {
+#dwnqozrihb .gt_font_bold {
   font-weight: bold;
 }
 
-#rudmfolpav .gt_font_italic {
+#dwnqozrihb .gt_font_italic {
   font-style: italic;
 }
 
-#rudmfolpav .gt_super {
+#dwnqozrihb .gt_super {
   font-size: 65%;
 }
 
-#rudmfolpav .gt_footnote_marks {
+#dwnqozrihb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rudmfolpav .gt_asterisk {
+#dwnqozrihb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rudmfolpav .gt_indent_1 {
+#dwnqozrihb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rudmfolpav .gt_indent_2 {
+#dwnqozrihb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rudmfolpav .gt_indent_3 {
+#dwnqozrihb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rudmfolpav .gt_indent_4 {
+#dwnqozrihb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rudmfolpav .gt_indent_5 {
+#dwnqozrihb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rudmfolpav .katex-display {
+#dwnqozrihb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rudmfolpav div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dwnqozrihb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2779,33 +2807,33 @@ island
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb21-2"><a></a>  <span class="fu">select</span>(species, island) <span class="sc">|&gt;</span></span>
-<span id="cb21-3"><a></a>  <span class="fu">tbl_cross</span>(</span>
-<span id="cb21-4"><a></a>    <span class="at">row =</span> species,</span>
-<span id="cb21-5"><a></a>    <span class="at">col =</span> island,</span>
-<span id="cb21-6"><a></a>    <span class="at">percent =</span> <span class="st">"row"</span></span>
-<span id="cb21-7"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb21-8"><a></a>  <span class="fu">add_p</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb22-2"><a></a>  <span class="fu">select</span>(species, island) <span class="sc">|&gt;</span></span>
+<span id="cb22-3"><a></a>  <span class="fu">tbl_cross</span>(</span>
+<span id="cb22-4"><a></a>    <span class="at">row =</span> species,</span>
+<span id="cb22-5"><a></a>    <span class="at">col =</span> island,</span>
+<span id="cb22-6"><a></a>    <span class="at">percent =</span> <span class="st">"row"</span></span>
+<span id="cb22-7"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb22-8"><a></a>  <span class="fu">add_p</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="jokaldifjj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jokaldifjj table {
+<div id="uwaybwzxiz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uwaybwzxiz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jokaldifjj thead, #jokaldifjj tbody, #jokaldifjj tfoot, #jokaldifjj tr, #jokaldifjj td, #jokaldifjj th {
+#uwaybwzxiz thead, #uwaybwzxiz tbody, #uwaybwzxiz tfoot, #uwaybwzxiz tr, #uwaybwzxiz td, #uwaybwzxiz th {
   border-style: none;
 }
 
-#jokaldifjj p {
+#uwaybwzxiz p {
   margin: 0;
   padding: 0;
 }
 
-#jokaldifjj .gt_table {
+#uwaybwzxiz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2831,12 +2859,12 @@ island
   border-left-color: #D3D3D3;
 }
 
-#jokaldifjj .gt_caption {
+#uwaybwzxiz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jokaldifjj .gt_title {
+#uwaybwzxiz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2848,7 +2876,7 @@ island
   border-bottom-width: 0;
 }
 
-#jokaldifjj .gt_subtitle {
+#uwaybwzxiz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2860,7 +2888,7 @@ island
   border-top-width: 0;
 }
 
-#jokaldifjj .gt_heading {
+#uwaybwzxiz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2872,13 +2900,13 @@ island
   border-right-color: #D3D3D3;
 }
 
-#jokaldifjj .gt_bottom_border {
+#uwaybwzxiz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jokaldifjj .gt_col_headings {
+#uwaybwzxiz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2893,7 +2921,7 @@ island
   border-right-color: #D3D3D3;
 }
 
-#jokaldifjj .gt_col_heading {
+#uwaybwzxiz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2913,7 +2941,7 @@ island
   overflow-x: hidden;
 }
 
-#jokaldifjj .gt_column_spanner_outer {
+#uwaybwzxiz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2925,15 +2953,15 @@ island
   padding-right: 4px;
 }
 
-#jokaldifjj .gt_column_spanner_outer:first-child {
+#uwaybwzxiz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jokaldifjj .gt_column_spanner_outer:last-child {
+#uwaybwzxiz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jokaldifjj .gt_column_spanner {
+#uwaybwzxiz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2945,11 +2973,11 @@ island
   width: 100%;
 }
 
-#jokaldifjj .gt_spanner_row {
+#uwaybwzxiz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jokaldifjj .gt_group_heading {
+#uwaybwzxiz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2975,7 +3003,7 @@ island
   text-align: left;
 }
 
-#jokaldifjj .gt_empty_group_heading {
+#uwaybwzxiz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2990,15 +3018,15 @@ island
   vertical-align: middle;
 }
 
-#jokaldifjj .gt_from_md > :first-child {
+#uwaybwzxiz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jokaldifjj .gt_from_md > :last-child {
+#uwaybwzxiz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jokaldifjj .gt_row {
+#uwaybwzxiz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3017,7 +3045,7 @@ island
   overflow-x: hidden;
 }
 
-#jokaldifjj .gt_stub {
+#uwaybwzxiz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3030,7 +3058,7 @@ island
   padding-right: 5px;
 }
 
-#jokaldifjj .gt_stub_row_group {
+#uwaybwzxiz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3044,15 +3072,15 @@ island
   vertical-align: top;
 }
 
-#jokaldifjj .gt_row_group_first td {
+#uwaybwzxiz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jokaldifjj .gt_row_group_first th {
+#uwaybwzxiz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jokaldifjj .gt_summary_row {
+#uwaybwzxiz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3062,16 +3090,16 @@ island
   padding-right: 5px;
 }
 
-#jokaldifjj .gt_first_summary_row {
+#uwaybwzxiz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jokaldifjj .gt_first_summary_row.thick {
+#uwaybwzxiz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jokaldifjj .gt_last_summary_row {
+#uwaybwzxiz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3081,7 +3109,7 @@ island
   border-bottom-color: #D3D3D3;
 }
 
-#jokaldifjj .gt_grand_summary_row {
+#uwaybwzxiz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3091,7 +3119,7 @@ island
   padding-right: 5px;
 }
 
-#jokaldifjj .gt_first_grand_summary_row {
+#uwaybwzxiz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3101,7 +3129,7 @@ island
   border-top-color: #D3D3D3;
 }
 
-#jokaldifjj .gt_last_grand_summary_row_top {
+#uwaybwzxiz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3111,11 +3139,11 @@ island
   border-bottom-color: #D3D3D3;
 }
 
-#jokaldifjj .gt_striped {
+#uwaybwzxiz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jokaldifjj .gt_table_body {
+#uwaybwzxiz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3124,7 +3152,7 @@ island
   border-bottom-color: #D3D3D3;
 }
 
-#jokaldifjj .gt_footnotes {
+#uwaybwzxiz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3138,7 +3166,7 @@ island
   border-right-color: #D3D3D3;
 }
 
-#jokaldifjj .gt_footnote {
+#uwaybwzxiz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3147,7 +3175,7 @@ island
   padding-right: 5px;
 }
 
-#jokaldifjj .gt_sourcenotes {
+#uwaybwzxiz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3161,7 +3189,7 @@ island
   border-right-color: #D3D3D3;
 }
 
-#jokaldifjj .gt_sourcenote {
+#uwaybwzxiz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3169,72 +3197,72 @@ island
   padding-right: 5px;
 }
 
-#jokaldifjj .gt_left {
+#uwaybwzxiz .gt_left {
   text-align: left;
 }
 
-#jokaldifjj .gt_center {
+#uwaybwzxiz .gt_center {
   text-align: center;
 }
 
-#jokaldifjj .gt_right {
+#uwaybwzxiz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jokaldifjj .gt_font_normal {
+#uwaybwzxiz .gt_font_normal {
   font-weight: normal;
 }
 
-#jokaldifjj .gt_font_bold {
+#uwaybwzxiz .gt_font_bold {
   font-weight: bold;
 }
 
-#jokaldifjj .gt_font_italic {
+#uwaybwzxiz .gt_font_italic {
   font-style: italic;
 }
 
-#jokaldifjj .gt_super {
+#uwaybwzxiz .gt_super {
   font-size: 65%;
 }
 
-#jokaldifjj .gt_footnote_marks {
+#uwaybwzxiz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jokaldifjj .gt_asterisk {
+#uwaybwzxiz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jokaldifjj .gt_indent_1 {
+#uwaybwzxiz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jokaldifjj .gt_indent_2 {
+#uwaybwzxiz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jokaldifjj .gt_indent_3 {
+#uwaybwzxiz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jokaldifjj .gt_indent_4 {
+#uwaybwzxiz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jokaldifjj .gt_indent_5 {
+#uwaybwzxiz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jokaldifjj .katex-display {
+#uwaybwzxiz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jokaldifjj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#uwaybwzxiz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3326,6 +3354,532 @@ island
 </section>
 <section id="rにふれてみようpalmer-penguins-23" class="slide level2">
 <h2>Rにふれてみよう：palmer penguins</h2>
+<h3 id="クロス集計-2">クロス集計</h3>
+<ul>
+<li>crosstableパッケージの場合</li>
+</ul>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>多くの人がパッケージを開発しているため、同様の機能をもつ複数のパッケージがあります</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a></a>  <span class="fu">select</span>(species, island) <span class="sc">|&gt;</span> </span>
+<span id="cb23-3"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">if_any</span>(<span class="fu">everything</span>(), is.na)) <span class="sc">|&gt;</span></span>
+<span id="cb23-4"><a></a>  <span class="fu">crosstable</span>(<span class="at">by =</span> species,</span>
+<span id="cb23-5"><a></a>             <span class="at">cols =</span> island,</span>
+<span id="cb23-6"><a></a>             <span class="at">total =</span> <span class="st">"row"</span>,</span>
+<span id="cb23-7"><a></a>             <span class="at">funs =</span> <span class="fu">list</span>(<span class="at">prop =</span> <span class="sc">~</span><span class="fu">prop.table</span>(.))) <span class="sc">|&gt;</span> </span>
+<span id="cb23-8"><a></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="eczontmyvp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eczontmyvp table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#eczontmyvp thead, #eczontmyvp tbody, #eczontmyvp tfoot, #eczontmyvp tr, #eczontmyvp td, #eczontmyvp th {
+  border-style: none;
+}
+
+#eczontmyvp p {
+  margin: 0;
+  padding: 0;
+}
+
+#eczontmyvp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#eczontmyvp .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#eczontmyvp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#eczontmyvp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#eczontmyvp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#eczontmyvp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eczontmyvp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#eczontmyvp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#eczontmyvp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#eczontmyvp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#eczontmyvp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#eczontmyvp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#eczontmyvp .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#eczontmyvp .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#eczontmyvp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#eczontmyvp .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#eczontmyvp .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#eczontmyvp .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#eczontmyvp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eczontmyvp .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#eczontmyvp .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#eczontmyvp .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#eczontmyvp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eczontmyvp .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#eczontmyvp .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#eczontmyvp .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eczontmyvp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eczontmyvp .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#eczontmyvp .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eczontmyvp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#eczontmyvp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eczontmyvp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#eczontmyvp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eczontmyvp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#eczontmyvp .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eczontmyvp .gt_left {
+  text-align: left;
+}
+
+#eczontmyvp .gt_center {
+  text-align: center;
+}
+
+#eczontmyvp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#eczontmyvp .gt_font_normal {
+  font-weight: normal;
+}
+
+#eczontmyvp .gt_font_bold {
+  font-weight: bold;
+}
+
+#eczontmyvp .gt_font_italic {
+  font-style: italic;
+}
+
+#eczontmyvp .gt_super {
+  font-size: 65%;
+}
+
+#eczontmyvp .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#eczontmyvp .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#eczontmyvp .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#eczontmyvp .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#eczontmyvp .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#eczontmyvp .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#eczontmyvp .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#eczontmyvp .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#eczontmyvp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="a.id" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">.id</th>
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">label</th>
+<th id="variable" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">variable</th>
+<th id="Adelie" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Adelie</th>
+<th id="Chinstrap" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Chinstrap</th>
+<th id="Gentoo" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Gentoo</th>
+<th id="Total" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Total</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers=".id">island</td>
+<td class="gt_row gt_left" headers="label">island</td>
+<td class="gt_row gt_left" headers="variable">Biscoe</td>
+<td class="gt_row gt_right" headers="Adelie">44 (26.19%)</td>
+<td class="gt_row gt_right" headers="Chinstrap">0 (0%)</td>
+<td class="gt_row gt_right" headers="Gentoo">124 (73.81%)</td>
+<td class="gt_row gt_right" headers="Total">168 (48.84%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=".id">island</td>
+<td class="gt_row gt_left" headers="label">island</td>
+<td class="gt_row gt_left" headers="variable">Dream</td>
+<td class="gt_row gt_right" headers="Adelie">56 (45.16%)</td>
+<td class="gt_row gt_right" headers="Chinstrap">68 (54.84%)</td>
+<td class="gt_row gt_right" headers="Gentoo">0 (0%)</td>
+<td class="gt_row gt_right" headers="Total">124 (36.05%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=".id">island</td>
+<td class="gt_row gt_left" headers="label">island</td>
+<td class="gt_row gt_left" headers="variable">Torgersen</td>
+<td class="gt_row gt_right" headers="Adelie">52 (100.00%)</td>
+<td class="gt_row gt_right" headers="Chinstrap">0 (0%)</td>
+<td class="gt_row gt_right" headers="Gentoo">0 (0%)</td>
+<td class="gt_row gt_right" headers="Total">52 (15.12%)</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="rにふれてみようpalmer-penguins-24" class="slide level2">
+<h2>Rにふれてみよう：palmer penguins</h2>
 <h3 id="代入">代入</h3>
 <ul>
 <li>代入 = 値や計算結果を変数や列に「入れる」こと</li>
@@ -3333,15 +3887,15 @@ island
 </ul>
 <h3 id="新しいオブジェクトを作る">新しいオブジェクトを作る</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>penguins2 <span class="ot">&lt;-</span></span>
-<span id="cb22-2"><a></a>  penguins <span class="sc">|&gt;</span> </span>
-<span id="cb22-3"><a></a>  <span class="fu">mutate</span>(<span class="at">body_mass_kg =</span> body_mass <span class="sc">/</span> <span class="dv">1000</span>)  <span class="co"># g → kg に変換して新しい列に代入</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>penguins2 <span class="ot">&lt;-</span></span>
+<span id="cb24-2"><a></a>  penguins <span class="sc">|&gt;</span> </span>
+<span id="cb24-3"><a></a>  <span class="fu">mutate</span>(<span class="at">body_mass_kg =</span> body_mass <span class="sc">/</span> <span class="dv">1000</span>)  <span class="co"># g → kg に変換して新しい列に代入</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h3 id="オブジェクトを上書きする">オブジェクトを上書きする</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>penguins <span class="ot">&lt;-</span></span>
-<span id="cb23-2"><a></a>  penguins <span class="sc">|&gt;</span> <span class="co"># 同じオブジェクト名を指定</span></span>
-<span id="cb23-3"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(body_mass))  <span class="co"># NA を除いたデータに上書き</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>penguins <span class="ot">&lt;-</span></span>
+<span id="cb25-2"><a></a>  penguins <span class="sc">|&gt;</span> <span class="co"># 同じオブジェクト名を指定</span></span>
+<span id="cb25-3"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(body_mass))  <span class="co"># NA を除いたデータに上書き</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-warning callout-style-simple">
 <div class="callout-body">
@@ -3354,7 +3908,7 @@ island
 </div>
 </div>
 </section>
-<section id="rにふれてみようpalmer-penguins-24" class="slide level2">
+<section id="rにふれてみようpalmer-penguins-25" class="slide level2">
 <h2>Rにふれてみよう：palmer penguins</h2>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -3386,7 +3940,7 @@ island
 <div class="callout-content">
 <ul>
 <li>原因がすぐにわからないエラーが出ても安心です（よくあることです）</li>
-<li>そのチャンクだけ実行をスキップできるので、レポート全体のレンダリングに影響しません（冒頭に「#| eval: false」と書く）</li>
+<li>そのチャンクだけ実行をスキップできるので、レポート全体のレンダーに影響しません（冒頭に「#| eval: false」と書く）</li>
 </ul>
 </div>
 </div>
@@ -3405,65 +3959,67 @@ island
 <ul>
 <li>Composite Leading Indicators (CLI)</li>
 </ul></li>
-<li>urlを指定して、ファイルをダウンロード（Rに直接、読ませる）</li>
+<li>urlを指定して、データを取得
+<ul>
+<li>ファイルをダウンロードせず、Rに直接、渡す</li>
+</ul></li>
 </ul>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI/.M.LI...AA...H?startPeriod=2023-02&amp;dimensionAtObservation=AllDimensions&amp;format=csvfilewithlabels"</span></span>
-<span id="cb24-2"><a></a></span>
-<span id="cb24-3"><a></a>df_oecd_cli <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url) <span class="co"># 指定したURLからデータを読み込む</span></span>
-<span id="cb24-4"><a></a></span>
-<span id="cb24-5"><a></a>df_oecd_cli <span class="ot">&lt;-</span></span>
-<span id="cb24-6"><a></a>  <span class="fu">read_csv</span>(<span class="st">"data/df_oecd_cli.csv"</span>)</span>
-<span id="cb24-7"><a></a></span>
-<span id="cb24-8"><a></a>df_oecd_cli <span class="ot">&lt;-</span> </span>
-<span id="cb24-9"><a></a>  df_oecd_cli <span class="sc">|&gt;</span> <span class="co"># 必要な列を取り出す</span></span>
-<span id="cb24-10"><a></a><span class="fu">select</span>(REF_AREA, TIME_PERIOD, OBS_VALUE) <span class="sc">|&gt;</span> </span>
-<span id="cb24-11"><a></a><span class="fu">mutate</span>(<span class="at">TIME_PERIOD =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(TIME_PERIOD, <span class="st">"-01"</span>))) <span class="sc">|&gt;</span> <span class="co"># 日付形式に変換（例：2025 → "2025-01-01"）</span></span>
-<span id="cb24-12"><a></a><span class="fu">mutate</span>(<span class="at">TIME_PERIOD =</span> <span class="fu">as.Date</span>(TIME_PERIOD)) <span class="co"># as.Date() で日付型を再確認（実質は不要な場合もある）</span></span>
-<span id="cb24-13"><a></a></span>
-<span id="cb24-14"><a></a>countries <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"JPN"</span>, <span class="st">"USA"</span>, <span class="st">"DEU"</span>, <span class="st">"FRA"</span>, <span class="st">"KOR"</span>) <span class="co">#主要国だけ選ぶ（主要国のオブジェクトを作る）</span></span>
-<span id="cb24-15"><a></a></span>
-<span id="cb24-16"><a></a>df_sub <span class="ot">&lt;-</span></span>
-<span id="cb24-17"><a></a>  df_oecd_cli <span class="sc">|&gt;</span></span>
-<span id="cb24-18"><a></a>  <span class="fu">filter</span>(REF_AREA <span class="sc">%in%</span> countries) <span class="co"># REF_AREA が countries に含まれる行だけを抽出</span></span>
-<span id="cb24-19"><a></a></span>
-<span id="cb24-20"><a></a>df_sub <span class="sc">|&gt;</span> </span>
-<span id="cb24-21"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> TIME_PERIOD, <span class="at">y =</span> OBS_VALUE, <span class="at">color =</span> REF_AREA)) <span class="sc">+</span></span>
-<span id="cb24-22"><a></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI/.M.LI...AA...H?startPeriod=2023-02&amp;dimensionAtObservation=AllDimensions&amp;format=csvfilewithlabels"</span></span>
+<span id="cb26-2"><a></a></span>
+<span id="cb26-3"><a></a>df_oecd_cli <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url) <span class="co"># 指定したURLからデータを読み込む</span></span>
+<span id="cb26-4"><a></a></span>
+<span id="cb26-5"><a></a><span class="co"># URLにアクセスできない場合（同じサイトに短時間でたくさんアクセスすると、サイト側が「アクセスが多すぎる」と判断して接続を拒否することがあります。その場合は、エラーが出てデータを取得できません。以下のコメントアウトを外してrunして下さい（ハッシュタグを削除））</span></span>
+<span id="cb26-6"><a></a><span class="co"># df_oecd_cli &lt;-</span></span>
+<span id="cb26-7"><a></a><span class="co">#  read_csv("data/df_oecd_cli.csv")</span></span>
+<span id="cb26-8"><a></a></span>
+<span id="cb26-9"><a></a>df_oecd_cli <span class="ot">&lt;-</span> </span>
+<span id="cb26-10"><a></a>  df_oecd_cli <span class="sc">|&gt;</span> <span class="co"># 必要な列を取り出す</span></span>
+<span id="cb26-11"><a></a><span class="fu">select</span>(REF_AREA, TIME_PERIOD, OBS_VALUE) <span class="sc">|&gt;</span> </span>
+<span id="cb26-12"><a></a><span class="fu">mutate</span>(<span class="at">TIME_PERIOD =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(TIME_PERIOD, <span class="st">"-01"</span>))) <span class="sc">|&gt;</span> <span class="co"># 日付形式に変換（例：2025 → "2025-01-01"）</span></span>
+<span id="cb26-13"><a></a><span class="fu">mutate</span>(<span class="at">TIME_PERIOD =</span> <span class="fu">as.Date</span>(TIME_PERIOD)) <span class="co"># as.Date() で日付型を再確認（実質は不要な場合もある）</span></span>
+<span id="cb26-14"><a></a></span>
+<span id="cb26-15"><a></a>countries <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"JPN"</span>, <span class="st">"USA"</span>, <span class="st">"DEU"</span>, <span class="st">"FRA"</span>, <span class="st">"KOR"</span>) <span class="co">#主要国だけ選ぶ（主要国のオブジェクトを作る）</span></span>
+<span id="cb26-16"><a></a></span>
+<span id="cb26-17"><a></a>df_oecd_cli <span class="sc">|&gt;</span></span>
+<span id="cb26-18"><a></a>  <span class="fu">filter</span>(REF_AREA <span class="sc">%in%</span> countries) <span class="sc">|&gt;</span> <span class="co"># REF_AREA が countries に含まれる行だけを抽出</span></span>
+<span id="cb26-19"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> TIME_PERIOD, <span class="at">y =</span> OBS_VALUE, <span class="at">color =</span> REF_AREA)) <span class="sc">+</span></span>
+<span id="cb26-20"><a></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 
-<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
+<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
 <section id="rを動かしてみようoecd景気先行指数-1" class="slide level2">
 <h2>Rを動かしてみよう：OECD景気先行指数</h2>
 <h3 id="見た目を整える">見た目を整える</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>df_sub <span class="sc">|&gt;</span> </span>
-<span id="cb25-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> TIME_PERIOD, <span class="at">y =</span> OBS_VALUE, <span class="at">color =</span> REF_AREA)) <span class="sc">+</span></span>
-<span id="cb25-3"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb25-4"><a></a>  <span class="fu">scale_x_date</span>(</span>
-<span id="cb25-5"><a></a>    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="st">"3 months"</span>),</span>
-<span id="cb25-6"><a></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_date_short</span>()</span>
-<span id="cb25-7"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb25-8"><a></a>  <span class="fu">scale_y_continuous</span>(</span>
-<span id="cb25-9"><a></a>    <span class="st">"Composite Leading Indicator (CLI)"</span>,       <span class="co"># y軸ラベル</span></span>
-<span id="cb25-10"><a></a>    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_extended</span>(<span class="dv">8</span>),       <span class="co"># 目盛りの個数を指定</span></span>
-<span id="cb25-11"><a></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">accuracy =</span> <span class="dv">1</span>) <span class="co"># 数値表示（小数なし）</span></span>
-<span id="cb25-12"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb25-13"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb25-14"><a></a>    <span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"CLI"</span>,</span>
-<span id="cb25-15"><a></a>    <span class="at">color =</span> <span class="st">"Country"</span></span>
-<span id="cb25-16"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb25-17"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"awtools::mpalette"</span>) <span class="sc">+</span></span>
-<span id="cb25-18"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>df_oecd_cli <span class="sc">|&gt;</span></span>
+<span id="cb27-2"><a></a>  <span class="fu">filter</span>(REF_AREA <span class="sc">%in%</span> countries) <span class="sc">|&gt;</span> </span>
+<span id="cb27-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> TIME_PERIOD, <span class="at">y =</span> OBS_VALUE, <span class="at">color =</span> REF_AREA)) <span class="sc">+</span></span>
+<span id="cb27-4"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb27-5"><a></a>  <span class="fu">scale_x_date</span>(</span>
+<span id="cb27-6"><a></a>    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="st">"3 months"</span>),</span>
+<span id="cb27-7"><a></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_date_short</span>()</span>
+<span id="cb27-8"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb27-9"><a></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb27-10"><a></a>    <span class="st">"Composite Leading Indicator (CLI)"</span>,       <span class="co"># y軸ラベル</span></span>
+<span id="cb27-11"><a></a>    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_extended</span>(<span class="dv">8</span>),       <span class="co"># 目盛りの個数を指定</span></span>
+<span id="cb27-12"><a></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">accuracy =</span> <span class="dv">1</span>) <span class="co"># 数値表示（小数なし）</span></span>
+<span id="cb27-13"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb27-14"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb27-15"><a></a>    <span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"CLI"</span>,</span>
+<span id="cb27-16"><a></a>    <span class="at">color =</span> <span class="st">"Country"</span></span>
+<span id="cb27-17"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb27-18"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"awtools::mpalette"</span>) <span class="sc">+</span></span>
+<span id="cb27-19"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
+<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
 <section id="rを動かしてみよう訪日外客数の推移" class="slide level2">
 <h2>Rを動かしてみよう：訪日外客数の推移</h2>
 <ul>
@@ -3471,7 +4027,7 @@ island
 <li>エディタに貼り付けて保存
 <ul>
 <li>保存形式はcsvとする</li>
-<li>新たにdataというフォルダを作って、そこに保存）</li>
+<li>新たにdataというフォルダを作って、そこに保存</li>
 </ul></li>
 </ul>
 <div class="callout callout-note callout-style-simple">
@@ -3503,24 +4059,24 @@ island
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>df_inbound <span class="ot">&lt;-</span></span>
-<span id="cb26-2"><a></a>  <span class="fu">read_csv</span>(<span class="st">"data/inbound_travelers.csv"</span>)</span>
-<span id="cb26-3"><a></a></span>
-<span id="cb26-4"><a></a>df_inbound <span class="sc">|&gt;</span> </span>
-<span id="cb26-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> <span class="st">`</span><span class="at">Visitor Arrivals</span><span class="st">`</span>)) <span class="sc">+</span> <span class="co"># カラム名に空白や記号が含まれている場合は、バッククォート（`）で囲む</span></span>
-<span id="cb26-6"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb26-7"><a></a>  <span class="fu">scale_x_continuous</span>(</span>
-<span id="cb26-8"><a></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1964</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">5</span>)  <span class="co"># 5年刻み</span></span>
-<span id="cb26-9"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb26-10"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"年"</span>,</span>
-<span id="cb26-11"><a></a>       <span class="at">y =</span> <span class="st">"訪日外国人客数"</span>) <span class="sc">+</span></span>
-<span id="cb26-12"><a></a>  <span class="fu">scale_y_continuous</span>(</span>
-<span id="cb26-13"><a></a>    <span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">big.mark =</span> <span class="st">","</span>, <span class="at">accuracy =</span> <span class="dv">1</span>)</span>
-<span id="cb26-14"><a></a>  ) <span class="co"># 指数表記を通常表記に（指数表記をあらためるためには、scalesパッケージを追加する必要があります）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>df_inbound <span class="ot">&lt;-</span></span>
+<span id="cb28-2"><a></a>  <span class="fu">read_csv</span>(<span class="st">"data/inbound_travelers.csv"</span>)</span>
+<span id="cb28-3"><a></a></span>
+<span id="cb28-4"><a></a>df_inbound <span class="sc">|&gt;</span> </span>
+<span id="cb28-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> <span class="st">`</span><span class="at">Visitor Arrivals</span><span class="st">`</span>)) <span class="sc">+</span> <span class="co"># カラム名に空白や記号が含まれている場合は、バッククォート（`）で囲む</span></span>
+<span id="cb28-6"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb28-7"><a></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb28-8"><a></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1964</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">5</span>)  <span class="co"># 5年刻み</span></span>
+<span id="cb28-9"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb28-10"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"年"</span>,</span>
+<span id="cb28-11"><a></a>       <span class="at">y =</span> <span class="st">"訪日外国人客数"</span>) <span class="sc">+</span></span>
+<span id="cb28-12"><a></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb28-13"><a></a>    <span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">big.mark =</span> <span class="st">","</span>, <span class="at">accuracy =</span> <span class="dv">1</span>)</span>
+<span id="cb28-14"><a></a>  ) <span class="co"># 指数表記を通常表記に（指数表記をあらためるためには、scalesパッケージを追加する必要があります）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
+<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section>
 <section id="rを動かしてみようデータの読み込み" class="slide level2">
 <h2>Rを動かしてみよう：データの読み込み</h2>
 <h3 id="データの読み込み">データの読み込み</h3>
@@ -3551,8 +4107,8 @@ island
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">read_csv</span>(<span class="st">"filename.csv"</span></span>
-<span id="cb27-2"><a></a>         , <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"cp932"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">read_csv</span>(<span class="st">"filename.csv"</span></span>
+<span id="cb29-2"><a></a>         , <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"cp932"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="rを動かしてみようデータの読み込み-1" class="slide level2">
@@ -3566,18 +4122,18 @@ island
 </ul>
 <h3 id="基本形">基本形</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>df <span class="ot">&lt;-</span></span>
-<span id="cb28-2"><a></a>  <span class="fu">read_excel</span>(<span class="st">"filename.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>df <span class="ot">&lt;-</span></span>
+<span id="cb30-2"><a></a>  <span class="fu">read_excel</span>(<span class="st">"filename.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h3 id="シートを指定して読み込む">シートを指定して読み込む</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>df <span class="ot">&lt;-</span></span>
-<span id="cb29-2"><a></a>  <span class="fu">read_excel</span>(<span class="st">"filename.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"2024年データ"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>df <span class="ot">&lt;-</span></span>
+<span id="cb31-2"><a></a>  <span class="fu">read_excel</span>(<span class="st">"filename.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"2024年データ"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h3 id="列名を含めない1行目をデータとして扱う">列名を含めない（1行目をデータとして扱う）</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>df <span class="ot">&lt;-</span></span>
-<span id="cb30-2"><a></a>  <span class="fu">read_excel</span>(<span class="st">"filename.xlsx"</span>, <span class="at">col_names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>df <span class="ot">&lt;-</span></span>
+<span id="cb32-2"><a></a>  <span class="fu">read_excel</span>(<span class="st">"filename.xlsx"</span>, <span class="at">col_names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="rを動かしてみようデータの読み込み-2" class="slide level2">
@@ -3602,7 +4158,7 @@ island
 <ul>
 <li><a href="https://www.moderncsv.com/download/">Modern CSV</a>
 <ul>
-<li>Windows / macOS / Windows Portable Linux</li>
+<li>Windows / macOS / Windows Portable / Linux</li>
 <li>基本的な操作は無償版でも十分可能</li>
 </ul></li>
 </ul>
@@ -3620,23 +4176,23 @@ island
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>df_pr_parties_2021 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/hr2021_pr_parties.csv"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb31-2"><a></a>  <span class="fu">mutate</span>(, <span class="at">.before =</span> block,</span>
-<span id="cb31-3"><a></a>         <span class="at">year =</span> <span class="dv">2021</span></span>
-<span id="cb31-4"><a></a>  ) </span>
-<span id="cb31-5"><a></a></span>
-<span id="cb31-6"><a></a>df_pr_parties_2024 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/hr2024_pr_parties.csv"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb31-7"><a></a>  <span class="fu">mutate</span>(, <span class="at">.before =</span> block,</span>
-<span id="cb31-8"><a></a>         <span class="at">year =</span> <span class="dv">2024</span></span>
-<span id="cb31-9"><a></a>  )</span>
-<span id="cb31-10"><a></a>  </span>
-<span id="cb31-11"><a></a>df_pr_parties <span class="ot">&lt;-</span> </span>
-<span id="cb31-12"><a></a>  <span class="fu">bind_rows</span>(df_pr_parties_2021, df_pr_parties_2024) <span class="sc">|&gt;</span> <span class="co"># 上記の二つのオブジェクトを結合します</span></span>
-<span id="cb31-13"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb31-14"><a></a>    <span class="at">block =</span> <span class="fu">factor</span>(block, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"北海道"</span>, <span class="st">"東北"</span>, <span class="st">"北関東"</span>, <span class="st">"南関東"</span>, <span class="st">"東京"</span>, <span class="st">"北陸信越"</span>, <span class="st">"東海"</span>, <span class="st">"近畿"</span>, <span class="st">"中国"</span>, <span class="st">"四国"</span>, <span class="st">"九州"</span>)) <span class="co"># factorにして、レベル（順序）を指定します</span></span>
-<span id="cb31-15"><a></a>  )</span>
-<span id="cb31-16"><a></a></span>
-<span id="cb31-17"><a></a>主要政党 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"自由民主党"</span>, <span class="st">"立憲民主党"</span>, <span class="st">"公明党"</span>, <span class="st">"金沢桜丘"</span>, <span class="st">"国民民主党"</span>, <span class="st">"日本維新の会"</span>, <span class="st">"日本共産党"</span>, <span class="st">"社会民主党"</span>, <span class="st">"れいわ新選組"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>df_pr_parties_2021 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/hr2021_pr_parties.csv"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb33-2"><a></a>  <span class="fu">mutate</span>(, <span class="at">.before =</span> block,</span>
+<span id="cb33-3"><a></a>         <span class="at">year =</span> <span class="dv">2021</span></span>
+<span id="cb33-4"><a></a>  ) </span>
+<span id="cb33-5"><a></a></span>
+<span id="cb33-6"><a></a>df_pr_parties_2024 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/hr2024_pr_parties.csv"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb33-7"><a></a>  <span class="fu">mutate</span>(, <span class="at">.before =</span> block,</span>
+<span id="cb33-8"><a></a>         <span class="at">year =</span> <span class="dv">2024</span></span>
+<span id="cb33-9"><a></a>  )</span>
+<span id="cb33-10"><a></a>  </span>
+<span id="cb33-11"><a></a>df_pr_parties <span class="ot">&lt;-</span> </span>
+<span id="cb33-12"><a></a>  <span class="fu">bind_rows</span>(df_pr_parties_2021, df_pr_parties_2024) <span class="sc">|&gt;</span> <span class="co"># 上記の二つのオブジェクトを結合します</span></span>
+<span id="cb33-13"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb33-14"><a></a>    <span class="at">block =</span> <span class="fu">factor</span>(block, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"北海道"</span>, <span class="st">"東北"</span>, <span class="st">"北関東"</span>, <span class="st">"南関東"</span>, <span class="st">"東京"</span>, <span class="st">"北陸信越"</span>, <span class="st">"東海"</span>, <span class="st">"近畿"</span>, <span class="st">"中国"</span>, <span class="st">"四国"</span>, <span class="st">"九州"</span>)) <span class="co"># factorにして、レベル（順序）を指定します</span></span>
+<span id="cb33-15"><a></a>  )</span>
+<span id="cb33-16"><a></a></span>
+<span id="cb33-17"><a></a>主要政党 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"自由民主党"</span>, <span class="st">"立憲民主党"</span>, <span class="st">"公明党"</span>, <span class="st">"国民民主党"</span>, <span class="st">"日本維新の会"</span>, <span class="st">"日本共産党"</span>, <span class="st">"社会民主党"</span>, <span class="st">"れいわ新選組"</span>, <span class="st">"参政党"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -3646,29 +4202,29 @@ island
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>df_pr_parties <span class="sc">|&gt;</span> </span>
-<span id="cb32-2"><a></a>  <span class="fu">group_by</span>(year, party) <span class="sc">|&gt;</span> </span>
-<span id="cb32-3"><a></a>  <span class="fu">summarise</span>(</span>
-<span id="cb32-4"><a></a>    <span class="at">votes =</span> <span class="fu">sum</span>(votes)</span>
-<span id="cb32-5"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb32-6"><a></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb32-7"><a></a>  <span class="fu">filter</span>(party <span class="sc">%in%</span> 主要政党) <span class="sc">|&gt;</span></span>
-<span id="cb32-8"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb32-9"><a></a>    <span class="at">party =</span> <span class="fu">factor</span>(party, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"自由民主党"</span>, <span class="st">"立憲民主党"</span>, <span class="st">"公明党"</span>, <span class="st">"国民民主党"</span>, <span class="st">"日本維新の会"</span>, <span class="st">"参政党"</span>, <span class="st">"日本共産党"</span>, <span class="st">"社会民主党"</span>, <span class="st">"れいわ新選組"</span>))</span>
-<span id="cb32-10"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb32-11"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> party, <span class="at">y =</span> votes, <span class="at">fill =</span> <span class="fu">as.factor</span>(year))) <span class="sc">+</span> <span class="co"># yearをfactorにします（標準では数字です）</span></span>
-<span id="cb32-12"><a></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span> <span class="co"># 棒グラフを横並びにする</span></span>
-<span id="cb32-13"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> zipangu<span class="sc">::</span><span class="fu">label_kansuji</span>()) <span class="sc">+</span> <span class="co"># y軸のラベルをわかりやすくします（zipanguパッケージ要）</span></span>
-<span id="cb32-14"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"得票数"</span>, <span class="at">fill =</span> <span class="st">"年"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>df_pr_parties <span class="sc">|&gt;</span> </span>
+<span id="cb34-2"><a></a>  <span class="fu">group_by</span>(year, party) <span class="sc">|&gt;</span> </span>
+<span id="cb34-3"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb34-4"><a></a>    <span class="at">votes =</span> <span class="fu">sum</span>(votes)</span>
+<span id="cb34-5"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb34-6"><a></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb34-7"><a></a>  <span class="fu">filter</span>(party <span class="sc">%in%</span> 主要政党) <span class="sc">|&gt;</span></span>
+<span id="cb34-8"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb34-9"><a></a>    <span class="at">party =</span> <span class="fu">factor</span>(party, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"自由民主党"</span>, <span class="st">"立憲民主党"</span>, <span class="st">"公明党"</span>, <span class="st">"国民民主党"</span>, <span class="st">"日本維新の会"</span>, <span class="st">"日本共産党"</span>, <span class="st">"社会民主党"</span>, <span class="st">"れいわ新選組"</span>, <span class="st">"参政党"</span>))</span>
+<span id="cb34-10"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb34-11"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> party, <span class="at">y =</span> votes, <span class="at">fill =</span> <span class="fu">as.factor</span>(year))) <span class="sc">+</span> <span class="co"># yearをfactorにします（標準では数字です）</span></span>
+<span id="cb34-12"><a></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span> <span class="co"># 棒グラフを横並びにする</span></span>
+<span id="cb34-13"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> zipangu<span class="sc">::</span><span class="fu">label_kansuji</span>()) <span class="sc">+</span> <span class="co"># y軸のラベルをわかりやすくします（zipanguパッケージ要）</span></span>
+<span id="cb34-14"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"得票数"</span>, <span class="at">fill =</span> <span class="st">"年"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section>
+<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section>
 <section id="rを動かしてみよう選挙-2" class="slide level2">
 <h2>Rを動かしてみよう：選挙</h2>
-<h3 id="衆議院議員選挙-比例代表得票の割合2021-vs.-2024">衆議院議員選挙 比例代表得票の割合：2021 vs.&nbsp;2024</h3>
+<h3 id="衆議院議員選挙-比例代表得票率2021-vs.-2024">衆議院議員選挙 比例代表得票率：2021 vs.&nbsp;2024</h3>
 
-<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section>
+<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section>
 <section id="rを動かしてみよう金沢広域急病センター利用者数" class="slide level2">
 <h2>Rを動かしてみよう：金沢広域急病センター利用者数</h2>
 <h3 id="データを読み込む-1">データを読み込む</h3>
@@ -3680,18 +4236,18 @@ island
 <li>以下のコードは、全てのR Chunkで使うことを想定するものなので、本来はSetup Chunkに書くことが望ましい</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>df_hospital <span class="ot">&lt;-</span> </span>
-<span id="cb33-2"><a></a>  <span class="fu">read_csv</span>(<span class="st">"data/金沢広域急病センター利用者数.csv"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb33-3"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb33-4"><a></a>    曜日 <span class="ot">=</span> <span class="fu">factor</span>(曜日, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"月"</span>, <span class="st">"火"</span>, <span class="st">"水"</span>, <span class="st">"木"</span>, <span class="st">"金"</span>, <span class="st">"土"</span>, <span class="st">"日"</span>)) <span class="co"># 曜日順に並べるための処理</span></span>
-<span id="cb33-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>df_hospital <span class="ot">&lt;-</span> </span>
+<span id="cb35-2"><a></a>  <span class="fu">read_csv</span>(<span class="st">"data/金沢広域急病センター利用者数.csv"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb35-3"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb35-4"><a></a>    曜日 <span class="ot">=</span> <span class="fu">factor</span>(曜日, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"月"</span>, <span class="st">"火"</span>, <span class="st">"水"</span>, <span class="st">"木"</span>, <span class="st">"金"</span>, <span class="st">"土"</span>, <span class="st">"日"</span>)) <span class="co"># 曜日順に並べるための処理</span></span>
+<span id="cb35-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="rを動かしてみよう金沢広域急病センター利用者数-1" class="slide level2">
 <h2>Rを動かしてみよう：金沢広域急病センター利用者数</h2>
 <h3 id="データの確認横持ちデータ">データの確認：横持ちデータ</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>df_hospital <span class="sc">|&gt;</span> <span class="fu">view</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>df_hospital <span class="sc">|&gt;</span> <span class="fu">view</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>小児科/内科が別の列になっていることを確認</li>
@@ -3702,39 +4258,129 @@ island
 <h2>Rを動かしてみよう：金沢広域急病センター利用者数</h2>
 <h3 id="データの変換横持ちデータから縦持ちデータへ">データの変換：横持ちデータから縦持ちデータへ</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>df_hospital_long <span class="ot">&lt;-</span> </span>
-<span id="cb35-2"><a></a>  df_hospital <span class="sc">|&gt;</span> </span>
-<span id="cb35-3"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb35-4"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"小児科"</span>, <span class="st">"内科"</span>),</span>
-<span id="cb35-5"><a></a>    <span class="at">names_to =</span> <span class="st">"専門"</span>,</span>
-<span id="cb35-6"><a></a>    <span class="at">values_to =</span> <span class="st">"利用者数"</span></span>
-<span id="cb35-7"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb35-8"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb35-9"><a></a>    専門 <span class="ot">=</span> <span class="fu">factor</span>(専門, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"内科"</span>, <span class="st">"小児科"</span>))</span>
-<span id="cb35-10"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb35-11"><a></a>  <span class="fu">select</span>(日付, 曜日, 土日祝, 専門, 利用者数) <span class="sc">|&gt;</span> </span>
-<span id="cb35-12"><a></a>  <span class="fu">mutate</span>(日付 <span class="ot">=</span> <span class="fu">as.POSIXct</span>(日付), <span class="co"># 日付をデータの型が「date」になるように変形」」</span></span>
-<span id="cb35-13"><a></a>         日付 <span class="ot">=</span> <span class="fu">as.Date</span>(日付))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>df_hospital_long <span class="ot">&lt;-</span> </span>
+<span id="cb37-2"><a></a>  df_hospital <span class="sc">|&gt;</span> </span>
+<span id="cb37-3"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb37-4"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"小児科"</span>, <span class="st">"内科"</span>),</span>
+<span id="cb37-5"><a></a>    <span class="at">names_to =</span> <span class="st">"専門"</span>,</span>
+<span id="cb37-6"><a></a>    <span class="at">values_to =</span> <span class="st">"利用者数"</span></span>
+<span id="cb37-7"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb37-8"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb37-9"><a></a>    専門 <span class="ot">=</span> <span class="fu">factor</span>(専門, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"内科"</span>, <span class="st">"小児科"</span>))</span>
+<span id="cb37-10"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb37-11"><a></a>  <span class="fu">select</span>(日付, 曜日, 土日祝, 専門, 利用者数) <span class="sc">|&gt;</span> </span>
+<span id="cb37-12"><a></a>  <span class="fu">mutate</span>(日付 <span class="ot">=</span> <span class="fu">as.POSIXct</span>(日付), <span class="co"># 日付をデータの型が「date」になるように変形」」</span></span>
+<span id="cb37-13"><a></a>         日付 <span class="ot">=</span> <span class="fu">as.Date</span>(日付))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="rを動かしてみよう金沢広域急病センター利用者数-3" class="slide level2">
 <h2>Rを動かしてみよう：金沢広域急病センター利用者数</h2>
 <h3 id="縦持ちデータカラム専門の活用">縦持ちデータ（カラム「専門」）の活用</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>df_hospital_long <span class="sc">|&gt;</span>  </span>
-<span id="cb36-2"><a></a>    <span class="fu">group_by</span>(曜日, 専門) <span class="sc">|&gt;</span> </span>
-<span id="cb36-3"><a></a>    <span class="fu">summarise</span>(</span>
-<span id="cb36-4"><a></a>      利用者数_曜日 <span class="ot">=</span> <span class="fu">sum</span>(利用者数)</span>
-<span id="cb36-5"><a></a>    ) <span class="sc">|&gt;</span> </span>
-<span id="cb36-6"><a></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 曜日, <span class="at">y =</span> 利用者数_曜日, <span class="at">fill =</span> 専門)) <span class="sc">+</span></span>
-<span id="cb36-7"><a></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>df_hospital_long <span class="sc">|&gt;</span>  </span>
+<span id="cb38-2"><a></a>    <span class="fu">group_by</span>(曜日, 専門) <span class="sc">|&gt;</span> </span>
+<span id="cb38-3"><a></a>    <span class="fu">summarise</span>(</span>
+<span id="cb38-4"><a></a>      利用者数_曜日 <span class="ot">=</span> <span class="fu">sum</span>(利用者数)</span>
+<span id="cb38-5"><a></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb38-6"><a></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 曜日, <span class="at">y =</span> 利用者数_曜日, <span class="at">fill =</span> 専門)) <span class="sc">+</span></span>
+<span id="cb38-7"><a></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-36-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-37-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="rを使いこなそうmap関数スクレイピング地図情報" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
 <h1>Ⅵ. Rを使いこなそう：map()関数・スクレイピング・地図情報</h1>
 
+</section>
+<section id="rを使いこなそうmap関数-penguin" class="slide level2">
+<h2>Rを使いこなそう：map()関数 ＞ penguin</h2>
+<h3 id="map関数の利点">map()関数の利点</h3>
+<ul>
+<li>グループごとに自動で処理できる
+<ul>
+<li>手作業でspeciesごとに分けてコードを書く必要がない</li>
+<li>例：ペンギンの種類ごとに、くちばしの長さ(bill_len)と深さ(bill_dep)の関係を回帰分析で調べる</li>
+</ul></li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb39-2"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb39-3"><a></a>  <span class="fu">nest</span>() <span class="sc">|&gt;</span>                  <span class="co"># グループごとにデータフレームをリスト化して1列にまとめる</span></span>
+<span id="cb39-4"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb39-5"><a></a>    <span class="at">bill_lm_result =</span> <span class="fu">map</span>(    <span class="co"># map() でリストの各要素（データフレーム）に同じ処理を適用</span></span>
+<span id="cb39-6"><a></a>      data,                  <span class="co"># 対象は nest() で作った 'data' 列</span></span>
+<span id="cb39-7"><a></a>      <span class="cf">function</span>(df) {</span>
+<span id="cb39-8"><a></a>        lm_result <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_len <span class="sc">~</span> bill_dep, <span class="at">data =</span> df)  <span class="co"># bill_len を目的変数、bill_dep を説明変数に回帰</span></span>
+<span id="cb39-9"><a></a>        <span class="fu">return</span>(lm_result)                              <span class="co"># lm の結果を返す</span></span>
+<span id="cb39-10"><a></a>      }</span>
+<span id="cb39-11"><a></a>    ),</span>
+<span id="cb39-12"><a></a>    <span class="at">coefficients =</span> <span class="fu">map</span>(      <span class="co"># map() で各回帰結果から係数を取り出す</span></span>
+<span id="cb39-13"><a></a>      bill_lm_result, </span>
+<span id="cb39-14"><a></a>      pluck, </span>
+<span id="cb39-15"><a></a>      <span class="st">"coefficients"</span></span>
+<span id="cb39-16"><a></a>    )</span>
+<span id="cb39-17"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb39-18"><a></a>  <span class="fu">unnest_wider</span>(coefficients, <span class="at">names_sep =</span> <span class="st">"_"</span>) <span class="sc">|&gt;</span>   <span class="co"># coefficients 列を列ごとに展開（intercept や傾きが列になる）</span></span>
+<span id="cb39-19"><a></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+# Groups:   species [3]
+  species   data     bill_lm_result coefficients_(Interc…¹ coefficients_bill_dep
+  &lt;fct&gt;     &lt;list&gt;   &lt;list&gt;                          &lt;dbl&gt;                 &lt;dbl&gt;
+1 Adelie    &lt;tibble&gt; &lt;lm&gt;                             23.1                 0.857
+2 Gentoo    &lt;tibble&gt; &lt;lm&gt;                             17.2                 2.02 
+3 Chinstrap &lt;tibble&gt; &lt;lm&gt;                             13.4                 1.92 
+# ℹ abbreviated name: ¹​`coefficients_(Intercept)`</code></pre>
+</div>
+</div>
+</section>
+<section id="rを使いこなそうmap関数-penguin-1" class="slide level2">
+<h2>Rを使いこなそう：map()関数 ＞ penguin</h2>
+<h3 id="mapを使わない場合">map()を使わない場合</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="co"># データを種別ごとに分ける</span></span>
+<span id="cb41-2"><a></a>adelie <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>)</span>
+<span id="cb41-3"><a></a><span class="co"># chinstrap &lt;- penguins |&gt; filter(species == "Chinstrap")</span></span>
+<span id="cb41-4"><a></a><span class="co"># gentoo &lt;- penguins |&gt; filter(species == "Gentoo")</span></span>
+<span id="cb41-5"><a></a></span>
+<span id="cb41-6"><a></a><span class="co"># 種別ごとに回帰分析を個別に書く</span></span>
+<span id="cb41-7"><a></a>adelie_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_len <span class="sc">~</span> bill_dep, <span class="at">data =</span> adelie)</span>
+<span id="cb41-8"><a></a><span class="co"># chinstrap_lm &lt;- lm(bill_len ~ bill_dep, data = chinstrap)</span></span>
+<span id="cb41-9"><a></a><span class="co"># gentoo_lm &lt;- lm(bill_len ~ bill_dep, data = gentoo)</span></span>
+<span id="cb41-10"><a></a></span>
+<span id="cb41-11"><a></a><span class="co"># 結果を確認</span></span>
+<span id="cb41-12"><a></a><span class="fu">print</span>(adelie_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = bill_len ~ bill_dep, data = adelie)
+
+Coefficients:
+(Intercept)     bill_dep  
+     23.068        0.857  </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="co"># print(chinstrap_lm)</span></span>
+<span id="cb43-2"><a></a><span class="co"># print(gentoo_lm)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>回帰分析をtidyverseスタイルで行うなら、parsnipパッケージが便利です。tidymodelsパッケージに含まれています。モデル結果を表形式に整理するにはbroomパッケージも使います</p>
+</div>
+</div>
+</div>
 </section>
 <section id="rを使いこなそうmap関数-選挙" class="slide level2">
 <h2>Rを使いこなそう：map()関数 ＞ 選挙</h2>
@@ -3748,25 +4394,42 @@ island
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="co"># 1. データを整形して新しいオブジェクトに保存</span></span>
-<span id="cb37-2"><a></a>df_plot <span class="ot">&lt;-</span> df_pr_parties <span class="sc">|&gt;</span></span>
-<span id="cb37-3"><a></a>  <span class="fu">group_by</span>(year, party, block) <span class="sc">|&gt;</span></span>
-<span id="cb37-4"><a></a>  <span class="fu">summarise</span>(<span class="at">votes =</span> <span class="fu">sum</span>(votes), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb37-5"><a></a>  <span class="fu">filter</span>(party <span class="sc">%in%</span> 主要政党) <span class="sc">|&gt;</span></span>
-<span id="cb37-6"><a></a>  <span class="fu">mutate</span>(<span class="at">party =</span> <span class="fu">factor</span>(party, <span class="at">levels =</span> 主要政党))</span>
-<span id="cb37-7"><a></a></span>
-<span id="cb37-8"><a></a><span class="co"># 2. block ごとに分割（factor → character に変換）</span></span>
-<span id="cb37-9"><a></a>df_list <span class="ot">&lt;-</span> <span class="fu">split</span>(df_plot, <span class="fu">as.character</span>(df_plot<span class="sc">$</span>block))</span>
-<span id="cb37-10"><a></a></span>
-<span id="cb37-11"><a></a><span class="co"># 3. ggplot を作成</span></span>
-<span id="cb37-12"><a></a>plots <span class="ot">&lt;-</span> <span class="fu">map</span>(df_list, <span class="sc">~</span> <span class="fu">ggplot</span>(.x, <span class="fu">aes</span>(<span class="at">x =</span> party, <span class="at">y =</span> votes, <span class="at">fill =</span> <span class="fu">as.factor</span>(year))) <span class="sc">+</span></span>
-<span id="cb37-13"><a></a>                       <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb37-14"><a></a>                       <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">unique</span>(.x<span class="sc">$</span>block), <span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"得票数"</span>) <span class="sc">+</span></span>
-<span id="cb37-15"><a></a>                       <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)))</span>
-<span id="cb37-16"><a></a></span>
-<span id="cb37-17"><a></a><span class="co"># 4. プロットを表示</span></span>
-<span id="cb37-18"><a></a><span class="fu">walk</span>(plots, print)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="co"># 1. データを整形して新しいオブジェクトに保存</span></span>
+<span id="cb44-2"><a></a>df_plot <span class="ot">&lt;-</span> df_pr_parties <span class="sc">|&gt;</span></span>
+<span id="cb44-3"><a></a>  <span class="fu">group_by</span>(year, party, block) <span class="sc">|&gt;</span></span>
+<span id="cb44-4"><a></a>  <span class="fu">summarise</span>(<span class="at">votes =</span> <span class="fu">sum</span>(votes), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb44-5"><a></a>  <span class="fu">filter</span>(party <span class="sc">%in%</span> 主要政党) <span class="sc">|&gt;</span></span>
+<span id="cb44-6"><a></a>  <span class="fu">mutate</span>(<span class="at">party =</span> <span class="fu">factor</span>(party, <span class="at">levels =</span> 主要政党))</span>
+<span id="cb44-7"><a></a></span>
+<span id="cb44-8"><a></a><span class="co"># 2. block ごとに分割（factor → character に変換）</span></span>
+<span id="cb44-9"><a></a>df_list <span class="ot">&lt;-</span> <span class="fu">split</span>(df_plot, <span class="fu">as.character</span>(df_plot<span class="sc">$</span>block))</span>
+<span id="cb44-10"><a></a></span>
+<span id="cb44-11"><a></a><span class="co"># 3. ggplot を作成</span></span>
+<span id="cb44-12"><a></a>plots <span class="ot">&lt;-</span> <span class="fu">map</span>(df_list, <span class="sc">~</span> <span class="fu">ggplot</span>(.x, <span class="fu">aes</span>(<span class="at">x =</span> party, <span class="at">y =</span> votes, <span class="at">fill =</span> <span class="fu">as.factor</span>(year))) <span class="sc">+</span></span>
+<span id="cb44-13"><a></a>                       <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb44-14"><a></a>                       <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">unique</span>(.x<span class="sc">$</span>block), <span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"得票数"</span>) <span class="sc">+</span></span>
+<span id="cb44-15"><a></a>                       <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)))</span>
+<span id="cb44-16"><a></a></span>
+<span id="cb44-17"><a></a><span class="co"># 4. プロットを表示</span></span>
+<span id="cb44-18"><a></a><span class="fu">walk</span>(plots, print)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+</div>
+</section>
+<section id="rを使いこなそうpdf-からテキストを抽出する" class="slide level2">
+<h2>Rを使いこなそう：PDF からテキストを抽出する</h2>
+<ul>
+<li>別途、pdftoolsをインストールして下さい</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="fu">library</span>(pdftools)</span>
+<span id="cb45-2"><a></a></span>
+<span id="cb45-3"><a></a><span class="co"># PDFファイルを読み込む</span></span>
+<span id="cb45-4"><a></a>text <span class="ot">&lt;-</span> <span class="fu">pdf_text</span>(<span class="st">"data/sample.pdf"</span>)</span>
+<span id="cb45-5"><a></a></span>
+<span id="cb45-6"><a></a>text <span class="sc">|&gt;</span> <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "1   # Lorem\n\n2\n\n3   &gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n\n    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud\n\n    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\n\n    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\n    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oﬃcia deserunt\n\n    mollit anim id est laborum.\n"</code></pre>
+</div>
 </div>
 </section>
 <section id="rを使いこなそうスクレイピング-総理の演説記者会見など" class="slide level2">
@@ -3781,50 +4444,50 @@ island
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>base_urls <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb38-2"><a></a>  <span class="st">"https://www.kantei.go.jp/jp/102_ishiba/statement/index.html"</span>,</span>
-<span id="cb38-3"><a></a>  <span class="st">"https://www.kantei.go.jp/jp/103/statement/index.html"</span></span>
-<span id="cb38-4"><a></a>)</span>
-<span id="cb38-5"><a></a></span>
-<span id="cb38-6"><a></a>years <span class="ot">&lt;-</span> <span class="dv">2024</span><span class="sc">:</span><span class="dv">2025</span></span>
-<span id="cb38-7"><a></a></span>
-<span id="cb38-8"><a></a>all_index_pages <span class="ot">&lt;-</span> <span class="fu">map</span>(base_urls, <span class="cf">function</span>(base) {</span>
-<span id="cb38-9"><a></a>  resp <span class="ot">&lt;-</span> <span class="fu">request</span>(base) <span class="sc">|&gt;</span> <span class="fu">req_perform</span>()</span>
-<span id="cb38-10"><a></a>  html <span class="ot">&lt;-</span> <span class="fu">resp_body_html</span>(resp)</span>
-<span id="cb38-11"><a></a>  </span>
-<span id="cb38-12"><a></a>  <span class="co"># index_YYYY.html のリンクも取得</span></span>
-<span id="cb38-13"><a></a>  archive_links <span class="ot">&lt;-</span> html <span class="sc">|&gt;</span> <span class="fu">html_elements</span>(<span class="st">"a"</span>) <span class="sc">|&gt;</span> <span class="fu">html_attr</span>(<span class="st">"href"</span>)</span>
-<span id="cb38-14"><a></a>  archive_links <span class="ot">&lt;-</span> archive_links[<span class="fu">str_detect</span>(archive_links, <span class="st">"statement/index_</span><span class="sc">\\</span><span class="st">d{4}</span><span class="sc">\\</span><span class="st">.html$"</span>)]</span>
-<span id="cb38-15"><a></a>  archive_links <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://www.kantei.go.jp"</span>, archive_links)</span>
-<span id="cb38-16"><a></a>  </span>
-<span id="cb38-17"><a></a>  <span class="fu">c</span>(base, archive_links)</span>
-<span id="cb38-18"><a></a>}) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">unique</span>()</span>
-<span id="cb38-19"><a></a></span>
-<span id="cb38-20"><a></a>get_article_urls <span class="ot">&lt;-</span> <span class="cf">function</span>(page_url) {</span>
-<span id="cb38-21"><a></a>  req <span class="ot">&lt;-</span> <span class="fu">request</span>(page_url) <span class="sc">|&gt;</span> <span class="fu">req_perform</span>()</span>
-<span id="cb38-22"><a></a>  html <span class="ot">&lt;-</span> <span class="fu">resp_body_html</span>(req)</span>
-<span id="cb38-23"><a></a>  </span>
-<span id="cb38-24"><a></a>  hrefs <span class="ot">&lt;-</span> html <span class="sc">|&gt;</span> <span class="fu">html_elements</span>(<span class="st">"a"</span>) <span class="sc">|&gt;</span> <span class="fu">html_attr</span>(<span class="st">"href"</span>)</span>
-<span id="cb38-25"><a></a>  </span>
-<span id="cb38-26"><a></a>  <span class="co"># 102_ishiba と 103 の両方に対応</span></span>
-<span id="cb38-27"><a></a>  relative_urls <span class="ot">&lt;-</span> hrefs[<span class="fu">str_detect</span>(hrefs, <span class="st">"^/jp/(102_ishiba|103)/statement/</span><span class="sc">\\</span><span class="st">d{4}/</span><span class="sc">\\</span><span class="st">d{4}.*</span><span class="sc">\\</span><span class="st">.html$"</span>)]</span>
-<span id="cb38-28"><a></a>  relative_urls <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(<span class="fu">unique</span>(relative_urls))</span>
-<span id="cb38-29"><a></a>  </span>
-<span id="cb38-30"><a></a>  <span class="fu">paste0</span>(<span class="st">"https://www.kantei.go.jp"</span>, relative_urls)</span>
-<span id="cb38-31"><a></a>}</span>
-<span id="cb38-32"><a></a></span>
-<span id="cb38-33"><a></a>article_urls <span class="ot">&lt;-</span> <span class="fu">map</span>(all_index_pages, get_article_urls) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">unique</span>()</span>
-<span id="cb38-34"><a></a><span class="fu">message</span>(<span class="st">"取得した記事数: "</span>, <span class="fu">length</span>(article_urls))</span>
-<span id="cb38-35"><a></a></span>
-<span id="cb38-36"><a></a>articles_info <span class="ot">&lt;-</span> <span class="fu">map</span>(article_urls, extract_article_info)</span>
-<span id="cb38-37"><a></a>articles_info <span class="ot">&lt;-</span> <span class="fu">compact</span>(articles_info)</span>
-<span id="cb38-38"><a></a>articles_df <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(articles_info)</span>
-<span id="cb38-39"><a></a></span>
-<span id="cb38-40"><a></a>articles_df <span class="ot">&lt;-</span> articles_df <span class="sc">|&gt;</span></span>
-<span id="cb38-41"><a></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">convert_jdate</span>(date)) <span class="sc">|&gt;</span> </span>
-<span id="cb38-42"><a></a>  <span class="fu">arrange</span>(date)</span>
-<span id="cb38-43"><a></a></span>
-<span id="cb38-44"><a></a><span class="fu">saveRDS</span>(articles_df, <span class="st">"speech_ishiba.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>base_urls <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb47-2"><a></a>  <span class="st">"https://www.kantei.go.jp/jp/102_ishiba/statement/index.html"</span>,</span>
+<span id="cb47-3"><a></a>  <span class="st">"https://www.kantei.go.jp/jp/103/statement/index.html"</span></span>
+<span id="cb47-4"><a></a>)</span>
+<span id="cb47-5"><a></a></span>
+<span id="cb47-6"><a></a>years <span class="ot">&lt;-</span> <span class="dv">2024</span><span class="sc">:</span><span class="dv">2025</span></span>
+<span id="cb47-7"><a></a></span>
+<span id="cb47-8"><a></a>all_index_pages <span class="ot">&lt;-</span> <span class="fu">map</span>(base_urls, <span class="cf">function</span>(base) {</span>
+<span id="cb47-9"><a></a>  resp <span class="ot">&lt;-</span> <span class="fu">request</span>(base) <span class="sc">|&gt;</span> <span class="fu">req_perform</span>()</span>
+<span id="cb47-10"><a></a>  html <span class="ot">&lt;-</span> <span class="fu">resp_body_html</span>(resp)</span>
+<span id="cb47-11"><a></a>  </span>
+<span id="cb47-12"><a></a>  <span class="co"># index_YYYY.html のリンクも取得</span></span>
+<span id="cb47-13"><a></a>  archive_links <span class="ot">&lt;-</span> html <span class="sc">|&gt;</span> <span class="fu">html_elements</span>(<span class="st">"a"</span>) <span class="sc">|&gt;</span> <span class="fu">html_attr</span>(<span class="st">"href"</span>)</span>
+<span id="cb47-14"><a></a>  archive_links <span class="ot">&lt;-</span> archive_links[<span class="fu">str_detect</span>(archive_links, <span class="st">"statement/index_</span><span class="sc">\\</span><span class="st">d{4}</span><span class="sc">\\</span><span class="st">.html$"</span>)]</span>
+<span id="cb47-15"><a></a>  archive_links <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://www.kantei.go.jp"</span>, archive_links)</span>
+<span id="cb47-16"><a></a>  </span>
+<span id="cb47-17"><a></a>  <span class="fu">c</span>(base, archive_links)</span>
+<span id="cb47-18"><a></a>}) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">unique</span>()</span>
+<span id="cb47-19"><a></a></span>
+<span id="cb47-20"><a></a>get_article_urls <span class="ot">&lt;-</span> <span class="cf">function</span>(page_url) {</span>
+<span id="cb47-21"><a></a>  req <span class="ot">&lt;-</span> <span class="fu">request</span>(page_url) <span class="sc">|&gt;</span> <span class="fu">req_perform</span>()</span>
+<span id="cb47-22"><a></a>  html <span class="ot">&lt;-</span> <span class="fu">resp_body_html</span>(req)</span>
+<span id="cb47-23"><a></a>  </span>
+<span id="cb47-24"><a></a>  hrefs <span class="ot">&lt;-</span> html <span class="sc">|&gt;</span> <span class="fu">html_elements</span>(<span class="st">"a"</span>) <span class="sc">|&gt;</span> <span class="fu">html_attr</span>(<span class="st">"href"</span>)</span>
+<span id="cb47-25"><a></a>  </span>
+<span id="cb47-26"><a></a>  <span class="co"># 102_ishiba と 103 の両方に対応</span></span>
+<span id="cb47-27"><a></a>  relative_urls <span class="ot">&lt;-</span> hrefs[<span class="fu">str_detect</span>(hrefs, <span class="st">"^/jp/(102_ishiba|103)/statement/</span><span class="sc">\\</span><span class="st">d{4}/</span><span class="sc">\\</span><span class="st">d{4}.*</span><span class="sc">\\</span><span class="st">.html$"</span>)]</span>
+<span id="cb47-28"><a></a>  relative_urls <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(<span class="fu">unique</span>(relative_urls))</span>
+<span id="cb47-29"><a></a>  </span>
+<span id="cb47-30"><a></a>  <span class="fu">paste0</span>(<span class="st">"https://www.kantei.go.jp"</span>, relative_urls)</span>
+<span id="cb47-31"><a></a>}</span>
+<span id="cb47-32"><a></a></span>
+<span id="cb47-33"><a></a>article_urls <span class="ot">&lt;-</span> <span class="fu">map</span>(all_index_pages, get_article_urls) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">unique</span>()</span>
+<span id="cb47-34"><a></a><span class="fu">message</span>(<span class="st">"取得した記事数: "</span>, <span class="fu">length</span>(article_urls))</span>
+<span id="cb47-35"><a></a></span>
+<span id="cb47-36"><a></a>articles_info <span class="ot">&lt;-</span> <span class="fu">map</span>(article_urls, extract_article_info)</span>
+<span id="cb47-37"><a></a>articles_info <span class="ot">&lt;-</span> <span class="fu">compact</span>(articles_info)</span>
+<span id="cb47-38"><a></a>articles_df <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(articles_info)</span>
+<span id="cb47-39"><a></a></span>
+<span id="cb47-40"><a></a>articles_df <span class="ot">&lt;-</span> articles_df <span class="sc">|&gt;</span></span>
+<span id="cb47-41"><a></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">convert_jdate</span>(date)) <span class="sc">|&gt;</span> </span>
+<span id="cb47-42"><a></a>  <span class="fu">arrange</span>(date)</span>
+<span id="cb47-43"><a></a></span>
+<span id="cb47-44"><a></a><span class="fu">saveRDS</span>(articles_df, <span class="st">"speech_ishiba.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -3832,15 +4495,15 @@ island
 <h2>Rを使いこなそう：地図情報 ＞ アメリカの選挙</h2>
 <h3 id="前処理">前処理</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>us_states <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"state"</span>)</span>
-<span id="cb39-2"><a></a></span>
-<span id="cb39-3"><a></a><span class="co"># アメリカ主要政党のカラーコード</span></span>
-<span id="cb39-4"><a></a>party_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#2E74C0"</span>, <span class="st">"#CB454A"</span>)</span>
-<span id="cb39-5"><a></a></span>
-<span id="cb39-6"><a></a>us_state_elec <span class="ot">&lt;-</span> </span>
-<span id="cb39-7"><a></a>  election <span class="sc">|&gt;</span> <span class="co"># データセットsocvizに含まれています</span></span>
-<span id="cb39-8"><a></a>  <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">tolower</span>(state)) <span class="sc">|&gt;</span> </span>
-<span id="cb39-9"><a></a>  <span class="fu">left_join</span>(us_states, <span class="at">by =</span> <span class="st">"region"</span>) <span class="co"># データの結合</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>us_states <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"state"</span>)</span>
+<span id="cb48-2"><a></a></span>
+<span id="cb48-3"><a></a><span class="co"># アメリカ主要政党のカラーコード</span></span>
+<span id="cb48-4"><a></a>party_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#2E74C0"</span>, <span class="st">"#CB454A"</span>)</span>
+<span id="cb48-5"><a></a></span>
+<span id="cb48-6"><a></a>us_state_elec <span class="ot">&lt;-</span> </span>
+<span id="cb48-7"><a></a>  election <span class="sc">|&gt;</span> <span class="co"># データセットsocvizに含まれています</span></span>
+<span id="cb48-8"><a></a>  <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">tolower</span>(state)) <span class="sc">|&gt;</span> </span>
+<span id="cb48-9"><a></a>  <span class="fu">left_join</span>(us_states, <span class="at">by =</span> <span class="st">"region"</span>) <span class="co"># データの結合</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="rを使いこなそう地図情報-アメリカの選挙-1" class="slide level2">
@@ -3849,17 +4512,17 @@ island
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>us_state_elec <span class="sc">|&gt;</span> </span>
-<span id="cb40-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group, <span class="at">fill =</span> party)) <span class="sc">+</span></span>
-<span id="cb40-3"><a></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"gray90"</span>, <span class="at">size =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb40-4"><a></a>  <span class="fu">coord_map</span>(<span class="at">projection =</span> <span class="st">"albers"</span>, <span class="at">lat0 =</span> <span class="dv">39</span>, <span class="at">lat1 =</span> <span class="dv">45</span>) <span class="sc">+</span></span>
-<span id="cb40-5"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> party_colors) <span class="sc">+</span></span>
-<span id="cb40-6"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"アメリカ大統領選挙結果 2016"</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb40-7"><a></a>  <span class="fu">theme_map</span>(<span class="at">base_family =</span> <span class="st">"HiraKakuProN-W3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>us_state_elec <span class="sc">|&gt;</span> </span>
+<span id="cb49-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group, <span class="at">fill =</span> party)) <span class="sc">+</span></span>
+<span id="cb49-3"><a></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"gray90"</span>, <span class="at">size =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb49-4"><a></a>  <span class="fu">coord_map</span>(<span class="at">projection =</span> <span class="st">"albers"</span>, <span class="at">lat0 =</span> <span class="dv">39</span>, <span class="at">lat1 =</span> <span class="dv">45</span>) <span class="sc">+</span></span>
+<span id="cb49-5"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> party_colors) <span class="sc">+</span></span>
+<span id="cb49-6"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"アメリカ大統領選挙結果 2016"</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb49-7"><a></a>  <span class="fu">theme_map</span>(<span class="at">base_family =</span> <span class="st">"HiraKakuProN-W3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-41-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><ul>
+<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-46-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><ul>
 <li>コードの出典：<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー， (<a href="#/引用文献-1" role="doc-biblioref" onclick="">2021</a>)</span></li>
 </ul>
 </section>
@@ -3869,26 +4532,26 @@ island
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>county_full <span class="ot">&lt;-</span></span>
-<span id="cb41-2"><a></a>  county_map <span class="sc">|&gt;</span> </span>
-<span id="cb41-3"><a></a>  <span class="fu">left_join</span>(county_data, <span class="at">by =</span> <span class="st">"id"</span>)</span>
-<span id="cb41-4"><a></a></span>
-<span id="cb41-5"><a></a>county_full <span class="sc">|&gt;</span>  </span>
-<span id="cb41-6"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat,</span>
-<span id="cb41-7"><a></a>         <span class="at">fill =</span> pop_dens,</span>
-<span id="cb41-8"><a></a>         <span class="at">group =</span> group)) <span class="sc">+</span></span>
-<span id="cb41-9"><a></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"gray90"</span>, <span class="at">size =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
-<span id="cb41-10"><a></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
-<span id="cb41-11"><a></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Blues"</span>,</span>
-<span id="cb41-12"><a></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"0-10"</span>, <span class="st">"10-50"</span>, <span class="st">"50-100"</span>, <span class="st">"100-500"</span>, <span class="st">"500-1,000"</span>, <span class="st">"1,000-5,000"</span>, <span class="st">"&gt;5,000"</span>)) <span class="sc">+</span></span>
-<span id="cb41-13"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Population per</span><span class="sc">\n</span><span class="st">square mile"</span>) <span class="sc">+</span></span>
-<span id="cb41-14"><a></a>  <span class="fu">theme_map</span>() <span class="sc">+</span></span>
-<span id="cb41-15"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb41-16"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a>county_full <span class="ot">&lt;-</span></span>
+<span id="cb50-2"><a></a>  county_map <span class="sc">|&gt;</span> </span>
+<span id="cb50-3"><a></a>  <span class="fu">left_join</span>(county_data, <span class="at">by =</span> <span class="st">"id"</span>)</span>
+<span id="cb50-4"><a></a></span>
+<span id="cb50-5"><a></a>county_full <span class="sc">|&gt;</span>  </span>
+<span id="cb50-6"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat,</span>
+<span id="cb50-7"><a></a>         <span class="at">fill =</span> pop_dens,</span>
+<span id="cb50-8"><a></a>         <span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb50-9"><a></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"gray90"</span>, <span class="at">size =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb50-10"><a></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
+<span id="cb50-11"><a></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Blues"</span>,</span>
+<span id="cb50-12"><a></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"0-10"</span>, <span class="st">"10-50"</span>, <span class="st">"50-100"</span>, <span class="st">"100-500"</span>, <span class="st">"500-1,000"</span>, <span class="st">"1,000-5,000"</span>, <span class="st">"&gt;5,000"</span>)) <span class="sc">+</span></span>
+<span id="cb50-13"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Population per</span><span class="sc">\n</span><span class="st">square mile"</span>) <span class="sc">+</span></span>
+<span id="cb50-14"><a></a>  <span class="fu">theme_map</span>() <span class="sc">+</span></span>
+<span id="cb50-15"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb50-16"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-42-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><ul>
+<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-47-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><ul>
 <li>コードの出典：<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー， (<a href="#/引用文献-1" role="doc-biblioref" onclick="">2021</a>)</span></li>
 </ul>
 </section>
@@ -3897,23 +4560,23 @@ island
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="fu">library</span>(ngramr)</span>
-<span id="cb42-2"><a></a></span>
-<span id="cb42-3"><a></a>words <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Cicero"</span>, <span class="st">"Tacitus"</span>, <span class="st">"Sallust"</span>,<span class="st">"Plutarch"</span>, <span class="st">"Aristotle"</span>, <span class="st">"Shakespeare"</span>, <span class="st">"Milton"</span>)</span>
-<span id="cb42-4"><a></a></span>
-<span id="cb42-5"><a></a>df <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(words, <span class="sc">~</span><span class="fu">ngram</span>(.x, <span class="at">corpus =</span> <span class="st">"eng_gb_2019"</span>, <span class="at">year_start =</span> <span class="dv">1500</span>, <span class="at">year_end =</span> <span class="dv">2020</span>))</span>
-<span id="cb42-6"><a></a></span>
-<span id="cb42-7"><a></a>df <span class="sc">|&gt;</span> </span>
-<span id="cb42-8"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Frequency, <span class="at">color =</span> Phrase)) <span class="sc">+</span></span>
-<span id="cb42-9"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb42-10"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"ggthemr::solarized"</span>) <span class="sc">+</span></span>
-<span id="cb42-11"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb42-12"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
-<span id="cb42-13"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Google Ngram Trends"</span>, <span class="at">y =</span> <span class="st">"Frequency (%)"</span>, <span class="at">x =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a><span class="fu">library</span>(ngramr)</span>
+<span id="cb51-2"><a></a></span>
+<span id="cb51-3"><a></a>words <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Cicero"</span>, <span class="st">"Tacitus"</span>, <span class="st">"Sallust"</span>,<span class="st">"Plutarch"</span>, <span class="st">"Aristotle"</span>, <span class="st">"Shakespeare"</span>, <span class="st">"Milton"</span>)</span>
+<span id="cb51-4"><a></a></span>
+<span id="cb51-5"><a></a>df <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(words, <span class="sc">~</span><span class="fu">ngram</span>(.x, <span class="at">corpus =</span> <span class="st">"eng_gb_2019"</span>, <span class="at">year_start =</span> <span class="dv">1500</span>, <span class="at">year_end =</span> <span class="dv">2020</span>))</span>
+<span id="cb51-6"><a></a></span>
+<span id="cb51-7"><a></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb51-8"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Frequency, <span class="at">color =</span> Phrase)) <span class="sc">+</span></span>
+<span id="cb51-9"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb51-10"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"ggthemr::solarized"</span>) <span class="sc">+</span></span>
+<span id="cb51-11"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb51-12"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
+<span id="cb51-13"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Google Ngram Trends"</span>, <span class="at">y =</span> <span class="st">"Frequency (%)"</span>, <span class="at">x =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-43-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-48-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="さらに学ぶために" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
 <h1>Ⅶ.さらに学ぶために</h1>
@@ -3926,6 +4589,12 @@ island
 <li>キーラン・ヒーリー（2021）『データ分析のためのデータ可視化入門』（瓜生真也・ 江口哲史・三村喬生 訳）、講談社（<a href="https://www.kspub.co.jp/book/detail/5164044.html">LINK</a>）</li>
 <li>松村優哉・湯谷啓明・紀ノ定保礼・前田和寛（2021）『改訂2版 RユーザのためのRStudio「実践」入門：tidyverseによるモダンな分析フローの世界』、技術評論社（<a href="https://gihyo.jp/book/2021/978-4-297-12170-9">LINK</a>）</li>
 <li>松村優哉・瓜生真也・吉村広志（2023）『Rユーザのためのtidymodels「実践」入門：モダンな統計・機械学習モデリングの世界』、技術評論社（<a href="https://gihyo.jp/book/2018/978-4-7741-9853-8">LINK</a>）</li>
+<li>Kosuke Imai and Nora Webb Williams, “Quantitative Social Science: An Introduction in tidyverse”（<a href="https://press.princeton.edu/books/hardcover/9780691222271/quantitative-social-science">LINK</a>、旧版（非tidyverse）は翻訳あり（<a href="https://www.iwanami.co.jp/book/b352348.html">LINK</a>）</li>
+</ul>
+</section>
+<section id="基本書-1" class="slide level2">
+<h2>基本書</h2>
+<ul>
 <li>轟亮・杉野勇・平沢和司編『入門・社会調査法〔第4版〕：2ステップで基礎から学ぶ』（<a href="https://www.hou-bun.com/cgi-bin/search/detail.cgi?c=ISBN978-4-589-04141-8">LINK</a>）</li>
 </ul>
 </section>
@@ -3998,6 +4667,7 @@ island
 </ul>
 <h3 id="初学者向け教材">初学者向け教材</h3>
 <ul>
+<li>宋財泫・矢内勇生<a href="https://www.jaysong.net/RBook/">私たちのR：ベストプラクティスの探求</a></li>
 <li><a href="https://qiita.com/nekobo/items/cbf32a13637273f229da">R初学者のためのtidyverse100本ノック</a></li>
 </ul>
 </section></section>
