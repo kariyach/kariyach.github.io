@@ -2783,7 +2783,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#rを使いこなそうおまけgoogle-ngram-trends",
     "title": "初心者向けR Studioの使い方",
     "section": "Rを使いこなそう（おまけ）：Google Ngram Trends",
-    "text": "Rを使いこなそう（おまけ）：Google Ngram Trends\n\n\nCode\nlibrary(ngramr)\n\nwords &lt;- c(\"Cicero\", \"Tacitus\", \"Sallust\",\"Plutarch\", \"Aristotle\", \"Shakespeare\", \"Milton\")\n\ndf &lt;- map_dfr(words, ~ngram(.x, corpus = \"eng_gb_2019\", year_start = 1500, year_end = 2020))\n\ndf |&gt; \n  ggplot(aes(x = Year, y = Frequency, color = Phrase)) +\n  geom_line() +\n  scale_color_paletteer_d(\"ggthemr::solarized\") +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  labs(title = \"Google Ngram Trends\", y = \"Frequency (%)\", x = \"\")"
+    "text": "Rを使いこなそう（おまけ）：Google Ngram Trends\n\n別途、ngramrをインストールして下さい\n\n\n\nCode\nlibrary(ngramr)\n\nwords &lt;- c(\"Cicero\", \"Tacitus\", \"Sallust\",\"Plutarch\", \"Aristotle\", \"Shakespeare\", \"Milton\")\n\ndf &lt;- map_dfr(words, ~ngram(.x, corpus = \"eng_gb_2019\", year_start = 1500, year_end = 2020))\n\ndf |&gt; \n  ggplot(aes(x = Year, y = Frequency, color = Phrase)) +\n  geom_line() +\n  scale_color_paletteer_d(\"ggthemr::solarized\") +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  labs(title = \"Google Ngram Trends\", y = \"Frequency (%)\", x = \"\")"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本書",
@@ -2804,7 +2804,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#専門的なパッケージ",
     "title": "初心者向けR Studioの使い方",
     "section": "専門的なパッケージ",
-    "text": "専門的なパッケージ\n\n社会科学：sjPlot\n\n回帰分析結果の可視化、アンケートデータの表作成\n\n政治学（議会の構成）：ggparliament\n\n議席構成や投票結果の可視化\n\n経済学：tidyquant\n\n株価データや金融指標の分析、時系列処理\n\n心理学：psych\n\n心理尺度の分析、因子分析、信頼性分析"
+    "text": "専門的なパッケージ\n\n社会科学：sjPlot\n\n回帰分析結果の可視化、アンケートデータの表作成\n\n政治学（議会の構成）：ggparliament\n\n議席構成や投票結果の可視化\n\n経済学：tidyquant\n\n株価データや金融指標の分析、時系列処理\n\n心理学：psych\n\n心理尺度の分析、因子分析、信頼性分析\npsychの補助ツール：psychTools"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#専門的なパッケージ-1",
@@ -2825,7 +2825,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#教材",
     "title": "初心者向けR Studioの使い方",
     "section": "教材",
-    "text": "教材\n学部生向け授業教材\n\nRとQuartoではじめるデータサイエンス：データを可視化する《2025》\n\n私（苅谷）が授業に作成した教材です。本論で挙げたものが多いですが、可視化の体裁変更などは参考になると思います\n\n\n初学者向け教材\n\n宋財泫・矢内勇生私たちのR：ベストプラクティスの探求\nR初学者のためのtidyverse100本ノック"
+    "text": "教材\n学部生向け授業教材\n\nRとQuartoではじめるデータサイエンス：データを可視化する《2025》\n\n私（苅谷）が授業に作成した教材です。本論で挙げたものが多いですが、可視化の体裁変更などは参考になると思います\n\n\n初学者向け教材\n\n宋財泫・矢内勇生 私たちのR：ベストプラクティスの探求\nR初学者のためのtidyverse100本ノック"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#引用文献-1",
