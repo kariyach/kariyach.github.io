@@ -2279,7 +2279,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#なぜrなのか-なぜquartoなのか",
     "title": "初心者向けR Studioの使い方",
     "section": "なぜRなのか / なぜquartoなのか",
-    "text": "なぜRなのか / なぜquartoなのか\n1. 無料\n2. コード（スクリプト）\n\n再現可能性\n\nマウス操作と違い､手順を説明する必要性が少ない（真似しやすい、生成AIと親和性が高い）\n操作を忘れてもコードが残る\nミスも再現できる\n\n使い回せる（作業の効率化）\n安全性（元データは加工されない）\n\n3. 豊富な可視化ツール\n\nggplot2 / カラーパッケージ"
+    "text": "なぜRなのか / なぜquartoなのか\n1. 無料\n2. コード（スクリプト）\n\n再現可能性\n\nマウス操作と違い､手順を説明する必要性が少ない\n\n真似しやすい、生成AIと親和性が高い\n\n操作を忘れてもコードが残る\nミスも再現できる\n\n使い回せる（作業の効率化）\n安全性（元データは加工されない）\n\n3. 豊富な可視化ツール\n\nggplot2 / カラーパッケージ"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#なぜrなのか-なぜquartoなのか-1",
@@ -2545,7 +2545,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-14",
     "title": "初心者向けR Studioの使い方",
     "section": "Rにふれてみよう：palmer penguins",
-    "text": "Rにふれてみよう：palmer penguins\nデータを要約する\n\npenguins |&gt; \n  filter(!if_any(everything(), is.na)) |&gt; # データの中で、1つでも欠損値（NA）がある行を削除する\n  group_by(species) |&gt; # speciesで分類する\n  summarise( # データを要約する\n    max = max(bill_len), # 「bill_len」の列の最大値\n    min = min(bill_len), # 「bill_len」の列の最小値\n    mean = round(mean(bill_len), 2), # 「bill_len」の列の平均、round関数で小数点以下2桁に丸める\n    sd = sd(bill_len) # 「bill_len」の列の標準偏差、roundしないとこうなる\n  ) |&gt; \n  gt() # 以上の集計結果を表にする\n\n\n\n\n\n\n\nspecies\nmax\nmin\nmean\nsd\n\n\n\n\nAdelie\n46.0\n32.1\n38.82\n2.662597\n\n\nChinstrap\n58.0\n40.9\n48.83\n3.339256\n\n\nGentoo\n59.6\n40.9\n47.57\n3.106116\n\n\n\n\n\n\n\n\n\n\n\n\n\ngt()はスライドに表示するために書いています gt()はtidyveseに入っていないパッケージです。tidyverseと同じように、インストールと読み込み（library）が必要です。標準的なパッケージですので、インストールを推奨します"
+    "text": "Rにふれてみよう：palmer penguins\nデータを要約する\n\nR Chunkを作り、以下のコードを入力しよう\n\n\n\n\npenguins |&gt; \n  group_by(species) |&gt; # speciesで分類する \n  summarise( # データを要約する（集計の枠組み）\n    mean = mean(bill_len, na.rm = TRUE), # 「bill_len」の列の平均を算出（summarise関数のもと具体的に何を計算するかを指定）\n  ) |&gt; \n  # ここにview関数を入れて、どのようにデータが変わったのか、見てみよう\n  gt() # 以上の集計結果を表にする\n\n\n\n\n\n\n\n\n\n\nspecies\nmean\n\n\n\n\nAdelie\n38.79139\n\n\nChinstrap\n48.83382\n\n\nGentoo\n47.50488\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nna.rm = TRUEは「NAを無視して計算する」という意味です。多くの集計関数（mean(), sum(), sd() など）は欠損値があると計算できません。デフォルトで NA を残すことで誤った計算（欠損を無視した計算）を防ぎ、明示的に（意図的に） na.rm = TRUE を書くことで安全に計算できます\n\n\n\n\n\n\n\n\n\ngt()はスライドに表示するために書いています gt()はtidyveseに入っていないパッケージです。tidyverseと同じように、インストールと読み込み（library）が必要です。標準的なパッケージですので、インストールを推奨します"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#rにふれてみようpalmer-penguins-15",
