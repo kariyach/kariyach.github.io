@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.25">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="苅谷 千尋">
 <meta name="keywords" content="データの加工；データの抽出">
@@ -84,18 +84,19 @@ div.csl-indent {
 <link href="../../img/favicon-16x16.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-29124b29be36714fa140da1b7eaa6547.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-5b53d57d5b6f866a11eac50cfbd76017.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-29124b29be36714fa140da1b7eaa6547.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-06ed20086a2bd4ca7598c88091de652a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-14c0bdb860daf350da9c4b825e21f0c7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-06ed20086a2bd4ca7598c88091de652a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -295,6 +296,8 @@ div.csl-indent {
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">CHIHIRO KARIYA</span>
     </a>
@@ -394,7 +397,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">Fri, 17, Oct, 2025</p>
+        <p class="date-modified">Sun, 19, Oct, 2025</p>
       </div>
     </div>
       
@@ -501,7 +504,7 @@ div.csl-indent {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-次回の授業
+<span class="screen-reader-only">Note</span>次回の授業
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -542,7 +545,7 @@ div.csl-indent {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-レンダリングのフォント設定：Windowsの場合
+<span class="screen-reader-only">Tip</span>レンダリングのフォント設定：Windowsの場合
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -604,26 +607,26 @@ ggplot2::update_geom_defaults(
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">here</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">here</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "/Users/kariyach/R/R-website/website"</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">bill_len</span>, y <span class="op">=</span> <span class="va">bill_dep</span>, colour <span class="op">=</span> <span class="va">island</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggsave</span><span class="op">(</span><span class="fu">here</span><span class="op">(</span><span class="st">"teaching/RandQuarto/figures/figure_散布図.jpg"</span><span class="op">)</span>, <span class="co"># パス名を指定（みなさんは「figure」だけでいいはず）</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggsave</span><span class="op">(</span><span class="fu">here</span><span class="op">(</span><span class="st">"teaching/RandQuarto/figures/figure_散布図.jpg"</span><span class="op">)</span>, <span class="co"># パス名を指定（みなさんは「figure」だけでいいはず）</span></span>
 <span>       width <span class="op">=</span> <span class="fl">16</span>, <span class="co"># 横幅（inch）</span></span>
 <span>       height <span class="op">=</span> <span class="fl">8</span>, <span class="co"># 高さ（inch）</span></span>
 <span>       dpi <span class="op">=</span> <span class="fl">600</span>, <span class="co"># 解像度（72dpiがデフォルト）</span></span>
-<span>       device <span class="op">=</span> <span class="st">"jpeg"</span><span class="op">)</span> <span class="co"># ファイル形式</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>       device <span class="op">=</span> <span class="st">"jpeg"</span><span class="op">)</span> <span class="co"># ファイル形式</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
@@ -639,25 +642,25 @@ ggplot2::update_geom_defaults(
 <li>同じ作業を最終成果物のファイルでもやってみよう</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span></span>
 <span>    人数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">人数</span>, y <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_col</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">theme_gray</span><span class="op">(</span>base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span> <span class="co"># フォントを指定（Windowsは適宜、フォント名を差し替えること）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">theme_gray</span><span class="op">(</span>base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span> <span class="co"># フォントを指定（Windowsは適宜、フォント名を差し替えること）</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggsave</span><span class="op">(</span><span class="fu">here</span><span class="op">(</span><span class="st">"teaching/RandQuarto/figures/figure_アンケート回答者数.jpg"</span><span class="op">)</span>, <span class="co"># パス名を指定（みなさんは「figure」だけでいいはず）</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggsave</span><span class="op">(</span><span class="fu">here</span><span class="op">(</span><span class="st">"teaching/RandQuarto/figures/figure_アンケート回答者数.jpg"</span><span class="op">)</span>, <span class="co"># パス名を指定（みなさんは「figure」だけでいいはず）</span></span>
 <span>       width <span class="op">=</span> <span class="fl">16</span>, <span class="co"># 横幅（inch）</span></span>
 <span>       height <span class="op">=</span> <span class="fl">8</span>, <span class="co"># 高さ（inch）</span></span>
 <span>       dpi <span class="op">=</span> <span class="fl">600</span>, <span class="co"># 解像度（72dpiがデフォルト）</span></span>
-<span>       device <span class="op">=</span> <span class="st">"jpeg"</span><span class="op">)</span> <span class="co"># ファイル形式</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>       device <span class="op">=</span> <span class="st">"jpeg"</span><span class="op">)</span> <span class="co"># ファイル形式</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="正しい数値の示し方" class="level1"><h1>Ⅳ. 正しい数値の示し方</h1>
 <div class="callout callout-style-simple callout-warning">
@@ -676,9 +679,9 @@ ggplot2::update_geom_defaults(
 <span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン <a href="#ref-HealyK:2021book1_translJA" role="doc-biblioref">(2021)</a></span>, 4.2, 128-129</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_line</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>group <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="co"># geom内に情報を足す</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_line</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>group <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="co"># geom内に情報を足す</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
@@ -690,10 +693,10 @@ ggplot2::update_geom_defaults(
 <li>教科書は失敗例として挙げています（データを読み取れる図になっておらず、可視化に失敗しています）</li>
 </ul></section><section id="複数の図に切り分ける" class="level2"><h2 class="anchored" data-anchor-id="複数の図に切り分ける">2. 複数の図に切り分ける</h2>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_line</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>group <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">continent</span>, ncol <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="co"># カテゴリー（factor型か文字型） / ncolで一行あたりのカラム数を指定</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">continent</span>, ncol <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="co"># カテゴリー（factor型か文字型） / ncolで一行あたりのカラム数を指定</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
@@ -735,12 +738,12 @@ ggplot2::update_geom_defaults(
 <li>read_csv()関数でデータを読み込み、オブジェクトに入れる(困ったら、先週のウェブページを参照しましょう)</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/sample_5科目.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/sample_5科目.csv"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 7
    年度  学期 クラス 科目  性別  生徒数  成績
@@ -785,7 +788,7 @@ ggplot2::update_geom_defaults(
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">df_sample5科目</span><span class="op">$</span><span class="va">性別</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">df_sample5科目</span><span class="op">$</span><span class="va">性別</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
  女  男 
@@ -796,9 +799,9 @@ ggplot2::update_geom_defaults(
 <li>まずは性別ごとの人数を棒グラフで描きます</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">性別</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="op">)</span> <span class="co"># デフォルトでカウント（stat(count)）される（geom_histogram(aes(y = stat(count)))）。カウントしたい場合はデフォルトのままでよい</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="op">)</span> <span class="co"># デフォルトでカウント（stat(count)）される（geom_histogram(aes(y = stat(count)))）。カウントしたい場合はデフォルトのままでよい</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
@@ -810,9 +813,9 @@ ggplot2::update_geom_defaults(
 <li>比率で表現します（y軸の変化に注目して下さい）</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">性別</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>y <span class="op">=</span> <span class="fu">after_stat</span><span class="op">(</span><span class="va">prop</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="co"># propは比率を計算させる関数です</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>y <span class="op">=</span> <span class="fu">after_stat</span><span class="op">(</span><span class="va">prop</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="co"># propは比率を計算させる関数です</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
@@ -821,9 +824,9 @@ ggplot2::update_geom_defaults(
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">性別</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>y <span class="op">=</span> <span class="fu">after_stat</span><span class="op">(</span><span class="va">prop</span><span class="op">)</span>, group <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="co"># 男女別ではなく、男女合算して一グループと見立てる</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>y <span class="op">=</span> <span class="fu">after_stat</span><span class="op">(</span><span class="va">prop</span><span class="op">)</span>, group <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="co"># 男女別ではなく、男女合算して一グループと見立てる</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
@@ -838,9 +841,9 @@ ggplot2::update_geom_defaults(
 <li>➡ 説明がわかりにくいかもしれませんが、一般的に円グラフで表現される図だと思って下さい。全体（一つの円）を想定するので、groupを1としている、ということです</li>
 </ul></section><section id="色の活用とposition" class="level2"><h2 class="anchored" data-anchor-id="色の活用とposition">4. 色の活用とposition</h2>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">性別</span>, color <span class="op">=</span> <span class="va">性別</span>, fill <span class="op">=</span> <span class="va">性別</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
@@ -864,9 +867,9 @@ ggplot2::update_geom_defaults(
 <section id="positionの指定" class="level3"><h3 class="anchored" data-anchor-id="positionの指定">⑴ positionの指定</h3>
 <section id="a-カテゴリー変数を積んで表示比率fill" class="level4"><h4 class="anchored" data-anchor-id="a-カテゴリー変数を積んで表示比率fill">a) カテゴリー変数を積んで表示（比率）：fill</h4>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span><span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span><span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">年度</span>, fill <span class="op">=</span> <span class="va">性別</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
@@ -876,9 +879,9 @@ ggplot2::update_geom_defaults(
 </div>
 </section><section id="b-カテゴリー変数を横並びに表示実数dodge" class="level4"><h4 class="anchored" data-anchor-id="b-カテゴリー変数を横並びに表示実数dodge">b) カテゴリー変数を横並びに表示（実数）：dodge</h4>
 <div class="cell">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">年度</span>, fill <span class="op">=</span> <span class="va">性別</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
@@ -888,10 +891,10 @@ ggplot2::update_geom_defaults(
 </div>
 </section></section><section id="facetの追加" class="level3"><h3 class="anchored" data-anchor-id="facetの追加">⑵ facetの追加</h3>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span>  </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span>  </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">年度</span>, fill <span class="op">=</span> <span class="va">性別</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">性別</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">性別</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
@@ -904,14 +907,14 @@ ggplot2::update_geom_defaults(
 <li>教科書では「不要な変換を避ける」として説明されている</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/sample_5科目_平均点.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/sample_5科目_平均点.csv"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="サンプルデータを見比べてみる" class="level3"><h3 class="anchored" data-anchor-id="サンプルデータを見比べてみる">サンプルデータを見比べてみる</h3>
 <section id="a-個票データ" class="level4"><h4 class="anchored" data-anchor-id="a-個票データ">a) 個票データ</h4>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 7
    年度  学期 クラス 科目  性別  生徒数  成績
@@ -935,8 +938,8 @@ ggplot2::update_geom_defaults(
 <li>集計済み</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
    年度 科目  性別  平均点
@@ -953,9 +956,9 @@ ggplot2::update_geom_defaults(
 <li>➡ geom内でstatする必要なし（identity = 計算せずにそのまま）</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">性別</span>, y <span class="op">=</span> <span class="va">平均点</span>, fill <span class="op">=</span> <span class="va">科目</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span>, stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span>, stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
@@ -964,9 +967,9 @@ ggplot2::update_geom_defaults(
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">性別</span>, y <span class="op">=</span> <span class="va">平均点</span>, fill <span class="op">=</span> <span class="va">科目</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_col</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="co"># , stat = "identity"を削除</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_col</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="co"># , stat = "identity"を削除</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
@@ -989,9 +992,9 @@ geom_col(position = "dodge")
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">性別</span>, y <span class="op">=</span> <span class="va">平均点</span>, fill <span class="op">=</span> <span class="va">科目</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <pre><code>Error in `geom_bar()`:
 ! Problem while computing stat.
@@ -1021,15 +1024,15 @@ Caused by error in `setup_params()`:
 <li>たとえば、性別や科目をファクターにして、水準（並び順）を与える</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">&lt;-</span> <span class="co"># データフレームを変形させて上書き（オブジェクトが同じだから上書きになる）</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">&lt;-</span> <span class="co"># データフレームを変形させて上書き（オブジェクトが同じだから上書きになる）</span></span>
 <span>  <span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span> <span class="co"># 列の操作（これもオブジェクト名が同じなので上書きになる）</span></span>
 <span>    性別 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">性別</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"男"</span>, <span class="st">"女"</span><span class="op">)</span><span class="op">)</span>, <span class="co"># levelsで水準を与える</span></span>
 <span>    科目 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">科目</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"国語"</span>, <span class="st">"数学"</span>, <span class="st">"理科"</span>, <span class="st">"社会"</span>, <span class="st">"英語"</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">男女_levels</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"男"</span>, <span class="st">"女"</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">男女_levels</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"男"</span>, <span class="st">"女"</span><span class="op">)</span></span>
 <span><span class="va">科目_levels</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"国語"</span>, <span class="st">"社会"</span>, <span class="st">"英語"</span>, <span class="st">"数学"</span>, <span class="st">"理科"</span><span class="op">)</span> <span class="co">#科目順のオブジェクトを別に作る（setupチャンクに置いておくと便利）</span></span>
 <span></span>
 <span><span class="va">df_sample5科目_平均点</span> <span class="op">&lt;-</span> <span class="co"># データフレームを変形させて上書き（オブジェクトが同じだから上書きになる）</span></span>
@@ -1041,7 +1044,7 @@ Caused by error in `setup_params()`:
 <span></span>
 <span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">性別</span>, y <span class="op">=</span> <span class="va">平均点</span>, fill <span class="op">=</span> <span class="va">科目</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span>, stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span>, stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
@@ -1053,8 +1056,8 @@ Caused by error in `setup_params()`:
 <li>データの確認</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
    年度 科目  性別  平均点
@@ -1081,9 +1084,9 @@ Caused by error in `setup_params()`:
 <li>➡ 性別、科目名の並びが変わったことを確認</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span>  </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span>  </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">性別</span>, y <span class="op">=</span> <span class="va">平均点</span>, fill <span class="op">=</span> <span class="va">科目</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span>, stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span>, stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
@@ -1098,11 +1101,11 @@ Caused by error in `setup_params()`:
 <section id="グループごとに集計してみよう" class="level3"><h3 class="anchored" data-anchor-id="グループごとに集計してみよう">⑴ グループごとに集計してみよう</h3>
 <section id="平均点を算出してみよう" class="level4"><h4 class="anchored" data-anchor-id="平均点を算出してみよう">平均点を算出してみよう</h4>
 <div class="cell">
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">年度</span>, <span class="va">科目</span>, <span class="va">性別</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co"># 分けたい変数（カラム名）を入れる</span></span>
 <span>  <span class="fu">summarise</span><span class="op">(</span> <span class="co"># データを要約する関数</span></span>
 <span>    平均点 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">成績</span><span class="op">)</span> <span class="co"># 平均値を出す関数</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
 # Groups:   年度, 科目 [3]
@@ -1137,12 +1140,12 @@ Caused by error in `setup_params()`:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">年度</span>, <span class="va">科目</span>, <span class="va">性別</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co"># 分けたい変数（カラム名）を入れる</span></span>
 <span>  <span class="fu">summarise</span><span class="op">(</span> <span class="co"># データを要約する関数</span></span>
 <span>    平均点 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">成績</span><span class="op">)</span> <span class="co"># 平均値を出す関数</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">gt</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">gt</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="idsmjgbvqh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#idsmjgbvqh table {
@@ -1593,14 +1596,14 @@ Caused by error in `setup_params()`:
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead><tr class="gt_col_headings header">
 <th id="性別" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">性別</th>
 <th id="平均点" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">平均点</th>
 </tr></thead>
 <tbody class="gt_table_body">
 <tr class="gt_group_heading_row odd">
-<td colspan="2" id="2020 - 国語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2020 - 国語</td>
+<th colspan="2" id="2020 - 国語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2020 - 国語</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="2020 - 国語  性別">女</td>
@@ -1611,7 +1614,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2020 - 国語  平均点">42.00000</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="2" id="2020 - 数学" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2020 - 数学</td>
+<th colspan="2" id="2020 - 数学" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2020 - 数学</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left" headers="2020 - 数学  性別">女</td>
@@ -1622,7 +1625,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2020 - 数学  平均点">47.18571</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="2" id="2020 - 理科" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2020 - 理科</td>
+<th colspan="2" id="2020 - 理科" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2020 - 理科</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="2020 - 理科  性別">女</td>
@@ -1633,7 +1636,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2020 - 理科  平均点">56.01667</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="2" id="2020 - 社会" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2020 - 社会</td>
+<th colspan="2" id="2020 - 社会" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2020 - 社会</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left" headers="2020 - 社会  性別">女</td>
@@ -1644,7 +1647,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2020 - 社会  平均点">38.26000</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="2" id="2020 - 英語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2020 - 英語</td>
+<th colspan="2" id="2020 - 英語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2020 - 英語</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="2020 - 英語  性別">女</td>
@@ -1655,7 +1658,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2020 - 英語  平均点">29.86667</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="2" id="2021 - 国語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2021 - 国語</td>
+<th colspan="2" id="2021 - 国語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2021 - 国語</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left" headers="2021 - 国語  性別">女</td>
@@ -1666,7 +1669,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2021 - 国語  平均点">61.57143</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="2" id="2021 - 数学" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2021 - 数学</td>
+<th colspan="2" id="2021 - 数学" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2021 - 数学</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="2021 - 数学  性別">女</td>
@@ -1677,7 +1680,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2021 - 数学  平均点">40.36667</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="2" id="2021 - 理科" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2021 - 理科</td>
+<th colspan="2" id="2021 - 理科" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2021 - 理科</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left" headers="2021 - 理科  性別">女</td>
@@ -1688,7 +1691,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2021 - 理科  平均点">74.13333</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="2" id="2021 - 社会" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2021 - 社会</td>
+<th colspan="2" id="2021 - 社会" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2021 - 社会</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="2021 - 社会  性別">女</td>
@@ -1699,7 +1702,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2021 - 社会  平均点">62.28889</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="2" id="2021 - 英語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2021 - 英語</td>
+<th colspan="2" id="2021 - 英語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2021 - 英語</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left" headers="2021 - 英語  性別">女</td>
@@ -1710,7 +1713,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2021 - 英語  平均点">31.60000</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="2" id="2022 - 国語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2022 - 国語</td>
+<th colspan="2" id="2022 - 国語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2022 - 国語</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="2022 - 国語  性別">女</td>
@@ -1721,7 +1724,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2022 - 国語  平均点">68.08000</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="2" id="2022 - 数学" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2022 - 数学</td>
+<th colspan="2" id="2022 - 数学" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2022 - 数学</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left" headers="2022 - 数学  性別">女</td>
@@ -1732,7 +1735,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2022 - 数学  平均点">59.10000</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="2" id="2022 - 理科" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2022 - 理科</td>
+<th colspan="2" id="2022 - 理科" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2022 - 理科</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="2022 - 理科  性別">女</td>
@@ -1743,7 +1746,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2022 - 理科  平均点">42.71250</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="2" id="2022 - 社会" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2022 - 社会</td>
+<th colspan="2" id="2022 - 社会" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2022 - 社会</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left" headers="2022 - 社会  性別">女</td>
@@ -1754,7 +1757,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2022 - 社会  平均点">35.61667</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="2" id="2022 - 英語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2022 - 英語</td>
+<th colspan="2" id="2022 - 英語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2022 - 英語</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="2022 - 英語  性別">女</td>
@@ -1765,7 +1768,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2022 - 英語  平均点">61.50000</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="2" id="2023 - 国語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2023 - 国語</td>
+<th colspan="2" id="2023 - 国語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2023 - 国語</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left" headers="2023 - 国語  性別">女</td>
@@ -1776,7 +1779,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2023 - 国語  平均点">57.70000</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="2" id="2023 - 数学" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2023 - 数学</td>
+<th colspan="2" id="2023 - 数学" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2023 - 数学</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="2023 - 数学  性別">女</td>
@@ -1787,7 +1790,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2023 - 数学  平均点">51.55714</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="2" id="2023 - 理科" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2023 - 理科</td>
+<th colspan="2" id="2023 - 理科" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2023 - 理科</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left" headers="2023 - 理科  性別">女</td>
@@ -1798,7 +1801,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2023 - 理科  平均点">56.27500</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="2" id="2023 - 社会" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2023 - 社会</td>
+<th colspan="2" id="2023 - 社会" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2023 - 社会</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="2023 - 社会  性別">女</td>
@@ -1809,7 +1812,7 @@ Caused by error in `setup_params()`:
 <td class="gt_row gt_right" headers="2023 - 社会  平均点">30.30000</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="2" id="2023 - 英語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2023 - 英語</td>
+<th colspan="2" id="2023 - 英語" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">2023 - 英語</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left" headers="2023 - 英語  性別">女</td>
@@ -1836,12 +1839,12 @@ Caused by error in `setup_params()`:
 </div>
 <pre><code>平均点 = round(mean(成績), digits = 1)</code></pre>
 <div class="cell">
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">年度</span>, <span class="va">クラス</span>, <span class="va">性別</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co"># 分けたい変数（カラム名）を入れる</span></span>
 <span>  <span class="fu">summarise</span><span class="op">(</span> <span class="co"># データを要約する関数</span></span>
 <span>    人数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span> <span class="co"># 個数（行数）をカウント</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
 # Groups:   年度, クラス [3]
@@ -1880,7 +1883,7 @@ Caused by error in `setup_params()`:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">年度</span>, <span class="va">クラス</span>, <span class="va">性別</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co"># 分けたい変数（カラム名）を入れる</span></span>
 <span>  <span class="fu">summarise</span><span class="op">(</span> <span class="co"># データを要約する関数</span></span>
 <span>    人数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span> <span class="co"># N関数は個数（行数）をカウント</span></span>
@@ -1888,7 +1891,7 @@ Caused by error in `setup_params()`:
 <span>  <span class="fu">mutate</span><span class="op">(</span></span>
 <span>    freq <span class="op">=</span> <span class="va">人数</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">人数</span><span class="op">)</span>, 比率 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="op">(</span><span class="va">freq</span><span class="op">*</span><span class="fl">100</span><span class="op">)</span>, <span class="fl">1</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>    <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
 # Groups:   年度, クラス [3]
@@ -1906,7 +1909,7 @@ Caused by error in `setup_params()`:
 <li>データフレームに、freqと比率という新しい列が加わったことを確認する</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">年度</span>, <span class="va">性別</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co"># 分けたい変数（カラム名）を入れる</span></span>
 <span>  <span class="fu">summarise</span><span class="op">(</span> <span class="co"># データを要約する関数</span></span>
 <span>    人数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span> <span class="co"># 個数（行数）をカウント</span></span>
@@ -1916,7 +1919,7 @@ Caused by error in `setup_params()`:
 <span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="co"># 人数と比率を算出したので、ggplotに渡せる</span></span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">年度</span>, y <span class="op">=</span> <span class="va">比率</span>, group <span class="op">=</span> <span class="va">性別</span>, colour <span class="op">=</span> <span class="va">性別</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_line</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">geom_line</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
@@ -1937,7 +1940,7 @@ Caused by error in `setup_params()`:
 <pre><code>?summarise</code></pre>
 </section><section id="b-新しいカテゴリを作ろう" class="level4"><h4 class="anchored" data-anchor-id="b-新しいカテゴリを作ろう">b) 新しいカテゴリを作ろう</h4>
 <div class="cell">
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目_平均点</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span></span>
 <span>    文理 <span class="op">=</span> <span class="fu">case_when</span><span class="op">(</span> <span class="co"># 条件に応じて、新しいカラムを作る</span></span>
 <span>      <span class="va">科目</span> <span class="op">==</span> <span class="st">"国語"</span> <span class="op">~</span> <span class="st">"文系科目"</span>, <span class="co"># 科目が○○なら、新しいカラムに□□という値を入れる</span></span>
@@ -1949,7 +1952,7 @@ Caused by error in `setup_params()`:
 <span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">性別</span>, y <span class="op">=</span> <span class="va">平均点</span>, fill <span class="op">=</span> <span class="va">科目</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_bar</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span>, stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">文理</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">文理</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="RandQuarto_w4_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
@@ -1963,9 +1966,9 @@ Caused by error in `setup_params()`:
 <li>フィルタリング</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">性別</span> <span class="op">==</span> <span class="st">"男"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 文字型の場合ダブルクオテーションが必要</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 文字型の場合ダブルクオテーションが必要</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 7
    年度  学期 クラス 科目  性別  生徒数  成績
@@ -1982,9 +1985,9 @@ Caused by error in `setup_params()`:
 <li>フィルタリング（除外）</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">年度</span> <span class="op">==</span> <span class="fl">2022</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 除外する場合は「!」を付ける。 文字型でない場合、ダブルクオテーション不要</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 除外する場合は「!」を付ける。 文字型でない場合、ダブルクオテーション不要</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 7
    年度  学期 クラス 科目  性別  生徒数  成績
@@ -1999,9 +2002,9 @@ Caused by error in `setup_params()`:
 </div>
 </section><section id="列の選択" class="level3"><h3 class="anchored" data-anchor-id="列の選択">⑵ 列の選択</h3>
 <div class="cell">
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">年度</span>, <span class="va">性別</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
    年度 性別 
@@ -2015,9 +2018,9 @@ Caused by error in `setup_params()`:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb54"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="va">年度</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
    学期 クラス 科目  性別  生徒数  成績
@@ -2031,9 +2034,9 @@ Caused by error in `setup_params()`:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="fl">3</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 列の順序でも指定できる。「:」は範囲</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 列の順序でも指定できる。「:」は範囲</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   クラス 科目  性別 
@@ -2054,9 +2057,9 @@ Caused by error in `setup_params()`:
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">年度</span>, ジェンダー <span class="op">=</span> <span class="va">性別</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 列を選択すると同時に、カラム名を変更（変更後 = 変更前）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 列を選択すると同時に、カラム名を変更（変更後 = 変更前）</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
    年度 ジェンダー
@@ -2071,8 +2074,8 @@ Caused by error in `setup_params()`:
 </div>
 </section><section id="行の選択" class="level3"><h3 class="anchored" data-anchor-id="行の選択">⑶ 行の選択</h3>
 <div class="cell">
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">slice</span><span class="op">(</span><span class="fl">5</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb60"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">slice</span><span class="op">(</span><span class="fl">5</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 7
    年度  学期 クラス 科目  性別  生徒数  成績
@@ -2089,8 +2092,8 @@ Caused by error in `setup_params()`:
 <li>ランダムサンプリング</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span>  <span class="fu">slice_sample</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">20</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb62"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span>  <span class="fu">slice_sample</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">20</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 7
    年度  学期 クラス 科目  性別  生徒数  成績
@@ -2107,11 +2110,11 @@ Caused by error in `setup_params()`:
 <li>ランダムサンプリング（データを固定）</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>  <span class="co"># 再現性のため乱数のシードを設定。数字には任意</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb64"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>  <span class="co"># 再現性のため乱数のシードを設定。数字には任意</span></span>
 <span></span>
 <span><span class="va">df_sample5科目</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">slice_sample</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">20</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 7
    年度  学期 クラス 科目  性別  生徒数  成績
@@ -2140,7 +2143,7 @@ Caused by error in `setup_params()`:
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-重要 | さらなるデータ加工の学習について
+<span class="screen-reader-only">Important</span>重要 | さらなるデータ加工の学習について
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2192,7 +2195,7 @@ Caused by error in `setup_params()`:
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-note | 回答先と締め切り
+<span class="screen-reader-only">Note</span>note | 回答先と締め切り
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2216,7 +2219,7 @@ note | 回答先と締め切り
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-note | 回答先と締め切り
+<span class="screen-reader-only">Note</span>note | 回答先と締め切り
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2306,13 +2309,14 @@ Masabumi Komatsu・Kazuya Nishina・Shoji Hashimoto (2019) 「Extensive analysis
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

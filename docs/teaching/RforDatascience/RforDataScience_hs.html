@@ -7,11 +7,11 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="苅谷千尋">
-  <meta name="dcterms.date" content="2025-10-17">
+  <meta name="dcterms.date" content="2025-10-19">
   <title>CHIHIRO KARIYA – 高校生のためのデータサイエンス入門</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -117,7 +117,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-73de0b3c4ac470fe1e45f26a233f94f0.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-40dc667b53725253a5a8c7a1f2a8a4b3.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -239,7 +239,7 @@
     </div>
 </div>
 
-  <p class="date">October 17, 2025</p>
+  <p class="date">October 19, 2025</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of contents</h2>
@@ -773,7 +773,7 @@
 }
 </style>
 
-<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="species" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">species</th>
@@ -1288,7 +1288,7 @@
 }
 </style>
 
-<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="species" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">species</th>
@@ -1538,10 +1538,10 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <section id="作図金沢広域急病センター利用者数" class="slide level2">
 <h2>作図：金沢広域急病センター利用者数</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>df_hospital_long <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>df_hospital_long <span class="sc">|&gt;</span></span>
 <span id="cb1-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">if_any</span>(<span class="fu">everything</span>(), is.na)) <span class="sc">|&gt;</span></span>
 <span id="cb1-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 日付, <span class="at">y =</span> 利用者数, <span class="at">color =</span> 専門, <span class="at">group =</span> 専門)) <span class="sc">+</span></span>
-<span id="cb1-4"><a></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a></a>  <span class="fu">geom_line</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="作図金沢広域急病センター利用者数-1" class="slide level2">
@@ -1549,7 +1549,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>df_hospital_long <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>df_hospital_long <span class="sc">|&gt;</span> </span>
 <span id="cb2-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">if_any</span>(<span class="fu">everything</span>(), is.na)) <span class="sc">|&gt;</span></span>
 <span id="cb2-3"><a></a>  <span class="fu">arrange</span>(日付) <span class="sc">|&gt;</span> </span>
 <span id="cb2-4"><a></a>  <span class="fu">group_by</span>(専門) <span class="sc">|&gt;</span> </span>
@@ -1560,7 +1560,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <span id="cb2-9"><a></a>    <span class="at">date_breaks =</span> <span class="st">"3 months"</span>,</span>
 <span id="cb2-10"><a></a>    <span class="at">labels =</span> <span class="fu">label_date_short</span>()</span>
 <span id="cb2-11"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb2-12"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"awtools::mpalette"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-12"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"awtools::mpalette"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -1569,7 +1569,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># 矩形のデータフレームを作成</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># 矩形のデータフレームを作成</span></span>
 <span id="cb3-2"><a></a>rects <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb3-3"><a></a>  <span class="at">xmin =</span> <span class="fu">as.Date</span>(<span class="st">"2020-04-16"</span>),</span>
 <span id="cb3-4"><a></a>  <span class="at">xmax =</span> <span class="fu">as.Date</span>(<span class="st">"2021-09-30"</span>),</span>
@@ -1591,7 +1591,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <span id="cb3-20"><a></a>    <span class="at">date_breaks =</span> <span class="st">"3 months"</span>,</span>
 <span id="cb3-21"><a></a>    <span class="at">labels =</span> <span class="fu">label_date_short</span>()</span>
 <span id="cb3-22"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb3-23"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"awtools::mpalette"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-23"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"awtools::mpalette"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -1600,7 +1600,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>基準値 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">yintercept =</span> <span class="dv">100</span>, <span class="at">Lines =</span> <span class="st">'基準値'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>基準値 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">yintercept =</span> <span class="dv">100</span>, <span class="at">Lines =</span> <span class="st">'基準値'</span>)</span>
 <span id="cb4-2"><a></a></span>
 <span id="cb4-3"><a></a>df_野生鳥獣 <span class="sc">|&gt;</span></span>
 <span id="cb4-4"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(セシウム)) <span class="sc">|&gt;</span> </span>
@@ -1618,7 +1618,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <span id="cb4-16"><a></a>    <span class="at">date_breaks =</span> <span class="st">"6 months"</span>,</span>
 <span id="cb4-17"><a></a>    <span class="at">labels =</span> <span class="fu">label_date_short</span>()</span>
 <span id="cb4-18"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb4-19"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"awtools::mpalette"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-19"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"awtools::mpalette"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -1627,7 +1627,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>df_野生鳥獣 <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>df_野生鳥獣 <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a></a>  <span class="fu">filter</span>(動物 <span class="sc">==</span> <span class="st">"イノシシ"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb5-3"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(セシウム)) <span class="sc">|&gt;</span> </span>
 <span id="cb5-4"><a></a>  <span class="fu">group_by</span>(方部, 西暦) <span class="sc">|&gt;</span></span>
@@ -1639,7 +1639,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <span id="cb5-10"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> comma) <span class="sc">+</span></span>
 <span id="cb5-11"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>) <span class="sc">+</span></span>
 <span id="cb5-12"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"awtools::mpalette"</span>) <span class="sc">+</span></span>
-<span id="cb5-13"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> 西暦)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-13"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> 西暦)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -1648,7 +1648,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>df_野生鳥獣 <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>df_野生鳥獣 <span class="sc">|&gt;</span></span>
 <span id="cb6-2"><a></a>  <span class="fu">filter</span>(動物 <span class="sc">==</span> <span class="st">"イノシシ"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb6-3"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(セシウム)) <span class="sc">|&gt;</span> </span>
 <span id="cb6-4"><a></a>  <span class="fu">group_by</span>(方部, 西暦) <span class="sc">|&gt;</span></span>
@@ -1662,7 +1662,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <span id="cb6-12"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"検査年"</span>) <span class="sc">+</span></span>
 <span id="cb6-13"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"awtools::mpalette"</span>) <span class="sc">+</span></span>
 <span id="cb6-14"><a></a>  <span class="fu">scale_x_discrete</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2010</span>, <span class="dv">2024</span>, <span class="at">by =</span> <span class="dv">2</span>)) <span class="sc">+</span></span>
-<span id="cb6-15"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> 方部)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-15"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> 方部)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -1672,7 +1672,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>df_野生鳥獣 <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>df_野生鳥獣 <span class="sc">|&gt;</span></span>
 <span id="cb7-2"><a></a>  <span class="fu">filter</span>(動物 <span class="sc">==</span> <span class="st">"イノシシ"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb7-3"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(セシウム)) <span class="sc">|&gt;</span> </span>
 <span id="cb7-4"><a></a>  <span class="fu">filter</span>(方部 <span class="sc">==</span> <span class="st">"相双"</span>) <span class="sc">|&gt;</span> </span>
@@ -1686,7 +1686,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <span id="cb7-12"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> comma) <span class="sc">+</span></span>
 <span id="cb7-13"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
 <span id="cb7-14"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"awtools::mpalette"</span>) <span class="sc">+</span></span>
-<span id="cb7-15"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"検査年"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-15"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"検査年"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -1695,7 +1695,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI/.M.LI...AA...H?startPeriod=2023-02&amp;dimensionAtObservation=AllDimensions&amp;format=csvfilewithlabels"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI/.M.LI...AA...H?startPeriod=2023-02&amp;dimensionAtObservation=AllDimensions&amp;format=csvfilewithlabels"</span></span>
 <span id="cb8-2"><a></a></span>
 <span id="cb8-3"><a></a>df_oecd_cli <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span>
 <span id="cb8-4"><a></a></span>
@@ -1728,7 +1728,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <span id="cb8-31"><a></a><span class="at">color =</span> <span class="st">"Country"</span></span>
 <span id="cb8-32"><a></a>) <span class="sc">+</span></span>
 <span id="cb8-33"><a></a><span class="fu">scale_color_paletteer_d</span>(<span class="st">"awtools::mpalette"</span>) <span class="sc">+</span></span>
-<span id="cb8-34"><a></a><span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-34"><a></a><span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section></section>
@@ -1742,7 +1742,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># 対象年度ページのURLリスト</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># 対象年度ページのURLリスト</span></span>
 <span id="cb9-2"><a></a>years <span class="ot">&lt;-</span> <span class="dv">2021</span><span class="sc">:</span><span class="dv">2024</span></span>
 <span id="cb9-3"><a></a>base_url <span class="ot">&lt;-</span> <span class="st">"https://www.kantei.go.jp/jp/101_kishida/statement"</span></span>
 <span id="cb9-4"><a></a>urls <span class="ot">&lt;-</span> <span class="fu">paste0</span>(base_url, <span class="st">"/"</span>, years, <span class="st">"/index.html"</span>)</span>
@@ -1815,7 +1815,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <span id="cb9-71"><a></a>    <span class="at">fn =</span> <span class="cf">function</span>(x) {</span>
 <span id="cb9-72"><a></a>      <span class="fu">map</span>(x, <span class="sc">~</span> <span class="fu">html</span>(<span class="fu">paste0</span>(<span class="st">"&lt;a href='"</span>, .x, <span class="st">"' target='_blank'&gt;"</span>, .x, <span class="st">"&lt;/a&gt;"</span>)))</span>
 <span id="cb9-73"><a></a>    }</span>
-<span id="cb9-74"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-74"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <ul>
@@ -1831,7 +1831,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>key <span class="ot">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>key <span class="ot">&lt;-</span></span>
 <span id="cb10-2"><a></a>  <span class="fu">textstat_keyness</span>(speech_dfm)</span>
 <span id="cb10-3"><a></a></span>
 <span id="cb10-4"><a></a>feat <span class="ot">&lt;-</span> </span>
@@ -1864,7 +1864,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <span id="cb10-31"><a></a>                  <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
 <span id="cb10-32"><a></a>  <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">repel =</span> <span class="cn">TRUE</span>,  <span class="at">family =</span> <span class="st">"HiraKakuProN-W3"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb10-33"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb10-34"><a></a>        <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"HiraKakuProN-W3"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-34"><a></a>        <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"HiraKakuProN-W3"</span>)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -1874,7 +1874,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>result <span class="ot">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>result <span class="ot">&lt;-</span></span>
 <span id="cb11-2"><a></a>  <span class="fu">dfm_lookup</span>(speech_dfm, <span class="at">dictionary =</span> dict)</span>
 <span id="cb11-3"><a></a></span>
 <span id="cb11-4"><a></a>df_result <span class="ot">&lt;-</span></span>
@@ -1891,7 +1891,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <span id="cb11-15"><a></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
 <span id="cb11-16"><a></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)</span>
 <span id="cb11-17"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb11-18"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"感情語の出現数（文書ごと）"</span>, <span class="at">x =</span> <span class="st">"文書"</span>, <span class="at">y =</span> <span class="st">"単語数"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-18"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"感情語の出現数（文書ごと）"</span>, <span class="at">x =</span> <span class="st">"文書"</span>, <span class="at">y =</span> <span class="st">"単語数"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <ul>
@@ -1916,7 +1916,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># 辞書を適用</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># 辞書を適用</span></span>
 <span id="cb12-2"><a></a>dfm_dict <span class="ot">&lt;-</span></span>
 <span id="cb12-3"><a></a>  <span class="fu">dfm_lookup</span>(speech_dfm, <span class="at">dictionary =</span> political_dict)</span>
 <span id="cb12-4"><a></a></span>
@@ -1927,7 +1927,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <span id="cb12-9"><a></a></span>
 <span id="cb12-10"><a></a>dfm_dict_df <span class="sc">|&gt;</span> </span>
 <span id="cb12-11"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-12"><a></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-12"><a></a>  <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -1939,18 +1939,18 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>us_state_elec <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>us_state_elec <span class="sc">|&gt;</span> </span>
 <span id="cb13-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group, <span class="at">fill =</span> party)) <span class="sc">+</span></span>
 <span id="cb13-3"><a></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"gray90"</span>, <span class="at">size =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
 <span id="cb13-4"><a></a>  <span class="fu">coord_map</span>(<span class="at">projection =</span> <span class="st">"albers"</span>, <span class="at">lat0 =</span> <span class="dv">39</span>, <span class="at">lat1 =</span> <span class="dv">45</span>) <span class="sc">+</span></span>
 <span id="cb13-5"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> party_colors) <span class="sc">+</span></span>
 <span id="cb13-6"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"アメリカ大統領選挙結果 2016"</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb13-7"><a></a>  <span class="fu">theme_map</span>(<span class="at">base_family =</span> <span class="st">"HiraKakuProN-W3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-7"><a></a>  <span class="fu">theme_map</span>(<span class="at">base_family =</span> <span class="st">"HiraKakuProN-W3"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
 <img data-src="RforDataScience_hs_files/figure-revealjs/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><ul>
-<li>コードの出典：<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー， (<a href="#/引用文献-1" role="doc-biblioref" onclick="">2021</a>)</span></li>
+<li>コードの出典：<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン (<a href="#/引用文献-1" role="doc-biblioref" onclick="">2021</a>)</span></li>
 </ul>
 </section>
 <section id="アメリカの人口密度" class="slide level2">
@@ -1958,7 +1958,7 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>county_full <span class="ot">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>county_full <span class="ot">&lt;-</span></span>
 <span id="cb14-2"><a></a>  county_map <span class="sc">|&gt;</span> </span>
 <span id="cb14-3"><a></a>  <span class="fu">left_join</span>(county_data, <span class="at">by =</span> <span class="st">"id"</span>)</span>
 <span id="cb14-4"><a></a></span>
@@ -1973,12 +1973,12 @@ style E fill:#FFB6C1,stroke:#333,stroke-width:1px,text-align:center
 <span id="cb14-13"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Population per</span><span class="sc">\n</span><span class="st">square mile"</span>) <span class="sc">+</span></span>
 <span id="cb14-14"><a></a>  <span class="fu">theme_map</span>() <span class="sc">+</span></span>
 <span id="cb14-15"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb14-16"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-16"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
 <img data-src="RforDataScience_hs_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><ul>
-<li>コードの出典：<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー， (<a href="#/引用文献-1" role="doc-biblioref" onclick="">2021</a>)</span></li>
+<li>コードの出典：<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン (<a href="#/引用文献-1" role="doc-biblioref" onclick="">2021</a>)</span></li>
 </ul>
 </section></section>
 <section>
@@ -2650,7 +2650,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 }
 </style>
 
-<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="skim_type" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">skim_type</th>
@@ -3101,14 +3101,14 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <li>R chunkに以下のコードを書く</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># パッケージの読み込み ---- #「# ○○-----」と書いておくと、Outlineに表示されてみやすい</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># パッケージの読み込み ---- #「# ○○-----」と書いておくと、Outlineに表示されてみやすい</span></span>
 <span id="cb15-2"><a></a><span class="fu">library</span>(tidyverse) <span class="co">#「モダンなデータ分析」を行うためのパッケージ群</span></span>
 <span id="cb15-3"><a></a><span class="fu">library</span>(gt) <span class="co"># 表パッケージ</span></span>
 <span id="cb15-4"><a></a></span>
 <span id="cb15-5"><a></a>penguins <span class="sc">|&gt;</span> <span class="co"># penguinsのデータセットを使用</span></span>
 <span id="cb15-6"><a></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span> <span class="sc">&amp;</span> island <span class="sc">==</span> <span class="st">"Biscoe"</span>) <span class="sc">|&gt;</span>  <span class="co"># Biscoe島にいるAdelieペンギンを抽出</span></span>
 <span id="cb15-7"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">|&gt;</span>  <span class="co"># 表示用に最初の5行だけ取り出す</span></span>
-<span id="cb15-8"><a></a>  <span class="fu">gt</span>()  <span class="co"># 表形式で表示</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-8"><a></a>  <span class="fu">gt</span>()  <span class="co"># 表形式で表示</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="iazildbkzi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#iazildbkzi table {
@@ -3560,7 +3560,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 }
 </style>
 
-<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="species" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">species</th>
@@ -3635,25 +3635,25 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <h2>動かしてみよう：palmer penguins</h2>
 <h3 id="図を作ってみよう">図を作ってみよう</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>penguins <span class="sc">|&gt;</span> <span class="co"># penguinsのデータセットを使用</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>penguins <span class="sc">|&gt;</span> <span class="co"># penguinsのデータセットを使用</span></span>
 <span id="cb16-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span>  <span class="co"># ggplotでグラフ作成、x軸に種類、y軸に体重、棒の色を種類ごとに分ける</span></span>
 <span id="cb16-3"><a></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"bar"</span>) <span class="sc">+</span>                  <span class="co"># 各種類の体重の平均を計算して棒グラフにする</span></span>
 <span id="cb16-4"><a></a>  <span class="fu">labs</span>(</span>
 <span id="cb16-5"><a></a>    <span class="at">x =</span> <span class="st">"種類"</span>,                                             <span class="co"># x軸のラベルを「種類」に変更</span></span>
 <span id="cb16-6"><a></a>    <span class="at">y =</span> <span class="st">"体重 (g)"</span>                                         <span class="co"># y軸のラベルを「体重 (g)」に変更</span></span>
-<span id="cb16-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-7"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="RforDataScience_hs_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section>
 <section id="test" class="slide level2">
 <h2>test</h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>penguins <span class="sc">|&gt;</span></span>
 <span id="cb17-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
 <span id="cb17-3"><a></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"bar"</span>) <span class="sc">+</span></span>
 <span id="cb17-4"><a></a>  <span class="fu">labs</span>(</span>
 <span id="cb17-5"><a></a>    <span class="at">x =</span> <span class="st">"種類"</span>,</span>
 <span id="cb17-6"><a></a>    <span class="at">y =</span> <span class="st">"体重 (g)"</span></span>
-<span id="cb17-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-7"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 <img data-src="RforDataScience_hs_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section></section>
 <section>
@@ -3709,7 +3709,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <li>観測した値は1行に記録される</li>
 <li>観測データの集合はテーブルを表現する</li>
 </ol>
-<p>（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー， (<a href="#/引用文献-1" role="doc-biblioref" onclick="">2021</a>)</span>, 「付録A.1.3「Tidyデータ」329-332ページ）</p>
+<p>（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン (<a href="#/引用文献-1" role="doc-biblioref" onclick="">2021</a>)</span>, 「付録A.1.3「Tidyデータ」329-332ページ）</p>
 </section></section>
 <section>
 <section id="データの入手先お勧め" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
@@ -3738,7 +3738,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-HealyK:2021book1_translJA" class="csl-entry" role="listitem">
-ヒーリー，キーラン., 2021. データ分析のためのデータ可視化入門, 瓜生真也・江口哲史・三村喬生 訳. 講談社.
+ヒーリー，キーラン, 2021. データ分析のためのデータ可視化入門, 瓜生真也・江口哲史・三村喬生 訳. 講談社.
 </div>
 </div>
 </section></section>
@@ -3937,7 +3937,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -4049,13 +4049,14 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
