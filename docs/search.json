@@ -2447,14 +2447,14 @@
     "href": "teaching/RforDatascience/RforDataScience.html#準備日本語表示mac",
     "title": "初心者向けR Studioの使い方",
     "section": "準備：日本語表示（Mac）",
-    "text": "準備：日本語表示（Mac）\n\n\n\n\n\n\n\nggplot（作図パッケージ）は初期設定のままでは日本語を表示できません\nYAMLに以下のコードを書いて下さい\n\n\n\n\n# 描画設定 -----\n# フォントファミリとサイズ\nggplot2::theme_set(\n  ggplot2::theme_get() +\n    ggplot2::theme(text = ggplot2::element_text(family = \"HiraginoSans-W3\", size = 8))\n)\n\n## text/labelのフォントファミリとサイズ\nggplot2::update_geom_defaults(\n  \"text\",\n  list(family = \"HiraginoSans-W3\", size = 6)\n)\n\nggplot2::update_geom_defaults(\n  \"label\",\n  list(family = \"HiraginoSans-W3\", size = 6)\n)"
+    "text": "準備：日本語表示（Mac）\n\n\n\n\n\n\n\nggplot（作図パッケージ）は初期設定のままでは日本語を表示できません\nYAMLに以下のコードを書いて下さい（動作は後ほど確認します）\n\n\n\n\n# 描画設定 -----\n# フォントファミリとサイズ\nggplot2::theme_set(\n  ggplot2::theme_get() +\n    ggplot2::theme(text = ggplot2::element_text(family = \"HiraginoSans-W3\", size = 8))\n)\n\n## text/labelのフォントファミリとサイズ\nggplot2::update_geom_defaults(\n  \"text\",\n  list(family = \"HiraginoSans-W3\", size = 6)\n)\n\nggplot2::update_geom_defaults(\n  \"label\",\n  list(family = \"HiraginoSans-W3\", size = 6)\n)"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#準備日本語対応windows",
     "href": "teaching/RforDatascience/RforDataScience.html#準備日本語対応windows",
     "title": "初心者向けR Studioの使い方",
     "section": "準備：日本語対応（Windows）",
-    "text": "準備：日本語対応（Windows）\n\nggplot（作図パッケージ）は初期設定のままでは日本語を表示できません\nYAMLに以下のコードを書いて下さい\n\n# 描画設定 -----\n# フォントファミリとサイズ\nggplot2::theme_set(\n  ggplot2::theme_get() +\n    ggplot2::theme(text = ggplot2::element_text(family = \"Meiryo\", size = 8))\n)\n\n## text/labelのフォントファミリとサイズ\nggplot2::update_geom_defaults(\n  \"text\",\n  list(family = \"Meiryo\", size = 6)\n)\n\nggplot2::update_geom_defaults(\n  \"label\",\n  list(family = \"Meiryo\", size = 6)\n)\n\n文字が表示されない（＝日本語が□で表示されたら）教えてください"
+    "text": "準備：日本語対応（Windows）\n\n\n\n\n\n\n\nggplot（作図パッケージ）は初期設定のままでは日本語を表示できません\nYAMLに以下のコードを書いて下さい（動作は後ほど確認します）\n\n\n\n\n# 描画設定 -----\n# フォントファミリとサイズ\nggplot2::theme_set(\n  ggplot2::theme_get() +\n    ggplot2::theme(text = ggplot2::element_text(family = \"Meiryo\", size = 8))\n)\n\n## text/labelのフォントファミリとサイズ\nggplot2::update_geom_defaults(\n  \"text\",\n  list(family = \"Meiryo\", size = 6)\n)\n\nggplot2::update_geom_defaults(\n  \"label\",\n  list(family = \"Meiryo\", size = 6)\n)"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データセット",
@@ -2573,14 +2573,21 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：palmer penguins > 作図",
-    "text": "基本：palmer penguins &gt; 作図\n図を作る：ggplotに渡した後にデータを計算する\n\npenguins |&gt;\n  ggplot(aes(x = species, y = body_mass, fill = species)) +  # ggplotでグラフ作成、x軸に種類、y軸に体重、棒の色を種類ごとに分ける\n  stat_summary(fun = mean, geom = \"bar\") +                  # 各種類の体重の平均を計算して棒グラフにする\n  labs(\n    x = \"種類\",                                             # x軸のラベルを「種類」に変更\n    y = \"体重 (g)\"                                         # y軸のラベルを「体重 (g)」に変更\n  )"
+    "text": "基本：palmer penguins &gt; 作図\n図を作る：ggplotに渡す前にデータを整形する\n\npenguins |&gt; \n  group_by(species) |&gt; \n  summarise(mean_body_mass = mean(body_mass, na.rm = TRUE)) |&gt; \n  ggplot(aes(x = species, y = mean_body_mass, fill = species)) +\n  geom_col() +   # geom_colはデータに渡されたyをそのまま棒の高さに使う\n  labs(\n    x = \"種類\",\n    y = \"体重 (g)\"\n  )"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-1",
     "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-1",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：palmer penguins > 作図",
-    "text": "基本：palmer penguins &gt; 作図\n図を作る：ggplotに渡す前にデータを整形する\n\npenguins |&gt; \n  group_by(species) |&gt; \n  summarise(mean_body_mass = mean(body_mass, na.rm = TRUE)) |&gt; \n  ggplot(aes(x = species, y = mean_body_mass, fill = species)) +\n  geom_col() +   # geom_colはデータに渡されたyをそのまま棒の高さに使う\n  labs(\n    x = \"種類\",\n    y = \"体重 (g)\"\n  )"
+    "text": "基本：palmer penguins &gt; 作図\n\nx軸とy軸のラベルに日本語を用いています\n種類や体重が□で表示されたら教えてください\n\nCf. 準備：日本語対応（Mac / Windows）"
+  },
+  {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-2",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-2",
+    "title": "初心者向けR Studioの使い方",
+    "section": "基本：palmer penguins > 作図",
+    "text": "基本：palmer penguins &gt; 作図\n図を作る：ggplotに渡した後にデータを計算する\n\npenguins |&gt;\n  ggplot(aes(x = species, y = body_mass, fill = species)) +  # ggplotでグラフ作成、x軸に種類、y軸に体重、棒の色を種類ごとに分ける\n  stat_summary(fun = mean, geom = \"bar\") +                  # 各種類の体重の平均を計算して棒グラフにする\n  labs(\n    x = \"種類\",                                             # x軸のラベルを「種類」に変更\n    y = \"体重 (g)\"                                         # y軸のラベルを「体重 (g)」に変更\n  )"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-計算",
@@ -2590,15 +2597,15 @@
     "text": "基本：palmer penguins &gt; 計算\n相関係数の算出\n\nbill_len: くちばしの長さ\n\n魚をつかまえたり、巣材をくわえたりすることに関わる\n\nbill_dep: くちばしの奥行き\n\nくちばしの太さや力強さの目安になる\n\n\n\npenguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;\n  group_by(species) |&gt;\n  summarise(\n    cor_bill = round(cor(bill_len, bill_dep), 3)\n  ) |&gt; gt()\n\n\n\n\n\n\n\nspecies\ncor_bill\n\n\n\n\nAdelie\n0.386\n\n\nChinstrap\n0.654\n\n\nGentoo\n0.654"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-2",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-2",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-3",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-3",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：palmer penguins > 作図",
     "text": "基本：palmer penguins &gt; 作図\n散布図の作成\n\npenguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;  \n  ggplot(aes(x = bill_len, y = bill_dep, colour = species)) +\n  geom_point()"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-3",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-3",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-4",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-4",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：palmer penguins > 作図",
     "text": "基本：palmer penguins &gt; 作図\n見比べる\n\nspecies（種）とisland（島）に関係はあるの？\n\n\npenguins |&gt; \n  group_by(species, island) |&gt; # グルーピングに住んでいる島を追加\n  summarise(mean_body_mass = mean(body_mass, na.rm = TRUE)) |&gt; \n  ggplot(aes(x = species, y = mean_body_mass, fill = species)) +\n  geom_col() +\n  labs(\n    x = \"種類\",\n    y = \"体重 (g)\"\n  ) +\n  facet_wrap(~island) #指定の変数(カラム名、ここではisland)によって小さなグラフを作って並べる"
@@ -2643,7 +2650,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#実践oecd景気先行指数urlからデータ取得",
     "title": "初心者向けR Studioの使い方",
     "section": "実践：OECD景気先行指数（URLからデータ取得）",
-    "text": "実践：OECD景気先行指数（URLからデータ取得）\n\nOECDデータセット\n\nComposite Leading Indicators (CLI)\n\nurlを指定して、データを取得\n\nファイルをダウンロードせず、Rに直接、渡す\n\n\n\n\nCode\nurl &lt;- \"https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI/.M.LI...AA...H?startPeriod=2023-02&dimensionAtObservation=AllDimensions&format=csvfilewithlabels\"\n\ndf_oecd_cli &lt;- read_csv(url) # 指定したURLからデータを読み込む\n\n# URLにアクセスできない場合（同じサイトに短時間でたくさんアクセスすると、サイト側が「アクセスが多すぎる」と判断して接続を拒否することがあります。その場合は、エラーが出てデータを取得できません。以下のコメントアウトを外してrunして下さい（ハッシュタグを削除））\n# df_oecd_cli &lt;-\n#  read_csv(\"data/df_oecd_cli.csv\")\n\ndf_oecd_cli &lt;- \n  df_oecd_cli |&gt; # 必要な列を取り出す\nselect(REF_AREA, TIME_PERIOD, OBS_VALUE) |&gt; \nmutate(TIME_PERIOD = as.Date(paste0(TIME_PERIOD, \"-01\"))) |&gt; # 日付形式に変換（例：2025 → \"2025-01-01\"）\nmutate(TIME_PERIOD = as.Date(TIME_PERIOD)) # as.Date() で日付型を再確認（実質は不要な場合もある）\n\ncountries &lt;- c(\"JPN\", \"USA\", \"DEU\", \"FRA\", \"KOR\") #主要国だけ選ぶ（主要国のオブジェクトを作る）\n\ndf_oecd_cli |&gt;\n  filter(REF_AREA %in% countries) |&gt; # REF_AREA が countries に含まれる行だけを抽出\n  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = REF_AREA)) +\n  geom_line()"
+    "text": "実践：OECD景気先行指数（URLからデータ取得）\n\nOECDデータセット\n\nComposite Leading Indicators (CLI)\n\nurlを指定して、データを取得\n\nファイルをダウンロードせず、Rに直接、渡す\n\n\n\n\nCode\nurl &lt;- \"https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI/.M.LI...AA...H?startPeriod=2023-02&dimensionAtObservation=AllDimensions&format=csvfilewithlabels\"\n\ndf_oecd_cli &lt;- read_csv(url) # 指定したURLからデータを読み込む\n\n# URLにアクセスできない場合（短時間にアクセスを繰り返すと接続拒否されることがあります。その場合は、エラーが出てデータを取得できません。以下のコメントアウトを外して（ハッシュタグを削除）、csvファイルからデータを読み取って下さい）\n# df_oecd_cli &lt;-\n#  read_csv(\"data/df_oecd_cli.csv\")\n\ndf_oecd_cli &lt;- \n  df_oecd_cli |&gt; # 必要な列を取り出す\nselect(REF_AREA, TIME_PERIOD, OBS_VALUE) |&gt; \nmutate(TIME_PERIOD = as.Date(paste0(TIME_PERIOD, \"-01\"))) |&gt; # 日付形式に変換（例：2025 → \"2025-01-01\"）\nmutate(TIME_PERIOD = as.Date(TIME_PERIOD)) # as.Date() で日付型を再確認（実質は不要な場合もある）\n\ncountries &lt;- c(\"JPN\", \"USA\", \"DEU\", \"FRA\", \"KOR\") #主要国だけ選ぶ（主要国のオブジェクトを作る）\n\ndf_oecd_cli |&gt;\n  filter(REF_AREA %in% countries) |&gt; # REF_AREA が countries に含まれる行だけを抽出\n  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = REF_AREA)) +\n  geom_line()"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#実践oecd景気先行指数urlからデータ取得-1",
@@ -2720,14 +2727,14 @@
     "href": "teaching/RforDatascience/RforDataScience.html#実践金沢広域急病センター利用者数-縦持ち横持ち-1",
     "title": "初心者向けR Studioの使い方",
     "section": "実践：金沢広域急病センター利用者数 > 縦持ち・横持ち",
-    "text": "実践：金沢広域急病センター利用者数 &gt; 縦持ち・横持ち\nデータの確認：横持ちデータ\n\ndf_hospital |&gt; view()\n\n\n小児科/内科が別の列になっていることを確認\n「専門」というカラムに「小児科/内科」という値が入っていると便利なのにな・・・"
+    "text": "実践：金沢広域急病センター利用者数 &gt; 縦持ち・横持ち\nデータの確認：横持ちデータ\n\ndf_hospital |&gt; head(3)\n\n# A tibble: 3 × 6\n  日付      曜日  土日祝 小児科  内科    計\n  &lt;chr&gt;     &lt;fct&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 2018/4/9  月         0      8     6    14\n2 2018/4/10 火         0     13     6    19\n3 2018/4/11 水         0     17     4    21\n\n\n\n小児科/内科が別の列になっていることを確認\n「専門」というカラムがあり、そこに「小児科/内科」という値が入っていると便利なのにな・・・\n\npivot_longer()関数で、「専門」というカラムを作る"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#実践金沢広域急病センター利用者数-縦持ち横持ち-2",
     "href": "teaching/RforDatascience/RforDataScience.html#実践金沢広域急病センター利用者数-縦持ち横持ち-2",
     "title": "初心者向けR Studioの使い方",
     "section": "実践：金沢広域急病センター利用者数 > 縦持ち・横持ち",
-    "text": "実践：金沢広域急病センター利用者数 &gt; 縦持ち・横持ち\nデータの変換：横持ちデータから縦持ちデータへ\n\ndf_hospital_long &lt;- \n  df_hospital |&gt; \n  pivot_longer(\n    cols = c(\"小児科\", \"内科\"),\n    names_to = \"専門\",\n    values_to = \"利用者数\"\n  ) |&gt; \n  mutate(\n    専門 = factor(専門, levels = c(\"内科\", \"小児科\"))\n  ) |&gt; \n  select(日付, 曜日, 土日祝, 専門, 利用者数) |&gt; \n  mutate(日付 = as.POSIXct(日付), # 日付をデータの型が「date」になるように変形」」\n         日付 = as.Date(日付))"
+    "text": "実践：金沢広域急病センター利用者数 &gt; 縦持ち・横持ち\nデータの変換：横持ちデータから縦持ちデータへ\n\npivot_longer()関数\n\n\ndf_hospital_long &lt;- \n  df_hospital |&gt; \n  pivot_longer(\n    cols = c(\"小児科\", \"内科\"), # もとのカラム名（新たに縦にまとめたい列）\n    names_to = \"専門\", # 新しく作りたいカラム名1：もとのカラム名（小児科・内科）が入る列\n    values_to = \"利用者数\" # 新しく作りたいカラム名2：もとの値（人数）が入る列\n  ) |&gt; \n  mutate(\n    専門 = factor(専門, levels = c(\"内科\", \"小児科\")) # 水準（順序付き）にする\n  ) |&gt; \n  select(日付, 曜日, 土日祝, 専門, 利用者数) |&gt; \n  mutate(日付 = as.POSIXct(日付), # 日付をデータの型が「date」になるように変形\n         日付 = as.Date(日付))"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#実践金沢広域急病センター利用者数-縦持ち横持ち-3",
@@ -2765,18 +2772,25 @@
     "text": "応用：PDF からテキストを抽出する\n\n別途、pdftoolsをインストールして下さい\n\n\nlibrary(pdftools)\n\n# PDFファイルを読み込む\ntext &lt;- pdf_text(\"data/sample.pdf\")\n\ntext |&gt; print()\n\n[1] \"1   # Lorem\\n\\n2\\n\\n3   &gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\\n\\n    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud\\n\\n    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\\n\\n    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\n    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oﬃcia deserunt\\n\\n    mollit anim id est laborum.\\n\""
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用スクレイピング-総理の演説記者会見など",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用スクレイピング-総理の演説記者会見など",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング-総理の演説記者会見など",
+    "href": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング-総理の演説記者会見など",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：スクレイピング > 総理の演説・記者会見など",
-    "text": "応用：スクレイピング &gt; 総理の演説・記者会見など\n\n首相官邸に掲載されている石破首相の「総理の演説・記者会見など」を一括取得し、speech_ishiba.rdsとして書き出す\n\n拡張子rds\n\nRで作ったデータ（データフレームなど）をそのままの形で保存できる専用のファイル形式\n利点：高速に読み書きできる / すべて正確に保持される（列の型（文字・数値・日付など）や因子レベルなどをそのまま保持する）\n\nスクレイピングパッケージ\n\nhttr2（ページを取得する）; xml2（ページの中身を読む）；rvest（必要なデータを取り出す）"
+    "section": "応用：スクレーピング > 総理の演説・記者会見など",
+    "text": "応用：スクレーピング &gt; 総理の演説・記者会見など\n\n首相官邸に掲載されている石破首相の「総理の演説・記者会見など」を一括取得し、speech_ishiba.rdsとして書き出す\n\n拡張子rds\n\nRで作ったデータ（データフレームなど）をそのままの形で保存できる専用のファイル形式\n利点：高速に読み書きできる / すべて正確に保持される（列の型（文字・数値・日付など）や因子レベルなどをそのまま保持する）\n\nスクレーピングパッケージ\n\nhttr2（ページを取得する）; xml2（ページの中身を読む）；rvest（必要なデータを取り出す）"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用スクレイピング-総理の演説記者会見など-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用スクレイピング-総理の演説記者会見など-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング-総理の演説記者会見など-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング-総理の演説記者会見など-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：スクレイピング ＞ 総理の演説・記者会見など",
-    "text": "応用：スクレイピング ＞ 総理の演説・記者会見など\n\n\nCode\nbase_urls &lt;- c(\n  \"https://www.kantei.go.jp/jp/102_ishiba/statement/index.html\",\n  \"https://www.kantei.go.jp/jp/103/statement/index.html\"\n)\n\nyears &lt;- 2024:2025\n\nall_index_pages &lt;- map(base_urls, function(base) {\n  resp &lt;- request(base) |&gt; req_perform()\n  html &lt;- resp_body_html(resp)\n  \n  # index_YYYY.html のリンクも取得\n  archive_links &lt;- html |&gt; html_elements(\"a\") |&gt; html_attr(\"href\")\n  archive_links &lt;- archive_links[str_detect(archive_links, \"statement/index_\\\\d{4}\\\\.html$\")]\n  archive_links &lt;- paste0(\"https://www.kantei.go.jp\", archive_links)\n  \n  c(base, archive_links)\n}) |&gt; unlist() |&gt; unique()\n\nget_article_urls &lt;- function(page_url) {\n  req &lt;- request(page_url) |&gt; req_perform()\n  html &lt;- resp_body_html(req)\n  \n  hrefs &lt;- html |&gt; html_elements(\"a\") |&gt; html_attr(\"href\")\n  \n  # 102_ishiba と 103 の両方に対応\n  relative_urls &lt;- hrefs[str_detect(hrefs, \"^/jp/(102_ishiba|103)/statement/\\\\d{4}/\\\\d{4}.*\\\\.html$\")]\n  relative_urls &lt;- na.omit(unique(relative_urls))\n  \n  paste0(\"https://www.kantei.go.jp\", relative_urls)\n}\n\narticle_urls &lt;- map(all_index_pages, get_article_urls) |&gt; unlist() |&gt; unique()\nmessage(\"取得した記事数: \", length(article_urls))\n\narticles_info &lt;- map(article_urls, extract_article_info)\narticles_info &lt;- compact(articles_info)\narticles_df &lt;- bind_rows(articles_info)\n\narticles_df &lt;- articles_df |&gt;\n  mutate(date = convert_jdate(date)) |&gt; \n  arrange(date)\n\nsaveRDS(articles_df, \"speech_ishiba.rds\")\n\n\n\n出力例はrds保存せず、head()出力している\n\n\n\n# A tibble: 6 × 4\n  title                                               date       paragraph url  \n  &lt;chr&gt;                                               &lt;date&gt;     &lt;chr&gt;     &lt;chr&gt;\n1 石破内閣総理大臣記者会見                            2024-10-01 【石破総理冒頭発… http…\n2 Ｇ７首脳電話会議出席についての会見                  2024-10-02 先ほど緊迫する中… http…\n3 日銀総裁との会談及び日韓、日豪各首脳電話会談についての会見…… 2024-10-02 本日、私が総理に… http…\n4 新内閣始動に際しての意気込み及び日米首脳電話会談等についての会見…… 2024-10-02 （新内閣本格始動… http…\n5 第二百十四回国会における石破内閣総理大臣所信表明演説…… 2024-10-04 ▼演説全文を読む… http…\n6 令和６年能登半島地震及び９月２０日からの大雨による被災状況視察のための石川県訪問等についての会見…… 2024-10-05 （能登半島地震と… http…"
+    "section": "応用：スクレーピング ＞ 総理の演説・記者会見など",
+    "text": "応用：スクレーピング ＞ 総理の演説・記者会見など\n\n「関数定義」「URL収集」「本文抽出」「整形・保存」ごとにchunkを分ける\n\n\n\nCode\n# --- indexページから記事URLを抽出 ---\nget_article_urls &lt;- function(page_url) {\n  req &lt;- request(page_url) |&gt; req_perform()\n  html &lt;- resp_body_html(req)\n  \n  hrefs &lt;- html |&gt; html_elements(\"a\") |&gt; html_attr(\"href\")\n  relative_urls &lt;- hrefs[str_detect(hrefs, \"^/jp/(102_ishiba|103)/statement/\\\\d{4}/\\\\d{4}.*\\\\.html$\")]\n  \n  paste0(\"https://www.kantei.go.jp\", unique(na.omit(relative_urls)))\n}\n\n\n\n\nCode\n# --- ベースURLから全indexページを収集 ---\ncollect_all_article_urls &lt;- function(base_urls) {\n  all_index_pages &lt;- map(base_urls, function(base) {\n    resp &lt;- request(base) |&gt; req_perform()\n    html &lt;- resp_body_html(resp)\n    archive_links &lt;- html |&gt; html_elements(\"a\") |&gt; html_attr(\"href\")\n    archive_links &lt;- archive_links[str_detect(archive_links, \"statement/index_\\\\d{4}\\\\.html$\")]\n    archive_links &lt;- paste0(\"https://www.kantei.go.jp\", archive_links)\n    c(base, archive_links)\n  }) |&gt; unlist() |&gt; unique()\n  \n    # 各indexページから記事URLを取得\n  article_urls &lt;- map(all_index_pages, get_article_urls) |&gt; unlist() |&gt; unique()\n  message(\"取得した記事数: \", length(article_urls))\n  article_urls\n}\n\n\n\n\nCode\nbase_urls &lt;- c(\n  \"https://www.kantei.go.jp/jp/102_ishiba/statement/index.html\",\n  \"https://www.kantei.go.jp/jp/103/statement/index.html\"\n)\n\narticle_urls &lt;- collect_all_article_urls(base_urls)\n\n\n\n\nCode\narticles_info &lt;- map(article_urls, extract_article_info) |&gt; \n  compact()\n\n\n\n\nCode\ndf_articles &lt;- \n  bind_rows(articles_info) |&gt;\n  mutate(date = convert_jdate(date)) |&gt;\n  arrange(date)\n\n\n\n\nCode\nsaveRDS(df_articles, \"speech_ishiba.rds\")"
+  },
+  {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング-総理の演説記者会見など-2",
+    "href": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング-総理の演説記者会見など-2",
+    "title": "初心者向けR Studioの使い方",
+    "section": "応用：スクレーピング ＞ 総理の演説・記者会見など",
+    "text": "応用：スクレーピング ＞ 総理の演説・記者会見など\n\nhead()でデータを確認\n\n\n\nCode\ndf_ishiba &lt;- read_rds(\"data/speech_ishiba.rds\")\n\ndf_ishiba|&gt; head(2)\n\n\n# A tibble: 2 × 4\n  title                              date       paragraph                  url  \n  &lt;chr&gt;                              &lt;date&gt;     &lt;chr&gt;                      &lt;chr&gt;\n1 石破内閣総理大臣記者会見           2024-10-01 【石破総理冒頭発言】 第１０２代内閣総理大臣に指名… http…\n2 Ｇ７首脳電話会議出席についての会見 2024-10-02 先ほど緊迫する中東情勢を受けまして、私にとりまして… http…\n\n\n\n\nCode\ndf_ishiba|&gt; \n  filter(\n    title == \"石破内閣総理大臣記者会見\",\n    date == as.Date(\"2024-10-09\")\n  ) |&gt; \n  mutate(paragraph = substr(paragraph, 1, 130)) |&gt;\n  select(paragraph) |&gt; gt()\n\n\n\n\n\n\n\n\nparagraph\n\n\n\n\n【石破総理冒頭発言】 お待たせいたしました。 本日、衆議院を解散いたしました。国民の皆様の御納得、そして共感。これなくして、政治を前に進めることはできません。国民の皆様方に信を問い、その御信任を得て、新政権の掲げる政策に力強い後押しをお願いしたいと、このように\n\n\n\n\n\n\n\nCode\ndf_ishiba|&gt; \n  filter(\n    title == \"石破内閣総理大臣記者会見\",\n    date == as.Date(\"2025-10-10\")\n  ) |&gt; \n  mutate(paragraph = substr(paragraph, 1, 130)) |&gt;\n  select(paragraph) |&gt; gt()\n\n\n\n\n\n\n\n\nparagraph\n\n\n\n\n（内閣総理大臣所感） 戦後８０年に寄せて（941KB）【石破総理冒頭発言】 本日、「戦後８０年に寄せて」と題します内閣総理大臣所感を発出をいたしました。 本文につきましては、もうメディアの方々にはお配りをしておるところでございます。時間の関係もございますので、"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#応用地図情報-アメリカの選挙",
@@ -2811,7 +2825,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#さらに学ぶ基本書",
     "title": "初心者向けR Studioの使い方",
     "section": "さらに学ぶ：基本書",
-    "text": "さらに学ぶ：基本書\n\nWickham, Hadley and Çetinkaya-Rundel, Mine and Grolemund, Garrett. ‘R for Data Science (2e)’（LINK）\nキーラン・ヒーリー（2021）『データ分析のためのデータ可視化入門』（瓜生真也・ 江口哲史・三村喬生 訳）、講談社（LINK）\n松村優哉・湯谷啓明・紀ノ定保礼・前田和寛（2021）『改訂2版 RユーザのためのRStudio「実践」入門：tidyverseによるモダンな分析フローの世界』、技術評論社（LINK）\n松村優哉・瓜生真也・吉村広志（2023）『Rユーザのためのtidymodels「実践」入門：モダンな統計・機械学習モデリングの世界』、技術評論社（LINK）\nKosuke Imai and Nora Webb Williams, “Quantitative Social Science: An Introduction in tidyverse”（LINK、旧版（非tidyverse）は翻訳あり（LINK）"
+    "text": "さらに学ぶ：基本書\n\nWickham, Hadley and Çetinkaya-Rundel, Mine and Grolemund, Garrett. ‘R for Data Science (2e)’（LINK）\nキーラン・ヒーリー（2021）『データ分析のためのデータ可視化入門』（瓜生真也・ 江口哲史・三村喬生 訳）、講談社（LINK）\n松村優哉・湯谷啓明・紀ノ定保礼・前田和寛（2021）『改訂2版 RユーザのためのRStudio「実践」入門：tidyverseによるモダンな分析フローの世界』、技術評論社（LINK）\n松村優哉・瓜生真也・吉村広志（2023）『Rユーザのためのtidymodels「実践」入門：モダンな統計・機械学習モデリングの世界』、技術評論社（LINK）\nKosuke Imai and Nora Webb Williams, “Quantitative Social Science: An Introduction in tidyverse”（LINK、旧版（非tidyverse）は翻訳あり（LINK））"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#さらに学ぶ基本書-1",
@@ -2846,7 +2860,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#さらに学ぶ教材チュートリアル",
     "title": "初心者向けR Studioの使い方",
     "section": "さらに学ぶ：教材（チュートリアル）",
-    "text": "さらに学ぶ：教材（チュートリアル）\n学部生向け授業教材\n\nRとQuartoではじめるデータサイエンス：データを可視化する《2025》\n\n私（苅谷）が授業に作成した教材です。本論で挙げたものが多いですが、可視化の体裁変更などは参考になると思います\n\n\n初学者向け教材\n\n宋財泫・矢内勇生 私たちのR：ベストプラクティスの探求\nR初学者のためのtidyverse100本ノック"
+    "text": "さらに学ぶ：教材（チュートリアル）\n学部生向け授業教材\n\nRとQuartoではじめるデータサイエンス：データを可視化する《2025》\n\n私（苅谷）が授業のために作成した教材です。本論で挙げたものが多いですが、可視化の体裁変更などは参考になると思います\n\n\n初学者向け教材\n\n宋財泫・矢内勇生 私たちのR：ベストプラクティスの探求\nR初学者のためのtidyverse100本ノック"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#さらに学ぶ問い合わせ",
@@ -2856,11 +2870,11 @@
     "text": "さらに学ぶ：問い合わせ\n問い合わせ\n\nわからないことがあればお気軽にお問い合わせ下さい（歓迎いたします）\n\nkariyach@staff.kanazawa-u.ac.jp\n\n\nスライド資料\n\nキーボードの「E」でpdf出力できます\n\nGoggle Chrome推奨"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#引用文献-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#引用文献-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#参考文献-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#参考文献-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "引用文献",
-    "text": "引用文献\n\n\n\n\nヒーリー，キーラン, 2021. データ分析のためのデータ可視化入門, 瓜生真也・江口哲史・三村喬生 訳. 講談社."
+    "section": "参考文献",
+    "text": "参考文献\n\n\n\n\nヒーリー，キーラン, 2021. データ分析のためのデータ可視化入門, 瓜生真也・江口哲史・三村喬生 訳. 講談社."
   },
   {
     "objectID": "teaching/Politics1/slide_politics1_w1.html#自己紹介-1",
