@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.34">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="苅谷 千尋">
 <title>RとQuartoではじめるデータサイエンス：データを可視化する《2025》 – CHIHIRO KARIYA</title>
@@ -64,19 +64,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../img/favicon-16x16.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-befe23ebd2f54d8af2c8a89d1a1611f1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-06ed20086a2bd4ca7598c88091de652a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-14c0bdb860daf350da9c4b825e21f0c7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-06ed20086a2bd4ca7598c88091de652a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-29124b29be36714fa140da1b7eaa6547.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-5b53d57d5b6f866a11eac50cfbd76017.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-29124b29be36714fa140da1b7eaa6547.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -275,8 +274,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">CHIHIRO KARIYA</span>
     </a>
@@ -376,7 +373,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">Mon, 20, Oct, 2025</p>
+        <p class="date-modified">Tue, 21, Oct, 2025</p>
       </div>
     </div>
       
@@ -437,7 +434,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>アンケート回収率：</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート_long</span> <span class="op">&lt;-</span></span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート_long</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">df_初回アンケート</span> <span class="op">|&gt;</span>  </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span><span class="fu">everything</span><span class="op">(</span><span class="op">)</span>, <span class="va">as.character</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span>  </span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
@@ -447,10 +444,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span></span>
 <span>    学域 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">学域</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"融合学域"</span>, <span class="st">"人間社会学域"</span>, <span class="st">"理工学域"</span>, <span class="st">"医薬保健学域"</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell page-columns page-full">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span></span>
 <span>    回答者数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>    .groups<span class="op">=</span><span class="st">"drop"</span></span>
@@ -469,7 +466,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span>scale <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span></span>
 <span>    x <span class="op">=</span> <span class="st">""</span></span>
-<span>  <span class="op">)</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full"><p><img src="Initialsurvey_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
@@ -490,7 +487,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="属性" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="属性">属性</h2>
 <div class="cell page-columns page-full">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span></span>
 <span>    人数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span></span>
@@ -517,7 +514,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    color <span class="op">=</span> <span class="st">"学域"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"DresdenColor::briefcases"</span><span class="op">)</span> <span class="co">#配色変更</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"DresdenColor::briefcases"</span><span class="op">)</span> <span class="co">#配色変更</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full"><p><img src="Initialsurvey_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
@@ -526,7 +523,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell page-columns page-full">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">学年</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span></span>
 <span>    人数 <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span></span>
@@ -553,7 +550,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    color <span class="op">=</span> <span class="st">"年次"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"PrettyCols::Fun"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"PrettyCols::Fun"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full"><p><img src="Initialsurvey_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
@@ -564,7 +561,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section><section id="単純集計" class="level2"><h2 class="anchored" data-anchor-id="単純集計">単純集計</h2>
 <section id="棒グラフ" class="level3"><h3 class="anchored" data-anchor-id="棒グラフ">棒グラフ</h3>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
 <span>  `Q1. パソコンのスキルに自信がありますか` <span class="op">=</span> <span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> <span class="fu">select</span><span class="op">(</span><span class="va">`Q1. パソコンのスキルに自信がありますか`</span><span class="op">)</span>,</span>
 <span>  `Q2. R言語を知っていますか？` <span class="op">=</span> <span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> <span class="fu">select</span><span class="op">(</span><span class="va">`Q2. R言語を知っていますか？`</span><span class="op">)</span>, </span>
 <span>  `Q3. プログラム言語を使ったことはありますか` <span class="op">=</span> <span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> <span class="fu">select</span><span class="op">(</span><span class="va">`Q3. プログラム言語を使ったことはありますか`</span><span class="op">)</span></span>
@@ -591,7 +588,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="co"># すべてのプロットを表示</span></span>
 <span><span class="kw">for</span> <span class="op">(</span><span class="va">plot</span> <span class="kw">in</span> <span class="va">plots</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">plot</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="Initialsurvey_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
@@ -612,7 +609,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
 <span>  `Q4. 可視化したいデータはありますか` <span class="op">=</span> <span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> <span class="fu">select</span><span class="op">(</span><span class="va">`Q4. 可視化したいデータはありますか`</span><span class="op">)</span>,</span>
 <span>  `Q5. 受講理由でもっとも近いものを選んでください` <span class="op">=</span> <span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> <span class="fu">select</span><span class="op">(</span><span class="va">`Q5. 受講理由でもっとも近いものを選んでください`</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
@@ -634,7 +631,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="co"># すべてのプロットを表示</span></span>
 <span><span class="kw">for</span> <span class="op">(</span><span class="va">plot</span> <span class="kw">in</span> <span class="va">plots</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">plot</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="Initialsurvey_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
@@ -649,7 +646,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
 <span>  `Q6. Microsoft Excelを使ったことはありますか` <span class="op">=</span> <span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> <span class="fu">select</span><span class="op">(</span><span class="va">`Q6. Microsoft Excelを使ったことはありますか`</span><span class="op">)</span>,</span>
 <span>  `Q7. SPSSを使ったことはありますか` <span class="op">=</span> <span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> <span class="fu">select</span><span class="op">(</span><span class="va">`Q7. SPSSを使ったことはありますか`</span><span class="op">)</span>, </span>
 <span>  `Q8. Stataを使ったことはありますか` <span class="op">=</span> <span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> <span class="fu">select</span><span class="op">(</span><span class="va">`Q8. Stataを使ったことはありますか`</span><span class="op">)</span>,</span>
@@ -684,7 +681,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="co"># すべてのプロットを表示</span></span>
 <span><span class="kw">for</span> <span class="op">(</span><span class="va">plot</span> <span class="kw">in</span> <span class="va">plots</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">plot</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="Initialsurvey_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
@@ -755,7 +752,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section></section><section id="クロス集計" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="クロス集計">クロス集計</h2>
 <section id="帯グラフ" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="帯グラフ">帯グラフ</h3>
 <div class="cell page-columns page-full">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q5. 受講理由でもっとも近いものを選んでください`</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>学域 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">学域</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"融合学域"</span>, <span class="st">"人間社会学域"</span>, <span class="st">"理工学域"</span>, <span class="st">"医薬保健学域"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span></span>
@@ -786,7 +783,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">学域</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme</span><span class="op">(</span>legend.position<span class="op">=</span><span class="st">"bottom"</span><span class="op">)</span> <span class="op">+</span> <span class="co">#凡例を図の下に</span></span>
 <span>  <span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="fu">guide_legend</span><span class="op">(</span>nrow <span class="op">=</span> <span class="fl">4</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"Manu::Hoiho"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">scale_color_paletteer_d</span><span class="op">(</span><span class="st">"Manu::Hoiho"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full"><p><img src="Initialsurvey_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
@@ -796,7 +793,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="モザイク図" class="level3"><h3 class="anchored" data-anchor-id="モザイク図">モザイク図</h3>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_mosaic</span> <span class="op">&lt;-</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_mosaic</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">df_初回アンケート_long</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">質問</span>, <span class="va">回答</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">質問</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Q4. 可視化したいデータはありますか"</span>, <span class="st">"Q5. 受講理由でもっとも近いものを選んでください"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -812,11 +809,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme</span><span class="op">(</span>legend.position<span class="op">=</span><span class="st">"bottom"</span>,</span>
 <span>        base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_fill_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#C2697FFF"</span>, <span class="st">"#FDDFA4FF"</span>, <span class="st">"#B4B9E0FF"</span>, <span class="st">"#513965FF"</span>, <span class="st">"#201B43FF"</span>, <span class="st">"#2C3778FF"</span> <span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">scale_fill_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#C2697FFF"</span>, <span class="st">"#FDDFA4FF"</span>, <span class="st">"#B4B9E0FF"</span>, <span class="st">"#513965FF"</span>, <span class="st">"#201B43FF"</span>, <span class="st">"#2C3778FF"</span> <span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_mosaic</span> <span class="op">&lt;-</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_mosaic</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">df_初回アンケート_long</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">質問</span>, <span class="va">回答</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">質問</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Q4. 可視化したいデータはありますか"</span>, <span class="st">"Q5. 受講理由でもっとも近いものを選んでください"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -832,27 +829,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">scale_fill_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#C2697FFF"</span>, <span class="st">"#FDDFA4FF"</span>, <span class="st">"#B4B9E0FF"</span>, <span class="st">"#513965FF"</span>, <span class="st">"#201B43FF"</span>, <span class="st">"#2C3778FF"</span> <span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme</span><span class="op">(</span>legend.position<span class="op">=</span><span class="st">"bottom"</span>,</span>
-<span>        base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>        base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">df_mosaic</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">df_mosaic</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_mosaic</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="fu">product</span><span class="op">(</span><span class="va">質問</span><span class="op">)</span>, fill <span class="op">=</span> <span class="va">回答</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="va">.</span> <span class="op">~</span> <span class="va">学域</span>, nrow <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme</span><span class="op">(</span>legend.position<span class="op">=</span><span class="st">"bottom"</span>,</span>
 <span>        base_family <span class="op">=</span> <span class="st">"HiraKakuProN-W3"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_fill_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#C2697FFF"</span>, <span class="st">"#FDDFA4FF"</span>, <span class="st">"#B4B9E0FF"</span>, <span class="st">"#513965FF"</span>, <span class="st">"#201B43FF"</span>, <span class="st">"#2C3778FF"</span> <span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">scale_fill_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#C2697FFF"</span>, <span class="st">"#FDDFA4FF"</span>, <span class="st">"#B4B9E0FF"</span>, <span class="st">"#513965FF"</span>, <span class="st">"#201B43FF"</span>, <span class="st">"#2C3778FF"</span> <span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section><section id="散布図" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="散布図">散布図</h3>
 <div class="cell page-columns page-full">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">`Q1. パソコンのスキルに自信がありますか`</span>,</span>
 <span>             y <span class="op">=</span> <span class="va">`Q2. R言語を知っていますか？`</span>, color <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">scale_color_colorblind</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="co">#散布図</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="co">#散布図</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full"><p><img src="Initialsurvey_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
@@ -861,11 +858,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell page-columns page-full">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">`Q1. パソコンのスキルに自信がありますか`</span>,</span>
 <span>             y <span class="op">=</span> <span class="va">`Q3. プログラム言語を使ったことはありますか`</span>, color <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">scale_color_colorblind</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="co">#散布図</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="co">#散布図</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full"><p><img src="Initialsurvey_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
@@ -874,11 +871,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell page-columns page-full">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">`Q6. Microsoft Excelを使ったことはありますか`</span>,</span>
 <span>             y <span class="op">=</span> <span class="va">`Q13. Microsoft Wordを使ったことはありますか`</span>, color <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">scale_color_colorblind</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="co">#散布図</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="co">#散布図</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full"><p><img src="Initialsurvey_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
@@ -890,9 +887,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section></section></section><section id="表" class="level1"><h1>表</h1>
 <section id="単純集計-1" class="level2"><h2 class="anchored" data-anchor-id="単純集計-1">単純集計</h2>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">tbl_summary</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">tbl_summary</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="ppjqagpjvf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#ppjqagpjvf table {
@@ -1343,7 +1340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -1607,10 +1604,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="基本統計量" class="level2"><h2 class="anchored" data-anchor-id="基本統計量">基本統計量</h2>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">skim</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">gt</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">gt</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="fmyveglhwb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#fmyveglhwb table {
@@ -2061,7 +2058,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead><tr class="gt_col_headings header">
 <th id="skim_type" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">skim_type</th>
 <th id="skim_variable" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">skim_variable</th>
@@ -2487,10 +2484,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="op">!</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">get_summary_stats</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">gt</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">gt</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="synqxugsnd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#synqxugsnd table {
@@ -2941,7 +2938,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead><tr class="gt_col_headings header">
 <th id="variable" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">variable</th>
 <th id="n" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">n</th>
@@ -3175,7 +3172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="クロス集計-1" class="level2"><h2 class="anchored" data-anchor-id="クロス集計-1">クロス集計</h2>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_list2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_list2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
 <span>  `Q1. パソコンのスキルに自信がありますか` <span class="op">=</span> <span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> <span class="fu">select</span><span class="op">(</span><span class="va">`Q1. パソコンのスキルに自信がありますか`</span><span class="op">)</span>,</span>
 <span>  `Q2. R言語を知っていますか？` <span class="op">=</span> <span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> <span class="fu">select</span><span class="op">(</span><span class="va">`Q2. R言語を知っていますか？`</span><span class="op">)</span>, </span>
 <span>  `Q3. プログラム言語を使ったことはありますか` <span class="op">=</span> <span class="va">df_初回アンケート</span> <span class="op">%&gt;%</span> <span class="fu">select</span><span class="op">(</span><span class="va">`Q3. プログラム言語を使ったことはありますか`</span><span class="op">)</span></span>
@@ -3200,17 +3197,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">result_list</span> <span class="op">&lt;-</span> <span class="fu">map</span><span class="op">(</span><span class="va">data_list</span>, <span class="va">create_table</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># すべてのプロットを表示</span></span>
-<span><span class="va">result_list</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="va">result_list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q1. パソコンのスキルに自信がありますか`</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>  <span class="op">|&gt;</span>  <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="wuubgbmboi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#wuubgbmboi table {
@@ -3661,7 +3658,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -3760,13 +3757,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q2. R言語を知っていますか？`</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="dsqkikdfac" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#dsqkikdfac table {
@@ -4217,7 +4214,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -4316,13 +4313,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q3. プログラム言語を使ったことはありますか`</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="wlaafefyko" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#wlaafefyko table {
@@ -4773,7 +4770,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -4864,13 +4861,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q4. 可視化したいデータはありますか`</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="vulpyrurlz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#vulpyrurlz table {
@@ -5321,7 +5318,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -5420,13 +5417,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q5. 受講理由でもっとも近いものを選んでください`</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="gmigflvpti" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#gmigflvpti table {
@@ -5877,7 +5874,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -5968,13 +5965,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q6. Microsoft Excelを使ったことはありますか`</span><span class="op">)</span> <span class="op">|&gt;</span>  </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span><span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="ebqbhcurvd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#ebqbhcurvd table {
@@ -6425,7 +6422,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -6524,13 +6521,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q7. SPSSを使ったことはありますか`</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="wrzjcyhceg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#wrzjcyhceg table {
@@ -6981,7 +6978,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -7072,13 +7069,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q8. Stataを使ったことはありますか`</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="bpjljqmybw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#bpjljqmybw table {
@@ -7529,7 +7526,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -7620,13 +7617,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q9. SASを使ったことはありますか`</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="pbjkgufsoj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#pbjkgufsoj table {
@@ -8077,7 +8074,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -8149,13 +8146,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q10. tableauを使ったことはありますか`</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="jgeomtetzb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#jgeomtetzb table {
@@ -8606,7 +8603,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -8678,13 +8675,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q11. pythonを使ったことはありますか`</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span>  <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>  <span class="op">|&gt;</span>  <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="ufnmukwgqh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#ufnmukwgqh table {
@@ -9135,7 +9132,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -9226,13 +9223,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q12. MATLABを使ったことがありますか`</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="tpavtpfosp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#tpavtpfosp table {
@@ -9683,7 +9680,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -9755,13 +9752,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q13. Microsoft Wordを使ったことはありますか`</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="jpognvjcti" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#jpognvjcti table {
@@ -10212,7 +10209,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -10311,13 +10308,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q14. TeXを使ったことはありますか`</span><span class="op">)</span> <span class="op">|&gt;</span>  </span>
 <span>  <span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="iltlvtdxxt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#iltlvtdxxt table {
@@ -10768,7 +10765,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -10840,13 +10837,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span><span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q15. markdownを使ったことはありますか`</span><span class="op">)</span> <span class="op">|&gt;</span>  </span>
 <span><span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span>  <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="ythuaclhgy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#ythuaclhgy table {
@@ -11297,7 +11294,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -11369,13 +11366,13 @@ N = 0</p>
 </div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_初回アンケート</span> <span class="op">|&gt;</span> </span>
 <span><span class="fu">select</span><span class="op">(</span><span class="va">学域</span>, <span class="va">`Q16. Githubを使ったことはありますか`</span><span class="op">)</span> <span class="op">|&gt;</span>  </span>
 <span><span class="fu">tbl_summary</span><span class="op">(</span>by <span class="op">=</span> <span class="va">学域</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">add_p</span><span class="op">(</span>test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"t.test"</span>,</span>
 <span>                    <span class="fu">all_categorical</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="st">"fisher.test"</span><span class="op">)</span>,</span>
 <span>        test.args <span class="op">=</span> <span class="fu">all_continuous</span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>var.equal <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="co">#検定</span></span>
-<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>  <span class="fu">bold_p</span><span class="op">(</span>t <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="co">#P値が有意水準（0.05に指定）を満たす場合､P値をボールド表記</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div id="xfedjqxtri" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#xfedjqxtri table {
@@ -11826,7 +11823,7 @@ N = 0</p>
   height: 0px !important;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -11990,14 +11987,13 @@ N = 0</p>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
