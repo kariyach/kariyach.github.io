@@ -200,7 +200,7 @@
     "href": "teaching/Biblio-battle/slide_biblio-battle_w3.html#次回の授業と宿題-1",
     "title": "ビブリオバトル入門《2025》",
     "section": "次回の授業と宿題",
-    "text": "次回の授業と宿題\n次回\n\n研究分野の本を紹介しよう 第1ラウンド\n\n宿題\n\n授業の感想。\n\n締め切り：授業と同じ週の金曜日23時59分\n\n研究分野の本についてのブックカード\n\n締め切り：10月29日授業開始前"
+    "text": "次回の授業と宿題\n次回\n\n研究分野の本を紹介しよう 第1ラウンド\n\n宿題\n\n授業の感想\n\n締め切り：授業と同じ週の金曜日23時59分\n\n研究分野の本についてのブックカード\n\n締め切り：10月29日授業開始前"
   },
   {
     "objectID": "teaching/Biblio-battle/biblio-battle_w1.html",
@@ -2807,27 +2807,6 @@
     "text": "実践：金沢広域急病センター利用者数 &gt; 縦持ち・横持ち\n縦持ちデータ（カラム「専門」）の活用\n\ndf_hospital_long |&gt;  \n    group_by(曜日, 専門) |&gt; \n    summarise(\n      利用者数_曜日 = sum(利用者数)\n    ) |&gt; \n    ggplot(aes(x = 曜日, y = 利用者数_曜日, fill = 専門)) +\n    geom_bar(stat = \"identity\")"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用map関数-penguin",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用map関数-penguin",
-    "title": "初心者向けR Studioの使い方",
-    "section": "応用：map()関数 > penguin",
-    "text": "応用：map()関数 &gt; penguin\nmap()関数の利点\n\nグループごとに自動で処理できる\n\n手作業でspeciesごとに分けてコードを書く必要がない\n例：ペンギンの種類ごとに、くちばしの長さ(bill_len)と深さ(bill_dep)の関係を回帰分析で調べる\n\n\n\n\nCode\npenguins |&gt; \n  group_by(species) |&gt; \n  nest() |&gt;                  # グループごとにデータフレームをリスト化して1列にまとめる\n  mutate(\n    bill_lm_result = map(    # map() でリストの各要素（データフレーム）に同じ処理を適用\n      data,                  # 対象は nest() で作った 'data' 列\n      function(df) {\n        lm_result &lt;- lm(bill_len ~ bill_dep, data = df)  # bill_len を目的変数、bill_dep を説明変数に回帰\n        return(lm_result)                              # lm の結果を返す\n      }\n    ),\n    coefficients = map(      # map() で各回帰結果から係数を取り出す\n      bill_lm_result, \n      pluck, \n      \"coefficients\"\n    )\n  ) |&gt; \n  unnest_wider(coefficients, names_sep = \"_\") |&gt;   # coefficients 列を列ごとに展開（intercept や傾きが列になる）\n  print()\n\n\n# A tibble: 3 × 5\n# Groups:   species [3]\n  species   data     bill_lm_result coefficients_(Interc…¹ coefficients_bill_dep\n  &lt;fct&gt;     &lt;list&gt;   &lt;list&gt;                          &lt;dbl&gt;                 &lt;dbl&gt;\n1 Adelie    &lt;tibble&gt; &lt;lm&gt;                             23.1                 0.857\n2 Gentoo    &lt;tibble&gt; &lt;lm&gt;                             17.2                 2.02 \n3 Chinstrap &lt;tibble&gt; &lt;lm&gt;                             13.4                 1.92 \n# ℹ abbreviated name: ¹​`coefficients_(Intercept)`"
-  },
-  {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用map関数-penguin-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用map関数-penguin-1",
-    "title": "初心者向けR Studioの使い方",
-    "section": "応用：map()関数 > penguin",
-    "text": "応用：map()関数 &gt; penguin\nmap()を使わない場合\n\n\nCode\n# データを種別ごとに分ける\nadelie &lt;- penguins |&gt; filter(species == \"Adelie\")\n# chinstrap &lt;- penguins |&gt; filter(species == \"Chinstrap\")\n# gentoo &lt;- penguins |&gt; filter(species == \"Gentoo\")\n\n# 種別ごとに回帰分析を個別に書く\nadelie_lm &lt;- lm(bill_len ~ bill_dep, data = adelie)\n# chinstrap_lm &lt;- lm(bill_len ~ bill_dep, data = chinstrap)\n# gentoo_lm &lt;- lm(bill_len ~ bill_dep, data = gentoo)\n\n# 結果を確認\nprint(adelie_lm)\n\n\n\nCall:\nlm(formula = bill_len ~ bill_dep, data = adelie)\n\nCoefficients:\n(Intercept)     bill_dep  \n     23.068        0.857  \n\n\nCode\n# print(chinstrap_lm)\n# print(gentoo_lm)\n\n\n\n\n\n\n\n\n回帰分析をtidyverseスタイルで行うなら、parsnipパッケージが便利です。tidymodelsパッケージに含まれています。モデル結果を表形式に整理するにはbroomパッケージも使います"
-  },
-  {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用map関数-選挙",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用map関数-選挙",
-    "title": "初心者向けR Studioの使い方",
-    "section": "応用：map()関数 > 選挙",
-    "text": "応用：map()関数 &gt; 選挙\n\nmap() ：同じ処理を、たくさんのデータに順番に適用する」関数\n\n「たくさんのファイル」や「いくつかのグループ（島・年・地域など）」に対して、同じ処理（たとえば平均を出す・グラフを描く）を自動で繰り返す\n\n比例区の得票数を地域ブロックごとに集計、描画したい\n\n\n\nCode\n# 1. データを整形して新しいオブジェクトに保存\ndf_plot &lt;- df_pr_parties |&gt;\n  group_by(year, party, block) |&gt;\n  summarise(votes = sum(votes), .groups = \"drop\") |&gt;\n  filter(party %in% 主要政党) |&gt;\n  mutate(party = factor(party, levels = 主要政党))\n\n# 2. block ごとに分割（factor → character に変換）\ndf_list &lt;- split(df_plot, as.character(df_plot$block))\n\n# 3. ggplot を作成\nplots &lt;- map(df_list, ~ ggplot(.x, aes(x = party, y = votes, fill = as.factor(year))) +\n                       geom_col(position = \"dodge\") +\n                       labs(title = unique(.x$block), x = \"\", y = \"得票数\") +\n                       theme(axis.text.x = element_text(angle = 45, hjust = 1)))\n\n# 4. プロットを表示\nwalk(plots, print)"
-  },
-  {
     "objectID": "teaching/RforDatascience/RforDataScience.html#応用pdf-からテキストを抽出する",
     "href": "teaching/RforDatascience/RforDataScience.html#応用pdf-からテキストを抽出する",
     "title": "初心者向けR Studioの使い方",
@@ -2835,25 +2814,53 @@
     "text": "応用：PDF からテキストを抽出する\n\n別途、pdftoolsをインストールして下さい\n\n\nlibrary(pdftools)\n\n# PDFファイルを読み込む\ntext &lt;- pdf_text(\"data/sample.pdf\")\n\ntext |&gt; print()\n\n[1] \"1   # Lorem\\n\\n2\\n\\n3   &gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\\n\\n    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud\\n\\n    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\\n\\n    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\n    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oﬃcia deserunt\\n\\n    mollit anim id est laborum.\\n\""
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング-総理の演説記者会見など",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング-総理の演説記者会見など",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング総理の演説記者会見など",
+    "href": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング総理の演説記者会見など",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：スクレーピング > 総理の演説・記者会見など",
-    "text": "応用：スクレーピング &gt; 総理の演説・記者会見など\n\n首相官邸に掲載されている石破首相の「総理の演説・記者会見など」を一括取得し、speech_ishiba.rdsとして書き出す\n\n拡張子rds\n\nRで作ったデータ（データフレームなど）をそのままの形で保存できる専用のファイル形式\n利点：高速に読み書きできる / すべて正確に保持される（列の型（文字・数値・日付など）や因子レベルなどをそのまま保持する）\n\nスクレーピングパッケージ\n\nhttr2（ページを取得する）; xml2（ページの中身を読む）；rvest（必要なデータを取り出す）"
+    "section": "応用：スクレーピング：総理の演説・記者会見など",
+    "text": "応用：スクレーピング：総理の演説・記者会見など\n\n首相官邸に掲載されている石破首相の「総理の演説・記者会見など」を一括取得し、speech_ishiba.rdsとして書き出す\n\n拡張子rds\n\nRで作ったデータ（データフレームなど）をそのままの形で保存できる専用のファイル形式\n利点：高速に読み書きできる / すべて正確に保持される（列の型（文字・数値・日付など）や因子レベルなどをそのまま保持する）\n\nスクレーピングパッケージ\n\nhttr2（ページを取得する）; xml2（ページの中身を読む）；rvest（必要なデータを取り出す）"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング-総理の演説記者会見など-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング-総理の演説記者会見など-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング総理の演説記者会見など-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング総理の演説記者会見など-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：スクレーピング ＞ 総理の演説・記者会見など",
-    "text": "応用：スクレーピング ＞ 総理の演説・記者会見など\n\n「関数定義」「URL収集」「本文抽出」「整形・保存」ごとにchunkを分ける\n\n\n\nCode\n# --- indexページから記事URLを抽出 ---\nget_article_urls &lt;- function(page_url) {\n  req &lt;- request(page_url) |&gt; req_perform()\n  html &lt;- resp_body_html(req)\n  \n  hrefs &lt;- html |&gt; html_elements(\"a\") |&gt; html_attr(\"href\")\n  relative_urls &lt;- hrefs[str_detect(hrefs, \"^/jp/(102_ishiba|103)/statement/\\\\d{4}/\\\\d{4}.*\\\\.html$\")]\n  \n  paste0(\"https://www.kantei.go.jp\", unique(na.omit(relative_urls)))\n}\n\n\n\n\nCode\n# --- ベースURLから全indexページを収集 ---\ncollect_all_article_urls &lt;- function(base_urls) {\n  all_index_pages &lt;- map(base_urls, function(base) {\n    resp &lt;- request(base) |&gt; req_perform()\n    html &lt;- resp_body_html(resp)\n    archive_links &lt;- html |&gt; html_elements(\"a\") |&gt; html_attr(\"href\")\n    archive_links &lt;- archive_links[str_detect(archive_links, \"statement/index_\\\\d{4}\\\\.html$\")]\n    archive_links &lt;- paste0(\"https://www.kantei.go.jp\", archive_links)\n    c(base, archive_links)\n  }) |&gt; unlist() |&gt; unique()\n  \n    # 各indexページから記事URLを取得\n  article_urls &lt;- map(all_index_pages, get_article_urls) |&gt; unlist() |&gt; unique()\n  message(\"取得した記事数: \", length(article_urls))\n  article_urls\n}\n\n\n\n\nCode\nbase_urls &lt;- c(\n  \"https://www.kantei.go.jp/jp/102_ishiba/statement/index.html\",\n  \"https://www.kantei.go.jp/jp/103/statement/index.html\"\n)\n\narticle_urls &lt;- collect_all_article_urls(base_urls)\n\n\n\n\nCode\narticles_info &lt;- map(article_urls, extract_article_info) |&gt; \n  compact()\n\n\n\n\nCode\ndf_articles &lt;- \n  bind_rows(articles_info) |&gt;\n  mutate(date = convert_jdate(date)) |&gt;\n  arrange(date)\n\n\n\n\nCode\nsaveRDS(df_articles, \"speech_ishiba.rds\")"
+    "section": "応用：スクレーピング：総理の演説・記者会見など",
+    "text": "応用：スクレーピング：総理の演説・記者会見など\n\n「関数定義」「URL収集」「本文抽出」「整形・保存」ごとにchunkを分ける\n\n\n\nCode\n# --- indexページから記事URLを抽出 ---\nget_article_urls &lt;- function(page_url) {\n  req &lt;- request(page_url) |&gt; req_perform()\n  html &lt;- resp_body_html(req)\n  \n  hrefs &lt;- html |&gt; html_elements(\"a\") |&gt; html_attr(\"href\")\n  relative_urls &lt;- hrefs[str_detect(hrefs, \"^/jp/(102_ishiba|103)/statement/\\\\d{4}/\\\\d{4}.*\\\\.html$\")]\n  \n  paste0(\"https://www.kantei.go.jp\", unique(na.omit(relative_urls)))\n}\n\n\n\n\nCode\n# --- ベースURLから全indexページを収集 ---\ncollect_all_article_urls &lt;- function(base_urls) {\n  all_index_pages &lt;- map(base_urls, function(base) {\n    resp &lt;- request(base) |&gt; req_perform()\n    html &lt;- resp_body_html(resp)\n    archive_links &lt;- html |&gt; html_elements(\"a\") |&gt; html_attr(\"href\")\n    archive_links &lt;- archive_links[str_detect(archive_links, \"statement/index_\\\\d{4}\\\\.html$\")]\n    archive_links &lt;- paste0(\"https://www.kantei.go.jp\", archive_links)\n    c(base, archive_links)\n  }) |&gt; unlist() |&gt; unique()\n  \n    # 各indexページから記事URLを取得\n  article_urls &lt;- map(all_index_pages, get_article_urls) |&gt; unlist() |&gt; unique()\n  message(\"取得した記事数: \", length(article_urls))\n  article_urls\n}\n\n\n\n\nCode\nbase_urls &lt;- c(\n  \"https://www.kantei.go.jp/jp/102_ishiba/statement/index.html\",\n  \"https://www.kantei.go.jp/jp/103/statement/index.html\"\n)\n\narticle_urls &lt;- collect_all_article_urls(base_urls)\n\n\n\n\nCode\narticles_info &lt;- map(article_urls, extract_article_info) |&gt; \n  compact()\n\n\n\n\nCode\ndf_articles &lt;- \n  bind_rows(articles_info) |&gt;\n  mutate(date = convert_jdate(date)) |&gt;\n  arrange(date)\n\n\n\n\nCode\nsaveRDS(df_articles, \"speech_ishiba.rds\")"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング-総理の演説記者会見など-2",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング-総理の演説記者会見など-2",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング総理の演説記者会見など-2",
+    "href": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング総理の演説記者会見など-2",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：スクレーピング ＞ 総理の演説・記者会見など",
-    "text": "応用：スクレーピング ＞ 総理の演説・記者会見など\n\nhead()でデータを確認\n\n\n\nCode\ndf_ishiba &lt;- read_rds(\"data/speech_ishiba.rds\")\n\ndf_ishiba|&gt; head(2)\n\n\n# A tibble: 2 × 4\n  title                              date       paragraph                  url  \n  &lt;chr&gt;                              &lt;date&gt;     &lt;chr&gt;                      &lt;chr&gt;\n1 石破内閣総理大臣記者会見           2024-10-01 【石破総理冒頭発言】 第１０２代内閣総理大臣に指名… http…\n2 Ｇ７首脳電話会議出席についての会見 2024-10-02 先ほど緊迫する中東情勢を受けまして、私にとりまして… http…\n\n\n\ngt()で本文を確認\n\n\n\nCode\ndf_ishiba|&gt; \n  filter(\n    title == \"石破内閣総理大臣記者会見\",\n    date == as.Date(\"2024-10-09\")\n  ) |&gt; \n  mutate(paragraph = substr(paragraph, 1, 50)) |&gt;\n  select(paragraph) |&gt; gt()\n\n\n\n\n\n\n\n\nparagraph\n\n\n\n\n【石破総理冒頭発言】 お待たせいたしました。 本日、衆議院を解散いたしました。国民の皆様の御納得、そ\n\n\n\n\n\n\n\nCode\ndf_ishiba|&gt; \n  filter(\n    title == \"石破内閣総理大臣記者会見\",\n    date == as.Date(\"2025-10-10\")\n  ) |&gt; \n  mutate(paragraph = substr(paragraph, 1, 50)) |&gt;\n  select(paragraph) |&gt; gt()\n\n\n\n\n\n\n\n\nparagraph\n\n\n\n\n（内閣総理大臣所感） 戦後８０年に寄せて（941KB）【石破総理冒頭発言】 本日、「戦後８０年に寄せ"
+    "section": "応用：スクレーピング：総理の演説・記者会見など",
+    "text": "応用：スクレーピング：総理の演説・記者会見など\n\nhead()でデータを確認\n\n\n\nCode\ndf_ishiba &lt;- read_rds(\"data/speech_ishiba.rds\")\n\ndf_ishiba|&gt; head(2)\n\n\n# A tibble: 2 × 4\n  title                              date       paragraph                  url  \n  &lt;chr&gt;                              &lt;date&gt;     &lt;chr&gt;                      &lt;chr&gt;\n1 石破内閣総理大臣記者会見           2024-10-01 【石破総理冒頭発言】 第１０２代内閣総理大臣に指名… http…\n2 Ｇ７首脳電話会議出席についての会見 2024-10-02 先ほど緊迫する中東情勢を受けまして、私にとりまして… http…\n\n\n\ngt()で本文を確認\n\n\n\nCode\ndf_ishiba|&gt; \n  filter(\n    title == \"石破内閣総理大臣記者会見\",\n    date == as.Date(\"2024-10-09\")\n  ) |&gt; \n  mutate(paragraph = substr(paragraph, 1, 50)) |&gt;\n  select(paragraph) |&gt; gt()\n\n\n\n\n\n\n\n\nparagraph\n\n\n\n\n【石破総理冒頭発言】 お待たせいたしました。 本日、衆議院を解散いたしました。国民の皆様の御納得、そ\n\n\n\n\n\n\n\nCode\ndf_ishiba|&gt; \n  filter(\n    title == \"石破内閣総理大臣記者会見\",\n    date == as.Date(\"2025-10-10\")\n  ) |&gt; \n  mutate(paragraph = substr(paragraph, 1, 50)) |&gt;\n  select(paragraph) |&gt; gt()\n\n\n\n\n\n\n\n\nparagraph\n\n\n\n\n（内閣総理大臣所感） 戦後８０年に寄せて（941KB）【石破総理冒頭発言】 本日、「戦後８０年に寄せ"
+  },
+  {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#応用データの結合oecd加盟国の人口100万人あたりの議員数",
+    "href": "teaching/RforDatascience/RforDataScience.html#応用データの結合oecd加盟国の人口100万人あたりの議員数",
+    "title": "初心者向けR Studioの使い方",
+    "section": "応用：データの結合：OECD加盟国の人口100万人あたりの議員数",
+    "text": "応用：データの結合：OECD加盟国の人口100万人あたりの議員数\n\nleft_join()関数\n\n\n\nCode\ndf_parline &lt;- \n  read_csv(\"data/ComparedataonParliaments.csv\", skip = 15, col_names = FALSE) |&gt; (\\(x) setNames(x[-1, ], x[1, ]))()\n\ndf_population &lt;-\n  read_excel(\"data/population.xlsx\", sheet = 1, skip = 16) |&gt; \n  filter(Type == \"Country/Area\") |&gt; \n  filter(Year == max(Year, na.rm = TRUE)) |&gt; \n  rename(country = `Region, subregion, country or area *`)\n\noecd_ISOcode &lt;- c(\n  \"AU\", \"AT\", \"BE\", \"CA\", \"CL\", \"CO\", \"CR\", \"CZ\", \"DK\", \"EE\", \"FI\", \"FR\",\n  \"DE\", \"GR\", \"HU\", \"IS\", \"IE\", \"IL\", \"IT\", \"JP\", \"KR\", \"LV\", \"LT\", \"LU\",\n  \"MX\", \"NL\", \"NZ\", \"NO\", \"PL\", \"PT\", \"SK\", \"SI\", \"ES\", \"SE\", \"CH\", \"TR\",\n  \"GB\", \"US\"\n)\n\noecd_countries &lt;- c(\n  \"Australia\", \"Austria\", \"Belgium\", \"Canada\", \"Chile\", \"Colombia\",\n  \"Czech Republic\", \"Denmark\", \"Estonia\", \"Finland\", \"France\", \"Germany\",\n  \"Greece\", \"Hungary\", \"Iceland\", \"Ireland\", \"Israel\", \"Italy\", \"Japan\",\n  \"Korea\", \"Latvia\", \"Lithuania\", \"Luxembourg\", \"Mexico\", \"Netherlands\",\n  \"New Zealand\", \"Norway\", \"Poland\", \"Portugal\", \"Slovak Republic\", \"Slovenia\",\n  \"Spain\", \"Sweden\", \"Switzerland\", \"Turkey\", \"United Kingdom\", \"United States of America\", \"Republic of Korea\"\n)\n\ndf_parline_oecd &lt;- \ndf_parline |&gt; \n    filter(`ISO Code` %in% oecd_ISOcode)\n\ndf_parline_oecd &lt;- \n  df_parline_oecd |&gt; \n  select(country = Country, statutory_number = `Statutory number of members`)\n\ndf_population_oecd &lt;- \n  df_population |&gt; \n      filter(country %in% oecd_countries)\n\ndf_population_oecd &lt;- \n  df_population_oecd |&gt; \n  mutate(across(`0`:`100+`, as.numeric)) |&gt; \n  mutate(TotalPopulation = rowSums(across(`0`:`100+`), na.rm = TRUE)) |&gt;\n  select(country, TotalPopulation) |&gt; \n  mutate(TotalPopulation = round(TotalPopulation))\n\ndf &lt;-\n  df_population_oecd |&gt; \n  left_join(df_parline_oecd, by = \"country\")\n\ndf_plot &lt;-\n  df |&gt; \n  mutate(\n    statutory_number = as.numeric(statutory_number),\n    member_per_million = statutory_number / (TotalPopulation / 1000),\n    member_per_million = round(member_per_million, 2)\n  ) |&gt; \n  arrange(desc(member_per_million)) |&gt; \n  mutate(country = factor(country, levels = country))\n\ny_max &lt;- max(df_plot$member_per_million, na.rm = TRUE)\n\ndf_plot |&gt;\nggplot(aes(x = country, y = member_per_million)) +\n  geom_col(fill = \"red\") + \n  gghighlight(country == \"Japan\") + # gghighlightパッケージを追加しています\n  scale_y_continuous(\n    breaks = seq(0, y_max, 30),\n    expand = c(0, 0)\n  ) +\n  coord_flip() +\n  labs(\n    x = \"\",\n    y = \"人口100万人あたりの下院議員数\",\n  ) +\n  theme(\n    axis.text.y = element_text(hjust = 0)\n  )  \n\n\n\n\nデータの出典\n\nUnited Nations, World Population Prospects 2024\nParline, Data explorer"
+  },
+  {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#応用map関数penguin",
+    "href": "teaching/RforDatascience/RforDataScience.html#応用map関数penguin",
+    "title": "初心者向けR Studioの使い方",
+    "section": "応用：map()関数：penguin",
+    "text": "応用：map()関数：penguin\nmap()関数の利点\n\nグループごとに自動で処理できる\n\n手作業でspeciesごとに分けてコードを書く必要がない\n例：ペンギンの種類ごとに、くちばしの長さ(bill_len)と深さ(bill_dep)の関係を回帰分析で調べる\n\n\n\n\nCode\npenguins |&gt; \n  group_by(species) |&gt; \n  nest() |&gt;                  # グループごとにデータフレームをリスト化して1列にまとめる\n  mutate(\n    bill_lm_result = map(    # map() でリストの各要素（データフレーム）に同じ処理を適用\n      data,                  # 対象は nest() で作った 'data' 列\n      function(df) {\n        lm_result &lt;- lm(bill_len ~ bill_dep, data = df)  # bill_len を目的変数、bill_dep を説明変数に回帰\n        return(lm_result)                              # lm の結果を返す\n      }\n    ),\n    coefficients = map(      # map() で各回帰結果から係数を取り出す\n      bill_lm_result, \n      pluck, \n      \"coefficients\"\n    )\n  ) |&gt; \n  unnest_wider(coefficients, names_sep = \"_\") |&gt;   # coefficients 列を列ごとに展開（intercept や傾きが列になる）\n  print()\n\n\n# A tibble: 3 × 5\n# Groups:   species [3]\n  species   data     bill_lm_result coefficients_(Interc…¹ coefficients_bill_dep\n  &lt;fct&gt;     &lt;list&gt;   &lt;list&gt;                          &lt;dbl&gt;                 &lt;dbl&gt;\n1 Adelie    &lt;tibble&gt; &lt;lm&gt;                             23.1                 0.857\n2 Gentoo    &lt;tibble&gt; &lt;lm&gt;                             17.2                 2.02 \n3 Chinstrap &lt;tibble&gt; &lt;lm&gt;                             13.4                 1.92 \n# ℹ abbreviated name: ¹​`coefficients_(Intercept)`"
+  },
+  {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#応用map関数penguin-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#応用map関数penguin-1",
+    "title": "初心者向けR Studioの使い方",
+    "section": "応用：map()関数：penguin",
+    "text": "応用：map()関数：penguin\nmap()を使わない場合\n\n\nCode\n# データを種別ごとに分ける\nadelie &lt;- penguins |&gt; filter(species == \"Adelie\")\n# chinstrap &lt;- penguins |&gt; filter(species == \"Chinstrap\")\n# gentoo &lt;- penguins |&gt; filter(species == \"Gentoo\")\n\n# 種別ごとに回帰分析を個別に書く\nadelie_lm &lt;- lm(bill_len ~ bill_dep, data = adelie)\n# chinstrap_lm &lt;- lm(bill_len ~ bill_dep, data = chinstrap)\n# gentoo_lm &lt;- lm(bill_len ~ bill_dep, data = gentoo)\n\n# 結果を確認\nprint(adelie_lm)\n\n\n\nCall:\nlm(formula = bill_len ~ bill_dep, data = adelie)\n\nCoefficients:\n(Intercept)     bill_dep  \n     23.068        0.857  \n\n\nCode\n# print(chinstrap_lm)\n# print(gentoo_lm)\n\n\n\n\n\n\n\n\n回帰分析をtidyverseスタイルで行うなら、parsnipパッケージが便利です。tidymodelsパッケージに含まれています。モデル結果を表形式に整理するにはbroomパッケージも使います"
+  },
+  {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#応用map関数選挙",
+    "href": "teaching/RforDatascience/RforDataScience.html#応用map関数選挙",
+    "title": "初心者向けR Studioの使い方",
+    "section": "応用：map()関数：選挙",
+    "text": "応用：map()関数：選挙\n\nmap() ：同じ処理を、たくさんのデータに順番に適用する」関数\n\n「たくさんのファイル」や「いくつかのグループ（島・年・地域など）」に対して、同じ処理（たとえば平均を出す・グラフを描く）を自動で繰り返す\n\n比例区の得票数を地域ブロックごとに集計、描画したい\n\n\n\nCode\n# 1. データを整形して新しいオブジェクトに保存\ndf_plot &lt;- df_pr_parties |&gt;\n  group_by(year, party, block) |&gt;\n  summarise(votes = sum(votes), .groups = \"drop\") |&gt;\n  filter(party %in% 主要政党) |&gt;\n  mutate(party = factor(party, levels = 主要政党))\n\n# 2. block ごとに分割（factor → character に変換）\ndf_list &lt;- split(df_plot, as.character(df_plot$block))\n\n# 3. ggplot を作成\nplots &lt;- map(df_list, ~ ggplot(.x, aes(x = party, y = votes, fill = as.factor(year))) +\n                       geom_col(position = \"dodge\") +\n                       labs(title = unique(.x$block), x = \"\", y = \"得票数\") +\n                       theme(axis.text.x = element_text(angle = 45, hjust = 1)))\n\n# 4. プロットを表示\nwalk(plots, print)"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#応用地図情報-アメリカの選挙",
