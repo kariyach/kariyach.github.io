@@ -2307,28 +2307,35 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基礎なぜrなのか-なぜquartoなのか",
     "title": "初心者向けR Studioの使い方",
     "section": "基礎：なぜRなのか / なぜQuartoなのか",
-    "text": "基礎：なぜRなのか / なぜQuartoなのか\n1. 無料\n2. コード（スクリプト）\n\n再現可能性\n\nマウス操作と違い､手順を説明する必要性が少ない\n\n真似しやすい、生成AIと親和性が高い\n\n操作を忘れてもコードが残る\nミスも再現できる\n\n使い回せる（作業の効率化）\n安全性（元データは加工されない）\n\n3. 豊富な可視化ツール\n\nggplot2 / カラーパッケージ"
+    "text": "基礎：なぜRなのか / なぜQuartoなのか\n1. 無料\n2. コード（スクリプト）\n\n再現可能性\n\nマウス操作と違い､その場限りではなく、手順がすべて残る\n\n真似しやすい、生成AIと親和性が高い\n操作を忘れてもコードが残る / ミスも再現できる\n\n\n作業の効率化\n\n一度作った処理を別のデータでも使い回せる\n\n安全性\n\nRは元データ（ファイル）を加工しない（メモリ上にデータを保持し、そのコピーを操作する）\n\n共同作業・共同研究との親和性\n\nコードを送れば、同じ分析を他の人が実行できる"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基礎なぜrなのか-なぜquartoなのか-1",
     "href": "teaching/RforDatascience/RforDataScience.html#基礎なぜrなのか-なぜquartoなのか-1",
     "title": "初心者向けR Studioの使い方",
     "section": "基礎：なぜRなのか / なぜQuartoなのか",
-    "text": "基礎：なぜRなのか / なぜQuartoなのか\n4. 豊富な出力形態（Quarto）\n\nDocuments / Presentations / Dashboards / Website\n\n5. 親切なコミュニティ\n\n各専門分野の研究者が､当該分野の分析に最適化したパッケージを作っている （探せばだいたい欲しいパッケージがある）\n困っていることはみんな一緒（先達の回答が参考になる）\n\nTokyo.R / Tokyo.R—Slack\nKanazawa.R（次回2025年11月15日(土)開催）\n\n\n6. 簡易的な記述法\n\nmarkdown"
+    "text": "基礎：なぜRなのか / なぜQuartoなのか\n3. 豊富な可視化ツール\n\nggplot2 / カラーパッケージ\n\n4. 親切なコミュニティ\n\n各専門分野の研究者が､当該分野の分析に最適化したパッケージを作っている （探せばだいたい欲しいパッケージがある）\n困っていることはみんな一緒（先達の回答が参考になる）\n\nTokyo.R / Tokyo.R—Slack\nKanazawa.R（次回2025年11月15日(土)開催）\n\n\n5. 豊富な出力形態（Quarto）\n\nDocuments / Presentations / Dashboards / Website"
+  },
+  {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基礎なぜrなのか-なぜquartoなのか-2",
+    "href": "teaching/RforDatascience/RforDataScience.html#基礎なぜrなのか-なぜquartoなのか-2",
+    "title": "初心者向けR Studioの使い方",
+    "section": "基礎：なぜRなのか / なぜQuartoなのか",
+    "text": "基礎：なぜRなのか / なぜQuartoなのか\n6. 簡易的な記述法（Quarto）\n\nmarkdown\n\n\n\n\n要素\nMarkdown構文\n例\n\n\n\n\n見出し\n# H1## H2\nH1 見出し  H2 見出し\n\n\n太字\n**bold text**\nbold text\n\n\nイタリック\n*italicized text*\nitalicized text\n\n\n引用\n&gt; blockquote\n&gt; blockquote\n\n\nリンク\n[金沢大学](https://www.kanazawa-u.ac.jp)\n金沢大学\n\n\n画像\n![alt text](img/logo_金沢大学.jpg)\n\n\n\n\n\n\n\n\n\n\n色や文字の大きさはCSSファイルを別途用意して、変更します"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基礎rの構造",
     "href": "teaching/RforDatascience/RforDataScience.html#基礎rの構造",
     "title": "初心者向けR Studioの使い方",
     "section": "基礎：Rの構造",
-    "text": "基礎：Rの構造\n\n\n\n\n\n\n\ngraph BT\n    A([\"&lt;strong&gt;base R&lt;/strong&gt;\nRの基本構文・関数\n例: mean(), sum(), if\"]) --&gt; \n    B([\"&lt;strong&gt;modern R&lt;/strong&gt;\n便利な文法・スタイル\n例: |&gt; パイプ, tibble, dplyr 文法,&lt;br&gt; ggplot2 文法\"]) --&gt; \n    C([\"&lt;strong&gt;Packages&lt;/strong&gt;\nRに追加するツール集\n例: tidyverse, ggplot2,&lt;br&gt;readr, lubridate, shiny\"])\n\n\n%% ノードのスタイル\nstyle A text-align:center\nstyle B text-align:center\nstyle A text-align:center, fill:#FFD700,stroke:#333,stroke-width:1px,font-weight:bold;\nstyle B text-align:center, fill:#87CEFA,stroke:#333,stroke-width:1px,font-weight:bold;\nstyle C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight:bold;\n\n\n\n\n\n\n\n\nPackages\n\n目的別に追加するツール：家具や家電\n\nmodern R：tidyな（整然とした）R\n\n近年の改良で、より読みやすく・便利になった文法：家の「骨組み・壁・柱」や「設計の考え方」\n\nbase R\n\nR言語そのもの：家の基礎部分\n\n\n\n\ntidyverseは家具も文法も含むが、文法部分はmodern R、インストールして使う部分はPackages に分類できる"
+    "text": "基礎：Rの構造\n\n\n\n\n\n\n\ngraph BT\n    A([\"&lt;strong&gt;base R&lt;/strong&gt;\nRの基本構文・関数\n例: mean(), sum(), if\"]) --&gt; \n    B([\"&lt;strong&gt;modern R&lt;/strong&gt;\n便利な文法・スタイル\n例: |&gt; パイプ, tibble, dplyr 文法,&lt;br&gt; ggplot2 文法\"]) --&gt; \n    C([\"&lt;strong&gt;Packages&lt;/strong&gt;\nRに追加するツール集\n例: tidyverse, ggplot2,&lt;br&gt;readr, lubridate, shiny\"])\n\n\n%% ノードのスタイル\nstyle A text-align:center\nstyle B text-align:center\nstyle A text-align:center, fill:#FFD700,stroke:#333,stroke-width:1px,font-weight:bold;\nstyle B text-align:center, fill:#87CEFA,stroke:#333,stroke-width:1px,font-weight:bold;\nstyle C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight:bold;\n\n\n\n\n\n\n\n\nPackages\n\n目的別に追加するツール：家具や家電\n\nmodern R：tidyな（整然とした）R\n\n近年の改良で、より読みやすく・便利になった文法：家の「骨組み・壁・柱」や「設計の考え方」\n\nbase R\n\nR言語そのもの：家の基礎部分\n\n\n\n\ntidyverseは家具も文法も含むが、文法部分はmodern R、インストールして使う部分はPackagesに分類できる"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基礎rの手順",
     "href": "teaching/RforDatascience/RforDataScience.html#基礎rの手順",
     "title": "初心者向けR Studioの使い方",
     "section": "基礎：Rの手順",
-    "text": "基礎：Rの手順\n\n\n\n\n\n\nflowchart TB\n    Start([YAML設定（ドキュメントの設定）:&lt;br&gt; タイトル、出力形式、テーマなど]) --&gt; B[データの読み込み・前処理:&lt;br&gt; dplyr / tidyr\n    &lt;br&gt;（フィルタリング / 集計・要約 / 新列作成・計算&lt;br&gt;/ 縦持ち・横持ち変換 / 欠損値処理）]\n    B --&gt; C1[データの探索・可視化:&lt;br&gt; skim, gt_summary / ggplot2]\n    B --&gt; C2[統計分析・モデル構築:&lt;br&gt; lm, glm, 因果推論]\n    C1 --&gt; D[結果の評価・解釈:&lt;br&gt; broom, modelsummary, performance]\n    C2 --&gt; D\n    D --&gt; End([レポート作成（レンダー）:&lt;br&gt; knitr / rmarkdown&lt;br&gt;（pdf; reveal.js; webpage; docx; pptx; pdf）])\n\n    %% 色付け\n    style Start fill:#a2d4f1,stroke:#333,stroke-width:2px\n    style End fill:#f1d4a2,stroke:#333,stroke-width:2px\n    style C1 fill:#d4f1a2,stroke:#333,stroke-width:1px\n    style C2 fill:#f1a2d4,stroke:#333,stroke-width:1px"
+    "text": "基礎：Rの手順\n\n\n\n\n\n\nflowchart TB\n    Start([YAML設定（ドキュメントの設定）:&lt;br&gt; タイトル、出力形式、テーマなど]) --&gt; B[データの読み込み・前処理:&lt;br&gt; dplyr / tidyr\n    &lt;br&gt;（フィルタリング / 新列作成・計算&lt;br&gt;/ 縦持ち・横持ち変換 / 欠損値処理）]\n    B --&gt; C1[データの概要と可視化:&lt;br&gt; skim, gt_summary / ggplot2]\n    B --&gt; C2[統計分析・モデル構築:&lt;br&gt; lm, glm, 因果推論]\n    C1 --&gt; D[結果の評価・解釈:&lt;br&gt; broom, modelsummary, performance]\n    C2 --&gt; D\n    D --&gt; End([レポート作成（レンダー）:&lt;br&gt; knitr / rmarkdown&lt;br&gt;（pdf; reveal.js; webpage; docx; pptx; pdf）])\n\n    %% 色付け\n    style Start fill:#a2d4f1,stroke:#333,stroke-width:2px\n    style End fill:#f1d4a2,stroke:#333,stroke-width:2px\n    style C1 fill:#d4f1a2,stroke:#333,stroke-width:1px\n    style C2 fill:#f1a2d4,stroke:#333,stroke-width:1px"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基礎整然データと雑然データ",
@@ -2461,7 +2468,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#準備setup-chunkの作成-1",
     "title": "初心者向けR Studioの使い方",
     "section": "準備：Setup Chunkの作成",
-    "text": "準備：Setup Chunkの作成\n10. Setup Chunkの作成\n\nソースペインで、YAMLの下に、Setup Chunkを作成\n\nメニュー &gt; Code &gt; Insert Chunk &gt; 「r」の文字の後に「半角スペース」を空け「setup」と入力\n\nChunk Optionの設定するために、以下のコードを入力\n\n\n\n#| echo: false\n#| output: false\n\n\n\n\necho: false: このチャンクのコードは表示しない\noutput: false：コードを実行しても、結果は出力に表示しない\n\n\n\n\n\n\n\nコードブロックは「てんてんてん（バッククォート）」3つで始まり、同じく「てんてんてん」3つで終わるのが規則です。この中にRのコードを書きます。間違って消さないように！"
+    "text": "準備：Setup Chunkの作成\n10. Setup Chunkの作成\n\nソースペインで、YAMLの下に、Setup Chunkを作成\n\nメニュー &gt; Code &gt; Insert Chunk &gt; 以下のコードを入力（貼り付けでよい）\n\n\n#| label: setup\n#| echo: false\n#| output: false\n\nlabel: setup: このチャンクをセットアップチャンクと名付ける\necho: false: このチャンクのコードは表示しない\noutput: false：コードを実行しても、結果は出力に表示しない\n\n\n\n\n\n\n\nコードブロックは「てんてんてん（バッククォート）」3つで始まり、同じく「てんてんてん」3つで終わるのが規則です。この中にRのコードを書きます。間違って消さないように！"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#準備パッケージの読み込み",
@@ -2499,242 +2506,256 @@
     "text": "準備：Quartoファイル\nQuartoファイルの構成パターン\n\n\n\n\n\n\n\nflowchart TB\n    A[\"YAML領域\"]:::yaml\n    B[\"R Setup Chunk（セットアップ領域）\"]:::setup\n    C[\"R Chunk領域\"]:::chunk\n    D[\"Markdown領域\"]:::md\n\n    A --&gt; B\n    B --&gt; C\n    B --&gt; D\n\n    classDef yaml fill:#FFF7D6,stroke:#E3B505,color:#333,font-weight:bold;\n    classDef setup fill:#FFF0F5,stroke:#D96BA8,color:#333,font-weight:bold;\n    classDef chunk fill:#E7F5FF,stroke:#4A90E2,color:#333,font-weight:bold;\n    classDef md fill:#E8F6E0,stroke:#7CB518,color:#333,font-weight:bold;\n\n\n\n\n\n\n\n\n\n\n\n\n\nハッシュタグの解釈がR ChunkとMarkdownで異なる\n\n\n\nR Chunk: コメントアウト\nMarkdown: 見出しレベル\n\n\n\n\n\n\nYAML（ヤムル）\n\nファイル全体の設定や出力形式の指定する領域\n\nR Chunk（アールチャンク）\n\nRコードを実行して、分析や図表を作成する領域\n\nMarkdown（マークダウン）\n\n見出しや本文、解説文などを記述する領域\nRコードを囲っていない部分は、すべてマークダウン領域となる"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データセット",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データセット",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本データセット",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本データセット",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > データセット",
-    "text": "基本：palmer penguins &gt; データセット\nデータセット：palmer penguins\n\npalmer penguinsは、R本体に組み込まれている練習用のデータセット（R4.5以降）\n\nこれは、パッケージを追加したり、データを読み込む必要がないことを意味する\n従来のデータセット（irisなど）とは違い、カラム名、naなどの点で、教育的配慮のあるデータセットとされる\n\n\n\n\n\n\n\n\n以前はパッケージを読み込み、使用するしかありませんでした。パッケージで提供されるデータセットと、base Rのそれで、カラム名が異なります。インターネットで検索すると、パッケージのカラム名のコードが現状では多いので、気をつけて下さい"
+    "section": "基本：データセット",
+    "text": "基本：データセット\nデータセット：palmer penguins\n\npalmer penguinsは、R本体に組み込まれている練習用のデータセット（R4.5以降）\n\nこれは、パッケージを追加したり、データを読み込む必要がないことを意味する\n従来のデータセット（irisなど）とは違い、カラム名、naなどの点で、教育的配慮のあるデータセットとされる\n\n\n\n\n\n\n\n\n以前はパッケージを読み込み、使用するしかありませんでした。パッケージで提供されるデータセットと、base Rのそれで、カラム名が異なります。インターネットで検索すると、パッケージのカラム名のコードが現状では多いので、気をつけて下さい"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データセット-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データセット-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本データセット-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本データセット-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > データセット",
-    "text": "基本：palmer penguins &gt; データセット\n\nパーマーランド（南極）の3つの島に住むペンギンたちのデータ（Allison Horstさん作成）\n\n\n\nペンギンの種類：\n\nAdelie（アデリーペンギン）\nGentoo（ジェンツーペンギン）\nChinstrap（ヒゲペンギン）\n\n島の名前：\n\nBiscoe（ビスコー）\nDream（ドリーム）\nTorgersen（トージャーセン）"
+    "section": "基本：データセット",
+    "text": "基本：データセット\n\nパーマーランド（南極）の3つの島に住むペンギンたちのデータ（Allison Horstさん作成）\n\n\n\nペンギンの種類：\n\nAdelie（アデリーペンギン）\nGentoo（ジェンツーペンギン）\nChinstrap（ヒゲペンギン）\n\n島の名前：\n\nBiscoe（ビスコー）\nDream（ドリーム）\nTorgersen（トージャーセン）"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-簡単な関数",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-簡単な関数",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本簡単な関数",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本簡単な関数",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > 簡単な関数",
-    "text": "基本：palmer penguins &gt; 簡単な関数\nデータを確認する\n\n関数を使ってみよう。以下のコードを入力（自動補完を確認下さい）\n\nview()関数\n\nデータを表にして見やすく開く関数。データ全体をチェックしたり、列名や値、また集計途中のデータをざっと確認するときに便利\n\n\npenguins |&gt; \n  view()\n\nhead()関数\n\nデータフレームやベクトルの先頭の数行（デフォルトは6行）だけを表示\n\n\npenguins |&gt; \n  head()"
+    "section": "基本：簡単な関数",
+    "text": "基本：簡単な関数\nデータを確認する\n\n関数を使ってみよう。以下のコードを入力（自動補完を確認下さい）\n\nview()関数\n\nデータを表にして見やすく開く関数。データ全体をチェックしたり、列名や値、また集計途中のデータをざっと確認するときに便利\n\n\npenguins |&gt; \n  view()\n\nhead()関数\n\nデータフレームやベクトルの先頭の数行（デフォルトは6行）だけを表示\n\n\npenguins |&gt; \n  head()"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データの型",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データの型",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本データの型",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本データの型",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > データの型",
-    "text": "基本：palmer penguins &gt; データの型\nデータの型"
+    "section": "基本：データの型",
+    "text": "基本：データの型\nデータの型"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データフレームの型",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データフレームの型",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本データフレームの型",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本データフレームの型",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > データフレームの型",
-    "text": "基本：palmer penguins &gt; データフレームの型\nデータフレームの型\n\n\ntibble（ティブル）はtidyverseで使われるデータフレームの新しい形式\n\nbase Rのデータフレームであるdata.frameを、より見やすく、扱いやすく改良したもの\ndplyrやggplot2などの関数と相性がよい\ntibbleは列にlistを入れられるので、グループごとのデータをまとめて操作する「ネスト処理」と相性がよい\n文字列を自動的にfactorにしない、出力が見やすい（先頭だけを整形して表示）間などの特徴もある"
+    "section": "基本：データフレームの型",
+    "text": "基本：データフレームの型\nデータフレームの型\n\n\ntibble（ティブル）はtidyverseで使われるデータフレームの新しい形式\n\nbase Rのデータフレームであるdata.frameを、より見やすく、扱いやすく改良したもの\ndplyrやggplot2などの関数と相性がよい\ntibbleは列にlistを入れられるので、グループごとのデータをまとめて操作する「ネスト処理」と相性がよい\n文字列を自動的にfactorにしない、出力が見やすい（先頭だけを整形して表示）間などの特徴もある"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-実行と出力",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-実行と出力",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本実行と出力",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本実行と出力",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > 実行と出力",
-    "text": "基本：palmer penguins &gt; 実行と出力\nレンダー（render）とrun\n\n\nrender：描画\n\nすべてのrのコードを実行し、YAMLのformatで設定した形式のファイルが出力される\n出力：Quartoファイルと同じフォルダにhtmlファイルが作成される\n\nViewer画面でも確認できる（show new windowでブラウザで確認できる）\n自動的にブラウザが開く場合もある（設定？）\n\n\n\nrun：rの実行\n\n図や表の出力に関数する関数がある場合、chunkの下に描画される"
+    "section": "基本：実行と出力",
+    "text": "基本：実行と出力\n実行（run）と出力（レンダー、render）\n\n\nrun：rの実行\n\n図や表の出力に関数する関数がある場合、Chunkの下に描画される\n\n個々のChunkを実行する場合は、Chunk右端の▶️をクリック\n全てのコードを実行する場合は、Run &gt; Run All\n\n\n\nrender：出力（描画）\n\nすべてのコードを実行し、YAMLのformatで設定した形式のファイルが出力される（出力先：Quartoファイルと同じフォルダ）\n出力はViewer画面でも確認できる（show new windowでブラウザで確認できる）\n\n自動的にブラウザが開く場合もある"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-パイプ処理",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-パイプ処理",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本パイプ処理",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本パイプ処理",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > パイプ処理",
-    "text": "基本：palmer penguins &gt; パイプ処理\nパイプ処理\n\n|&gt; または %&gt;%\nmodern Rの大きな特徴の一つ\n処理を連続させるための記号\n\nより正確には「前の結果を次の関数に渡して、処理を順番につなげるための記号」\n\nRを初めて学ぶ人、あるいは他のプログラミング言語に慣れた人にとって つまずきやすく、でも、もっとも大切な考え方\n\n\nデータ |&gt;\n  処理A() |&gt;\n  処理B()\n\n\n料理で喩えると：「材料を選んで → 炒めて → 味付けする」"
+    "section": "基本：パイプ処理",
+    "text": "基本：パイプ処理\nパイプ処理\n\n|&gt; または %&gt;%\nmodern Rの大きな特徴の一つ\n処理を連続させるための記号\n\nより正確には「前の結果を次の関数に渡して、処理を順番につなげるための記号」\n\nRを初めて学ぶ人、あるいは他のプログラミング言語に慣れた人にとって つまずきやすく、でも、もっとも大切な考え方\n\n\nデータ |&gt;\n  処理A() |&gt;\n  処理B()\n\n\n料理で喩えると：「材料を選んで → 炒めて → 味付けする」"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-パイプ処理-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-パイプ処理-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本パイプ処理-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本パイプ処理-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > パイプ処理",
-    "text": "基本：palmer penguins &gt; パイプ処理\nパイプを使った書き方（modern R / tidyverse）\n\npenguins |&gt; # ペンギンというデータ（正確には「オブジェクト」と表現します）を使って\n  group_by(species) |&gt; # 種類ごとにグループを分けて\n  summarize(mean_body_mass = mean(body_mass, na.rm = TRUE)) # 平均の体重を計算する（na.rm = TRUEは、欠損値を除外する指示）\n\n\nオブジェクトをどう処理したいのかが書きやすい（読みやすい）\n\nパイプを使わない書き方（base R）\n\nsummarize(\n  group_by(penguins, species),\n  mean_body_mass = mean(body_mass, na.rm = TRUE)\n)\n\n\n関数が入れ子構造（ネスト）になり、どこからどこまでが特定の関数なのかわかりにくい\n処理の順番がわかりにくく、かっこの対応関係も見づらい"
+    "section": "基本：パイプ処理",
+    "text": "基本：パイプ処理\nパイプを使った書き方（modern R / tidyverse）\n\npenguins |&gt; # ペンギンというデータ（正確には「オブジェクト」と表現します）を使って\n  group_by(species) |&gt; # 種類ごとにグループを分けて\n  summarize(mean_body_mass = mean(body_mass, na.rm = TRUE)) # 平均の体重を計算する（na.rm = TRUEは、欠損値を除外する指示）\n\n\nオブジェクトをどう処理したいのかが書きやすい（読みやすい）\n\nパイプを使わない書き方（base R）\n\nsummarize(\n  group_by(penguins, species),\n  mean_body_mass = mean(body_mass, na.rm = TRUE)\n)\n\n\n関数が入れ子構造（ネスト）になり、どこからどこまでが特定の関数なのかわかりにくい\n処理の順番がわかりにくく、かっこの対応関係も見づらい"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-パイプ処理-2",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-パイプ処理-2",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本パイプ処理-2",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本パイプ処理-2",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > パイプ処理",
-    "text": "基本：palmer penguins &gt; パイプ処理\n\n\nパイプあり（modern R / tidyverse）\n\npenguins |&gt;\n  head()\n\n\nパイプなし（base R）\n\nhead(penguins)\n\n\n\nどちらも同じ処理\n処理を連続させないのであれば、右のコードでよい\nbase Rでは、関数のかっこの中に第1引数として、処理・操作したいデータを書くが、パイプを使うと、そのデータを関数の外（左側・コードの最初）に置くことができる\n\n可読性の高いコードになる"
+    "section": "基本：パイプ処理",
+    "text": "基本：パイプ処理\n\n\nパイプあり（modern R / tidyverse）\n\npenguins |&gt;\n  head()\n\n\nパイプなし（base R）\n\nhead(penguins)\n\n\n\nどちらも同じ処理\n処理を連続させないのであれば、右のコードでよい\nbase Rでは、関数のかっこの中に第1引数として、処理・操作したいデータを書くが、パイプを使うと、そのデータを関数の外（左側・コードの最初）に置くことができる\n\n可読性の高いコードになる"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-パッケージのインストール",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-パッケージのインストール",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本パッケージのインストール",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本パッケージのインストール",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > パッケージのインストール",
-    "text": "基本：palmer penguins &gt; パッケージのインストール\nパッケージの一括インストール\n\nパッケージは各自の必要に応じてインストールすべきですが、時間の都合上、以下のスライドで使用するコードを一括でインストールしましょう。上からscalesまでのパッケージは、今日、標準的なものです\n任意のR Chunkで操作（このR Chunkはインストール後に削除して下さい）\n\n\n# インストールするパッケージをまとめて指定\npackages &lt;- c(\n  \"readxl\",     # Excelファイルの読み込み\n  \"conflicted\", # 複数のパッケージで同じ関数名があるとき、使う方を選べるようにする\n  \"stringi\",    # 文字列操作\n  \"gt\",         # 表作成\n  \"crosstable\", # クロス表\n  \"skimr\",      # データ要約\n  \"scales\",     # 軸やラベルのスケール調整 ## 以下のパッケージは標準的ではないが、本日の講習会で使っているものです\n  \"zipangu\",    # 元号を西暦に変換\n  \"rvest\",      # Webスクレイピング\n  \"httr2\",      # HTTPリクエスト\n  \"xml2\",       # XML解析\n  \"maps\",       # アメリカの地図情報（地理データ）\n  \"socviz\",     # 政治・社会・教育に関連するデータセットが中心（初学者の演習や可視化の教材として便利）\n  \"paletteer\",  # カラーパレット\n  \"ngramr\",     # Google Ngram Trends\n  \"sjPlot\"      # 社会科学系の分析総合パッケージ\n)"
+    "section": "基本：パッケージのインストール",
+    "text": "基本：パッケージのインストール\nパッケージの一括インストール\n\nパッケージは各自の必要に応じてインストールすべきですが、時間の都合上、以下のスライドで使用するコードを一括でインストールしましょう。上からscalesまでのパッケージは、今日、標準的なものです\n任意のR Chunkで操作（このR Chunkはインストール後に削除して下さい）\n\n\n# インストールするパッケージをまとめて指定\npackages &lt;- c(\n  \"readxl\",     # Excelファイルの読み込み\n  \"conflicted\", # 複数のパッケージで同じ関数名があるとき、使う方を選べるようにする\n  \"lubridate\",  # 日付処理\n  \"stringi\",    # 文字列操作\n  \"glue\",       # 文字列の埋め込み\n  \"gt\",         # 表作成\n  \"skimr\",      # データ要約\n  \"scales\",     # 軸やラベルのスケール調整 ## 以下のパッケージは標準的ではないが、本日の講習会で使っているものです\n  \"crosstable\", # クロス表\n  \"zipangu\",    # 元号を西暦に変換\n  \"rvest\",      # Webスクレイピング\n  \"httr2\",      # HTTPリクエスト\n  \"xml2\",       # XML解析\n  \"maps\",       # アメリカの地図情報（地理データ）\n  \"socviz\",     # 政治・社会・教育に関連するデータセットが中心（初学者の演習や可視化の教材として便利）\n  \"paletteer\",  # カラーパレット\n  \"ngramr\",     # Google Ngram Trends\n  \"sjPlot\"      # 社会科学系の分析総合パッケージ\n)"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-パッケージのインストール-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-パッケージのインストール-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本パッケージのインストール-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本パッケージのインストール-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > パッケージのインストール",
-    "text": "基本：palmer penguins &gt; パッケージのインストール\nパッケージの一括インストール\n\n以下のコードをコンソールに入力して実行\n\n先に入力したパッケージ群（「packages」と名付けました）を一括でインストールできます\n\n\n\n# 一括インストール\ninstall.packages(packages)"
+    "section": "基本：パッケージのインストール",
+    "text": "基本：パッケージのインストール\nパッケージの一括インストール\n\n以下のコードをコンソールに入力して実行\n\n先に入力したパッケージ群（「packages」と名付けました）を一括でインストールできます\n\n\n\n# 一括インストール\ninstall.packages(packages)"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-パッケージのインストール-2",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-パッケージのインストール-2",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本パッケージのインストール-2",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本パッケージのインストール-2",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > パッケージのインストール",
-    "text": "基本：palmer penguins &gt; パッケージのインストール\nパッケージの一括インストール（読み込み）\n\nパッケージはQuartoファイルごとに読み込みが必要です\n以下のコードをSetup Chunk（library(tidyverse)）の下に入力して実行（Run）\n\n\n# パッケージの読み込み\nlibrary(readxl)    # Excelファイルの読み込み\nlibrary(conflicted)# 名前空間の衝突を防ぐ\nlibrary(stringi)   # 文字列操作\nlibrary(gt)        # 表作成\nlibrary(crosstable)# クロス表\nlibrary(skimr)     # データ要約\nlibrary(scales)    # 軸やラベルのスケール調整\nlibrary(zipangu)   # 元号を西暦に変換\nlibrary(rvest)     # Webスクレイピング\nlibrary(httr2)     # HTTPリクエスト\nlibrary(xml2)      # XML解析\nlibrary(maps)      # アメリカの地図情報\nlibrary(socviz)    # 社会・政治・教育関連データセット\nlibrary(paletteer) # カラーパレット\nlibrary(ngramr)    # Google Ngram Trends\nlibrary(sjPlot)    # 社会科学系の分析総合パッケージ\n\n# 優先する関数を指定 ----\nconflicts_prefer(dplyr::filter) # filter関数はdplyrを優先"
+    "section": "基本：パッケージのインストール",
+    "text": "基本：パッケージのインストール\nパッケージの一括インストール（読み込み）\n\nパッケージはQuartoファイルごとに読み込みが必要です\n以下のコードをSetup Chunk（library(tidyverse)）の下に入力して実行（Run）\n\n\n# パッケージの読み込み\nlibrary(readxl)    # Excelファイルの読み込み\nlibrary(conflicted)# 名前空間の衝突を防ぐ\nlibrary(rubridate) #日付処理\nlibrary(stringi)   # 文字列操作\nlibrary(glue)      # 文字列の埋め込み\nlibrary(gt)        # 表作成\nlibrary(skimr)     # データ要約\nlibrary(scales)    # 軸やラベルのスケール調整\nlibrary(crosstable)# クロス表\nlibrary(zipangu)   # 元号を西暦に変換\nlibrary(rvest)     # Webスクレイピング\nlibrary(httr2)     # HTTPリクエスト\nlibrary(xml2)      # XML解析\nlibrary(maps)      # アメリカの地図情報\nlibrary(socviz)    # 社会・政治・教育関連データセット\nlibrary(paletteer) # カラーパレット\nlibrary(ngramr)    # Google Ngram Trends\nlibrary(sjPlot)    # 社会科学系の分析総合パッケージ\n\n# 優先する関数を指定 ----\nconflicts_prefer(dplyr::filter) # filter関数はdplyrを優先"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-ショートカット",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-ショートカット",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本ショートカット",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本ショートカット",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > ショートカット",
-    "text": "基本：palmer penguins &gt; ショートカット\nショートカット\n\nR Chunkは頻繁に作成します。ショートカットを覚えましょう\n\n\n\n\n\n\n\nR Chunkのショートカット\n\n\n\nWin: Ctrl + Alt + I\n\nMac: Command + option + I\n\n\n\n\n\nインデントを揃える癖をつけましょう\n\n\n\n\n\n\n\nインデントの調整のショートカット\n\n\n\nWin: Ctrl + I\nMac: Command + I"
+    "section": "基本：ショートカット",
+    "text": "基本：ショートカット\nショートカット\n\nR Chunkは頻繁に作成します。ショートカットを覚えましょう\n\n\n\n\n\n\n\nR Chunkのショートカット\n\n\n\nWin: Ctrl + Alt + I\n\nMac: Command + option + I\n\n\n\n\n\nインデントを揃える癖をつけましょう\n\n\n\n\n\n\n\nインデントの調整のショートカット\n\n\n\nWin: Ctrl + I\nMac: Command + I"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データの型-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データの型-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本データの型-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本データの型-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > データの型",
-    "text": "基本：palmer penguins &gt; データの型\nデータ / データフレームの型\n\nすべてのオブジェクトは型（クラス）をもつ\n\nR（tidyverse）がデータを読み､適切と思われる型を割り当てる\n\n重要な型\n\nnumeric（数字）\ncharacter（文字）\nfactor（ファクター（因子）：レベルを設定できる）\nlogical（true / false）\ndata.frame（base Rのテーブル形式）\ntibble（tidyverseのテーブル形式）"
+    "section": "基本：データの型",
+    "text": "基本：データの型\nデータ / データフレームの型\n\nすべてのオブジェクトは型（クラス）をもつ\n\nR（tidyverse）がデータを読み､適切と思われる型を割り当てる\n\n重要な型\n\nnumeric（数字）\ncharacter（文字）\nfactor（ファクター（因子）：レベルを設定できる）\nlogical（true / false）\ndata.frame（base Rのテーブル形式）\ntibble（tidyverseのテーブル形式）"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データの型-2",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データの型-2",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本データの型-2",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本データの型-2",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > データの型",
-    "text": "基本：palmer penguins &gt; データの型\nデータの型\n\n\n\n\n\n\n同じ文字でもデータの型が違う可能性がある\n\n\n\nnumeric/character/factor\nggplot（作図）で特に問題になります\n\n例えば散布図はnumeric（数字）であることが基本なので、数字以外の型の場合、プロットできません"
+    "section": "基本：データの型",
+    "text": "基本：データの型\nデータの型\n\n\n\n\n\n\n同じ文字でもデータの型が違う可能性がある\n\n\n\nnumeric/character/factor\nggplot（作図）で特に問題になります\n\n例えば散布図はnumeric（数字）であることが基本なので、数字以外の型の場合、プロットできません\n\n\n\n\n\n\nstr()関数または、skim()関数を使って調べると確実です"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データの要約",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データの要約",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本データの要約",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本データの要約",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > データの要約",
-    "text": "基本：palmer penguins &gt; データの要約\nデータを要約する\n\nR Chunkを作り、以下のコードを入力しよう\n\n\n\n\npenguins |&gt; \n  group_by(species) |&gt; # speciesで分類する \n  summarise( # データを要約する（集計の枠組み）\n    mean = mean(bill_len, na.rm = TRUE), # 「bill_len」の列の平均を算出（summarise関数のもと具体的に何を計算するかを指定）\n  ) |&gt; \n  # ここにview関数を入れて、どのようにデータが変わったのか、見てみよう\n  gt() # 以上の集計結果を表にする\n\n\n\n\n\n\n\n\n\n\nspecies\nmean\n\n\n\n\nAdelie\n38.79139\n\n\nChinstrap\n48.83382\n\n\nGentoo\n47.50488\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nna.rm = TRUEは「NAを無視して計算する」という意味です。多くの集計関数（mean(), sum(), sd() など）は欠損値があると計算できません。デフォルトで NA を残すことで誤った計算（欠損を無視した計算）を防ぎ、明示的に（意図的に） na.rm = TRUE を書くことで安全に計算できます\n\n\n\n\n\n\n\n\n\ngt()はスライドに表示するために書いています gt()はtidyveseに入っていないパッケージです。tidyverseと同じように、インストールと読み込み（library）が必要です。標準的なパッケージですので、インストールを推奨します"
+    "section": "基本：データの要約",
+    "text": "基本：データの要約\nデータを要約する\n\nR Chunkを作り、以下のコードを入力しよう\n\n\n\n\npenguins |&gt; \n  group_by(species) |&gt; # speciesで分類する \n  summarise( # データを要約する（集計の枠組み）\n    mean = mean(bill_len, na.rm = TRUE), # 「bill_len」の列の平均を算出（summarise関数のもと具体的に何を計算するかを指定）\n  ) |&gt; \n  # ここにview関数を入れて、どのようにデータが変わったのか、見てみよう\n  gt() # 以上の集計結果を表にする\n\n\n\n\n\n\n\n\n\n\nspecies\nmean\n\n\n\n\nAdelie\n38.79139\n\n\nChinstrap\n48.83382\n\n\nGentoo\n47.50488\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nna.rm = TRUEは「NAを無視して計算する」という意味です。多くの集計関数（mean(), sum(), sd() など）は欠損値があると計算できません。デフォルトで NA を残すことで誤った計算（欠損を無視した計算）を防ぎ、明示的に（意図的に） na.rm = TRUE を書くことで安全に計算できます\n\n\n\n\n\n\n\n\n\ngt()はスライドに表示するために書いています gt()はtidyveseに入っていないパッケージです。tidyverseと同じように、インストールと読み込み（library）が必要です。標準的なパッケージですので、インストールを推奨します"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-生成ai",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-生成ai",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本生成ai",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本生成ai",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > 生成AI",
-    "text": "基本：palmer penguins &gt; 生成AI\n\n\n\n\n\n\n生成AI活用の勧め\n\n\n\n以降のコードは初学者にはやや難しく、また時間的に丁寧に解説できません（関数はシンプルな英語なので直感的には理解できるとは思いますが）\nコードをそのまま貼り付け、解説を求めましょう\n\n\n\n\n出力例（ChatGPT）\n- ① filter(!if_any(everything(), is.na))\n  - 意味：欠損値（NA）が含まれている行をすべて取り除きます。\n  - everything() は「すべての列」を意味します。\n  - if_any(..., is.na)は「どの列か1つでもNAがあるか？」を判定します。! は「〜でない」という否定なので、「NAがない行だけ残す」ことになります。\n  - 👉 欠損のない完全なデータだけを残す処理。\n\n\n\n\n\n\n\ndplyrも生成AIを導入しました（右上のAsk AI）。日本語にも対応しています\nGemini CLI *R Studio内部でも生成AIを活用できるようです（試していません）"
+    "section": "基本：生成AI",
+    "text": "基本：生成AI\n\n\n\n\n\n\n生成AI活用の勧め\n\n\n\n以降のコードは初学者にはやや難しく、また時間的に丁寧に解説できません（関数はシンプルな英語なので直感的には理解できるとは思いますが）\nコードをそのまま貼り付け、解説を求めましょう\n\n\n\n\n出力例（ChatGPT）\n- ① filter(!if_any(everything(), is.na))\n  - 意味：欠損値（NA）が含まれている行をすべて取り除きます。\n  - everything() は「すべての列」を意味します。\n  - if_any(..., is.na)は「どの列か1つでもNAがあるか？」を判定します。! は「〜でない」という否定なので、「NAがない行だけ残す」ことになります。\n  - 👉 欠損のない完全なデータだけを残す処理。\n\n\n\n\n\n\n\ndplyrも生成AIを導入しました（右上のAsk AI）。日本語にも対応しています\nGemini CLI *R Studio内部でも生成AIを活用できるようです（試していません）"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本作図",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本作図",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > 作図",
-    "text": "基本：palmer penguins &gt; 作図\n図を作る：ggplotに渡す前にデータを整形する\n\npenguins |&gt; \n  group_by(species) |&gt; \n  summarise(mean_body_mass = mean(body_mass, na.rm = TRUE)) |&gt; \n  ggplot(aes(x = species, y = mean_body_mass, fill = species)) +\n  geom_col() +   # geom_colはデータに渡されたyをそのまま棒の高さに使う\n  labs(\n    x = \"種類\",\n    y = \"体重 (g)\"\n  )"
+    "section": "基本：作図",
+    "text": "基本：作図\n図を作る：ggplotに渡す前にデータを整形する\n\npenguins |&gt; \n  group_by(species) |&gt; \n  summarise(mean_body_mass = mean(body_mass, na.rm = TRUE)) |&gt; \n  ggplot(aes(x = species, y = mean_body_mass, fill = species)) +\n  geom_col() +   # geom_colはデータに渡されたyをそのまま棒の高さに使う\n  labs(\n    x = \"種類\",\n    y = \"体重 (g)\"\n  )"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本作図-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本作図-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > 作図",
-    "text": "基本：palmer penguins &gt; 作図\n\nx軸とy軸のラベルに日本語を用いています\n種類や体重が□で表示されたら教えてください\n\nCf. 準備：日本語対応（Mac / Windows）"
+    "section": "基本：作図",
+    "text": "基本：作図\n\nx軸とy軸のラベルに日本語を用いています\n種類や体重が□で表示されたら教えてください\n\nCf. 準備：日本語対応（Mac / Windows）"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-2",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-2",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本作図-2",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本作図-2",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > 作図",
-    "text": "基本：palmer penguins &gt; 作図\n図を作る：ggplotに渡した後にデータを計算する\n\npenguins |&gt;\n  ggplot(aes(x = species, y = body_mass, fill = species)) +  # ggplotでグラフ作成、x軸に種類、y軸に体重、棒の色を種類ごとに分ける\n  stat_summary(fun = mean, geom = \"bar\") +                  # 各種類の体重の平均を計算して棒グラフにする\n  labs(\n    x = \"種類\",                                             # x軸のラベルを「種類」に変更\n    y = \"体重 (g)\"                                         # y軸のラベルを「体重 (g)」に変更\n  )"
+    "section": "基本：作図",
+    "text": "基本：作図\n図を作る：ggplotに渡した後にデータを計算する\n\npenguins |&gt;\n  ggplot(aes(x = species, y = body_mass, fill = species)) +  # ggplotでグラフ作成、x軸に種類、y軸に体重、棒の色を種類ごとに分ける\n  stat_summary(fun = mean, geom = \"bar\") +                  # 各種類の体重の平均を計算して棒グラフにする\n  labs(\n    x = \"種類\",                                             # x軸のラベルを「種類」に変更\n    y = \"体重 (g)\"                                         # y軸のラベルを「体重 (g)」に変更\n  )"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-計算",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-計算",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本計算",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本計算",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > 計算",
-    "text": "基本：palmer penguins &gt; 計算\n相関係数の算出\n\nbill_len: くちばしの長さ\n\n魚をつかまえたり、巣材をくわえたりすることに関わる\n\nbill_dep: くちばしの奥行き\n\nくちばしの太さや力強さの目安になる\n\n\n\npenguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;\n  group_by(species) |&gt;\n  summarise(\n    cor_bill = round(cor(bill_len, bill_dep), 3)\n  ) |&gt; gt()\n\n\n\n\n\n\n\nspecies\ncor_bill\n\n\n\n\nAdelie\n0.386\n\n\nChinstrap\n0.654\n\n\nGentoo\n0.654"
+    "section": "基本：計算",
+    "text": "基本：計算\n相関係数の算出\n\nbill_len: くちばしの長さ\n\n魚をつかまえたり、巣材をくわえたりすることに関わる\n\nbill_dep: くちばしの奥行き\n\nくちばしの太さや力強さの目安になる\n\n\n\npenguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;\n  group_by(species) |&gt;\n  summarise(\n    cor_bill = round(cor(bill_len, bill_dep), 3)\n  ) |&gt; gt()\n\n\n\n\n\n\n\nspecies\ncor_bill\n\n\n\n\nAdelie\n0.386\n\n\nChinstrap\n0.654\n\n\nGentoo\n0.654"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-3",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-3",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本作図-散布図",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本作図-散布図",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > 作図",
-    "text": "基本：palmer penguins &gt; 作図\n散布図の作成\n\npenguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;  \n  ggplot(aes(x = bill_len, y = bill_dep, colour = species)) +\n  geom_point()"
+    "section": "基本：作図 > 散布図",
+    "text": "基本：作図 &gt; 散布図\n散布図の作成\n\npenguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;  \n  ggplot(aes(x = bill_len, y = bill_dep, colour = species)) +\n  geom_point()"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-4",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-作図-4",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本作図-棒グラフファセット",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本作図-棒グラフファセット",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > 作図",
-    "text": "基本：palmer penguins &gt; 作図\n見比べる\n\nspecies（種）とisland（島）に関係はあるの？\n\n\npenguins |&gt; \n  group_by(species, island) |&gt; # グルーピングにisland（住んでいる島）を追加\n  summarise(mean_body_mass = mean(body_mass, na.rm = TRUE)) |&gt; \n  ggplot(aes(x = species, y = mean_body_mass, fill = species)) +\n  geom_col() +\n  labs(\n    x = \"種類\",\n    y = \"体重 (g)\"\n  ) +\n  facet_wrap(~island) # 指定の変数(カラム名、ここではisland)によって小さなグラフを作って並べる"
+    "section": "基本：作図 > 棒グラフ（ファセット）",
+    "text": "基本：作図 &gt; 棒グラフ（ファセット）\n見比べる\n\nspecies（種）とisland（島）に関係はあるの？\nfacet()関数：図を変数の値ごとに分割して、複数の小さなグラフにする\n\n1つの大きなデータの面を切り分けて、それぞれの側面を並べて見る\n\n\n\n\nCode\npenguins |&gt; \n  group_by(species, island) |&gt; # グルーピングにisland（住んでいる島）を追加\n  summarise(mean_body_mass = mean(body_mass, na.rm = TRUE)) |&gt; \n  ggplot(aes(x = species, y = mean_body_mass, fill = species)) +\n  geom_col() +\n  labs(\n    x = \"種類\",\n    y = \"体重 (g)\"\n  ) +\n  facet_wrap(~island) # 指定の変数(カラム名、ここではisland)によって小さなグラフを作って並べる"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-集計",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-集計",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本クロス集計-gtsummary",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本クロス集計-gtsummary",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > 集計",
-    "text": "基本：palmer penguins &gt; 集計\nクロス集計\n\ngtsummaryパッケージを追加（インストール後、Setup Chunkで読み込み）\n\n\n\n\npenguins |&gt; \n  select(species, island) |&gt; \n  tbl_cross(\n    row = species, # rowに行変数\n    col = island, # colに列変数を指定\n    percent = \"row\" # 行ごとの割合を表示\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nisland\n\nTotal\n\n\nBiscoe\nDream\nTorgersen\n\n\n\n\nspecies\n\n\n\n\n\n\n\n\n\n\n    Adelie\n44 (29%)\n56 (37%)\n52 (34%)\n152 (100%)\n\n\n    Chinstrap\n0 (0%)\n68 (100%)\n0 (0%)\n68 (100%)\n\n\n    Gentoo\n124 (100%)\n0 (0%)\n0 (0%)\n124 (100%)\n\n\nTotal\n168 (49%)\n124 (36%)\n52 (15%)\n344 (100%)\n\n\n\n\n\n\n\n\n\n件数と割合を自動計算して表にしてくれる\n見やすく整形され、発表資料にも向く"
+    "section": "基本：クロス集計 > gtsummary",
+    "text": "基本：クロス集計 &gt; gtsummary\nクロス集計\n\ngtsummaryパッケージを追加（インストール後、Setup Chunkで読み込み）\n\n\n\n\npenguins |&gt; \n  select(species, island) |&gt; \n  tbl_cross(\n    row = species, # rowに行変数\n    col = island, # colに列変数を指定\n    percent = \"row\" # 行ごとの割合を表示\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nisland\n\nTotal\n\n\nBiscoe\nDream\nTorgersen\n\n\n\n\nspecies\n\n\n\n\n\n\n\n\n\n\n    Adelie\n44 (29%)\n56 (37%)\n52 (34%)\n152 (100%)\n\n\n    Chinstrap\n0 (0%)\n68 (100%)\n0 (0%)\n68 (100%)\n\n\n    Gentoo\n124 (100%)\n0 (0%)\n0 (0%)\n124 (100%)\n\n\nTotal\n168 (49%)\n124 (36%)\n52 (15%)\n344 (100%)\n\n\n\n\n\n\n\n\n\n件数と割合を自動計算して表にしてくれる\n見やすく整形され、発表資料にも向く"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-集計-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-集計-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本クロス集計-gtsummary-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本クロス集計-gtsummary-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > 集計",
-    "text": "基本：palmer penguins &gt; 集計\nクロス集計\n\nadd_p()を加えるだけでカイ二乗検定（またはFisher検定）を自動で実行してくれる\n\n\n\nCode\npenguins |&gt;\n  select(species, island) |&gt;\n  tbl_cross(\n    row = species,\n    col = island,\n    percent = \"row\"\n  ) |&gt;\n  add_p()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nisland\n\nTotal\np-value\n1\n\n\nBiscoe\nDream\nTorgersen\n\n\n\n\nspecies\n\n\n\n\n\n\n\n\n&lt;0.001\n\n\n    Adelie\n44 (29%)\n56 (37%)\n52 (34%)\n152 (100%)\n\n\n\n\n    Chinstrap\n0 (0%)\n68 (100%)\n0 (0%)\n68 (100%)\n\n\n\n\n    Gentoo\n124 (100%)\n0 (0%)\n0 (0%)\n124 (100%)\n\n\n\n\nTotal\n168 (49%)\n124 (36%)\n52 (15%)\n344 (100%)\n\n\n\n\n\n1\nPearson’s Chi-squared test"
+    "section": "基本：クロス集計 > gtsummary",
+    "text": "基本：クロス集計 &gt; gtsummary\nクロス集計\n\nadd_p()を加えるだけでカイ二乗検定（またはFisher検定）を自動で実行してくれる\n\n\n\nCode\npenguins |&gt;\n  select(species, island) |&gt;\n  tbl_cross(\n    row = species,\n    col = island,\n    percent = \"row\"\n  ) |&gt;\n  add_p()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nisland\n\nTotal\np-value\n1\n\n\nBiscoe\nDream\nTorgersen\n\n\n\n\nspecies\n\n\n\n\n\n\n\n\n&lt;0.001\n\n\n    Adelie\n44 (29%)\n56 (37%)\n52 (34%)\n152 (100%)\n\n\n\n\n    Chinstrap\n0 (0%)\n68 (100%)\n0 (0%)\n68 (100%)\n\n\n\n\n    Gentoo\n124 (100%)\n0 (0%)\n0 (0%)\n124 (100%)\n\n\n\n\nTotal\n168 (49%)\n124 (36%)\n52 (15%)\n344 (100%)\n\n\n\n\n\n1\nPearson’s Chi-squared test"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-集計-2",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-集計-2",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本クロス集計-crosstable",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本クロス集計-crosstable",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > 集計",
-    "text": "基本：palmer penguins &gt; 集計\nクロス集計\n\ncrosstableパッケージの場合\n\n\n\n\n\n\n\n多くの人がパッケージを開発しているため、同様の機能をもつ複数のパッケージがあります\n\n\n\n\n\nCode\npenguins |&gt;\n  select(species, island) |&gt; \n  filter(!if_any(everything(), is.na)) |&gt;\n  crosstable(by = species,\n             cols = island,\n             total = \"row\",\n             funs = list(prop = ~prop.table(.))) |&gt; \n  gt()\n\n\n\n\n\n\n\n\n.id\nlabel\nvariable\nAdelie\nChinstrap\nGentoo\nTotal\n\n\n\n\nisland\nisland\nBiscoe\n44 (26.19%)\n0 (0%)\n124 (73.81%)\n168 (48.84%)\n\n\nisland\nisland\nDream\n56 (45.16%)\n68 (54.84%)\n0 (0%)\n124 (36.05%)\n\n\nisland\nisland\nTorgersen\n52 (100.00%)\n0 (0%)\n0 (0%)\n52 (15.12%)"
+    "section": "基本：クロス集計 > crosstable",
+    "text": "基本：クロス集計 &gt; crosstable\nクロス集計\n\ncrosstableパッケージの場合\n\n\n\n\n\n\n\n多くの人がパッケージを開発しているため、同様の機能をもつ複数のパッケージがあります\n\n\n\n\n\nCode\npenguins |&gt;\n  select(species, island) |&gt; \n  filter(!if_any(everything(), is.na)) |&gt;\n  crosstable(by = species,\n             cols = island,\n             total = \"row\",\n             funs = list(prop = ~prop.table(.))) |&gt; \n  gt()\n\n\n\n\n\n\n\n\n.id\nlabel\nvariable\nAdelie\nChinstrap\nGentoo\nTotal\n\n\n\n\nisland\nisland\nBiscoe\n44 (26.19%)\n0 (0%)\n124 (73.81%)\n168 (48.84%)\n\n\nisland\nisland\nDream\n56 (45.16%)\n68 (54.84%)\n0 (0%)\n124 (36.05%)\n\n\nisland\nisland\nTorgersen\n52 (100.00%)\n0 (0%)\n0 (0%)\n52 (15.12%)"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-代入",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-代入",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本代入-新しいオブジェクト",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本代入-新しいオブジェクト",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > 代入",
-    "text": "基本：palmer penguins &gt; 代入\n代入\n\n代入 = 値や計算結果を変数や列に「入れる」こと\nRでは「&lt;-」（左向き矢印）が一般的\n\n新しいオブジェクトを作る\n\npenguins2 &lt;-\n  penguins |&gt; \n  mutate(body_mass_kg = body_mass / 1000)  # g → kg に変換して新しい列に代入\n\nオブジェクトを上書きする\n\npenguins &lt;-\n  penguins |&gt; # 同じオブジェクト名を指定\n  filter(!is.na(body_mass))  # NA を除いたデータに上書き\n\n\n\n\n\n\n\n元のpenguinsは NAを含む元のデータではなくなります"
+    "section": "基本：代入 > 新しいオブジェクト",
+    "text": "基本：代入 &gt; 新しいオブジェクト\n代入\n\n代入 = 値や計算結果を変数や列に「入れる」こと\nRでは「&lt;-」（左向き矢印）が一般的\n\n新しいオブジェクトを作る\n\npenguins_kg &lt;- # オブジェクト名は任意（以下のtipsを参照）\n  penguins |&gt; \n  mutate(body_mass_kg = body_mass / 1000)  # g → kg に変換して新しい列に代入\n\n\n\n\n\n\n\n\nオブジェクト名は英字で始め、小文字と_（アンダースコア）を使い、意味のある名前にするのがベストです（Tidyverse style guide）\n数字で始めることはできません（最初の文字以外では使えます）\n記号や空白は避けましょう\n日本語文字（2バイト文字）も避けましょう（技術的には可能だが推奨されない）"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-ショートカット-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-ショートカット-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本代入-オブジェクトの上書き",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本代入-オブジェクトの上書き",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > ショートカット",
-    "text": "基本：palmer penguins &gt; ショートカット\n\n\n\n\n\n\n代入演算子（&lt;-）のショートカット\n\n\n\nチャンク内で\n\nWin: Alt + 「-」キー\nMac: Option + 「-」キー\n\n\n\n\n\n\n\n\n\n\n\n特定のチャンクが動かない\n\n\n\n原因がすぐにわからないエラーが出ても安心です（よくあることです）\nそのチャンクだけ実行をスキップできるので、レポート全体のレンダーに影響しません（冒頭に「#| eval: false」と書く）"
+    "section": "基本：代入 > オブジェクトの上書き",
+    "text": "基本：代入 &gt; オブジェクトの上書き\nオブジェクトを上書きする\n\npenguins &lt;-\n  penguins |&gt; # 同じオブジェクト名を指定\n  filter(!is.na(body_mass))  # NA を除いたデータに上書き\n\n\n\n\n\n\n\n元のpenguinsは NAを含む元のデータではなくなります"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-画像の書き出し",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-画像の書き出し",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本ショートカット-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本ショートカット-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > 画像の書き出し",
-    "text": "基本：palmer penguins &gt; 画像の書き出し\n\nggsave()関数\n\nあらかじめ出力先フォルダを作る（例：img）\n\n\n\np &lt;- # ggsaveはパイプ処理できません。一旦、pというオブジェクトに代入（pでなくてもいいです）\n  penguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;  \n  ggplot(aes(x = bill_len, y = bill_dep, colour = species)) +\n  geom_point()\n\nggsave(\"img/geom_point_penguins.png\", plot = p, width = 8, height = 6)\n# 出力先と出力ファイル名、出力するオブジェクトを指定（plot = p）。サイズは任意"
+    "section": "基本：ショートカット",
+    "text": "基本：ショートカット\n\n\n\n\n\n\n代入演算子（&lt;-）のショートカット\n\n\n\nチャンク内で\n\nWin: Alt + 「-」キー\nMac: Option + 「-」キー\n\n\n\n\n\n\n\n\n\n\n\n特定のチャンクが動かない\n\n\n\n原因がすぐにわからないエラーが出ても安心です（よくあることです）\nそのチャンクだけ実行をスキップできるので、レポート全体のレンダーに影響しません（冒頭に「#| eval: false」と書く）"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データファイルの書き出し",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本palmer-penguins-データファイルの書き出し",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本画像の書き出し",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本画像の書き出し",
     "title": "初心者向けR Studioの使い方",
-    "section": "基本：palmer penguins > データファイルの書き出し",
-    "text": "基本：palmer penguins &gt; データファイルの書き出し\n\nwrite_csv()関数\n\nあらかじめ出力先フォルダを作る（例：data）\n\n\n\nt &lt;- penguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;\n  group_by(species) |&gt;\n  summarise(\n    cor_bill = round(cor(bill_len, bill_dep), 3)\n  )\n\n# CSVとして書き出す\nwrite_csv(t, \"data/penguins_summary.csv\") # 出力するオブジェクトと、出力先を指定\n\n\n\n\n\n\n\n\nExcelファイルを出力したい場合は、writexlやopenxlsxなどの専用パッケージを使います（tidyverseには含まれていません）\n\n\n\n\n\n# xlsxとして書き出す\nwrite_xlsx(t, \"data/penguins_summary.csv\") # 出力するオブジェクトと、出力先を指定"
+    "section": "基本：画像の書き出し",
+    "text": "基本：画像の書き出し\n\nggsave()関数\n\nあらかじめ出力先フォルダを作る（例：img）\n\n\n\np &lt;- # ggsaveはパイプ処理できません。一旦、pというオブジェクトに代入（pでなくてもいいです）\n  penguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;  \n  ggplot(aes(x = bill_len, y = bill_dep, colour = species)) +\n  geom_point()\n\nggsave(\"img/geom_point_penguins.png\", plot = p, width = 8, height = 6)\n# 出力先と出力ファイル名、出力するオブジェクトを指定（plot = p）。サイズは任意"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#実践oecd景気先行指数urlからデータ取得",
-    "href": "teaching/RforDatascience/RforDataScience.html#実践oecd景気先行指数urlからデータ取得",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本データファイルの書き出し",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本データファイルの書き出し",
     "title": "初心者向けR Studioの使い方",
-    "section": "実践：OECD景気先行指数（URLからデータ取得）",
-    "text": "実践：OECD景気先行指数（URLからデータ取得）\n\nOECDデータセット\n\nComposite Leading Indicators (CLI)\n\nurlを指定して、データを取得\n\nファイルをダウンロードせず、Rに直接、渡す\n\n\n\n\nCode\nurl &lt;- \"https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI/.M.LI...AA...H?startPeriod=2023-02&dimensionAtObservation=AllDimensions&format=csvfilewithlabels\"\n\ndf_oecd_cli &lt;- read_csv(url) # 指定したURLからデータを読み込む\n\n# URLにアクセスできない場合（短時間にアクセスを繰り返すと接続拒否されることがあります。その場合は、エラーが出てデータを取得できません。以下のコメントアウトを外して（ハッシュタグを削除）、csvファイルからデータを読み取って下さい）\n# df_oecd_cli &lt;-\n#  read_csv(\"data/df_oecd_cli.csv\")\n\ndf_oecd_cli &lt;- \n  df_oecd_cli |&gt; # 必要な列を取り出す\nselect(REF_AREA, TIME_PERIOD, OBS_VALUE) |&gt; \nmutate(TIME_PERIOD = as.Date(paste0(TIME_PERIOD, \"-01\"))) |&gt; # 日付形式に変換（例：2025 → \"2025-01-01\"）\nmutate(TIME_PERIOD = as.Date(TIME_PERIOD)) # as.Date() で日付型を再確認（実質は不要な場合もある）\n\ncountries &lt;- c(\"JPN\", \"USA\", \"DEU\", \"FRA\", \"KOR\") #主要国だけ選ぶ（主要国のオブジェクトを作る）\n\ndf_oecd_cli |&gt;\n  filter(REF_AREA %in% countries) |&gt; # REF_AREA が countries に含まれる行だけを抽出\n  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = REF_AREA)) +\n  geom_line()"
+    "section": "基本：データファイルの書き出し",
+    "text": "基本：データファイルの書き出し\n\nwrite_csv()関数\n\nあらかじめ出力先フォルダを作る（例：data）\n\n\n\nt &lt;- penguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;\n  group_by(species) |&gt;\n  summarise(\n    cor_bill = round(cor(bill_len, bill_dep), 3)\n  )\n\n# CSVとして書き出す\nwrite_csv(t, \"data/penguins_summary.csv\") # 出力するオブジェクトと、出力先を指定\n\n\n\n\n\n\n\n\nExcelファイルを出力したい場合は、writexlやopenxlsxなどの専用パッケージを使います（tidyverseには含まれていません）\n\n\n\n\n\n# xlsxとして書き出す\nwrite_xlsx(t, \"data/penguins_summary.csv\") # 出力するオブジェクトと、出力先を指定"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#実践oecd景気先行指数urlからデータ取得-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#実践oecd景気先行指数urlからデータ取得-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#実践urlからデータ取得oecd景気先行指数",
+    "href": "teaching/RforDatascience/RforDataScience.html#実践urlからデータ取得oecd景気先行指数",
     "title": "初心者向けR Studioの使い方",
-    "section": "実践：OECD景気先行指数（URLからデータ取得）",
-    "text": "実践：OECD景気先行指数（URLからデータ取得）\n見た目を整える\n\n\nCode\ndf_oecd_cli |&gt;\n  filter(REF_AREA %in% countries) |&gt; \n  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = REF_AREA)) +\n  geom_line() +\n  scale_x_date(\n    breaks = scales::breaks_width(\"3 months\"),\n    labels = scales::label_date_short()\n  ) +\n  scale_y_continuous(\n    \"Composite Leading Indicator (CLI)\",       # y軸ラベル\n    breaks = scales::breaks_extended(8),       # 目盛りの個数を指定\n    labels = scales::label_number(accuracy = 1) # 数値表示（小数なし）\n  ) +\n  labs(\n    x = \"Year\", y = \"CLI\",\n    color = \"Country\"\n  ) +\n  scale_color_paletteer_d(\"awtools::mpalette\") +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))"
+    "section": "実践：URLからデータ取得（OECD景気先行指数）",
+    "text": "実践：URLからデータ取得（OECD景気先行指数）\n\nOECDデータセット\n\nComposite Leading Indicators (CLI)\n\nurlを指定して、データを取得\n\nファイルをダウンロードせず、Rに直接、渡す\n\n\n\n\nCode\nurl &lt;- \"https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI/.M.LI...AA...H?startPeriod=2023-02&dimensionAtObservation=AllDimensions&format=csvfilewithlabels\"\n\ndf_oecd_cli &lt;- read_csv(url) # 指定したURLからデータを読み込む\n\n# URLにアクセスできない場合（短時間にアクセスを繰り返すと接続拒否されることがあります。その場合は、エラーが出てデータを取得できません。以下のコメントアウトを外して（ハッシュタグを削除）、csvファイルからデータを読み取って下さい）\n# df_oecd_cli &lt;-\n#  read_csv(\"data/df_oecd_cli.csv\")\n\nde_oecd_cli_selected &lt;- \n  df_oecd_cli |&gt; \n  select(REF_AREA, TIME_PERIOD, OBS_VALUE) |&gt; # 必要な列を取り出す\n  mutate(TIME_PERIOD = ymd(TIME_PERIOD)) # 日付型に変換\n\ncountries &lt;- c(\"JPN\", \"USA\", \"DEU\", \"FRA\", \"KOR\") #主要国だけ選ぶ（主要国のオブジェクトを作る）\n\nde_oecd_cli_selected |&gt;\n  filter(REF_AREA %in% countries) |&gt; # REF_AREA が countries に含まれる行だけを抽出\n  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = REF_AREA)) +\n  geom_line()"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#実践訪日外客数の推移ファイルの読み込み",
-    "href": "teaching/RforDatascience/RforDataScience.html#実践訪日外客数の推移ファイルの読み込み",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#実践urlからデータ取得oecd景気先行指数-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#実践urlからデータ取得oecd景気先行指数-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "実践：訪日外客数の推移（ファイルの読み込み）",
-    "text": "実践：訪日外客数の推移（ファイルの読み込み）\n\n日本の観光統計データ &gt; 「年別 訪日外客数の推移」から「データをダウンロード」\nエディタに貼り付けて保存\n\n保存形式はcsvとする\n新たにdataというフォルダを作って、そこに保存\n\n\n\n\n\n\n\n\ne-statに格納されている多くのデータは、「表」形式（messyデータ）でまとめられており、使いづらい（大きな加工が必要。dplyr/tidyrの熟練した操作を要する）"
+    "section": "実践：URLからデータ取得（OECD景気先行指数）",
+    "text": "実践：URLからデータ取得（OECD景気先行指数）\n見た目を整える\n\n\nCode\nde_oecd_cli_selected |&gt;\n  filter(REF_AREA %in% countries) |&gt; \n  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = REF_AREA)) +\n  geom_line() +\n  scale_x_date(\n    breaks = scales::breaks_width(\"3 months\"),\n    labels = scales::label_date_short()\n  ) +\n  scale_y_continuous(\n    \"Composite Leading Indicator (CLI)\",       # y軸ラベル\n    breaks = scales::breaks_extended(8),       # 目盛りの個数を指定\n    labels = scales::label_number(accuracy = 1) # 数値表示（小数なし）\n  ) +\n  labs(\n    x = \"Year\", y = \"CLI\",\n    color = \"Country\"\n  ) +\n  scale_color_paletteer_d(\"awtools::mpalette\") +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#実践訪日外客数の推移ファイルの読み込み-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#実践訪日外客数の推移ファイルの読み込み-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#実践ファイルの読み込み訪日外客数の推移",
+    "href": "teaching/RforDatascience/RforDataScience.html#実践ファイルの読み込み訪日外客数の推移",
     "title": "初心者向けR Studioの使い方",
-    "section": "実践：訪日外客数の推移（ファイルの読み込み）",
-    "text": "実践：訪日外客数の推移（ファイルの読み込み）\n\nデータの読み込み：read_csv()関数\n\n\n\n\n\n\n\nread.csv関数が補完入力されるかもしれません。read.csv関数はbase Rの関数で、今日では標準ではありません（.ドットと_アンダースコアの違い）\n\n\n\n\n\nCode\ndf_inbound &lt;-\n  read_csv(\"data/inbound_travelers.csv\")\n\ndf_inbound |&gt; \n  ggplot(aes(x = Year, y = `Visitor Arrivals`)) + # カラム名に空白や記号が含まれている場合は、バッククォート（`）で囲む（日本語キーボード：Shift + @ / 英語キーボード：数字の1の左）\n  geom_line() +\n  scale_x_continuous(\n    breaks = seq(1964, 2025, by = 5)  # 5年刻み\n  ) +\n  labs(x = \"年\",\n       y = \"訪日外国人客数\") +\n  scale_y_continuous(\n    labels = label_number(big.mark = \",\", accuracy = 1)\n  ) # 指数表記を通常表記に（指数表記をあらためるためには、scalesパッケージを追加する必要があります）"
+    "section": "実践：ファイルの読み込み（訪日外客数の推移）",
+    "text": "実践：ファイルの読み込み（訪日外客数の推移）\n\n日本の観光統計データ &gt; 「年別 訪日外客数の推移」から「データをダウンロード」\nエディタに貼り付けて保存\n\n保存形式はcsvとする\n新たにdataというフォルダを作って、そこに保存\n\n\n\n\n\n\n\n\ne-statに格納されている多くのデータは、「表」形式（messyデータ）でまとめられており、使いづらい（大きな加工が必要。dplyr/tidyrの熟練した操作を要する）"
+  },
+  {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#実践ファイルの読み込み訪日外客数の推移-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#実践ファイルの読み込み訪日外客数の推移-1",
+    "title": "初心者向けR Studioの使い方",
+    "section": "実践：ファイルの読み込み（訪日外客数の推移）",
+    "text": "実践：ファイルの読み込み（訪日外客数の推移）\nフォルダとファイルの構成（確認）\n├── test.Rproj\n├── test.qmd\n├── img\n│   ├── test.png\n│   └── test2.png\n├── data\n    ├── test.csv\n    └── test2.csv"
+  },
+  {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#実践ファイルの読み込み訪日外客数の推移-2",
+    "href": "teaching/RforDatascience/RforDataScience.html#実践ファイルの読み込み訪日外客数の推移-2",
+    "title": "初心者向けR Studioの使い方",
+    "section": "実践：ファイルの読み込み（訪日外客数の推移）",
+    "text": "実践：ファイルの読み込み（訪日外客数の推移）\n\nデータの読み込み：read_csv()関数\n\n\n\n\n\n\n\nread.csv関数が補完入力されるかもしれません。read.csv関数はbase Rの関数で、今日では標準ではありません（.ドットと_アンダースコアの違い）\n\n\n\n\n\nCode\ndf_inbound &lt;-\n  read_csv(\"data/inbound_travelers.csv\")\n\ndf_inbound |&gt; \n  ggplot(aes(x = Year, y = `Visitor Arrivals`)) + # カラム名に空白や記号が含まれている場合は、バッククォート（`）で囲む（日本語キーボード：Shift + @ / 英語キーボード：数字の1の左）\n  geom_line() +\n  scale_x_continuous(\n    breaks = seq(1964, 2025, by = 5)  # 5年刻み\n  ) +\n  labs(x = \"年\",\n       y = \"訪日外国人客数\") +\n  scale_y_continuous(\n    labels = label_number(big.mark = \",\", accuracy = 1)\n  ) # 指数表記を通常表記に（指数表記をあらためるためには、scalesパッケージを追加する必要があります）"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#実践データの読み込み",
@@ -2758,144 +2779,151 @@
     "text": "実践：データの読み込み\n\n\n\n\n\n\nCSVエディタの勧め\n\n\n\nCSVファイルは、単純なテキスト形式のデータです\nMicrosoft Excel で開くと、CP932形式（Shift_JIS）となります。日付や数値の形式が自動で変わってしまうことがあります\nデータを正確に扱いたい場合は、専用のCSVエディタやテキストエディタの使用をお勧めします\n\n\n\n\n\nModern CSV\n\nWindows / macOS / Windows Portable / Linux\n基本的な操作は無償版でも十分可能"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#実践選挙-作図-比べる",
-    "href": "teaching/RforDatascience/RforDataScience.html#実践選挙-作図-比べる",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#実践データの結合oecd加盟国の人口100万人あたりの議員数",
+    "href": "teaching/RforDatascience/RforDataScience.html#実践データの結合oecd加盟国の人口100万人あたりの議員数",
     "title": "初心者向けR Studioの使い方",
-    "section": "実践：選挙 > 作図 > 比べる",
-    "text": "実践：選挙 &gt; 作図 &gt; 比べる\nデータを読み込む\n\nGoogle Driveからファイルをダウンロード（出典：Yuki Yanai）\ndataフォルダに保存\n\n\n以下のコードは、全てのR Chunkで使うことを想定するものなので、本来はSetup Chunkに書くことが望ましい\n\n\n\nCode\ndf_pr_parties_2021 &lt;- read_csv(\"data/hr2021_pr_parties.csv\") |&gt; \n  mutate(, .before = block,\n         year = 2021\n  ) \n\ndf_pr_parties_2024 &lt;- read_csv(\"data/hr2024_pr_parties.csv\") |&gt; \n  mutate(, .before = block,\n         year = 2024\n  )\n  \ndf_pr_parties &lt;- \n  bind_rows(df_pr_parties_2021, df_pr_parties_2024) |&gt; # 上記の二つのオブジェクトを結合します\n  mutate(\n    block = factor(block, levels = c(\"北海道\", \"東北\", \"北関東\", \"南関東\", \"東京\", \"北陸信越\", \"東海\", \"近畿\", \"中国\", \"四国\", \"九州\")) # factorにして、レベル（順序）を指定します\n  )\n\n主要政党 &lt;- c(\"自由民主党\", \"立憲民主党\", \"公明党\", \"国民民主党\", \"日本維新の会\", \"日本共産党\", \"社会民主党\", \"れいわ新選組\", \"参政党\")"
+    "section": "実践：データの結合（OECD加盟国の人口100万人あたりの議員数）",
+    "text": "実践：データの結合（OECD加盟国の人口100万人あたりの議員数）\nデータの結合\n\n別種のデータを結合したい場合、left_join()関数などの関数を使う\n\n\nGoogle Driveからファイルをダウンロード（出典：United Nations, World Population Prospects 2024; Parline, Data explorer）\ndataフォルダに保存\n以下のコードを写して、実行\n\n\n\nCode\n## 前処理（Setup Chunk）に書くべき\n\ndf_parline &lt;- \n  read_csv(\"data/ComparedataonParliaments.csv\", skip = 15, col_names = FALSE) |&gt; (\\(x) setNames(x[-1, ], x[1, ]))()\n\ndf_population &lt;-\n  read_excel(\"data/population.xlsx\", sheet = 1, skip = 16) |&gt; \n  filter(Type == \"Country/Area\") |&gt; \n  filter(Year == max(Year, na.rm = TRUE)) |&gt; \n  rename(country = `Region, subregion, country or area *`)\n\noecd_ISOcode &lt;- c(\n  \"AU\", \"AT\", \"BE\", \"CA\", \"CL\", \"CO\", \"CR\", \"CZ\", \"DK\", \"EE\", \"FI\", \"FR\",\n  \"DE\", \"GR\", \"HU\", \"IS\", \"IE\", \"IL\", \"IT\", \"JP\", \"KR\", \"LV\", \"LT\", \"LU\",\n  \"MX\", \"NL\", \"NZ\", \"NO\", \"PL\", \"PT\", \"SK\", \"SI\", \"ES\", \"SE\", \"CH\", \"TR\",\n  \"GB\", \"US\"\n)\n\noecd_countries &lt;- c(\n  \"Australia\", \"Austria\", \"Belgium\", \"Canada\", \"Chile\", \"Colombia\",\n  \"Czech Republic\", \"Denmark\", \"Estonia\", \"Finland\", \"France\", \"Germany\",\n  \"Greece\", \"Hungary\", \"Iceland\", \"Ireland\", \"Israel\", \"Italy\", \"Japan\",\n  \"Korea\", \"Latvia\", \"Lithuania\", \"Luxembourg\", \"Mexico\", \"Netherlands\",\n  \"New Zealand\", \"Norway\", \"Poland\", \"Portugal\", \"Slovak Republic\", \"Slovenia\",\n  \"Spain\", \"Sweden\", \"Switzerland\", \"Turkey\", \"United Kingdom\", \"United States of America\", \"Republic of Korea\"\n)\n\ndf_parline_oecd &lt;- \ndf_parline |&gt; \n    filter(`ISO Code` %in% oecd_ISOcode)\n\ndf_parline_oecd &lt;- \n  df_parline_oecd |&gt; \n  select(country = Country, statutory_number = `Statutory number of members`)\n\ndf_population_oecd &lt;- \n  df_population |&gt; \n      filter(country %in% oecd_countries)\n\ndf_population_oecd &lt;- \n  df_population_oecd |&gt; \n  mutate(across(`0`:`100+`, as.numeric)) |&gt; \n  mutate(TotalPopulation = rowSums(across(`0`:`100+`), na.rm = TRUE)) |&gt;\n  select(country, TotalPopulation) |&gt; \n  mutate(TotalPopulation = round(TotalPopulation))\n\ndf_pop_par &lt;-\n  df_population_oecd |&gt; \n  left_join(df_parline_oecd, by = \"country\")\n\n## 個別チャンク\n\ndf_pop_par |&gt; \n  mutate(\n    statutory_number = as.numeric(statutory_number),\n    member_per_million = statutory_number / (TotalPopulation / 1000),\n    member_per_million = round(member_per_million, 2)\n  ) |&gt; \n  arrange(desc(member_per_million)) |&gt; \n  mutate(country = factor(country, levels = country)) |&gt; \n  ggplot(aes(x = country, y = member_per_million)) +\n  geom_col(fill = \"orange\") + \n  geom_text(\n    aes(label = glue(\"{member_per_million}人\")),\n    hjust = -0.1,\n    size = 3.0\n  ) +\n  scale_y_continuous(\n    breaks = seq(0, 300, 30),\n    expand = c(0, 0)\n  ) +\n  coord_flip() +\n  labs(\n    x = \"\",\n    y = \"人口100万人あたりの下院議員数\",\n  ) +\n  theme(\n    axis.text.y = element_text(hjust = 0)\n  )"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#実践選挙-作図-比べる-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#実践選挙-作図-比べる-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#実践データの結合oecd加盟国の人口100万人あたりの議員数-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#実践データの結合oecd加盟国の人口100万人あたりの議員数-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "実践：選挙 > 作図 > 比べる",
-    "text": "実践：選挙 &gt; 作図 &gt; 比べる\n衆議院議員選挙 比例代表得票数：2021 vs. 2024\n\n\nCode\ndf_pr_parties |&gt; \n  group_by(year, party) |&gt; \n  summarise(\n    votes = sum(votes)\n  ) |&gt; \n  ungroup() |&gt; \n  filter(party %in% 主要政党) |&gt;\n  mutate(\n    party = factor(party, levels = c(\"自由民主党\", \"立憲民主党\", \"公明党\", \"国民民主党\", \"日本維新の会\", \"日本共産党\", \"社会民主党\", \"れいわ新選組\", \"参政党\"))\n  ) |&gt; \n  ggplot(aes(x = party, y = votes, fill = as.factor(year))) + # yearをfactorにします（標準では数字です）\n  geom_col(position = \"dodge\") + # 棒グラフを横並びにする\n  scale_y_continuous(labels = zipangu::label_kansuji()) + # y軸のラベルをわかりやすくします（zipanguパッケージ要）\n  labs(x = \"\", y = \"得票数\", fill = \"年\")"
+    "section": "実践：データの結合（OECD加盟国の人口100万人あたりの議員数）",
+    "text": "実践：データの結合（OECD加盟国の人口100万人あたりの議員数）\n\n\nCode\n## 前処理（Setup Chunk）に書くべき\n\ndf_parline &lt;- \n  read_csv(\"data/ComparedataonParliaments.csv\", skip = 15, col_names = FALSE) |&gt; (\\(x) setNames(x[-1, ], x[1, ]))()\n\ndf_population &lt;-\n  read_excel(\"data/population.xlsx\", sheet = 1, skip = 16) |&gt; \n  filter(Type == \"Country/Area\") |&gt; \n  filter(Year == max(Year, na.rm = TRUE)) |&gt; \n  rename(country = `Region, subregion, country or area *`)\n\noecd_ISOcode &lt;- c(\n  \"AU\", \"AT\", \"BE\", \"CA\", \"CL\", \"CO\", \"CR\", \"CZ\", \"DK\", \"EE\", \"FI\", \"FR\",\n  \"DE\", \"GR\", \"HU\", \"IS\", \"IE\", \"IL\", \"IT\", \"JP\", \"KR\", \"LV\", \"LT\", \"LU\",\n  \"MX\", \"NL\", \"NZ\", \"NO\", \"PL\", \"PT\", \"SK\", \"SI\", \"ES\", \"SE\", \"CH\", \"TR\",\n  \"GB\", \"US\"\n)\n\noecd_countries &lt;- c(\n  \"Australia\", \"Austria\", \"Belgium\", \"Canada\", \"Chile\", \"Colombia\",\n  \"Czech Republic\", \"Denmark\", \"Estonia\", \"Finland\", \"France\", \"Germany\",\n  \"Greece\", \"Hungary\", \"Iceland\", \"Ireland\", \"Israel\", \"Italy\", \"Japan\",\n  \"Korea\", \"Latvia\", \"Lithuania\", \"Luxembourg\", \"Mexico\", \"Netherlands\",\n  \"New Zealand\", \"Norway\", \"Poland\", \"Portugal\", \"Slovak Republic\", \"Slovenia\",\n  \"Spain\", \"Sweden\", \"Switzerland\", \"Turkey\", \"United Kingdom\", \"United States of America\", \"Republic of Korea\"\n)\n\ndf_parline_oecd &lt;- \ndf_parline |&gt; \n    filter(`ISO Code` %in% oecd_ISOcode)\n\ndf_parline_oecd &lt;- \n  df_parline_oecd |&gt; \n  select(country = Country, statutory_number = `Statutory number of members`)\n\ndf_population_oecd &lt;- \n  df_population |&gt; \n      filter(country %in% oecd_countries)\n\ndf_population_oecd &lt;- \n  df_population_oecd |&gt; \n  mutate(across(`0`:`100+`, as.numeric)) |&gt; \n  mutate(TotalPopulation = rowSums(across(`0`:`100+`), na.rm = TRUE)) |&gt;\n  select(country, TotalPopulation) |&gt; \n  mutate(TotalPopulation = round(TotalPopulation))\n\ndf_pop_par &lt;-\n  df_population_oecd |&gt; \n  left_join(df_parline_oecd, by = \"country\")\n\n## 個別チャンク\n\ndf_pop_par |&gt; \n  mutate(\n    statutory_number = as.numeric(statutory_number),\n    member_per_million = statutory_number / (TotalPopulation / 1000),\n    member_per_million = round(member_per_million, 2)\n  ) |&gt; \n  arrange(desc(member_per_million)) |&gt; \n  mutate(country = factor(country, levels = country)) |&gt; \n  ggplot(aes(x = country, y = member_per_million)) +\n  geom_col(fill = \"orange\") + \n  geom_text(\n    aes(label = glue(\"{member_per_million}人\")),\n    hjust = -0.1,\n    size = 3.0\n  ) +\n  scale_y_continuous(\n    breaks = seq(0, 300, 30),\n    expand = c(0, 0)\n  ) +\n  coord_flip() +\n  labs(\n    x = \"\",\n    y = \"人口100万人あたりの下院議員数\",\n  ) +\n  theme(\n    axis.text.y = element_text(hjust = 0)\n  )"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#実践選挙-作図-比べる-2",
-    "href": "teaching/RforDatascience/RforDataScience.html#実践選挙-作図-比べる-2",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#実践縦持ち横持ち金沢広域急病センター利用者数",
+    "href": "teaching/RforDatascience/RforDataScience.html#実践縦持ち横持ち金沢広域急病センター利用者数",
     "title": "初心者向けR Studioの使い方",
-    "section": "実践：選挙 > 作図 > 比べる",
-    "text": "実践：選挙 &gt; 作図 &gt; 比べる\n衆議院議員選挙 比例代表得票率：2021 vs. 2024"
+    "section": "実践：縦持ち・横持ち（金沢広域急病センター利用者数）",
+    "text": "実践：縦持ち・横持ち（金沢広域急病センター利用者数）\nデータを読み込む\n\nGoogle Driveからファイルをダウンロード（出典：ckan: 金沢市 &gt; 金沢広域急病センター利用者数）\ndataフォルダに保存\n\n\n以下のコードは、全てのR Chunkで使うことを想定するものなので、本来はSetup Chunkに書くことが望ましい\n\n\ndf_hospital &lt;- \n  read_csv(\"data/金沢広域急病センター利用者数.csv\") |&gt; \n  mutate(\n    曜日 = factor(曜日, levels = c(\"月\", \"火\", \"水\", \"木\", \"金\", \"土\", \"日\")) # 曜日順に並べるための処理\n  )"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#実践金沢広域急病センター利用者数-縦持ち横持ち",
-    "href": "teaching/RforDatascience/RforDataScience.html#実践金沢広域急病センター利用者数-縦持ち横持ち",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#実践縦持ち横持ち金沢広域急病センター利用者数-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#実践縦持ち横持ち金沢広域急病センター利用者数-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "実践：金沢広域急病センター利用者数 > 縦持ち・横持ち",
-    "text": "実践：金沢広域急病センター利用者数 &gt; 縦持ち・横持ち\nデータを読み込む\n\nGoogle Driveからファイルをダウンロード（出典：ckan: 金沢市 &gt; 金沢広域急病センター利用者数）\ndataフォルダに保存\n\n\n以下のコードは、全てのR Chunkで使うことを想定するものなので、本来はSetup Chunkに書くことが望ましい\n\n\ndf_hospital &lt;- \n  read_csv(\"data/金沢広域急病センター利用者数.csv\") |&gt; \n  mutate(\n    曜日 = factor(曜日, levels = c(\"月\", \"火\", \"水\", \"木\", \"金\", \"土\", \"日\")) # 曜日順に並べるための処理\n  )"
+    "section": "実践：縦持ち・横持ち（金沢広域急病センター利用者数）",
+    "text": "実践：縦持ち・横持ち（金沢広域急病センター利用者数）\nデータの確認：横持ちデータ\n\ndf_hospital |&gt; head(3)\n\n# A tibble: 3 × 6\n  日付      曜日  土日祝 小児科  内科    計\n  &lt;chr&gt;     &lt;fct&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 2018/4/9  月         0      8     6    14\n2 2018/4/10 火         0     13     6    19\n3 2018/4/11 水         0     17     4    21\n\n\n\n小児科/内科が別の列になっていることを確認\n「専門」というカラムがあり、そこに「小児科/内科」という値が入っていると便利なのにな・・・\n\npivot_longer()関数で、「専門」というカラムを作る"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#実践金沢広域急病センター利用者数-縦持ち横持ち-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#実践金沢広域急病センター利用者数-縦持ち横持ち-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#実践縦持ち横持ち金沢広域急病センター利用者数-2",
+    "href": "teaching/RforDatascience/RforDataScience.html#実践縦持ち横持ち金沢広域急病センター利用者数-2",
     "title": "初心者向けR Studioの使い方",
-    "section": "実践：金沢広域急病センター利用者数 > 縦持ち・横持ち",
-    "text": "実践：金沢広域急病センター利用者数 &gt; 縦持ち・横持ち\nデータの確認：横持ちデータ\n\ndf_hospital |&gt; head(3)\n\n# A tibble: 3 × 6\n  日付      曜日  土日祝 小児科  内科    計\n  &lt;chr&gt;     &lt;fct&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 2018/4/9  月         0      8     6    14\n2 2018/4/10 火         0     13     6    19\n3 2018/4/11 水         0     17     4    21\n\n\n\n小児科/内科が別の列になっていることを確認\n「専門」というカラムがあり、そこに「小児科/内科」という値が入っていると便利なのにな・・・\n\npivot_longer()関数で、「専門」というカラムを作る"
+    "section": "実践：縦持ち・横持ち（金沢広域急病センター利用者数）",
+    "text": "実践：縦持ち・横持ち（金沢広域急病センター利用者数）\nデータの変換：横持ちデータから縦持ちデータへ\n\npivot_longer()関数\n\n\ndf_hospital_long &lt;- \n  df_hospital |&gt; \n  pivot_longer(\n    cols = c(\"小児科\", \"内科\"), # もとのカラム名（新たに縦にまとめたい列）\n    names_to = \"専門\", # 新しく作りたいカラム名1：もとのカラム名（小児科・内科）が入る列\n    values_to = \"利用者数\" # 新しく作りたいカラム名2：もとの値（人数）が入る列\n  ) |&gt; \n  mutate(\n    専門 = factor(専門, levels = c(\"内科\", \"小児科\")) # 水準（順序付き）にする\n  ) |&gt; \n  select(日付, 曜日, 土日祝, 専門, 利用者数) |&gt; \n  mutate(日付 = as.POSIXct(日付), # 日付をデータの型が「date」になるように変形\n         日付 = as.Date(日付))"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#実践金沢広域急病センター利用者数-縦持ち横持ち-2",
-    "href": "teaching/RforDatascience/RforDataScience.html#実践金沢広域急病センター利用者数-縦持ち横持ち-2",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#実践縦持ち横持ち金沢広域急病センター利用者数-3",
+    "href": "teaching/RforDatascience/RforDataScience.html#実践縦持ち横持ち金沢広域急病センター利用者数-3",
     "title": "初心者向けR Studioの使い方",
-    "section": "実践：金沢広域急病センター利用者数 > 縦持ち・横持ち",
-    "text": "実践：金沢広域急病センター利用者数 &gt; 縦持ち・横持ち\nデータの変換：横持ちデータから縦持ちデータへ\n\npivot_longer()関数\n\n\ndf_hospital_long &lt;- \n  df_hospital |&gt; \n  pivot_longer(\n    cols = c(\"小児科\", \"内科\"), # もとのカラム名（新たに縦にまとめたい列）\n    names_to = \"専門\", # 新しく作りたいカラム名1：もとのカラム名（小児科・内科）が入る列\n    values_to = \"利用者数\" # 新しく作りたいカラム名2：もとの値（人数）が入る列\n  ) |&gt; \n  mutate(\n    専門 = factor(専門, levels = c(\"内科\", \"小児科\")) # 水準（順序付き）にする\n  ) |&gt; \n  select(日付, 曜日, 土日祝, 専門, 利用者数) |&gt; \n  mutate(日付 = as.POSIXct(日付), # 日付をデータの型が「date」になるように変形\n         日付 = as.Date(日付))"
+    "section": "実践：縦持ち・横持ち（金沢広域急病センター利用者数）",
+    "text": "実践：縦持ち・横持ち（金沢広域急病センター利用者数）\n縦持ちデータ（カラム「専門」）の活用\n\ndf_hospital_long |&gt;  \n    group_by(曜日, 専門) |&gt; \n    summarise(\n      利用者数_曜日 = sum(利用者数)\n    ) |&gt; \n    ggplot(aes(x = 曜日, y = 利用者数_曜日, fill = 専門)) +\n    geom_bar(stat = \"identity\")"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#実践金沢広域急病センター利用者数-縦持ち横持ち-3",
-    "href": "teaching/RforDatascience/RforDataScience.html#実践金沢広域急病センター利用者数-縦持ち横持ち-3",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#実践比べられる図比例代表得票数",
+    "href": "teaching/RforDatascience/RforDataScience.html#実践比べられる図比例代表得票数",
     "title": "初心者向けR Studioの使い方",
-    "section": "実践：金沢広域急病センター利用者数 > 縦持ち・横持ち",
-    "text": "実践：金沢広域急病センター利用者数 &gt; 縦持ち・横持ち\n縦持ちデータ（カラム「専門」）の活用\n\ndf_hospital_long |&gt;  \n    group_by(曜日, 専門) |&gt; \n    summarise(\n      利用者数_曜日 = sum(利用者数)\n    ) |&gt; \n    ggplot(aes(x = 曜日, y = 利用者数_曜日, fill = 専門)) +\n    geom_bar(stat = \"identity\")"
+    "section": "実践：比べられる図（比例代表得票数）",
+    "text": "実践：比べられる図（比例代表得票数）\n\nGoogle Driveからファイルをダウンロード（出典：Yuki Yanai）\ndataフォルダに保存\n\n\n以下のコードは、全てのR Chunkで使うことを想定するものなので、本来はSetup Chunkに書くことが望ましい\n\n\n\nCode\ndf_pr_parties_2021 &lt;- read_csv(\"data/hr2021_pr_parties.csv\") |&gt; \n  mutate(, .before = block,\n         year = 2021\n  ) \n\ndf_pr_parties_2024 &lt;- read_csv(\"data/hr2024_pr_parties.csv\") |&gt; \n  mutate(, .before = block,\n         year = 2024\n  )\n  \ndf_pr_parties &lt;- \n  bind_rows(df_pr_parties_2021, df_pr_parties_2024) |&gt; # 上記の二つのオブジェクトを結合します\n  mutate(\n    block = factor(block, levels = c(\"北海道\", \"東北\", \"北関東\", \"南関東\", \"東京\", \"北陸信越\", \"東海\", \"近畿\", \"中国\", \"四国\", \"九州\")) # factorにして、レベル（順序）を指定します\n  )\n\n主要政党 &lt;- c(\"自由民主党\", \"立憲民主党\", \"公明党\", \"国民民主党\", \"日本維新の会\", \"日本共産党\", \"社会民主党\", \"れいわ新選組\", \"参政党\")"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用pdf-からテキストを抽出する",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用pdf-からテキストを抽出する",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#実践比べられる図比例代表得票数-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#実践比べられる図比例代表得票数-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：PDF からテキストを抽出する",
-    "text": "応用：PDF からテキストを抽出する\n\n別途、pdftoolsをインストールして下さい\n\n\nlibrary(pdftools)\n\n# PDFファイルを読み込む\ntext &lt;- pdf_text(\"data/sample.pdf\")\n\ntext |&gt; print()\n\n[1] \"1   # Lorem\\n\\n2\\n\\n3   &gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\\n\\n    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud\\n\\n    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\\n\\n    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\n    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oﬃcia deserunt\\n\\n    mollit anim id est laborum.\\n\""
+    "section": "実践：比べられる図（比例代表得票数）",
+    "text": "実践：比べられる図（比例代表得票数）\n衆議院議員選挙 比例代表得票数：2021 vs. 2024\n\n\nCode\ndf_pr_parties |&gt; \n  group_by(year, party) |&gt; \n  summarise(\n    votes = sum(votes)\n  ) |&gt; \n  ungroup() |&gt; \n  filter(party %in% 主要政党) |&gt;\n  mutate(\n    party = factor(party, levels = c(\"自由民主党\", \"立憲民主党\", \"公明党\", \"国民民主党\", \"日本維新の会\", \"日本共産党\", \"社会民主党\", \"れいわ新選組\", \"参政党\"))\n  ) |&gt; \n  ggplot(aes(x = party, y = votes, fill = as.factor(year))) + # yearをfactorにします（標準では数字です）\n  geom_col(position = \"dodge\") + # 棒グラフを横並びにする\n  scale_y_continuous(labels = zipangu::label_kansuji()) + # y軸のラベルをわかりやすくします（zipanguパッケージ要）\n  labs(x = \"\", y = \"得票数\", fill = \"年\")"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング総理の演説記者会見など",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング総理の演説記者会見など",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#実践比べられる図比例代表得票数-2",
+    "href": "teaching/RforDatascience/RforDataScience.html#実践比べられる図比例代表得票数-2",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：スクレーピング：総理の演説・記者会見など",
-    "text": "応用：スクレーピング：総理の演説・記者会見など\n\n首相官邸に掲載されている石破首相の「総理の演説・記者会見など」を一括取得し、speech_ishiba.rdsとして書き出す\n\n拡張子rds\n\nRで作ったデータ（データフレームなど）をそのままの形で保存できる専用のファイル形式\n利点：高速に読み書きできる / すべて正確に保持される（列の型（文字・数値・日付など）や因子レベルなどをそのまま保持する）\n\nスクレーピングパッケージ\n\nhttr2（ページを取得する）; xml2（ページの中身を読む）；rvest（必要なデータを取り出す）"
+    "section": "実践：比べられる図（比例代表得票数）",
+    "text": "実践：比べられる図（比例代表得票数）\n衆議院議員選挙 比例代表得票率：2021 vs. 2024"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング総理の演説記者会見など-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング総理の演説記者会見など-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#発展pdf-からテキストを抽出する",
+    "href": "teaching/RforDatascience/RforDataScience.html#発展pdf-からテキストを抽出する",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：スクレーピング：総理の演説・記者会見など",
-    "text": "応用：スクレーピング：総理の演説・記者会見など\n\n「関数定義」「URL収集」「本文抽出」「整形・保存」ごとにchunkを分ける\n\n\n\nCode\n# --- indexページから記事URLを抽出 ---\nget_article_urls &lt;- function(page_url) {\n  req &lt;- request(page_url) |&gt; req_perform()\n  html &lt;- resp_body_html(req)\n  \n  hrefs &lt;- html |&gt; html_elements(\"a\") |&gt; html_attr(\"href\")\n  relative_urls &lt;- hrefs[str_detect(hrefs, \"^/jp/(102_ishiba|103)/statement/\\\\d{4}/\\\\d{4}.*\\\\.html$\")]\n  \n  paste0(\"https://www.kantei.go.jp\", unique(na.omit(relative_urls)))\n}\n\n\n\n\nCode\n# --- ベースURLから全indexページを収集 ---\ncollect_all_article_urls &lt;- function(base_urls) {\n  all_index_pages &lt;- map(base_urls, function(base) {\n    resp &lt;- request(base) |&gt; req_perform()\n    html &lt;- resp_body_html(resp)\n    archive_links &lt;- html |&gt; html_elements(\"a\") |&gt; html_attr(\"href\")\n    archive_links &lt;- archive_links[str_detect(archive_links, \"statement/index_\\\\d{4}\\\\.html$\")]\n    archive_links &lt;- paste0(\"https://www.kantei.go.jp\", archive_links)\n    c(base, archive_links)\n  }) |&gt; unlist() |&gt; unique()\n  \n    # 各indexページから記事URLを取得\n  article_urls &lt;- map(all_index_pages, get_article_urls) |&gt; unlist() |&gt; unique()\n  message(\"取得した記事数: \", length(article_urls))\n  article_urls\n}\n\n\n\n\nCode\nbase_urls &lt;- c(\n  \"https://www.kantei.go.jp/jp/102_ishiba/statement/index.html\",\n  \"https://www.kantei.go.jp/jp/103/statement/index.html\"\n)\n\narticle_urls &lt;- collect_all_article_urls(base_urls)\n\n\n\n\nCode\narticles_info &lt;- map(article_urls, extract_article_info) |&gt; \n  compact()\n\n\n\n\nCode\ndf_articles &lt;- \n  bind_rows(articles_info) |&gt;\n  mutate(date = convert_jdate(date)) |&gt;\n  arrange(date)\n\n\n\n\nCode\nsaveRDS(df_articles, \"speech_ishiba.rds\")"
+    "section": "発展：PDF からテキストを抽出する",
+    "text": "発展：PDF からテキストを抽出する\n\n別途、pdftoolsをインストールして下さい\n\n\nlibrary(pdftools)\n\n# PDFファイルを読み込む\ntext &lt;- pdf_text(\"data/sample.pdf\")\n\ntext |&gt; print()\n\n[1] \"1   # Lorem\\n\\n2\\n\\n3   &gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\\n\\n    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud\\n\\n    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\\n\\n    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\\n\\n    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oﬃcia deserunt\\n\\n    mollit anim id est laborum.\\n\""
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング総理の演説記者会見など-2",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用スクレーピング総理の演説記者会見など-2",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#発展スクレーピング総理の演説記者会見など",
+    "href": "teaching/RforDatascience/RforDataScience.html#発展スクレーピング総理の演説記者会見など",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：スクレーピング：総理の演説・記者会見など",
-    "text": "応用：スクレーピング：総理の演説・記者会見など\n\nhead()でデータを確認\n\n\n\nCode\ndf_ishiba &lt;- read_rds(\"data/speech_ishiba.rds\")\n\ndf_ishiba|&gt; head(2)\n\n\n# A tibble: 2 × 4\n  title                              date       paragraph                  url  \n  &lt;chr&gt;                              &lt;date&gt;     &lt;chr&gt;                      &lt;chr&gt;\n1 石破内閣総理大臣記者会見           2024-10-01 【石破総理冒頭発言】 第１０２代内閣総理大臣に指名… http…\n2 Ｇ７首脳電話会議出席についての会見 2024-10-02 先ほど緊迫する中東情勢を受けまして、私にとりまして… http…\n\n\n\ngt()で本文を確認\n\n\n\nCode\ndf_ishiba|&gt; \n  filter(\n    title == \"石破内閣総理大臣記者会見\",\n    date == as.Date(\"2024-10-09\")\n  ) |&gt; \n  mutate(paragraph = substr(paragraph, 1, 50)) |&gt;\n  select(paragraph) |&gt; gt()\n\n\n\n\n\n\n\n\nparagraph\n\n\n\n\n【石破総理冒頭発言】 お待たせいたしました。 本日、衆議院を解散いたしました。国民の皆様の御納得、そ\n\n\n\n\n\n\n\nCode\ndf_ishiba|&gt; \n  filter(\n    title == \"石破内閣総理大臣記者会見\",\n    date == as.Date(\"2025-10-10\")\n  ) |&gt; \n  mutate(paragraph = substr(paragraph, 1, 50)) |&gt;\n  select(paragraph) |&gt; gt()\n\n\n\n\n\n\n\n\nparagraph\n\n\n\n\n（内閣総理大臣所感） 戦後８０年に寄せて（941KB）【石破総理冒頭発言】 本日、「戦後８０年に寄せ"
+    "section": "発展：スクレーピング：総理の演説・記者会見など",
+    "text": "発展：スクレーピング：総理の演説・記者会見など\n\n首相官邸に掲載されている石破首相の「総理の演説・記者会見など」を一括取得し、speech_ishiba.rdsとして書き出す\n\n拡張子rds\n\nRで作ったデータ（データフレームなど）をそのままの形で保存できる専用のファイル形式\n利点：高速に読み書きできる / すべて正確に保持される（列の型（文字・数値・日付など）や因子レベルなどをそのまま保持する）\n\nスクレーピングパッケージ\n\nhttr2（ページを取得する）; xml2（ページの中身を読む）；rvest（必要なデータを取り出す）"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用データの結合oecd加盟国の人口100万人あたりの議員数",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用データの結合oecd加盟国の人口100万人あたりの議員数",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#発展スクレーピング総理の演説記者会見など-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#発展スクレーピング総理の演説記者会見など-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：データの結合：OECD加盟国の人口100万人あたりの議員数",
-    "text": "応用：データの結合：OECD加盟国の人口100万人あたりの議員数\n\nleft_join()関数\n\n\n\nCode\ndf_parline &lt;- \n  read_csv(\"data/ComparedataonParliaments.csv\", skip = 15, col_names = FALSE) |&gt; (\\(x) setNames(x[-1, ], x[1, ]))()\n\ndf_population &lt;-\n  read_excel(\"data/population.xlsx\", sheet = 1, skip = 16) |&gt; \n  filter(Type == \"Country/Area\") |&gt; \n  filter(Year == max(Year, na.rm = TRUE)) |&gt; \n  rename(country = `Region, subregion, country or area *`)\n\noecd_ISOcode &lt;- c(\n  \"AU\", \"AT\", \"BE\", \"CA\", \"CL\", \"CO\", \"CR\", \"CZ\", \"DK\", \"EE\", \"FI\", \"FR\",\n  \"DE\", \"GR\", \"HU\", \"IS\", \"IE\", \"IL\", \"IT\", \"JP\", \"KR\", \"LV\", \"LT\", \"LU\",\n  \"MX\", \"NL\", \"NZ\", \"NO\", \"PL\", \"PT\", \"SK\", \"SI\", \"ES\", \"SE\", \"CH\", \"TR\",\n  \"GB\", \"US\"\n)\n\noecd_countries &lt;- c(\n  \"Australia\", \"Austria\", \"Belgium\", \"Canada\", \"Chile\", \"Colombia\",\n  \"Czech Republic\", \"Denmark\", \"Estonia\", \"Finland\", \"France\", \"Germany\",\n  \"Greece\", \"Hungary\", \"Iceland\", \"Ireland\", \"Israel\", \"Italy\", \"Japan\",\n  \"Korea\", \"Latvia\", \"Lithuania\", \"Luxembourg\", \"Mexico\", \"Netherlands\",\n  \"New Zealand\", \"Norway\", \"Poland\", \"Portugal\", \"Slovak Republic\", \"Slovenia\",\n  \"Spain\", \"Sweden\", \"Switzerland\", \"Turkey\", \"United Kingdom\", \"United States of America\", \"Republic of Korea\"\n)\n\ndf_parline_oecd &lt;- \ndf_parline |&gt; \n    filter(`ISO Code` %in% oecd_ISOcode)\n\ndf_parline_oecd &lt;- \n  df_parline_oecd |&gt; \n  select(country = Country, statutory_number = `Statutory number of members`)\n\ndf_population_oecd &lt;- \n  df_population |&gt; \n      filter(country %in% oecd_countries)\n\ndf_population_oecd &lt;- \n  df_population_oecd |&gt; \n  mutate(across(`0`:`100+`, as.numeric)) |&gt; \n  mutate(TotalPopulation = rowSums(across(`0`:`100+`), na.rm = TRUE)) |&gt;\n  select(country, TotalPopulation) |&gt; \n  mutate(TotalPopulation = round(TotalPopulation))\n\ndf &lt;-\n  df_population_oecd |&gt; \n  left_join(df_parline_oecd, by = \"country\")\n\ndf_plot &lt;-\n  df |&gt; \n  mutate(\n    statutory_number = as.numeric(statutory_number),\n    member_per_million = statutory_number / (TotalPopulation / 1000),\n    member_per_million = round(member_per_million, 2)\n  ) |&gt; \n  arrange(desc(member_per_million)) |&gt; \n  mutate(country = factor(country, levels = country))\n\ny_max &lt;- max(df_plot$member_per_million, na.rm = TRUE)\n\ndf_plot |&gt;\nggplot(aes(x = country, y = member_per_million)) +\n  geom_col(fill = \"red\") + \n  gghighlight(country == \"Japan\") + # gghighlightパッケージを追加しています\n  scale_y_continuous(\n    breaks = seq(0, y_max, 30),\n    expand = c(0, 0)\n  ) +\n  coord_flip() +\n  labs(\n    x = \"\",\n    y = \"人口100万人あたりの下院議員数\",\n  ) +\n  theme(\n    axis.text.y = element_text(hjust = 0)\n  )  \n\n\n\n\nデータの出典\n\nUnited Nations, World Population Prospects 2024\nParline, Data explorer"
+    "section": "発展：スクレーピング：総理の演説・記者会見など",
+    "text": "発展：スクレーピング：総理の演説・記者会見など\n\n「関数定義」「URL収集」「本文抽出」「整形・保存」ごとにchunkを分ける\n\n\n\nCode\n# --- indexページから記事URLを抽出 ---\nget_article_urls &lt;- function(page_url) {\n  req &lt;- request(page_url) |&gt; req_perform()\n  html &lt;- resp_body_html(req)\n  \n  hrefs &lt;- html |&gt; html_elements(\"a\") |&gt; html_attr(\"href\")\n  relative_urls &lt;- hrefs[str_detect(hrefs, \"^/jp/(102_ishiba|103)/statement/\\\\d{4}/\\\\d{4}.*\\\\.html$\")]\n  \n  paste0(\"https://www.kantei.go.jp\", unique(na.omit(relative_urls)))\n}\n\n\n\n\nCode\n# --- ベースURLから全indexページを収集 ---\ncollect_all_article_urls &lt;- function(base_urls) {\n  all_index_pages &lt;- map(base_urls, function(base) {\n    resp &lt;- request(base) |&gt; req_perform()\n    html &lt;- resp_body_html(resp)\n    archive_links &lt;- html |&gt; html_elements(\"a\") |&gt; html_attr(\"href\")\n    archive_links &lt;- archive_links[str_detect(archive_links, \"statement/index_\\\\d{4}\\\\.html$\")]\n    archive_links &lt;- paste0(\"https://www.kantei.go.jp\", archive_links)\n    c(base, archive_links)\n  }) |&gt; unlist() |&gt; unique()\n  \n    # 各indexページから記事URLを取得\n  article_urls &lt;- map(all_index_pages, get_article_urls) |&gt; unlist() |&gt; unique()\n  message(\"取得した記事数: \", length(article_urls))\n  article_urls\n}\n\n\n\n\nCode\nbase_urls &lt;- c(\n  \"https://www.kantei.go.jp/jp/102_ishiba/statement/index.html\",\n  \"https://www.kantei.go.jp/jp/103/statement/index.html\"\n)\n\narticle_urls &lt;- collect_all_article_urls(base_urls)\n\n\n\n\nCode\narticles_info &lt;- map(article_urls, extract_article_info) |&gt; \n  compact()\n\n\n\n\nCode\ndf_articles &lt;- \n  bind_rows(articles_info) |&gt;\n  mutate(date = convert_jdate(date)) |&gt;\n  arrange(date)\n\n\n\n\nCode\nsaveRDS(df_articles, \"speech_ishiba.rds\")"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用map関数penguin",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用map関数penguin",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#発展スクレーピング総理の演説記者会見など-2",
+    "href": "teaching/RforDatascience/RforDataScience.html#発展スクレーピング総理の演説記者会見など-2",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：map()関数：penguin",
-    "text": "応用：map()関数：penguin\nmap()関数の利点\n\nグループごとに自動で処理できる\n\n手作業でspeciesごとに分けてコードを書く必要がない\n例：ペンギンの種類ごとに、くちばしの長さ(bill_len)と深さ(bill_dep)の関係を回帰分析で調べる\n\n\n\n\nCode\npenguins |&gt; \n  group_by(species) |&gt; \n  nest() |&gt;                  # グループごとにデータフレームをリスト化して1列にまとめる\n  mutate(\n    bill_lm_result = map(    # map() でリストの各要素（データフレーム）に同じ処理を適用\n      data,                  # 対象は nest() で作った 'data' 列\n      function(df) {\n        lm_result &lt;- lm(bill_len ~ bill_dep, data = df)  # bill_len を目的変数、bill_dep を説明変数に回帰\n        return(lm_result)                              # lm の結果を返す\n      }\n    ),\n    coefficients = map(      # map() で各回帰結果から係数を取り出す\n      bill_lm_result, \n      pluck, \n      \"coefficients\"\n    )\n  ) |&gt; \n  unnest_wider(coefficients, names_sep = \"_\") |&gt;   # coefficients 列を列ごとに展開（intercept や傾きが列になる）\n  print()\n\n\n# A tibble: 3 × 5\n# Groups:   species [3]\n  species   data     bill_lm_result coefficients_(Interc…¹ coefficients_bill_dep\n  &lt;fct&gt;     &lt;list&gt;   &lt;list&gt;                          &lt;dbl&gt;                 &lt;dbl&gt;\n1 Adelie    &lt;tibble&gt; &lt;lm&gt;                             23.1                 0.857\n2 Gentoo    &lt;tibble&gt; &lt;lm&gt;                             17.2                 2.02 \n3 Chinstrap &lt;tibble&gt; &lt;lm&gt;                             13.4                 1.92 \n# ℹ abbreviated name: ¹​`coefficients_(Intercept)`"
+    "section": "発展：スクレーピング：総理の演説・記者会見など",
+    "text": "発展：スクレーピング：総理の演説・記者会見など\n\nhead()でデータを確認\n\n\n\nCode\ndf_ishiba &lt;- read_rds(\"data/speech_ishiba.rds\")\n\ndf_ishiba|&gt; head(2)\n\n\n# A tibble: 2 × 4\n  title                              date       paragraph                  url  \n  &lt;chr&gt;                              &lt;date&gt;     &lt;chr&gt;                      &lt;chr&gt;\n1 石破内閣総理大臣記者会見           2024-10-01 【石破総理冒頭発言】 第１０２代内閣総理大臣に指名… http…\n2 Ｇ７首脳電話会議出席についての会見 2024-10-02 先ほど緊迫する中東情勢を受けまして、私にとりまして… http…\n\n\n\ngt()で本文を確認\n\n\n\nCode\ndf_ishiba|&gt; \n  filter(\n    title == \"石破内閣総理大臣記者会見\",\n    date == as.Date(\"2024-10-09\")\n  ) |&gt; \n  mutate(paragraph = substr(paragraph, 1, 50)) |&gt;\n  select(paragraph) |&gt; gt()\n\n\n\n\n\n\n\n\nparagraph\n\n\n\n\n【石破総理冒頭発言】 お待たせいたしました。 本日、衆議院を解散いたしました。国民の皆様の御納得、そ\n\n\n\n\n\n\n\nCode\ndf_ishiba|&gt; \n  filter(\n    title == \"石破内閣総理大臣記者会見\",\n    date == as.Date(\"2025-10-10\")\n  ) |&gt; \n  mutate(paragraph = substr(paragraph, 1, 50)) |&gt;\n  select(paragraph) |&gt; gt()\n\n\n\n\n\n\n\n\nparagraph\n\n\n\n\n（内閣総理大臣所感） 戦後８０年に寄せて（941KB）【石破総理冒頭発言】 本日、「戦後８０年に寄せ"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用map関数penguin-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用map関数penguin-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#発展map関数penguin",
+    "href": "teaching/RforDatascience/RforDataScience.html#発展map関数penguin",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：map()関数：penguin",
-    "text": "応用：map()関数：penguin\nmap()を使わない場合\n\n\nCode\n# データを種別ごとに分ける\nadelie &lt;- penguins |&gt; filter(species == \"Adelie\")\n# chinstrap &lt;- penguins |&gt; filter(species == \"Chinstrap\")\n# gentoo &lt;- penguins |&gt; filter(species == \"Gentoo\")\n\n# 種別ごとに回帰分析を個別に書く\nadelie_lm &lt;- lm(bill_len ~ bill_dep, data = adelie)\n# chinstrap_lm &lt;- lm(bill_len ~ bill_dep, data = chinstrap)\n# gentoo_lm &lt;- lm(bill_len ~ bill_dep, data = gentoo)\n\n# 結果を確認\nprint(adelie_lm)\n\n\n\nCall:\nlm(formula = bill_len ~ bill_dep, data = adelie)\n\nCoefficients:\n(Intercept)     bill_dep  \n     23.068        0.857  \n\n\nCode\n# print(chinstrap_lm)\n# print(gentoo_lm)\n\n\n\n\n\n\n\n\n回帰分析をtidyverseスタイルで行うなら、parsnipパッケージが便利です。tidymodelsパッケージに含まれています。モデル結果を表形式に整理するにはbroomパッケージも使います"
+    "section": "発展：map()関数：penguin",
+    "text": "発展：map()関数：penguin\nmap()関数の利点\n\nグループごとに自動で処理できる\n\n手作業でspeciesごとに分けてコードを書く必要がない\n例：ペンギンの種類ごとに、くちばしの長さ(bill_len)と深さ(bill_dep)の関係を回帰分析で調べる\n\n\n\n\nCode\npenguins |&gt; \n  group_by(species) |&gt; \n  nest() |&gt;                  # グループごとにデータフレームをリスト化して1列にまとめる\n  mutate(\n    bill_lm_result = map(    # map() でリストの各要素（データフレーム）に同じ処理を適用\n      data,                  # 対象は nest() で作った 'data' 列\n      function(df) {\n        lm_result &lt;- lm(bill_len ~ bill_dep, data = df)  # bill_len を目的変数、bill_dep を説明変数に回帰\n        return(lm_result)                              # lm の結果を返す\n      }\n    ),\n    coefficients = map(      # map() で各回帰結果から係数を取り出す\n      bill_lm_result, \n      pluck, \n      \"coefficients\"\n    )\n  ) |&gt; \n  unnest_wider(coefficients, names_sep = \"_\") |&gt;   # coefficients 列を列ごとに展開（intercept や傾きが列になる）\n  print()\n\n\n# A tibble: 3 × 5\n# Groups:   species [3]\n  species   data     bill_lm_result coefficients_(Interc…¹ coefficients_bill_dep\n  &lt;fct&gt;     &lt;list&gt;   &lt;list&gt;                          &lt;dbl&gt;                 &lt;dbl&gt;\n1 Adelie    &lt;tibble&gt; &lt;lm&gt;                             23.1                 0.857\n2 Gentoo    &lt;tibble&gt; &lt;lm&gt;                             17.2                 2.02 \n3 Chinstrap &lt;tibble&gt; &lt;lm&gt;                             13.4                 1.92 \n# ℹ abbreviated name: ¹​`coefficients_(Intercept)`"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用map関数選挙",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用map関数選挙",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#発展map関数penguin-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#発展map関数penguin-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：map()関数：選挙",
-    "text": "応用：map()関数：選挙\n\nmap() ：同じ処理を、たくさんのデータに順番に適用する」関数\n\n「たくさんのファイル」や「いくつかのグループ（島・年・地域など）」に対して、同じ処理（たとえば平均を出す・グラフを描く）を自動で繰り返す\n\n比例区の得票数を地域ブロックごとに集計、描画したい\n\n\n\nCode\n# 1. データを整形して新しいオブジェクトに保存\ndf_plot &lt;- df_pr_parties |&gt;\n  group_by(year, party, block) |&gt;\n  summarise(votes = sum(votes), .groups = \"drop\") |&gt;\n  filter(party %in% 主要政党) |&gt;\n  mutate(party = factor(party, levels = 主要政党))\n\n# 2. block ごとに分割（factor → character に変換）\ndf_list &lt;- split(df_plot, as.character(df_plot$block))\n\n# 3. ggplot を作成\nplots &lt;- map(df_list, ~ ggplot(.x, aes(x = party, y = votes, fill = as.factor(year))) +\n                       geom_col(position = \"dodge\") +\n                       labs(title = unique(.x$block), x = \"\", y = \"得票数\") +\n                       theme(axis.text.x = element_text(angle = 45, hjust = 1)))\n\n# 4. プロットを表示\nwalk(plots, print)"
+    "section": "発展：map()関数：penguin",
+    "text": "発展：map()関数：penguin\nmap()を使わない場合\n\n\nCode\n# データを種別ごとに分ける\nadelie &lt;- penguins |&gt; filter(species == \"Adelie\")\n# chinstrap &lt;- penguins |&gt; filter(species == \"Chinstrap\")\n# gentoo &lt;- penguins |&gt; filter(species == \"Gentoo\")\n\n# 種別ごとに回帰分析を個別に書く\nadelie_lm &lt;- lm(bill_len ~ bill_dep, data = adelie)\n# chinstrap_lm &lt;- lm(bill_len ~ bill_dep, data = chinstrap)\n# gentoo_lm &lt;- lm(bill_len ~ bill_dep, data = gentoo)\n\n# 結果を確認\nprint(adelie_lm)\n\n\n\nCall:\nlm(formula = bill_len ~ bill_dep, data = adelie)\n\nCoefficients:\n(Intercept)     bill_dep  \n     23.068        0.857  \n\n\nCode\n# print(chinstrap_lm)\n# print(gentoo_lm)\n\n\n\n\n\n\n\n\n回帰分析をtidyverseスタイルで行うなら、parsnipパッケージが便利です。tidymodelsパッケージに含まれています。モデル結果を表形式に整理するにはbroomパッケージも使います"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用地図情報-アメリカの選挙",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用地図情報-アメリカの選挙",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#発展map関数選挙",
+    "href": "teaching/RforDatascience/RforDataScience.html#発展map関数選挙",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：地図情報 > アメリカの選挙",
-    "text": "応用：地図情報 &gt; アメリカの選挙\n前処理\n\nSetup Chunkに書く\n\n\nus_states &lt;- map_data(\"state\")\n\n# アメリカ主要政党のカラーコード\nparty_colors &lt;- c(\"#2E74C0\", \"#CB454A\")\n\nus_state_elec &lt;- \n  election |&gt; # データセットsocvizに含まれています\n  mutate(region = tolower(state)) |&gt; \n  left_join(us_states, by = \"region\") # データの結合"
+    "section": "発展：map()関数：選挙",
+    "text": "発展：map()関数：選挙\n\nmap() ：同じ処理を、たくさんのデータに順番に適用する」関数\n\n「たくさんのファイル」や「いくつかのグループ（島・年・地域など）」に対して、同じ処理（たとえば平均を出す・グラフを描く）を自動で繰り返す\n\n比例区の得票数を地域ブロックごとに集計、描画したい\n\n\n\nCode\n# 1. データを整形して新しいオブジェクトに保存\ndf_plot &lt;- df_pr_parties |&gt;\n  group_by(year, party, block) |&gt;\n  summarise(votes = sum(votes), .groups = \"drop\") |&gt;\n  filter(party %in% 主要政党) |&gt;\n  mutate(party = factor(party, levels = 主要政党))\n\n# 2. block ごとに分割（factor → character に変換）\ndf_list &lt;- split(df_plot, as.character(df_plot$block))\n\n# 3. ggplot を作成\nplots &lt;- map(df_list, ~ ggplot(.x, aes(x = party, y = votes, fill = as.factor(year))) +\n                       geom_col(position = \"dodge\") +\n                       labs(title = unique(.x$block), x = \"\", y = \"得票数\") +\n                       theme(axis.text.x = element_text(angle = 45, hjust = 1)))\n\n# 4. プロットを表示\nwalk(plots, print)"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用地図情報-アメリカの選挙-1",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用地図情報-アメリカの選挙-1",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#発展地図情報-アメリカの選挙",
+    "href": "teaching/RforDatascience/RforDataScience.html#発展地図情報-アメリカの選挙",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：地図情報 ＞ アメリカの選挙",
-    "text": "応用：地図情報 ＞ アメリカの選挙\n2016年アメリカ大統領選挙結果\n\n\nCode\nus_state_elec |&gt; \n  ggplot(aes(x = long, y = lat, group = group, fill = party)) +\n  geom_polygon(color = \"gray90\", size = 0.1) +\n  coord_map(projection = \"albers\", lat0 = 39, lat1 = 45) +\n  scale_fill_manual(values = party_colors) +\n  labs(title = \"アメリカ大統領選挙結果 2016\", fill = NULL) +\n  theme_map(base_family = \"HiraKakuProN-W3\")\n\n\n\n\nコードの出典：ヒーリー，キーラン (2021)"
+    "section": "発展：地図情報 > アメリカの選挙",
+    "text": "発展：地図情報 &gt; アメリカの選挙\n前処理\n\nSetup Chunkに書く\n\n\nus_states &lt;- map_data(\"state\")\n\n# アメリカ主要政党のカラーコード\nparty_colors &lt;- c(\"#2E74C0\", \"#CB454A\")\n\nus_state_elec &lt;- \n  election |&gt; # データセットsocvizに含まれています\n  mutate(region = tolower(state)) |&gt; \n  left_join(us_states, by = \"region\") # データの結合"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用地図情報-アメリカの人口密度",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用地図情報-アメリカの人口密度",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#発展地図情報-アメリカの選挙-1",
+    "href": "teaching/RforDatascience/RforDataScience.html#発展地図情報-アメリカの選挙-1",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用：地図情報 > アメリカの人口密度",
-    "text": "応用：地図情報 &gt; アメリカの人口密度\nアメリカの人口密度\n\n\nCode\ncounty_full &lt;-\n  county_map |&gt; \n  left_join(county_data, by = \"id\")\n\ncounty_full |&gt;  \n  ggplot(aes(x = long, y = lat,\n         fill = pop_dens,\n         group = group)) +\n  geom_polygon(color = \"gray90\", size = 0.05) +\n  coord_equal() +\n  scale_fill_brewer(palette = \"Blues\",\n                    labels = c(\"0-10\", \"10-50\", \"50-100\", \"100-500\", \"500-1,000\", \"1,000-5,000\", \"&gt;5,000\")) +\n  labs(fill = \"Population per\\nsquare mile\") +\n  theme_map() +\n  guides(fill = guide_legend(nrow = 1)) +\n  theme(legend.position = \"bottom\")\n\n\n\n\nコードの出典：ヒーリー，キーラン (2021)"
+    "section": "発展：地図情報 ＞ アメリカの選挙",
+    "text": "発展：地図情報 ＞ アメリカの選挙\n2016年アメリカ大統領選挙結果\n\n\nCode\nus_state_elec |&gt; \n  ggplot(aes(x = long, y = lat, group = group, fill = party)) +\n  geom_polygon(color = \"gray90\", size = 0.1) +\n  coord_map(projection = \"albers\", lat0 = 39, lat1 = 45) +\n  scale_fill_manual(values = party_colors) +\n  labs(title = \"アメリカ大統領選挙結果 2016\", fill = NULL) +\n  theme_map(base_family = \"HiraKakuProN-W3\")\n\n\n\n\nコードの出典：ヒーリー，キーラン (2021)"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用おまけ重回帰分析",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用おまけ重回帰分析",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#発展地図情報-アメリカの人口密度",
+    "href": "teaching/RforDatascience/RforDataScience.html#発展地図情報-アメリカの人口密度",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用（おまけ）：重回帰分析",
-    "text": "応用（おまけ）：重回帰分析\n\n別途、sjPlotをインストールして下さい\n\n\n\nCode\nlibrary(sjPlot)\n\n# データ例\npenguins_clean &lt;- \n  penguins |&gt; \n  filter(!is.na(bill_len), !is.na(bill_dep), !is.na(flipper_len))\n\n# 重回帰\nlm_model &lt;- lm(bill_len ~ bill_dep + flipper_len, data = penguins_clean)\n\n# 表示\ntab_model(lm_model)\n\n\n\n\n\n \nbill_len\n\n\nPredictors\nEstimates\nCI\np\n\n\n(Intercept)\n-28.15\n-38.99 – -17.30\n&lt;0.001\n\n\nbill dep\n0.62\n0.35 – 0.89\n&lt;0.001\n\n\nflipper len\n0.31\n0.27 – 0.34\n&lt;0.001\n\n\nObservations\n342\n\n\nR2 / R2 adjusted\n0.464 / 0.461"
+    "section": "発展：地図情報 > アメリカの人口密度",
+    "text": "発展：地図情報 &gt; アメリカの人口密度\nアメリカの人口密度\n\n\nCode\ncounty_full &lt;-\n  county_map |&gt; \n  left_join(county_data, by = \"id\")\n\ncounty_full |&gt;  \n  ggplot(aes(x = long, y = lat,\n         fill = pop_dens,\n         group = group)) +\n  geom_polygon(color = \"gray90\", size = 0.05) +\n  coord_equal() +\n  scale_fill_brewer(palette = \"Blues\",\n                    labels = c(\"0-10\", \"10-50\", \"50-100\", \"100-500\", \"500-1,000\", \"1,000-5,000\", \"&gt;5,000\")) +\n  labs(fill = \"Population per\\nsquare mile\") +\n  theme_map() +\n  guides(fill = guide_legend(nrow = 1)) +\n  theme(legend.position = \"bottom\")\n\n\n\n\nコードの出典：ヒーリー，キーラン (2021)"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#応用おまけgoogle-ngram-trends",
-    "href": "teaching/RforDatascience/RforDataScience.html#応用おまけgoogle-ngram-trends",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#発展おまけ重回帰分析",
+    "href": "teaching/RforDatascience/RforDataScience.html#発展おまけ重回帰分析",
     "title": "初心者向けR Studioの使い方",
-    "section": "応用（おまけ）：Google Ngram Trends",
-    "text": "応用（おまけ）：Google Ngram Trends\n\n別途、ngramrをインストールして下さい\n\n\n\nCode\nlibrary(ngramr)\n\nwords &lt;- c(\"Cicero\", \"Tacitus\", \"Sallust\",\"Plutarch\", \"Aristotle\", \"Shakespeare\", \"Milton\")\n\ndf &lt;- map_dfr(words, ~ngram(.x, corpus = \"eng_gb_2019\", year_start = 1500, year_end = 2020))\n\ndf |&gt; \n  ggplot(aes(x = Year, y = Frequency, color = Phrase)) +\n  geom_line() +\n  scale_color_paletteer_d(\"ggthemr::solarized\") +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  labs(title = \"Google Ngram Trends\", y = \"Frequency (%)\", x = \"\")"
+    "section": "発展（おまけ）：重回帰分析",
+    "text": "発展（おまけ）：重回帰分析\n\n別途、sjPlotをインストールして下さい\n\n\n\nCode\nlibrary(sjPlot)\n\n# データ例\npenguins_clean &lt;- \n  penguins |&gt; \n  filter(!is.na(bill_len), !is.na(bill_dep), !is.na(flipper_len))\n\n# 重回帰\nlm_model &lt;- lm(bill_len ~ bill_dep + flipper_len, data = penguins_clean)\n\n# 表示\ntab_model(lm_model)\n\n\n\n\n\n \nbill_len\n\n\nPredictors\nEstimates\nCI\np\n\n\n(Intercept)\n-28.15\n-38.99 – -17.30\n&lt;0.001\n\n\nbill dep\n0.62\n0.35 – 0.89\n&lt;0.001\n\n\nflipper len\n0.31\n0.27 – 0.34\n&lt;0.001\n\n\nObservations\n342\n\n\nR2 / R2 adjusted\n0.464 / 0.461"
+  },
+  {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#発展おまけgoogle-ngram-trends",
+    "href": "teaching/RforDatascience/RforDataScience.html#発展おまけgoogle-ngram-trends",
+    "title": "初心者向けR Studioの使い方",
+    "section": "発展（おまけ）：Google Ngram Trends",
+    "text": "発展（おまけ）：Google Ngram Trends\n\n別途、ngramrをインストールして下さい\n\n\n\nCode\nlibrary(ngramr)\n\nwords &lt;- c(\"Cicero\", \"Tacitus\", \"Sallust\",\"Plutarch\", \"Aristotle\", \"Shakespeare\", \"Milton\")\n\ndf &lt;- map_dfr(words, ~ngram(.x, corpus = \"eng_gb_2019\", year_start = 1500, year_end = 2020))\n\ndf |&gt; \n  ggplot(aes(x = Year, y = Frequency, color = Phrase)) +\n  geom_line() +\n  scale_color_paletteer_d(\"ggthemr::solarized\") +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  labs(title = \"Google Ngram Trends\", y = \"Frequency (%)\", x = \"\")"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#さらに学ぶ基本書",
