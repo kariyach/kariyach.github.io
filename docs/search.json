@@ -2342,7 +2342,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基礎なぜrなのか-なぜquartoなのか-3",
     "title": "初心者向けR Studioの使い方",
     "section": "基礎：なぜRなのか / なぜQuartoなのか",
-    "text": "基礎：なぜRなのか / なぜQuartoなのか\n6. 豊富な出力形態（Quarto）\n\nDocuments / Presentations / Dashboards / Website\n\n7. 無料"
+    "text": "基礎：なぜRなのか / なぜQuartoなのか\n6. レポーティング機能と多様な出力形態（Quarto）\n\nRは単なる分析ツールではなく、結果をそのままレポートやスライドとしてまとめるレポーティング機能を備える\n出力形式は多様であり、YAML（ヤムル・後述）の設定を少し変えるだけで可能\n\nhtml / MS Word / PDF: Typst\nPresentations\nDashboards\nWebsite\n\n\n7. 無料"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基礎rの構造",
@@ -2398,7 +2398,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#準備インストール",
     "title": "初心者向けR Studioの使い方",
     "section": "準備：インストール",
-    "text": "準備：インストール\n1. R本体をインストール\n\nブラウザからRにアクセス\n手持ちのPCに適したファイルをダウンロードして、実行\n\nWindows / macOS / Linux\n\n\n2. R Studioをインストール\n\nブラウザからR Studioにアクセス\n手持ちのPCに適したファイルをダウンロード、実行\n\nWindows / macOS / Ubuntu"
+    "text": "準備：インストール\n\n12のステップに分けて説明します\n\n1. R本体をインストール\n\nブラウザからRにアクセス\n手持ちのPCに適したファイルをダウンロードして、実行\n\nWindows / macOS / Linux\n\n\n2. R Studioをインストール\n\nブラウザからR Studioにアクセス\n手持ちのPCに適したファイルをダウンロード、実行\n\nWindows / macOS / Ubuntu"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#準備ファイルの作成",
@@ -2433,7 +2433,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#準備r-studioソースペインの外観の変更",
     "title": "初心者向けR Studioの使い方",
     "section": "準備：R Studio（ソースペイン）の外観の変更",
-    "text": "準備：R Studio（ソースペイン）の外観の変更\n\nコードを書くうえで、視認性はとても重要\n\n6. 文字の配色の変更\n\nメニュー &gt; Tools &gt; Global Options &gt; Appearance &gt; Editor Theme\n\n私（苅谷）はrstudio-themesからダウンロードしたrscodeio (anthonynorth) をaddで追加しています\n\n\n7. 不可視文字を表示\n\nメニュー &gt; Tools &gt; Global Options &gt; Code &gt; Display &gt; Show whitespace charactersにチェック / Indentation guides:から適当なものを選択\n\nthemeによってはIndentation guidesが適用されない（rscodeioも適用対象外）"
+    "text": "準備：R Studio（ソースペイン）の外観の変更\n\nコードを書くうえで、視認性はとても重要です\n\n6. 文字の配色の変更\n\nメニュー &gt; Tools &gt; Global Options &gt; Appearance &gt; Editor Theme\n\n私（苅谷）はrstudio-themesからダウンロードしたrscodeio (anthonynorth) をaddで追加しています\n\n\n7. 不可視文字を表示\n\nメニュー &gt; Tools &gt; Global Options &gt; Code &gt; Display &gt; Show whitespace charactersにチェック / Indentation guides:から適当なものを選択\n\nthemeによってはIndentation guidesが適用されない（rscodeioも適用対象外）"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#準備r-studioソースペインの外観の変更-1",
@@ -2475,14 +2475,14 @@
     "href": "teaching/RforDatascience/RforDataScience.html#準備パッケージの追加tidyverse-1",
     "title": "初心者向けR Studioの使い方",
     "section": "準備：パッケージの追加（tidyverse）",
-    "text": "準備：パッケージの追加（tidyverse）\n9. パッケージの追加\n\nConsoleパネル（画面左下）にカーソルを合わせる\n以下のコードを入力（または「クリップボード」でコピー）して実行（Enter）\n\ninstall.packages(\"tidyverse\")\n\n\n\n\n\n\n\nパッケージのインストールは最初の一回だけで大丈夫です\n次回以降は、各Quartoファイル内においてlibrary() 関数で読み込むだけで使えます（後述）"
+    "text": "準備：パッケージの追加（tidyverse）\n9. パッケージの追加\n\nConsoleパネル（画面左下）にカーソルを合わせる\n以下のコードを入力（または「クリップボード」でコピー）して実行（Enter）\n\ninstall.packages(\"tidyverse\")\n\n\n\n\n\n\n\n一度インストールすれば、同じPCではもう一度、インストールする必要はありません\n\nパッケージはR内部から利用する設計になっており、初心者がファイルを探す、触る必要はありません\n\n次回以降は、各Quartoファイル内においてlibrary() 関数で読み込むだけで使えます（後述）"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#準備setup-chunkの作成",
     "href": "teaching/RforDatascience/RforDataScience.html#準備setup-chunkの作成",
     "title": "初心者向けR Studioの使い方",
     "section": "準備：Setup Chunkの作成",
-    "text": "準備：Setup Chunkの作成\nR Chunk\n\nR Chunkは、Quartoファイルの中で Rのコードを書くためのブロック\n一つのR Chunkで、一つの作図、分析を行うのが基本\n\nSetup Chunk\n\nR Chunkの一種だが、R全体の設定や、使うパッケージの読み込みをまとめて書く場所\n\nパッケージの読み込み / データの読み込み / 前処理（縦持ちデータへの変換など）\n\n\n\n\n\n\n\n\nこの部分を整えておくと、後の分析がスムーズになります"
+    "text": "準備：Setup Chunkの作成\nR Chunk\n\nR Chunkは、Quartoファイルの中で Rのコードを書くためのブロック\n一つのR Chunkで、一つの作図、分析を行うのが基本\n\nSetup Chunk\n\nR Chunkの一種だが、文書全体の設定を行うために慣例的に使われる特別なコードブロック\n\nパッケージ・読み込み / 前処理（縦持ちデータへの変換など）\n\nQuartoは「ドキュメント内の最初にあるコードチャンク」を自動的にグローバルな設定チャンクとして実行する（ラベルは便宜的なもの）\n\n\n\n\n\n\n\nこの部分を整えておくと、後の分析がスムーズになります"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#準備setup-chunkの作成-1",
@@ -2496,14 +2496,14 @@
     "href": "teaching/RforDatascience/RforDataScience.html#準備パッケージの読み込み",
     "title": "初心者向けR Studioの使い方",
     "section": "準備：パッケージの読み込み",
-    "text": "準備：パッケージの読み込み\n\n先に作成したSetup Chunkで、modern Rの基本パッケージ群tidyverseを読み込む\n\n11. パッケージの読み込み\nソースペインで、Setup Chunk内に以下のコードを書く\n# パッケージの読み込み ---- #「# ○○-----」と書いておくと、Outlineに表示されてみやすい\nlibrary(tidyverse) # modern Rの基本パッケージ\n\n\n\n\n\n\n\nR Chunk内では #（ハッシュ）をコードの前につけると、その行は実行されずにメモとして残せます\n＃ より右側の文字もRでは実行されません（コメントアウトと呼びます）\n特定のコード（行）が動かないなどの理由で、問題を特定したい場合にも便利です"
+    "text": "準備：パッケージの読み込み\n\n先に作成したSetup Chunkで、modern Rの基本パッケージ群tidyverseを読み込む\n\n11. パッケージの読み込み\nソースペインで、Setup Chunk内に以下のコードを書く\n# パッケージの読み込み ---- #「○○ ----」と書いておくと、Outlineに表示されて見やすい（R Studioが区切り線として認識）\nlibrary(tidyverse) # modern Rの基本パッケージ\n\n\n\n\n\n\n\nR Chunk内では #（ハッシュ）をコードの前につけると、その行は実行されずにメモとして残せます\n＃ より右側の文字もRでは実行されません（コメントアウトと呼びます）\n特定のコード（行）が動かないなどの理由で、問題を特定したい場合にも便利です\n\n\n\n\n\n\n\n\n\n\n可読性、判読性、視認性を上げ、スパゲティコードにならないようにすることが重要です"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#準備日本語表示ggplot",
     "href": "teaching/RforDatascience/RforDataScience.html#準備日本語表示ggplot",
     "title": "初心者向けR Studioの使い方",
     "section": "準備：日本語表示（ggplot）",
-    "text": "準備：日本語表示（ggplot）\n\n\n\n\n\n\n\nggplot2は初期設定のままでは、日本語を正しく表示できない場合があります\n\n特に、WindowsやmacOSでは、デフォルトのフォント設定に日本語フォントが含まれていないため、文字化けや「□」「?」のような記号に置き換えられることがあります\n一方で、Linux環境では日本語フォントが標準でインストールされていることが多く、日本語がそのまま表示できる場合もあります"
+    "text": "準備：日本語表示（ggplot）\n\n\n\n\n\n\n\nggplot2は初期設定のままでは、日本語を正しく表示できない場合があります\n\n特に、WindowsやmacOSでは、デフォルトのフォント設定に日本語フォントが含まれていないため、文字化けや「□」「?」のような記号に置き換えられることがあります\n一方で、Linux環境では日本語フォントが標準でインストールされていることが多く、日本語がそのまま表示できることが多いです"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#ggplot-japanese-mac",
@@ -2524,7 +2524,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#準備quartoファイル",
     "title": "初心者向けR Studioの使い方",
     "section": "準備：Quartoファイル",
-    "text": "準備：Quartoファイル\nQuartoファイルの構成パターン\n\n\n\n\n\n\n\nflowchart TB\n    A[\"YAML領域\"]:::yaml\n    B[\"R Setup Chunk（セットアップ領域）\"]:::setup\n    C[\"R Chunk領域\"]:::chunk\n    D[\"Markdown領域\"]:::md\n\n    A --&gt; B\n    B --&gt; C\n    B --&gt; D\n\n    classDef yaml fill:#FFF7D6,stroke:#E3B505,color:#333,font-weight:bold;\n    classDef setup fill:#FFF0F5,stroke:#D96BA8,color:#333,font-weight:bold;\n    classDef chunk fill:#E7F5FF,stroke:#4A90E2,color:#333,font-weight:bold;\n    classDef md fill:#E8F6E0,stroke:#7CB518,color:#333,font-weight:bold;\n\n\n\n\n\n\n\n\n\n\n\n\n\nハッシュタグの解釈がR ChunkとMarkdownで異なる\n\n\n\nR Chunk: コメントアウト\nMarkdown: 見出しレベル\n\n\n\n\n\n\nYAML（ヤムル）\n\nファイル全体の設定や出力形式の指定する領域\n\nR Chunk（アールチャンク）\n\nRコードを実行して、分析や図表を作成する領域\n\nMarkdown（マークダウン）\n\n見出しや本文、解説文などを記述する領域\nRコードを囲っていない部分は、すべてマークダウン領域となる"
+    "text": "準備：Quartoファイル\nQuartoファイルの構成パターン\n\n\n\n\n\n\n\nflowchart TB\n    A[\"YAML領域\"]:::yaml\n    B[\"R Setup Chunk（セットアップ領域）\"]:::setup\n    C[\"R Chunk領域\"]:::chunk\n    D[\"Markdown領域\"]:::md\n\n    A --&gt; B\n    B --&gt; C\n    B --&gt; D\n\n    classDef yaml fill:#FFF7D6,stroke:#E3B505,color:#333,font-weight:bold;\n    classDef setup fill:#FFF0F5,stroke:#D96BA8,color:#333,font-weight:bold;\n    classDef chunk fill:#E7F5FF,stroke:#4A90E2,color:#333,font-weight:bold;\n    classDef md fill:#E8F6E0,stroke:#7CB518,color:#333,font-weight:bold;\n\n\n\n\n\n\n\n\n\n\n\n\n\nハッシュタグの解釈がR ChunkとMarkdownで異なる\n\n\n\nR Chunk: コメントアウト\nMarkdown: 見出しレベル\n\n\n\n\n\n\nYAML（ヤムル）\n\nファイル全体の設定や出力形式の指定する領域\n\nR Chunk（アールチャンク）\n\nRコードを実行して、分析や図表を作成する領域\n\nMarkdown（マークダウン）\n\n見出しや本文、解説文などを記述する領域\nコードで囲っていない部分は、すべてマークダウン領域となる"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本データセット",
@@ -2545,7 +2545,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基本簡単な関数",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：簡単な関数",
-    "text": "基本：簡単な関数\nデータを確認する\n\n関数を使ってみよう。以下のコードを入力（自動補完を確認下さい）\n\nview()関数\n\nデータを表にして見やすく開く関数。データ全体をチェックしたり、列名や値、また集計途中のデータをざっと確認するときに便利\n\n\npenguins |&gt; \n  view()\n\nhead()関数\n\nデータフレームやベクトルの先頭の数行（デフォルトは6行）だけを表示\n\n\npenguins |&gt; \n  head()"
+    "text": "基本：簡単な関数\nデータを確認する\n\n関数を使ってみよう。以下のコードを入力（自動補完機能を確認下さい）\n\nview()関数\n\nデータを表にして見やすく開く関数。データ全体をチェックしたり、列名や値、また集計途中のデータをざっと確認するときに便利\n\n\npenguins |&gt; \n  view()\n\nhead()関数\n\nデータフレームやベクトルの先頭の数行（デフォルトは6行）だけを表示\n\n\npenguins |&gt; \n  head()"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本データの型",
@@ -2594,7 +2594,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基本パッケージのインストール",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：パッケージのインストール",
-    "text": "基本：パッケージのインストール\nパッケージの一括インストール\n\nパッケージは各自の必要に応じてインストールすべきですが、時間の都合上、以下のスライドで使用するコードを一括でインストールしましょう。上からscalesまでのパッケージは、今日、標準的なものです\n任意のR Chunkで操作（このR Chunkはインストール後に削除して下さい）\n\n\n# インストールするパッケージをまとめて指定\npackages &lt;- c(\n  \"readxl\",     # Excelファイルの読み込み\n  \"conflicted\", # 複数のパッケージで同じ関数名があるとき、使う方を選べるようにする\n  \"lubridate\",  # 日付処理\n  \"stringi\",    # 文字列操作\n  \"glue\",       # 文字列の埋め込み\n  \"gt\",         # 表作成\n  \"skimr\",      # データ要約\n  \"scales\",     # 軸やラベルのスケール調整 ## 以下のパッケージは標準的ではないが、本日の講習会で使っているものです\n  \"crosstable\", # クロス表\n  \"zipangu\",    # 元号を西暦に変換\n  \"rvest\",      # Webスクレイピング\n  \"httr2\",      # HTTPリクエスト\n  \"xml2\",       # XML解析\n  \"maps\",       # アメリカの地図情報（地理データ）\n  \"socviz\",     # 政治・社会・教育に関連するデータセットが中心（初学者の演習や可視化の教材として便利）\n  \"paletteer\",  # カラーパレット\n  \"ngramr\",     # Google Ngram Trends\n  \"sjPlot\"      # 社会科学系の分析総合パッケージ\n)"
+    "text": "基本：パッケージのインストール\nパッケージの一括インストール\n\nパッケージは各自の必要に応じてインストールすべきですが、時間の都合上、以下のスライドで使用するコードを一括でインストールしましょう。上からscalesまでのパッケージは、今日、標準的なものです\n任意のR Chunkで操作（このR Chunkはインストール後に削除して下さい）\n\n\n# インストールするパッケージをまとめて指定\npackages &lt;- c(\n  \"readxl\",     # Excelファイルの読み込み\n  \"conflicted\", # 複数のパッケージで同じ関数名があるとき、使う方を選べるようにする\n  \"lubridate\",  # 日付処理\n  \"stringi\",    # 文字列操作\n  \"glue\",       # 文字列の埋め込み\n  \"gt\",         # 表作成\n  \"skimr\",      # データ要約\n  \"scales\",     # 軸やラベルのスケール調整\n## 以下のパッケージは標準的ではないが、本日の講習会で使っているものです\n  \"crosstable\", # クロス表\n  \"zipangu\",    # 元号を西暦に変換\n  \"rvest\",      # Webスクレイピング\n  \"httr2\",      # HTTPリクエスト\n  \"xml2\",       # XML解析\n  \"maps\",       # アメリカの地図情報（地理データ）\n  \"socviz\",     # 政治・社会・教育に関連するデータセットが中心（初学者の演習や可視化の教材として便利）\n  \"paletteer\",  # カラーパレット\n  \"ngramr\",     # Google Ngram Trends\n  \"sjPlot\"      # 社会科学系の分析総合パッケージ\n)"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本パッケージのインストール-1",
@@ -2629,7 +2629,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基本データの型-2",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：データの型",
-    "text": "基本：データの型\nデータの型\n\n\n\n\n\n\n同じ文字でもデータの型が違う可能性がある\n\n\n\nnumeric/character/factor\nggplot（作図）で特に問題になります\n\n例えば散布図はnumeric（数字）であることが基本なので、数字以外の型の場合、プロットできません\n\n\n\n\n\n\nstr()関数または、skim()関数を使って調べると確実です"
+    "text": "基本：データの型\nデータの型\n\n\n\n\n\n\n同じ文字でもデータの型が違う可能性がある\n\n\n\nnumeric/character/factor\nggplot（作図）で特に問題になります\n\n例えば散布図はnumeric（数字）であることが基本なので、数字以外の型の場合、プロットできません\n\n\n\n\n\n\n型は、str()関数やskim()関数を使って調べると確実です"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本データの要約",
@@ -2650,7 +2650,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基本作図",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：作図",
-    "text": "基本：作図\n図を作る：ggplotに渡す前にデータを整形する\n\npenguins |&gt; \n  group_by(species) |&gt; \n  summarise(mean_body_mass = mean(body_mass, na.rm = TRUE)) |&gt; \n  ggplot(aes(x = species, y = mean_body_mass, fill = species)) +\n  geom_col() +   # geom_colはデータに渡されたyをそのまま棒の高さに使う\n  labs(\n    x = \"種類\",\n    y = \"体重 (g)\"\n  )"
+    "text": "基本：作図\n図を作る：ggplotに渡す前にデータを整形する\n\npenguins |&gt; \n  group_by(species) |&gt; \n  summarise(mean_body_mass = mean(body_mass, na.rm = TRUE)) |&gt; \n  ggplot(aes(x = species, y = mean_body_mass, fill = species)) + # fill = speciesは棒や面を塗りつぶす色をspeciesに応じて変える、の意\n  geom_col() +   # geom_colはデータに渡されたyをそのまま棒の高さに使う\n  labs(\n    x = \"種類\",\n    y = \"体重 (g)\"\n  )"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本作図-ggplotの日本語問題",
@@ -2713,7 +2713,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基本代入",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：代入",
-    "text": "基本：代入\n代入\n\n代入 = 値や計算結果を変数や列に「入れる」こと\nRでは「&lt;-」（左向き矢印）が一般的\n\n代入の目的とパターン\n\n目的：計算や変形したオブジェクトを、別の処理や可視化で使う\nパターン：\n\n新しいオブジェクトにする\nオブジェクトを上書きする"
+    "text": "基本：代入\n代入\n\n代入 = 値や計算結果を変数や列に「入れる」こと\nRでは「&lt;-」（左向き矢印）が一般的\n\n代入の目的とパターン\n\n目的：計算や変形したオブジェクトを、別の処理や可視化で使う\nパターン：\n\n新しいオブジェクトにする（オブジェクトを作る）\nオブジェクトを上書きする"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本代入-新しいオブジェクト",
