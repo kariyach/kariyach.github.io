@@ -2510,7 +2510,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基本データセット",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：データセット",
-    "text": "基本：データセット\nデータセット：palmer penguins\n\npalmer penguinsは、R本体に組み込まれている練習用のデータセット（R4.5以降）\n\nこれは、パッケージを追加したり、データを読み込む必要がないことを意味する\n従来のデータセット（irisなど）とは違い、カラム名、naなどの点で、教育的配慮のあるデータセットとされる\n\n\n\n\n\n\n\n\n以前はパッケージを読み込み、使用するしかありませんでした。パッケージで提供されるデータセットと、base Rのそれで、カラム名が異なります。インターネットで検索すると、パッケージのカラム名のコードが現状では多いので、気をつけて下さい"
+    "text": "基本：データセット\nデータセット：palmer penguins\n\npalmer penguinsは、R本体に組み込まれている練習用のデータセット（R4.5以降）\n\nこれは、パッケージを追加したり、データを読み込む必要がないことを意味する\n従来のデータセット（irisなど）とは違い、カラム名、欠損値（na）などの点で、教育的配慮のあるデータセットとされる\n\n\n\n\n\n\n\n\n以前は、palmerpenguinsという個別パッケージを読み込み、使用する必要がありました。パッケージで提供されるデータセットと、base Rのそれで、カラム名が一部、異なっています。インターネットで検索すると、パッケージのカラム名のコードが現状では多いので、気をつけて下さい"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本データセット-1",
@@ -2559,14 +2559,14 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基本パイプ処理-1",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：パイプ処理",
-    "text": "基本：パイプ処理\nパイプを使った書き方（modern R / tidyverse）\n\npenguins |&gt; # ペンギンというデータ（正確には「オブジェクト」と表現します）を使って\n  group_by(species) |&gt; # 種類ごとにグループを分けて\n  summarize(mean_body_mass = mean(body_mass, na.rm = TRUE)) # 平均の体重を計算する（na.rm = TRUEは、欠損値を除外する指示）\n\n\nオブジェクトをどう処理したいのかが書きやすい（読みやすい）\n\nパイプを使わない書き方（base R）\n\nsummarize(\n  group_by(penguins, species),\n  mean_body_mass = mean(body_mass, na.rm = TRUE)\n)\n\n\n関数が入れ子構造（ネスト）になり、どこからどこまでが特定の関数なのかわかりにくい\n処理の順番がわかりにくく、かっこの対応関係も見づらい"
+    "text": "基本：パイプ処理\nパイプを使った書き方（modern R = tidyverse）\n\npenguins |&gt; # ペンギンというデータ（正確には「オブジェクト」と表現します）を使って\n  group_by(species) |&gt; # 種類ごとにグループを分けて\n  summarize(mean_body_mass = mean(body_mass, na.rm = TRUE)) # 平均の体重を計算する（na.rm = TRUEは、欠損値を除外する指示）\n\n\nオブジェクトをどう処理したいのかが書きやすい（読みやすい）\n\nパイプを使わない書き方（base R）\n\nsummarize(\n  group_by(penguins, species),\n  mean_body_mass = mean(body_mass, na.rm = TRUE)\n)\n\n\n関数が入れ子構造（ネスト）になり、どこからどこまでが特定の関数なのかわかりにくい\n処理の順番がわかりにくく、かっこの対応関係も見づらい"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本パイプ処理-2",
     "href": "teaching/RforDatascience/RforDataScience.html#基本パイプ処理-2",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：パイプ処理",
-    "text": "基本：パイプ処理\n\n\nパイプあり（modern R / tidyverse）\n\npenguins |&gt;\n  head()\n\n\nパイプなし（base R）\n\nhead(penguins)\n\n\n\nどちらも同じ処理\n処理を連続させないのであれば、右のコードでよい\nbase Rでは、関数のかっこの中に第1引数として、処理・操作したいデータを書くが、パイプを使うと、そのデータを関数の外（左側・コードの最初）に置くことができる\n\n可読性の高いコードになる"
+    "text": "基本：パイプ処理\n\n\nパイプあり（modern R = tidyverse）\n\npenguins |&gt;\n  head()\n\n\nパイプなし（base R）\n\nhead(penguins)\n\n\n\nどちらも同じ処理\n処理を連続させないのであれば、右のコードでよい\nbase Rでは、関数のかっこの中に第1引数として、処理・操作したいデータを書くが、パイプを使うと、そのデータを関数の外（左側・コードの最初）に置くことができる\n\n可読性の高いコードになる"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本パッケージのインストール",
@@ -2632,18 +2632,18 @@
     "text": "基本：作図\n図を作る：ggplotに渡す前にデータを整形する\n\npenguins |&gt; \n  group_by(species) |&gt; \n  summarise(mean_body_mass = mean(body_mass, na.rm = TRUE)) |&gt; \n  ggplot(aes(x = species, y = mean_body_mass, fill = species)) +\n  geom_col() +   # geom_colはデータに渡されたyをそのまま棒の高さに使う\n  labs(\n    x = \"種類\",\n    y = \"体重 (g)\"\n  )"
   },
   {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本作図-ggplotの日本語問題",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本作図-ggplotの日本語問題",
+    "title": "初心者向けR Studioの使い方",
+    "section": "基本：作図 > ggplotの日本語問題",
+    "text": "基本：作図 &gt; ggplotの日本語問題\nggplotの日本語問題\n\n\n\nx軸とy軸のラベルに日本語を用いています\n種類や体重が□で表示されたら教えて下さい（すぐには対応できないと思いますが）\n\nCf. 準備：日本語対応（Mac / Windows）"
+  },
+  {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本作図-1",
     "href": "teaching/RforDatascience/RforDataScience.html#基本作図-1",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：作図",
-    "text": "基本：作図\n\nx軸とy軸のラベルに日本語を用いています\n種類や体重が□で表示されたら教えてください\n\nCf. 準備：日本語対応（Mac / Windows）"
-  },
-  {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#基本作図-2",
-    "href": "teaching/RforDatascience/RforDataScience.html#基本作図-2",
-    "title": "初心者向けR Studioの使い方",
-    "section": "基本：作図",
-    "text": "基本：作図\n図を作る：ggplotに渡した後にデータを計算する\n\npenguins |&gt;\n  ggplot(aes(x = species, y = body_mass, fill = species)) +  # ggplotでグラフ作成、x軸に種類、y軸に体重、棒の色を種類ごとに分ける\n  stat_summary(fun = mean, geom = \"bar\") +                  # 各種類の体重の平均を計算して棒グラフにする\n  labs(\n    x = \"種類\",                                             # x軸のラベルを「種類」に変更\n    y = \"体重 (g)\"                                         # y軸のラベルを「体重 (g)」に変更\n  )"
+    "text": "基本：作図\n図を作る：ggplotに渡した後にデータを計算する\n\npenguins |&gt;\n  ggplot(aes(x = species, y = body_mass, fill = species)) +  # ggplotでグラフ作成、x軸に種類、y軸に体重、棒の色を種類ごとに分ける\n  stat_summary(fun = mean, geom = \"bar\") +                  # 各種類の体重の平均を計算して棒グラフにする（ggplot2パッケージ内の関数）\n  labs(\n    x = \"種類\",                                             # x軸のラベルを「種類」に変更\n    y = \"体重 (g)\"                                         # y軸のラベルを「体重 (g)」に変更\n  )"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本計算",
@@ -2688,11 +2688,18 @@
     "text": "基本：クロス集計 &gt; crosstable\nクロス集計\n\ncrosstableパッケージの場合\n\n\n\n\n\n\n\n多くの人がパッケージを開発しているため、同様の機能をもつ複数のパッケージがあります\n\n\n\n\n\nCode\npenguins |&gt;\n  select(species, island) |&gt; \n  filter(!if_any(everything(), is.na)) |&gt;\n  crosstable(by = species,\n             cols = island,\n             total = \"row\",\n             funs = list(prop = ~prop.table(.))) |&gt; \n  gt()\n\n\n\n\n\n\n\n\n.id\nlabel\nvariable\nAdelie\nChinstrap\nGentoo\nTotal\n\n\n\n\nisland\nisland\nBiscoe\n44 (26.19%)\n0 (0%)\n124 (73.81%)\n168 (48.84%)\n\n\nisland\nisland\nDream\n56 (45.16%)\n68 (54.84%)\n0 (0%)\n124 (36.05%)\n\n\nisland\nisland\nTorgersen\n52 (100.00%)\n0 (0%)\n0 (0%)\n52 (15.12%)"
   },
   {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本代入",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本代入",
+    "title": "初心者向けR Studioの使い方",
+    "section": "基本：代入",
+    "text": "基本：代入\n代入\n\n代入 = 値や計算結果を変数や列に「入れる」こと\nRでは「&lt;-」（左向き矢印）が一般的\n\n代入の目的とパターン\n\n目的：計算や変形したオブジェクトを、別の処理や可視化で使う\nパターン：\n\n新しいオブジェクトにする\nオブジェクトを上書きする"
+  },
+  {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本代入-新しいオブジェクト",
     "href": "teaching/RforDatascience/RforDataScience.html#基本代入-新しいオブジェクト",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：代入 > 新しいオブジェクト",
-    "text": "基本：代入 &gt; 新しいオブジェクト\n代入\n\n代入 = 値や計算結果を変数や列に「入れる」こと\nRでは「&lt;-」（左向き矢印）が一般的\n\n新しいオブジェクトを作る\n\npenguins_kg &lt;- # オブジェクト名は任意（以下のtipsを参照）\n  penguins |&gt; \n  mutate(body_mass_kg = body_mass / 1000)  # g → kg に変換して新しい列に代入\n\n\n\n\n\n\n\n\nオブジェクト名は英字で始め、小文字と_（アンダースコア）を使い、意味のある名前にするのがベストです（Tidyverse style guide）\n数字で始めることはできません（最初の文字以外では使えます）\n記号や空白は避けましょう\n日本語文字（2バイト文字）も避けましょう（技術的には可能だが推奨されない）"
+    "text": "基本：代入 &gt; 新しいオブジェクト\n新しいオブジェクトを作る\n\npenguins_kg &lt;- # オブジェクト名は任意（以下のtipsを参照）\n  penguins |&gt; \n  mutate(body_mass_kg = body_mass / 1000)  # g → kg に変換して新しい列に代入\n\n\n\n\n\n\n\n\nオブジェクト名は英字で始め、小文字と_（アンダースコア）を使い、意味のある名前にするのがベストです\n数字で始めることはできません（最初の文字以外では使えます）\n記号や空白は避けましょう。日本語文字（2バイト文字）も避けましょう（技術的には可能だが推奨されない）\n詳しくはTidyverse style guideを参照"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本代入-オブジェクトの上書き",
@@ -2720,7 +2727,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基本データファイルの書き出し",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：データファイルの書き出し",
-    "text": "基本：データファイルの書き出し\n\nwrite_csv()関数\n\nあらかじめ出力先フォルダを作る（例：data）\n\n\n\nt &lt;- penguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;\n  group_by(species) |&gt;\n  summarise(\n    cor_bill = round(cor(bill_len, bill_dep), 3)\n  )\n\n# CSVとして書き出す\nwrite_csv(t, \"data/penguins_summary.csv\") # 出力するオブジェクトと、出力先を指定\n\n\n\n\n\n\n\n\nExcelファイルを出力したい場合は、writexlやopenxlsxなどの専用パッケージを使います（tidyverseには含まれていません）\n\n\n\n\n\n# xlsxとして書き出す\nwrite_xlsx(t, \"data/penguins_summary.csv\") # 出力するオブジェクトと、出力先を指定"
+    "text": "基本：データファイルの書き出し\n\nwrite_csv()関数\n\nあらかじめ出力先フォルダを作る（例：data）\n\n\n\nt &lt;- penguins |&gt;\n  filter(!if_any(everything(), is.na)) |&gt;\n  group_by(species) |&gt;\n  summarise(\n    cor_bill = round(cor(bill_len, bill_dep), 3)\n  )\n\n# CSVとして書き出す\nwrite_csv(t, \"data/penguins_summary.csv\") # 出力するオブジェクトと、出力先を指定\n\n\n\n\n\n\n\nExcelファイルを出力したい場合は、writexlやopenxlsxなどの専用パッケージを使います（tidyverseには含まれていません）\n\n\n\n\n# xlsxとして書き出す\nwrite_xlsx(t, \"data/penguins_summary.csv\") # 出力するオブジェクトと、出力先を指定"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#実践urlからデータ取得oecd景気先行指数",
@@ -2748,7 +2755,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#実践ファイルの読み込み訪日外客数の推移-1",
     "title": "初心者向けR Studioの使い方",
     "section": "実践：ファイルの読み込み（訪日外客数の推移）",
-    "text": "実践：ファイルの読み込み（訪日外客数の推移）\nフォルダとファイルの構成（確認）\n├── test.Rproj\n├── test.qmd\n├── img\n│   ├── test.png\n│   └── test2.png\n├── data\n    ├── test.csv\n    └── test2.csv"
+    "text": "実践：ファイルの読み込み（訪日外客数の推移）\nフォルダとファイルの構成（確認）\n├── firststep.Rproj\n├── firststep.qmd\n├── img\n│   └── geom_point_penguins.png\n└─── data\n    ├── speech_ishiba.rds\n    ├── penguins_summary.csv\n    └── inbound_travelers.csv\n    └── sample.pdf\n\nQuartファイルとimg/dataフォルダの相対的な位置関係を確認"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#実践ファイルの読み込み訪日外客数の推移-2",
@@ -2783,7 +2790,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#実践データの結合oecd加盟国の人口100万人あたりの議員数",
     "title": "初心者向けR Studioの使い方",
     "section": "実践：データの結合（OECD加盟国の人口100万人あたりの議員数）",
-    "text": "実践：データの結合（OECD加盟国の人口100万人あたりの議員数）\nデータの結合\n\n別種のデータを結合したい場合、left_join()関数などの関数を使う\n\n\nGoogle Driveからファイルをダウンロード（出典：United Nations, World Population Prospects 2024; Parline, Data explorer）\ndataフォルダに保存\n以下のコードを写して、実行\n\n\n\nCode\n## 前処理（Setup Chunk）に書くべき\n\ndf_parline &lt;- \n  read_csv(\"data/ComparedataonParliaments.csv\", skip = 15, col_names = FALSE) |&gt; (\\(x) setNames(x[-1, ], x[1, ]))()\n\ndf_population &lt;-\n  read_excel(\"data/population.xlsx\", sheet = 1, skip = 16) |&gt; \n  filter(Type == \"Country/Area\") |&gt; \n  filter(Year == max(Year, na.rm = TRUE)) |&gt; \n  rename(country = `Region, subregion, country or area *`)\n\noecd_ISOcode &lt;- c(\n  \"AU\", \"AT\", \"BE\", \"CA\", \"CL\", \"CO\", \"CR\", \"CZ\", \"DK\", \"EE\", \"FI\", \"FR\",\n  \"DE\", \"GR\", \"HU\", \"IS\", \"IE\", \"IL\", \"IT\", \"JP\", \"KR\", \"LV\", \"LT\", \"LU\",\n  \"MX\", \"NL\", \"NZ\", \"NO\", \"PL\", \"PT\", \"SK\", \"SI\", \"ES\", \"SE\", \"CH\", \"TR\",\n  \"GB\", \"US\"\n)\n\noecd_countries &lt;- c(\n  \"Australia\", \"Austria\", \"Belgium\", \"Canada\", \"Chile\", \"Colombia\",\n  \"Czech Republic\", \"Denmark\", \"Estonia\", \"Finland\", \"France\", \"Germany\",\n  \"Greece\", \"Hungary\", \"Iceland\", \"Ireland\", \"Israel\", \"Italy\", \"Japan\",\n  \"Korea\", \"Latvia\", \"Lithuania\", \"Luxembourg\", \"Mexico\", \"Netherlands\",\n  \"New Zealand\", \"Norway\", \"Poland\", \"Portugal\", \"Slovak Republic\", \"Slovenia\",\n  \"Spain\", \"Sweden\", \"Switzerland\", \"Turkey\", \"United Kingdom\", \"United States of America\", \"Republic of Korea\"\n)\n\ndf_parline_oecd &lt;- \ndf_parline |&gt; \n    filter(`ISO Code` %in% oecd_ISOcode)\n\ndf_parline_oecd &lt;- \n  df_parline_oecd |&gt; \n  select(country = Country, statutory_number = `Statutory number of members`)\n\ndf_population_oecd &lt;- \n  df_population |&gt; \n      filter(country %in% oecd_countries)\n\ndf_population_oecd &lt;- \n  df_population_oecd |&gt; \n  mutate(across(`0`:`100+`, as.numeric)) |&gt; \n  mutate(TotalPopulation = rowSums(across(`0`:`100+`), na.rm = TRUE)) |&gt;\n  select(country, TotalPopulation) |&gt; \n  mutate(TotalPopulation = round(TotalPopulation))\n\ndf_pop_par &lt;-\n  df_population_oecd |&gt; \n  left_join(df_parline_oecd, by = \"country\")\n\n## 個別チャンク\n\ndf_pop_par |&gt; \n  mutate(\n    statutory_number = as.numeric(statutory_number),\n    member_per_million = statutory_number / (TotalPopulation / 1000),\n    member_per_million = round(member_per_million, 2)\n  ) |&gt; \n  arrange(desc(member_per_million)) |&gt; \n  mutate(country = factor(country, levels = country)) |&gt; \n  ggplot(aes(x = country, y = member_per_million)) +\n  geom_col(fill = \"orange\") + \n  geom_text(\n    aes(label = glue(\"{member_per_million}人\")),\n    hjust = -0.1,\n    size = 3.0\n  ) +\n  scale_y_continuous(\n    breaks = seq(0, 300, 30),\n    expand = c(0, 0)\n  ) +\n  coord_flip() +\n  labs(\n    x = \"\",\n    y = \"人口100万人あたりの下院議員数\",\n  ) +\n  theme(\n    axis.text.y = element_text(hjust = 0)\n  )"
+    "text": "実践：データの結合（OECD加盟国の人口100万人あたりの議員数）\nデータの結合\n\n別種のデータを結合したい場合、left_join()関数などの関数を使う\n\n\nGoogle Driveからファイルをダウンロード（出典：United Nations, World Population Prospects 2024; Parline, Data explorer）\ndataフォルダに保存\n以下のコードを写して、実行\n\n\n\nCode\n## 前処理（Setup Chunk）に書くべき\n\ndf_parline &lt;- \n  read_csv(\"data/ComparedataonParliaments.csv\", skip = 15, col_names = FALSE) |&gt; (\\(x) setNames(x[-1, ], x[1, ]))()\n\ndf_population &lt;-\n  read_excel(\"data/population.xlsx\", sheet = 1, skip = 16) |&gt; \n  filter(Type == \"Country/Area\") |&gt; \n  filter(Year == max(Year, na.rm = TRUE)) |&gt; \n  rename(country = `Region, subregion, country or area *`)\n\noecd_ISOcode &lt;- c(\n  \"AU\", \"AT\", \"BE\", \"CA\", \"CL\", \"CO\", \"CR\", \"CZ\", \"DK\", \"EE\", \"FI\", \"FR\",\n  \"DE\", \"GR\", \"HU\", \"IS\", \"IE\", \"IL\", \"IT\", \"JP\", \"KR\", \"LV\", \"LT\", \"LU\",\n  \"MX\", \"NL\", \"NZ\", \"NO\", \"PL\", \"PT\", \"SK\", \"SI\", \"ES\", \"SE\", \"CH\", \"TR\",\n  \"GB\", \"US\"\n)\n\noecd_countries &lt;- c(\n  \"Australia\", \"Austria\", \"Belgium\", \"Canada\", \"Chile\", \"Colombia\",\n  \"Czech Republic\", \"Denmark\", \"Estonia\", \"Finland\", \"France\", \"Germany\",\n  \"Greece\", \"Hungary\", \"Iceland\", \"Ireland\", \"Israel\", \"Italy\", \"Japan\",\n  \"Korea\", \"Latvia\", \"Lithuania\", \"Luxembourg\", \"Mexico\", \"Netherlands\",\n  \"New Zealand\", \"Norway\", \"Poland\", \"Portugal\", \"Slovak Republic\", \"Slovenia\",\n  \"Spain\", \"Sweden\", \"Switzerland\", \"Turkey\", \"United Kingdom\", \"United States of America\", \"Republic of Korea\"\n)\n\ndf_parline_oecd &lt;- \ndf_parline |&gt; \n    filter(`ISO Code` %in% oecd_ISOcode)\n\ndf_parline_oecd &lt;- \n  df_parline_oecd |&gt; \n  select(country = Country, statutory_number = `Statutory number of members`)\n\ndf_population_oecd &lt;- \n  df_population |&gt; \n      filter(country %in% oecd_countries)\n\ndf_population_oecd &lt;- \n  df_population_oecd |&gt; \n  mutate(across(`0`:`100+`, as.numeric)) |&gt; \n  mutate(TotalPopulation = rowSums(across(`0`:`100+`), na.rm = TRUE)) |&gt;\n  select(country, TotalPopulation) |&gt; \n  mutate(TotalPopulation = round(TotalPopulation))\n\ndf_pop_par &lt;-\n  df_population_oecd |&gt; \n  left_join(df_parline_oecd, by = \"country\")\n\n## 個別チャンク\n\ndf_pop_par |&gt; \n  mutate(\n    statutory_number = as.numeric(statutory_number),\n    member_per_million = statutory_number / (TotalPopulation / 1000),\n    member_per_million = round(member_per_million, 2)\n  ) |&gt; \n  arrange(desc(member_per_million)) |&gt; \n  mutate(country = factor(country, levels = country)) |&gt; \n  ggplot(aes(x = country, y = member_per_million)) +\n  geom_col(fill = \"#a0564d\") + \n  geom_text(\n    aes(label = glue(\"{member_per_million}人\")),\n    hjust = -0.1,\n    size = 3.0\n  ) +\n  scale_y_continuous(\n    breaks = seq(0, 300, 30),\n    expand = c(0, 0)\n  ) +\n  coord_flip() +\n  labs(\n    x = \"\",\n    y = \"人口100万人あたりの下院議員数\",\n  ) +\n  theme(\n    axis.text.y = element_text(hjust = 0)\n  )"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#実践データの結合oecd加盟国の人口100万人あたりの議員数-1",
