@@ -2363,14 +2363,14 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基礎整然データと雑然データ",
     "title": "初心者向けR Studioの使い方",
     "section": "基礎：整然データと雑然データ",
-    "text": "基礎：整然データと雑然データ\n整然（tidy）データ（縦持ちデータ）\n\n\n\n各変数は独立した列で表現される\n観測した値は1行に記録される\n観測データの集合はテーブルを表現する\n\n（Wickham et al. (2023), Data tidying）\n\n\n縦持ちデータ\n\n\n\n\n地域\n曜日\n天気\n\n\n\n\n東京\n月曜\n晴れ\n\n\n東京\n火曜\n曇り\n\n\n東京\n水曜\n雨\n\n\n大阪\n月曜\n曇り\n\n\n大阪\n火曜\n晴れ\n\n\n大阪\n水曜\n晴れ\n\n\n\n「地域」「曜日」「天気」がそれぞれ1つの変数として1列にまとまっており、1行が1つの観測になっている（tidyのルールを満たす）"
+    "text": "基礎：整然データと雑然データ\n\n\n整然（tidy）データ\n\n各変数は独立した列で表現される\n観測した値は1行に記録される\n観測データの集合はテーブルを表現する\n\n（Wickham et al. (2023), Data tidying）\n\n雑然（messy）データ\n\n左の定義に合わないデータ\n\n例：次のページのような横持ちデータ\n\n不要な空白行や結合セルからなる表\n\n毎月勤労統計調査"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基礎整然データと雑然データ-1",
     "href": "teaching/RforDatascience/RforDataScience.html#基礎整然データと雑然データ-1",
     "title": "初心者向けR Studioの使い方",
     "section": "基礎：整然データと雑然データ",
-    "text": "基礎：整然データと雑然データ\n雑然（messy）データ\n\n\n\n整然データではないデータ\n\n代表：横持ちデータ\n\n不要な空白行や結合セルからなる表\n\n毎月勤労統計調査\n\n\n\n\n横持ちデータ\n\n\n\n\n地域\n月曜\n火曜\n水曜\n\n\n\n\n東京\n晴れ\n曇り\n雨\n\n\n大阪\n曇り\n晴れ\n晴れ\n\n\n\n一見わかりやすいが、曜日が複数列に分かれているため「1列＝1変数」というtidyのルールに合いない"
+    "text": "基礎：整然データと雑然データ\n\n\n整然とした縦持ちデータ\n\n\n\n地域\n曜日\n天気\n\n\n\n\n東京\n月曜\n晴れ\n\n\n東京\n火曜\n曇り\n\n\n東京\n水曜\n雨\n\n\n大阪\n月曜\n曇り\n\n\n大阪\n火曜\n晴れ\n\n\n大阪\n水曜\n晴れ\n\n\n\n「地域」「曜日」「天気」がそれぞれ1つの変数として1列にまとまっており、1行が1つの観測になっている（tidyのルールを満たす）\n\n雑然とした横持ちデータ\n\n\n\n地域\n月曜\n火曜\n水曜\n\n\n\n\n東京\n晴れ\n曇り\n雨\n\n\n大阪\n曇り\n晴れ\n晴れ\n\n\n\n人間には見慣れた表（行と列の交差点（セル）に意味があることを直感的に認識できるから）だが、曜日が複数列に分かれているため「1列＝1変数」というtidyのルールに合わない。値が晴れ、曇りなどの天気である以上、カラム名（変数）は天気であるべき。このようなデータフレームでは、集計、プロットすることが難しい\n\n\n\n\n\n\n\nカラム名は列に含まれる値全体を説明するものであるべき（カテゴリカルな名詞）"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基礎整然データと雑然データ-2",
@@ -2954,18 +2954,18 @@
     "text": "発展：地図情報（アメリカの人口密度）\nアメリカの人口密度1\n\nCodePlot\n\n\n\ncounty_full &lt;-\n  county_map |&gt; \n  left_join(county_data, by = \"id\")\n\ncounty_full |&gt;  \n  ggplot(aes(x = long, y = lat,\n         fill = pop_dens,\n         group = group)) +\n  geom_polygon(color = \"gray90\", size = 0.05) +\n  coord_equal() +\n  scale_fill_brewer(palette = \"Blues\",\n                    labels = c(\"0-10\", \"10-50\", \"50-100\", \"100-500\", \"500-1,000\", \"1,000-5,000\", \"&gt;5,000\")) +\n  labs(fill = \"Population per\\nsquare mile\") +\n  theme_map() +\n  guides(fill = guide_legend(nrow = 1)) +\n  theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nコードの出典：ヒーリー，キーラン (2021)"
   },
   {
-    "objectID": "teaching/RforDatascience/RforDataScience.html#発展おまけ重回帰分析penguins",
-    "href": "teaching/RforDatascience/RforDataScience.html#発展おまけ重回帰分析penguins",
+    "objectID": "teaching/RforDatascience/RforDataScience.html#発展重回帰分析penguins",
+    "href": "teaching/RforDatascience/RforDataScience.html#発展重回帰分析penguins",
     "title": "初心者向けR Studioの使い方",
-    "section": "発展（おまけ）：重回帰分析（penguins）",
-    "text": "発展（おまけ）：重回帰分析（penguins）\n\n別途、sjPlotをインストールして下さい\n\n\nCodeTable\n\n\n\nlibrary(sjPlot)\n\n# データ例\npenguins_clean &lt;- \n  penguins |&gt; \n  filter(!is.na(bill_len), !is.na(bill_dep), !is.na(flipper_len))\n\n# 重回帰\nlm_model &lt;- lm(bill_len ~ bill_dep + flipper_len, data = penguins_clean)\n\n# 表示\ntab_model(lm_model)\n\n\n\n\n\n\n\n\n \nbill_len\n\n\nPredictors\nEstimates\nCI\np\n\n\n(Intercept)\n-28.15\n-38.99 – -17.30\n&lt;0.001\n\n\nbill dep\n0.62\n0.35 – 0.89\n&lt;0.001\n\n\nflipper len\n0.31\n0.27 – 0.34\n&lt;0.001\n\n\nObservations\n342\n\n\nR2 / R2 adjusted\n0.464 / 0.461"
+    "section": "発展：重回帰分析（penguins）",
+    "text": "発展：重回帰分析（penguins）\n\n別途、sjPlotをインストールして下さい\n\n\nCodeTable\n\n\n\nlibrary(sjPlot)\n\n# データ例\npenguins_clean &lt;- \n  penguins |&gt; \n  filter(!is.na(bill_len), !is.na(bill_dep), !is.na(flipper_len))\n\n# 重回帰\nlm_model &lt;- lm(bill_len ~ bill_dep + flipper_len, data = penguins_clean)\n\n# 表示\ntab_model(lm_model)\n\n\n\n\n\n\n\n\n \nbill_len\n\n\nPredictors\nEstimates\nCI\np\n\n\n(Intercept)\n-28.15\n-38.99 – -17.30\n&lt;0.001\n\n\nbill dep\n0.62\n0.35 – 0.89\n&lt;0.001\n\n\nflipper len\n0.31\n0.27 – 0.34\n&lt;0.001\n\n\nObservations\n342\n\n\nR2 / R2 adjusted\n0.464 / 0.461"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#Google-Ngram-Trends",
     "href": "teaching/RforDatascience/RforDataScience.html#Google-Ngram-Trends",
     "title": "初心者向けR Studioの使い方",
-    "section": "発展（おまけ）：Google Ngram Trends",
-    "text": "発展（おまけ）：Google Ngram Trends\n\n別途、ngramrをインストールして下さい\n\n\n\nCode\nlibrary(ngramr)\n\nwords &lt;- c(\"Cicero\", \"Tacitus\", \"Sallust\",\"Plutarch\", \"Aristotle\", \"Shakespeare\", \"Milton\")\n\ndf &lt;- map_dfr(words, ~ngram(.x, corpus = \"eng_gb_2019\", year_start = 1500, year_end = 2020))\n\ndf |&gt; \n  ggplot(aes(x = Year, y = Frequency, color = Phrase)) +\n  geom_line() +\n  scale_color_paletteer_d(\"ggthemr::solarized\") +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  labs(title = \"Google Ngram Trends\", y = \"Frequency (%)\", x = \"\")"
+    "section": "発展：Google Ngram Trends",
+    "text": "発展：Google Ngram Trends\n\n別途、ngramrをインストールして下さい\n\n\n\nCode\nlibrary(ngramr)\n\nwords &lt;- c(\"Cicero\", \"Tacitus\", \"Sallust\",\"Plutarch\", \"Aristotle\", \"Shakespeare\", \"Milton\")\n\ndf &lt;- map_dfr(words, ~ngram(.x, corpus = \"eng_gb_2019\", year_start = 1500, year_end = 2020))\n\ndf |&gt; \n  ggplot(aes(x = Year, y = Frequency, color = Phrase)) +\n  geom_line() +\n  scale_color_paletteer_d(\"ggthemr::solarized\") +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  labs(title = \"Google Ngram Trends\", y = \"Frequency (%)\", x = \"\")"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#さらに学ぶ基本書",
