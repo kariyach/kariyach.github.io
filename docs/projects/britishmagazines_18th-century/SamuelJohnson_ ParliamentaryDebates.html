@@ -123,7 +123,6 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script><style>html{ scroll-behavior: smooth; }</style>
-<meta name="quarto:status" content="draft">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="../../style_ja.css">
@@ -293,7 +292,7 @@ div.csl-indent {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">CHIHIRO KARIYA</span>
@@ -644,7 +643,6 @@ div.csl-indent {
 <span></span>
 <span><span class="co"># コーパス作成 ----</span></span>
 <span></span>
-<span></span>
 <span><span class="va">corpus_1740_1742</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">df_1740_1742</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://quanteda.io/reference/corpus.html">corpus</a></span><span class="op">(</span>text_field <span class="op">=</span> <span class="st">"text"</span><span class="op">)</span></span>
@@ -668,7 +666,8 @@ div.csl-indent {
 <span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://quanteda.io/reference/tokens_select.html">tokens_remove</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span>          <span class="co"># 空トークン削除</span></span>
 <span></span>
-<span><span class="va">toks_1740_1742_kwic</span> <span class="op">&lt;-</span></span>
+<span><span class="co"># kwic用</span></span>
+<span><span class="va">toks_1740_1742_nostopw</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">corpus_1740_1742</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://quanteda.io/reference/tokens.html">tokens</a></span><span class="op">(</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -687,7 +686,8 @@ div.csl-indent {
 <span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://quanteda.io/reference/tokens_select.html">tokens_remove</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span>          <span class="co"># 空トークン削除</span></span>
 <span></span>
-<span><span class="va">toks_1750_kwic</span> <span class="op">&lt;-</span></span>
+<span><span class="co"># kwic用</span></span>
+<span><span class="va">toks_1750_nostopw</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">corpus_1750</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://quanteda.io/reference/tokens.html">tokens</a></span><span class="op">(</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -708,7 +708,6 @@ div.csl-indent {
 <span>  <span class="fu"><a href="https://juliasilge.github.io/tidytext/reference/unnest_tokens.html">unnest_tokens</a></span><span class="op">(</span><span class="va">word</span>, <span class="va">text</span>, token <span class="op">=</span> <span class="st">"words"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">anti_join</a></span><span class="op">(</span><span class="va">stop_words</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">word</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">custom_stop</span><span class="op">)</span></span>
-<span></span>
 <span></span>
 <span><span class="co"># DTM作成 ----</span></span>
 <span></span>
@@ -1409,7 +1408,7 @@ div.csl-indent {
 <span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">target_words</span>, <span class="op">~</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"\n\n===== Keyword:"</span>, <span class="va">.x</span>, <span class="st">"=====\n\n"</span><span class="op">)</span>  <span class="co"># 区切り見出し（コンソール出力用）</span></span>
 <span>  </span>
-<span>  <span class="va">kwic_result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://quanteda.io/reference/kwic.html">kwic</a></span><span class="op">(</span><span class="va">toks_1740_1742_kwic</span>, pattern <span class="op">=</span> <span class="va">.x</span>, window <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span>  <span class="va">kwic_result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://quanteda.io/reference/kwic.html">kwic</a></span><span class="op">(</span><span class="va">toks_1740_1742_nostopw</span>, pattern <span class="op">=</span> <span class="va">.x</span>, window <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span>  </span>
 <span>  <span class="va">kwic_result</span> <span class="op">|&gt;</span></span>
 <span>    <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -1423,7 +1422,7 @@ div.csl-indent {
 <li>eloquence</li>
 </ul>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">toks_1740_1742_kwic</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">toks_1740_1742_nostopw</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://quanteda.io/reference/kwic.html">kwic</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"eloquence"</span>, window <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2167,7 +2166,7 @@ div.csl-indent {
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">target_words</span>, <span class="op">~</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"\n\n===== Keyword:"</span>, <span class="va">.x</span>, <span class="st">"=====\n\n"</span><span class="op">)</span>  <span class="co"># 区切り見出し（コンソール出力用）</span></span>
 <span>  </span>
-<span>  <span class="va">kwic_result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://quanteda.io/reference/kwic.html">kwic</a></span><span class="op">(</span><span class="va">toks_1750_kwic</span>, pattern <span class="op">=</span> <span class="va">.x</span>, window <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span>  <span class="va">kwic_result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://quanteda.io/reference/kwic.html">kwic</a></span><span class="op">(</span><span class="va">toks_1750_nostopw</span>, pattern <span class="op">=</span> <span class="va">.x</span>, window <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span>  </span>
 <span>  <span class="va">kwic_result</span> <span class="op">|&gt;</span></span>
 <span>    <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -2181,7 +2180,7 @@ div.csl-indent {
 <li>eloquence</li>
 </ul>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">toks_1750_kwic</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">toks_1750_nostopw</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://quanteda.io/reference/kwic.html">kwic</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"eloquence"</span>, window <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3449,8 +3448,8 @@ NULL</code></pre>
 <pre><code>Fitting LDA with 6 topics
  ...initializing
  ...Gibbs sampling in up to 2000 iterations
- ......iteration 100 elapsed time: 0.46 seconds (delta: 0.27%)
- ......iteration 200 elapsed time: 0.88 seconds (delta: -0.07%)
+ ......iteration 100 elapsed time: 0.48 seconds (delta: 0.27%)
+ ......iteration 200 elapsed time: 0.90 seconds (delta: -0.07%)
  ...computing theta and phi
  ...complete</code></pre>
 </div>
@@ -4145,8 +4144,8 @@ NULL</code></pre>
 <pre><code>Fitting LDA with 6 topics
  ...initializing
  ...Gibbs sampling in up to 2000 iterations
- ......iteration 100 elapsed time: 0.46 seconds (delta: 0.20%)
- ......iteration 200 elapsed time: 0.87 seconds (delta: -0.04%)
+ ......iteration 100 elapsed time: 0.47 seconds (delta: 0.20%)
+ ......iteration 200 elapsed time: 0.88 seconds (delta: -0.04%)
  ...computing theta and phi
  ...complete</code></pre>
 </div>
