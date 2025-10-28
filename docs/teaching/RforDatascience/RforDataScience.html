@@ -314,8 +314,8 @@
 <p><img data-src="img/tacitus.jpg" style="width:80.0%"></p>
 </div></div>
 </section>
-<section id="自己紹介レトリックの受容史-1" class="slide level2">
-<h2>自己紹介：レトリックの受容史</h2>
+<section id="自己紹介レトリックの受容史-議会ジャーナリズム" class="slide level2">
+<h2>自己紹介：レトリックの受容史 / 議会ジャーナリズム</h2>
 <h3 id="サミュエルジョンソンthe-gentlemans-magazine">サミュエル・ジョンソン（The Gentleman’s Magazine）</h3>
 <div class="columns">
 <div class="column" style="width:80%;">
@@ -327,8 +327,8 @@
 <p><img data-src="img/gentleman-s-magazine-1731.jpg"></p>
 </div></div>
 </section>
-<section id="自己紹介レトリックの受容史-2" class="slide level2">
-<h2>自己紹介：レトリックの受容史</h2>
+<section id="自己紹介レトリックの受容史-議会ジャーナリズム-1" class="slide level2">
+<h2>自己紹介：レトリックの受容史 / 議会ジャーナリズム</h2>
 <h3 id="エドマンドバーク">エドマンド・バーク</h3>
 <div class="columns">
 <div class="column" style="width:80%;">
@@ -350,8 +350,8 @@
 <h3 id="学べること">学べること</h3>
 <ul>
 <li>Rの何がよいのか、Rで何ができるかの理解</li>
-<li>Rの基本操作の習得</li>
-<li>Rの応用操作の見通し</li>
+<li>Rの基本操作の習得（基本編；実践編）</li>
+<li>Rの応用操作の見通し（発展編）</li>
 </ul>
 <h3 id="学べないこと">学べないこと</h3>
 <ul>
@@ -372,7 +372,7 @@
 <ul>
 <li>再現可能性
 <ul>
-<li>マウス操作と違い､その場限りではなく、<em>手順がすべて残る</em>
+<li>マウス操作ベース（=GUI）と違い､その場限りではなく、<em>手順がすべて残る</em>
 <ul>
 <li>真似しやすい / <em>生成AIと親和性が高い</em> / <em>ミスも再現できる</em> / 共同作業・共同研究しやすい</li>
 </ul></li>
@@ -385,7 +385,7 @@
 <li>安全性
 <ul>
 <li><em>元データ（ファイル）を加工しない</em></li>
-<li>メモリ上にデータを保持し、そのコピーを操作する</li>
+<li>Rが、メモリ上にデータを保持し、そのコピーを操作する</li>
 </ul></li>
 </ul>
 </section>
@@ -418,7 +418,7 @@
 <h2>基礎：なぜRなのか / なぜQuartoなのか</h2>
 <h3 id="簡易的な記述法quarto">5. 簡易的な記述法（Quarto）</h3>
 <ul>
-<li><a href="https://www.markdownguide.org/cheat-sheet/">markdown</a></li>
+<li><a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a></li>
 </ul>
 <table class="caption-top">
 <thead>
@@ -824,6 +824,12 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 </section>
 <section id="準備r-studioペインの見方" class="slide level2">
 <h2>準備：R Studio（ペイン）の見方</h2>
+<ul>
+<li>4画面構成
+<ul>
+<li>主要な操作は左上のソースペインで行う</li>
+</ul></li>
+</ul>
 
 <img data-src="img/pane.png" class="r-stretch"></section>
 <section id="準備r-studioソースペインの外観の変更" class="slide level2">
@@ -958,7 +964,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <h2>準備：Setup Chunkの作成</h2>
 <h3 id="r-chunk">R Chunk</h3>
 <ul>
-<li>R Chunkは、Quartoファイルの中で Rのコードを書くためのブロック</li>
+<li>R Chunkは、Quartoファイルの中でRのコードを書くためのブロック</li>
 <li>一つのR Chunkで、一つの作図、分析を行うのが基本</li>
 </ul>
 <h3 id="setup-chunk">Setup Chunk</h3>
@@ -1298,12 +1304,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <h3 id="パイプ処理">パイプ処理</h3>
 <ul>
 <li><em>|&gt;</em> または <em>%&gt;%</em></li>
-<li>modern Rの大きな特徴の一つ</li>
-<li>処理を連続させるための記号
+<li>modern Rの大きな特徴の一つ<sup>1</sup></li>
+<li>処理を連続させるための記号（正確には、演算子という）
 <ul>
 <li>より正確には「前の結果を次の関数に渡して、処理を順番につなげるための記号」</li>
 </ul></li>
-<li>Rを初めて学ぶ人、あるいは他のプログラミング言語に慣れた人にとって つまずきやすく、でも、もっとも大切な考え方</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>データ <span class="sc">|&gt;</span></span>
@@ -1313,9 +1318,12 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <ul>
 <li>料理で喩えると：「材料を選んで → 炒めて → 味付けする」</li>
 </ul>
-</section>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>R 4.1.0（2021年5月）で、R本体に組み込まれ、ネイティブ構文に</p></li></ol></aside></section>
 <section id="基本パイプ処理-1" class="slide level2">
 <h2>基本：パイプ処理</h2>
+<ul>
+<li>パイプ演算子は頻繁に使います。ショートカットを覚えましょう</li>
+</ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1333,7 +1341,10 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 </div>
 </div>
 <ul>
-<li>RStudioの設定（Preferences → Code → Editing → Insert native pipe operator）で、<em>|&gt;</em> と <em>%&gt;%</em> のどちらを挿入するか選択できる</li>
+<li>R Studioの設定（Tools &gt; Grobal Options &gt; Code &gt; Editing &gt; Use native pipe operator）で、<em>|&gt;</em> と <em>%&gt;%</em> のどちらを挿入するかを選択できる
+<ul>
+<li>デフォルトは<em>|&gt;</em></li>
+</ul></li>
 </ul>
 </section>
 <section id="基本パイプ処理-2" class="slide level2">
@@ -1358,7 +1369,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <li>関数が入れ子構造（ネスト）になり、どこからどこまでが特定の関数なのかわかりにくい</li>
 <li>処理の順番がわかりにくく、かっこの対応関係も見づらい
 <ul>
-<li>入れ子人形（マトリョーシカ）（<a href="https://craftofcoding.wordpress.com/2021/06/16/recursion-and-matryoshka-dolls/">Recursion and Matryoshka dolls</a>）</li>
+<li>入れ子人形（マトリョーシカ）（<a href="https://www.jumpingrivers.com/blog/refactoring-russian-doll-code/">Refactoring Russian Doll Code</a>）</li>
 </ul></li>
 </ul>
 </section>
@@ -1390,7 +1401,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <h2>基本：パッケージのインストール</h2>
 <h3 id="パッケージの一括インストール">パッケージの一括インストール</h3>
 <ul>
-<li><p>パッケージは各自の必要に応じてインストールすべきですが、時間の都合上、以下のスライドで使用するコードを一括でインストールしましょう。上からscalesまでのパッケージは、今日、標準的なものです</p></li>
+<li><p>パッケージは各自の必要に応じてインストールすべきですが、時間の都合上、以下のスライドで使用するコードを一括でインストールしましょう。上からpatchworkまでのパッケージは、今日、標準的なものです</p></li>
 <li><p>任意のR Chunkで操作（このR Chunkはインストール後に削除して下さい）</p></li>
 </ul>
 <div class="cell">
@@ -1404,18 +1415,19 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <span id="cb14-8"><a></a>  <span class="st">"gt"</span>,         <span class="co"># 表作成</span></span>
 <span id="cb14-9"><a></a>  <span class="st">"skimr"</span>,      <span class="co"># データ要約</span></span>
 <span id="cb14-10"><a></a>  <span class="st">"scales"</span>,     <span class="co"># 軸やラベルのスケール調整</span></span>
-<span id="cb14-11"><a></a><span class="do">## 以下のパッケージは標準的ではないが、本日の講習会で使っているものです</span></span>
-<span id="cb14-12"><a></a>  <span class="st">"crosstable"</span>, <span class="co"># クロス表</span></span>
-<span id="cb14-13"><a></a>  <span class="st">"zipangu"</span>,    <span class="co"># 元号を西暦に変換</span></span>
-<span id="cb14-14"><a></a>  <span class="st">"rvest"</span>,      <span class="co"># Webスクレイピング</span></span>
-<span id="cb14-15"><a></a>  <span class="st">"httr2"</span>,      <span class="co"># HTTPリクエスト</span></span>
-<span id="cb14-16"><a></a>  <span class="st">"xml2"</span>,       <span class="co"># XML解析</span></span>
-<span id="cb14-17"><a></a>  <span class="st">"maps"</span>,       <span class="co"># アメリカの地図情報（地理データ）</span></span>
-<span id="cb14-18"><a></a>  <span class="st">"socviz"</span>,     <span class="co"># 政治・社会・教育に関連するデータセットが中心（初学者の演習や可視化の教材として便利）</span></span>
-<span id="cb14-19"><a></a>  <span class="st">"paletteer"</span>,  <span class="co"># カラーパレット</span></span>
-<span id="cb14-20"><a></a>  <span class="st">"ngramr"</span>,     <span class="co"># Google Ngram Trends</span></span>
-<span id="cb14-21"><a></a>  <span class="st">"sjPlot"</span>      <span class="co"># 社会科学系の分析総合パッケージ</span></span>
-<span id="cb14-22"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-11"><a></a>  <span class="st">"patchwork"</span>,  <span class="co"># 複数のggplotの出力結果を並べる</span></span>
+<span id="cb14-12"><a></a><span class="do">## 以下のパッケージは標準的ではないが、本日の講習会で使っているものです</span></span>
+<span id="cb14-13"><a></a>  <span class="st">"crosstable"</span>, <span class="co"># クロス表</span></span>
+<span id="cb14-14"><a></a>  <span class="st">"zipangu"</span>,    <span class="co"># 日本固有の表記（和暦、都道府県名、住所など）を処理</span></span>
+<span id="cb14-15"><a></a>  <span class="st">"rvest"</span>,      <span class="co"># Webスクレイピング</span></span>
+<span id="cb14-16"><a></a>  <span class="st">"httr2"</span>,      <span class="co"># HTTPリクエスト</span></span>
+<span id="cb14-17"><a></a>  <span class="st">"xml2"</span>,       <span class="co"># XML解析</span></span>
+<span id="cb14-18"><a></a>  <span class="st">"maps"</span>,       <span class="co"># アメリカの地図情報（地理データ）</span></span>
+<span id="cb14-19"><a></a>  <span class="st">"socviz"</span>,     <span class="co"># 政治・社会・教育に関連するデータセットが中心（初学者の演習や可視化の教材として便利）</span></span>
+<span id="cb14-20"><a></a>  <span class="st">"paletteer"</span>,  <span class="co"># カラーパレット</span></span>
+<span id="cb14-21"><a></a>  <span class="st">"ngramr"</span>,     <span class="co"># Google Ngram Trends</span></span>
+<span id="cb14-22"><a></a>  <span class="st">"sjPlot"</span>      <span class="co"># 社会科学系の分析総合パッケージ</span></span>
+<span id="cb14-23"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="基本パッケージのインストール-1" class="slide level2">
@@ -1449,19 +1461,20 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <span id="cb16-7"><a></a><span class="fu">library</span>(gt)        <span class="co"># 表作成</span></span>
 <span id="cb16-8"><a></a><span class="fu">library</span>(skimr)     <span class="co"># データ要約</span></span>
 <span id="cb16-9"><a></a><span class="fu">library</span>(scales)    <span class="co"># 軸やラベルのスケール調整</span></span>
-<span id="cb16-10"><a></a><span class="fu">library</span>(crosstable)<span class="co"># クロス表</span></span>
-<span id="cb16-11"><a></a><span class="fu">library</span>(zipangu)   <span class="co"># 元号を西暦に変換</span></span>
-<span id="cb16-12"><a></a><span class="fu">library</span>(rvest)     <span class="co"># Webスクレイピング</span></span>
-<span id="cb16-13"><a></a><span class="fu">library</span>(httr2)     <span class="co"># HTTPリクエスト</span></span>
-<span id="cb16-14"><a></a><span class="fu">library</span>(xml2)      <span class="co"># XML解析</span></span>
-<span id="cb16-15"><a></a><span class="fu">library</span>(maps)      <span class="co"># アメリカの地図情報</span></span>
-<span id="cb16-16"><a></a><span class="fu">library</span>(socviz)    <span class="co"># 社会・政治・教育関連データセット</span></span>
-<span id="cb16-17"><a></a><span class="fu">library</span>(paletteer) <span class="co"># カラーパレット</span></span>
-<span id="cb16-18"><a></a><span class="fu">library</span>(ngramr)    <span class="co"># Google Ngram Trends</span></span>
-<span id="cb16-19"><a></a><span class="fu">library</span>(sjPlot)    <span class="co"># 社会科学系の分析総合パッケージ</span></span>
-<span id="cb16-20"><a></a></span>
-<span id="cb16-21"><a></a><span class="co"># 優先する関数を指定 ----</span></span>
-<span id="cb16-22"><a></a><span class="fu">conflicts_prefer</span>(dplyr<span class="sc">::</span>filter) <span class="co"># filter関数はdplyrを優先</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-10"><a></a><span class="fu">library</span>(patchwork) <span class="co"># 複数のggplotの出力結果を並べる</span></span>
+<span id="cb16-11"><a></a><span class="fu">library</span>(crosstable)<span class="co"># クロス表</span></span>
+<span id="cb16-12"><a></a><span class="fu">library</span>(zipangu)   <span class="co"># 日本固有の表記（和暦、都道府県名、住所など）を処理</span></span>
+<span id="cb16-13"><a></a><span class="fu">library</span>(rvest)     <span class="co"># Webスクレイピング</span></span>
+<span id="cb16-14"><a></a><span class="fu">library</span>(httr2)     <span class="co"># HTTPリクエスト</span></span>
+<span id="cb16-15"><a></a><span class="fu">library</span>(xml2)      <span class="co"># XML解析</span></span>
+<span id="cb16-16"><a></a><span class="fu">library</span>(maps)      <span class="co"># アメリカの地図情報</span></span>
+<span id="cb16-17"><a></a><span class="fu">library</span>(socviz)    <span class="co"># 社会・政治・教育関連データセット</span></span>
+<span id="cb16-18"><a></a><span class="fu">library</span>(paletteer) <span class="co"># カラーパレット</span></span>
+<span id="cb16-19"><a></a><span class="fu">library</span>(ngramr)    <span class="co"># Google Ngram Trends</span></span>
+<span id="cb16-20"><a></a><span class="fu">library</span>(sjPlot)    <span class="co"># 社会科学系の分析総合パッケージ</span></span>
+<span id="cb16-21"><a></a></span>
+<span id="cb16-22"><a></a><span class="co"># 優先する関数を指定 ----</span></span>
+<span id="cb16-23"><a></a><span class="fu">conflicts_prefer</span>(dplyr<span class="sc">::</span>filter) <span class="co"># filter関数はdplyrを優先</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="基本ショートカット" class="slide level2">
@@ -1572,23 +1585,23 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 </div><div class="column" style="width:20%;">
 <div class="cell">
 <div class="cell-output-display">
-<div id="swfpcrncom" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#swfpcrncom table {
+<div id="prjxftkkcq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#prjxftkkcq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#swfpcrncom thead, #swfpcrncom tbody, #swfpcrncom tfoot, #swfpcrncom tr, #swfpcrncom td, #swfpcrncom th {
+#prjxftkkcq thead, #prjxftkkcq tbody, #prjxftkkcq tfoot, #prjxftkkcq tr, #prjxftkkcq td, #prjxftkkcq th {
   border-style: none;
 }
 
-#swfpcrncom p {
+#prjxftkkcq p {
   margin: 0;
   padding: 0;
 }
 
-#swfpcrncom .gt_table {
+#prjxftkkcq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1614,12 +1627,12 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-left-color: #D3D3D3;
 }
 
-#swfpcrncom .gt_caption {
+#prjxftkkcq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#swfpcrncom .gt_title {
+#prjxftkkcq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1631,7 +1644,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-width: 0;
 }
 
-#swfpcrncom .gt_subtitle {
+#prjxftkkcq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1643,7 +1656,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-width: 0;
 }
 
-#swfpcrncom .gt_heading {
+#prjxftkkcq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1655,13 +1668,13 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#swfpcrncom .gt_bottom_border {
+#prjxftkkcq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#swfpcrncom .gt_col_headings {
+#prjxftkkcq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1676,7 +1689,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#swfpcrncom .gt_col_heading {
+#prjxftkkcq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1696,7 +1709,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#swfpcrncom .gt_column_spanner_outer {
+#prjxftkkcq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1708,15 +1721,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 4px;
 }
 
-#swfpcrncom .gt_column_spanner_outer:first-child {
+#prjxftkkcq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#swfpcrncom .gt_column_spanner_outer:last-child {
+#prjxftkkcq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#swfpcrncom .gt_column_spanner {
+#prjxftkkcq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1728,11 +1741,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   width: 100%;
 }
 
-#swfpcrncom .gt_spanner_row {
+#prjxftkkcq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#swfpcrncom .gt_group_heading {
+#prjxftkkcq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1758,7 +1771,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   text-align: left;
 }
 
-#swfpcrncom .gt_empty_group_heading {
+#prjxftkkcq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1773,15 +1786,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: middle;
 }
 
-#swfpcrncom .gt_from_md > :first-child {
+#prjxftkkcq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#swfpcrncom .gt_from_md > :last-child {
+#prjxftkkcq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#swfpcrncom .gt_row {
+#prjxftkkcq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1800,7 +1813,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#swfpcrncom .gt_stub {
+#prjxftkkcq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1813,7 +1826,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#swfpcrncom .gt_stub_row_group {
+#prjxftkkcq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1827,15 +1840,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: top;
 }
 
-#swfpcrncom .gt_row_group_first td {
+#prjxftkkcq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#swfpcrncom .gt_row_group_first th {
+#prjxftkkcq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#swfpcrncom .gt_summary_row {
+#prjxftkkcq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1845,16 +1858,16 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#swfpcrncom .gt_first_summary_row {
+#prjxftkkcq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#swfpcrncom .gt_first_summary_row.thick {
+#prjxftkkcq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#swfpcrncom .gt_last_summary_row {
+#prjxftkkcq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1864,7 +1877,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#swfpcrncom .gt_grand_summary_row {
+#prjxftkkcq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1874,7 +1887,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#swfpcrncom .gt_first_grand_summary_row {
+#prjxftkkcq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1884,7 +1897,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-color: #D3D3D3;
 }
 
-#swfpcrncom .gt_last_grand_summary_row_top {
+#prjxftkkcq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1894,11 +1907,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#swfpcrncom .gt_striped {
+#prjxftkkcq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#swfpcrncom .gt_table_body {
+#prjxftkkcq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1907,7 +1920,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#swfpcrncom .gt_footnotes {
+#prjxftkkcq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1921,7 +1934,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#swfpcrncom .gt_footnote {
+#prjxftkkcq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1930,7 +1943,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#swfpcrncom .gt_sourcenotes {
+#prjxftkkcq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1944,7 +1957,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#swfpcrncom .gt_sourcenote {
+#prjxftkkcq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1952,72 +1965,72 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#swfpcrncom .gt_left {
+#prjxftkkcq .gt_left {
   text-align: left;
 }
 
-#swfpcrncom .gt_center {
+#prjxftkkcq .gt_center {
   text-align: center;
 }
 
-#swfpcrncom .gt_right {
+#prjxftkkcq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#swfpcrncom .gt_font_normal {
+#prjxftkkcq .gt_font_normal {
   font-weight: normal;
 }
 
-#swfpcrncom .gt_font_bold {
+#prjxftkkcq .gt_font_bold {
   font-weight: bold;
 }
 
-#swfpcrncom .gt_font_italic {
+#prjxftkkcq .gt_font_italic {
   font-style: italic;
 }
 
-#swfpcrncom .gt_super {
+#prjxftkkcq .gt_super {
   font-size: 65%;
 }
 
-#swfpcrncom .gt_footnote_marks {
+#prjxftkkcq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#swfpcrncom .gt_asterisk {
+#prjxftkkcq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#swfpcrncom .gt_indent_1 {
+#prjxftkkcq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#swfpcrncom .gt_indent_2 {
+#prjxftkkcq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#swfpcrncom .gt_indent_3 {
+#prjxftkkcq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#swfpcrncom .gt_indent_4 {
+#prjxftkkcq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#swfpcrncom .gt_indent_5 {
+#prjxftkkcq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#swfpcrncom .katex-display {
+#prjxftkkcq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#swfpcrncom div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#prjxftkkcq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2346,23 +2359,23 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <span id="cb21-5"><a></a>    <span class="at">cor_bill =</span> <span class="fu">round</span>(<span class="fu">cor</span>(bill_len, bill_dep), <span class="dv">3</span>)</span>
 <span id="cb21-6"><a></a>  ) <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="tnzclghxsh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tnzclghxsh table {
+<div id="gxiivjnkbv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gxiivjnkbv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tnzclghxsh thead, #tnzclghxsh tbody, #tnzclghxsh tfoot, #tnzclghxsh tr, #tnzclghxsh td, #tnzclghxsh th {
+#gxiivjnkbv thead, #gxiivjnkbv tbody, #gxiivjnkbv tfoot, #gxiivjnkbv tr, #gxiivjnkbv td, #gxiivjnkbv th {
   border-style: none;
 }
 
-#tnzclghxsh p {
+#gxiivjnkbv p {
   margin: 0;
   padding: 0;
 }
 
-#tnzclghxsh .gt_table {
+#gxiivjnkbv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2388,12 +2401,12 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-left-color: #D3D3D3;
 }
 
-#tnzclghxsh .gt_caption {
+#gxiivjnkbv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tnzclghxsh .gt_title {
+#gxiivjnkbv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2405,7 +2418,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-width: 0;
 }
 
-#tnzclghxsh .gt_subtitle {
+#gxiivjnkbv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2417,7 +2430,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-width: 0;
 }
 
-#tnzclghxsh .gt_heading {
+#gxiivjnkbv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2429,13 +2442,13 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#tnzclghxsh .gt_bottom_border {
+#gxiivjnkbv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tnzclghxsh .gt_col_headings {
+#gxiivjnkbv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2450,7 +2463,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#tnzclghxsh .gt_col_heading {
+#gxiivjnkbv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2470,7 +2483,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#tnzclghxsh .gt_column_spanner_outer {
+#gxiivjnkbv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2482,15 +2495,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 4px;
 }
 
-#tnzclghxsh .gt_column_spanner_outer:first-child {
+#gxiivjnkbv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tnzclghxsh .gt_column_spanner_outer:last-child {
+#gxiivjnkbv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tnzclghxsh .gt_column_spanner {
+#gxiivjnkbv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2502,11 +2515,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   width: 100%;
 }
 
-#tnzclghxsh .gt_spanner_row {
+#gxiivjnkbv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tnzclghxsh .gt_group_heading {
+#gxiivjnkbv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2532,7 +2545,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   text-align: left;
 }
 
-#tnzclghxsh .gt_empty_group_heading {
+#gxiivjnkbv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2547,15 +2560,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: middle;
 }
 
-#tnzclghxsh .gt_from_md > :first-child {
+#gxiivjnkbv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tnzclghxsh .gt_from_md > :last-child {
+#gxiivjnkbv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tnzclghxsh .gt_row {
+#gxiivjnkbv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2574,7 +2587,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#tnzclghxsh .gt_stub {
+#gxiivjnkbv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2587,7 +2600,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#tnzclghxsh .gt_stub_row_group {
+#gxiivjnkbv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2601,15 +2614,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: top;
 }
 
-#tnzclghxsh .gt_row_group_first td {
+#gxiivjnkbv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tnzclghxsh .gt_row_group_first th {
+#gxiivjnkbv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tnzclghxsh .gt_summary_row {
+#gxiivjnkbv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2619,16 +2632,16 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#tnzclghxsh .gt_first_summary_row {
+#gxiivjnkbv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tnzclghxsh .gt_first_summary_row.thick {
+#gxiivjnkbv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tnzclghxsh .gt_last_summary_row {
+#gxiivjnkbv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2638,7 +2651,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#tnzclghxsh .gt_grand_summary_row {
+#gxiivjnkbv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2648,7 +2661,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#tnzclghxsh .gt_first_grand_summary_row {
+#gxiivjnkbv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2658,7 +2671,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-color: #D3D3D3;
 }
 
-#tnzclghxsh .gt_last_grand_summary_row_top {
+#gxiivjnkbv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2668,11 +2681,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#tnzclghxsh .gt_striped {
+#gxiivjnkbv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tnzclghxsh .gt_table_body {
+#gxiivjnkbv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2681,7 +2694,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#tnzclghxsh .gt_footnotes {
+#gxiivjnkbv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2695,7 +2708,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#tnzclghxsh .gt_footnote {
+#gxiivjnkbv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2704,7 +2717,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#tnzclghxsh .gt_sourcenotes {
+#gxiivjnkbv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2718,7 +2731,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#tnzclghxsh .gt_sourcenote {
+#gxiivjnkbv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2726,72 +2739,72 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#tnzclghxsh .gt_left {
+#gxiivjnkbv .gt_left {
   text-align: left;
 }
 
-#tnzclghxsh .gt_center {
+#gxiivjnkbv .gt_center {
   text-align: center;
 }
 
-#tnzclghxsh .gt_right {
+#gxiivjnkbv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tnzclghxsh .gt_font_normal {
+#gxiivjnkbv .gt_font_normal {
   font-weight: normal;
 }
 
-#tnzclghxsh .gt_font_bold {
+#gxiivjnkbv .gt_font_bold {
   font-weight: bold;
 }
 
-#tnzclghxsh .gt_font_italic {
+#gxiivjnkbv .gt_font_italic {
   font-style: italic;
 }
 
-#tnzclghxsh .gt_super {
+#gxiivjnkbv .gt_super {
   font-size: 65%;
 }
 
-#tnzclghxsh .gt_footnote_marks {
+#gxiivjnkbv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tnzclghxsh .gt_asterisk {
+#gxiivjnkbv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tnzclghxsh .gt_indent_1 {
+#gxiivjnkbv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tnzclghxsh .gt_indent_2 {
+#gxiivjnkbv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tnzclghxsh .gt_indent_3 {
+#gxiivjnkbv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tnzclghxsh .gt_indent_4 {
+#gxiivjnkbv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tnzclghxsh .gt_indent_5 {
+#gxiivjnkbv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tnzclghxsh .katex-display {
+#gxiivjnkbv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tnzclghxsh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#gxiivjnkbv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2892,23 +2905,23 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <span id="cb24-6"><a></a>    <span class="at">percent =</span> <span class="st">"row"</span> <span class="co"># 行ごとの割合を表示</span></span>
 <span id="cb24-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="nztbyyjfpq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nztbyyjfpq table {
+<div id="nltszfcqym" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nltszfcqym table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nztbyyjfpq thead, #nztbyyjfpq tbody, #nztbyyjfpq tfoot, #nztbyyjfpq tr, #nztbyyjfpq td, #nztbyyjfpq th {
+#nltszfcqym thead, #nltszfcqym tbody, #nltszfcqym tfoot, #nltszfcqym tr, #nltszfcqym td, #nltszfcqym th {
   border-style: none;
 }
 
-#nztbyyjfpq p {
+#nltszfcqym p {
   margin: 0;
   padding: 0;
 }
 
-#nztbyyjfpq .gt_table {
+#nltszfcqym .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2934,12 +2947,12 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-left-color: #D3D3D3;
 }
 
-#nztbyyjfpq .gt_caption {
+#nltszfcqym .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nztbyyjfpq .gt_title {
+#nltszfcqym .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2951,7 +2964,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-width: 0;
 }
 
-#nztbyyjfpq .gt_subtitle {
+#nltszfcqym .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2963,7 +2976,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-width: 0;
 }
 
-#nztbyyjfpq .gt_heading {
+#nltszfcqym .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2975,13 +2988,13 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#nztbyyjfpq .gt_bottom_border {
+#nltszfcqym .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nztbyyjfpq .gt_col_headings {
+#nltszfcqym .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2996,7 +3009,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#nztbyyjfpq .gt_col_heading {
+#nltszfcqym .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3016,7 +3029,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#nztbyyjfpq .gt_column_spanner_outer {
+#nltszfcqym .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3028,15 +3041,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 4px;
 }
 
-#nztbyyjfpq .gt_column_spanner_outer:first-child {
+#nltszfcqym .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nztbyyjfpq .gt_column_spanner_outer:last-child {
+#nltszfcqym .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nztbyyjfpq .gt_column_spanner {
+#nltszfcqym .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3048,11 +3061,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   width: 100%;
 }
 
-#nztbyyjfpq .gt_spanner_row {
+#nltszfcqym .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nztbyyjfpq .gt_group_heading {
+#nltszfcqym .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3078,7 +3091,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   text-align: left;
 }
 
-#nztbyyjfpq .gt_empty_group_heading {
+#nltszfcqym .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3093,15 +3106,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: middle;
 }
 
-#nztbyyjfpq .gt_from_md > :first-child {
+#nltszfcqym .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nztbyyjfpq .gt_from_md > :last-child {
+#nltszfcqym .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nztbyyjfpq .gt_row {
+#nltszfcqym .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3120,7 +3133,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#nztbyyjfpq .gt_stub {
+#nltszfcqym .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3133,7 +3146,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#nztbyyjfpq .gt_stub_row_group {
+#nltszfcqym .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3147,15 +3160,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: top;
 }
 
-#nztbyyjfpq .gt_row_group_first td {
+#nltszfcqym .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nztbyyjfpq .gt_row_group_first th {
+#nltszfcqym .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nztbyyjfpq .gt_summary_row {
+#nltszfcqym .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3165,16 +3178,16 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#nztbyyjfpq .gt_first_summary_row {
+#nltszfcqym .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nztbyyjfpq .gt_first_summary_row.thick {
+#nltszfcqym .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nztbyyjfpq .gt_last_summary_row {
+#nltszfcqym .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3184,7 +3197,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#nztbyyjfpq .gt_grand_summary_row {
+#nltszfcqym .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3194,7 +3207,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#nztbyyjfpq .gt_first_grand_summary_row {
+#nltszfcqym .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3204,7 +3217,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-color: #D3D3D3;
 }
 
-#nztbyyjfpq .gt_last_grand_summary_row_top {
+#nltszfcqym .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3214,11 +3227,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#nztbyyjfpq .gt_striped {
+#nltszfcqym .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nztbyyjfpq .gt_table_body {
+#nltszfcqym .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3227,7 +3240,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#nztbyyjfpq .gt_footnotes {
+#nltszfcqym .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3241,7 +3254,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#nztbyyjfpq .gt_footnote {
+#nltszfcqym .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3250,7 +3263,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#nztbyyjfpq .gt_sourcenotes {
+#nltszfcqym .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3264,7 +3277,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#nztbyyjfpq .gt_sourcenote {
+#nltszfcqym .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3272,72 +3285,72 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#nztbyyjfpq .gt_left {
+#nltszfcqym .gt_left {
   text-align: left;
 }
 
-#nztbyyjfpq .gt_center {
+#nltszfcqym .gt_center {
   text-align: center;
 }
 
-#nztbyyjfpq .gt_right {
+#nltszfcqym .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nztbyyjfpq .gt_font_normal {
+#nltszfcqym .gt_font_normal {
   font-weight: normal;
 }
 
-#nztbyyjfpq .gt_font_bold {
+#nltszfcqym .gt_font_bold {
   font-weight: bold;
 }
 
-#nztbyyjfpq .gt_font_italic {
+#nltszfcqym .gt_font_italic {
   font-style: italic;
 }
 
-#nztbyyjfpq .gt_super {
+#nltszfcqym .gt_super {
   font-size: 65%;
 }
 
-#nztbyyjfpq .gt_footnote_marks {
+#nltszfcqym .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nztbyyjfpq .gt_asterisk {
+#nltszfcqym .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nztbyyjfpq .gt_indent_1 {
+#nltszfcqym .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nztbyyjfpq .gt_indent_2 {
+#nltszfcqym .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nztbyyjfpq .gt_indent_3 {
+#nltszfcqym .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nztbyyjfpq .gt_indent_4 {
+#nltszfcqym .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nztbyyjfpq .gt_indent_5 {
+#nltszfcqym .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nztbyyjfpq .katex-display {
+#nltszfcqym .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nztbyyjfpq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nltszfcqym div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3446,23 +3459,23 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div id="tabset-3-2">
 <div class="cell">
 <div class="cell-output-display">
-<div id="jvkdhzrjgo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jvkdhzrjgo table {
+<div id="wucldulell" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wucldulell table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jvkdhzrjgo thead, #jvkdhzrjgo tbody, #jvkdhzrjgo tfoot, #jvkdhzrjgo tr, #jvkdhzrjgo td, #jvkdhzrjgo th {
+#wucldulell thead, #wucldulell tbody, #wucldulell tfoot, #wucldulell tr, #wucldulell td, #wucldulell th {
   border-style: none;
 }
 
-#jvkdhzrjgo p {
+#wucldulell p {
   margin: 0;
   padding: 0;
 }
 
-#jvkdhzrjgo .gt_table {
+#wucldulell .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3488,12 +3501,12 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-left-color: #D3D3D3;
 }
 
-#jvkdhzrjgo .gt_caption {
+#wucldulell .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jvkdhzrjgo .gt_title {
+#wucldulell .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3505,7 +3518,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-width: 0;
 }
 
-#jvkdhzrjgo .gt_subtitle {
+#wucldulell .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3517,7 +3530,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-width: 0;
 }
 
-#jvkdhzrjgo .gt_heading {
+#wucldulell .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3529,13 +3542,13 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#jvkdhzrjgo .gt_bottom_border {
+#wucldulell .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jvkdhzrjgo .gt_col_headings {
+#wucldulell .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3550,7 +3563,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#jvkdhzrjgo .gt_col_heading {
+#wucldulell .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3570,7 +3583,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#jvkdhzrjgo .gt_column_spanner_outer {
+#wucldulell .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3582,15 +3595,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 4px;
 }
 
-#jvkdhzrjgo .gt_column_spanner_outer:first-child {
+#wucldulell .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jvkdhzrjgo .gt_column_spanner_outer:last-child {
+#wucldulell .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jvkdhzrjgo .gt_column_spanner {
+#wucldulell .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3602,11 +3615,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   width: 100%;
 }
 
-#jvkdhzrjgo .gt_spanner_row {
+#wucldulell .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jvkdhzrjgo .gt_group_heading {
+#wucldulell .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3632,7 +3645,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   text-align: left;
 }
 
-#jvkdhzrjgo .gt_empty_group_heading {
+#wucldulell .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3647,15 +3660,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: middle;
 }
 
-#jvkdhzrjgo .gt_from_md > :first-child {
+#wucldulell .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jvkdhzrjgo .gt_from_md > :last-child {
+#wucldulell .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jvkdhzrjgo .gt_row {
+#wucldulell .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3674,7 +3687,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#jvkdhzrjgo .gt_stub {
+#wucldulell .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3687,7 +3700,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#jvkdhzrjgo .gt_stub_row_group {
+#wucldulell .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3701,15 +3714,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: top;
 }
 
-#jvkdhzrjgo .gt_row_group_first td {
+#wucldulell .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jvkdhzrjgo .gt_row_group_first th {
+#wucldulell .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jvkdhzrjgo .gt_summary_row {
+#wucldulell .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3719,16 +3732,16 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#jvkdhzrjgo .gt_first_summary_row {
+#wucldulell .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jvkdhzrjgo .gt_first_summary_row.thick {
+#wucldulell .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jvkdhzrjgo .gt_last_summary_row {
+#wucldulell .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3738,7 +3751,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#jvkdhzrjgo .gt_grand_summary_row {
+#wucldulell .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3748,7 +3761,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#jvkdhzrjgo .gt_first_grand_summary_row {
+#wucldulell .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3758,7 +3771,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-color: #D3D3D3;
 }
 
-#jvkdhzrjgo .gt_last_grand_summary_row_top {
+#wucldulell .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3768,11 +3781,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#jvkdhzrjgo .gt_striped {
+#wucldulell .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jvkdhzrjgo .gt_table_body {
+#wucldulell .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3781,7 +3794,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#jvkdhzrjgo .gt_footnotes {
+#wucldulell .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3795,7 +3808,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#jvkdhzrjgo .gt_footnote {
+#wucldulell .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3804,7 +3817,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#jvkdhzrjgo .gt_sourcenotes {
+#wucldulell .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3818,7 +3831,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#jvkdhzrjgo .gt_sourcenote {
+#wucldulell .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3826,72 +3839,72 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#jvkdhzrjgo .gt_left {
+#wucldulell .gt_left {
   text-align: left;
 }
 
-#jvkdhzrjgo .gt_center {
+#wucldulell .gt_center {
   text-align: center;
 }
 
-#jvkdhzrjgo .gt_right {
+#wucldulell .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jvkdhzrjgo .gt_font_normal {
+#wucldulell .gt_font_normal {
   font-weight: normal;
 }
 
-#jvkdhzrjgo .gt_font_bold {
+#wucldulell .gt_font_bold {
   font-weight: bold;
 }
 
-#jvkdhzrjgo .gt_font_italic {
+#wucldulell .gt_font_italic {
   font-style: italic;
 }
 
-#jvkdhzrjgo .gt_super {
+#wucldulell .gt_super {
   font-size: 65%;
 }
 
-#jvkdhzrjgo .gt_footnote_marks {
+#wucldulell .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jvkdhzrjgo .gt_asterisk {
+#wucldulell .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jvkdhzrjgo .gt_indent_1 {
+#wucldulell .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jvkdhzrjgo .gt_indent_2 {
+#wucldulell .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jvkdhzrjgo .gt_indent_3 {
+#wucldulell .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jvkdhzrjgo .gt_indent_4 {
+#wucldulell .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jvkdhzrjgo .gt_indent_5 {
+#wucldulell .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jvkdhzrjgo .katex-display {
+#wucldulell .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jvkdhzrjgo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wucldulell div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4026,23 +4039,23 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div id="tabset-4-2">
 <div class="cell">
 <div class="cell-output-display">
-<div id="refkkgqwkn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#refkkgqwkn table {
+<div id="llspizrlsd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#llspizrlsd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#refkkgqwkn thead, #refkkgqwkn tbody, #refkkgqwkn tfoot, #refkkgqwkn tr, #refkkgqwkn td, #refkkgqwkn th {
+#llspizrlsd thead, #llspizrlsd tbody, #llspizrlsd tfoot, #llspizrlsd tr, #llspizrlsd td, #llspizrlsd th {
   border-style: none;
 }
 
-#refkkgqwkn p {
+#llspizrlsd p {
   margin: 0;
   padding: 0;
 }
 
-#refkkgqwkn .gt_table {
+#llspizrlsd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4068,12 +4081,12 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-left-color: #D3D3D3;
 }
 
-#refkkgqwkn .gt_caption {
+#llspizrlsd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#refkkgqwkn .gt_title {
+#llspizrlsd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4085,7 +4098,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-width: 0;
 }
 
-#refkkgqwkn .gt_subtitle {
+#llspizrlsd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4097,7 +4110,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-width: 0;
 }
 
-#refkkgqwkn .gt_heading {
+#llspizrlsd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4109,13 +4122,13 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#refkkgqwkn .gt_bottom_border {
+#llspizrlsd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#refkkgqwkn .gt_col_headings {
+#llspizrlsd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4130,7 +4143,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#refkkgqwkn .gt_col_heading {
+#llspizrlsd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4150,7 +4163,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#refkkgqwkn .gt_column_spanner_outer {
+#llspizrlsd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4162,15 +4175,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 4px;
 }
 
-#refkkgqwkn .gt_column_spanner_outer:first-child {
+#llspizrlsd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#refkkgqwkn .gt_column_spanner_outer:last-child {
+#llspizrlsd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#refkkgqwkn .gt_column_spanner {
+#llspizrlsd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4182,11 +4195,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   width: 100%;
 }
 
-#refkkgqwkn .gt_spanner_row {
+#llspizrlsd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#refkkgqwkn .gt_group_heading {
+#llspizrlsd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4212,7 +4225,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   text-align: left;
 }
 
-#refkkgqwkn .gt_empty_group_heading {
+#llspizrlsd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4227,15 +4240,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: middle;
 }
 
-#refkkgqwkn .gt_from_md > :first-child {
+#llspizrlsd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#refkkgqwkn .gt_from_md > :last-child {
+#llspizrlsd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#refkkgqwkn .gt_row {
+#llspizrlsd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4254,7 +4267,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#refkkgqwkn .gt_stub {
+#llspizrlsd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4267,7 +4280,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#refkkgqwkn .gt_stub_row_group {
+#llspizrlsd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4281,15 +4294,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: top;
 }
 
-#refkkgqwkn .gt_row_group_first td {
+#llspizrlsd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#refkkgqwkn .gt_row_group_first th {
+#llspizrlsd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#refkkgqwkn .gt_summary_row {
+#llspizrlsd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4299,16 +4312,16 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#refkkgqwkn .gt_first_summary_row {
+#llspizrlsd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#refkkgqwkn .gt_first_summary_row.thick {
+#llspizrlsd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#refkkgqwkn .gt_last_summary_row {
+#llspizrlsd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4318,7 +4331,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#refkkgqwkn .gt_grand_summary_row {
+#llspizrlsd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4328,7 +4341,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#refkkgqwkn .gt_first_grand_summary_row {
+#llspizrlsd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4338,7 +4351,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-color: #D3D3D3;
 }
 
-#refkkgqwkn .gt_last_grand_summary_row_top {
+#llspizrlsd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4348,11 +4361,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#refkkgqwkn .gt_striped {
+#llspizrlsd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#refkkgqwkn .gt_table_body {
+#llspizrlsd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4361,7 +4374,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#refkkgqwkn .gt_footnotes {
+#llspizrlsd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4375,7 +4388,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#refkkgqwkn .gt_footnote {
+#llspizrlsd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4384,7 +4397,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#refkkgqwkn .gt_sourcenotes {
+#llspizrlsd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4398,7 +4411,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#refkkgqwkn .gt_sourcenote {
+#llspizrlsd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4406,72 +4419,72 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#refkkgqwkn .gt_left {
+#llspizrlsd .gt_left {
   text-align: left;
 }
 
-#refkkgqwkn .gt_center {
+#llspizrlsd .gt_center {
   text-align: center;
 }
 
-#refkkgqwkn .gt_right {
+#llspizrlsd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#refkkgqwkn .gt_font_normal {
+#llspizrlsd .gt_font_normal {
   font-weight: normal;
 }
 
-#refkkgqwkn .gt_font_bold {
+#llspizrlsd .gt_font_bold {
   font-weight: bold;
 }
 
-#refkkgqwkn .gt_font_italic {
+#llspizrlsd .gt_font_italic {
   font-style: italic;
 }
 
-#refkkgqwkn .gt_super {
+#llspizrlsd .gt_super {
   font-size: 65%;
 }
 
-#refkkgqwkn .gt_footnote_marks {
+#llspizrlsd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#refkkgqwkn .gt_asterisk {
+#llspizrlsd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#refkkgqwkn .gt_indent_1 {
+#llspizrlsd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#refkkgqwkn .gt_indent_2 {
+#llspizrlsd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#refkkgqwkn .gt_indent_3 {
+#llspizrlsd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#refkkgqwkn .gt_indent_4 {
+#llspizrlsd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#refkkgqwkn .gt_indent_5 {
+#llspizrlsd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#refkkgqwkn .katex-display {
+#llspizrlsd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#refkkgqwkn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#llspizrlsd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4530,8 +4543,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <h2>基本：代入</h2>
 <h3 id="代入">代入</h3>
 <ul>
-<li>代入 = 値や計算結果を変数や列に「入れる」こと</li>
-<li>Rでは「<em>&lt;-</em>」（左向き矢印）が一般的</li>
+<li>代入 = 値や計算結果を変数や列に「入れる」こと（正確には、変数名に値や計算結果を結びつける）</li>
+<li>Rでは通常 x <em>&lt;-</em> 1 のように左向き矢印を使う
+<ul>
+<li>1 <em>-&gt;</em> x（コード末尾に代入）と書いても同じ意味、処理だが、一般的ではない</li>
+</ul></li>
 </ul>
 <h3 id="代入の目的とパターン">代入の目的とパターン</h3>
 <ul>
@@ -4633,7 +4649,8 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <ul>
 <li>ggsave()関数
 <ul>
-<li>あらかじめ出力先フォルダを作る（例：img）</li>
+<li>あらかじめ、qmdファイルと同じ階層に出力先フォルダを作る（例：img）</li>
+<li>ggsave()関数はパイプ処理できないため、オブジェクトに代入</li>
 </ul></li>
 </ul>
 <div class="cell">
@@ -4652,7 +4669,8 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <ul>
 <li>write_csv()関数
 <ul>
-<li>あらかじめ出力先フォルダを作る（例：data）</li>
+<li>あらかじめ、qmdファイルと同じ階層に出力先フォルダを作る（例：data）</li>
+<li>write_csv()関数はパイプ処理できないため、オブジェクトに代入</li>
 </ul></li>
 </ul>
 <div class="cell">
@@ -4680,6 +4698,14 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="co"># xlsxとして書き出す</span></span>
 <span id="cb31-2"><a></a><span class="fu">write_xlsx</span>(t, <span class="st">"data/penguins_summary.csv"</span>) <span class="co"># 出力するオブジェクトと、出力先を指定</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="基本練習問題" class="slide level2">
+<h2>基本：練習問題</h2>
+<p>penguinsのデータセットを用いて、Biscoe（ビスコー）島に住むペンギンの特徴を分析して下さい。</p>
+<ol type="1">
+<li><p>任意の観測データを用いて、種別ごとの平均値を算出して下さい。算出したデータを新しいオブジェクトに入れて下さい（オブジェクト名は、わかりやすい名前を任意でつけて下さい）</p></li>
+<li><p>（時間が余った人だけ）上記で作成したオブジェクトをggplotに渡して、任意の図を作成して下さい</p></li>
+</ol>
 </section></section>
 <section>
 <section id="実践編rを動かしてみよう社会科学のデータ" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
@@ -4723,7 +4749,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-36-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-37-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -4766,7 +4792,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-39-1.png" width="960"></p>
+<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-40-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -4783,6 +4809,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <ul>
 <li>保存形式はcsvとする</li>
 <li>新たにdataというフォルダを作って、そこに保存</li>
+<li>ファイル名は任意（英数字がよい）</li>
 </ul></li>
 </ul>
 <h3 id="e-statの難しさ">e-statの難しさ</h3>
@@ -4831,7 +4858,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div id="tabset-7-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>df_inbound <span class="ot">&lt;-</span></span>
-<span id="cb35-2"><a></a>  <span class="fu">read_csv</span>(<span class="st">"data/inbound_travelers.csv"</span>)</span>
+<span id="cb35-2"><a></a>  <span class="fu">read_csv</span>(<span class="st">"data/inbound_travelers.csv"</span>) <span class="co"># ファイル名は各自がつけたものとする</span></span>
 <span id="cb35-3"><a></a></span>
 <span id="cb35-4"><a></a>df_inbound <span class="sc">|&gt;</span> </span>
 <span id="cb35-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> <span class="st">`</span><span class="at">Visitor Arrivals</span><span class="st">`</span>)) <span class="sc">+</span> <span class="co"># カラム名に空白や記号が含まれている場合は、バッククォート（`）で囲む（日本語キーボード：Shift + @ / 英語キーボード：数字の1の左）</span></span>
@@ -4851,7 +4878,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-41-1.png" width="960"></p>
+<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-42-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -4971,7 +4998,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 </div>
 </div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>United Nations, <a href="https://population.un.org/wpp/downloads?folder=Standard%20Projections&amp;group=Population">World Population Prospects 2024</a></p></li><li id="fn3"><p>Parline, <a href="https://data.ipu.org/data-explorer/?fields=country_name,chamber_name,not_directly_elected,compulsory_voting,number_of_members.total,number_of_members.gender&amp;current_page=2&amp;per_page=500&amp;date=2025-10-01&amp;sort=country_name">Data explorer</a></p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>United Nations, <a href="https://population.un.org/wpp/downloads?folder=Standard%20Projections&amp;group=Population">World Population Prospects 2024</a></p></li><li id="fn4"><p>Parline, <a href="https://data.ipu.org/data-explorer/?fields=country_name,chamber_name,not_directly_elected,compulsory_voting,number_of_members.total,number_of_members.gender&amp;current_page=2&amp;per_page=500&amp;date=2025-10-01&amp;sort=country_name">Data explorer</a></p></li></ol></aside></section>
 <section id="実践データの結合oecd加盟国の人口100万人あたりの議員数-1" class="slide level2">
 <h2>実践：データの結合（OECD加盟国の人口100万人あたりの議員数）</h2>
 <div class="panel-tabset">
@@ -5068,7 +5095,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-47-1.png" width="960"></p>
+<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-48-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -5089,12 +5116,12 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>df_hospital <span class="ot">&lt;-</span> </span>
-<span id="cb41-2"><a></a>  <span class="fu">read_csv</span>(<span class="st">"data/金沢広域急病センター利用者数.csv"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb41-2"><a></a>  <span class="fu">read_csv</span>(<span class="st">"data/kanazawaemergencycenter_users.csv"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb41-3"><a></a>  <span class="fu">mutate</span>(</span>
 <span id="cb41-4"><a></a>    曜日 <span class="ot">=</span> <span class="fu">factor</span>(曜日, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"月"</span>, <span class="st">"火"</span>, <span class="st">"水"</span>, <span class="st">"木"</span>, <span class="st">"金"</span>, <span class="st">"土"</span>, <span class="st">"日"</span>)) <span class="co"># 曜日順に並べるための処理</span></span>
 <span id="cb41-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn4"><p><a href="https://catalog-data.city.kanazawa.ishikawa.jp/dataset/172014-kouikikyubyocenter_riyousyasuu/resource/246ad33b-8141-4672-b5ec-f6e52ae4263b">ckan: 金沢市 &gt; 金沢広域急病センター利用者数</a></p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn5"><p><a href="https://catalog-data.city.kanazawa.ishikawa.jp/dataset/172014-kouikikyubyocenter_riyousyasuu/resource/246ad33b-8141-4672-b5ec-f6e52ae4263b">ckan: 金沢市 &gt; 金沢広域急病センター利用者数</a></p></li></ol></aside></section>
 <section id="実践縦持ち横持ち金沢広域急病センター利用者数-1" class="slide level2">
 <h2>実践：縦持ち・横持ち（金沢広域急病センター利用者数）</h2>
 <h3 id="データの確認横持ちデータ">データの確認：横持ちデータ</h3>
@@ -5152,11 +5179,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <span id="cb45-7"><a></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-51-1.png" width="960" class="r-stretch"></section>
+<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-52-1.png" width="960" class="r-stretch"></section>
 <section id="実践比べられる図比例代表得票数" class="slide level2">
 <h2>実践：比べられる図（比例代表得票数）</h2>
 <ol type="1">
-<li><a href="https://drive.google.com/drive/folders/1ZkAaooz5znCVIuqgmxhyfGhq7UpOR6a3?usp=sharing">Google Drive</a>からファイルをダウンロード（出所：<a href="https://yukiyanai.github.io/jp/resources/data/hr2021_pr_parties.csv">Yuki Yanai</a>）</li>
+<li><a href="https://drive.google.com/drive/folders/1ZkAaooz5znCVIuqgmxhyfGhq7UpOR6a3?usp=sharing">Google Drive</a>からファイルをダウンロード（出所<sup>1</sup>）</li>
 <li>dataフォルダに保存</li>
 </ol>
 <ul>
@@ -5184,7 +5211,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <span id="cb46-17"><a></a>主要政党 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"自由民主党"</span>, <span class="st">"立憲民主党"</span>, <span class="st">"公明党"</span>, <span class="st">"国民民主党"</span>, <span class="st">"日本維新の会"</span>, <span class="st">"日本共産党"</span>, <span class="st">"社会民主党"</span>, <span class="st">"れいわ新選組"</span>, <span class="st">"参政党"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
+<aside><ol class="aside-footnotes"><li id="fn6"><p><a href="https://yukiyanai.github.io/jp/resources/data/hr2021_pr_parties.csv">Yuki Yanai</a>）</p></li></ol></aside></section>
 <section id="実践比べられる図比例代表得票数-1" class="slide level2">
 <h2>実践：比べられる図（比例代表得票数）</h2>
 <h3 id="衆議院議員選挙-比例代表得票数2021-vs.-2024">衆議院議員選挙 比例代表得票数：2021 vs.&nbsp;2024</h3>
@@ -5214,7 +5241,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-54-1.png" width="960"></p>
+<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-55-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -5259,7 +5286,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-56-1.png" width="960"></p>
+<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-57-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -5267,6 +5294,31 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 </div>
 </div>
 </div>
+</section>
+<section id="実践練習問題" class="slide level2">
+<h2>実践：練習問題</h2>
+<ul>
+<li>OECD加盟国の人口100万人あたりの議員数で用いた二つのデータを使って（population.xlsx; parliaments.csv）、以下の指示に従った図を作図して下さい。作図にあたっては、（ワンコードで書ける分量ですが）、一旦、オブジェクトを作成して、それをggplotに渡して下さい</li>
+</ul>
+<ol type="1">
+<li>G7各国のみにデータを絞る</li>
+<li>65歳以上のデータを抽出する</li>
+<li>棒グラフを作図する</li>
+<li>全人口の図と比較する</li>
+<li>（時間が余った人のみ）18歳未満のデータで同じことをしてみましょう</li>
+</ol>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>既存のコードを有効に活用しよう / （処理が複雑になっています）変数名、オブジェクト名をわかりやすく付けよう</p>
+</div>
+</div>
+</div>
+<!-- ## 実践：練習問題 -->
+<!-- - ここでは出力結果を見比べるために、ggplotの出力結果をオブジェクトに格納して、patchworkパッケージを使って並べています -->
 </section></section>
 <section>
 <section id="発展編rを使いこなそうスクレーピングmap関数ほか" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
@@ -5280,7 +5332,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <li>以下のコードでは、pdftools パッケージで PDF からテキストを読み取り、stringr パッケージの関数を使って特定の文字（例：改行コード）を置換しています。stringr は tidyverse に含まれるパッケージです</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">Code</a></li><li><a href="#tabset-11-2">Plot</a></li></ul>
+<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">Code</a></li><li><a href="#tabset-11-2">Print</a></li></ul>
 <div class="tab-content">
 <div id="tabset-11-1">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a><span class="fu">library</span>(pdftools)</span>
@@ -5322,76 +5374,57 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 </section>
 <section id="発展スクレーピング総理の演説記者会見など-1" class="slide level2">
 <h2>発展：スクレーピング（「総理の演説・記者会見など」）</h2>
-<ul>
-<li>「関数定義」「URL収集」「本文抽出」「整形・保存」ごとにchunkを分ける</li>
-</ul>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a><span class="co"># --- indexページから記事URLを抽出 ---</span></span>
-<span id="cb51-2"><a></a>get_article_urls <span class="ot">&lt;-</span> <span class="cf">function</span>(page_url) {</span>
-<span id="cb51-3"><a></a>  req <span class="ot">&lt;-</span> <span class="fu">request</span>(page_url) <span class="sc">|&gt;</span> <span class="fu">req_perform</span>()</span>
-<span id="cb51-4"><a></a>  html <span class="ot">&lt;-</span> <span class="fu">resp_body_html</span>(req)</span>
-<span id="cb51-5"><a></a>  </span>
-<span id="cb51-6"><a></a>  hrefs <span class="ot">&lt;-</span> html <span class="sc">|&gt;</span> <span class="fu">html_elements</span>(<span class="st">"a"</span>) <span class="sc">|&gt;</span> <span class="fu">html_attr</span>(<span class="st">"href"</span>)</span>
-<span id="cb51-7"><a></a>  relative_urls <span class="ot">&lt;-</span> hrefs[<span class="fu">str_detect</span>(hrefs, <span class="st">"^/jp/(102_ishiba|103)/statement/</span><span class="sc">\\</span><span class="st">d{4}/</span><span class="sc">\\</span><span class="st">d{4}.*</span><span class="sc">\\</span><span class="st">.html$"</span>)]</span>
-<span id="cb51-8"><a></a>  </span>
-<span id="cb51-9"><a></a>  <span class="fu">paste0</span>(<span class="st">"https://www.kantei.go.jp"</span>, <span class="fu">unique</span>(<span class="fu">na.omit</span>(relative_urls)))</span>
-<span id="cb51-10"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a><span class="co"># --- ベースURLから全indexページを収集 ---</span></span>
-<span id="cb52-2"><a></a>collect_all_article_urls <span class="ot">&lt;-</span> <span class="cf">function</span>(base_urls) {</span>
-<span id="cb52-3"><a></a>  all_index_pages <span class="ot">&lt;-</span> <span class="fu">map</span>(base_urls, <span class="cf">function</span>(base) {</span>
-<span id="cb52-4"><a></a>    resp <span class="ot">&lt;-</span> <span class="fu">request</span>(base) <span class="sc">|&gt;</span> <span class="fu">req_perform</span>()</span>
-<span id="cb52-5"><a></a>    html <span class="ot">&lt;-</span> <span class="fu">resp_body_html</span>(resp)</span>
-<span id="cb52-6"><a></a>    archive_links <span class="ot">&lt;-</span> html <span class="sc">|&gt;</span> <span class="fu">html_elements</span>(<span class="st">"a"</span>) <span class="sc">|&gt;</span> <span class="fu">html_attr</span>(<span class="st">"href"</span>)</span>
-<span id="cb52-7"><a></a>    archive_links <span class="ot">&lt;-</span> archive_links[<span class="fu">str_detect</span>(archive_links, <span class="st">"statement/index_</span><span class="sc">\\</span><span class="st">d{4}</span><span class="sc">\\</span><span class="st">.html$"</span>)]</span>
-<span id="cb52-8"><a></a>    archive_links <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://www.kantei.go.jp"</span>, archive_links)</span>
-<span id="cb52-9"><a></a>    <span class="fu">c</span>(base, archive_links)</span>
-<span id="cb52-10"><a></a>  }) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">unique</span>()</span>
-<span id="cb52-11"><a></a>  </span>
-<span id="cb52-12"><a></a>    <span class="co"># 各indexページから記事URLを取得</span></span>
-<span id="cb52-13"><a></a>  article_urls <span class="ot">&lt;-</span> <span class="fu">map</span>(all_index_pages, get_article_urls) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">unique</span>()</span>
-<span id="cb52-14"><a></a>  <span class="fu">message</span>(<span class="st">"取得した記事数: "</span>, <span class="fu">length</span>(article_urls))</span>
-<span id="cb52-15"><a></a>  article_urls</span>
-<span id="cb52-16"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>base_urls <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb53-2"><a></a>  <span class="st">"https://www.kantei.go.jp/jp/102_ishiba/statement/index.html"</span>,</span>
-<span id="cb53-3"><a></a>  <span class="st">"https://www.kantei.go.jp/jp/103/statement/index.html"</span></span>
-<span id="cb53-4"><a></a>)</span>
-<span id="cb53-5"><a></a></span>
-<span id="cb53-6"><a></a>article_urls <span class="ot">&lt;-</span> <span class="fu">collect_all_article_urls</span>(base_urls)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a>articles_info <span class="ot">&lt;-</span> <span class="fu">map</span>(article_urls, extract_article_info) <span class="sc">|&gt;</span> </span>
-<span id="cb54-2"><a></a>  <span class="fu">compact</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>df_articles <span class="ot">&lt;-</span> </span>
-<span id="cb55-2"><a></a>  <span class="fu">bind_rows</span>(articles_info) <span class="sc">|&gt;</span></span>
-<span id="cb55-3"><a></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">convert_jdate</span>(date)) <span class="sc">|&gt;</span></span>
-<span id="cb55-4"><a></a>  <span class="fu">arrange</span>(date)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a><span class="fu">saveRDS</span>(df_articles, <span class="st">"speech_ishiba.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a><span class="co"># 「関数定義」「URL収集」「本文抽出」「整形・保存」ごとにchunkを分ける方がいいが、ここでは一つのチャンクで書く</span></span>
+<span id="cb51-2"><a></a></span>
+<span id="cb51-3"><a></a><span class="co"># --- indexページから記事URLを抽出 ---</span></span>
+<span id="cb51-4"><a></a>get_article_urls <span class="ot">&lt;-</span> <span class="cf">function</span>(page_url) {</span>
+<span id="cb51-5"><a></a>  req <span class="ot">&lt;-</span> <span class="fu">request</span>(page_url) <span class="sc">|&gt;</span> <span class="fu">req_perform</span>()</span>
+<span id="cb51-6"><a></a>  html <span class="ot">&lt;-</span> <span class="fu">resp_body_html</span>(req)</span>
+<span id="cb51-7"><a></a>  </span>
+<span id="cb51-8"><a></a>  hrefs <span class="ot">&lt;-</span> html <span class="sc">|&gt;</span> <span class="fu">html_elements</span>(<span class="st">"a"</span>) <span class="sc">|&gt;</span> <span class="fu">html_attr</span>(<span class="st">"href"</span>)</span>
+<span id="cb51-9"><a></a>  relative_urls <span class="ot">&lt;-</span> hrefs[<span class="fu">str_detect</span>(hrefs, <span class="st">"^/jp/(102_ishiba|103)/statement/</span><span class="sc">\\</span><span class="st">d{4}/</span><span class="sc">\\</span><span class="st">d{4}.*</span><span class="sc">\\</span><span class="st">.html$"</span>)]</span>
+<span id="cb51-10"><a></a>  </span>
+<span id="cb51-11"><a></a>  <span class="fu">paste0</span>(<span class="st">"https://www.kantei.go.jp"</span>, <span class="fu">unique</span>(<span class="fu">na.omit</span>(relative_urls)))</span>
+<span id="cb51-12"><a></a>}</span>
+<span id="cb51-13"><a></a></span>
+<span id="cb51-14"><a></a><span class="co"># ベースURLから全indexページを収集</span></span>
+<span id="cb51-15"><a></a>collect_all_article_urls <span class="ot">&lt;-</span> <span class="cf">function</span>(base_urls) {</span>
+<span id="cb51-16"><a></a>  all_index_pages <span class="ot">&lt;-</span> <span class="fu">map</span>(base_urls, <span class="cf">function</span>(base) {</span>
+<span id="cb51-17"><a></a>    resp <span class="ot">&lt;-</span> <span class="fu">request</span>(base) <span class="sc">|&gt;</span> <span class="fu">req_perform</span>()</span>
+<span id="cb51-18"><a></a>    html <span class="ot">&lt;-</span> <span class="fu">resp_body_html</span>(resp)</span>
+<span id="cb51-19"><a></a>    archive_links <span class="ot">&lt;-</span> html <span class="sc">|&gt;</span> <span class="fu">html_elements</span>(<span class="st">"a"</span>) <span class="sc">|&gt;</span> <span class="fu">html_attr</span>(<span class="st">"href"</span>)</span>
+<span id="cb51-20"><a></a>    archive_links <span class="ot">&lt;-</span> archive_links[<span class="fu">str_detect</span>(archive_links, <span class="st">"statement/index_</span><span class="sc">\\</span><span class="st">d{4}</span><span class="sc">\\</span><span class="st">.html$"</span>)]</span>
+<span id="cb51-21"><a></a>    archive_links <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://www.kantei.go.jp"</span>, archive_links)</span>
+<span id="cb51-22"><a></a>    <span class="fu">c</span>(base, archive_links)</span>
+<span id="cb51-23"><a></a>  }) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">unique</span>()</span>
+<span id="cb51-24"><a></a>  </span>
+<span id="cb51-25"><a></a>  <span class="co"># 各indexページから記事URLとデータを取得</span></span>
+<span id="cb51-26"><a></a>  article_urls <span class="ot">&lt;-</span> <span class="fu">map</span>(all_index_pages, get_article_urls) <span class="sc">|&gt;</span> <span class="fu">unlist</span>() <span class="sc">|&gt;</span> <span class="fu">unique</span>()</span>
+<span id="cb51-27"><a></a>  <span class="fu">message</span>(<span class="st">"取得した記事数: "</span>, <span class="fu">length</span>(article_urls))</span>
+<span id="cb51-28"><a></a>  article_urls</span>
+<span id="cb51-29"><a></a>}</span>
+<span id="cb51-30"><a></a></span>
+<span id="cb51-31"><a></a>base_urls <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb51-32"><a></a>  <span class="st">"https://www.kantei.go.jp/jp/102_ishiba/statement/index.html"</span>,</span>
+<span id="cb51-33"><a></a>  <span class="st">"https://www.kantei.go.jp/jp/103/statement/index.html"</span></span>
+<span id="cb51-34"><a></a>)</span>
+<span id="cb51-35"><a></a></span>
+<span id="cb51-36"><a></a>article_urls <span class="ot">&lt;-</span> <span class="fu">collect_all_article_urls</span>(base_urls)</span>
+<span id="cb51-37"><a></a></span>
+<span id="cb51-38"><a></a>articles_info <span class="ot">&lt;-</span> <span class="fu">map</span>(article_urls, extract_article_info) <span class="sc">|&gt;</span> <span class="co"># extract_article_info()関数が個々の article_url にアクセスして 記事の本文や日付などを取得</span></span>
+<span id="cb51-39"><a></a>  <span class="fu">compact</span>() <span class="co"># リストからNULLの要素を取り除く</span></span>
+<span id="cb51-40"><a></a></span>
+<span id="cb51-41"><a></a><span class="co"># 整形</span></span>
+<span id="cb51-42"><a></a>df_articles <span class="ot">&lt;-</span> </span>
+<span id="cb51-43"><a></a>  <span class="fu">bind_rows</span>(articles_info) <span class="sc">|&gt;</span></span>
+<span id="cb51-44"><a></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">convert_jdate</span>(date)) <span class="sc">|&gt;</span> <span class="co"># zipangu パッケージの関数。和暦の日付（例：令和○年○月○日）をDate型に変換</span></span>
+<span id="cb51-45"><a></a>  <span class="fu">arrange</span>(date) <span class="co"># date列で並び替え</span></span>
+<span id="cb51-46"><a></a></span>
+<span id="cb51-47"><a></a><span class="co"># 保存</span></span>
+<span id="cb51-48"><a></a><span class="fu">saveRDS</span>(df_articles, <span class="st">"speech_ishiba.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -5403,9 +5436,9 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>df_ishiba <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">"data/speech_ishiba.rds"</span>)</span>
-<span id="cb57-2"><a></a></span>
-<span id="cb57-3"><a></a>df_ishiba<span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a>df_ishiba <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">"data/speech_ishiba.rds"</span>)</span>
+<span id="cb52-2"><a></a></span>
+<span id="cb52-3"><a></a>df_ishiba<span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 4
@@ -5416,37 +5449,37 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 </div>
 </div>
 <ul>
-<li>gt()で本文を確認</li>
+<li>gt()で本文を確認（スペースの都合）</li>
 </ul>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>df_ishiba<span class="sc">|&gt;</span> </span>
-<span id="cb59-2"><a></a>  <span class="fu">filter</span>(</span>
-<span id="cb59-3"><a></a>    title <span class="sc">==</span> <span class="st">"石破内閣総理大臣記者会見"</span>,</span>
-<span id="cb59-4"><a></a>    date <span class="sc">==</span> <span class="fu">as.Date</span>(<span class="st">"2024-10-09"</span>)</span>
-<span id="cb59-5"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb59-6"><a></a>  <span class="fu">mutate</span>(<span class="at">paragraph =</span> <span class="fu">substr</span>(paragraph, <span class="dv">1</span>, <span class="dv">50</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb59-7"><a></a>  <span class="fu">select</span>(paragraph) <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a>df_ishiba<span class="sc">|&gt;</span> </span>
+<span id="cb54-2"><a></a>  <span class="fu">filter</span>(</span>
+<span id="cb54-3"><a></a>    title <span class="sc">==</span> <span class="st">"石破内閣総理大臣記者会見"</span>,</span>
+<span id="cb54-4"><a></a>    date <span class="sc">==</span> <span class="fu">as.Date</span>(<span class="st">"2024-10-09"</span>)</span>
+<span id="cb54-5"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb54-6"><a></a>  <span class="fu">mutate</span>(<span class="at">paragraph =</span> <span class="fu">substr</span>(paragraph, <span class="dv">1</span>, <span class="dv">50</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb54-7"><a></a>  <span class="fu">select</span>(paragraph) <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="scmgmptrrm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#scmgmptrrm table {
+<div id="ccvruwqmhn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ccvruwqmhn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#scmgmptrrm thead, #scmgmptrrm tbody, #scmgmptrrm tfoot, #scmgmptrrm tr, #scmgmptrrm td, #scmgmptrrm th {
+#ccvruwqmhn thead, #ccvruwqmhn tbody, #ccvruwqmhn tfoot, #ccvruwqmhn tr, #ccvruwqmhn td, #ccvruwqmhn th {
   border-style: none;
 }
 
-#scmgmptrrm p {
+#ccvruwqmhn p {
   margin: 0;
   padding: 0;
 }
 
-#scmgmptrrm .gt_table {
+#ccvruwqmhn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5472,12 +5505,12 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-left-color: #D3D3D3;
 }
 
-#scmgmptrrm .gt_caption {
+#ccvruwqmhn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#scmgmptrrm .gt_title {
+#ccvruwqmhn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5489,7 +5522,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-width: 0;
 }
 
-#scmgmptrrm .gt_subtitle {
+#ccvruwqmhn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5501,7 +5534,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-width: 0;
 }
 
-#scmgmptrrm .gt_heading {
+#ccvruwqmhn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5513,13 +5546,13 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#scmgmptrrm .gt_bottom_border {
+#ccvruwqmhn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#scmgmptrrm .gt_col_headings {
+#ccvruwqmhn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5534,7 +5567,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#scmgmptrrm .gt_col_heading {
+#ccvruwqmhn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5554,7 +5587,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#scmgmptrrm .gt_column_spanner_outer {
+#ccvruwqmhn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5566,15 +5599,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 4px;
 }
 
-#scmgmptrrm .gt_column_spanner_outer:first-child {
+#ccvruwqmhn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#scmgmptrrm .gt_column_spanner_outer:last-child {
+#ccvruwqmhn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#scmgmptrrm .gt_column_spanner {
+#ccvruwqmhn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5586,11 +5619,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   width: 100%;
 }
 
-#scmgmptrrm .gt_spanner_row {
+#ccvruwqmhn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#scmgmptrrm .gt_group_heading {
+#ccvruwqmhn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5616,7 +5649,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   text-align: left;
 }
 
-#scmgmptrrm .gt_empty_group_heading {
+#ccvruwqmhn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5631,15 +5664,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: middle;
 }
 
-#scmgmptrrm .gt_from_md > :first-child {
+#ccvruwqmhn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#scmgmptrrm .gt_from_md > :last-child {
+#ccvruwqmhn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#scmgmptrrm .gt_row {
+#ccvruwqmhn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5658,7 +5691,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#scmgmptrrm .gt_stub {
+#ccvruwqmhn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5671,7 +5704,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#scmgmptrrm .gt_stub_row_group {
+#ccvruwqmhn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5685,15 +5718,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: top;
 }
 
-#scmgmptrrm .gt_row_group_first td {
+#ccvruwqmhn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#scmgmptrrm .gt_row_group_first th {
+#ccvruwqmhn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#scmgmptrrm .gt_summary_row {
+#ccvruwqmhn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5703,16 +5736,16 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#scmgmptrrm .gt_first_summary_row {
+#ccvruwqmhn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#scmgmptrrm .gt_first_summary_row.thick {
+#ccvruwqmhn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#scmgmptrrm .gt_last_summary_row {
+#ccvruwqmhn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5722,7 +5755,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#scmgmptrrm .gt_grand_summary_row {
+#ccvruwqmhn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5732,7 +5765,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#scmgmptrrm .gt_first_grand_summary_row {
+#ccvruwqmhn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5742,7 +5775,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-color: #D3D3D3;
 }
 
-#scmgmptrrm .gt_last_grand_summary_row_top {
+#ccvruwqmhn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5752,11 +5785,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#scmgmptrrm .gt_striped {
+#ccvruwqmhn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#scmgmptrrm .gt_table_body {
+#ccvruwqmhn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5765,7 +5798,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#scmgmptrrm .gt_footnotes {
+#ccvruwqmhn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5779,7 +5812,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#scmgmptrrm .gt_footnote {
+#ccvruwqmhn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5788,7 +5821,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#scmgmptrrm .gt_sourcenotes {
+#ccvruwqmhn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5802,7 +5835,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#scmgmptrrm .gt_sourcenote {
+#ccvruwqmhn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5810,72 +5843,72 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#scmgmptrrm .gt_left {
+#ccvruwqmhn .gt_left {
   text-align: left;
 }
 
-#scmgmptrrm .gt_center {
+#ccvruwqmhn .gt_center {
   text-align: center;
 }
 
-#scmgmptrrm .gt_right {
+#ccvruwqmhn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#scmgmptrrm .gt_font_normal {
+#ccvruwqmhn .gt_font_normal {
   font-weight: normal;
 }
 
-#scmgmptrrm .gt_font_bold {
+#ccvruwqmhn .gt_font_bold {
   font-weight: bold;
 }
 
-#scmgmptrrm .gt_font_italic {
+#ccvruwqmhn .gt_font_italic {
   font-style: italic;
 }
 
-#scmgmptrrm .gt_super {
+#ccvruwqmhn .gt_super {
   font-size: 65%;
 }
 
-#scmgmptrrm .gt_footnote_marks {
+#ccvruwqmhn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#scmgmptrrm .gt_asterisk {
+#ccvruwqmhn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#scmgmptrrm .gt_indent_1 {
+#ccvruwqmhn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#scmgmptrrm .gt_indent_2 {
+#ccvruwqmhn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#scmgmptrrm .gt_indent_3 {
+#ccvruwqmhn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#scmgmptrrm .gt_indent_4 {
+#ccvruwqmhn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#scmgmptrrm .gt_indent_5 {
+#ccvruwqmhn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#scmgmptrrm .katex-display {
+#ccvruwqmhn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#scmgmptrrm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ccvruwqmhn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5897,32 +5930,32 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a>df_ishiba<span class="sc">|&gt;</span> </span>
-<span id="cb60-2"><a></a>  <span class="fu">filter</span>(</span>
-<span id="cb60-3"><a></a>    title <span class="sc">==</span> <span class="st">"石破内閣総理大臣記者会見"</span>,</span>
-<span id="cb60-4"><a></a>    date <span class="sc">==</span> <span class="fu">as.Date</span>(<span class="st">"2025-10-10"</span>)</span>
-<span id="cb60-5"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb60-6"><a></a>  <span class="fu">mutate</span>(<span class="at">paragraph =</span> <span class="fu">substr</span>(paragraph, <span class="dv">1</span>, <span class="dv">50</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb60-7"><a></a>  <span class="fu">select</span>(paragraph) <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>df_ishiba<span class="sc">|&gt;</span> </span>
+<span id="cb55-2"><a></a>  <span class="fu">filter</span>(</span>
+<span id="cb55-3"><a></a>    title <span class="sc">==</span> <span class="st">"石破内閣総理大臣記者会見"</span>,</span>
+<span id="cb55-4"><a></a>    date <span class="sc">==</span> <span class="fu">as.Date</span>(<span class="st">"2025-10-10"</span>)</span>
+<span id="cb55-5"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb55-6"><a></a>  <span class="fu">mutate</span>(<span class="at">paragraph =</span> <span class="fu">substr</span>(paragraph, <span class="dv">1</span>, <span class="dv">50</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb55-7"><a></a>  <span class="fu">select</span>(paragraph) <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="uqgrgiwkdt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uqgrgiwkdt table {
+<div id="cxogwllsjf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cxogwllsjf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uqgrgiwkdt thead, #uqgrgiwkdt tbody, #uqgrgiwkdt tfoot, #uqgrgiwkdt tr, #uqgrgiwkdt td, #uqgrgiwkdt th {
+#cxogwllsjf thead, #cxogwllsjf tbody, #cxogwllsjf tfoot, #cxogwllsjf tr, #cxogwllsjf td, #cxogwllsjf th {
   border-style: none;
 }
 
-#uqgrgiwkdt p {
+#cxogwllsjf p {
   margin: 0;
   padding: 0;
 }
 
-#uqgrgiwkdt .gt_table {
+#cxogwllsjf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5948,12 +5981,12 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-left-color: #D3D3D3;
 }
 
-#uqgrgiwkdt .gt_caption {
+#cxogwllsjf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uqgrgiwkdt .gt_title {
+#cxogwllsjf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5965,7 +5998,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-width: 0;
 }
 
-#uqgrgiwkdt .gt_subtitle {
+#cxogwllsjf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5977,7 +6010,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-width: 0;
 }
 
-#uqgrgiwkdt .gt_heading {
+#cxogwllsjf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5989,13 +6022,13 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#uqgrgiwkdt .gt_bottom_border {
+#cxogwllsjf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uqgrgiwkdt .gt_col_headings {
+#cxogwllsjf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6010,7 +6043,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#uqgrgiwkdt .gt_col_heading {
+#cxogwllsjf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6030,7 +6063,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#uqgrgiwkdt .gt_column_spanner_outer {
+#cxogwllsjf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6042,15 +6075,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 4px;
 }
 
-#uqgrgiwkdt .gt_column_spanner_outer:first-child {
+#cxogwllsjf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uqgrgiwkdt .gt_column_spanner_outer:last-child {
+#cxogwllsjf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uqgrgiwkdt .gt_column_spanner {
+#cxogwllsjf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6062,11 +6095,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   width: 100%;
 }
 
-#uqgrgiwkdt .gt_spanner_row {
+#cxogwllsjf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uqgrgiwkdt .gt_group_heading {
+#cxogwllsjf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6092,7 +6125,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   text-align: left;
 }
 
-#uqgrgiwkdt .gt_empty_group_heading {
+#cxogwllsjf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6107,15 +6140,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: middle;
 }
 
-#uqgrgiwkdt .gt_from_md > :first-child {
+#cxogwllsjf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uqgrgiwkdt .gt_from_md > :last-child {
+#cxogwllsjf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uqgrgiwkdt .gt_row {
+#cxogwllsjf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6134,7 +6167,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   overflow-x: hidden;
 }
 
-#uqgrgiwkdt .gt_stub {
+#cxogwllsjf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6147,7 +6180,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#uqgrgiwkdt .gt_stub_row_group {
+#cxogwllsjf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6161,15 +6194,15 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   vertical-align: top;
 }
 
-#uqgrgiwkdt .gt_row_group_first td {
+#cxogwllsjf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uqgrgiwkdt .gt_row_group_first th {
+#cxogwllsjf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uqgrgiwkdt .gt_summary_row {
+#cxogwllsjf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6179,16 +6212,16 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#uqgrgiwkdt .gt_first_summary_row {
+#cxogwllsjf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uqgrgiwkdt .gt_first_summary_row.thick {
+#cxogwllsjf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uqgrgiwkdt .gt_last_summary_row {
+#cxogwllsjf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6198,7 +6231,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#uqgrgiwkdt .gt_grand_summary_row {
+#cxogwllsjf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6208,7 +6241,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#uqgrgiwkdt .gt_first_grand_summary_row {
+#cxogwllsjf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6218,7 +6251,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-top-color: #D3D3D3;
 }
 
-#uqgrgiwkdt .gt_last_grand_summary_row_top {
+#cxogwllsjf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6228,11 +6261,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#uqgrgiwkdt .gt_striped {
+#cxogwllsjf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uqgrgiwkdt .gt_table_body {
+#cxogwllsjf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6241,7 +6274,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-bottom-color: #D3D3D3;
 }
 
-#uqgrgiwkdt .gt_footnotes {
+#cxogwllsjf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6255,7 +6288,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#uqgrgiwkdt .gt_footnote {
+#cxogwllsjf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6264,7 +6297,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#uqgrgiwkdt .gt_sourcenotes {
+#cxogwllsjf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6278,7 +6311,7 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   border-right-color: #D3D3D3;
 }
 
-#uqgrgiwkdt .gt_sourcenote {
+#cxogwllsjf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6286,72 +6319,72 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
   padding-right: 5px;
 }
 
-#uqgrgiwkdt .gt_left {
+#cxogwllsjf .gt_left {
   text-align: left;
 }
 
-#uqgrgiwkdt .gt_center {
+#cxogwllsjf .gt_center {
   text-align: center;
 }
 
-#uqgrgiwkdt .gt_right {
+#cxogwllsjf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uqgrgiwkdt .gt_font_normal {
+#cxogwllsjf .gt_font_normal {
   font-weight: normal;
 }
 
-#uqgrgiwkdt .gt_font_bold {
+#cxogwllsjf .gt_font_bold {
   font-weight: bold;
 }
 
-#uqgrgiwkdt .gt_font_italic {
+#cxogwllsjf .gt_font_italic {
   font-style: italic;
 }
 
-#uqgrgiwkdt .gt_super {
+#cxogwllsjf .gt_super {
   font-size: 65%;
 }
 
-#uqgrgiwkdt .gt_footnote_marks {
+#cxogwllsjf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uqgrgiwkdt .gt_asterisk {
+#cxogwllsjf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uqgrgiwkdt .gt_indent_1 {
+#cxogwllsjf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uqgrgiwkdt .gt_indent_2 {
+#cxogwllsjf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uqgrgiwkdt .gt_indent_3 {
+#cxogwllsjf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uqgrgiwkdt .gt_indent_4 {
+#cxogwllsjf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uqgrgiwkdt .gt_indent_5 {
+#cxogwllsjf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uqgrgiwkdt .katex-display {
+#cxogwllsjf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uqgrgiwkdt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#cxogwllsjf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6386,25 +6419,25 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb61-2"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
-<span id="cb61-3"><a></a>  <span class="fu">nest</span>() <span class="sc">|&gt;</span>                  <span class="co"># グループごとにデータフレームをリスト化して1列にまとめる</span></span>
-<span id="cb61-4"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb61-5"><a></a>    <span class="at">bill_lm_result =</span> <span class="fu">map</span>(    <span class="co"># map() でリストの各要素（データフレーム）に同じ処理を適用</span></span>
-<span id="cb61-6"><a></a>      data,                  <span class="co"># 対象は nest() で作った 'data' 列</span></span>
-<span id="cb61-7"><a></a>      <span class="cf">function</span>(df) {</span>
-<span id="cb61-8"><a></a>        lm_result <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_len <span class="sc">~</span> bill_dep, <span class="at">data =</span> df)  <span class="co"># bill_len を目的変数、bill_dep を説明変数に回帰</span></span>
-<span id="cb61-9"><a></a>        <span class="fu">return</span>(lm_result)                              <span class="co"># lm の結果を返す</span></span>
-<span id="cb61-10"><a></a>      }</span>
-<span id="cb61-11"><a></a>    ),</span>
-<span id="cb61-12"><a></a>    <span class="at">coefficients =</span> <span class="fu">map</span>(      <span class="co"># map() で各回帰結果から係数を取り出す</span></span>
-<span id="cb61-13"><a></a>      bill_lm_result, </span>
-<span id="cb61-14"><a></a>      pluck, </span>
-<span id="cb61-15"><a></a>      <span class="st">"coefficients"</span></span>
-<span id="cb61-16"><a></a>    )</span>
-<span id="cb61-17"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb61-18"><a></a>  <span class="fu">unnest_wider</span>(coefficients, <span class="at">names_sep =</span> <span class="st">"_"</span>) <span class="sc">|&gt;</span>   <span class="co"># coefficients 列を列ごとに展開（intercept や傾きが列になる）</span></span>
-<span id="cb61-19"><a></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb56-2"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb56-3"><a></a>  <span class="fu">nest</span>() <span class="sc">|&gt;</span>                  <span class="co"># グループごとにデータフレームをリスト化して1列にまとめる</span></span>
+<span id="cb56-4"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb56-5"><a></a>    <span class="at">bill_lm_result =</span> <span class="fu">map</span>(    <span class="co"># map() でリストの各要素（データフレーム）に同じ処理を適用</span></span>
+<span id="cb56-6"><a></a>      data,                  <span class="co"># 対象は nest() で作った 'data' 列</span></span>
+<span id="cb56-7"><a></a>      <span class="cf">function</span>(df) {</span>
+<span id="cb56-8"><a></a>        lm_result <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_len <span class="sc">~</span> bill_dep, <span class="at">data =</span> df)  <span class="co"># bill_len を目的変数、bill_dep を説明変数に回帰</span></span>
+<span id="cb56-9"><a></a>        <span class="fu">return</span>(lm_result)                              <span class="co"># lm の結果を返す</span></span>
+<span id="cb56-10"><a></a>      }</span>
+<span id="cb56-11"><a></a>    ),</span>
+<span id="cb56-12"><a></a>    <span class="at">coefficients =</span> <span class="fu">map</span>(      <span class="co"># map() で各回帰結果から係数を取り出す</span></span>
+<span id="cb56-13"><a></a>      bill_lm_result, </span>
+<span id="cb56-14"><a></a>      pluck, </span>
+<span id="cb56-15"><a></a>      <span class="st">"coefficients"</span></span>
+<span id="cb56-16"><a></a>    )</span>
+<span id="cb56-17"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb56-18"><a></a>  <span class="fu">unnest_wider</span>(coefficients, <span class="at">names_sep =</span> <span class="st">"_"</span>) <span class="sc">|&gt;</span>   <span class="co"># coefficients 列を列ごとに展開（intercept や傾きが列になる）</span></span>
+<span id="cb56-19"><a></a>  <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 5
@@ -6424,18 +6457,18 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a><span class="co"># データを種別ごとに分ける</span></span>
-<span id="cb63-2"><a></a>adelie <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>)</span>
-<span id="cb63-3"><a></a><span class="co"># chinstrap &lt;- penguins |&gt; filter(species == "Chinstrap")</span></span>
-<span id="cb63-4"><a></a><span class="co"># gentoo &lt;- penguins |&gt; filter(species == "Gentoo")</span></span>
-<span id="cb63-5"><a></a></span>
-<span id="cb63-6"><a></a><span class="co"># 種別ごとに回帰分析を個別に書く</span></span>
-<span id="cb63-7"><a></a>adelie_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_len <span class="sc">~</span> bill_dep, <span class="at">data =</span> adelie)</span>
-<span id="cb63-8"><a></a><span class="co"># chinstrap_lm &lt;- lm(bill_len ~ bill_dep, data = chinstrap)</span></span>
-<span id="cb63-9"><a></a><span class="co"># gentoo_lm &lt;- lm(bill_len ~ bill_dep, data = gentoo)</span></span>
-<span id="cb63-10"><a></a></span>
-<span id="cb63-11"><a></a><span class="co"># 結果を確認</span></span>
-<span id="cb63-12"><a></a><span class="fu">print</span>(adelie_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a><span class="co"># データを種別ごとに分ける</span></span>
+<span id="cb58-2"><a></a>adelie <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>)</span>
+<span id="cb58-3"><a></a><span class="co"># chinstrap &lt;- penguins |&gt; filter(species == "Chinstrap")</span></span>
+<span id="cb58-4"><a></a><span class="co"># gentoo &lt;- penguins |&gt; filter(species == "Gentoo")</span></span>
+<span id="cb58-5"><a></a></span>
+<span id="cb58-6"><a></a><span class="co"># 種別ごとに回帰分析を個別に書く</span></span>
+<span id="cb58-7"><a></a>adelie_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_len <span class="sc">~</span> bill_dep, <span class="at">data =</span> adelie)</span>
+<span id="cb58-8"><a></a><span class="co"># chinstrap_lm &lt;- lm(bill_len ~ bill_dep, data = chinstrap)</span></span>
+<span id="cb58-9"><a></a><span class="co"># gentoo_lm &lt;- lm(bill_len ~ bill_dep, data = gentoo)</span></span>
+<span id="cb58-10"><a></a></span>
+<span id="cb58-11"><a></a><span class="co"># 結果を確認</span></span>
+<span id="cb58-12"><a></a><span class="fu">print</span>(adelie_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -6448,8 +6481,8 @@ Coefficients:
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="co"># print(chinstrap_lm)</span></span>
-<span id="cb65-2"><a></a><span class="co"># print(gentoo_lm)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a><span class="co"># print(chinstrap_lm)</span></span>
+<span id="cb60-2"><a></a><span class="co"># print(gentoo_lm)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="callout callout-tip callout-style-simple">
@@ -6475,24 +6508,24 @@ Coefficients:
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a><span class="co"># 1. データを整形して新しいオブジェクトに保存</span></span>
-<span id="cb66-2"><a></a>df_plot <span class="ot">&lt;-</span> df_pr_parties <span class="sc">|&gt;</span></span>
-<span id="cb66-3"><a></a>  <span class="fu">group_by</span>(year, party, block) <span class="sc">|&gt;</span></span>
-<span id="cb66-4"><a></a>  <span class="fu">summarise</span>(<span class="at">votes =</span> <span class="fu">sum</span>(votes), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb66-5"><a></a>  <span class="fu">filter</span>(party <span class="sc">%in%</span> 主要政党) <span class="sc">|&gt;</span></span>
-<span id="cb66-6"><a></a>  <span class="fu">mutate</span>(<span class="at">party =</span> <span class="fu">factor</span>(party, <span class="at">levels =</span> 主要政党))</span>
-<span id="cb66-7"><a></a></span>
-<span id="cb66-8"><a></a><span class="co"># 2. block ごとに分割（factor → character に変換）</span></span>
-<span id="cb66-9"><a></a>df_list <span class="ot">&lt;-</span> <span class="fu">split</span>(df_plot, <span class="fu">as.character</span>(df_plot<span class="sc">$</span>block))</span>
-<span id="cb66-10"><a></a></span>
-<span id="cb66-11"><a></a><span class="co"># 3. ggplot を作成</span></span>
-<span id="cb66-12"><a></a>plots <span class="ot">&lt;-</span> <span class="fu">map</span>(df_list, <span class="sc">~</span> <span class="fu">ggplot</span>(.x, <span class="fu">aes</span>(<span class="at">x =</span> party, <span class="at">y =</span> votes, <span class="at">fill =</span> <span class="fu">as.factor</span>(year))) <span class="sc">+</span></span>
-<span id="cb66-13"><a></a>                       <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb66-14"><a></a>                       <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">unique</span>(.x<span class="sc">$</span>block), <span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"得票数"</span>) <span class="sc">+</span></span>
-<span id="cb66-15"><a></a>                       <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)))</span>
-<span id="cb66-16"><a></a></span>
-<span id="cb66-17"><a></a><span class="co"># 4. プロットを表示</span></span>
-<span id="cb66-18"><a></a><span class="fu">walk</span>(plots, print)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a><span class="co"># 1. データを整形して新しいオブジェクトに保存</span></span>
+<span id="cb61-2"><a></a>df_plot <span class="ot">&lt;-</span> df_pr_parties <span class="sc">|&gt;</span></span>
+<span id="cb61-3"><a></a>  <span class="fu">group_by</span>(year, party, block) <span class="sc">|&gt;</span></span>
+<span id="cb61-4"><a></a>  <span class="fu">summarise</span>(<span class="at">votes =</span> <span class="fu">sum</span>(votes), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb61-5"><a></a>  <span class="fu">filter</span>(party <span class="sc">%in%</span> 主要政党) <span class="sc">|&gt;</span></span>
+<span id="cb61-6"><a></a>  <span class="fu">mutate</span>(<span class="at">party =</span> <span class="fu">factor</span>(party, <span class="at">levels =</span> 主要政党))</span>
+<span id="cb61-7"><a></a></span>
+<span id="cb61-8"><a></a><span class="co"># 2. block ごとに分割（factor → character に変換）</span></span>
+<span id="cb61-9"><a></a>df_list <span class="ot">&lt;-</span> <span class="fu">split</span>(df_plot, <span class="fu">as.character</span>(df_plot<span class="sc">$</span>block))</span>
+<span id="cb61-10"><a></a></span>
+<span id="cb61-11"><a></a><span class="co"># 3. ggplot を作成</span></span>
+<span id="cb61-12"><a></a>plots <span class="ot">&lt;-</span> <span class="fu">map</span>(df_list, <span class="sc">~</span> <span class="fu">ggplot</span>(.x, <span class="fu">aes</span>(<span class="at">x =</span> party, <span class="at">y =</span> votes, <span class="at">fill =</span> <span class="fu">as.factor</span>(year))) <span class="sc">+</span></span>
+<span id="cb61-13"><a></a>                       <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb61-14"><a></a>                       <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">unique</span>(.x<span class="sc">$</span>block), <span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"得票数"</span>) <span class="sc">+</span></span>
+<span id="cb61-15"><a></a>                       <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)))</span>
+<span id="cb61-16"><a></a></span>
+<span id="cb61-17"><a></a><span class="co"># 4. プロットを表示</span></span>
+<span id="cb61-18"><a></a><span class="fu">walk</span>(plots, print)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -6503,15 +6536,15 @@ Coefficients:
 <li>Setup Chunkに書く</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a>us_states <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"state"</span>)</span>
-<span id="cb67-2"><a></a></span>
-<span id="cb67-3"><a></a><span class="co"># アメリカ主要政党のカラーコード</span></span>
-<span id="cb67-4"><a></a>party_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#2E74C0"</span>, <span class="st">"#CB454A"</span>)</span>
-<span id="cb67-5"><a></a></span>
-<span id="cb67-6"><a></a>us_state_elec <span class="ot">&lt;-</span> </span>
-<span id="cb67-7"><a></a>  election <span class="sc">|&gt;</span> <span class="co"># データセットsocvizに含まれています</span></span>
-<span id="cb67-8"><a></a>  <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">tolower</span>(state)) <span class="sc">|&gt;</span> </span>
-<span id="cb67-9"><a></a>  <span class="fu">left_join</span>(us_states, <span class="at">by =</span> <span class="st">"region"</span>) <span class="co"># データの結合</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a>us_states <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"state"</span>)</span>
+<span id="cb62-2"><a></a></span>
+<span id="cb62-3"><a></a><span class="co"># アメリカ主要政党のカラーコード</span></span>
+<span id="cb62-4"><a></a>party_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#2E74C0"</span>, <span class="st">"#CB454A"</span>)</span>
+<span id="cb62-5"><a></a></span>
+<span id="cb62-6"><a></a>us_state_elec <span class="ot">&lt;-</span> </span>
+<span id="cb62-7"><a></a>  election <span class="sc">|&gt;</span> <span class="co"># データセットsocvizに含まれています</span></span>
+<span id="cb62-8"><a></a>  <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">tolower</span>(state)) <span class="sc">|&gt;</span> </span>
+<span id="cb62-9"><a></a>  <span class="fu">left_join</span>(us_states, <span class="at">by =</span> <span class="st">"region"</span>) <span class="co"># データの結合</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="発展地図情報アメリカの選挙結果-1" class="slide level2">
@@ -6525,15 +6558,15 @@ Coefficients:
 <div class="tab-content">
 <div id="tabset-12-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb68-2"><a></a></span>
-<span id="cb68-3"><a></a>us_state_elec <span class="sc">|&gt;</span> </span>
-<span id="cb68-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group, <span class="at">fill =</span> party)) <span class="sc">+</span></span>
-<span id="cb68-5"><a></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"gray90"</span>, <span class="at">size =</span> <span class="fl">0.1</span>) <span class="sc">+</span> <span class="co"># ggplot2内の関数</span></span>
-<span id="cb68-6"><a></a>  <span class="fu">coord_map</span>(<span class="at">projection =</span> <span class="st">"albers"</span>, <span class="at">lat0 =</span> <span class="dv">39</span>, <span class="at">lat1 =</span> <span class="dv">45</span>) <span class="sc">+</span></span>
-<span id="cb68-7"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> party_colors) <span class="sc">+</span></span>
-<span id="cb68-8"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"アメリカ大統領選挙結果 2016"</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb68-9"><a></a>  <span class="fu">theme_map</span>(<span class="at">base_family =</span> <span class="st">"HiraKakuProN-W3"</span>) <span class="co"># 地図を描くときに余分な軸・枠・背景などを消して、地図表示に適したシンプルなテーマを適用する関数（注記・Windwowsユーザーはフォント変えて下さい）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb63-2"><a></a></span>
+<span id="cb63-3"><a></a>us_state_elec <span class="sc">|&gt;</span> </span>
+<span id="cb63-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group, <span class="at">fill =</span> party)) <span class="sc">+</span></span>
+<span id="cb63-5"><a></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"gray90"</span>, <span class="at">size =</span> <span class="fl">0.1</span>) <span class="sc">+</span> <span class="co"># ggplot2内の関数</span></span>
+<span id="cb63-6"><a></a>  <span class="fu">coord_map</span>(<span class="at">projection =</span> <span class="st">"albers"</span>, <span class="at">lat0 =</span> <span class="dv">39</span>, <span class="at">lat1 =</span> <span class="dv">45</span>) <span class="sc">+</span></span>
+<span id="cb63-7"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> party_colors) <span class="sc">+</span></span>
+<span id="cb63-8"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"アメリカ大統領選挙結果 2016"</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb63-9"><a></a>  <span class="fu">theme_map</span>(<span class="at">base_family =</span> <span class="st">"HiraKakuProN-W3"</span>) <span class="co"># 地図を描くときに余分な軸・枠・背景などを消して、地図表示に適したシンプルなテーマを適用する関数（注記・Windwowsユーザーはフォント変えて下さい）</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-12-2">
@@ -6541,7 +6574,7 @@ Coefficients:
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-73-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-72-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -6549,7 +6582,7 @@ Coefficients:
 </div>
 </div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn5"><p>コードの出典：<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2021</a>)</span></p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn7"><p>コードの出典：<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2021</a>)</span></p></li></ol></aside></section>
 <section id="発展地図情報アメリカの人口密度" class="slide level2">
 <h2>発展：地図情報（アメリカの人口密度）</h2>
 <h3 id="アメリカの人口密度2">アメリカの人口密度<sup>1</sup></h3>
@@ -6558,22 +6591,22 @@ Coefficients:
 <div class="tab-content">
 <div id="tabset-13-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a>county_full <span class="ot">&lt;-</span></span>
-<span id="cb69-2"><a></a>  county_map <span class="sc">|&gt;</span> </span>
-<span id="cb69-3"><a></a>  <span class="fu">left_join</span>(county_data, <span class="at">by =</span> <span class="st">"id"</span>)</span>
-<span id="cb69-4"><a></a></span>
-<span id="cb69-5"><a></a>county_full <span class="sc">|&gt;</span>  </span>
-<span id="cb69-6"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat,</span>
-<span id="cb69-7"><a></a>         <span class="at">fill =</span> pop_dens,</span>
-<span id="cb69-8"><a></a>         <span class="at">group =</span> group)) <span class="sc">+</span></span>
-<span id="cb69-9"><a></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"gray90"</span>, <span class="at">size =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
-<span id="cb69-10"><a></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
-<span id="cb69-11"><a></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Blues"</span>,</span>
-<span id="cb69-12"><a></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"0-10"</span>, <span class="st">"10-50"</span>, <span class="st">"50-100"</span>, <span class="st">"100-500"</span>, <span class="st">"500-1,000"</span>, <span class="st">"1,000-5,000"</span>, <span class="st">"&gt;5,000"</span>)) <span class="sc">+</span></span>
-<span id="cb69-13"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Population per</span><span class="sc">\n</span><span class="st">square mile"</span>) <span class="sc">+</span></span>
-<span id="cb69-14"><a></a>  <span class="fu">theme_map</span>() <span class="sc">+</span></span>
-<span id="cb69-15"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb69-16"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a></a>county_full <span class="ot">&lt;-</span></span>
+<span id="cb64-2"><a></a>  county_map <span class="sc">|&gt;</span> </span>
+<span id="cb64-3"><a></a>  <span class="fu">left_join</span>(county_data, <span class="at">by =</span> <span class="st">"id"</span>)</span>
+<span id="cb64-4"><a></a></span>
+<span id="cb64-5"><a></a>county_full <span class="sc">|&gt;</span>  </span>
+<span id="cb64-6"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat,</span>
+<span id="cb64-7"><a></a>         <span class="at">fill =</span> pop_dens,</span>
+<span id="cb64-8"><a></a>         <span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb64-9"><a></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"gray90"</span>, <span class="at">size =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb64-10"><a></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
+<span id="cb64-11"><a></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Blues"</span>,</span>
+<span id="cb64-12"><a></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"0-10"</span>, <span class="st">"10-50"</span>, <span class="st">"50-100"</span>, <span class="st">"100-500"</span>, <span class="st">"500-1,000"</span>, <span class="st">"1,000-5,000"</span>, <span class="st">"&gt;5,000"</span>)) <span class="sc">+</span></span>
+<span id="cb64-13"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Population per</span><span class="sc">\n</span><span class="st">square mile"</span>) <span class="sc">+</span></span>
+<span id="cb64-14"><a></a>  <span class="fu">theme_map</span>() <span class="sc">+</span></span>
+<span id="cb64-15"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb64-16"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-13-2">
@@ -6581,7 +6614,7 @@ Coefficients:
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-75-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-74-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -6589,7 +6622,7 @@ Coefficients:
 </div>
 </div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn6"><p>コードの出典：<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2021</a>)</span></p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn8"><p>コードの出典：<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン (<a href="#/参考文献-1" role="doc-biblioref" onclick="">2021</a>)</span></p></li></ol></aside></section>
 <section id="発展重回帰分析penguins" class="slide level2">
 <h2>発展：重回帰分析（penguins）</h2>
 <ul>
@@ -6600,18 +6633,18 @@ Coefficients:
 <div class="tab-content">
 <div id="tabset-14-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a></a><span class="fu">library</span>(sjPlot)</span>
-<span id="cb70-2"><a></a></span>
-<span id="cb70-3"><a></a><span class="co"># データ例</span></span>
-<span id="cb70-4"><a></a>penguins_clean <span class="ot">&lt;-</span> </span>
-<span id="cb70-5"><a></a>  penguins <span class="sc">|&gt;</span> </span>
-<span id="cb70-6"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(bill_len), <span class="sc">!</span><span class="fu">is.na</span>(bill_dep), <span class="sc">!</span><span class="fu">is.na</span>(flipper_len))</span>
-<span id="cb70-7"><a></a></span>
-<span id="cb70-8"><a></a><span class="co"># 重回帰</span></span>
-<span id="cb70-9"><a></a>lm_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_len <span class="sc">~</span> bill_dep <span class="sc">+</span> flipper_len, <span class="at">data =</span> penguins_clean)</span>
-<span id="cb70-10"><a></a></span>
-<span id="cb70-11"><a></a><span class="co"># 表示</span></span>
-<span id="cb70-12"><a></a><span class="fu">tab_model</span>(lm_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="fu">library</span>(sjPlot)</span>
+<span id="cb65-2"><a></a></span>
+<span id="cb65-3"><a></a><span class="co"># データ例</span></span>
+<span id="cb65-4"><a></a>penguins_clean <span class="ot">&lt;-</span> </span>
+<span id="cb65-5"><a></a>  penguins <span class="sc">|&gt;</span> </span>
+<span id="cb65-6"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(bill_len), <span class="sc">!</span><span class="fu">is.na</span>(bill_dep), <span class="sc">!</span><span class="fu">is.na</span>(flipper_len))</span>
+<span id="cb65-7"><a></a></span>
+<span id="cb65-8"><a></a><span class="co"># 重回帰</span></span>
+<span id="cb65-9"><a></a>lm_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_len <span class="sc">~</span> bill_dep <span class="sc">+</span> flipper_len, <span class="at">data =</span> penguins_clean)</span>
+<span id="cb65-10"><a></a></span>
+<span id="cb65-11"><a></a><span class="co"># 表示</span></span>
+<span id="cb65-12"><a></a><span class="fu">tab_model</span>(lm_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-14-2">
@@ -6671,23 +6704,23 @@ Coefficients:
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a></a><span class="fu">library</span>(ngramr)</span>
-<span id="cb71-2"><a></a></span>
-<span id="cb71-3"><a></a>words <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Cicero"</span>, <span class="st">"Tacitus"</span>, <span class="st">"Sallust"</span>,<span class="st">"Plutarch"</span>, <span class="st">"Aristotle"</span>, <span class="st">"Shakespeare"</span>, <span class="st">"Milton"</span>)</span>
-<span id="cb71-4"><a></a></span>
-<span id="cb71-5"><a></a>df <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(words, <span class="sc">~</span><span class="fu">ngram</span>(.x, <span class="at">corpus =</span> <span class="st">"eng_gb_2019"</span>, <span class="at">year_start =</span> <span class="dv">1500</span>, <span class="at">year_end =</span> <span class="dv">2020</span>))</span>
-<span id="cb71-6"><a></a></span>
-<span id="cb71-7"><a></a>df <span class="sc">|&gt;</span> </span>
-<span id="cb71-8"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Frequency, <span class="at">color =</span> Phrase)) <span class="sc">+</span></span>
-<span id="cb71-9"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb71-10"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"ggthemr::solarized"</span>) <span class="sc">+</span></span>
-<span id="cb71-11"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb71-12"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
-<span id="cb71-13"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Google Ngram Trends"</span>, <span class="at">y =</span> <span class="st">"Frequency (%)"</span>, <span class="at">x =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a><span class="fu">library</span>(ngramr)</span>
+<span id="cb66-2"><a></a></span>
+<span id="cb66-3"><a></a>words <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Cicero"</span>, <span class="st">"Tacitus"</span>, <span class="st">"Sallust"</span>,<span class="st">"Plutarch"</span>, <span class="st">"Aristotle"</span>, <span class="st">"Shakespeare"</span>, <span class="st">"Milton"</span>)</span>
+<span id="cb66-4"><a></a></span>
+<span id="cb66-5"><a></a>df <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(words, <span class="sc">~</span><span class="fu">ngram</span>(.x, <span class="at">corpus =</span> <span class="st">"eng_gb_2019"</span>, <span class="at">year_start =</span> <span class="dv">1500</span>, <span class="at">year_end =</span> <span class="dv">2020</span>)) <span class="co"># 複数のオブジェクトに対して同じ処理を行い、その結果を 縦方向に結合（row-bind）してデータフレームにする</span></span>
+<span id="cb66-6"><a></a></span>
+<span id="cb66-7"><a></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb66-8"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Frequency, <span class="at">color =</span> Phrase)) <span class="sc">+</span></span>
+<span id="cb66-9"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb66-10"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"ggthemr::solarized"</span>) <span class="sc">+</span></span>
+<span id="cb66-11"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb66-12"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
+<span id="cb66-13"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Google Ngram Trends"</span>, <span class="at">y =</span> <span class="st">"Frequency (%)"</span>, <span class="at">x =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-78-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="RforDataScience_files/figure-revealjs/unnamed-chunk-77-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="さらに学ぶために" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
 <h1>Ⅶ. さらに学ぶために</h1>
@@ -6797,7 +6830,10 @@ Coefficients:
 <h2>さらに学ぶ：問い合わせ</h2>
 <h3 id="メールアドレス">メールアドレス</h3>
 <ul>
-<li>1度の講習会で理解できることには限界があります</li>
+<li>1度の講習会で理解できることには限界があります
+<ul>
+<li>特にサンプルコードでは動いても、自分が参照したいデータではうまくいかない</li>
+</ul></li>
 <li>わからないことがあればお気軽にお問い合わせ下さい（歓迎いたします）
 <ul>
 <li><a href="mailto:kariyach@staff.kanazawa-u.ac.jp">kariyach@staff.kanazawa-u.ac.jp</a></li>
@@ -6807,6 +6843,9 @@ Coefficients:
 <ul>
 <li>本日、実演したコードは<a href="https://drive.google.com/drive/folders/17MYPimyTInd4_xZ1ew88y8TVofVXj1u0?usp=sharing">Google Drive</a>からダウンロードできるようにしておきます</li>
 </ul>
+</section>
+<section id="さらに学ぶスライド資料" class="slide level2">
+<h2>さらに学ぶ：スライド資料</h2>
 <h3 id="スライド資料">スライド資料</h3>
 <ul>
 <li>キーボードの「E」でpdf出力できます
