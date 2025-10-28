@@ -412,7 +412,14 @@ div.csl-indent {
 <a href="#%E7%9B%B8%E8%AB%87%E5%86%85%E5%AE%B9" id="toc-相談内容" class="nav-link" data-scroll-target="#%E7%9B%B8%E8%AB%87%E5%86%85%E5%AE%B9">0. 相談内容</a>
   <ul class="collapse">
 <li><a href="#%E3%83%86%E3%82%AF%E3%82%B9%E3%83%88" id="toc-テクスト" class="nav-link" data-scroll-target="#%E3%83%86%E3%82%AF%E3%82%B9%E3%83%88">1. テクスト</a></li>
-  <li><a href="#%E3%82%B3%E3%83%BC%E3%83%91%E3%82%B9%E3%81%A8%E5%88%86%E6%9E%90%E7%9B%AE%E7%9A%84" id="toc-コーパスと分析目的" class="nav-link" data-scroll-target="#%E3%82%B3%E3%83%BC%E3%83%91%E3%82%B9%E3%81%A8%E5%88%86%E6%9E%90%E7%9B%AE%E7%9A%84">2. コーパスと分析目的</a></li>
+  <li>
+<a href="#%E3%82%B3%E3%83%BC%E3%83%91%E3%82%B9%E3%81%A8%E5%88%86%E6%9E%90%E7%9B%AE%E7%9A%84" id="toc-コーパスと分析目的" class="nav-link" data-scroll-target="#%E3%82%B3%E3%83%BC%E3%83%91%E3%82%B9%E3%81%A8%E5%88%86%E6%9E%90%E7%9B%AE%E7%9A%84">2. コーパスと分析目的</a>
+  <ul class="collapse">
+<li><a href="#i-%E6%9C%AC%E5%88%86%E6%9E%90" id="toc-i-本分析" class="nav-link" data-scroll-target="#i-%E6%9C%AC%E5%88%86%E6%9E%90">i) 本分析</a></li>
+  <li><a href="#ii-%E5%88%A5%E9%80%94%E8%A1%8C%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8%E2%91%A0" id="toc-ii-別途行なっていること①" class="nav-link" data-scroll-target="#ii-%E5%88%A5%E9%80%94%E8%A1%8C%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8%E2%91%A0">ii) 別途、行なっていること①</a></li>
+  <li><a href="#iii-%E5%88%A5%E9%80%94%E8%A1%8C%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8%E2%91%A1" id="toc-iii-別途行なっていること②" class="nav-link" data-scroll-target="#iii-%E5%88%A5%E9%80%94%E8%A1%8C%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8%E2%91%A1">iii) 別途、行なっていること②</a></li>
+  </ul>
+</li>
   <li>
 <a href="#%E7%9B%B8%E8%AB%87%E5%86%85%E5%AE%B9-1" id="toc-相談内容-1" class="nav-link" data-scroll-target="#%E7%9B%B8%E8%AB%87%E5%86%85%E5%AE%B9-1">3. 相談内容</a>
   <ul class="collapse">
@@ -623,11 +630,13 @@ div.csl-indent {
 <span></span>
 <span><span class="va">df_1740_1742</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">volume_10</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">text</span>, .keep_all <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">text</span>, .keep_all <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="op">-</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">512</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">df_1750</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">volume_11</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">text</span>, .keep_all <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">text</span>, .keep_all <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="op">-</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">67</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">df_1740_1742_tidy</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">df_1740_1742</span> <span class="op">|&gt;</span> </span>
@@ -855,9 +864,12 @@ div.csl-indent {
 <li>1787年に、Samuel Johnson, Debates in Parliamentとして公刊された</li>
 <li>イェール版(1958-2019)によって最新の校訂がなされた。そのデジタル版<a href="https://yalejohnson.com/volumes/">The Yale Digital Edition of the Works of Samuel Johnson</a>が公開され、広く利用可能である。Debates in Parliamentは、Vol.11-13</li>
 </ul></section><section id="コーパスと分析目的" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="コーパスと分析目的">2. コーパスと分析目的</h2>
+<section id="i-本分析" class="level3"><h3 class="anchored" data-anchor-id="i-本分析">i) 本分析</h3>
 <ul>
 <li>
-<em>以下の分析は、探索とtextmining系の関数の勉強を兼ねて、上記のThe Works of Samuel Johnson, LL.D. Volume 10-11を用いており、編集者によるイントロダクションや注記を除去していない</em>。またVol.10と11は便宜的に分かれているだけで、本来は統合して分析すべきものと思う</li>
+<em>以下の分析は、探索とtextmining系の関数の勉強を兼ねて、上記のThe Works of Samuel Johnson, LL.D. Volume 10-11を用いた。編集者によるイントロダクションは除去したが、注記は残っている</em>。またVol.10と11は便宜的に分かれているだけで、本来は統合して分析すべきものと思う</li>
+</ul></section><section id="ii-別途行なっていること①" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="ii-別途行なっていること①">ii) 別途、行なっていること①</h3>
+<ul>
 <li>現在、別途、イェール版から、
 <ul>
 <li>debate_subject</li>
@@ -867,8 +879,10 @@ div.csl-indent {
 <li>debate_speaker_position を分類したコーパスを作成している。特に<em>position（政権党、オポジション）の違いに伴う、発言、語彙の相違（ジョンソンの語彙の使い分け）</em>を確認したい。例えば、オポジションは高度に規範的な語彙が用いられているなど。また、筆者サミュエル・ジョンソンは自身でトーリー（当時、オポジション）に有利になるように発言を編集、脚色したと語っているが<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>、本当かを確認できるとよい</li>
 </ul>
 </li>
-<li>この他、ジョンソンが執筆していない時期のDebateを分析するために、Gentlemans’s Magazine（<a href="https://books.google.co.jp/books?q=editions:LCCN2012229756&amp;id=55H8hR0mr6sC&amp;hl=ja">Google Books</a>）からテクストを収集している。同時代の総合雑誌London Magazine（<a href="https://onlinebooks.library.upenn.edu/webbin/serial?id=londonmag">The Online Books</a>）、Anual Register（<a href="https://catalog.hathitrust.org/Record/009795767?type%5B%5D=title&amp;lookfor%5B%5D=Annual%20Register&amp;ft=ft">Hathitrust</a>）からも、追ってDebateを収集し、雑誌の相違、時系列的な類似点、相違点を把握したい</li>
-</ul><div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Johnson at this time clearly supported the governmental opposition, which was composed of disaffected Whigs, Tories, Jacobites (those who continued their allegiance to the Stuart line of James II), and Nonjurors (those who refused to take either the oath of allegiance to the Hanover kings or the oath of abjuration of James II and the Stuarts). Despite claims to the contrary, Johnson was neither a Jacobite nor a Nonjuror. His Toryism, which he sometimes expressed for shock value, was based upon his conviction that the Tories could be counted upon to support the Church of England as a state institution. When Johnson attacked Whiggism or defended Toryism (an ideology for him more than a practical politics, especially since Tories remained a minority throughout most of his lifetime), he always took an outsider’s position. Later in life he expressed a high regard for Walpole.(<a href="https://www.britannica.com/biography/Samuel-Johnson/The-Gentlemans-Magazine-and-early-publications">Britannica</a>)</p></div></div></section><section id="相談内容-1" class="level2"><h2 class="anchored" data-anchor-id="相談内容-1">3. 相談内容</h2>
+</ul><div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Johnson at this time clearly supported the governmental opposition, which was composed of disaffected Whigs, Tories, Jacobites (those who continued their allegiance to the Stuart line of James II), and Nonjurors (those who refused to take either the oath of allegiance to the Hanover kings or the oath of abjuration of James II and the Stuarts). Despite claims to the contrary, Johnson was neither a Jacobite nor a Nonjuror. His Toryism, which he sometimes expressed for shock value, was based upon his conviction that the Tories could be counted upon to support the Church of England as a state institution. When Johnson attacked Whiggism or defended Toryism (an ideology for him more than a practical politics, especially since Tories remained a minority throughout most of his lifetime), he always took an outsider’s position. Later in life he expressed a high regard for Walpole.(<a href="https://www.britannica.com/biography/Samuel-Johnson/The-Gentlemans-Magazine-and-early-publications">Britannica</a>)</p></div></div></section><section id="iii-別途行なっていること②" class="level3"><h3 class="anchored" data-anchor-id="iii-別途行なっていること②">iii) 別途、行なっていること②</h3>
+<ul>
+<li>この他、ジョンソンが執筆していない時期（18世紀後半すべて）のDebateを分析するために、Gentlemans’s Magazine（<a href="https://books.google.co.jp/books?q=editions:LCCN2012229756&amp;id=55H8hR0mr6sC&amp;hl=ja">Google Books</a>）からテクストを収集している。同時代の総合雑誌London Magazine（<a href="https://onlinebooks.library.upenn.edu/webbin/serial?id=londonmag">The Online Books</a>）、Anual Register（<a href="https://catalog.hathitrust.org/Record/009795767?type%5B%5D=title&amp;lookfor%5B%5D=Annual%20Register&amp;ft=ft">Hathitrust</a>）からも、追ってDebateを収集し、雑誌の相違、時系列的な類似点、相違点を把握したい</li>
+</ul></section></section><section id="相談内容-1" class="level2"><h2 class="anchored" data-anchor-id="相談内容-1">3. 相談内容</h2>
 <section id="種語の数" class="level3"><h3 class="anchored" data-anchor-id="種語の数">1. 種語の数</h3>
 <ul>
 <li>多すぎると恣意的になるのでしょうか？例えば、経済関係の単語を種語に入れれば、経済についての単語が集まるのは当然で、あまり意外性がない気がします。一部の意外な単語を拾ったことを知見として強調すべきなのでしょうか？そもそもLDAに向いているテクストと向いていないテクストがあるのでしょうか？</li>
@@ -886,15 +900,15 @@ div.csl-indent {
 <pre><code># A tibble: 10 × 2
    word        n
    &lt;chr&gt;   &lt;int&gt;
- 1 nation    392
+ 1 nation    390
  2 war       289
- 3 power     284
+ 3 power     282
  4 publick   282
- 5 opinion   242
- 6 country   216
- 7 bill      214
+ 5 opinion   241
+ 6 country   214
+ 7 bill      210
  8 enemies   202
- 9 law       198
+ 9 law       197
 10 reason    197</code></pre>
 </div>
 </div>
@@ -936,16 +950,16 @@ div.csl-indent {
 <pre><code># A tibble: 30 × 6
    gutenberg_id word        n      tf   idf tf_idf
           &lt;int&gt; &lt;chr&gt;   &lt;int&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
- 1        10351 nation    392 0.00655     0      0
- 2        10351 war       289 0.00483     0      0
- 3        10351 power     284 0.00475     0      0
- 4        10351 publick   282 0.00471     0      0
- 5        10351 opinion   242 0.00404     0      0
- 6        10351 country   216 0.00361     0      0
- 7        10351 bill      214 0.00358     0      0
- 8        10351 enemies   202 0.00338     0      0
- 9        10351 law       198 0.00331     0      0
-10        10351 reason    197 0.00329     0      0
+ 1        10351 nation    390 0.00667     0      0
+ 2        10351 war       289 0.00494     0      0
+ 3        10351 power     282 0.00482     0      0
+ 4        10351 publick   282 0.00482     0      0
+ 5        10351 opinion   241 0.00412     0      0
+ 6        10351 country   214 0.00366     0      0
+ 7        10351 bill      210 0.00359     0      0
+ 8        10351 enemies   202 0.00345     0      0
+ 9        10351 law       197 0.00337     0      0
+10        10351 reason    197 0.00337     0      0
 # ℹ 20 more rows</code></pre>
 </div>
 </div>
@@ -977,11 +991,11 @@ div.csl-indent {
  1 bill      495
  2 nation    385
  3 people    349
- 4 publick   337
+ 4 publick   336
  5 war       300
  6 law       279
  7 power     267
- 8 troops    260
+ 8 troops    259
  9 country   231
 10 reason    219</code></pre>
 </div>
@@ -1024,16 +1038,16 @@ div.csl-indent {
 <pre><code># A tibble: 30 × 6
    gutenberg_id word        n      tf   idf tf_idf
           &lt;int&gt; &lt;chr&gt;   &lt;int&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
- 1        10352 bill      495 0.00825     0      0
- 2        10352 nation    385 0.00642     0      0
- 3        10352 people    349 0.00582     0      0
- 4        10352 publick   337 0.00562     0      0
- 5        10352 war       300 0.00500     0      0
- 6        10352 law       279 0.00465     0      0
- 7        10352 power     267 0.00445     0      0
- 8        10352 troops    260 0.00433     0      0
- 9        10352 country   231 0.00385     0      0
-10        10352 reason    219 0.00365     0      0
+ 1        10352 bill      495 0.00826     0      0
+ 2        10352 nation    385 0.00643     0      0
+ 3        10352 people    349 0.00583     0      0
+ 4        10352 publick   336 0.00561     0      0
+ 5        10352 war       300 0.00501     0      0
+ 6        10352 law       279 0.00466     0      0
+ 7        10352 power     267 0.00446     0      0
+ 8        10352 troops    259 0.00432     0      0
+ 9        10352 country   231 0.00386     0      0
+10        10352 reason    219 0.00366     0      0
 # ℹ 20 more rows</code></pre>
 </div>
 </div>
@@ -1427,23 +1441,23 @@ div.csl-indent {
 <span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<div id="xxevcheiot" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xxevcheiot table {
+<div id="hdhmieewxr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hdhmieewxr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xxevcheiot thead, #xxevcheiot tbody, #xxevcheiot tfoot, #xxevcheiot tr, #xxevcheiot td, #xxevcheiot th {
+#hdhmieewxr thead, #hdhmieewxr tbody, #hdhmieewxr tfoot, #hdhmieewxr tr, #hdhmieewxr td, #hdhmieewxr th {
   border-style: none;
 }
 
-#xxevcheiot p {
+#hdhmieewxr p {
   margin: 0;
   padding: 0;
 }
 
-#xxevcheiot .gt_table {
+#hdhmieewxr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1469,12 +1483,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#xxevcheiot .gt_caption {
+#hdhmieewxr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xxevcheiot .gt_title {
+#hdhmieewxr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1486,7 +1500,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#xxevcheiot .gt_subtitle {
+#hdhmieewxr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1498,7 +1512,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#xxevcheiot .gt_heading {
+#hdhmieewxr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1510,13 +1524,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xxevcheiot .gt_bottom_border {
+#hdhmieewxr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xxevcheiot .gt_col_headings {
+#hdhmieewxr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1531,7 +1545,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xxevcheiot .gt_col_heading {
+#hdhmieewxr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1551,7 +1565,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#xxevcheiot .gt_column_spanner_outer {
+#hdhmieewxr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1563,15 +1577,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#xxevcheiot .gt_column_spanner_outer:first-child {
+#hdhmieewxr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xxevcheiot .gt_column_spanner_outer:last-child {
+#hdhmieewxr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xxevcheiot .gt_column_spanner {
+#hdhmieewxr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1583,11 +1597,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#xxevcheiot .gt_spanner_row {
+#hdhmieewxr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xxevcheiot .gt_group_heading {
+#hdhmieewxr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1613,7 +1627,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#xxevcheiot .gt_empty_group_heading {
+#hdhmieewxr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1628,15 +1642,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#xxevcheiot .gt_from_md > :first-child {
+#hdhmieewxr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xxevcheiot .gt_from_md > :last-child {
+#hdhmieewxr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xxevcheiot .gt_row {
+#hdhmieewxr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1655,7 +1669,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#xxevcheiot .gt_stub {
+#hdhmieewxr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1668,7 +1682,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xxevcheiot .gt_stub_row_group {
+#hdhmieewxr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1682,15 +1696,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#xxevcheiot .gt_row_group_first td {
+#hdhmieewxr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xxevcheiot .gt_row_group_first th {
+#hdhmieewxr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xxevcheiot .gt_summary_row {
+#hdhmieewxr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1700,16 +1714,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xxevcheiot .gt_first_summary_row {
+#hdhmieewxr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xxevcheiot .gt_first_summary_row.thick {
+#hdhmieewxr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xxevcheiot .gt_last_summary_row {
+#hdhmieewxr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1719,7 +1733,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#xxevcheiot .gt_grand_summary_row {
+#hdhmieewxr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1729,7 +1743,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xxevcheiot .gt_first_grand_summary_row {
+#hdhmieewxr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1739,7 +1753,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#xxevcheiot .gt_last_grand_summary_row_top {
+#hdhmieewxr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1749,11 +1763,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#xxevcheiot .gt_striped {
+#hdhmieewxr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xxevcheiot .gt_table_body {
+#hdhmieewxr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1762,7 +1776,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#xxevcheiot .gt_footnotes {
+#hdhmieewxr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1776,7 +1790,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xxevcheiot .gt_footnote {
+#hdhmieewxr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1785,7 +1799,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xxevcheiot .gt_sourcenotes {
+#hdhmieewxr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1799,7 +1813,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xxevcheiot .gt_sourcenote {
+#hdhmieewxr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1807,72 +1821,72 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xxevcheiot .gt_left {
+#hdhmieewxr .gt_left {
   text-align: left;
 }
 
-#xxevcheiot .gt_center {
+#hdhmieewxr .gt_center {
   text-align: center;
 }
 
-#xxevcheiot .gt_right {
+#hdhmieewxr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xxevcheiot .gt_font_normal {
+#hdhmieewxr .gt_font_normal {
   font-weight: normal;
 }
 
-#xxevcheiot .gt_font_bold {
+#hdhmieewxr .gt_font_bold {
   font-weight: bold;
 }
 
-#xxevcheiot .gt_font_italic {
+#hdhmieewxr .gt_font_italic {
   font-style: italic;
 }
 
-#xxevcheiot .gt_super {
+#hdhmieewxr .gt_super {
   font-size: 65%;
 }
 
-#xxevcheiot .gt_footnote_marks {
+#hdhmieewxr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xxevcheiot .gt_asterisk {
+#hdhmieewxr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xxevcheiot .gt_indent_1 {
+#hdhmieewxr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xxevcheiot .gt_indent_2 {
+#hdhmieewxr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xxevcheiot .gt_indent_3 {
+#hdhmieewxr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xxevcheiot .gt_indent_4 {
+#hdhmieewxr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xxevcheiot .gt_indent_5 {
+#hdhmieewxr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xxevcheiot .katex-display {
+#hdhmieewxr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xxevcheiot div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hdhmieewxr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1888,16 +1902,7 @@ div.csl-indent {
 </tr></thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="docname">text121</td>
-<td class="gt_row gt_right" headers="from">6</td>
-<td class="gt_row gt_right" headers="to">6</td>
-<td class="gt_row gt_left" headers="pre">British with Greek and Roman</td>
-<td class="gt_row gt_left" headers="keyword">eloquence</td>
-<td class="gt_row gt_left" headers="post">; and ludicrous instances are</td>
-<td class="gt_row gt_center" headers="pattern">eloquence</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="docname">text2090</td>
+<td class="gt_row gt_left" headers="docname">text1578</td>
 <td class="gt_row gt_right" headers="from">3</td>
 <td class="gt_row gt_right" headers="to">3</td>
 <td class="gt_row gt_left" headers="pre">to the</td>
@@ -1905,8 +1910,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">of the right honourable gentleman , that I am never</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="docname">text2246</td>
+<tr class="even">
+<td class="gt_row gt_left" headers="docname">text1734</td>
 <td class="gt_row gt_right" headers="from">12</td>
 <td class="gt_row gt_right" headers="to">12</td>
 <td class="gt_row gt_left" headers="pre">be necessary to frighten those whom they want art or</td>
@@ -1914,8 +1919,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">to</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="docname">text2626</td>
+<tr class="odd">
+<td class="gt_row gt_left" headers="docname">text2114</td>
 <td class="gt_row gt_right" headers="from">1</td>
 <td class="gt_row gt_right" headers="to">1</td>
 <td class="gt_row gt_left" headers="pre"></td>
@@ -1923,8 +1928,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">has very little power .</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="docname">text2731</td>
+<tr class="even">
+<td class="gt_row gt_left" headers="docname">text2219</td>
 <td class="gt_row gt_right" headers="from">8</td>
 <td class="gt_row gt_right" headers="to">8</td>
 <td class="gt_row gt_left" headers="pre">however deficient in knowledge , or in</td>
@@ -1932,8 +1937,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">.</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="docname">text4575</td>
+<tr class="odd">
+<td class="gt_row gt_left" headers="docname">text4063</td>
 <td class="gt_row gt_right" headers="from">15</td>
 <td class="gt_row gt_right" headers="to">15</td>
 <td class="gt_row gt_left" headers="pre">who spoke last , is too great a master of</td>
@@ -1941,8 +1946,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">not</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="docname">text4586</td>
+<tr class="even">
+<td class="gt_row gt_left" headers="docname">text4074</td>
 <td class="gt_row gt_right" headers="from">2</td>
 <td class="gt_row gt_right" headers="to">2</td>
 <td class="gt_row gt_left" headers="pre">of</td>
@@ -1950,8 +1955,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">.</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="docname">text6458</td>
+<tr class="odd">
+<td class="gt_row gt_left" headers="docname">text5946</td>
 <td class="gt_row gt_right" headers="from">10</td>
 <td class="gt_row gt_right" headers="to">10</td>
 <td class="gt_row gt_left" headers="pre">knowledge , and displayed with all the power of</td>
@@ -1959,8 +1964,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">, a collection</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="docname">text8748</td>
+<tr class="even">
+<td class="gt_row gt_left" headers="docname">text8236</td>
 <td class="gt_row gt_right" headers="from">9</td>
 <td class="gt_row gt_right" headers="to">9</td>
 <td class="gt_row gt_left" headers="pre">supported , and inquire whether this triumph of</td>
@@ -1968,8 +1973,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">has been</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="docname">text11502</td>
+<tr class="odd">
+<td class="gt_row gt_left" headers="docname">text10990</td>
 <td class="gt_row gt_right" headers="from">9</td>
 <td class="gt_row gt_right" headers="to">9</td>
 <td class="gt_row gt_left" headers="pre">ardour , and displayed with such power of</td>
@@ -1977,8 +1982,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">, are not , in my</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="docname">text12458</td>
+<tr class="even">
+<td class="gt_row gt_left" headers="docname">text11946</td>
 <td class="gt_row gt_right" headers="from">1</td>
 <td class="gt_row gt_right" headers="to">1</td>
 <td class="gt_row gt_left" headers="pre"></td>
@@ -1986,8 +1991,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">with which this grant of the merchants ' petition has</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="docname">text12596</td>
+<tr class="odd">
+<td class="gt_row gt_left" headers="docname">text12084</td>
 <td class="gt_row gt_right" headers="from">10</td>
 <td class="gt_row gt_right" headers="to">10</td>
 <td class="gt_row gt_left" headers="pre">their integrity ; and enforce , with his usual</td>
@@ -1995,8 +2000,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">, every motive to</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="docname">text12599</td>
+<tr class="even">
+<td class="gt_row gt_left" headers="docname">text12087</td>
 <td class="gt_row gt_right" headers="from">7</td>
 <td class="gt_row gt_right" headers="to">7</td>
 <td class="gt_row gt_left" headers="pre">time , since , however his</td>
@@ -2004,8 +2009,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">may please , and his arguments</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="docname">text13413</td>
+<tr class="odd">
+<td class="gt_row gt_left" headers="docname">text12901</td>
 <td class="gt_row gt_right" headers="from">12</td>
 <td class="gt_row gt_right" headers="to">12</td>
 <td class="gt_row gt_left" headers="pre">never happen ; much sagacity was exerted , and much</td>
@@ -2013,8 +2018,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post"></td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="docname">text13585</td>
+<tr class="even">
+<td class="gt_row gt_left" headers="docname">text13073</td>
 <td class="gt_row gt_right" headers="from">1</td>
 <td class="gt_row gt_right" headers="to">1</td>
 <td class="gt_row gt_left" headers="pre"></td>
@@ -2022,8 +2027,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">in the praise of his own cider . That he</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="docname">text14050</td>
+<tr class="odd">
+<td class="gt_row gt_left" headers="docname">text13538</td>
 <td class="gt_row gt_right" headers="from">7</td>
 <td class="gt_row gt_right" headers="to">7</td>
 <td class="gt_row gt_left" headers="pre">of it had exhausted all their</td>
@@ -2031,8 +2036,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">in censuring the treaty of</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="docname">text14935</td>
+<tr class="even">
+<td class="gt_row gt_left" headers="docname">text14423</td>
 <td class="gt_row gt_right" headers="from">12</td>
 <td class="gt_row gt_right" headers="to">12</td>
 <td class="gt_row gt_left" headers="pre">when the same man proceeds to display , with equal</td>
@@ -2040,8 +2045,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">, the</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="docname">text15606</td>
+<tr class="odd">
+<td class="gt_row gt_left" headers="docname">text15094</td>
 <td class="gt_row gt_right" headers="from">13</td>
 <td class="gt_row gt_right" headers="to">13</td>
 <td class="gt_row gt_left" headers="pre">, is preparation against it ; and that wit and</td>
@@ -2049,8 +2054,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post"></td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="docname">text16235</td>
+<tr class="even">
+<td class="gt_row gt_left" headers="docname">text15723</td>
 <td class="gt_row gt_right" headers="from">5</td>
 <td class="gt_row gt_right" headers="to">5</td>
 <td class="gt_row gt_left" headers="pre">conviction ; and his</td>
@@ -2058,8 +2063,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">always receives its praise , though it may</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="docname">text16378</td>
+<tr class="odd">
+<td class="gt_row gt_left" headers="docname">text15866</td>
 <td class="gt_row gt_right" headers="from">10</td>
 <td class="gt_row gt_right" headers="to">10</td>
 <td class="gt_row gt_left" headers="pre">profit is more powerful than reason , the French</td>
@@ -2067,8 +2072,8 @@ div.csl-indent {
 <td class="gt_row gt_left" headers="post">will</td>
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="docname">text17018</td>
+<tr class="even">
+<td class="gt_row gt_left" headers="docname">text16506</td>
 <td class="gt_row gt_right" headers="from">6</td>
 <td class="gt_row gt_right" headers="to">6</td>
 <td class="gt_row gt_left" headers="pre">ruin , not by our</td>
@@ -2185,23 +2190,23 @@ div.csl-indent {
 <span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<div id="feezlvyjiw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#feezlvyjiw table {
+<div id="wcglllgzbh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wcglllgzbh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#feezlvyjiw thead, #feezlvyjiw tbody, #feezlvyjiw tfoot, #feezlvyjiw tr, #feezlvyjiw td, #feezlvyjiw th {
+#wcglllgzbh thead, #wcglllgzbh tbody, #wcglllgzbh tfoot, #wcglllgzbh tr, #wcglllgzbh td, #wcglllgzbh th {
   border-style: none;
 }
 
-#feezlvyjiw p {
+#wcglllgzbh p {
   margin: 0;
   padding: 0;
 }
 
-#feezlvyjiw .gt_table {
+#wcglllgzbh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2227,12 +2232,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#feezlvyjiw .gt_caption {
+#wcglllgzbh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#feezlvyjiw .gt_title {
+#wcglllgzbh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2244,7 +2249,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#feezlvyjiw .gt_subtitle {
+#wcglllgzbh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2256,7 +2261,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#feezlvyjiw .gt_heading {
+#wcglllgzbh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2268,13 +2273,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#feezlvyjiw .gt_bottom_border {
+#wcglllgzbh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#feezlvyjiw .gt_col_headings {
+#wcglllgzbh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2289,7 +2294,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#feezlvyjiw .gt_col_heading {
+#wcglllgzbh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2309,7 +2314,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#feezlvyjiw .gt_column_spanner_outer {
+#wcglllgzbh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2321,15 +2326,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#feezlvyjiw .gt_column_spanner_outer:first-child {
+#wcglllgzbh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#feezlvyjiw .gt_column_spanner_outer:last-child {
+#wcglllgzbh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#feezlvyjiw .gt_column_spanner {
+#wcglllgzbh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2341,11 +2346,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#feezlvyjiw .gt_spanner_row {
+#wcglllgzbh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#feezlvyjiw .gt_group_heading {
+#wcglllgzbh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2371,7 +2376,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#feezlvyjiw .gt_empty_group_heading {
+#wcglllgzbh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2386,15 +2391,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#feezlvyjiw .gt_from_md > :first-child {
+#wcglllgzbh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#feezlvyjiw .gt_from_md > :last-child {
+#wcglllgzbh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#feezlvyjiw .gt_row {
+#wcglllgzbh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2413,7 +2418,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#feezlvyjiw .gt_stub {
+#wcglllgzbh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2426,7 +2431,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#feezlvyjiw .gt_stub_row_group {
+#wcglllgzbh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2440,15 +2445,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#feezlvyjiw .gt_row_group_first td {
+#wcglllgzbh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#feezlvyjiw .gt_row_group_first th {
+#wcglllgzbh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#feezlvyjiw .gt_summary_row {
+#wcglllgzbh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2458,16 +2463,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#feezlvyjiw .gt_first_summary_row {
+#wcglllgzbh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#feezlvyjiw .gt_first_summary_row.thick {
+#wcglllgzbh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#feezlvyjiw .gt_last_summary_row {
+#wcglllgzbh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2477,7 +2482,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#feezlvyjiw .gt_grand_summary_row {
+#wcglllgzbh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2487,7 +2492,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#feezlvyjiw .gt_first_grand_summary_row {
+#wcglllgzbh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2497,7 +2502,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#feezlvyjiw .gt_last_grand_summary_row_top {
+#wcglllgzbh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2507,11 +2512,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#feezlvyjiw .gt_striped {
+#wcglllgzbh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#feezlvyjiw .gt_table_body {
+#wcglllgzbh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2520,7 +2525,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#feezlvyjiw .gt_footnotes {
+#wcglllgzbh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2534,7 +2539,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#feezlvyjiw .gt_footnote {
+#wcglllgzbh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2543,7 +2548,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#feezlvyjiw .gt_sourcenotes {
+#wcglllgzbh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2557,7 +2562,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#feezlvyjiw .gt_sourcenote {
+#wcglllgzbh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2565,72 +2570,72 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#feezlvyjiw .gt_left {
+#wcglllgzbh .gt_left {
   text-align: left;
 }
 
-#feezlvyjiw .gt_center {
+#wcglllgzbh .gt_center {
   text-align: center;
 }
 
-#feezlvyjiw .gt_right {
+#wcglllgzbh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#feezlvyjiw .gt_font_normal {
+#wcglllgzbh .gt_font_normal {
   font-weight: normal;
 }
 
-#feezlvyjiw .gt_font_bold {
+#wcglllgzbh .gt_font_bold {
   font-weight: bold;
 }
 
-#feezlvyjiw .gt_font_italic {
+#wcglllgzbh .gt_font_italic {
   font-style: italic;
 }
 
-#feezlvyjiw .gt_super {
+#wcglllgzbh .gt_super {
   font-size: 65%;
 }
 
-#feezlvyjiw .gt_footnote_marks {
+#wcglllgzbh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#feezlvyjiw .gt_asterisk {
+#wcglllgzbh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#feezlvyjiw .gt_indent_1 {
+#wcglllgzbh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#feezlvyjiw .gt_indent_2 {
+#wcglllgzbh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#feezlvyjiw .gt_indent_3 {
+#wcglllgzbh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#feezlvyjiw .gt_indent_4 {
+#wcglllgzbh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#feezlvyjiw .gt_indent_5 {
+#wcglllgzbh .gt_indent_5 {
   text-indent: 25px;
 }
 
-#feezlvyjiw .katex-display {
+#wcglllgzbh .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#feezlvyjiw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wcglllgzbh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2646,7 +2651,7 @@ div.csl-indent {
 </tr></thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="docname">text1604</td>
+<td class="gt_row gt_left" headers="docname">text1537</td>
 <td class="gt_row gt_right" headers="from">2</td>
 <td class="gt_row gt_right" headers="to">2</td>
 <td class="gt_row gt_left" headers="pre">their</td>
@@ -2655,7 +2660,7 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="docname">text2270</td>
+<td class="gt_row gt_left" headers="docname">text2203</td>
 <td class="gt_row gt_right" headers="from">11</td>
 <td class="gt_row gt_right" headers="to">11</td>
 <td class="gt_row gt_left" headers="pre">each party exerted the utmost force of their reason and</td>
@@ -2664,7 +2669,7 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="docname">text2671</td>
+<td class="gt_row gt_left" headers="docname">text2604</td>
 <td class="gt_row gt_right" headers="from">1</td>
 <td class="gt_row gt_right" headers="to">1</td>
 <td class="gt_row gt_left" headers="pre"></td>
@@ -2673,7 +2678,7 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="docname">text3138</td>
+<td class="gt_row gt_left" headers="docname">text3071</td>
 <td class="gt_row gt_right" headers="from">7</td>
 <td class="gt_row gt_right" headers="to">7</td>
 <td class="gt_row gt_left" headers="pre">imagination , and the exuberance of</td>
@@ -2682,7 +2687,7 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="docname">text7203</td>
+<td class="gt_row gt_left" headers="docname">text7136</td>
 <td class="gt_row gt_right" headers="from">7</td>
 <td class="gt_row gt_right" headers="to">7</td>
 <td class="gt_row gt_left" headers="pre">be ingenious , and though the</td>
@@ -2691,7 +2696,7 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="docname">text8594</td>
+<td class="gt_row gt_left" headers="docname">text8527</td>
 <td class="gt_row gt_right" headers="from">1</td>
 <td class="gt_row gt_right" headers="to">1</td>
 <td class="gt_row gt_left" headers="pre"></td>
@@ -2700,7 +2705,7 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="docname">text9831</td>
+<td class="gt_row gt_left" headers="docname">text9764</td>
 <td class="gt_row gt_right" headers="from">6</td>
 <td class="gt_row gt_right" headers="to">6</td>
 <td class="gt_row gt_left" headers="pre">reproaches , and exercising their</td>
@@ -2709,7 +2714,7 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="docname">text10144</td>
+<td class="gt_row gt_left" headers="docname">text10077</td>
 <td class="gt_row gt_right" headers="from">1</td>
 <td class="gt_row gt_right" headers="to">1</td>
 <td class="gt_row gt_left" headers="pre"></td>
@@ -2718,7 +2723,7 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="docname">text11892</td>
+<td class="gt_row gt_left" headers="docname">text11825</td>
 <td class="gt_row gt_right" headers="from">1</td>
 <td class="gt_row gt_right" headers="to">1</td>
 <td class="gt_row gt_left" headers="pre"></td>
@@ -2727,7 +2732,7 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="docname">text13512</td>
+<td class="gt_row gt_left" headers="docname">text13445</td>
 <td class="gt_row gt_right" headers="from">8</td>
 <td class="gt_row gt_right" headers="to">8</td>
 <td class="gt_row gt_left" headers="pre">with absurdities , which no strength of</td>
@@ -2736,7 +2741,7 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="docname">text14232</td>
+<td class="gt_row gt_left" headers="docname">text14165</td>
 <td class="gt_row gt_right" headers="from">6</td>
 <td class="gt_row gt_right" headers="to">6</td>
 <td class="gt_row gt_left" headers="pre">with all the arts of</td>
@@ -2745,7 +2750,7 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="docname">text14524</td>
+<td class="gt_row gt_left" headers="docname">text14457</td>
 <td class="gt_row gt_right" headers="from">6</td>
 <td class="gt_row gt_right" headers="to">6</td>
 <td class="gt_row gt_left" headers="pre">dissipate all the mists which</td>
@@ -2754,7 +2759,7 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="docname">text16569</td>
+<td class="gt_row gt_left" headers="docname">text16502</td>
 <td class="gt_row gt_right" headers="from">9</td>
 <td class="gt_row gt_right" headers="to">9</td>
 <td class="gt_row gt_left" headers="pre">110 acuteness can overthrow , and against which</td>
@@ -2763,7 +2768,7 @@ div.csl-indent {
 <td class="gt_row gt_center" headers="pattern">eloquence</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="docname">text16975</td>
+<td class="gt_row gt_left" headers="docname">text16908</td>
 <td class="gt_row gt_right" headers="from">8</td>
 <td class="gt_row gt_right" headers="to">8</td>
 <td class="gt_row gt_left" headers="pre">first notions , and have employed their</td>
@@ -2871,11 +2876,11 @@ div.csl-indent {
 <pre><code># A tibble: 30 × 3
    item1    item2          n
    &lt;chr&gt;    &lt;chr&gt;      &lt;dbl&gt;
- 1 queen    hungary       35
- 2 walpole  robert        30
- 3 john     barnard       30
- 4 subjects fellow        28
- 5 publick  service       26
+ 1 queen    hungary       34
+ 2 fellow   subjects      28
+ 3 john     barnard       28
+ 4 publick  service       26
+ 5 robert   walpole       26
  6 william  yonge         25
  7 officers soldiers      21
  8 sanction pragmatick    21
@@ -2916,20 +2921,20 @@ div.csl-indent {
 <span></span>
 <span><span class="va">cooccur</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 57 × 3
-   item1      item2          n
-   &lt;chr&gt;      &lt;chr&gt;      &lt;dbl&gt;
- 1 queen      hungary       81
- 2 troops     hanover       39
- 3 war        ships         34
- 4 sanction   pragmatick    33
- 5 subjects   fellow        23
- 6 liquors    distilled     21
- 7 spirituous liquors       20
- 8 spirits    distilled     20
- 9 publick    affairs       19
-10 publick    happiness     19
-# ℹ 47 more rows</code></pre>
+<pre><code># A tibble: 54 × 3
+   item1    item2          n
+   &lt;chr&gt;    &lt;chr&gt;      &lt;dbl&gt;
+ 1 queen    hungary       81
+ 2 hanover  troops        39
+ 3 war      ships         34
+ 4 sanction pragmatick    33
+ 5 subjects fellow        23
+ 6 liquors  distilled     21
+ 7 spirits  distilled     20
+ 8 publick  happiness     19
+ 9 liquors  spirituous    19
+10 affairs  publick       18
+# ℹ 44 more rows</code></pre>
 </div>
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb61"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># igraphオブジェクトを作成</span></span>
 <span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r.igraph.org/reference/graph_from_data_frame.html">graph_from_data_frame</a></span><span class="op">(</span><span class="va">cooccur</span><span class="op">)</span></span>
@@ -2965,20 +2970,20 @@ div.csl-indent {
 <span></span>
 <span><span class="va">cooccur</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 56 × 3
-   item1      item2         n
-   &lt;chr&gt;      &lt;chr&gt;     &lt;dbl&gt;
- 1 power      eloquence     3
- 2 eloquence  praise        2
- 3 eloquence  displayed     2
- 4 reports    eloquent      1
- 5 faithful   eloquent      1
- 6 deservedly eloquent      1
- 7 eminent    eloquent      1
- 8 french     eloquence     1
- 9 majesty    eloquence     1
-10 sagacity   eloquence     1
-# ℹ 46 more rows</code></pre>
+<pre><code># A tibble: 47 × 3
+   item1     item2         n
+   &lt;chr&gt;     &lt;chr&gt;     &lt;dbl&gt;
+ 1 power     eloquence     3
+ 2 eloquence praise        2
+ 3 eloquence displayed     2
+ 4 majesty   eloquence     1
+ 5 petition  eloquence     1
+ 6 french    eloquence     1
+ 7 supported eloquence     1
+ 8 merchants eloquence     1
+ 9 profit    eloquence     1
+10 inquire   eloquence     1
+# ℹ 37 more rows</code></pre>
 </div>
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb64"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># igraphオブジェクトを作成</span></span>
 <span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r.igraph.org/reference/graph_from_data_frame.html">graph_from_data_frame</a></span><span class="op">(</span><span class="va">cooccur</span><span class="op">)</span></span>
@@ -3448,8 +3453,7 @@ NULL</code></pre>
 <pre><code>Fitting LDA with 6 topics
  ...initializing
  ...Gibbs sampling in up to 2000 iterations
- ......iteration 100 elapsed time: 0.46 seconds (delta: 0.27%)
- ......iteration 200 elapsed time: 0.89 seconds (delta: -0.07%)
+ ......iteration 100 elapsed time: 0.46 seconds (delta: -0.17%)
  ...computing theta and phi
  ...complete</code></pre>
 </div>
@@ -3943,178 +3947,178 @@ NULL</code></pre>
 <td class="gt_row gt_left" headers="freedomofspeech">opinion</td>
 <td class="gt_row gt_left" headers="norms">publick</td>
 <td class="gt_row gt_left" headers="economy">merchants</td>
-<td class="gt_row gt_left" headers="rhetorical">degree</td>
+<td class="gt_row gt_left" headers="rhetorical">necessary</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">2</td>
 <td class="gt_row gt_left" headers="domestic">country</td>
 <td class="gt_row gt_left" headers="international">army</td>
 <td class="gt_row gt_left" headers="freedomofspeech">people</td>
-<td class="gt_row gt_left" headers="norms">interest</td>
-<td class="gt_row gt_left" headers="economy">bill</td>
-<td class="gt_row gt_left" headers="rhetorical">advantage</td>
+<td class="gt_row gt_left" headers="norms">liberty</td>
+<td class="gt_row gt_left" headers="economy">trade</td>
+<td class="gt_row gt_left" headers="rhetorical">reasonable</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">3</td>
 <td class="gt_row gt_left" headers="domestic">law</td>
 <td class="gt_row gt_left" headers="international">soldiers</td>
 <td class="gt_row gt_left" headers="freedomofspeech">government</td>
-<td class="gt_row gt_left" headers="norms">liberty</td>
-<td class="gt_row gt_left" headers="economy">trade</td>
-<td class="gt_row gt_left" headers="rhetorical">reasonable</td>
+<td class="gt_row gt_left" headers="norms">justice</td>
+<td class="gt_row gt_left" headers="economy">bill</td>
+<td class="gt_row gt_left" headers="rhetorical">advantage</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">4</td>
 <td class="gt_row gt_left" headers="domestic">people</td>
 <td class="gt_row gt_left" headers="international">french</td>
-<td class="gt_row gt_left" headers="freedomofspeech">method</td>
-<td class="gt_row gt_left" headers="norms">justice</td>
+<td class="gt_row gt_left" headers="freedomofspeech">always</td>
+<td class="gt_row gt_left" headers="norms">equal</td>
 <td class="gt_row gt_left" headers="economy">commerce</td>
-<td class="gt_row gt_left" headers="rhetorical">authority</td>
+<td class="gt_row gt_left" headers="rhetorical">expected</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">5</td>
 <td class="gt_row gt_left" headers="domestic">majesty</td>
 <td class="gt_row gt_left" headers="international">dominions</td>
 <td class="gt_row gt_left" headers="freedomofspeech">proper</td>
-<td class="gt_row gt_left" headers="norms">equal</td>
+<td class="gt_row gt_left" headers="norms">interest</td>
 <td class="gt_row gt_left" headers="economy">money</td>
-<td class="gt_row gt_left" headers="rhetorical">expected</td>
+<td class="gt_row gt_left" headers="rhetorical">opportunity</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">6</td>
 <td class="gt_row gt_left" headers="domestic">minister</td>
 <td class="gt_row gt_left" headers="international">britain</td>
-<td class="gt_row gt_left" headers="freedomofspeech">long</td>
+<td class="gt_row gt_left" headers="freedomofspeech">arguments</td>
 <td class="gt_row gt_left" headers="norms">honour</td>
 <td class="gt_row gt_left" headers="economy">necessary</td>
-<td class="gt_row gt_left" headers="rhetorical">give</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="rank">7</td>
-<td class="gt_row gt_left" headers="domestic">power</td>
-<td class="gt_row gt_left" headers="international">officers</td>
-<td class="gt_row gt_left" headers="freedomofspeech">arguments</td>
-<td class="gt_row gt_left" headers="norms">always</td>
-<td class="gt_row gt_left" headers="economy">sailors</td>
-<td class="gt_row gt_left" headers="rhetorical">greater</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="rank">8</td>
-<td class="gt_row gt_left" headers="domestic">subject</td>
-<td class="gt_row gt_left" headers="international">military</td>
-<td class="gt_row gt_left" headers="freedomofspeech">oppression</td>
-<td class="gt_row gt_left" headers="norms">affairs</td>
-<td class="gt_row gt_left" headers="economy">clause</td>
-<td class="gt_row gt_left" headers="rhetorical">common</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="rank">9</td>
-<td class="gt_row gt_left" headers="domestic">government</td>
-<td class="gt_row gt_left" headers="international">europe</td>
-<td class="gt_row gt_left" headers="freedomofspeech">last</td>
-<td class="gt_row gt_left" headers="norms">rights</td>
-<td class="gt_row gt_left" headers="economy">necessity</td>
-<td class="gt_row gt_left" headers="rhetorical">reason</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="rank">10</td>
-<td class="gt_row gt_left" headers="domestic">danger</td>
-<td class="gt_row gt_left" headers="international">foreign</td>
-<td class="gt_row gt_left" headers="freedomofspeech">necessary</td>
-<td class="gt_row gt_left" headers="norms">different</td>
-<td class="gt_row gt_left" headers="economy">offered</td>
 <td class="gt_row gt_left" headers="rhetorical">confidence</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="rank">11</td>
+<td class="gt_row gt_right" headers="rank">7</td>
+<td class="gt_row gt_left" headers="domestic">subject</td>
+<td class="gt_row gt_left" headers="international">military</td>
+<td class="gt_row gt_left" headers="freedomofspeech">able</td>
+<td class="gt_row gt_left" headers="norms">rights</td>
+<td class="gt_row gt_left" headers="economy">particular</td>
+<td class="gt_row gt_left" headers="rhetorical">authority</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="rank">8</td>
+<td class="gt_row gt_left" headers="domestic">government</td>
+<td class="gt_row gt_left" headers="international">officers</td>
+<td class="gt_row gt_left" headers="freedomofspeech">necessary</td>
+<td class="gt_row gt_left" headers="norms">reason</td>
+<td class="gt_row gt_left" headers="economy">clause</td>
+<td class="gt_row gt_left" headers="rhetorical">enemies</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="rank">9</td>
 <td class="gt_row gt_left" headers="domestic">constitution</td>
+<td class="gt_row gt_left" headers="international">foreign</td>
+<td class="gt_row gt_left" headers="freedomofspeech">oppression</td>
+<td class="gt_row gt_left" headers="norms">equally</td>
+<td class="gt_row gt_left" headers="economy">debate</td>
+<td class="gt_row gt_left" headers="rhetorical">discovered</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="rank">10</td>
+<td class="gt_row gt_left" headers="domestic">crown</td>
 <td class="gt_row gt_left" headers="international">troops</td>
 <td class="gt_row gt_left" headers="freedomofspeech">discover</td>
-<td class="gt_row gt_left" headers="norms">importance</td>
-<td class="gt_row gt_left" headers="economy">petition</td>
-<td class="gt_row gt_left" headers="rhetorical">right</td>
+<td class="gt_row gt_left" headers="norms">assembly</td>
+<td class="gt_row gt_left" headers="economy">sailors</td>
+<td class="gt_row gt_left" headers="rhetorical">queen</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="rank">11</td>
+<td class="gt_row gt_left" headers="domestic">power</td>
+<td class="gt_row gt_left" headers="international">europe</td>
+<td class="gt_row gt_left" headers="freedomofspeech">even</td>
+<td class="gt_row gt_left" headers="norms">affairs</td>
+<td class="gt_row gt_left" headers="economy">consideration</td>
+<td class="gt_row gt_left" headers="rhetorical">method</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">12</td>
-<td class="gt_row gt_left" headers="domestic">crown</td>
-<td class="gt_row gt_left" headers="international">soldier</td>
-<td class="gt_row gt_left" headers="freedomofspeech">reason</td>
-<td class="gt_row gt_left" headers="norms">service</td>
-<td class="gt_row gt_left" headers="economy">follows</td>
-<td class="gt_row gt_left" headers="rhetorical">justly</td>
+<td class="gt_row gt_left" headers="domestic">subjects</td>
+<td class="gt_row gt_left" headers="international">power</td>
+<td class="gt_row gt_left" headers="freedomofspeech">others</td>
+<td class="gt_row gt_left" headers="norms">act</td>
+<td class="gt_row gt_left" headers="economy">common</td>
+<td class="gt_row gt_left" headers="rhetorical">advantages</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">13</td>
 <td class="gt_row gt_left" headers="domestic">make</td>
-<td class="gt_row gt_left" headers="international">forces</td>
+<td class="gt_row gt_left" headers="international">soldier</td>
 <td class="gt_row gt_left" headers="freedomofspeech">noble</td>
-<td class="gt_row gt_left" headers="norms">dignity</td>
-<td class="gt_row gt_left" headers="economy">particular</td>
-<td class="gt_row gt_left" headers="rhetorical">equally</td>
+<td class="gt_row gt_left" headers="norms">necessity</td>
+<td class="gt_row gt_left" headers="economy">offered</td>
+<td class="gt_row gt_left" headers="rhetorical">greater</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">14</td>
 <td class="gt_row gt_left" headers="domestic">influence</td>
-<td class="gt_row gt_left" headers="international">power</td>
-<td class="gt_row gt_left" headers="freedomofspeech">little</td>
-<td class="gt_row gt_left" headers="norms">appear</td>
-<td class="gt_row gt_left" headers="economy">whole</td>
-<td class="gt_row gt_left" headers="rhetorical">claim</td>
+<td class="gt_row gt_left" headers="international">enemies</td>
+<td class="gt_row gt_left" headers="freedomofspeech">necessity</td>
+<td class="gt_row gt_left" headers="norms">dignity</td>
+<td class="gt_row gt_left" headers="economy">evident</td>
+<td class="gt_row gt_left" headers="rhetorical">easy</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">15</td>
-<td class="gt_row gt_left" headers="domestic">subjects</td>
-<td class="gt_row gt_left" headers="international">enemies</td>
-<td class="gt_row gt_left" headers="freedomofspeech">debate</td>
+<td class="gt_row gt_left" headers="domestic">security</td>
+<td class="gt_row gt_left" headers="international">forces</td>
+<td class="gt_row gt_left" headers="freedomofspeech">allowed</td>
 <td class="gt_row gt_left" headers="norms">virtue</td>
-<td class="gt_row gt_left" headers="economy">wealth</td>
-<td class="gt_row gt_left" headers="rhetorical">imagine</td>
+<td class="gt_row gt_left" headers="economy">petition</td>
+<td class="gt_row gt_left" headers="rhetorical">life</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">16</td>
-<td class="gt_row gt_left" headers="domestic">ministry</td>
+<td class="gt_row gt_left" headers="domestic">whole</td>
 <td class="gt_row gt_left" headers="international">treaty</td>
-<td class="gt_row gt_left" headers="freedomofspeech">able</td>
-<td class="gt_row gt_left" headers="norms">assembly</td>
-<td class="gt_row gt_left" headers="economy">said</td>
-<td class="gt_row gt_left" headers="rhetorical">opportunity</td>
+<td class="gt_row gt_left" headers="freedomofspeech">force</td>
+<td class="gt_row gt_left" headers="norms">know</td>
+<td class="gt_row gt_left" headers="economy">thousand</td>
+<td class="gt_row gt_left" headers="rhetorical">imagine</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">17</td>
-<td class="gt_row gt_left" headers="domestic">security</td>
-<td class="gt_row gt_left" headers="international">success</td>
-<td class="gt_row gt_left" headers="freedomofspeech">gentlemen</td>
-<td class="gt_row gt_left" headers="norms">nature</td>
-<td class="gt_row gt_left" headers="economy">manner</td>
-<td class="gt_row gt_left" headers="rhetorical">evidence</td>
+<td class="gt_row gt_left" headers="domestic">long</td>
+<td class="gt_row gt_left" headers="international">spaniards</td>
+<td class="gt_row gt_left" headers="freedomofspeech">appear</td>
+<td class="gt_row gt_left" headers="norms">sometimes</td>
+<td class="gt_row gt_left" headers="economy">wealth</td>
+<td class="gt_row gt_left" headers="rhetorical">imagined</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">18</td>
 <td class="gt_row gt_left" headers="domestic">contempt</td>
-<td class="gt_row gt_left" headers="international">expense</td>
-<td class="gt_row gt_left" headers="freedomofspeech">opposition</td>
-<td class="gt_row gt_left" headers="norms">state</td>
-<td class="gt_row gt_left" headers="economy">put</td>
-<td class="gt_row gt_left" headers="rhetorical">enemies</td>
+<td class="gt_row gt_left" headers="international">ships</td>
+<td class="gt_row gt_left" headers="freedomofspeech">gentlemen</td>
+<td class="gt_row gt_left" headers="norms">manner</td>
+<td class="gt_row gt_left" headers="economy">consider</td>
+<td class="gt_row gt_left" headers="rhetorical">know</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">19</td>
-<td class="gt_row gt_left" headers="domestic">policy</td>
-<td class="gt_row gt_left" headers="international">defence</td>
-<td class="gt_row gt_left" headers="freedomofspeech">truth</td>
-<td class="gt_row gt_left" headers="norms">senate</td>
-<td class="gt_row gt_left" headers="economy">objections</td>
-<td class="gt_row gt_left" headers="rhetorical">see</td>
+<td class="gt_row gt_left" headers="domestic">danger</td>
+<td class="gt_row gt_left" headers="international">formidable</td>
+<td class="gt_row gt_left" headers="freedomofspeech">favour</td>
+<td class="gt_row gt_left" headers="norms">laws</td>
+<td class="gt_row gt_left" headers="economy">put</td>
+<td class="gt_row gt_left" headers="rhetorical">abilities</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">20</td>
-<td class="gt_row gt_left" headers="domestic">regulation</td>
-<td class="gt_row gt_left" headers="international">spaniards</td>
-<td class="gt_row gt_left" headers="freedomofspeech">queen</td>
-<td class="gt_row gt_left" headers="norms">private</td>
-<td class="gt_row gt_left" headers="economy">seamen</td>
-<td class="gt_row gt_left" headers="rhetorical">life</td>
+<td class="gt_row gt_left" headers="domestic">established</td>
+<td class="gt_row gt_left" headers="international">france</td>
+<td class="gt_row gt_left" headers="freedomofspeech">believe</td>
+<td class="gt_row gt_left" headers="norms">follows</td>
+<td class="gt_row gt_left" headers="economy">right</td>
+<td class="gt_row gt_left" headers="rhetorical">reputation</td>
 </tr>
 </tbody>
 </table>
@@ -4144,8 +4148,7 @@ NULL</code></pre>
 <pre><code>Fitting LDA with 6 topics
  ...initializing
  ...Gibbs sampling in up to 2000 iterations
- ......iteration 100 elapsed time: 0.46 seconds (delta: 0.20%)
- ......iteration 200 elapsed time: 0.87 seconds (delta: -0.04%)
+ ......iteration 100 elapsed time: 0.48 seconds (delta: -0.09%)
  ...computing theta and phi
  ...complete</code></pre>
 </div>
@@ -4639,178 +4642,178 @@ NULL</code></pre>
 <td class="gt_row gt_left" headers="freedomofspeech">people</td>
 <td class="gt_row gt_left" headers="norms">publick</td>
 <td class="gt_row gt_left" headers="economy">trade</td>
-<td class="gt_row gt_left" headers="rhetorical">bill</td>
+<td class="gt_row gt_left" headers="rhetorical">found</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">2</td>
 <td class="gt_row gt_left" headers="domestic">law</td>
-<td class="gt_row gt_left" headers="international">troops</td>
-<td class="gt_row gt_left" headers="freedomofspeech">opinion</td>
+<td class="gt_row gt_left" headers="international">britain</td>
+<td class="gt_row gt_left" headers="freedomofspeech">bill</td>
 <td class="gt_row gt_left" headers="norms">justice</td>
 <td class="gt_row gt_left" headers="economy">money</td>
-<td class="gt_row gt_left" headers="rhetorical">necessary</td>
+<td class="gt_row gt_left" headers="rhetorical">believe</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">3</td>
 <td class="gt_row gt_left" headers="domestic">people</td>
-<td class="gt_row gt_left" headers="international">britain</td>
-<td class="gt_row gt_left" headers="freedomofspeech">government</td>
+<td class="gt_row gt_left" headers="international">troops</td>
+<td class="gt_row gt_left" headers="freedomofspeech">opinion</td>
 <td class="gt_row gt_left" headers="norms">virtue</td>
 <td class="gt_row gt_left" headers="economy">commerce</td>
-<td class="gt_row gt_left" headers="rhetorical">noble</td>
+<td class="gt_row gt_left" headers="rhetorical">find</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">4</td>
 <td class="gt_row gt_left" headers="domestic">country</td>
 <td class="gt_row gt_left" headers="international">dominions</td>
-<td class="gt_row gt_left" headers="freedomofspeech">use</td>
+<td class="gt_row gt_left" headers="freedomofspeech">government</td>
 <td class="gt_row gt_left" headers="norms">vice</td>
 <td class="gt_row gt_left" headers="economy">tax</td>
-<td class="gt_row gt_left" headers="rhetorical">since</td>
+<td class="gt_row gt_left" headers="rhetorical">reasonable</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">5</td>
 <td class="gt_row gt_left" headers="domestic">government</td>
 <td class="gt_row gt_left" headers="international">europe</td>
-<td class="gt_row gt_left" headers="freedomofspeech">liquors</td>
-<td class="gt_row gt_left" headers="norms">interest</td>
+<td class="gt_row gt_left" headers="freedomofspeech">noble</td>
+<td class="gt_row gt_left" headers="norms">equal</td>
 <td class="gt_row gt_left" headers="economy">merchants</td>
-<td class="gt_row gt_left" headers="rhetorical">inquiry</td>
+<td class="gt_row gt_left" headers="rhetorical">long</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">6</td>
 <td class="gt_row gt_left" headers="domestic">majesty</td>
-<td class="gt_row gt_left" headers="international">army</td>
-<td class="gt_row gt_left" headers="freedomofspeech">spirits</td>
-<td class="gt_row gt_left" headers="norms">equal</td>
-<td class="gt_row gt_left" headers="economy">duty</td>
-<td class="gt_row gt_left" headers="rhetorical">lordships</td>
+<td class="gt_row gt_left" headers="international">foreign</td>
+<td class="gt_row gt_left" headers="freedomofspeech">necessary</td>
+<td class="gt_row gt_left" headers="norms">liberty</td>
+<td class="gt_row gt_left" headers="economy">use</td>
+<td class="gt_row gt_left" headers="rhetorical">confidence</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">7</td>
 <td class="gt_row gt_left" headers="domestic">constitution</td>
-<td class="gt_row gt_left" headers="international">foreign</td>
-<td class="gt_row gt_left" headers="freedomofspeech">found</td>
-<td class="gt_row gt_left" headers="norms">liberty</td>
-<td class="gt_row gt_left" headers="economy">method</td>
-<td class="gt_row gt_left" headers="rhetorical">arguments</td>
+<td class="gt_row gt_left" headers="international">french</td>
+<td class="gt_row gt_left" headers="freedomofspeech">reason</td>
+<td class="gt_row gt_left" headers="norms">honour</td>
+<td class="gt_row gt_left" headers="economy">liquors</td>
+<td class="gt_row gt_left" headers="rhetorical">opposition</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">8</td>
-<td class="gt_row gt_left" headers="domestic">policy</td>
-<td class="gt_row gt_left" headers="international">french</td>
-<td class="gt_row gt_left" headers="freedomofspeech">even</td>
-<td class="gt_row gt_left" headers="norms">honour</td>
-<td class="gt_row gt_left" headers="economy">security</td>
-<td class="gt_row gt_left" headers="rhetorical">commons</td>
+<td class="gt_row gt_left" headers="domestic">ships</td>
+<td class="gt_row gt_left" headers="international">army</td>
+<td class="gt_row gt_left" headers="freedomofspeech">lordships</td>
+<td class="gt_row gt_left" headers="norms">interest</td>
+<td class="gt_row gt_left" headers="economy">spirits</td>
+<td class="gt_row gt_left" headers="rhetorical">false</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">9</td>
-<td class="gt_row gt_left" headers="domestic">long</td>
+<td class="gt_row gt_left" headers="domestic">queen</td>
 <td class="gt_row gt_left" headers="international">power</td>
-<td class="gt_row gt_left" headers="freedomofspeech">danger</td>
-<td class="gt_row gt_left" headers="norms">queen</td>
-<td class="gt_row gt_left" headers="economy">wealth</td>
-<td class="gt_row gt_left" headers="rhetorical">reason</td>
+<td class="gt_row gt_left" headers="freedomofspeech">arguments</td>
+<td class="gt_row gt_left" headers="norms">happiness</td>
+<td class="gt_row gt_left" headers="economy">duty</td>
+<td class="gt_row gt_left" headers="rhetorical">little</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">10</td>
-<td class="gt_row gt_left" headers="domestic">senate</td>
+<td class="gt_row gt_left" headers="domestic">policy</td>
 <td class="gt_row gt_left" headers="international">hanover</td>
-<td class="gt_row gt_left" headers="freedomofspeech">force</td>
-<td class="gt_row gt_left" headers="norms">happiness</td>
-<td class="gt_row gt_left" headers="economy">necessity</td>
-<td class="gt_row gt_left" headers="rhetorical">believe</td>
+<td class="gt_row gt_left" headers="freedomofspeech">commons</td>
+<td class="gt_row gt_left" headers="norms">corruption</td>
+<td class="gt_row gt_left" headers="economy">advantage</td>
+<td class="gt_row gt_left" headers="rhetorical">necessity</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">11</td>
 <td class="gt_row gt_left" headers="domestic">subject</td>
-<td class="gt_row gt_left" headers="international">ships</td>
-<td class="gt_row gt_left" headers="freedomofspeech">drunkenness</td>
-<td class="gt_row gt_left" headers="norms">hungary</td>
-<td class="gt_row gt_left" headers="economy">raised</td>
-<td class="gt_row gt_left" headers="rhetorical">consideration</td>
+<td class="gt_row gt_left" headers="international">enemies</td>
+<td class="gt_row gt_left" headers="freedomofspeech">appears</td>
+<td class="gt_row gt_left" headers="norms">affairs</td>
+<td class="gt_row gt_left" headers="economy">wealth</td>
+<td class="gt_row gt_left" headers="rhetorical">able</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">12</td>
-<td class="gt_row gt_left" headers="domestic">ministers</td>
+<td class="gt_row gt_left" headers="domestic">hungary</td>
 <td class="gt_row gt_left" headers="international">empire</td>
-<td class="gt_row gt_left" headers="freedomofspeech">endeavour</td>
-<td class="gt_row gt_left" headers="norms">mankind</td>
-<td class="gt_row gt_left" headers="economy">last</td>
-<td class="gt_row gt_left" headers="rhetorical">reasonable</td>
+<td class="gt_row gt_left" headers="freedomofspeech">inquiry</td>
+<td class="gt_row gt_left" headers="norms">rights</td>
+<td class="gt_row gt_left" headers="economy">raised</td>
+<td class="gt_row gt_left" headers="rhetorical">necessary</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">13</td>
-<td class="gt_row gt_left" headers="domestic">minister</td>
+<td class="gt_row gt_left" headers="domestic">act</td>
 <td class="gt_row gt_left" headers="international">france</td>
-<td class="gt_row gt_left" headers="freedomofspeech">methods</td>
-<td class="gt_row gt_left" headers="norms">reason</td>
-<td class="gt_row gt_left" headers="economy">year</td>
-<td class="gt_row gt_left" headers="rhetorical">debate</td>
+<td class="gt_row gt_left" headers="freedomofspeech">discover</td>
+<td class="gt_row gt_left" headers="norms">designs</td>
+<td class="gt_row gt_left" headers="economy">effects</td>
+<td class="gt_row gt_left" headers="rhetorical">wickedness</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">14</td>
-<td class="gt_row gt_left" headers="domestic">right</td>
-<td class="gt_row gt_left" headers="international">enemies</td>
-<td class="gt_row gt_left" headers="freedomofspeech">allowed</td>
-<td class="gt_row gt_left" headers="norms">corruption</td>
-<td class="gt_row gt_left" headers="economy">taken</td>
-<td class="gt_row gt_left" headers="rhetorical">design</td>
+<td class="gt_row gt_left" headers="domestic">minister</td>
+<td class="gt_row gt_left" headers="international">forces</td>
+<td class="gt_row gt_left" headers="freedomofspeech">show</td>
+<td class="gt_row gt_left" headers="norms">different</td>
+<td class="gt_row gt_left" headers="economy">security</td>
+<td class="gt_row gt_left" headers="rhetorical">danger</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">15</td>
-<td class="gt_row gt_left" headers="domestic">power</td>
-<td class="gt_row gt_left" headers="international">employed</td>
-<td class="gt_row gt_left" headers="freedomofspeech">influence</td>
-<td class="gt_row gt_left" headers="norms">rights</td>
-<td class="gt_row gt_left" headers="economy">greater</td>
-<td class="gt_row gt_left" headers="rhetorical">argument</td>
+<td class="gt_row gt_left" headers="domestic">senate</td>
+<td class="gt_row gt_left" headers="international">balance</td>
+<td class="gt_row gt_left" headers="freedomofspeech">since</td>
+<td class="gt_row gt_left" headers="norms">always</td>
+<td class="gt_row gt_left" headers="economy">year</td>
+<td class="gt_row gt_left" headers="rhetorical">set</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">16</td>
-<td class="gt_row gt_left" headers="domestic">crown</td>
-<td class="gt_row gt_left" headers="international">forces</td>
-<td class="gt_row gt_left" headers="freedomofspeech">utmost</td>
-<td class="gt_row gt_left" headers="norms">affairs</td>
-<td class="gt_row gt_left" headers="economy">laid</td>
-<td class="gt_row gt_left" headers="rhetorical">urged</td>
+<td class="gt_row gt_left" headers="domestic">always</td>
+<td class="gt_row gt_left" headers="international">interest</td>
+<td class="gt_row gt_left" headers="freedomofspeech">debate</td>
+<td class="gt_row gt_left" headers="norms">utmost</td>
+<td class="gt_row gt_left" headers="economy">drunkenness</td>
+<td class="gt_row gt_left" headers="rhetorical">formed</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">17</td>
 <td class="gt_row gt_left" headers="domestic">state</td>
-<td class="gt_row gt_left" headers="international">balance</td>
-<td class="gt_row gt_left" headers="freedomofspeech">wickedness</td>
-<td class="gt_row gt_left" headers="norms">whatever</td>
-<td class="gt_row gt_left" headers="economy">price</td>
-<td class="gt_row gt_left" headers="rhetorical">person</td>
+<td class="gt_row gt_left" headers="international">austria</td>
+<td class="gt_row gt_left" headers="freedomofspeech">method</td>
+<td class="gt_row gt_left" headers="norms">authority</td>
+<td class="gt_row gt_left" headers="economy">laid</td>
+<td class="gt_row gt_left" headers="rhetorical">since</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">18</td>
-<td class="gt_row gt_left" headers="domestic">designs</td>
-<td class="gt_row gt_left" headers="international">powers</td>
-<td class="gt_row gt_left" headers="freedomofspeech">effects</td>
-<td class="gt_row gt_left" headers="norms">equally</td>
-<td class="gt_row gt_left" headers="economy">raise</td>
-<td class="gt_row gt_left" headers="rhetorical">discover</td>
+<td class="gt_row gt_left" headers="domestic">crown</td>
+<td class="gt_row gt_left" headers="international">nations</td>
+<td class="gt_row gt_left" headers="freedomofspeech">argument</td>
+<td class="gt_row gt_left" headers="norms">thought</td>
+<td class="gt_row gt_left" headers="economy">price</td>
+<td class="gt_row gt_left" headers="rhetorical">methods</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="rank">19</td>
-<td class="gt_row gt_left" headers="domestic">subjects</td>
-<td class="gt_row gt_left" headers="international">nations</td>
-<td class="gt_row gt_left" headers="freedomofspeech">debauchery</td>
-<td class="gt_row gt_left" headers="norms">others</td>
+<td class="gt_row gt_left" headers="domestic">former</td>
+<td class="gt_row gt_left" headers="international">world</td>
+<td class="gt_row gt_left" headers="freedomofspeech">favour</td>
+<td class="gt_row gt_left" headers="norms">private</td>
 <td class="gt_row gt_left" headers="economy">years</td>
-<td class="gt_row gt_left" headers="rhetorical">committee</td>
+<td class="gt_row gt_left" headers="rhetorical">success</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="rank">20</td>
-<td class="gt_row gt_left" headers="domestic">act</td>
-<td class="gt_row gt_left" headers="international">austria</td>
-<td class="gt_row gt_left" headers="freedomofspeech">high</td>
-<td class="gt_row gt_left" headers="norms">cause</td>
-<td class="gt_row gt_left" headers="economy">necessary</td>
-<td class="gt_row gt_left" headers="rhetorical">evidence</td>
+<td class="gt_row gt_left" headers="domestic">subjects</td>
+<td class="gt_row gt_left" headers="international">powers</td>
+<td class="gt_row gt_left" headers="freedomofspeech">consideration</td>
+<td class="gt_row gt_left" headers="norms">means</td>
+<td class="gt_row gt_left" headers="economy">increase</td>
+<td class="gt_row gt_left" headers="rhetorical">expected</td>
 </tr>
 </tbody>
 </table>
