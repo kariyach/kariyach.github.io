@@ -74,7 +74,7 @@
     "href": "teaching/Biblio-battle/index.html#week-4-1029-研究分野の本を紹介しよう①",
     "title": "ビブリオバトル入門：読む楽しみを分かち合う《2025》",
     "section": "Week 4 (10/29) ：研究分野の本を紹介しよう①",
-    "text": "Week 4 (10/29) ：研究分野の本を紹介しよう①\n\n専攻する研究にかかわる本\n\n第1ラウンド"
+    "text": "Week 4 (10/29) ：研究分野の本を紹介しよう①\n\n専攻する研究にかかわる本\n\n第1ラウンド\n\nslide / ブクログ"
   },
   {
     "objectID": "teaching/Biblio-battle/index.html#week-5-115-研究分野の本を紹介しよう②",
@@ -690,7 +690,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基礎なぜrなのか-なぜquartoなのか",
     "title": "初心者向けR Studioの使い方",
     "section": "基礎：なぜRなのか / なぜQuartoなのか",
-    "text": "基礎：なぜRなのか / なぜQuartoなのか\n1. コード（スクリプト）\n\n再現可能性\n\nマウス操作ベース（=GUI）と違い､その場限りではなく、手順がすべて残る\n\n真似しやすい / 生成AIと親和性が高い / ミスも再現できる / 共同作業・共同研究しやすい\n\nCf. Microsoft Excel; SPSS; KH Coder\n\n作業の効率化\n\n一度作ったコード（データ処理）を別のデータでも使い回せる\n\n安全性\n\n元データ（ファイル）を加工しない\nRが、メモリ上にデータを保持し、そのコピーを操作する"
+    "text": "基礎：なぜRなのか / なぜQuartoなのか\n1. コード（スクリプト）\n\n再現可能性\n\nコードはすべての手順が残る\n\n真似しやすい / 生成AIと親和性が高い / ミスも再現できる / 共同作業・共同研究しやすい\n\nCf. マウス操作（GUI）中心：Microsoft Excel; SPSS; KH Coder\n\n作業の効率化\n\n一度作ったコード（データ処理）を別のデータでも使い回せる\n\n安全性\n\n元データ（ファイル）を加工しない\nRが、メモリ上にデータを保持し、そのコピーを操作する"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基礎なぜrなのか-なぜquartoなのか-1",
@@ -1229,7 +1229,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#実践データの結合oecd加盟国の人口100万人あたりの議員数-1",
     "title": "初心者向けR Studioの使い方",
     "section": "実践：データの結合（OECD加盟国の人口100万人あたりの議員数）",
-    "text": "実践：データの結合（OECD加盟国の人口100万人あたりの議員数）\n\nCodePlot\n\n\n\n## 前処理（Setup Chunk）に書くべき\n\ndf_parline &lt;- \n  read_csv(\"data/parliaments.csv\", skip = 15) # 冒頭から15行目まではメタデータ（ヘッダーコメント ）なので読み込まない\n\ndf_population &lt;- # ファイルが大きいため、重い処理かもしれない\n  read_excel(\"data/population.xlsx\", sheet = 1, skip = 16) |&gt; # excelファイルはシートを指定できる\n  filter(Type == \"Country/Area\") |&gt; \n  filter(Year == max(Year, na.rm = TRUE)) |&gt; \n  rename(country = `Region, subregion, country or area *`) # rename()でカラム名を変更\n\noecd_ISOcode &lt;- c(\n  \"AU\", \"AT\", \"BE\", \"CA\", \"CL\", \"CO\", \"CR\", \"CZ\", \"DK\", \"EE\", \"FI\", \"FR\",\n  \"DE\", \"GR\", \"HU\", \"IS\", \"IE\", \"IL\", \"IT\", \"JP\", \"KR\", \"LV\", \"LT\", \"LU\",\n  \"MX\", \"NL\", \"NZ\", \"NO\", \"PL\", \"PT\", \"SK\", \"SI\", \"ES\", \"SE\", \"CH\", \"TR\",\n  \"GB\", \"US\"\n)\n\noecd_countries &lt;- c(\n  \"Australia\", \"Austria\", \"Belgium\", \"Canada\", \"Chile\", \"Colombia\",\n  \"Czech Republic\", \"Denmark\", \"Estonia\", \"Finland\", \"France\", \"Germany\",\n  \"Greece\", \"Hungary\", \"Iceland\", \"Ireland\", \"Israel\", \"Italy\", \"Japan\",\n  \"Korea\", \"Latvia\", \"Lithuania\", \"Luxembourg\", \"Mexico\", \"Netherlands\",\n  \"New Zealand\", \"Norway\", \"Poland\", \"Portugal\", \"Slovak Republic\", \"Slovenia\",\n  \"Spain\", \"Sweden\", \"Switzerland\", \"Turkey\", \"United Kingdom\", \"United States of America\", \"Republic of Korea\"\n)\n\ndf_parline_oecd &lt;- \ndf_parline |&gt; \n    filter(`ISO Code` %in% oecd_ISOcode) # %in% は複数の値をフィルタリングする際に使用〔特定の値の場合は==〕\n\ndf_parline_oecd &lt;- \n  df_parline_oecd |&gt; \n  # selectは文字通り列を選択する関数だが、選択する列名の前に「任意の名前 = カラム名」と書くことで、選択と列名の変更を同時に行うことができて便利\n  select(country = Country, statutory_number = `Statutory number of members`)\n\ndf_population_oecd &lt;- \n  df_population |&gt; \n      filter(country %in% oecd_countries)\n\ndf_population_oecd &lt;- \n  df_population_oecd |&gt; \n  mutate(across(`0`:`100+`, as.numeric)) |&gt; # 年齢に関する列がすべて文字列として認識されているため、across()で指定した列（0〜100+）をまとめて as.numeric() に変換する\n  mutate(TotalPopulation = rowSums(across(`0`:`100+`), na.rm = TRUE)) |&gt; # 年齢ごとの列（0歳〜100歳以上）の値をすべて足し合わせ、その合計を新しい列「TotalPopulation」に追加（欠損地は除外）\n  select(country, TotalPopulation) |&gt; \n  mutate(TotalPopulation = round(TotalPopulation)) # TotalPopulation列の値を四捨五入して、整数に。結果は同じ列名TotalPopulation に上書き\n\ndf_pop_par &lt;-\n  df_population_oecd |&gt; # df_population_oecdをベースに、df_parline_oecdを結合\n  left_join(df_parline_oecd, by = \"country\") # countryをキーに\n\n## 個別チャンク\n\ndf_pop_par |&gt; \n  mutate(\n    statutory_number = as.numeric(statutory_number),\n    member_per_million = statutory_number / (TotalPopulation / 1000),\n    member_per_million = round(member_per_million, 2)\n  ) |&gt; \n  arrange(desc(member_per_million)) |&gt; \n  mutate(country = factor(country, levels = country)) |&gt; # 上記の順序で並べる（未指定だとアルファベット順に）\n  ggplot(aes(x = fct_reorder(country, member_per_million), \n             y = member_per_million)) + # fct_reorder() で棒グラフの順序をデータに合わせて並べ替え（未指定だと、逆順になる。ggplotの仕様）\n  geom_col(fill = \"#a0564d\") + \n  geom_text(                                     # 値を図に加える\n    aes(label = glue(\"{member_per_million}人\")), # 値に「人」を足す\n    hjust = -0.1,\n    size = 3.0\n  ) +\n  expand_limits(y = 180) + # Icelandの値がはみ出るため、x軸を180に\n  scale_y_continuous(\n    breaks = seq(0, 300, 30),\n    expand = c(0, 0)\n  ) +\n  coord_flip() + # x軸とy軸を入れ替える\n  labs(\n    x = \"\",\n    y = \"人口100万人あたりの下院議員数\",\n  ) +\n  theme(\n    axis.text.y = element_text(hjust = 0) # y軸のラベル名を左揃え（デフォルトは中央揃え）\n  )"
+    "text": "実践：データの結合（OECD加盟国の人口100万人あたりの議員数）\n\nCodePlot\n\n\n\n## 前処理（Setup Chunk）に書くべき\n\ndf_parline &lt;- \n  read_csv(\"data/parliaments.csv\", skip = 15) # 冒頭から15行目まではメタデータ（ヘッダーコメント ）なので読み込まない\n\ndf_population &lt;- # ファイルが大きい（220.3MB）ため、重い処理かもしれない\n  read_excel(\"data/population.xlsx\", sheet = 1, skip = 16) |&gt; # excelファイルはシートを指定できる\n  filter(Type == \"Country/Area\") |&gt; \n  filter(Year == max(Year, na.rm = TRUE)) |&gt; \n  rename(country = `Region, subregion, country or area *`) # rename()でカラム名を変更\n\noecd_ISOcode &lt;- c(\n  \"AU\", \"AT\", \"BE\", \"CA\", \"CL\", \"CO\", \"CR\", \"CZ\", \"DK\", \"EE\", \"FI\", \"FR\",\n  \"DE\", \"GR\", \"HU\", \"IS\", \"IE\", \"IL\", \"IT\", \"JP\", \"KR\", \"LV\", \"LT\", \"LU\",\n  \"MX\", \"NL\", \"NZ\", \"NO\", \"PL\", \"PT\", \"SK\", \"SI\", \"ES\", \"SE\", \"CH\", \"TR\",\n  \"GB\", \"US\"\n)\n\noecd_countries &lt;- c(\n  \"Australia\", \"Austria\", \"Belgium\", \"Canada\", \"Chile\", \"Colombia\",\n  \"Czech Republic\", \"Denmark\", \"Estonia\", \"Finland\", \"France\", \"Germany\",\n  \"Greece\", \"Hungary\", \"Iceland\", \"Ireland\", \"Israel\", \"Italy\", \"Japan\",\n  \"Korea\", \"Latvia\", \"Lithuania\", \"Luxembourg\", \"Mexico\", \"Netherlands\",\n  \"New Zealand\", \"Norway\", \"Poland\", \"Portugal\", \"Slovak Republic\", \"Slovenia\",\n  \"Spain\", \"Sweden\", \"Switzerland\", \"Turkey\", \"United Kingdom\", \"United States of America\", \"Republic of Korea\"\n)\n\ndf_parline_oecd &lt;- \ndf_parline |&gt; \n    filter(`ISO Code` %in% oecd_ISOcode) # %in% は複数の値をフィルタリングする際に使用〔特定の値の場合は==〕\n\ndf_parline_oecd &lt;- \n  df_parline_oecd |&gt; \n  # selectは文字通り列を選択する関数だが、選択する列名の前に「任意の名前 = カラム名」と書くことで、選択と列名の変更を同時に行うことができて便利\n  select(country = Country, statutory_number = `Statutory number of members`)\n\ndf_population_oecd &lt;- \n  df_population |&gt; \n      filter(country %in% oecd_countries)\n\ndf_population_oecd &lt;- \n  df_population_oecd |&gt; \n  mutate(across(`0`:`100+`, as.numeric)) |&gt; # 年齢に関する列がすべて文字列として認識されているため、across()で指定した列（0〜100+）をまとめて as.numeric() に変換する\n  mutate(TotalPopulation = rowSums(across(`0`:`100+`), na.rm = TRUE)) |&gt; # 年齢ごとの列（0歳〜100歳以上）の値をすべて足し合わせ、その合計を新しい列「TotalPopulation」に追加（欠損地は除外）\n  select(country, TotalPopulation) |&gt; \n  mutate(TotalPopulation = round(TotalPopulation)) # TotalPopulation列の値を四捨五入して、整数に。結果は同じ列名TotalPopulation に上書き\n\ndf_pop_par &lt;-\n  df_population_oecd |&gt; # df_population_oecdをベースに、df_parline_oecdを結合\n  left_join(df_parline_oecd, by = \"country\") # countryをキーに\n\n## 個別チャンク\n\ndf_pop_par |&gt; \n  mutate(\n    statutory_number = as.numeric(statutory_number),\n    member_per_million = statutory_number / (TotalPopulation / 1000),\n    member_per_million = round(member_per_million, 2)\n  ) |&gt; \n  arrange(desc(member_per_million)) |&gt; \n  mutate(country = factor(country, levels = country)) |&gt; # 上記の順序で並べる（未指定だとアルファベット順に）\n  ggplot(aes(x = fct_reorder(country, member_per_million), \n             y = member_per_million)) + # fct_reorder() で棒グラフの順序をデータに合わせて並べ替え（未指定だと、逆順になる。ggplotの仕様）\n  geom_col(fill = \"#a0564d\") + \n  geom_text(                                     # 値を図に加える\n    aes(label = glue(\"{member_per_million}人\")), # 値に「人」を足す\n    hjust = -0.1,\n    size = 3.0\n  ) +\n  expand_limits(y = 180) + # Icelandの値がはみ出るため、x軸を180に\n  scale_y_continuous(\n    breaks = seq(0, 300, 30),\n    expand = c(0, 0)\n  ) +\n  coord_flip() + # x軸とy軸を入れ替える\n  labs(\n    x = \"\",\n    y = \"人口100万人あたりの下院議員数\",\n  ) +\n  theme(\n    axis.text.y = element_text(hjust = 0) # y軸のラベル名を左揃え（デフォルトは中央揃え）\n  )"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#実践縦持ち横持ち金沢広域急病センター利用者数",
@@ -1425,7 +1425,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#さらに学ぶ問い合わせ",
     "title": "初心者向けR Studioの使い方",
     "section": "さらに学ぶ：問い合わせ",
-    "text": "さらに学ぶ：問い合わせ\nメールアドレス\n\n1度の講習会で理解できることには限界があります\n\n特にサンプルコードでは動いても、自分が参照したいデータではうまくいかない\n\nわからないことがあればお気軽にお問い合わせ下さい（歓迎いたします）\n\nkariyach@staff.kanazawa-u.ac.jp\n\n\n実演したコード\n\n本日、実演したコードはGoogle Driveからダウンロードできるようにしておきます"
+    "text": "さらに学ぶ：問い合わせ\nメールアドレス\n\n1度の講習会で理解できることには限界があります\n\n特にサンプルコードでは動いても、自分が参照したいデータではうまくいかないことはよくあります\n\nわからないことがあればお気軽にお問い合わせ下さい（歓迎いたします）\n\nkariyach@staff.kanazawa-u.ac.jp\n\n\n実演したコード\n\n本日、実演したコードはGoogle Driveからダウンロードできるようにしておきます"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#さらに学ぶスライド資料",
@@ -3581,21 +3581,21 @@
     "href": "teaching/Biblio-battle/slide_biblio-battle_w4.html#授業の感想-1",
     "title": "ビブリオバトル入門《2025》",
     "section": "授業の感想",
-    "text": "授業の感想\n\nほかの受講生の発表について質問をすることは意外と難しいことだと実感しました。でも、どれだけほかの人が苦し紛れに出した質問であれ自分が発表したときにほかの人からもらった質問によって、どんなところが伝わっていなかったのかや、こういったところを説明するといいのか、といったことがわかり次回の発表についての参考になりました（井上さん）。\n\n\n今日の授業では、グループでそれぞれおすすめの本を紹介しました。自分が最初に発表しましたので、ちょっと緊張しています。でもなんとか発表できました。正直に言うと、ほかのメンバーの発表はとても素晴らしいです、自分はもっと頑張らないといけないなと感じました。印象的だったのは、みんなが紹介した本がどれも文学的で内容が深かったことで、自分の読書の幅が狭いなと気づかされました。普段はあまり読まないジャンルですが、今度は試しに読んでみたいと思います（谷さん）。"
+    "text": "授業の感想\n\n二回目の発表だったから前回よりは時間の感覚がわかって、計画的に話ができたと思う。物語文を題材に選んだが、登場人物についてどこまで説明するかが難しい。聞き手にとって情報量が多すぎるのは混乱するからどこまで情報をそぎ落とすかを次回から意識したいと思った。好きな本の紹介は普段自分が読まないような本を知れてとても楽しかった。同時に、ビブリオバトルに向かないジャンルもありそうだと思った（梅野さん）。\n\n\n自分が発表したときに質問をしてくれると興味を持ってもらえたのだと実感できてとても嬉しいなと改めて感じました。私は何を質問したら良いのか分からず、質問をすることが苦手なのですが班のみんながとても質問が上手だったので次回から参考にさせてもらおうと思います。ビブリオバトルで紹介された本からも新しい視点を学べますが、質問をしている人からもそんな視点で質問できるんだという新しい視点を得られてとても学びになりました（坂田さん）。"
   },
   {
     "objectID": "teaching/Biblio-battle/slide_biblio-battle_w4.html#授業の感想-2",
     "href": "teaching/Biblio-battle/slide_biblio-battle_w4.html#授業の感想-2",
     "title": "ビブリオバトル入門《2025》",
     "section": "授業の感想",
-    "text": "授業の感想\n\nみんなそれぞれ好きなジャンルがあって、自分にも好きなジャンルがあるからどうしても読む本は偏ってしまいがちだけど、ビブリオバトルでは自分が絶対に手に取らないような本の紹介が聞けて面白いと改めて思いました。私はミステリー系が好きなので、トリックが面白かったり劇的な展開があったりする本をどうしても手に取ってしまうけど、今回のビブリオバトルで班の方が紹介していた本がとても穏やかな雰囲気の本で、時間があるときにゆっくりと読んでみたいなと思えるものでした。ビブリオバトルは狭くなってしまいがちな視野を広げてくれて、新しい本の中の新しい考え方などに出会える場なのだと気付かされました（坂田さん）。\n\n\n初めてのビブリオバトルをしたが、想像以上にグループのみんなの構成の緻密さが高くて驚いた。特に、ある人は自分の好きな本を言う→本の特徴を絞って述べる→選んだ理由を言う→作品内での自分の推しキャラについて熱く語る　というように一連の流れがスムーズに楽しく述べられており聞き手側としては、わかりやすくかつ暇な時間がなかったので非常に聞きやすかった。自分の構成にもいくつかの無駄な点や分かりにくい点を、講評を通して気が付いたので修正して次に望みたい。学びのある時間だった（竹田さん）。"
+    "text": "授業の感想\n\n今回の質問時間に班員が「この本はなぜこの題名なのだと思いますか？」と質問をしたときに非常に興味深いと感じた。本のタイトルは重要な意味を持つと思う。読者に真っ先に飛び込んでくる作品の情報であり、その本が読まれるかどうかはタイトル次第といっても過言ではないと感じる。多かれ少なかれ作品との関係が読み取れる。その見落しがちだが大事な部分に対し質問したことは意義があると思うし、面白いと感じた。自分ももっと好きな本について知ろうと思った（竹田さん）。\n\n\n学生が提出するレポートのタイトルについても、教員は同じことを思っています！\n\n講義名＋レポート課題のようなタイトルが付されていると、残念な気持ちに・・・\n気をてらう必要はないですが、レポートの内容を表す具体的なタイトルをつけましょう"
   },
   {
     "objectID": "teaching/Biblio-battle/slide_biblio-battle_w4.html#授業の感想-3",
     "href": "teaching/Biblio-battle/slide_biblio-battle_w4.html#授業の感想-3",
     "title": "ビブリオバトル入門《2025》",
     "section": "授業の感想",
-    "text": "授業の感想\n\n今回の授業で初めてビブリオバトルを行い、難しいものだと思っていたが案外楽しくできて良かった。どのようにしたら聴衆の興味を惹きつけることができるのかについて、授業前に考えたこと（本の内容を全て話さないことや、質問をしてみるなど）を行うことができた。また、グループで行う時とクラス全体で行うときのビブリオバトルのやり方は少し違うのではないかと考えた。グループでは一人一人の表情を見て、反応が悪ければ話す順番を変えたり工夫できるが、クラス全体だとそれが出来ないため、一部の人ではなくより多くの人たちの興味を引く内容を考えるやり方が有効ではないかと思った（デルガードさん）。\n\n\n班の中でも紹介した本のジャンルがさまざまで、自分からは手に取らないような本についても知ることができてよかったです。本には人を感動させるだけではなく、読む前と読んだ後で読者の考え方を変化させたり、新しい考え方に納得できるようにさせたりする力もあるのだと思いました。本の紹介と聞くと本の内容をイメージしますが、作者の意図、自分自身の考え方などについても紹介してみるとより良い紹介ができるようになりそうです（若林さん）。"
+    "text": "授業の感想\n\n今回の授業では、ビブリオバトルで作品の魅力をどう伝えるか、その難しさを改めて感じた。特に同じ班の人が話していた「ネタバレを避けながら紹介する難しさ」が印象に残った。どんでん返しや伏線回収が見事な作品は、その魅力を語るほどに核心に触れてしまうため、面白さを伝えたい気持ちとネタバレの線引きの間で悩む様子がよく分かった。また、主人公が最後に亡くなる作品を紹介していた人も、物語全体がその瞬間の衝撃や感動、切なさにつながっているからこそ、あらすじをどこまで話すかに迷っていた。作品の構成やテーマによって紹介の工夫が必要だと感じ、ビブリオバトルは単なる本の紹介ではなく、聞き手の興味を引く表現力も問われる場だと改めて学んだ（中田さん）。\n\n\n本を読む際にはその本が書かれた背景に着目してみると良いと思いました。本が書かれた当時の社会の様子や筆者の考えに思いをはせることでその本をより深く理解できるようになると思います。ビブリオバトルでは本の内容だけではなく、その本が伝えたいメッセージ、自分なりの解釈を伝えることで、聞いている人たちも実際にその本を読んだときに考え方の違いを楽しむことができると思います（若林さん）。"
   },
   {
     "objectID": "teaching/Biblio-battle/slide_biblio-battle_w4.html#授業の約束教員との約束",
@@ -3603,13 +3603,6 @@
     "title": "ビブリオバトル入門《2025》",
     "section": "授業の約束（教員との約束）",
     "text": "授業の約束（教員との約束）\nこの授業はグループワーク中心の授業です。教員一人では授業を作ることができません\n\n教員：学びの空間設計者\n受講生：コンテンツ制作者\n\n皆さんも授業を作るメンバーとして、以下の3つを心がけて下さい\n\n\n\n元気に毎回出席する（ただし無理は禁物）\nグループワークには積極的に参加する\n提出物はちゃんと出す"
-  },
-  {
-    "objectID": "teaching/Biblio-battle/slide_biblio-battle_w4.html#評価方法と割合評価の割合確認",
-    "href": "teaching/Biblio-battle/slide_biblio-battle_w4.html#評価方法と割合評価の割合確認",
-    "title": "ビブリオバトル入門《2025》",
-    "section": "評価方法と割合：評価の割合（確認）",
-    "text": "評価方法と割合：評価の割合（確認）\n\n授業の感想：30%\nブックカード：30%\n学期末振り返りレポート：10%\nプレゼンテーション：10%\n受講態度：20%\n\n\n\n\n\n\n\n授業の感想とブックカードについては、提出すれば、（ほぼ）自動的に加点します。未提出でいると、単位認定に必要な点数に達しませんので、気をつけて下さい\n\n\n\n\n\n\n\n\n\n※授業には3分の2以上の出席を必要とします ※評価基準は、授業目標に準じます"
   },
   {
     "objectID": "teaching/Biblio-battle/slide_biblio-battle_w4.html#グループワークの心理的安全性",
@@ -3626,18 +3619,18 @@
     "text": "グループワークの心理的安全性\n\n\n\n\n\n\n禁止 | マウンティング行為\n\n\n\n知識ひけらかし型：「この本は原著で読んでるから、翻訳はちょっとね」/ 「作者の別の論文を読んでないと本当の意味は分からないよ」\n先取り型：「あー、この後の展開は◯◯だから、そこまで読まないと面白さはわからないよ」/「私、もう続編も全部読んでるから」\n比較優位型：「その感想は初心者っぽいね」 / 「自分はもっと難しい本を普段読んでるから、この本は物足りないかな」\n発言の矮小化型：「その見方は浅いよ、本当はこう読むべきなんだ」 / 「その感想はよくあるけど、重要なのは別のところだよ」 / 「それってあなたの感想ですよね」"
   },
   {
-    "objectID": "teaching/Biblio-battle/slide_biblio-battle_w4.html#アイスブレイク共通点グランドスラム",
-    "href": "teaching/Biblio-battle/slide_biblio-battle_w4.html#アイスブレイク共通点グランドスラム",
+    "objectID": "teaching/Biblio-battle/slide_biblio-battle_w4.html#ビブリオバトル研究分野の本を紹介しよう①",
+    "href": "teaching/Biblio-battle/slide_biblio-battle_w4.html#ビブリオバトル研究分野の本を紹介しよう①",
     "title": "ビブリオバトル入門《2025》",
-    "section": "アイスブレイク：共通点グランドスラム",
-    "text": "アイスブレイク：共通点グランドスラム\nルール\n\nお互いにコミュニケーションをとって、以下の4つのパターンの共通点（または相違点）を探そう\n\n\n\n\nパターン\n内容の説明\n\n\n\n\n① 全員バラバラ\n4人全員がちがう\n\n\n② 3人が同じ\n1人だけちがう\n\n\n③ 2人ずつ同じ\n2対2に分かれる\n\n\n④ 全員同じ\n全員が共通している\n\n\n\n\n\n\n\n\n\n見た目の特徴など、コミュニケーションをとらなくてもわかるものは避けて下さい\n\n\n\n\n制限時間：10分"
+    "section": "ビブリオバトル：研究分野の本を紹介しよう①",
+    "text": "ビブリオバトル：研究分野の本を紹介しよう①\n\nブクログ &gt; 研究分野の本"
   },
   {
-    "objectID": "teaching/Biblio-battle/slide_biblio-battle_w4.html#ビブリオバトル好きな本を紹介しよう②",
-    "href": "teaching/Biblio-battle/slide_biblio-battle_w4.html#ビブリオバトル好きな本を紹介しよう②",
+    "objectID": "teaching/Biblio-battle/slide_biblio-battle_w4.html#ビブリオバトル研究分野の本を紹介しよう①-1",
+    "href": "teaching/Biblio-battle/slide_biblio-battle_w4.html#ビブリオバトル研究分野の本を紹介しよう①-1",
     "title": "ビブリオバトル入門《2025》",
-    "section": "ビブリオバトル：好きな本を紹介しよう②",
-    "text": "ビブリオバトル：好きな本を紹介しよう②\n司会（タイムキーパー）：ハート❤️︎️\n本の紹介：5分（最低4分30秒は話すこと）\n質疑応答：3分（しっかり3分間、質疑応答すること）\nアフターセッション：5分（しっかり5分間話し合うこと）\n\nグループチャンプ本を決めて下さい\n\n配布するカードに、日付、グループチャンプ本のタイトル、その受講生の名前、簡単な理由を書いて提出して下さい\n\n残りの時間は、ブックカードのまとめ方、質疑応答の続きなど、各グループで有効に活用して下さい"
+    "section": "ビブリオバトル：研究分野の本を紹介しよう①",
+    "text": "ビブリオバトル：研究分野の本を紹介しよう①\n司会（タイムキーパー）：スペード♠️️︎️\n本の紹介：5分（最低4分30秒は話すこと）\n質疑応答：3分（しっかり3分間、質疑応答すること）\nアフターセッション：5分（しっかり5分間話し合うこと）\n\nグループチャンプ本を決めて下さい\n\n配布するカードに、日付、グループチャンプ本のタイトル、その受講生の名前、簡単な理由を書いて提出して下さい\n\n残りの時間は、ブックカードのまとめ方、質疑応答の続きなど、各グループで有効に活用して下さい"
   },
   {
     "objectID": "teaching/Biblio-battle/slide_biblio-battle_w4.html#グループチャンプ本プレゼンテーション-1",
@@ -3651,7 +3644,7 @@
     "href": "teaching/Biblio-battle/slide_biblio-battle_w4.html#次回の授業と宿題-1",
     "title": "ビブリオバトル入門《2025》",
     "section": "次回の授業と宿題",
-    "text": "次回の授業と宿題\n次回\n\n研究分野の本を紹介しよう 第1ラウンド\n\n宿題\n\n授業の感想\n\n締め切り：授業と同じ週の金曜日23時59分\n\n研究分野の本についてのブックカード\n\n締め切り：10月29日授業開始前"
+    "text": "次回の授業と宿題\n次回\n\n研究分野の本を紹介しよう 第2ラウンド\n\n宿題\n\n授業の感想\n\n締め切り：授業と同じ週の金曜日23時59分"
   },
   {
     "objectID": "teaching/Biblio-battle/slide_biblio-battle_w2.html#授業の感想-1",
