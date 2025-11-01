@@ -802,7 +802,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#準備r-studioソースペインの外観の変更",
     "title": "初心者向けR Studioの使い方",
     "section": "準備：R Studio（ソースペイン）の外観の変更",
-    "text": "準備：R Studio（ソースペイン）の外観の変更\n\nコードを書くうえで、視認性はとても重要です\n\n6. 文字の配色の変更\n\nメニュー &gt; Tools &gt; Global Options &gt; Appearance &gt; Editor Theme\n\n私（苅谷）はrstudio-themesからダウンロードしたrscodeio (anthonynorth) をaddで追加しています\n\n\n7. 不可視文字を表示\n\nメニュー &gt; Tools &gt; Global Options &gt; Code &gt; Display &gt; Show whitespace charactersにチェック / Indentation guides:から適当なものを選択\n\nthemeによってはIndentation guidesが適用されない（rscodeioも適用対象外）"
+    "text": "準備：R Studio（ソースペイン）の外観の変更\n\nコードを書くうえで、視認性はとても重要です\n\n6. 文字の配色の変更\n\nメニュー &gt; Tools &gt; Global Options &gt; Appearance &gt; Editor Theme\n\n私（苅谷）はrstudio-themesからダウンロードしたrscodeio (anthonynorth) をaddで追加しています\n\n\n7. 不可視文字を表示\n\nメニュー &gt; Tools &gt; Global Options &gt; Code &gt; Display\n\nShow whitespace charactersにチェック\nIndentation guides:から適当なものを選択\n\nthemeによってはIndentation guidesが適用されない（rscodeioも適用対象外）"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#準備r-studioソースペインの外観の変更-1",
@@ -851,7 +851,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#準備パッケージの追加tidyverse",
     "title": "初心者向けR Studioの使い方",
     "section": "準備：パッケージの追加（tidyverse）",
-    "text": "準備：パッケージの追加（tidyverse）\n\nmodern Rは、tidyverse（整然としたデータ世界）という思想にもとづくパッケージ群からなる\nbase Rには組み込まれていないので、パッケージとして追加することが必要\ntidyverseの中身\n\ndplyr（データ操作）\ntidyr（データ整形）\nggplot2（可視化）\nreadr（データ読み込み）\npurrr（関数型操作）\ntibble（データフレーム拡張）"
+    "text": "準備：パッケージの追加（tidyverse）\n\nmodern Rは、tidyverse（整然としたデータ世界）という思想にもとづくパッケージ群からなる\nbase Rには組み込まれていないので、パッケージとして追加することが必要\ntidyverseの中身\n\ndplyr（データ操作）\ntidyr（データ整形）\nggplot2（可視化）\nreadr（データ読み込み）\npurrr（関数型操作）\nforcats（factor（カテゴリ変数）の処理）\nstringr（文字列処理）\ntibble（データフレーム拡張）\nrubridate（日付・時間処理）"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#準備パッケージの追加tidyverse-1",
@@ -1005,7 +1005,7 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基本パッケージのインストール-2",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：パッケージのインストール",
-    "text": "基本：パッケージのインストール\nパッケージの一括インストール（読み込み）\n\nパッケージはQuartoファイルごとに読み込みが必要です\n以下のコードをSetup Chunk（library(tidyverse)）の下に入力して実行（Run）\n\n\n# パッケージの読み込み\nlibrary(readxl)    # Excelファイルの読み込み\nlibrary(conflicted)# 名前空間の衝突を防ぐ\nlibrary(rubridate) #日付処理\nlibrary(stringi)   # 文字列操作\nlibrary(glue)      # 文字列の埋め込み\nlibrary(gt)        # 表作成\nlibrary(skimr)     # データ要約\nlibrary(scales)    # 軸やラベルのスケール調整\nlibrary(patchwork) # 複数のggplotの出力結果を並べる\nlibrary(crosstable)# クロス表\nlibrary(zipangu)   # 日本固有の表記（和暦、都道府県名、住所など）を処理\nlibrary(rvest)     # Webスクレイピング\nlibrary(httr2)     # HTTPリクエスト\nlibrary(xml2)      # XML解析\nlibrary(maps)      # アメリカの地図情報\nlibrary(socviz)    # 社会・政治・教育関連データセット\nlibrary(paletteer) # カラーパレット\nlibrary(ngramr)    # Google Ngram Trends\nlibrary(sjPlot)    # 社会科学系の分析総合パッケージ\n\n# 優先する関数を指定 ----\nconflicts_prefer(dplyr::filter) # filter関数はdplyrを優先"
+    "text": "基本：パッケージのインストール\nパッケージの一括インストール（読み込み）\n\nパッケージはQuartoファイルごとに読み込みが必要です\n以下のコードをSetup Chunk（library(tidyverse)）の下に入力して実行（Run）\n\n\n# パッケージの読み込み\nlibrary(readxl)    # Excelファイルの読み込み\nlibrary(conflicted)# 名前空間の衝突を防ぐ\nlibrary(stringi)   # 文字列操作\nlibrary(glue)      # 文字列の埋め込み\nlibrary(gt)        # 表作成\nlibrary(skimr)     # データ要約\nlibrary(scales)    # 軸やラベルのスケール調整\nlibrary(patchwork) # 複数のggplotの出力結果を並べる\nlibrary(crosstable)# クロス表\nlibrary(zipangu)   # 日本固有の表記（和暦、都道府県名、住所など）を処理\nlibrary(rvest)     # Webスクレイピング\nlibrary(httr2)     # HTTPリクエスト\nlibrary(xml2)      # XML解析\nlibrary(maps)      # アメリカの地図情報\nlibrary(socviz)    # 社会・政治・教育関連データセット\nlibrary(paletteer) # カラーパレット\nlibrary(ngramr)    # Google Ngram Trends\nlibrary(sjPlot)    # 社会科学系の分析総合パッケージ\n\n# 優先する関数を指定 ----\nconflicts_prefer(dplyr::filter) # filter関数はdplyrを優先"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本ショートカット",
@@ -1026,21 +1026,21 @@
     "href": "teaching/RforDatascience/RforDataScience.html#基本データの型-2",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：データの型",
-    "text": "基本：データの型\nデータの型\n\n\n\n\n\n\n同じ文字でもデータの型が違う可能性がある\n\n\n\nnumeric/character/factor\nggplot（作図）で特に問題になります\n\n例えば散布図はnumeric（数字）であることが基本なので、数字以外の型の場合、プロットできません\n\n\n\n\n\n\n型は、str()関数やskim()関数を使って調べると確実です"
+    "text": "基本：データの型\nデータの型\n\n\n\n\n\n\n同じ文字でもデータの型が違う可能性がある\n\n\n\nnumeric/character/factor\nggplot（作図）で特に問題になります\n\n例えば散布図はnumeric（数字）であることが基本なので、数字以外の型の場合、プロットできません\n\n\n\n\n\n\n型は、str()関数やskim()関数を使って調べると確実です\n\nskim()関数については、次のページで説明します"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本データの要約確認",
     "href": "teaching/RforDatascience/RforDataScience.html#基本データの要約確認",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：データの要約（確認）",
-    "text": "基本：データの要約（確認）\n\nskim()関数\n\n分析の前段階での点検に適している\n\n\n\npenguins |&gt;\n  skim() \n\n\n\n\n\n\n\n\n\nskim_variable\nskim_type\nn_missing\nfactor.n_unique\nnumeric.hist\ncomplete_rate\nnumeric.mean\nnumeric.sd\n\n\n\n\nspecies\nfactor\n0\n3\nNA\n1.0000000\nNA\nNA\n\n\nisland\nfactor\n0\n3\nNA\n1.0000000\nNA\nNA\n\n\nsex\nfactor\n11\n2\nNA\n0.9680233\nNA\nNA\n\n\nbill_len\nnumeric\n2\nNA\n▃▇▇▆▁\n0.9941860\n43.92193\n5.4595837\n\n\nbill_dep\nnumeric\n2\nNA\n▅▅▇▇▂\n0.9941860\n17.15117\n1.9747932\n\n\nflipper_len\nnumeric\n2\nNA\n▂▇▃▅▂\n0.9941860\n200.91520\n14.0617137\n\n\nbody_mass\nnumeric\n2\nNA\n▃▇▆▃▂\n0.9941860\n4201.75439\n801.9545357\n\n\nyear\nnumeric\n0\nNA\n▇▁▇▁▇\n1.0000000\n2008.02907\n0.8183559\n\n\n\n\n\n\n\n\n\n\n\n\n\nスライドに収めるために、表示項目を絞っています"
+    "text": "基本：データの要約（確認）\n\nskim()関数\n\nデータを読み込み、集計・分析に着手する前段階でのデータの確認に適している\n\nR Chunkを作り、以下のコードを入力しよう\n\n\npenguins |&gt;\n  skim() |&gt; \n  gt() # 以上の集計結果を表にする\n\n\n\n\n\n\n\n\n\nskim_variable\nskim_type\nn_missing\nfactor.n_unique\nnumeric.hist\nnumeric.mean\nnumeric.sd\n\n\n\n\nspecies\nfactor\n0\n3\nNA\nNA\nNA\n\n\nisland\nfactor\n0\n3\nNA\nNA\nNA\n\n\nsex\nfactor\n11\n2\nNA\nNA\nNA\n\n\nbill_len\nnumeric\n2\nNA\n▃▇▇▆▁\n43.92193\n5.4595837\n\n\nbill_dep\nnumeric\n2\nNA\n▅▅▇▇▂\n17.15117\n1.9747932\n\n\nflipper_len\nnumeric\n2\nNA\n▂▇▃▅▂\n200.91520\n14.0617137\n\n\nbody_mass\nnumeric\n2\nNA\n▃▇▆▃▂\n4201.75439\n801.9545357\n\n\nyear\nnumeric\n0\nNA\n▇▁▇▁▇\n2008.02907\n0.8183559\n\n\n\n\n\n\n\n\n\n\n\n\n\nスライドに収めるために、表示項目を絞っています"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本データの要約",
     "href": "teaching/RforDatascience/RforDataScience.html#基本データの要約",
     "title": "初心者向けR Studioの使い方",
     "section": "基本：データの要約",
-    "text": "基本：データの要約\nデータを要約する\n\nR Chunkを作り、以下のコードを入力しよう\n\n\n\n\npenguins |&gt; \n  group_by(species) |&gt; # speciesで分類する \n  summarise( # データを要約する（集計の枠組み）\n    mean = mean(bill_len, na.rm = TRUE), # 「bill_len」の列の平均を算出（summarise関数のもと具体的に何を計算するかを指定）\n  ) |&gt; \n  # ここにview関数を入れて、どのようにデータが変わったのか、見てみよう\n  gt() # 以上の集計結果を表にする\n\n\n\n\n\n\n\n\n\n\nspecies\nmean\n\n\n\n\nAdelie\n38.79139\n\n\nChinstrap\n48.83382\n\n\nGentoo\n47.50488\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRは「保守的」に設計されています。na.rm = TRUEは「NAを取り除いて（ remove）して計算する」という意味です。多くの集計関数（mean(), sum(), sd() など）は欠損値があるとエラーを返し、動作を止めます。これは意図しない、欠損を無視した計算を防ぐためです\n\n\n\n\n\n\n\n\n\ngt()はスライドに表示するために書いています gt()はtidyveseに入っていないパッケージです。tidyverseと同じように、インストールと読み込み（library）が必要です。標準的なパッケージですので、インストールを推奨します"
+    "text": "基本：データの要約\nデータを要約する\n\nR Chunkを作り、以下のコードを入力しよう\n\n\n\n\npenguins |&gt; \n  group_by(species) |&gt; # speciesで分類する \n  summarise( # データを要約する（集計の枠組み）\n    mean = mean(bill_len, na.rm = TRUE), # 「bill_len」の列の平均を算出（summarise関数のもと具体的に何を計算するかを指定）\n  ) |&gt; \n  # ここにview関数を入れて、どのようにデータが変わったのか、見てみよう\n  gt()\n\n\n\n\n\n\n\n\n\n\nspecies\nmean\n\n\n\n\nAdelie\n38.79139\n\n\nChinstrap\n48.83382\n\n\nGentoo\n47.50488\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRは「保守的」に設計されています。na.rm = TRUEは「NAを取り除いて（ remove）して計算する」という意味です。多くの集計関数（mean(), sum(), sd() など）は欠損値があるとエラーを返し、動作を止めます。これは意図しない、欠損を無視した計算を防ぐためです\n\n\n\n\n\n\n\n\n\ngt()はスライドに表示するために書いています gt()はtidyveseに入っていないパッケージです。tidyverseと同じように、インストールと読み込み（library）が必要です。標準的なパッケージですので、インストールを推奨します"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本引数-tidyverse関数の引数の考え方",
