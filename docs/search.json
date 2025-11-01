@@ -1029,6 +1029,13 @@
     "text": "基本：データの型\nデータの型\n\n\n\n\n\n\n同じ文字でもデータの型が違う可能性がある\n\n\n\nnumeric/character/factor\nggplot（作図）で特に問題になります\n\n例えば散布図はnumeric（数字）であることが基本なので、数字以外の型の場合、プロットできません\n\n\n\n\n\n\n型は、str()関数やskim()関数を使って調べると確実です"
   },
   {
+    "objectID": "teaching/RforDatascience/RforDataScience.html#基本データの要約確認",
+    "href": "teaching/RforDatascience/RforDataScience.html#基本データの要約確認",
+    "title": "初心者向けR Studioの使い方",
+    "section": "基本：データの要約（確認）",
+    "text": "基本：データの要約（確認）\n\nskim()関数\n\n分析の前段階での点検に適している\n\n\n\npenguins |&gt;\n  skim() \n\n\n\n\n\n\n\n\n\nskim_variable\nskim_type\nn_missing\nfactor.n_unique\nnumeric.hist\ncomplete_rate\nnumeric.mean\nnumeric.sd\n\n\n\n\nspecies\nfactor\n0\n3\nNA\n1.0000000\nNA\nNA\n\n\nisland\nfactor\n0\n3\nNA\n1.0000000\nNA\nNA\n\n\nsex\nfactor\n11\n2\nNA\n0.9680233\nNA\nNA\n\n\nbill_len\nnumeric\n2\nNA\n▃▇▇▆▁\n0.9941860\n43.92193\n5.4595837\n\n\nbill_dep\nnumeric\n2\nNA\n▅▅▇▇▂\n0.9941860\n17.15117\n1.9747932\n\n\nflipper_len\nnumeric\n2\nNA\n▂▇▃▅▂\n0.9941860\n200.91520\n14.0617137\n\n\nbody_mass\nnumeric\n2\nNA\n▃▇▆▃▂\n0.9941860\n4201.75439\n801.9545357\n\n\nyear\nnumeric\n0\nNA\n▇▁▇▁▇\n1.0000000\n2008.02907\n0.8183559\n\n\n\n\n\n\n\n\n\n\n\n\n\nスライドに収めるために、表示項目を絞っています"
+  },
+  {
     "objectID": "teaching/RforDatascience/RforDataScience.html#基本データの要約",
     "href": "teaching/RforDatascience/RforDataScience.html#基本データの要約",
     "title": "初心者向けR Studioの使い方",
