@@ -75,7 +75,7 @@ function initializeTimer(containerId, timeLimit, startOn) {
 
   function toggleTimer() {
     if (active) {
-      document.getElementById(`${containerId}-circle`).style.fill = '#fcb';
+      document.getElementById(`${containerId}-circle`).style.fill = '#f0f4f2';
     } else {
       document.getElementById(`${containerId}-circle`).style.fill = '';
     }
