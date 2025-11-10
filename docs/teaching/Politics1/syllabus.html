@@ -357,7 +357,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">Friday, 7, Nov, 2025</p>
+        <p class="date-modified">Monday, 10, Nov, 2025</p>
       </div>
     </div>
       
@@ -447,9 +447,9 @@ div.csl-indent {
 
     <script>
 
-      function styleCell_2c1g2ni0mu4rrafw5dsn(i, j, css_id) {
-          var table = document.getElementById("tinytable_2c1g2ni0mu4rrafw5dsn");
-          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+      function styleCell_eljprzpi58688ivh639y(i, j, css_id) {
+          var table = document.getElementById("tinytable_eljprzpi58688ivh639y");
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
               cell.classList.add(css_id);
@@ -457,89 +457,81 @@ div.csl-indent {
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_2c1g2ni0mu4rrafw5dsn');
-        var newRow = table.insertRow(i);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
-      function spanCell_2c1g2ni0mu4rrafw5dsn(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_2c1g2ni0mu4rrafw5dsn");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
+      function spanCell_eljprzpi58688ivh639y(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_eljprzpi58688ivh639y");
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
         for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
             }
           }
         }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
       }
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 4, j: 0 }, { i: 4, j: 1 }, { i: 4, j: 2 },  ], css_id: 'tinytable_css_56vm7eqjoeekptnp4qzl',}, 
-          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_q2q09dkxxqsd9rqyiera',}, 
+          { positions: [ { i: '4', j: 0 }, { i: '4', j: 1 }, { i: '4', j: 2 },  ], css_id: 'tinytable_css_ro9hrs2jqzvpcpvf0lkn',}, 
+          { positions: [ { i: '0', j: 0 }, { i: '0', j: 1 }, { i: '0', j: 2 },  ], css_id: 'tinytable_css_p1wg5qmk85xzj5z400vl',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_2c1g2ni0mu4rrafw5dsn(cell.i, cell.j, group.css_id);
+                  styleCell_eljprzpi58688ivh639y(cell.i, cell.j, group.css_id);
               });
           });
       });
     </script><style>
       /* tinytable css entries after */
-      .table td.tinytable_css_56vm7eqjoeekptnp4qzl, .table th.tinytable_css_56vm7eqjoeekptnp4qzl { border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_q2q09dkxxqsd9rqyiera, .table th.tinytable_css_q2q09dkxxqsd9rqyiera { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_ro9hrs2jqzvpcpvf0lkn, .table th.tinytable_css_ro9hrs2jqzvpcpvf0lkn { border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_p1wg5qmk85xzj5z400vl, .table th.tinytable_css_p1wg5qmk85xzj5z400vl { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
     </style>
 <div class="container">
-      <table class="table table-borderless" id="tinytable_2c1g2ni0mu4rrafw5dsn" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_eljprzpi58688ivh639y" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
 <thead><tr>
-<th scope="col">項目</th>
-                <th scope="col">比率</th>
-                <th scope="col">到達目標</th>
+<th scope="col" data-row="0" data-col="0">項目</th>
+                <th scope="col" data-row="0" data-col="1">比率</th>
+                <th scope="col" data-row="0" data-col="2">到達目標</th>
               </tr></thead>
 <tbody>
 <tr>
-<td>リーディング・アサインメント</td>
-                  <td>30</td>
-                  <td>4</td>
+<td data-row="1" data-col="0">リーディング・アサインメント</td>
+                  <td data-row="1" data-col="1">30</td>
+                  <td data-row="1" data-col="2">4</td>
                 </tr>
 <tr>
-<td>授業の感想</td>
-                  <td>30</td>
-                  <td>1;2</td>
+<td data-row="2" data-col="0">授業の感想</td>
+                  <td data-row="2" data-col="1">30</td>
+                  <td data-row="2" data-col="2">1;2</td>
                 </tr>
 <tr>
-<td>レポート（2種）</td>
-                  <td>30</td>
-                  <td>1; 2; 3; 4; 5</td>
+<td data-row="3" data-col="0">レポート（2種）</td>
+                  <td data-row="3" data-col="1">30</td>
+                  <td data-row="3" data-col="2">1; 2; 3; 4; 5</td>
                 </tr>
 <tr>
-<td>ディスカッション（受講態度を含む）</td>
-                  <td>10</td>
-                  <td>1; 2</td>
+<td data-row="4" data-col="0">ディスカッション（受講態度を含む）</td>
+                  <td data-row="4" data-col="1">10</td>
+                  <td data-row="4" data-col="2">1; 2</td>
                 </tr>
 </tbody>
 </table>
@@ -706,23 +698,23 @@ Note | 予習復習も単位取得に必要な時間です
 <section id="スケジュール-1" class="level2"><h2 class="anchored" data-anchor-id="スケジュール-1">スケジュール</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="mlsydzonrr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mlsydzonrr table {
+<div id="jvhbnczeeg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jvhbnczeeg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mlsydzonrr thead, #mlsydzonrr tbody, #mlsydzonrr tfoot, #mlsydzonrr tr, #mlsydzonrr td, #mlsydzonrr th {
+#jvhbnczeeg thead, #jvhbnczeeg tbody, #jvhbnczeeg tfoot, #jvhbnczeeg tr, #jvhbnczeeg td, #jvhbnczeeg th {
   border-style: none;
 }
 
-#mlsydzonrr p {
+#jvhbnczeeg p {
   margin: 0;
   padding: 0;
 }
 
-#mlsydzonrr .gt_table {
+#jvhbnczeeg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -748,12 +740,12 @@ Note | 予習復習も単位取得に必要な時間です
   border-left-color: #D3D3D3;
 }
 
-#mlsydzonrr .gt_caption {
+#jvhbnczeeg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mlsydzonrr .gt_title {
+#jvhbnczeeg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -765,7 +757,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-bottom-width: 0;
 }
 
-#mlsydzonrr .gt_subtitle {
+#jvhbnczeeg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -777,7 +769,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-top-width: 0;
 }
 
-#mlsydzonrr .gt_heading {
+#jvhbnczeeg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -789,13 +781,13 @@ Note | 予習復習も単位取得に必要な時間です
   border-right-color: #D3D3D3;
 }
 
-#mlsydzonrr .gt_bottom_border {
+#jvhbnczeeg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mlsydzonrr .gt_col_headings {
+#jvhbnczeeg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -810,7 +802,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-right-color: #D3D3D3;
 }
 
-#mlsydzonrr .gt_col_heading {
+#jvhbnczeeg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -830,7 +822,7 @@ Note | 予習復習も単位取得に必要な時間です
   overflow-x: hidden;
 }
 
-#mlsydzonrr .gt_column_spanner_outer {
+#jvhbnczeeg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -842,15 +834,15 @@ Note | 予習復習も単位取得に必要な時間です
   padding-right: 4px;
 }
 
-#mlsydzonrr .gt_column_spanner_outer:first-child {
+#jvhbnczeeg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mlsydzonrr .gt_column_spanner_outer:last-child {
+#jvhbnczeeg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mlsydzonrr .gt_column_spanner {
+#jvhbnczeeg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -862,11 +854,11 @@ Note | 予習復習も単位取得に必要な時間です
   width: 100%;
 }
 
-#mlsydzonrr .gt_spanner_row {
+#jvhbnczeeg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mlsydzonrr .gt_group_heading {
+#jvhbnczeeg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -892,7 +884,7 @@ Note | 予習復習も単位取得に必要な時間です
   text-align: left;
 }
 
-#mlsydzonrr .gt_empty_group_heading {
+#jvhbnczeeg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -907,15 +899,15 @@ Note | 予習復習も単位取得に必要な時間です
   vertical-align: middle;
 }
 
-#mlsydzonrr .gt_from_md > :first-child {
+#jvhbnczeeg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mlsydzonrr .gt_from_md > :last-child {
+#jvhbnczeeg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mlsydzonrr .gt_row {
+#jvhbnczeeg .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -934,7 +926,7 @@ Note | 予習復習も単位取得に必要な時間です
   overflow-x: hidden;
 }
 
-#mlsydzonrr .gt_stub {
+#jvhbnczeeg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -947,7 +939,7 @@ Note | 予習復習も単位取得に必要な時間です
   padding-right: 5px;
 }
 
-#mlsydzonrr .gt_stub_row_group {
+#jvhbnczeeg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -961,15 +953,15 @@ Note | 予習復習も単位取得に必要な時間です
   vertical-align: top;
 }
 
-#mlsydzonrr .gt_row_group_first td {
+#jvhbnczeeg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mlsydzonrr .gt_row_group_first th {
+#jvhbnczeeg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mlsydzonrr .gt_summary_row {
+#jvhbnczeeg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -979,16 +971,16 @@ Note | 予習復習も単位取得に必要な時間です
   padding-right: 5px;
 }
 
-#mlsydzonrr .gt_first_summary_row {
+#jvhbnczeeg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mlsydzonrr .gt_first_summary_row.thick {
+#jvhbnczeeg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mlsydzonrr .gt_last_summary_row {
+#jvhbnczeeg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -998,7 +990,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-bottom-color: #D3D3D3;
 }
 
-#mlsydzonrr .gt_grand_summary_row {
+#jvhbnczeeg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1008,7 +1000,7 @@ Note | 予習復習も単位取得に必要な時間です
   padding-right: 5px;
 }
 
-#mlsydzonrr .gt_first_grand_summary_row {
+#jvhbnczeeg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1018,7 +1010,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-top-color: #D3D3D3;
 }
 
-#mlsydzonrr .gt_last_grand_summary_row_top {
+#jvhbnczeeg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1028,11 +1020,11 @@ Note | 予習復習も単位取得に必要な時間です
   border-bottom-color: #D3D3D3;
 }
 
-#mlsydzonrr .gt_striped {
+#jvhbnczeeg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mlsydzonrr .gt_table_body {
+#jvhbnczeeg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1041,7 +1033,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-bottom-color: #D3D3D3;
 }
 
-#mlsydzonrr .gt_footnotes {
+#jvhbnczeeg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1055,7 +1047,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-right-color: #D3D3D3;
 }
 
-#mlsydzonrr .gt_footnote {
+#jvhbnczeeg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1064,7 +1056,7 @@ Note | 予習復習も単位取得に必要な時間です
   padding-right: 5px;
 }
 
-#mlsydzonrr .gt_sourcenotes {
+#jvhbnczeeg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1078,7 +1070,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-right-color: #D3D3D3;
 }
 
-#mlsydzonrr .gt_sourcenote {
+#jvhbnczeeg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1086,84 +1078,84 @@ Note | 予習復習も単位取得に必要な時間です
   padding-right: 5px;
 }
 
-#mlsydzonrr .gt_left {
+#jvhbnczeeg .gt_left {
   text-align: left;
 }
 
-#mlsydzonrr .gt_center {
+#jvhbnczeeg .gt_center {
   text-align: center;
 }
 
-#mlsydzonrr .gt_right {
+#jvhbnczeeg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mlsydzonrr .gt_font_normal {
+#jvhbnczeeg .gt_font_normal {
   font-weight: normal;
 }
 
-#mlsydzonrr .gt_font_bold {
+#jvhbnczeeg .gt_font_bold {
   font-weight: bold;
 }
 
-#mlsydzonrr .gt_font_italic {
+#jvhbnczeeg .gt_font_italic {
   font-style: italic;
 }
 
-#mlsydzonrr .gt_super {
+#jvhbnczeeg .gt_super {
   font-size: 65%;
 }
 
-#mlsydzonrr .gt_footnote_marks {
+#jvhbnczeeg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mlsydzonrr .gt_asterisk {
+#jvhbnczeeg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mlsydzonrr .gt_indent_1 {
+#jvhbnczeeg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mlsydzonrr .gt_indent_2 {
+#jvhbnczeeg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mlsydzonrr .gt_indent_3 {
+#jvhbnczeeg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mlsydzonrr .gt_indent_4 {
+#jvhbnczeeg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mlsydzonrr .gt_indent_5 {
+#jvhbnczeeg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mlsydzonrr .katex-display {
+#jvhbnczeeg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mlsydzonrr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jvhbnczeeg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead><tr class="gt_col_headings header">
-<th id="a回" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">回</th>
-<th id="a日付" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">日付</th>
-<th id="aコマ" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">コマ</th>
-<th id="a時間" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">時間</th>
-<th id="a開催形態" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">開催形態</th>
-<th id="aタイトル" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">タイトル</th>
-<th id="aキーワード" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">キーワード</th>
+<th id="回" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">回</th>
+<th id="日付" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">日付</th>
+<th id="コマ" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">コマ</th>
+<th id="時間" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">時間</th>
+<th id="開催形態" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">開催形態</th>
+<th id="タイトル" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">タイトル</th>
+<th id="キーワード" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">キーワード</th>
 </tr></thead>
 <tbody class="gt_table_body">
 <tr class="odd">
@@ -1328,23 +1320,23 @@ Note | 予習復習も単位取得に必要な時間です
 </section><section id="リーディングアサインメント" class="level2"><h2 class="anchored" data-anchor-id="リーディングアサインメント">リーディングアサインメント</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="harpfrswuv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#harpfrswuv table {
+<div id="fwxaoaxmbk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fwxaoaxmbk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#harpfrswuv thead, #harpfrswuv tbody, #harpfrswuv tfoot, #harpfrswuv tr, #harpfrswuv td, #harpfrswuv th {
+#fwxaoaxmbk thead, #fwxaoaxmbk tbody, #fwxaoaxmbk tfoot, #fwxaoaxmbk tr, #fwxaoaxmbk td, #fwxaoaxmbk th {
   border-style: none;
 }
 
-#harpfrswuv p {
+#fwxaoaxmbk p {
   margin: 0;
   padding: 0;
 }
 
-#harpfrswuv .gt_table {
+#fwxaoaxmbk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1370,12 +1362,12 @@ Note | 予習復習も単位取得に必要な時間です
   border-left-color: #D3D3D3;
 }
 
-#harpfrswuv .gt_caption {
+#fwxaoaxmbk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#harpfrswuv .gt_title {
+#fwxaoaxmbk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1387,7 +1379,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-bottom-width: 0;
 }
 
-#harpfrswuv .gt_subtitle {
+#fwxaoaxmbk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1399,7 +1391,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-top-width: 0;
 }
 
-#harpfrswuv .gt_heading {
+#fwxaoaxmbk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1411,13 +1403,13 @@ Note | 予習復習も単位取得に必要な時間です
   border-right-color: #D3D3D3;
 }
 
-#harpfrswuv .gt_bottom_border {
+#fwxaoaxmbk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#harpfrswuv .gt_col_headings {
+#fwxaoaxmbk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1432,7 +1424,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-right-color: #D3D3D3;
 }
 
-#harpfrswuv .gt_col_heading {
+#fwxaoaxmbk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1452,7 +1444,7 @@ Note | 予習復習も単位取得に必要な時間です
   overflow-x: hidden;
 }
 
-#harpfrswuv .gt_column_spanner_outer {
+#fwxaoaxmbk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1464,15 +1456,15 @@ Note | 予習復習も単位取得に必要な時間です
   padding-right: 4px;
 }
 
-#harpfrswuv .gt_column_spanner_outer:first-child {
+#fwxaoaxmbk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#harpfrswuv .gt_column_spanner_outer:last-child {
+#fwxaoaxmbk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#harpfrswuv .gt_column_spanner {
+#fwxaoaxmbk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1484,11 +1476,11 @@ Note | 予習復習も単位取得に必要な時間です
   width: 100%;
 }
 
-#harpfrswuv .gt_spanner_row {
+#fwxaoaxmbk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#harpfrswuv .gt_group_heading {
+#fwxaoaxmbk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1514,7 +1506,7 @@ Note | 予習復習も単位取得に必要な時間です
   text-align: left;
 }
 
-#harpfrswuv .gt_empty_group_heading {
+#fwxaoaxmbk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1529,15 +1521,15 @@ Note | 予習復習も単位取得に必要な時間です
   vertical-align: middle;
 }
 
-#harpfrswuv .gt_from_md > :first-child {
+#fwxaoaxmbk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#harpfrswuv .gt_from_md > :last-child {
+#fwxaoaxmbk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#harpfrswuv .gt_row {
+#fwxaoaxmbk .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1556,7 +1548,7 @@ Note | 予習復習も単位取得に必要な時間です
   overflow-x: hidden;
 }
 
-#harpfrswuv .gt_stub {
+#fwxaoaxmbk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1569,7 +1561,7 @@ Note | 予習復習も単位取得に必要な時間です
   padding-right: 5px;
 }
 
-#harpfrswuv .gt_stub_row_group {
+#fwxaoaxmbk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1583,15 +1575,15 @@ Note | 予習復習も単位取得に必要な時間です
   vertical-align: top;
 }
 
-#harpfrswuv .gt_row_group_first td {
+#fwxaoaxmbk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#harpfrswuv .gt_row_group_first th {
+#fwxaoaxmbk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#harpfrswuv .gt_summary_row {
+#fwxaoaxmbk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1601,16 +1593,16 @@ Note | 予習復習も単位取得に必要な時間です
   padding-right: 5px;
 }
 
-#harpfrswuv .gt_first_summary_row {
+#fwxaoaxmbk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#harpfrswuv .gt_first_summary_row.thick {
+#fwxaoaxmbk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#harpfrswuv .gt_last_summary_row {
+#fwxaoaxmbk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1620,7 +1612,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-bottom-color: #D3D3D3;
 }
 
-#harpfrswuv .gt_grand_summary_row {
+#fwxaoaxmbk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1630,7 +1622,7 @@ Note | 予習復習も単位取得に必要な時間です
   padding-right: 5px;
 }
 
-#harpfrswuv .gt_first_grand_summary_row {
+#fwxaoaxmbk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1640,7 +1632,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-top-color: #D3D3D3;
 }
 
-#harpfrswuv .gt_last_grand_summary_row_top {
+#fwxaoaxmbk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1650,11 +1642,11 @@ Note | 予習復習も単位取得に必要な時間です
   border-bottom-color: #D3D3D3;
 }
 
-#harpfrswuv .gt_striped {
+#fwxaoaxmbk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#harpfrswuv .gt_table_body {
+#fwxaoaxmbk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1663,7 +1655,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-bottom-color: #D3D3D3;
 }
 
-#harpfrswuv .gt_footnotes {
+#fwxaoaxmbk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1677,7 +1669,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-right-color: #D3D3D3;
 }
 
-#harpfrswuv .gt_footnote {
+#fwxaoaxmbk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1686,7 +1678,7 @@ Note | 予習復習も単位取得に必要な時間です
   padding-right: 5px;
 }
 
-#harpfrswuv .gt_sourcenotes {
+#fwxaoaxmbk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1700,7 +1692,7 @@ Note | 予習復習も単位取得に必要な時間です
   border-right-color: #D3D3D3;
 }
 
-#harpfrswuv .gt_sourcenote {
+#fwxaoaxmbk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1708,82 +1700,82 @@ Note | 予習復習も単位取得に必要な時間です
   padding-right: 5px;
 }
 
-#harpfrswuv .gt_left {
+#fwxaoaxmbk .gt_left {
   text-align: left;
 }
 
-#harpfrswuv .gt_center {
+#fwxaoaxmbk .gt_center {
   text-align: center;
 }
 
-#harpfrswuv .gt_right {
+#fwxaoaxmbk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#harpfrswuv .gt_font_normal {
+#fwxaoaxmbk .gt_font_normal {
   font-weight: normal;
 }
 
-#harpfrswuv .gt_font_bold {
+#fwxaoaxmbk .gt_font_bold {
   font-weight: bold;
 }
 
-#harpfrswuv .gt_font_italic {
+#fwxaoaxmbk .gt_font_italic {
   font-style: italic;
 }
 
-#harpfrswuv .gt_super {
+#fwxaoaxmbk .gt_super {
   font-size: 65%;
 }
 
-#harpfrswuv .gt_footnote_marks {
+#fwxaoaxmbk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#harpfrswuv .gt_asterisk {
+#fwxaoaxmbk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#harpfrswuv .gt_indent_1 {
+#fwxaoaxmbk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#harpfrswuv .gt_indent_2 {
+#fwxaoaxmbk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#harpfrswuv .gt_indent_3 {
+#fwxaoaxmbk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#harpfrswuv .gt_indent_4 {
+#fwxaoaxmbk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#harpfrswuv .gt_indent_5 {
+#fwxaoaxmbk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#harpfrswuv .katex-display {
+#fwxaoaxmbk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#harpfrswuv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fwxaoaxmbk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead><tr class="gt_col_headings header">
-<th id="a回" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">回</th>
-<th id="a授業日" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">授業日</th>
-<th id="a著者" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">著者</th>
-<th id="aタイトル" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">タイトル</th>
-<th id="a〆切" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">〆切</th>
+<th id="回" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">回</th>
+<th id="授業日" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">授業日</th>
+<th id="著者" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">著者</th>
+<th id="タイトル" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">タイトル</th>
+<th id="〆切" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">〆切</th>
 </tr></thead>
 <tbody class="gt_table_body">
 <tr class="odd">
@@ -1909,7 +1901,7 @@ Note | 予習復習も単位取得に必要な時間です
 
 </section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">引用文献</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-MEXT_University_credits" class="csl-entry" role="listitem">
-文部科学省高等教育局. n.d. <span>“大学における教育内容・方法の改善等について.”</span> <a href="https://www.mext.go.jp/a_menu/koutou/daigaku/04052801/003.htm">https://www.mext.go.jp/a_menu/koutou/daigaku/04052801/003.htm</a>.
+文部科学省高等教育局, n.d. <a href="https://www.mext.go.jp/a_menu/koutou/daigaku/04052801/003.htm">大学における教育内容・方法の改善等について</a>.
 </div>
 </div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>苅谷千尋 2025</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
