@@ -13,7 +13,7 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="苅谷千尋">
-  <meta name="dcterms.date" content="2025-11-25">
+  <meta name="dcterms.date" content="2025-11-27">
   <title>CHIHIRO KARIYA – 高校生のためのデータサイエンス入門</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -240,7 +240,7 @@
     </div>
 </div>
 
-  <p class="date">November 25, 2025</p>
+  <p class="date">November 27, 2025</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of contents</h2>
@@ -4088,6 +4088,11 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
               if (link.dataset.originalHref !== undefined) {
                 link.href = link.dataset.originalHref;
               }
+                // target, if specified
+                link.setAttribute("target", "_blank");
+                if (link.getAttribute("rel") === null) {
+                  link.setAttribute("rel", "noopener");
+                }
                 // default icon
                 link.classList.add("external");
             }
