@@ -53,7 +53,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-a8f35752bb19140720bf3cf2590f2f32.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-55e89f189e5fa6e03a45fabdb8d21ede.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -148,6 +148,8 @@
       margin-right: 0; 
     }
   </style>
+  <link href="../../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="../../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -177,18 +179,15 @@
 <h2 id="toc-title">Table of contents</h2>
 <ul>
 <li><a href="#/自己紹介" id="/toc-自己紹介">Ⅰ. 自己紹介</a></li>
+<li><a href="#/教材" id="/toc-教材">Ⅱ. 教材</a></li>
 <li><a href="#/シラバス" id="/toc-シラバス">Ⅱ. シラバス</a></li>
+<li><a href="#/リーディングアサインメント-2" id="/toc-リーディングアサインメント-2">Ⅲ. リーディング・アサインメント</a></li>
 <li><a href="#/公民公共政治学" id="/toc-公民公共政治学">Ⅲ. 「公民」/「公共」/「政治学」</a></li>
 <li><a href="#/おすすめの番組記事本" id="/toc-おすすめの番組記事本">Ⅳ. おすすめの番組・記事・本</a></li>
+<li><a href="#/次回の授業と宿題" id="/toc-次回の授業と宿題">Ⅳ. 次回の授業と宿題</a></li>
 <li><a href="#/引用文献" id="/toc-引用文献">引用文献</a></li>
 </ul>
 </nav>
-</section>
-<section id="test" class="slide level2">
-<h2>test</h2>
-<div class="task">
-<p>Suggestions / requests for things to cover in Thursday’s session?</p>
-</div>
 </section>
 <section>
 <section id="自己紹介" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
@@ -198,21 +197,16 @@
 <section id="自己紹介-1" class="slide level2">
 <h2>自己紹介</h2>
 <ul>
-<li><strong>氏名</strong>：苅谷千尋（かりやちひろ）</li>
-<li><strong>所属</strong>：金沢大学教育支援センター
+<li>氏名：苅谷千尋（かりやちひろ）</li>
+<li>所属：金沢大学 教育支援センター
 <ul>
 <li>主担当業務：高大接続コア・センター業務</li>
 </ul></li>
-<li><strong>専門</strong>：政治学 &gt; 政治思想史（イギリス）
+<li>専門：政治学 &gt; 政治思想史（イギリス）
 <ul>
-<li>18世紀イギリスの議会政治と議会ジャーナリズム</li>
-<li>レトリックの受容史：キケロ；サルスティウス；タキトゥス</li>
+<li>18世紀イギリスの議会政治の発展に、古典古代の著作（キケロ；サルスティウス；タキトゥス）の読解が果たした役割（レトリックの受容史）cf.&nbsp;市民革命史観</li>
 </ul></li>
-<li><strong>最近の興味関心</strong>
-<ul>
-<li>R言語を用いたデータの可視化（<a href="https://kariyach.github.io/teaching/RforDatascience/RforDataScience.html?q=データサイエンス入門">参考1</a>; <a href="https://eduweb.sta.kanazawa-u.ac.jp/Portal/Public/Syllabus/DetailMain.aspx?lct_year=2025&amp;lct_cd=77626&amp;je_cd=1&amp;lct_idx=A000000000208392">参考2</a>）</li>
-</ul></li>
-<li><strong>Webサイト</strong>
+<li>Webサイト
 <ul>
 <li><a href="https://kariyach.github.io">personal website - en</a> / <a href="https://researchmap.jp/kariya/">researchmap - ja</a></li>
 </ul></li>
@@ -220,11 +214,17 @@
 </section>
 <section id="自己紹介-レトリックの受容史" class="slide level2">
 <h2>自己紹介 &gt; レトリックの受容史</h2>
-<h3 id="エドマンドバーク">エドマンド・バーク</h3>
+<h3 id="主要研究対象">主要研究対象</h3>
+<ul>
+<li>エドマンド・バーク
+<ul>
+<li>保守主義の原理原則を論じた思想家とみなされる</li>
+</ul></li>
+</ul>
 <div class="columns">
 <div class="column" style="width:80%;">
 <blockquote>
-<p>確かに社会は、一種の契約である。……［時々の利益を目的とするような契約であれば、好き勝手に契約解消も可能］。しかし、国家stateを、胡椒やコーヒー……などの交易する際の協力協定partnershipとなんら変わらぬ存在とみなすべきではない。……国家は、今、生きている者、既に死した者、そしてこれから生まれてくる者のあいだの協定である。</p>
+<p>確かに社会は、一種の契約である。……〔時々の利益を目的とするような契約であれば、好き勝手に契約解消も可能〕。しかし、国家stateを、胡椒やコーヒー……などの交易する際の協力協定partnershipとなんら変わらぬ存在とみなすべきではない。……国家は、今、生きている者、既に死した者、そしてこれから生まれてくる者のあいだの協定である。</p>
 </blockquote>
 </div><div class="column" style="width:20%;">
 <p><img data-src="img/Burke.jpg"></p>
@@ -248,7 +248,7 @@
 <div class="columns">
 <div class="column" style="width:80%;">
 <blockquote>
-<p>民衆が演説をどう受け止めるかに関心を持たない者は、すなわち寡頭制を支持する者、説得よりも暴力に頼ろうとする者である</p>
+<p>民衆が演説をどう受け止めるかに関心を持たない者は、すなわち寡頭制を支持する者、説得よりも暴力に頼ろうとする者である。</p>
 </blockquote>
 </div><div class="column" style="width:20%;">
 <p><img data-src="img/Plutarch.jpg"></p>
@@ -260,7 +260,7 @@
 <div class="columns">
 <div class="column" style="width:80%;">
 <blockquote>
-<p>今昔を比較して暇を潰す老人らは、つぎのことに気がついた。国家を統治した歴代の元首のうちで、他人の雄弁術を必要としたのは、ネロが最初であると（タキトゥス）</p>
+<p>今昔を比較して暇を潰す老人らは、つぎのことに気がついた。国家を統治した歴代の元首のうちで、他人の雄弁術を必要としたのは、ネロが最初であると。</p>
 </blockquote>
 <ul>
 <li>タキトゥスの読まれ方
@@ -287,7 +287,7 @@
 </section>
 <section id="自己紹介-レトリックの受容史-5" class="slide level2">
 <h2>自己紹介 &gt; レトリックの受容史</h2>
-<h3 id="エドマンドバーク-1">エドマンド・バーク</h3>
+<h3 id="エドマンドバーク">エドマンド・バーク</h3>
 <div class="columns">
 <div class="column" style="width:80%;">
 <blockquote>
@@ -296,6 +296,45 @@
 </div><div class="column" style="width:20%;">
 <p><img data-src="img/Burke.jpg"></p>
 </div></div>
+</section>
+<section id="自己紹介-高大接続業務" class="slide level2">
+<h2>自己紹介 &gt; 高大接続業務</h2>
+<h3 id="校務高大接続">校務（高大接続）</h3>
+<ul>
+<li>高大接続リーディングセミナー
+<ul>
+<li>高校生向けに書かれた新書らを読みあう（ <a href="https://kugspro.adm.kanazawa-u.ac.jp/?page_id=3250">セミナーの模様</a>）</li>
+</ul></li>
+<li>ボードゲームで学ぶ社会の平等と不平等
+<ul>
+<li>フランスで作られた、社会格差を知り、考えるためのモノポリー教材（ <a href="https://www.kanazawa-u.ac.jp/news/161202/">セミナーの模様</a>）</li>
+</ul></li>
+<li>高大接続ラウンドテーブル
+<ul>
+<li>探究学習を題材に、高校生と大学生が交流（<a href="https://kugspro.adm.kanazawa-u.ac.jp/?page_id=2209">ラウンドテーブルの模様</a>）</li>
+</ul></li>
+<li>R言語を用いたデータの可視化（<a href="https://kariyach.github.io/teaching/RforDatascience/RforDataScience.html?q=データサイエンス入門">参考1</a>）</li>
+</ul>
+</section></section>
+<section>
+<section id="教材" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
+<h1>Ⅱ. 教材</h1>
+
+</section>
+<section id="教材-1" class="slide level2">
+<h2>教材</h2>
+<ul>
+<li>ウェブサイト &gt; ホームページ</li>
+<li>レジュメ（resume）
+<ul>
+<li>保存・印刷方法:キーボードの「E」でpdf出力可（Goggle Chrome推奨）</li>
+</ul></li>
+<li>スライド（slide）
+<ul>
+<li>保存・印刷方法：サイドメニュー（右側）のpdfをクリック</li>
+</ul></li>
+<li>動画（movie）</li>
+</ul>
 </section></section>
 <section>
 <section id="シラバス" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
@@ -303,14 +342,14 @@
 
 </section>
 <section id="シラバス-授業の目的" class="slide level2">
-<h2>シラバス ＞ 授業の目的</h2>
+<h2>シラバス &gt; 授業の目的</h2>
 <h3 id="ねらい">ねらい</h3>
 <p>本授業は、政治学に関する入門的・基礎的知識を学ぶことを目的としています。日々のニュース報道や新聞報道で見聞するように、「政治」は私たちの生活に非常に密着したものです。しかし、政治が具体的にどのような仕組み・メカニズムのもとに成り立っているかは、理解しづらく、私たちを「政治」から遠ざけるひとつの原因となっています。この授業では、政治に関わる基本概念の理解を通して、政治や政策を動かす仕組み・メカニズムについて説明します。</p>
 <h3 id="カリキュラム上の位置づけ">カリキュラム上の位置づけ</h3>
 <p>この授業は、免許法該当科目（教科に関する科目）の「政治学」に分類されている選択必修科目です。</p>
 </section>
 <section id="シラバス-授業の到達目標" class="slide level2">
-<h2>シラバス ＞ 授業の到達目標</h2>
+<h2>シラバス &gt; 授業の到達目標</h2>
 <ol type="1">
 <li>受講生が、国民主権を中心とした公民分野の基礎的知識を得て、初学者に対してわかりやすく説明することができる。（公民）</li>
 <li>受講生が、選挙制度、政党、政治体制といった政治学の基礎的知識を得て、初学者に対してわかりやすく説明することができる。（基礎的関心）</li>
@@ -320,15 +359,17 @@
 </ol>
 </section>
 <section id="シラバス-授業の進め方" class="slide level2">
-<h2>シラバス ＞ 授業の進め方</h2>
+<h2>シラバス &gt; 授業の進め方</h2>
 <h3 id="授業の進め方">授業の進め方</h3>
 <ul>
-<li><p>初回から第4回目までの授業はオンデマンド配信にて実施します（初回・第2回は12月、第3回・第4回は1月を予定）｡それ以降の授業は対面で実施いたします（2026年2月を予定）｡</p></li>
-<li><p>授業はスライド資料を用いておこないます。受講生は、各単元に関連する指定文献を事前に読み、それについて要約や感想を書くことが求められます（リーディング・アサインメント（＝文献予習））。また、Googleフォームを用いて、定期的に受講者の授業理解を確認します（授業の感想）。</p></li>
+<li><p>初回から第4回目までの授業はオンデマンド配信にて実施します（初回・第2回は12月、第3回・第4回は1月を予定）｡それ以降の授業は対面で実施いたします（2026年2月2日（月）から6日（金）を予定）｡</p></li>
+<li><p>授業はスライド資料を用いておこないます（資料は、このウェブサイトを通して配布します）</p></li>
+<li><p>授業は、受講生の理解度や関心を確認しながら進められます。そのため、受講生は、各単元に関連する指定文献を事前に読み、それについての感想、疑問などを書くことが求められます（<em>リーディング・アサインメント</em>）。また、<em>授業の感想</em>を簡単に書いてもらいます。回収したこれらの感想、意見のうち、重要なもの、代表的なものを紹介しながら､授業を進めます。<em>すべての回答は一覧表にして配布</em>します。</p></li>
+<li><p>詳しくは<a href="https://kariyach.github.io/teaching/Politics1/syllabus_politics1.html#予習復習に関する指示">予習・復習に関する指示</a>を参照下さい。</p></li>
 </ul>
 </section>
 <section id="シラバス-授業キーワード" class="slide level2">
-<h2>シラバス ＞ 授業キーワード</h2>
+<h2>シラバス &gt; 授業キーワード</h2>
 <h3 id="授業キーワード">授業キーワード</h3>
 <ul>
 <li>福祉国家</li>
@@ -342,6 +383,493 @@
 </section>
 <section id="シラバス-成績評価の方法およびその基準" class="slide level2">
 <h2>シラバス &gt; 成績評価の方法およびその基準</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="srlfqdzsyh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#srlfqdzsyh table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#srlfqdzsyh thead, #srlfqdzsyh tbody, #srlfqdzsyh tfoot, #srlfqdzsyh tr, #srlfqdzsyh td, #srlfqdzsyh th {
+  border-style: none;
+}
+
+#srlfqdzsyh p {
+  margin: 0;
+  padding: 0;
+}
+
+#srlfqdzsyh .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 30px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#srlfqdzsyh .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#srlfqdzsyh .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#srlfqdzsyh .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#srlfqdzsyh .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#srlfqdzsyh .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srlfqdzsyh .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#srlfqdzsyh .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#srlfqdzsyh .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#srlfqdzsyh .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#srlfqdzsyh .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#srlfqdzsyh .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#srlfqdzsyh .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#srlfqdzsyh .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#srlfqdzsyh .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#srlfqdzsyh .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#srlfqdzsyh .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#srlfqdzsyh .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#srlfqdzsyh .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srlfqdzsyh .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#srlfqdzsyh .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#srlfqdzsyh .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#srlfqdzsyh .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srlfqdzsyh .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#srlfqdzsyh .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#srlfqdzsyh .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srlfqdzsyh .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srlfqdzsyh .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#srlfqdzsyh .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srlfqdzsyh .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#srlfqdzsyh .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srlfqdzsyh .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#srlfqdzsyh .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srlfqdzsyh .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#srlfqdzsyh .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srlfqdzsyh .gt_left {
+  text-align: left;
+}
+
+#srlfqdzsyh .gt_center {
+  text-align: center;
+}
+
+#srlfqdzsyh .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#srlfqdzsyh .gt_font_normal {
+  font-weight: normal;
+}
+
+#srlfqdzsyh .gt_font_bold {
+  font-weight: bold;
+}
+
+#srlfqdzsyh .gt_font_italic {
+  font-style: italic;
+}
+
+#srlfqdzsyh .gt_super {
+  font-size: 65%;
+}
+
+#srlfqdzsyh .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#srlfqdzsyh .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#srlfqdzsyh .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#srlfqdzsyh .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#srlfqdzsyh .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#srlfqdzsyh .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#srlfqdzsyh .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#srlfqdzsyh .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#srlfqdzsyh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="項目" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">項目</th>
+<th id="比率" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">比率</th>
+<th id="到達目標" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">到達目標</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="項目">リーディング・アサインメント</td>
+<td class="gt_row gt_right" headers="比率">30</td>
+<td class="gt_row gt_left" headers="到達目標">4</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="項目">授業の感想</td>
+<td class="gt_row gt_right" headers="比率">30</td>
+<td class="gt_row gt_left" headers="到達目標">1;2</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="項目">レポート（2種）</td>
+<td class="gt_row gt_right" headers="比率">30</td>
+<td class="gt_row gt_left" headers="到達目標">1; 2; 3; 4; 5</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="項目">ディスカッション（受講態度を含む）</td>
+<td class="gt_row gt_right" headers="比率">10</td>
+<td class="gt_row gt_left" headers="到達目標">1; 2</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 </section>
 <section id="シラバス-成績評価の方法およびその基準-1" class="slide level2">
 <h2>シラバス &gt; 成績評価の方法およびその基準</h2>
@@ -366,7 +894,7 @@
 <div class="callout-content">
 <ul>
 <li>普通に取り組めば80点以上とれるように、配点しています</li>
-<li>レポートはSかAを決めるために使っています（使いたいです）</li>
+<li>レポートは秀か優を決めるために使っています（使いたいです）</li>
 <li>以上のことは、<em>レポート評価は厳し目（各レポート8点/15点満点を標準的なレポートとして評価し、それ以上、それ以下で点数をつけます）、その他は甘め目</em>であることを含意します</li>
 </ul>
 </div>
@@ -407,6 +935,9 @@
 </div>
 </div>
 </div>
+</section>
+<section id="シラバス-単位についての考え方-1" class="slide level2">
+<h2>シラバス &gt; 単位についての考え方</h2>
 <h3 id="単位45時間の学修の考え方大学設置基準">1単位＝45時間の学修の考え方（「大学設置基準」）</h3>
 <blockquote>
 <p>我が国の大学教育は単位制度を基本としており、1単位あたり45時間の学修を必要とする内容をもって構成することが標準とされています。ここでいう１単位あたりの学修時間は、授業時間内の学修時間だけではなく、その授業の事前の準備学修・事後の準備復習を合わせたものとなっています（<span class="citation" data-cites="MEXT_University_credits">文部科学省高等教育局 (<a href="#/引用文献-1" role="doc-biblioref" onclick="">n.d.</a>)</span>）</p>
@@ -420,6 +951,14 @@
 </ul></li>
 </ul>
 </section>
+<section id="科目概要-成績評価-レポート" class="slide level2">
+<h2>科目概要 &gt; 成績評価 &gt; レポート</h2>
+<h3 id="芋づる式マップ">⑴ 芋づる式マップ</h3>
+<h3 id="試験問題の作成">⑵ 試験問題の作成</h3>
+<ul>
+<li>詳しくは別途案内します</li>
+</ul>
+</section>
 <section id="科目概要-成績評価-芋づる式マップ" class="slide level2">
 <h2>科目概要 &gt; 成績評価 &gt; 芋づる式マップ</h2>
 
@@ -429,7 +968,7 @@
 
 <img data-src="img/芋づる式MAPのイメージ.png" style="width:97.0%" class="r-stretch quarto-figure-center"><p class="caption">芋づる式マップ（記入例）</p></section>
 <section id="シラバス-テキストなど" class="slide level2">
-<h2>シラバス ＞ テキストなど</h2>
+<h2>シラバス &gt; テキストなど</h2>
 <h3 id="テキスト">テキスト</h3>
 <ul>
 <li>使用しません</li>
@@ -440,38 +979,85 @@
 </ul>
 <h3 id="その他授業資料等">その他授業資料等</h3>
 <ul>
-<li>レジュメ、スライド資料などの授業資料は､特設Webページ（後日、連絡します）を通して配布します。リーディング・アサインメントで用いる著作権のある文献についてはMoodleにアップロードいたします。</li>
+<li>レジュメ、スライド資料などの授業資料は､特設ウェブサイト（<a href="https://kariyach.github.io/teaching/Politics1/index.html">https://kariyach.github.io/teaching/Politics1/index.html</a>）を通して配布します。リーディング・アサインメントで用いる著作権のある文献については<a href="https://moodle.cerd.shimane-u.ac.jp/moodle_2025/">Moodle</a>にアップロードいたします。</li>
 </ul>
+</section>
+<section id="シラバス-予習復習に関する指示-予習" class="slide level2">
+<h2>シラバス &gt; 予習・復習に関する指示 &gt; 予習</h2>
+<h3 id="予習">予習</h3>
+<ul>
+<li>予習：リーディング・アサインメント
+<ul>
+<li>ほぼ毎回の授業において､内容にかかわる文献を事前に読み､感想や質問を書いて提出して下さい</li>
+<li>文献の分量は内容によって差はありますが､1時間くらい時間を書けて欲しいと思っています</li>
+<li>合計10回実施（1回提出につき3点。不正行為、悪質な内容でなければ、一律に3点つけます）</li>
+<li>文献、提出先、締め切りについては、特設サイト<a href="https://kariyach.github.io/teaching/Politics1/index.html">ホームページ</a>からご確認下さい</li>
+</ul></li>
+</ul>
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>2月7日23:59まで遅延提出を認めますが、得点は1点となります</p>
+</div>
+</div>
+</div>
+</section>
+<section id="シラバス-予習復習に関する指示-復習" class="slide level2">
+<h2>シラバス &gt; 予習・復習に関する指示 &gt; 復習</h2>
+<h3 id="復習">復習</h3>
+<ul>
+<li>復習：授業の感想と授業アンケート
+<ul>
+<li>授業内容に関する感想を提出してください</li>
+<li>オンデマンド授業は毎回､対面授業の場合は､一日に1回とします</li>
+<li>30分くらい復習の時間を取って欲しいと思います</li>
+<li>合計9回実施（1回提出につき3点。不正行為、悪質な内容でなければ、一律に3点つけます。全て期日までに提出した者には3点加点します）</li>
+<li>文献、提出先、締め切りについては、特設サイト<a href="https://kariyach.github.io/teaching/Politics1/index.html">ホームページ</a>からご確認下さい</li>
+</ul></li>
+</ul>
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>2月7日23:59まで遅延提出を認めますが、得点は1点となります</p>
+</div>
+</div>
+</div>
 </section>
 <section id="シラバス-オフィスアワー等" class="slide level2">
 <h2>シラバス &gt; オフィスアワー等</h2>
 <h3 id="学生からの質問への対応方法等">学生からの質問への対応方法等</h3>
 <ul>
 <li>対面授業の期間中は､授業前後に質問､相談に応じます</li>
-<li>この期間以外に、質問・連絡が必要な場合は、社会科教育講座主任の諸岡先生に御連絡ください</li>
+<li>この期間以外に、質問・連絡が必要な場合は、社会科教育講座主任の諸岡先生にご連絡ください</li>
 </ul>
 </section>
 <section id="スケジュール" class="slide level2">
 <h2>スケジュール</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="ibvhnfpsqc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ibvhnfpsqc table {
+<div id="rqpobzzhel" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rqpobzzhel table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ibvhnfpsqc thead, #ibvhnfpsqc tbody, #ibvhnfpsqc tfoot, #ibvhnfpsqc tr, #ibvhnfpsqc td, #ibvhnfpsqc th {
+#rqpobzzhel thead, #rqpobzzhel tbody, #rqpobzzhel tfoot, #rqpobzzhel tr, #rqpobzzhel td, #rqpobzzhel th {
   border-style: none;
 }
 
-#ibvhnfpsqc p {
+#rqpobzzhel p {
   margin: 0;
   padding: 0;
 }
 
-#ibvhnfpsqc .gt_table {
+#rqpobzzhel .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -497,12 +1083,12 @@
   border-left-color: #D3D3D3;
 }
 
-#ibvhnfpsqc .gt_caption {
+#rqpobzzhel .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ibvhnfpsqc .gt_title {
+#rqpobzzhel .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -514,7 +1100,7 @@
   border-bottom-width: 0;
 }
 
-#ibvhnfpsqc .gt_subtitle {
+#rqpobzzhel .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -526,7 +1112,7 @@
   border-top-width: 0;
 }
 
-#ibvhnfpsqc .gt_heading {
+#rqpobzzhel .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -538,13 +1124,13 @@
   border-right-color: #D3D3D3;
 }
 
-#ibvhnfpsqc .gt_bottom_border {
+#rqpobzzhel .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ibvhnfpsqc .gt_col_headings {
+#rqpobzzhel .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -559,7 +1145,7 @@
   border-right-color: #D3D3D3;
 }
 
-#ibvhnfpsqc .gt_col_heading {
+#rqpobzzhel .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -579,7 +1165,7 @@
   overflow-x: hidden;
 }
 
-#ibvhnfpsqc .gt_column_spanner_outer {
+#rqpobzzhel .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -591,15 +1177,15 @@
   padding-right: 4px;
 }
 
-#ibvhnfpsqc .gt_column_spanner_outer:first-child {
+#rqpobzzhel .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ibvhnfpsqc .gt_column_spanner_outer:last-child {
+#rqpobzzhel .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ibvhnfpsqc .gt_column_spanner {
+#rqpobzzhel .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -611,11 +1197,11 @@
   width: 100%;
 }
 
-#ibvhnfpsqc .gt_spanner_row {
+#rqpobzzhel .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ibvhnfpsqc .gt_group_heading {
+#rqpobzzhel .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -641,7 +1227,7 @@
   text-align: left;
 }
 
-#ibvhnfpsqc .gt_empty_group_heading {
+#rqpobzzhel .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -656,15 +1242,15 @@
   vertical-align: middle;
 }
 
-#ibvhnfpsqc .gt_from_md > :first-child {
+#rqpobzzhel .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ibvhnfpsqc .gt_from_md > :last-child {
+#rqpobzzhel .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ibvhnfpsqc .gt_row {
+#rqpobzzhel .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -683,7 +1269,7 @@
   overflow-x: hidden;
 }
 
-#ibvhnfpsqc .gt_stub {
+#rqpobzzhel .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -696,7 +1282,7 @@
   padding-right: 5px;
 }
 
-#ibvhnfpsqc .gt_stub_row_group {
+#rqpobzzhel .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -710,15 +1296,15 @@
   vertical-align: top;
 }
 
-#ibvhnfpsqc .gt_row_group_first td {
+#rqpobzzhel .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ibvhnfpsqc .gt_row_group_first th {
+#rqpobzzhel .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ibvhnfpsqc .gt_summary_row {
+#rqpobzzhel .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -728,16 +1314,16 @@
   padding-right: 5px;
 }
 
-#ibvhnfpsqc .gt_first_summary_row {
+#rqpobzzhel .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ibvhnfpsqc .gt_first_summary_row.thick {
+#rqpobzzhel .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ibvhnfpsqc .gt_last_summary_row {
+#rqpobzzhel .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -747,7 +1333,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#ibvhnfpsqc .gt_grand_summary_row {
+#rqpobzzhel .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -757,7 +1343,7 @@
   padding-right: 5px;
 }
 
-#ibvhnfpsqc .gt_first_grand_summary_row {
+#rqpobzzhel .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -767,7 +1353,7 @@
   border-top-color: #D3D3D3;
 }
 
-#ibvhnfpsqc .gt_last_grand_summary_row_top {
+#rqpobzzhel .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -777,11 +1363,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#ibvhnfpsqc .gt_striped {
+#rqpobzzhel .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ibvhnfpsqc .gt_table_body {
+#rqpobzzhel .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -790,7 +1376,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#ibvhnfpsqc .gt_footnotes {
+#rqpobzzhel .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -804,7 +1390,7 @@
   border-right-color: #D3D3D3;
 }
 
-#ibvhnfpsqc .gt_footnote {
+#rqpobzzhel .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -813,7 +1399,7 @@
   padding-right: 5px;
 }
 
-#ibvhnfpsqc .gt_sourcenotes {
+#rqpobzzhel .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -827,7 +1413,7 @@
   border-right-color: #D3D3D3;
 }
 
-#ibvhnfpsqc .gt_sourcenote {
+#rqpobzzhel .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -835,72 +1421,72 @@
   padding-right: 5px;
 }
 
-#ibvhnfpsqc .gt_left {
+#rqpobzzhel .gt_left {
   text-align: left;
 }
 
-#ibvhnfpsqc .gt_center {
+#rqpobzzhel .gt_center {
   text-align: center;
 }
 
-#ibvhnfpsqc .gt_right {
+#rqpobzzhel .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ibvhnfpsqc .gt_font_normal {
+#rqpobzzhel .gt_font_normal {
   font-weight: normal;
 }
 
-#ibvhnfpsqc .gt_font_bold {
+#rqpobzzhel .gt_font_bold {
   font-weight: bold;
 }
 
-#ibvhnfpsqc .gt_font_italic {
+#rqpobzzhel .gt_font_italic {
   font-style: italic;
 }
 
-#ibvhnfpsqc .gt_super {
+#rqpobzzhel .gt_super {
   font-size: 65%;
 }
 
-#ibvhnfpsqc .gt_footnote_marks {
+#rqpobzzhel .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ibvhnfpsqc .gt_asterisk {
+#rqpobzzhel .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ibvhnfpsqc .gt_indent_1 {
+#rqpobzzhel .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ibvhnfpsqc .gt_indent_2 {
+#rqpobzzhel .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ibvhnfpsqc .gt_indent_3 {
+#rqpobzzhel .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ibvhnfpsqc .gt_indent_4 {
+#rqpobzzhel .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ibvhnfpsqc .gt_indent_5 {
+#rqpobzzhel .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ibvhnfpsqc .katex-display {
+#rqpobzzhel .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ibvhnfpsqc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rqpobzzhel div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1069,23 +1655,23 @@
 <h2>リーディングアサインメント</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="cnvhdbghgr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cnvhdbghgr table {
+<div id="yanszpmwma" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yanszpmwma table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cnvhdbghgr thead, #cnvhdbghgr tbody, #cnvhdbghgr tfoot, #cnvhdbghgr tr, #cnvhdbghgr td, #cnvhdbghgr th {
+#yanszpmwma thead, #yanszpmwma tbody, #yanszpmwma tfoot, #yanszpmwma tr, #yanszpmwma td, #yanszpmwma th {
   border-style: none;
 }
 
-#cnvhdbghgr p {
+#yanszpmwma p {
   margin: 0;
   padding: 0;
 }
 
-#cnvhdbghgr .gt_table {
+#yanszpmwma .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1111,12 +1697,12 @@
   border-left-color: #D3D3D3;
 }
 
-#cnvhdbghgr .gt_caption {
+#yanszpmwma .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cnvhdbghgr .gt_title {
+#yanszpmwma .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1128,7 +1714,7 @@
   border-bottom-width: 0;
 }
 
-#cnvhdbghgr .gt_subtitle {
+#yanszpmwma .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1140,7 +1726,7 @@
   border-top-width: 0;
 }
 
-#cnvhdbghgr .gt_heading {
+#yanszpmwma .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1152,13 +1738,13 @@
   border-right-color: #D3D3D3;
 }
 
-#cnvhdbghgr .gt_bottom_border {
+#yanszpmwma .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cnvhdbghgr .gt_col_headings {
+#yanszpmwma .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1173,7 +1759,7 @@
   border-right-color: #D3D3D3;
 }
 
-#cnvhdbghgr .gt_col_heading {
+#yanszpmwma .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1193,7 +1779,7 @@
   overflow-x: hidden;
 }
 
-#cnvhdbghgr .gt_column_spanner_outer {
+#yanszpmwma .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1205,15 +1791,15 @@
   padding-right: 4px;
 }
 
-#cnvhdbghgr .gt_column_spanner_outer:first-child {
+#yanszpmwma .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cnvhdbghgr .gt_column_spanner_outer:last-child {
+#yanszpmwma .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cnvhdbghgr .gt_column_spanner {
+#yanszpmwma .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1225,11 +1811,11 @@
   width: 100%;
 }
 
-#cnvhdbghgr .gt_spanner_row {
+#yanszpmwma .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cnvhdbghgr .gt_group_heading {
+#yanszpmwma .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1255,7 +1841,7 @@
   text-align: left;
 }
 
-#cnvhdbghgr .gt_empty_group_heading {
+#yanszpmwma .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1270,15 +1856,15 @@
   vertical-align: middle;
 }
 
-#cnvhdbghgr .gt_from_md > :first-child {
+#yanszpmwma .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cnvhdbghgr .gt_from_md > :last-child {
+#yanszpmwma .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cnvhdbghgr .gt_row {
+#yanszpmwma .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1297,7 +1883,7 @@
   overflow-x: hidden;
 }
 
-#cnvhdbghgr .gt_stub {
+#yanszpmwma .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1310,7 +1896,7 @@
   padding-right: 5px;
 }
 
-#cnvhdbghgr .gt_stub_row_group {
+#yanszpmwma .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1324,15 +1910,15 @@
   vertical-align: top;
 }
 
-#cnvhdbghgr .gt_row_group_first td {
+#yanszpmwma .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cnvhdbghgr .gt_row_group_first th {
+#yanszpmwma .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cnvhdbghgr .gt_summary_row {
+#yanszpmwma .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1342,16 +1928,16 @@
   padding-right: 5px;
 }
 
-#cnvhdbghgr .gt_first_summary_row {
+#yanszpmwma .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cnvhdbghgr .gt_first_summary_row.thick {
+#yanszpmwma .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cnvhdbghgr .gt_last_summary_row {
+#yanszpmwma .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1361,7 +1947,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#cnvhdbghgr .gt_grand_summary_row {
+#yanszpmwma .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1371,7 +1957,7 @@
   padding-right: 5px;
 }
 
-#cnvhdbghgr .gt_first_grand_summary_row {
+#yanszpmwma .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1381,7 +1967,7 @@
   border-top-color: #D3D3D3;
 }
 
-#cnvhdbghgr .gt_last_grand_summary_row_top {
+#yanszpmwma .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1391,11 +1977,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#cnvhdbghgr .gt_striped {
+#yanszpmwma .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cnvhdbghgr .gt_table_body {
+#yanszpmwma .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1404,7 +1990,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#cnvhdbghgr .gt_footnotes {
+#yanszpmwma .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1418,7 +2004,7 @@
   border-right-color: #D3D3D3;
 }
 
-#cnvhdbghgr .gt_footnote {
+#yanszpmwma .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1427,7 +2013,7 @@
   padding-right: 5px;
 }
 
-#cnvhdbghgr .gt_sourcenotes {
+#yanszpmwma .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1441,7 +2027,7 @@
   border-right-color: #D3D3D3;
 }
 
-#cnvhdbghgr .gt_sourcenote {
+#yanszpmwma .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1449,72 +2035,72 @@
   padding-right: 5px;
 }
 
-#cnvhdbghgr .gt_left {
+#yanszpmwma .gt_left {
   text-align: left;
 }
 
-#cnvhdbghgr .gt_center {
+#yanszpmwma .gt_center {
   text-align: center;
 }
 
-#cnvhdbghgr .gt_right {
+#yanszpmwma .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cnvhdbghgr .gt_font_normal {
+#yanszpmwma .gt_font_normal {
   font-weight: normal;
 }
 
-#cnvhdbghgr .gt_font_bold {
+#yanszpmwma .gt_font_bold {
   font-weight: bold;
 }
 
-#cnvhdbghgr .gt_font_italic {
+#yanszpmwma .gt_font_italic {
   font-style: italic;
 }
 
-#cnvhdbghgr .gt_super {
+#yanszpmwma .gt_super {
   font-size: 65%;
 }
 
-#cnvhdbghgr .gt_footnote_marks {
+#yanszpmwma .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cnvhdbghgr .gt_asterisk {
+#yanszpmwma .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cnvhdbghgr .gt_indent_1 {
+#yanszpmwma .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cnvhdbghgr .gt_indent_2 {
+#yanszpmwma .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cnvhdbghgr .gt_indent_3 {
+#yanszpmwma .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cnvhdbghgr .gt_indent_4 {
+#yanszpmwma .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cnvhdbghgr .gt_indent_5 {
+#yanszpmwma .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cnvhdbghgr .katex-display {
+#yanszpmwma .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cnvhdbghgr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#yanszpmwma div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1601,75 +2187,197 @@
 </div>
 </div>
 </div>
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<ul>
-<li>提出先：<a href="https://forms.gle/zqBkQCE2kWwzLRCj8">Googleフォーム</a></li>
-<li>配点：各回3点（計10回＝30点）
-<ul>
-<li>注記：2月●日23:59までは、期日後であっても提出を認めますが、得点は1点とします</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
 </section>
 <section id="リーディングアサインメント-1" class="slide level2">
-<h2>リーディングアサインメント</h2>
+<h2>リーディング・アサインメント</h2>
 <ul>
 <li>Q1. 重要だと思った箇所､あるいは､面白いと思った箇所､疑問に思っていた点が解決した箇所などを挙げて下さい（ページ数を記載すること・行数は不要）</li>
 <li>Q2. 上記の理由を教えて下さい（150-200字程度）</li>
 </ul>
 </section></section>
 <section>
+<section id="リーディングアサインメント-2" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
+<h1>Ⅲ. リーディング・アサインメント</h1>
+
+</section>
+<section id="リーディングアサインメント-3" class="slide level2">
+<h2>リーディング・アサインメント</h2>
+</section></section>
+<section>
 <section id="公民公共政治学" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
 <h1>Ⅲ. 「公民」/「公共」/「政治学」</h1>
 
 </section>
-<section id="公民公共政治学-中等教育と高等教育の違い" class="slide level2">
-<h2>「公民」/「公共」/「政治学」 ＞ 中等教育と高等教育の違い</h2>
-<h3 id="公民公共教育政治教育の失敗敗北">公民・公共教育、政治教育の失敗・敗北</h3>
+<section id="公民公共政治学-現代の政治現象" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 現代の政治現象</h2>
+
+<img data-src="img/立花孝.jpg" class="quarto-figure quarto-figure-center r-stretch"><ul>
+<li>出典：たておの動画（via <a href="https://www.youtube.com/watch?v=zQ1DtNOeC14">YouTube</a>）</li>
+</ul>
+</section>
+<section id="公民公共政治学-現代の政治現象-1" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 現代の政治現象</h2>
+
+<img data-src="img/poster_N党.jpg" class="quarto-figure quarto-figure-center r-stretch"><ul>
+<li>出典：日刊ゲンダイ「NHK党による故三浦春馬さん「都知事選ポスター無断使用」にアミューズが猛抗議…選挙悪用に“つける薬”は？」（<a href="https://www.nikkan-gendai.com/articles/view/geino/357064/2">LINK</a>）</li>
+</ul>
+</section>
+<section id="公民公共政治学-現代の政治現象-2" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 現代の政治現象</h2>
+<ul>
+<li>なぜ、このような政治現象が生じるのか？</li>
+<li>「公民」/「公共」/「政治学」教育に問題があるのではないか？</li>
+<li>政治を教える者の責任
+<ul>
+<li>直的的：中学・高校教育の責任
+<ul>
+<li>学習指導要領・教科書・入試問題をこなすだけでよいのか？</li>
+</ul></li>
+<li>間接的：教員を養成する大学教育の責任
+<ul>
+<li>学界の知見をわかりやすく教えるだけでいいのか？</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="公民公共政治学-教育の敗北" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 教育の敗北</h2>
+<h3 id="公民公共教育政治教育の敗北">公民・公共教育、政治教育の敗北</h3>
 <ul>
 <li>政治への無関心
 <ul>
-<li>間隙を突く極端な意見と行動</li>
+<li>希薄な「主権者」意識</li>
+<li>「推し活」的政権支持・政権擁護（政治を政治と見ていない）</li>
 </ul></li>
 <li>ポピュリズムの台頭
 <ul>
-<li>実現可能性のない政策公約が耳目集める</li>
+<li>実現可能性のない政策公約への支持</li>
 <li>「愛国心」の位置付け / 排外主義
 <ul>
 <li>「愛国」の狭義解釈（スパイ防止法に反対する者は左翼） / 「害人」</li>
 </ul></li>
 </ul></li>
-<li>リテラシー能力
+<li>乏しいリテラシー能力
 <ul>
-<li>「オールド・メディア」批判</li>
+<li>「オールド・メディア」批判に乗せられる</li>
 <li>動画や画像による印象操作（「食べ方が汚い」首相はちょっと・・・）</li>
-<li>SNSというサイバー空間の特徴</li>
+<li>SNSのフィルターバブルとマッチポンプ（「こたつ記事」）</li>
 </ul></li>
 </ul>
 </section>
-<section id="公民公共政治学-中等教育と高等教育の違い-1" class="slide level2">
-<h2>「公民」/「公共」/「政治学」 ＞ 中等教育と高等教育の違い</h2>
-<h3 id="公民公共教育政治教育の失敗敗北-1">公民・公共教育、政治教育の失敗・敗北</h3>
+<section id="公民公共政治学-サナ活" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 「サナ活」</h2>
+<h3 id="サナ活">「サナ活」</h3>
+<blockquote>
+<p>最新メイクに挑戦したり、自然体で自分らしく生きる姿勢が「女性らしさ＋芯の強さ」を体現していると評判です。</p>
+</blockquote>
+<blockquote>
+<p>自分の好きを大胆に表現し、SNSでも率直にその姿勢を発信するに「ブレない生き方」「芯のある女性の強さ」「共感力」が感じられ、若い憧れの的となっています。</p>
+</blockquote>
+<blockquote>
+<p>若者世代が積極的にキャリアや生き方のロールモデルとして高市早苗を選ぶこの現象は、今後のSNSトレンドにも大きな影響を与えています。</p>
+</blockquote>
 <ul>
-<li>政治への無関心
+<li>出典：楽しいことはあちこちに！「高市に立って話した韓国コスメ好きやライフスタイルへのこだわりは、若い女性にとって近しい親感と憧れの対象に」（<a href="https://yuki-fuji.com/takaitisanae-sanakatu/">LINK</a>）</li>
+</ul>
+</section>
+<section id="公民公共政治学-サナ活-1" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 「サナ活」</h2>
+<h3 id="サナ活-1">「サナ活」</h3>
+<blockquote>
+<p>高市早苗氏の首相就任から3週間弱。政治家としては異例の“熱狂”が広がっている。内閣支持率は80％超、20代では90％を超えるとの調査もあり、高市首相の服装やアクセサリーをまねる「サナ活」が登場。国会での発言が即座に切り抜かれ、称賛とともにSNSで拡散されるなど、<em>その盛り上がりは“推し活”とも呼べる様相を帯びている</em>。</p>
+</blockquote>
+<blockquote>
+<p>この熱は閣僚にも波及している。片山さつき財務大臣や小野田紀美経済安全保障担当大臣の国会答弁や記者会見も、<em>象徴的なワンシーンが拡散され、「強気」「かっこいい」といったラベルが付けられていく</em>。国会の“名場面”を切り取って楽しむ行為は、政治に関心の薄い層まで巻き込み、<em>エンタメ文化の一部として定着</em>しつつある。</p>
+</blockquote>
 <ul>
-<li>間隙を突く極端な意見と行動</li>
+<li>日刊SPA!「“サナ活”からSNS動画まで…高市政権「異例の熱狂」の正体。支持者が“見ているもの”とは」（<a href="https://nikkan-spa.jp/2129615/2">LINK</a>）</li>
+</ul>
+</section>
+<section id="公民公共政治学-教育の敗北-1" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 教育の敗北</h2>
+<h3 id="退屈な授業">退屈な授業</h3>
+<ul>
+<li>中学・高校で学習する「政治」単元は面白いのか問題</li>
+</ul>
+<h3 id="退屈な授業の帰結">退屈な授業の帰結？</h3>
+<ul>
+<li>若者の政治参加が低いことは問題だ
+<ul>
+<li>なぜ低いのか、低いことがなぜ問題なのかを考えない</li>
 </ul></li>
-<li>ポピュリズムの台頭
+<li>野党は批判ばかりで税金の無駄だ
 <ul>
-<li>実現可能性のない政策公約が耳目集める</li>
+<li>政治における野党の役割とは何かを考えない</li>
+<li>本当に野党は批判ばかりしているのかを調べない</li>
+</ul></li>
+<li>解像度の低い議論
+<ul>
+<li>ウヨ／サヨ（パヨク） / 「右でも左でもない普通の日本人」</li>
+</ul></li>
+<li>自責思考（希薄な他責観念。頑張らない者が悪い）</li>
+</ul>
+</section>
+<section id="公民公共政治学-教育の敗北-2" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 教育の敗北</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<blockquote>
+<p>一部の「愛国者」を自称する人々の論理では、「在日認定」とは、相手を「日本の敵」とみなすことの宣言となる。つまり、自称「愛国者」たちは、気に食わない相手を「特殊な存在」「敵」とすることで自身を（相対的に）「普通」と位置づけ、さらに「敵」への反撃は「普通の日本人」なら当然のことだと正当化しているように思われる。ここでもやはり「普通の日本人」というレトリックが、ある種の「免罪符」となっているといえよう。</p>
+</blockquote>
+</div><div class="column" style="width:30%;">
+<p><img data-src="img/zainichimegane.jpg"></p>
+</div></div>
+<ul>
+<li>出典：秦正樹「「右でも左でもない普通の日本人」を自認する人ほど、陰謀論を信じやすかった…！」（<a href="https://gendai.media/articles/-/77698">現代ビジネス</a>）</li>
+</ul>
+</section>
+<section id="公民公共政治学-政治の難しさ" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 ＞ 政治の難しさ</h2>
+<h3 id="政治の難しさ">政治の難しさ</h3>
+<ul>
+<li>用語の難しさではない</li>
+<li>個人の行動と社会的成果との因果関係が遠く、直接的に見えにくい
+<ul>
+<li>単純化したくなる（e.g.&nbsp;陰謀論・友敵論）</li>
 </ul></li>
 </ul>
 </section>
-<section id="公民公共政治学-中等教育と高等教育の違い-2" class="slide level2">
-<h2>「公民」/「公共」/「政治学」 ＞ 中等教育と高等教育の違い</h2>
+<section id="公民公共政治学-政治の難しさ-1" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 ＞ 政治の難しさ</h2>
+<h3 id="私的行為">私的行為</h3>
+<ul>
+<li>勉強時間を増やせば成績が上がる</li>
+<li>アルバイトをすれば給料がもらえる
+<ul>
+<li>行動と結果の関係が明確で、個人が直接的に成果を受け取れる</li>
+</ul></li>
+</ul>
+<h3 id="政治活動">政治活動</h3>
+<ul>
+<li>ルールを変えられるかどうかは不確実</li>
+<li>仮にルールが変わったとしても、その恩恵は社会全体に分配され、<em>自分だけが独占できるわけではない</em>（弱い動機づけ）
+<ul>
+<li>それでもいいという利他的な人しかできない</li>
+<li>利権構造に転換されやすい（政治が私的行為に）e.g.&nbsp;既得権益/収益化</li>
+</ul></li>
+</ul>
+</section>
+<section id="公民公共政治学-政治の難しさ-2" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 ＞ 政治の難しさ</h2>
+<h3 id="集合行為論でみる政治">集合行為論でみる政治</h3>
+<ul>
+<li>個人が行動しても成果を独占できないため、参加動機が弱くなりやすい</li>
+<li>政治参加は不確実性と公共性の両方が絡むため、個人の意思決定が難しい行動であり、社会的協力や組織化が必要となる</li>
+<li>しかしながら、個人には、社会的協力や組織化する動機がそもそもない
+<ul>
+<li>多数者は特に協力、組織化できない（生産者↔︎消費者）</li>
+<li>分割統治：被支配者の間に分裂状態を生じさせ、団結をむずかしくしておいて安定した支配の継続をはかる方法（『精選版 日本国語大辞典』）</li>
+</ul></li>
+</ul>
+</section>
+<section id="公民公共政治学-中等教育と高等教育の違い" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 中等教育と高等教育の違い</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="中等教育">中等教育：</h3>
@@ -1688,18 +2396,22 @@
 <li>規範と記述を峻別しない</li>
 </ol>
 <ul>
-<li>建前ばかり
+<li>建前や原則論にとどまる
 <ul>
-<li>理想と現実のギャップ</li>
+<li>現実が理想から程遠いという印象をもつ</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <h3 id="高等教育研究者">高等教育（研究者）：</h3>
 <ol type="1">
-<li>制度の運用と帰結までを対象</li>
+<li>現象の解明が中心</li>
 </ol>
 <ul>
+<li>制度の運用と帰結までを対象
+<ul>
 <li>例：衆議院の優越の行使回数､条件</li>
+<li>例：三権が融合する契機</li>
+</ul></li>
 </ul>
 <ol start="2" type="1">
 <li>学問の自由</li>
@@ -1719,85 +2431,129 @@
 <!-- > 知識や体験をばらばらな情報として受け入れるだけではなく、それを自分のなかでまとめて、意味づけてみよう。そうしてはじめて、あなたたちは、社会を「知る」ことができる（清水書院） -->
 </section>
 <section id="公民公共政治学-政治的中立性" class="slide level2">
-<h2>「公民」/「公共」/「政治学」 ＞政治的中立性</h2>
+<h2>「公民」/「公共」/「政治学」 &gt; 政治的中立性</h2>
 <h3 id="学校における政治的中立性についての政府公式見解">学校における政治的中立性についての政府公式見解</h3>
+<ul>
+<li>学校における政治的中立性の確保 規定の趣旨</li>
+</ul>
 <blockquote>
-<p>〔教育基本法第14条〕第2項は、「公の性質」を有する学校においては、その政治的中立性を確保するため、教育内容に一党一派の政治的な主義・主張が持ち込まれたり、学校が政治的活動の舞台となるようなことは厳に避けなくてはならないことから、<em>学校教育における党派的政治教育の禁止</em>を規定するものである</p>
+<p>〔教育基本法第14条〕第2項は、「公の性質」を有する学校においては、その政治的中立性を確保するため、教育内容に一党一派の政治的な主義・主張が持ち込まれたり、学校が政治的活動の舞台となるようなことは厳に避けなくてはならないことから、<em>学校教育における党派的政治教育の禁止</em>を規定するものである（<span class="citation" data-cites="MIC:2023kommentar">総務省 (<a href="#/引用文献-1" role="doc-biblioref" onclick="">2023</a>)</span>）。</p>
 </blockquote>
+</section>
+<section id="公民公共政治学-政治的中立性-1" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 政治的中立性</h2>
+<h3 id="学校における政治的中立性についての政府公式見解-1">学校における政治的中立性についての政府公式見解</h3>
 <ul>
-<li>➡ 政治に関する解釈、評価を避ける傾向に
+<li>「特定の政党を支持し，又はこれに反対するための政治教育」</li>
+</ul>
+<blockquote>
+<p>直接・間接を問わず，特定の政党を支持し，またはこれに反対するための政治教育，すなわち党派的政治教育をいう。したがって，学校教育において，ある政党の政策や主張を支持ないし反対するよう教育を行う場合などは本項により禁止される。なお，教員が政治的教養に関する教育を行う場合，党派的な主張や政策に触れることはあり得ることであり，各政党の政策等を批評することが直ちに本項に抵触するものではないが，その場合には，他の考え方や見方を紹介したり，異なる見解を示した複数の資料を使用したりするとともに，教員の個人的な主義主張を避けて中立かつ公正な立場で指導するよう留意しなければならない（<span class="citation" data-cites="MIC:2023kommentar">総務省 (<a href="#/引用文献-1" role="doc-biblioref" onclick="">2023</a>)</span>）。</p>
+</blockquote>
+</section>
+<section id="公民公共政治学-政治的中立性-2" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 政治的中立性</h2>
+<h3 id="政治的に中立な授業">政治的に「中立」な授業</h3>
 <ul>
-<li>➡「客観的事実」の重視</li>
-<li>➡️両論併記</li>
-<li>➡️「「政治的中立」は政治的意見もたないこと」</li>
+<li>政治に関する解釈、評価を避ける傾向に
+<ul>
+<li>「客観的事実」の重視（暗記型の試験）</li>
+<li>️両論併記</li>
+<li>️「<em>「政治的中立」は政治的意見もたないこと」と実質的に同義</em>に</li>
+<li>情報をアップデートすることがめんどくさい
+<ul>
+<li><em>主権者教育に反する</em></li>
 </ul></li>
-<li>➡️<em>主権者教育に反する</em></li>
+</ul></li>
 </ul>
 </section>
-<section id="グループワークの心理的安全性" class="slide level2">
-<h2>グループワークの心理的安全性</h2>
-<div class="callout callout-important callout-titled callout-style-default">
+<section id="公民公共政治学-試験の政治的中立性" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 試験の「政治的中立性」</h2>
+<ul>
+<li>Q1. 現在の首相の氏名を漢字で書きなさい</li>
+<li>Q2. 現在の首相の現在の選出選挙区はどこですか</li>
+<li>Q3. 現在の首相は主要閣僚の経験、党三役経験が乏しく、自民党出身の首相としては、例外的なキャリアパスである。正誤で回答しなさい</li>
+<li>Q4. 現在の首相が挙げる愛読書で<em>間違っているもの</em>を選びなさい
+<ol type="A">
+<li>マーガレット・サッチャー『サッチャー回顧録』</li>
+<li>山本七平『「空気」の研究』</li>
+<li>司馬遼太郎『坂の上の雲』</li>
+<li>百田尚樹 『日本国紀』</li>
+<li>Ｇ.キングス＆レイ・ウォード『ビジネスマンの父より息子への30通の手紙』</li>
+</ol></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_70bd3e90" data-warn-when="5" data-update-every="1" data-play-sound="true" data-blink-colon="true" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">15</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="公民公共政治学-試験の政治的中立性-1" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 試験の「政治的中立性」</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>Q5. 現在の首相は2024年の総裁選挙の際に「サナエあれば、憂いなし」と書かれたボードの前に立って出馬会見しました。あなたは日本の将来は「サナエあれば、憂いなし」だと思いますか。賛否を明確にした上で、その理由を根拠をもって論じて下さい</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><img data-src="img/sanaeareba.jpg"></p>
+</div></div>
+<div class="callout callout-note callout-style-simple">
 <div class="callout-body">
-<div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>重要 | <em>「この場では安心して意見を言える」という感覚が何より大切</em>です</strong></p>
-</div>
 <div class="callout-content">
-<ol type="1">
-<li>グループワークで話したことは外に持ち出さない</li>
-<li>相手の意見を批判しない（マウンティング行為を含む）</li>
-<li>グルームのメンバー全員が「つながり」を生む声かけを心がける（「◯◯さんはどう思いますか？」）</li>
-</ol>
+<p>この設問は、政治家や特定の立場を評価することを目的としたものではなく、あなた自身の考えを論理的に説明する力を問うものです。したがって、賛否自体は評価対象とはしません。理由と論拠の妥当性及び主張の独自性で評価します</p>
 </div>
 </div>
 </div>
 </section>
-<section id="公民公共政治学-試験の政治的中立性" class="slide level2">
-<h2>「公民」/「公共」/「政治学」 ＞ 試験の「政治的中立性」</h2>
-<div class="columns">
-<div class="column" style="width:65%;">
-<p>Q1. 現在の首相の氏名を漢字で書きなさい</p>
-<p>Q2. 現在の首相の選挙区はどこですか</p>
-<p>Q3. 現在の首相は酒豪である。○か×かで答えなさい</p>
-<p>Q4. 現在の首相の父親の職業を以下の選択肢から選びなさい</p>
+<section id="公民公共政治学-試験の政治的中立性-2" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 試験の「政治的中立性」</h2>
 <ul>
-<li>A. 菓子職人（もみじまんじゅう）</li>
-<li>B. 広島カープの選手（投手）</li>
-<li>C. 衆議院議員</li>
-<li>D. 社会科教諭（中学校）</li>
+<li>Q1. 高市早苗</li>
+<li>Q2. 衆議院小選挙区奈良2区</li>
+<li>Q3. 正</li>
+<li>Q4. D) 百田尚樹 『日本国紀』
+<ul>
+<li>正しくは「松下幸之助『松下幸之助発言集』</li>
+</ul></li>
 </ul>
-<p>Q5. 現在の首相は「聞く力」をもってるかどうか､あなたの意見を根拠をもって論じなさい</p>
-</div><div class="column" style="width:35%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/聞く力.jpg"></p>
-<figcaption>岸田首相の「聞く力」</figcaption>
-</figure>
-</div>
-<p>出典：<a href="https://twitter.com/kishida230/status/1303288227218911233">kishida230</a>（旧Twitter）</p>
-</div></div>
+</section>
+<section id="公民公共政治学-試験の政治的中立性-3" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 試験の「政治的中立性」</h2>
+
+<img data-src="img/books_takaichi.jpg" class="quarto-figure quarto-figure-center r-stretch"><ul>
+<li>出典：日本経済新聞電子版（2025年10月4日）</li>
+</ul>
 </section>
 <section id="公民公共政治学-歴史教育の場合" class="slide level2">
-<h2>「公民」/「公共」/「政治学」 ＞ 歴史教育の場合</h2>
+<h2>「公民」/「公共」/「政治学」 &gt; 歴史教育の場合</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:75%;">
 <h3 id="映画教育と愛国">映画『教育と愛国』</h3>
 <ul>
-<li>監督：斉加尚代</li>
-<li><a href="https://www.mbs.jp/kyoiku-aikoku/">公式サイト</a></li>
+<li>監督：斉加尚代 / <a href="https://www.mbs.jp/kyoiku-aikoku/">公式サイト</a></li>
 </ul>
 <blockquote>
-<p>2006年に改正された教育基本法や、太平洋戦争の記述内容に関する教科書問題、歴史教育に携わる関係者への抗議や中傷など、教育と政治の問題をインタビューを交えながら追う。</p>
+<p>本作は、歴史の記述をきっかけに倒産に追い込まれた大手教科書出版社の元編集者や、保守系の政治家が薦める教科書の執筆者などへのインタビュー、新しく採用が始まった教科書を使う学校や、慰安婦問題など加害の歴史を教える教師・研究する大学教授へのバッシング、さらには日本学術会議任命拒否問題など、⼤阪・毎⽇放送(MBS)で20年以上にわたって教育現場を取材してきた斉加尚代ディレクターが、「教育と政治」の関係を見つめながら最新の教育事情を記録した。</p>
 </blockquote>
 <ul>
-<li>➡️政治からの圧力</li>
-<li>➡️政治への忖度</li>
+<li>️政治からの圧力 /️ 政治への忖度 / 考えても無駄 / 政府批判＝サヨク</li>
 </ul>
-</div><div class="column" style="width:40%;">
-<p><a href="https://www.youtube.com/watch?v=GkuFbWxHDrM"><img data-src="https://img.youtube.com/vi/GkuFbWxHDrM/0.jpg" style="width:100.0%"></a></p>
+</div><div class="column" style="width:25%;">
+<p><img data-src="img/chirashi_omote.jpg"></p>
 </div></div>
+</section>
+<section id="公民公共政治学-歴史教育の場合-1" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 ＞ 歴史教育の場合</h2>
+<ul>
+<li>映画『教育と愛国』予告編（via <a href="#/" data-modal-type="iframe" data-modal-url="https://www.youtube.com/embed/GkuFbWxHDrM?si=QT6r0UXuVG2q3tJ_">Youtube</a>）</li>
+<li>映画「教育と愛国」が示すもの　「政治の道具」迫る危機　ディレクター・斉加尚代さん（via <a href="#/" data-modal-type="iframe" data-modal-url="https://www.youtube.com/embed/xCbWMJJ0qyg?si=W0FlqXHUsUD_MLlK">Youtube</a>）</li>
+</ul>
 </section>
 <section id="公民公共政治学-政治的中立性の研究" class="slide level2">
 <h2>「公民」/「公共」/「政治学」 ＞ 「政治的中立性」の研究</h2>
@@ -1890,39 +2646,21 @@
 </ul>
 </div></div>
 </section>
-<section id="公民公共政治学-1" class="slide level2">
-<h2>「公民」/「公共」/「政治学」</h2>
+<section id="公民公共政治学-輸入言語" class="slide level2">
+<h2>「公民」/「公共」/「政治学」 &gt; 輸入言語</h2>
+<h3 id="外来語という厄介な問題">外来語という厄介な問題</h3>
 <ul>
-<li>外来語という厄介な問題
+<li>right
 <ul>
-<li>例：Rightばかり主張する
-<ul>
-<li>正しいことばかり主張する（原語の語感）</li>
-<li>権利ばかり主張する（日本語の語感）</li>
+<li>「正しい」と「権利」を同じ語彙で表現できる（することに意味がある）</li>
 </ul></li>
+<li>justice
+<ul>
+<li>the fair treatment of people</li>
+<li>the quality of being fair or reasonable</li>
+<li>the legal system used to punish people who have committed crimes</li>
 </ul></li>
 </ul>
-</section>
-<section id="グループワークの心理的安全性-1" class="slide level2">
-<h2>グループワークの心理的安全性</h2>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>禁止 | マウンティング行為</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li><strong>知識ひけらかし型</strong>：「この本は原著で読んでるから、翻訳はちょっとね」/ 「作者の別の論文を読んでないと本当の意味は分からないよ」</li>
-<li><strong>先取り型</strong>：「あー、この後の展開は◯◯だから、そこまで読まないと面白さはわからないよ」/「私、もう続編も全部読んでるから」</li>
-<li><strong>比較優位型</strong>：「その感想は初心者っぽいね」 / 「自分はもっと難しい本を普段読んでるから、この本は物足りないかな」</li>
-<li><strong>発言の矮小化型</strong>：「その見方は浅いよ、本当はこう読むべきなんだ」 / 「その感想はよくあるけど、重要なのは別のところだよ」 / 「それってあなたの感想ですよね」</li>
-</ul>
-</div>
-</div>
-</div>
 </section></section>
 <section>
 <section id="おすすめの番組記事本" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
@@ -1969,7 +2707,7 @@
 <h2>おすすめのニュース系記事</h2>
 <h3 id="時事論評研究者ら">時事論評（研究者ら）</h3>
 <ul>
-<li>「<a href="https://toyokeizai.net/category/tkm-category-focuspolitics?page=7">フォーカス政治</a>」（『週刊東洋経済』）
+<li>「<a href="https://toyokeizai.net/category/tkm-category-focuspolitics">フォーカス政治</a>」（『週刊東洋経済』）
 <ul>
 <li>牧原出先生（政治学・行政学）の回</li>
 </ul></li>
@@ -2003,6 +2741,43 @@
 <li>J. S. ミル『<a href="https://www.iwanami.co.jp/book/b498667.html">自由論</a>』（関口正司訳､岩波文庫､2020年）</li>
 <li>E. H. ノーマン『<a href="https://www.iwanami.co.jp/book/b246477.html">クリオの顔：歴史随想集</a>』（大窪愿二編訳､岩波文庫､1986年）</li>
 </ul>
+</section>
+<section id="おすすめの本-古典-クリオの顔" class="slide level2">
+<h2>おすすめの本 &gt; 古典 &gt; クリオの顔</h2>
+<blockquote>
+<p>クリオはちょっとしたいたずらが好きである。彼女は最も目だたない人びとを使って、うぬぼれ思い上がった者をやりこめ、返答に困らせて喜ぶ。大言壮語によって不羈自由〔ふきじゆう〕という神聖な言葉を汚すデマゴーグらは無謀にも何らかの事件や前例をおのれの支えにしようとするが、その解釈を偽ることによって自らの正体を現わすのである（<span class="citation" data-cites="NormanEH:1986b1">ノーマン (<a href="#/引用文献-1" role="doc-biblioref" onclick="">1986, p. 70</a>)</span>）</p>
+</blockquote>
+<blockquote>
+<p>クリオは大変内気で謙遜な娘でありながら、きわめて仕えにくい主人でもある。しかも彼女は気取り屋である。彼女は、扇動的な新聞やデマゴーグがまきちらす劣悪な通貨である常套句や符牒に理解力を曇らされないきわめて平凡な市民にも、また、人間の作った制度はいずれも不変なものでなく社会全般および他の制度にとって相対的なものであって、たえまない歴史の大きな運動そのものの一部として、微妙に変化し変質するものであると見ることを学んだ学徒にも、ひとしく彼女の愛らしく物思わしげな顔を現わすであろう（<span class="citation" data-cites="NormanEH:1986b1">ノーマン (<a href="#/引用文献-1" role="doc-biblioref" onclick="">1986, p. 72</a>)</span>）</p>
+</blockquote>
+</section></section>
+<section>
+<section id="次回の授業と宿題" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758, #6A5ACD)" data-background-transition="slide" data-background-color="#113758">
+<h1>Ⅳ. 次回の授業と宿題</h1>
+
+</section>
+<section id="次回の授業と宿題-1" class="slide level2">
+<h2>次回の授業と宿題</h2>
+<h3 id="次回">次回</h3>
+<ul>
+<li>福祉国家と現代日本の課題
+<ul>
+<li>12月17日（水）の配信を予定</li>
+</ul></li>
+</ul>
+<h3 id="宿題">宿題</h3>
+<ul>
+<li>授業の感想：
+<ul>
+<li>回答先： <a href="https://forms.gle/tk4PUw5TdVw1fsXH9">Google Form</a></li>
+<li>締め切り：12月15日（月）23時59分</li>
+</ul></li>
+<li>リーディング・アサインメント：
+<ul>
+<li>回答先：<a href="https://forms.gle/Jsfdix83vetVSvp76">Google Form</a></li>
+<li>締め切り：12月15日（月）23時59分</li>
+</ul></li>
+</ul>
 </section></section>
 <section>
 <section id="引用文献" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
@@ -2014,11 +2789,17 @@
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-NormanEH:1986b1" class="csl-entry" role="listitem">
+ノーマン，.E.H., 1986. クリオの顔：歴史随想集. 岩波書店.
+</div>
 <div id="ref-MEXT_University_credits" class="csl-entry" role="listitem">
 文部科学省高等教育局, n.d. <a href="https://www.mext.go.jp/a_menu/koutou/daigaku/04052801/003.htm">大学における教育内容・方法の改善等について</a>.
 </div>
 <div id="ref-HataMkandSakaiKk:2021a1" class="csl-entry" role="listitem">
 秦正樹., 酒井和希., 2021. <a href="https://cir.nii.ac.jp/crid/1521980705934551552">教育における政治的中立性が若年層の政治的態度に及ぼす影響</a>. 生活経済政策 (288), 22–26.
+</div>
+<div id="ref-MIC:2023kommentar" class="csl-entry" role="listitem">
+総務省, 2023. <a href="https://www.soumu.go.jp/main_content/000815490.pdf">指導上の政治的中立の確保等に関する留意点</a>.
 </div>
 </div>
 </section></section>
