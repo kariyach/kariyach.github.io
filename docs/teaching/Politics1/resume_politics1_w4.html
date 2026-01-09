@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="苅谷 千尋">
+<meta name="keywords" content="選挙制度；セイリアンス；有効性感覚">
 
-<title>ボードゲームで考える社会の平等と不平等《2025》 – CHIHIRO KARIYA</title>
+<title>Politics I - Week4 – CHIHIRO KARIYA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +22,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -246,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -318,7 +338,56 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title"><a href="index.html">政治学概論Ⅰ《2025》</a></h1>
+            <p class="subtitle lead">#4 選挙制度と政治意識</p>
+                      </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">苅谷 千尋, PhD <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              金沢大学 教育支援センター
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Wednesday, 21, Jan, 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">Friday, 9, Jan, 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+
+  <div>
+    <div class="keywords">
+      <div class="block-title">Keywords</div>
+      <p>選挙制度；セイリアンス；有効性感覚</p>
+    </div>
+  </div>
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -326,123 +395,461 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#不平等なモノポリールール説明" id="toc-不平等なモノポリールール説明" class="nav-link active" data-scroll-target="#不平等なモノポリールール説明">「不平等なモノポリー」ルール説明</a>
+  <li><a href="#連絡事項" id="toc-連絡事項" class="nav-link active" data-scroll-target="#連絡事項">0. 連絡事項</a></li>
+  <li><a href="#前回の振り返り授業の感想" id="toc-前回の振り返り授業の感想" class="nav-link" data-scroll-target="#前回の振り返り授業の感想">Ⅰ. 前回の振り返り（授業の感想）</a></li>
+  <li><a href="#今週のイチオシ記事" id="toc-今週のイチオシ記事" class="nav-link" data-scroll-target="#今週のイチオシ記事">Ⅱ. 今週のイチオシ記事</a></li>
+  <li><a href="#選挙制度" id="toc-選挙制度" class="nav-link" data-scroll-target="#選挙制度">Ⅰ. 選挙制度</a>
   <ul class="collapse">
-  <li><a href="#プレイヤー" id="toc-プレイヤー" class="nav-link" data-scroll-target="#プレイヤー">1. プレイヤー</a></li>
-  <li><a href="#ゲームの手順" id="toc-ゲームの手順" class="nav-link" data-scroll-target="#ゲームの手順">2. ゲームの手順</a></li>
-  <li><a href="#あなたのターン" id="toc-あなたのターン" class="nav-link" data-scroll-target="#あなたのターン">3. あなたのターン</a></li>
-  <li><a href="#マスの意味" id="toc-マスの意味" class="nav-link" data-scroll-target="#マスの意味">4. マスの意味</a></li>
+  <li><a href="#選挙制度と民意原論" id="toc-選挙制度と民意原論" class="nav-link" data-scroll-target="#選挙制度と民意原論">1. 選挙制度と民意：原論</a></li>
+  <li><a href="#選挙制度と議会" id="toc-選挙制度と議会" class="nav-link" data-scroll-target="#選挙制度と議会">2. 選挙制度と議会</a></li>
+  <li><a href="#選挙制度の改革" id="toc-選挙制度の改革" class="nav-link" data-scroll-target="#選挙制度の改革">3. 選挙制度の改革</a>
+  <ul class="collapse">
+  <li><a href="#中選挙区制" id="toc-中選挙区制" class="nav-link" data-scroll-target="#中選挙区制">1.中選挙区制</a></li>
+  <li><a href="#小選挙区制" id="toc-小選挙区制" class="nav-link" data-scroll-target="#小選挙区制">2.小選挙区制</a></li>
   </ul></li>
+  <li><a href="#選挙を支える組織後援会" id="toc-選挙を支える組織後援会" class="nav-link" data-scroll-target="#選挙を支える組織後援会">4. 選挙を支える組織：後援会</a></li>
+  <li><a href="#総選挙データ得票率と議席占有率" id="toc-総選挙データ得票率と議席占有率" class="nav-link" data-scroll-target="#総選挙データ得票率と議席占有率">5. 総選挙データ：得票率と議席占有率</a></li>
+  <li><a href="#選挙研究" id="toc-選挙研究" class="nav-link" data-scroll-target="#選挙研究">6.選挙研究</a>
+  <ul class="collapse">
+  <li><a href="#濱本真輔の小選挙区比例代表並立制の効果分析" id="toc-濱本真輔の小選挙区比例代表並立制の効果分析" class="nav-link" data-scroll-target="#濱本真輔の小選挙区比例代表並立制の効果分析">1. 濱本真輔の小選挙区比例代表並立制の効果分析</a></li>
+  <li><a href="#砂原庸介の選挙制度分析" id="toc-砂原庸介の選挙制度分析" class="nav-link" data-scroll-target="#砂原庸介の選挙制度分析">2. 砂原庸介の選挙制度分析</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#政治意識" id="toc-政治意識" class="nav-link" data-scroll-target="#政治意識">Ⅱ. 政治意識</a>
+  <ul class="collapse">
+  <li><a href="#政治意識調査と分析" id="toc-政治意識調査と分析" class="nav-link" data-scroll-target="#政治意識調査と分析">1. 政治意識調査と分析</a></li>
+  <li><a href="#政治意識諸研究" id="toc-政治意識諸研究" class="nav-link" data-scroll-target="#政治意識諸研究">2. 政治意識：諸研究</a>
+  <ul class="collapse">
+  <li><a href="#石橋の意識調査有効性感覚" id="toc-石橋の意識調査有効性感覚" class="nav-link" data-scroll-target="#石橋の意識調査有効性感覚">1. 石橋の意識調査（有効性感覚）</a></li>
+  <li><a href="#坂本の分析ポストコロナ" id="toc-坂本の分析ポストコロナ" class="nav-link" data-scroll-target="#坂本の分析ポストコロナ">2.坂本の分析（ポストコロナ）</a></li>
+  <li><a href="#政治意識の変化と政党ラベル" id="toc-政治意識の変化と政党ラベル" class="nav-link" data-scroll-target="#政治意識の変化と政党ラベル">3. 政治意識の変化と政党ラベル</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#次回の授業と宿題" id="toc-次回の授業と宿題" class="nav-link" data-scroll-target="#次回の授業と宿題">Ⅴ. 次回の授業と宿題</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="rules_monopoly.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="resume_politics1_w4.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">ボードゲームで考える社会の平等と不平等《2025》</h1>
-<p class="subtitle lead">不平等なモノポリーの諸ルール</p>
-</div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">苅谷 千尋, PhD <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            金沢大学 教育支援センター
-          </p>
-      </div>
-  </div>
-
-<div class="quarto-title-meta">
-
-      
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">Saturday, 20, Dec, 2025</p>
-    </div>
-  </div>
-  
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">Friday, 9, Jan, 2026</p>
-    </div>
-  </div>
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="不平等なモノポリールール説明" class="level1 page-columns page-full">
-<h1>「不平等なモノポリー」ルール説明</h1>
-<section id="プレイヤー" class="level2">
-<h2 class="anchored" data-anchor-id="プレイヤー">1. プレイヤー</h2>
+<section id="連絡事項" class="level1">
+<h1>0. 連絡事項</h1>
 <ul>
-<li>3つのカテゴリーに分かれており、サイコロの数が違うなど、<strong>ゲームのルールがそれぞれで異なります</strong>
+<li>次回講義のリーディング・アサインメント
 <ul>
-<li>A群＝「上級国民」</li>
-<li>B群＝「中流階級」</li>
-<li>C群＝「下級国民」</li>
+<li>牧原出「フォーカス政治 | 高市政権、揺らぐ基盤と政策の針路」</li>
 </ul></li>
 </ul>
-<p>ゲームは、各プレイヤーが異なる財産（金銭や財産）を持っている状態でスタートします。銀行係は、キャラクターカードに記入されたカテゴリーと性別に基づいて、各プレイヤーの財産を分配して下さい。</p>
 </section>
-<section id="ゲームの手順" class="level2">
-<h2 class="anchored" data-anchor-id="ゲームの手順">2. ゲームの手順</h2>
-<ol type="1">
-<li>このゲームは、社会で見られる不平等をテーマにしています。そのため、最も裕福な白人男性のキャラクター（すなわち、Aurel）を引いた方からスタートします。</li>
-<li>以降の順序は時計回りです</li>
-</ol>
+<section id="前回の振り返り授業の感想" class="level1">
+<h1>Ⅰ. 前回の振り返り（授業の感想）</h1>
 </section>
-<section id="あなたのターン" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="あなたのターン">3. あなたのターン</h2>
-<ol type="1">
-<li>各プレイヤーはカードに書かれたサイコロの数を振って下さい。つまり、あるプレイヤーにはチャンスが多く、他の人には少ないのです（カテゴリーCは、サイコロを一つしか振れません）。それは不公平では？はい、分かっています</li>
-<li>サイコロの出目だけ自分の駒を時計回りに進めて下さい。<strong>注意</strong>：障がいをもつプレイヤーは、サイコロの目をそれぞれ2点ずつ減点して下さい</li>
-<li>止まったマスが、あなたが何をしなければならないかを決めます（下記「マスの意味」を参照）</li>
-<li>サイコロでゾロ目（ふたつとも同じ目）が出た場合、もう一度、サイコロを振ってください。止まったマスでアクションを行ったうえで、その後、もう一度、サイコロを振ります（ステップ1～4を繰り返す、ということです）。ただし、ゾロ目を3回以上出すと、すぐに「刑務所に入る」ことになります（ただし、Aカテゴリのプレイヤーを除く）<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
-<li>自分の順番が終了したら、左隣の人にサイコロを渡して下さい</li>
-</ol>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;ゾロ目が連続して出続けることにより、運の要素が過剰に強調されてしまいます。このルールを設けることで、あまりにも運が偏りすぎることを避け、プレイヤー同士の戦略や交渉がもっと重要になるようにしています</p></div></div></section>
-<section id="マスの意味" class="level2">
-<h2 class="anchored" data-anchor-id="マスの意味">4. マスの意味</h2>
-<ol type="1">
-<li><em>月初め（DÉBUT DU MOIS）</em>：月初めのマス目に停止またはそこを通過すると、銀行から給料が支払われます</li>
-<li><em>駅（Gare）</em>：駅は移動するために使います（オリジナル・モノポリーは駅は資産ですが、「不平等なモノポリー」ではそうではありません）。自分が選んだ別の駅に行くことができ、戻ることはできません。最寄りの駅に行くには20ユーロ、2番目の駅には40ユーロ、3番目の駅には60ユーロを銀行に支払います（例：あるプレイヤーがモンパルナス駅に止まった場合、20ユーロでリヨン駅に行くことができ、40ユーロでノール駅、60ユーロでサン・ラザール駅に行くことができます）。「月初め」マスを通過した場合、給料を受け取ります。<strong>注意</strong>：障害を持つキャラクターは駅を利用できません。すなわち、駅マスに止まっても意味がありません。</li>
-<li><em>刑務所に入る（ALLEZ EN PRISON）</em>：このマスに止まった場合、自分のコマを「刑務所」のマスに移動しなければなりません。給料は受け取れません。あなたのターンは終了です。サイコロを次のプレイヤーに渡して下さい。<strong>注意</strong>：ルーカスとモハメッドが「刑務所に行く」のマスを通過するとき（通常は止まる必要はありません）、彼らは警察のチェックを受けるために止まらなければならず、その順番はそこでストップします。彼らは刑務所には行く必要はありませんが、次の順番が回ってくるまで待たなければなりません（このルールは確かに滑稽ですが、人種的プロファイリングと偏見の問題を提起することができます）</li>
-<li><em>面会中（SIMPLE VISITE）</em>：ここに止まっても刑務所には行きません。自分のコマを「面会中（SIMPLE VISITE）」のエリアに置いて、何も起こりません。</li>
-<li><em>イベント（ÉVÈNEMENT）</em>のマスに止まったら、カードを1枚引き、全文を声に出して読みます。その後、カードに書かれたアクションを実行してください。アクションを終えたら、そのカードを自分のそばに置き、次のプレイヤーに順番を譲って下さい。</li>
-<li><em>再分配（REDISTRIBUTION）</em>：Aカテゴリのプレイヤーが「再分配（REDISTRIBUTION）」のマスに止まるか通過すると、Cカテゴリのプレイヤー全員にそれぞれ100ユーロを支払わなければなりません。ただし、電車を利用すればこのマスを避けることができます。Bカテゴリのプレイヤーは再分配に参加しません。また、「社会的上昇（Ascension sociale）」のイベントカードを持っているプレイヤーも同様です。</li>
-<li><em>土地（PROPRIÉTÉ、地名が印刷されているマス）</em>：土地は22箇所あります。ここに駒が止まり、<strong>まだ所有者がいない場合は、ボードに印刷されている価格で銀行からその土地を購入できます</strong>。購入したプレイヤーは、所有権を示す権利書を受けとり表を向けて自分の前に置きます。もし、<strong>そのプレイヤーがその土地を買いたくないと宣言した場合は、銀行によって競売にかけられ、もっとも高い金額を提示したプレイヤーに販売されます</strong>。ボードに印刷されている価格で購入を拒否したプレイヤーも競売に参加できます。入札価格(売りに出される時の最初の価格)は、いくらからスタートしてもかまいませんが、通常は印刷されている額の半分からはじめます。 また、<strong>駒の止まったマスにすでに所有者がいた場合は、その土地のレンタル料を所有者に支払わなければなりません</strong>。</li>
-</ol>
-<section id="土地に関する権利書の見方" class="level4">
-<h4 class="anchored" data-anchor-id="土地に関する権利書の見方">土地に関する権利書の見方</h4>
+<section id="今週のイチオシ記事" class="level1">
+<h1>Ⅱ. 今週のイチオシ記事</h1>
 <ul>
-<li>あるプレイヤーが、他のプレイヤーの所有している土地に止まったら、所有者に権利書にあるレンタル料を支払います</li>
-<li><strong>同色の土地を同じプレイヤーが独占して所有している場合は、止まった土地の2倍のレンタル料を支払わなければなりません</strong></li>
-<li>ただし、その土地が抵当(抵当の項目を参照)に入っている場合は、レンタル料は徴収できません</li>
-<li>もし所有者がレンタル料の請求を忘れても、次の次のプレイヤーがサイコロを振る前までに請求すれば、レンタル料は受け取れます。次の次のプレイヤーがサイコロを振ってしまうともうレンタル料は請求できません</li>
+<li>朝日新聞ポッドキャスト<a href="https://www.asahi.com/special/podcasts/item/?itemid=ea4e0b68-c916-4f63-a0bd-b3c9006e237b&amp;msockid=38e50734e4a862a8249511efe5f86315">紅白見た？で始まり、「高市早苗論」で終わる2時間の座談です #152</a>
+<ul>
+<li>01:25:51</li>
+</ul></li>
 </ul>
-
-
+</section>
+<section id="選挙制度" class="level1">
+<h1>Ⅰ. 選挙制度</h1>
+<section id="選挙制度と民意原論" class="level2">
+<h2 class="anchored" data-anchor-id="選挙制度と民意原論">1. 選挙制度と民意：原論</h2>
+<ul>
+<li>選挙
+<ul>
+<li>民意の表出；統治権力の創出</li>
+</ul></li>
+<li>選挙制度
+<ul>
+<li>民意の表出と安定的な統治権力の創出の間のバランス
+<ul>
+<li>完全なるミラー（鏡）ではない</li>
+<li>選挙制度（の特性）が民意を偏光させる</li>
+</ul></li>
+</ul></li>
+<li>イシュー・セイリアンス（目立つ）
+<ul>
+<li>争点になりやすい/なりにくい政策領域
+<ul>
+<li>イシュー・ロー・セイリアンス</li>
+<li>政策に関する専門性が高いために多くの有権者と政治家が積極的に関心をもたない</li>
+</ul></li>
+<li>ワンイシューで政治に参加できる仕組み</li>
+<li>参議院比例代表制
+<ul>
+<li>組織内候補を通した民意表出</li>
+<li>例：連合；電機連合；自治労；日本医師会；全国老人保健施設連盟；日本看護連盟；パチンコ関連業界団体</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="選挙制度と議会" class="level2">
+<h2 class="anchored" data-anchor-id="選挙制度と議会">2. 選挙制度と議会</h2>
+<ul>
+<li>衆議院定数：465議席
+<ul>
+<li>単純過半数：233議席</li>
+</ul></li>
+<li>絶対安定多数：261議席
+<ul>
+<li>すべての衆院常任委員会で委員長ポストを独占</li>
+<li>衆院の全委員会で過半数の委員を与党が確保する状態を指す</li>
+</ul></li>
+<li>安定多数：244議席
+<ul>
+<li>すべての衆院常任委員会で委員長ポストを独占</li>
+<li>衆院の全常任委員会で野党側と同数の委員を確保できる状態を指す</li>
+</ul></li>
+<li>圧倒的多数：310議席
+<ul>
+<li>参議院で否決された場合の衆議院での法案再可決；憲法改正の発議；秘密会の開催；国会議員の除名</li>
+</ul></li>
+</ul>
+</section>
+<section id="選挙制度の改革" class="level2">
+<h2 class="anchored" data-anchor-id="選挙制度の改革">3. 選挙制度の改革</h2>
+<section id="中選挙区制" class="level3">
+<h3 class="anchored" data-anchor-id="中選挙区制">1.中選挙区制</h3>
+<ul>
+<li>定数：原則として3〜5</li>
+<li>日本社会党は過半数の候補を擁立せず</li>
+<li>➡ 自民党候補者間の争いに</li>
+<li>➡ 派閥政治（金権政治）の背景</li>
+<li>➡ 族議員の誕生</li>
+<li>➡ 疑似政権交替</li>
+</ul>
+</section>
+<section id="小選挙区制" class="level3">
+<h3 class="anchored" data-anchor-id="小選挙区制">2.小選挙区制</h3>
+<ul>
+<li>小選挙区制（比例代表制）導入時の期待
+<ol type="1">
+<li>金権政治からの脱却</li>
+<li>強いリーダーシップ</li>
+<li>政権選択（候補者選択から政党選択へ）</li>
+</ol>
+<ul>
+<li>➡ 政権選択：「政党枠組み、政策体系、首相候補」の三位一体</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="選挙を支える組織後援会" class="level2">
+<h2 class="anchored" data-anchor-id="選挙を支える組織後援会">4. 選挙を支える組織：後援会</h2>
+<ul>
+<li>中選挙区制
+<ul>
+<li>属人的性格の強い組織</li>
+<li>中選挙区制下において発展</li>
+<li>中選挙区：大政党が、同一選挙区内での複数候補者を擁立するよう促す</li>
+<li>➡政党組織は弱体化</li>
+<li>個々の政治家（候補者）は、政党ではなく、支持者を組織する後援会に依拠</li>
+<li>候補者の人柄を重視</li>
+<li>国会議員─地方議員─後援会</li>
+</ul></li>
+<li>小選挙区制（比例代表並立制）
+<ul>
+<li>後援会加入率：1983年：29%；2005年：10%に</li>
+<li>後援会の衰退；地方政治の新しい動き</li>
+</ul></li>
+</ul>
+</section>
+<section id="総選挙データ得票率と議席占有率" class="level2">
+<h2 class="anchored" data-anchor-id="総選挙データ得票率と議席占有率">5. 総選挙データ：得票率と議席占有率</h2>
+<ul>
+<li>2017年総選挙
+<ul>
+<li>投票率：53.68%</li>
+<li>自民党得票率：48.2%</li>
+<li>自民党小選挙区議席占有率：74%</li>
+<li>➡ 投票率を加味すれば、自民党に投票した有権者：25%</li>
+</ul></li>
+<li>2021年総選挙
+<ul>
+<li>投票率：55.93%</li>
+<li>自民党得票率：48.4%</li>
+<li>自民党小選挙区議席占有率：65.4%</li>
+</ul></li>
+<li>デュベルジェの法則
+<ul>
+<li>小選挙区制は二大政党制を促す</li>
+<li>比例代表制は多党制を促す</li>
+</ul></li>
+<li>➡ 日本の事例は法則に反する</li>
+<li>➡ 小選挙区比例代表並立制を導入しているため</li>
+</ul>
+</section>
+<section id="選挙研究" class="level2">
+<h2 class="anchored" data-anchor-id="選挙研究">6.選挙研究</h2>
+<ul>
+<li>小選挙区比例代表並立制の効果検証
+<ul>
+<li>小選挙区の特徴である勝者総取りがどのような結果をもたらしたか</li>
+<li>（仮説）安定的な統治権力の創出</li>
+<li>（仮説）責任の所在の明確化</li>
+</ul></li>
+<li>効果検証</li>
+</ul>
+<ol type="1">
+<li>派閥中心から政党中心への移行に成功</li>
+</ol>
+<ul>
+<li>選挙の公認権（自民党：幹事長）</li>
+</ul>
+<ol start="2" type="1">
+<li>政策決定の集中化に失敗</li>
+</ol>
+<ul>
+<li>「選挙制度の規定力はかなり弱い」</li>
+<li>首相（党首）の指導力に依存</li>
+</ul>
+<section id="濱本真輔の小選挙区比例代表並立制の効果分析" class="level3">
+<h3 class="anchored" data-anchor-id="濱本真輔の小選挙区比例代表並立制の効果分析">1. 濱本真輔の小選挙区比例代表並立制の効果分析</h3>
+<ol type="1">
+<li>政党の看板が議員の再選に有利な場合：</li>
+</ol>
+<ul>
+<li>集権的な一体性が確保される</li>
+</ul>
+<ol start="2" type="1">
+<li>政党の看板が議員の再選に不利な場合：</li>
+</ol>
+<ul>
+<li>党の一体性の確保が困難になり、分裂に至ることもありうる <span class="citation" data-cites="HamamotoSs:2019book1">濱本真輔 <a href="#ref-HamamotoSs:2019book1" role="doc-biblioref">(2019)</a></span></li>
+</ul>
+</section>
+<section id="砂原庸介の選挙制度分析" class="level3">
+<h3 class="anchored" data-anchor-id="砂原庸介の選挙制度分析">2. 砂原庸介の選挙制度分析</h3>
+<ol type="1">
+<li>衆議院の選挙制度</li>
+</ol>
+<ul>
+<li>高度経済成長期
+<ul>
+<li>農村から都市部への人口移動</li>
+<li>➡ しかし、議員定数の配分はなされず</li>
+<li>1990年代の選挙制度改革</li>
+<li>都市部と農村部の定数不均衡を是正
+<ul>
+<li>➡ 政党：都市部の有権者の意思を重視</li>
+</ul></li>
+</ul></li>
+</ul>
+<ol start="2" type="1">
+<li>参議院の選挙制度</li>
+</ol>
+<ul>
+<li>選挙制度改革なし</li>
+<li>参議院選挙の特徴
+<ul>
+<li>都市的な性格の強い都市：定数2以上</li>
+<li>第2政党以下の政党の候補者も当選</li>
+<li>農村的な性格の強い都市：定数1</li>
+<li>勝者総取り</li>
+<li>➡1人区での勝敗が選挙全体の結果を決める</li>
+</ul></li>
+<li>➡衆議院：都市の有権者が好む改革</li>
+<li>➡参議院：衆議院の改革に抵抗</li>
+<li>典型的事例：2010年の参議院選挙
+<ul>
+<li>TPP問題に関する、衆議院の民意と、参議院の民意の差</li>
+<li>➡ 一つの政党内に、2つの民意の受け皿ができる
+<ul>
+<li>➡ 統合が困難に（<span class="citation" data-cites="SunaharaYs:2015b1">砂原庸介 <a href="#ref-SunaharaYs:2015b1" role="doc-biblioref">(2015), pp.129–135</a></span></li>
+</ul></li>
+</ul></li>
+</ul>
 </section>
 </section>
 </section>
+<section id="政治意識" class="level1 page-columns page-full">
+<h1>Ⅱ. 政治意識</h1>
+<section id="政治意識調査と分析" class="level2">
+<h2 class="anchored" data-anchor-id="政治意識調査と分析">1. 政治意識調査と分析</h2>
+<ul>
+<li>政治意識
+<ul>
+<li>政治的なことがらに対する心理的な態度、意見、選好
+<ul>
+<li>政権支持；政党支持；政策支持</li>
+</ul></li>
+<li>ただし、多くの人は、大きな政治争点がなければ、明確な意識をもっていない</li>
+<li>Cf. 新聞社の世論調査</li>
+</ul></li>
+</ul>
+</section>
+<section id="政治意識諸研究" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="政治意識諸研究">2. 政治意識：諸研究</h2>
+<ol type="1">
+<li>政党帰属意識
+<ul>
+<li>特殊アメリカ的；変化しにくい；世代間継承</li>
+</ul></li>
+<li>政治的有効性感覚</li>
+</ol>
+<ul>
+<li>自分の一票が政治を動かすという感覚
+<ul>
+<li>内的有効性感覚：自分たちが政治に働きかければ、それだけの効果はある</li>
+<li>外的有効性感覚：政治家や政党、国会などが自分たちの気持ちに応えてくれる</li>
+</ul></li>
+<li>有効性感覚の低さ➡ 政治的無力感へ
+<ul>
+<li>Cf. 業績投票</li>
+</ul></li>
+</ul>
+<ol start="3" type="1">
+<li>政治的疎外感
+<ul>
+<li>政治はエリートのもの；素人の自分が口を出してもムダ</li>
+</ul></li>
+<li>政治不信
+<ul>
+<li>民主主義を弱体化</li>
+</ul></li>
+</ol>
+<section id="石橋の意識調査有効性感覚" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="石橋の意識調査有効性感覚">1. 石橋の意識調査（有効性感覚）</h3>
+<blockquote class="blockquote">
+<p>〔以下に示す〕調査結果によれば、応答性に対する期待を示す「選挙があるからこそ有権者の声が反映されるようになる」については、59％の回答者がこれを肯定している。なお27％の回答者が「わからない」「無回答」を選択しているが、もし学校で習った記述内容を無自覚的に受け入れていればこの意見を肯定したはずである。つまり、教科書の内容と現実との間に矛盾を感じている者が一定数いるということである。「政治や政府は、あまりに複雑なので、自分には何をやっているのか良く理解できない」は、政治に対する理解力についての自己評価を尋ねたものであり、この意見を肯定していれば内的有効性感覚が弱いと判断される。回答者の65％がこれを肯定していることから内的有効性感覚は全体として弱いとみてよいだろう。回答者たちは政治に不信を感じながらも外的有効性感覚が比較的強く、内的有効性感覚が弱いことから、政治に多くの事柄を委任し、政治参加を回避しようとする傾向があるといえよう（<span class="citation" data-cites="IshibashiSir:2010a1">石橋章市朗 <a href="#ref-IshibashiSir:2010a1" role="doc-biblioref">(2010), pp.79–80</a></span>）。</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="img/政治的態度.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="margin-caption">政治的態度・78頁</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="img/順位相関係数.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="margin-caption">順位相関係数・82頁</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="img/公民科目の目的の認知.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption class="margin-caption">公民科目の目的の認知・89頁</figcaption>
+</figure>
+</div>
+</section>
+<section id="坂本の分析ポストコロナ" class="level3">
+<h3 class="anchored" data-anchor-id="坂本の分析ポストコロナ">2.坂本の分析（ポストコロナ）</h3>
+<ul>
+<li>一般的な理解
+<ul>
+<li>政治関心向上➡ 活発な政治参加➡ 政治の変化</li>
+</ul></li>
+<li>坂本の理解
+<ul>
+<li>自発的な政治参加の要因
+<ol type="1">
+<li>資源（金銭；時間；知識；市民的スキル）</li>
+<li>指向性（政治参加；参加規範；政治的有効性感覚）</li>
+<li>リクルートメント（政治参加への勧誘・動員）</li>
+</ol></li>
+<li>政治関心は政治参加の主要因ではない
+<ul>
+<li>90年以降、投票率は低下するも、政治関心は変化なし</li>
+</ul></li>
+<li>➡ ポストコロナにおいても、政治参加に変化なし</li>
+</ul></li>
+</ul>
+</section>
+<section id="政治意識の変化と政党ラベル" class="level3">
+<h3 class="anchored" data-anchor-id="政治意識の変化と政党ラベル">3. 政治意識の変化と政党ラベル</h3>
+<section id="i.伝統的な対立軸" class="level4">
+<h4 class="anchored" data-anchor-id="i.伝統的な対立軸">i.伝統的な対立軸</h4>
+<ul>
+<li>保守：自由民主党</li>
+<li>革新：日本社会党</li>
+<li>➡ 一貫性のある政策パッケージを提供</li>
+<li>➡ 政治ラベル（政党のイメージを端的に示す）として機能</li>
+</ul>
+</section>
+<section id="ii.冷戦崩壊以降伝統的な対立軸が曖昧に" class="level4">
+<h4 class="anchored" data-anchor-id="ii.冷戦崩壊以降伝統的な対立軸が曖昧に">ii.冷戦崩壊以降、伝統的な対立軸が曖昧に</h4>
+<ul>
+<li>➡ 何を保守するのか／何を革新するのか不明瞭に</li>
+<li>➡ 政党ラベルも曖昧に</li>
+<li>➡ 党名が意味するものも不明瞭に
+<ul>
+<li>自由民主党は、共産主義という明確な対立軸があってこそ、その意味を把握できる</li>
+</ul></li>
+<li>➡ 世代間で政党ラベルのイメージが異なる</li>
+</ul>
+</section>
+<section id="iii.-宇野の整理" class="level4">
+<h4 class="anchored" data-anchor-id="iii.-宇野の整理">iii. 宇野の整理</h4>
+<p>「保守」と「革新」という政治的ラベルが時代遅れになったと言われて久しい。にもかかわらず、日本の有権者が政治をとらえるにあたって、この対立軸はまだ有効性を失っていないようだ。ただし、「保守」と「革新」が何を意味するかについては、かなりの変化が見られる（宇野 2019）。</p>
+<p>遠藤晶久とウィリー・ジョウによる『イデオロギーと日本政治』によれば、高齢者が共産党をもっとも革新的な政党と見ているのに対し、若年層は日本維新の会をもっとも革新的と考えているという。これは５０代の筆者にとって驚きの指摘である（宇野 2019）。</p>
+<p>日本政治においては長く、憲法や安全保障といった争点を中心に保守と革新の対立軸が形成されてきた。「大きな政府」か「小さな政府」といった社会的・経済的な次元ではなく、あくまで日米安保や防衛力の強化がイデオロギーを決める最大の争点であり続けたのである（宇野 2019）。</p>
+<p>これに対し、４０代以下の層においてはむしろ、「既得権益への挑戦」や「改革派」のアピールこそが「革新」の判断基準となる。この層にとって「革新」とは「変化」を意味する。変化の方向性を考慮に入れないとすれば、これはこれで一つの理解と言えると著者たちはいう（宇野 2019）。</p>
+<p>ただし、橘はこれを「若者の右傾化」などと誤解してはならないという。５０代以上と４０代以下の間に断層があるとすれば、その原因は冷戦の終焉（しゅうえん）とバブル崩壊にある。「変わらなければ、生き残れない」と言われ続けたバブル以降の世代にとって、年功序列・終身雇用という日本型雇用制度を守ろうとする年上世代は「保守」以外の何ものでもない。かつて「リベラル」だった世代が高齢化することで、言葉の意味が入れ替わったというのが、橘の解釈である（宇野 2019）。</p>
+</section>
+<section id="iv.-読売早大共同世論調査" class="level4">
+<h4 class="anchored" data-anchor-id="iv.-読売早大共同世論調査">iv. 読売・早大共同世論調査</h4>
+<ul>
+<li>世代による政党ラベルの評価の変化
+<ul>
+<li>保守：公明党；日本共産党</li>
+<li>改革：自民党；日本維新の会</li>
+<li>リベラル：立憲民主党</li>
+</ul></li>
+<li>➡ 有権者は政党ラベルに頼ることができず、投票コストが増大（棄権を生みやすい）</li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+<section id="次回の授業と宿題" class="level1">
+<h1>Ⅴ. 次回の授業と宿題</h1>
+<ul>
+<li>次回：選挙制度と政治意識
+<ul>
+<li>2026年1月21日（水）の配信を予定</li>
+</ul></li>
+<li>宿題：
+<ol type="1">
+<li>授業の感想：
+<ul>
+<li>回答先： <a href="https://forms.gle/ckyyCeEcXF5P4YE27">Google Form</a></li>
+<li>締め切り：2026年1月19日（月）23時59分</li>
+</ul></li>
+<li>リーディング・アサインメント：
+<ul>
+<li>回答先：<a href="https://forms.gle/Jsfdix83vetVSvp76">Google Form</a></li>
+<li>締め切り：2026年1月19日（月）23時59分</li>
+</ul></li>
+</ol></li>
+</ul>
+</section>
+<section id="references" class="level1">
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>苅谷千尋</div></div></section></div></main> <!-- /main -->
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-HamamotoSs:2019book1" class="csl-entry" role="listitem">
+濱本真輔 (2019) 『現代日本の政党政治：選挙制度改革は何をもたらしたのか』, 有斐閣.
+</div>
+<div id="ref-IshibashiSir:2010a1" class="csl-entry" role="listitem">
+石橋章市朗 (2010) 「高校生の政治的有効性感覚に関する研究」. 『ソーシャル・キャピタルと市民参加』, pp.69–94. Available at: <a href="https://kansai-u.repo.nii.ac.jp/records/2772">https://kansai-u.repo.nii.ac.jp/records/2772</a>.
+</div>
+<div id="ref-SunaharaYs:2015b1" class="csl-entry" role="listitem">
+砂原庸介 (2015) 『民主主義の条件』, 東洋経済新報社.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>苅谷千尋</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
