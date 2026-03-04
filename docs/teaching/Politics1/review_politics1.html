@@ -18,7 +18,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -331,14 +350,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Friday, 20, Feb, 2026</p>
+        <p class="date">Wednesday, 4, Mar, 2026</p>
       </div>
     </div>
     
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">Saturday, 28, Feb, 2026</p>
+        <p class="date-modified">Wednesday, 4, Mar, 2026</p>
       </div>
     </div>
       
@@ -355,56 +374,49 @@ ul.task-list li input[type="checkbox"] {
 <li>
 <a href="#%E8%AC%9B%E8%A9%95" id="toc-講評" class="nav-link active" data-scroll-target="#%E8%AC%9B%E8%A9%95">Ⅰ. 講評</a>
   <ul class="collapse">
-<li><a href="#%E5%85%A8%E4%BD%93" id="toc-全体" class="nav-link" data-scroll-target="#%E5%85%A8%E4%BD%93">1. 全体</a></li>
-  <li><a href="#%E6%88%90%E7%B8%BE%E5%88%86%E5%B8%83" id="toc-成績分布" class="nav-link" data-scroll-target="#%E6%88%90%E7%B8%BE%E5%88%86%E5%B8%83">2. 成績分布</a></li>
-  <li>
-<a href="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E8%A9%95%E4%BE%A1%E3%81%AE%E5%86%85%E8%A8%B3%E3%81%AE%E5%88%86%E5%B8%83%E3%83%AB%E3%83%BC%E3%83%96%E3%83%AA%E3%83%83%E3%82%AF%E3%81%AB%E6%BA%96%E6%8B%A0" id="toc-レポート評価の内訳の分布ルーブリックに準拠" class="nav-link" data-scroll-target="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E8%A9%95%E4%BE%A1%E3%81%AE%E5%86%85%E8%A8%B3%E3%81%AE%E5%88%86%E5%B8%83%E3%83%AB%E3%83%BC%E3%83%96%E3%83%AA%E3%83%83%E3%82%AF%E3%81%AB%E6%BA%96%E6%8B%A0">レポート評価の内訳の分布（ルーブリックに準拠）</a>
+<li>
+<a href="#%E9%85%8D%E7%82%B9%E3%81%A8%E7%B5%90%E6%9E%9C" id="toc-配点と結果" class="nav-link" data-scroll-target="#%E9%85%8D%E7%82%B9%E3%81%A8%E7%B5%90%E6%9E%9C">1. 配点と結果</a>
   <ul class="collapse">
-<li><a href="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%881" id="toc-レポート1" class="nav-link" data-scroll-target="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%881">4. レポート1</a></li>
-  <li><a href="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%882" id="toc-レポート2" class="nav-link" data-scroll-target="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%882">4. レポート2</a></li>
+<li><a href="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3%E5%88%9D%E5%9B%9E%E5%AD%A6%E6%9C%9F%E6%9C%AB%E6%8E%88%E6%A5%AD%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88%E3%82%92%E5%90%AB%E3%82%80" id="toc-授業の感想初回学期末授業アンケートを含む" class="nav-link" data-scroll-target="#%E6%8E%88%E6%A5%AD%E3%81%AE%E6%84%9F%E6%83%B3%E5%88%9D%E5%9B%9E%E5%AD%A6%E6%9C%9F%E6%9C%AB%E6%8E%88%E6%A5%AD%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88%E3%82%92%E5%90%AB%E3%82%80">⑴ 授業の感想（初回・学期末授業アンケートを含む）</a></li>
+  <li><a href="#%E3%83%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%B5%E3%82%A4%E3%83%B3%E3%83%A1%E3%83%B3%E3%83%88" id="toc-リーディングアサインメント" class="nav-link" data-scroll-target="#%E3%83%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%B5%E3%82%A4%E3%83%B3%E3%83%A1%E3%83%B3%E3%83%88">⑵ リーディングアサインメント</a></li>
+  <li><a href="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88" id="toc-レポート" class="nav-link" data-scroll-target="#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88">⑶ レポート</a></li>
+  <li><a href="#%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3" id="toc-ディスカッション" class="nav-link" data-scroll-target="#%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3">4. ディスカッション</a></li>
   </ul>
 </li>
-  <li><a href="#%E6%95%A3%E5%B8%83%E5%9B%B3" id="toc-散布図" class="nav-link" data-scroll-target="#%E6%95%A3%E5%B8%83%E5%9B%B3">散布図</a></li>
+  <li><a href="#%E6%88%90%E7%B8%BE%E5%88%86%E5%B8%83" id="toc-成績分布" class="nav-link" data-scroll-target="#%E6%88%90%E7%B8%BE%E5%88%86%E5%B8%83">2. 成績分布</a></li>
+  <li><a href="#%E6%A4%9C%E8%A8%BC" id="toc-検証" class="nav-link" data-scroll-target="#%E6%A4%9C%E8%A8%BC">3. 検証</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%E5%AD%A6%E6%9C%9F%E6%9C%AB%E6%8E%88%E6%A5%AD%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88" id="toc-学期末授業アンケート" class="nav-link" data-scroll-target="#%E5%AD%A6%E6%9C%9F%E6%9C%AB%E6%8E%88%E6%A5%AD%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88">Ⅱ. 学期末授業アンケート</a>
+  <ul class="collapse">
+<li><a href="#%E5%9B%9E%E7%AD%94%E7%8E%87" id="toc-回答率" class="nav-link" data-scroll-target="#%E5%9B%9E%E7%AD%94%E7%8E%87">1. 回答率</a></li>
+  <li><a href="#%E6%88%90%E9%95%B7%E3%81%AB%E9%96%A2%E3%82%8F%E3%82%8B%E8%87%AA%E5%B7%B1%E8%AA%8D%E8%AD%98" id="toc-成長に関わる自己認識" class="nav-link" data-scroll-target="#%E6%88%90%E9%95%B7%E3%81%AB%E9%96%A2%E3%82%8F%E3%82%8B%E8%87%AA%E5%B7%B1%E8%AA%8D%E8%AD%98">2. 成長に関わる自己認識</a></li>
+  <li><a href="#%E6%89%80%E6%84%9F" id="toc-所感" class="nav-link" data-scroll-target="#%E6%89%80%E6%84%9F">3. 所感</a></li>
+  <li><a href="#%E6%94%BF%E6%B2%BB%E5%AD%A6%E6%A6%82%E8%AB%96%E2%85%B1%E3%81%AE%E6%A1%88%E5%86%85" id="toc-政治学概論ⅱの案内" class="nav-link" data-scroll-target="#%E6%94%BF%E6%B2%BB%E5%AD%A6%E6%A6%82%E8%AB%96%E2%85%B1%E3%81%AE%E6%A1%88%E5%86%85">4. 政治学概論Ⅱの案内</a></li>
   </ul>
 </li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>成績を付け終えたら記載します</p>
-</div>
-</div>
-</div>
-<section id="講評" class="level1"><h1>Ⅰ. 講評</h1>
-<section id="全体" class="level2"><h2 class="anchored" data-anchor-id="全体">1. 全体</h2>
-</section><section id="成績分布" class="level2"><h2 class="anchored" data-anchor-id="成績分布">2. 成績分布</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section><section id="レポート評価の内訳の分布ルーブリックに準拠" class="level2"><h2 class="anchored" data-anchor-id="レポート評価の内訳の分布ルーブリックに準拠">レポート評価の内訳の分布（ルーブリックに準拠）</h2>
-<section id="レポート1" class="level3"><h3 class="anchored" data-anchor-id="レポート1">4. レポート1</h3>
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content"><section id="講評" class="level1 page-columns page-full"><h1>Ⅰ. 講評</h1>
+<section id="配点と結果" class="level2"><h2 class="anchored" data-anchor-id="配点と結果">1. 配点と結果</h2>
+<p>以下のように配点いたしました。いずれもシラバス通り、授業の案内した通りです｡</p>
+<section id="授業の感想初回学期末授業アンケートを含む" class="level3"><h3 class="anchored" data-anchor-id="授業の感想初回学期末授業アンケートを含む">⑴ 授業の感想（初回・学期末授業アンケートを含む）</h3>
+<p>授業の感想は、初回・学期末授業アンケートを含め、計9回実施しました｡締め切りまでに提出されたレポートについては、1回の提出を3点、すべて提出した者に+3点を加点しました｡小計30点です｡締め切りを超えて提出されたレポートは1点を付けています。誤って提出したもの（例えば、授業の感想を誤ってリーディングアサイメントに提出した）は、適切に読み替えて成績をつけていますので、安心して下さい。</p>
+<p>初回に説明したように「楽しかった、勉強になった」などの感想は0点とする方針をとっていますが、そのような不真面目な回答に当たるものはありませんでした｡</p>
+<p>アーカイブ配信に用いたvimeoは、投稿者（管理者）が各種視聴データを取得できます。それを見ると、受講生の中には、途中で視聴をやめている者など、動画を視聴しないままに回答している者がいることがわかります。本人を特定できないこと、また、そのような受講生は、後述のように、レポートの成績が低いと推測されますので、特にペナルティは課していませんが、学ぶ機会を自ら放棄している受講生がいることは残念です。</p>
+</section><section id="リーディングアサインメント" class="level3"><h3 class="anchored" data-anchor-id="リーディングアサインメント">⑵ リーディングアサインメント</h3>
+<p>リーディングアサインメントは計10回実施いたしました｡締め切りまでに提出されたレポートについては、1回の提出を3点としています｡小計30点です｡こちらもいい加減なものは0点とする方針をとっていますが、該当者はいませんでした｡締め切りを超えて提出されたレポートは1点を付けています。</p>
+</section><section id="レポート" class="level3"><h3 class="anchored" data-anchor-id="レポート">⑶ レポート</h3>
+<section id="a-レポート1.-芋づる式マップの作成" class="level4"><h4 class="anchored" data-anchor-id="a-レポート1.-芋づる式マップの作成">a) レポート1. 芋づる式マップの作成</h4>
+<p>芋づる式マップを課すレポートです（<a href="https://kariyach.github.io/teaching/Politics1/reportassignment_politics1.html#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%881.-%E8%8A%8B%E3%81%A5%E3%82%8B%E5%BC%8F%E3%83%9E%E3%83%83%E3%83%97%E3%81%AE%E4%BD%9C%E6%88%90">リンク</a>）｡評価基準は事前に案内した通り（<a href="https://kariyach.github.io/teaching/Politics1/reportassignment_politics1.html#%E8%A9%95%E4%BE%A1%E3%81%A8%E8%A9%95%E4%BE%A1%E5%9F%BA%E6%BA%96">リンク</a>）で、評価の中心は<a href="https://kariyach.github.io/teaching/Politics1/pdf/rubric_politics1_2025.pdf">ルーブリック</a>です。</p>
+<p>こちらも初回の授業などでお話ししている通りですが、授業の感想とリーディングアサインメントは質的な評価をしておらず、提出忘れが多少あっても50点くらいとるであろうことを前提としています。一方で、レポートに関しては質的な評価を重視し、出来不出来、努力の有無によって、配分的正義に即して、成績のグレードが分かれるように評価を付けています。</p>
+<p>その結果、評価の低い者と高い者の差が大きくなっています｡平均点は11.4点でした（成績判定の対象でない者は除外）｡各項目の内訳は以下の図を参照下さい。特に優劣の差がついたのは項目3の「政治学または政治現象に関わる資料、文献の読解」でした。少数の限られた受講生にのみ3を付けました。</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -412,33 +424,20 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="レポート2" class="level3"><h3 class="anchored" data-anchor-id="レポート2">4. レポート2</h3>
+<p><strong>高く評価したレポート</strong>は、兼清さん（テーマに一貫性があり、それぞれの説明も自分の言葉で咀嚼している）、西田さん（統計学を四角枠に加えることで、他の四角枠が新しい意味をもっている）、引地さん（限定された合理性と投票コストを結びつけるなど、授業内容を応用的に活用している）です。</p>
+<p><strong>低く評価したレポート</strong>は、中学校で学習する程度の内容（例えば三権分立）を芋づる式マップに書き、かつ、他のブロックとのつながりがないものです。今回の総選挙の結果は、立法権力と執行権力の分立が危ぶまれるものですので、そのような観点からの分析があれば見事だと思いますが、ただ、空いている枠を埋めただけというレポートは残念としか言いようがありません。また、ガソリン減税の手柄が高市政権にあるかのような説明をしている者が数名いましたが、これは授業内でも説明した通り、石破政権と野党の駆け引きの恩恵です。高市首相が自らの手柄であるかのように説明していましたので、マップ内の説明が「追い風として利用した」などであれば評価に値しますが、単純な事実誤認としか読めないものばかりでした。大学の授業ですので、政治や政権に関する解釈はいろいろあっていいと思いますが、将来、教員を目指すような者がデマに簡単にひっかり、自分の権力性に無頓着にデマ拡散機になるようなことはあってはならないと思います。複数の事実誤認があった場合は、減点しています。</p>
+</section><section id="b-レポート2.-試験問題案の作成" class="level4"><h4 class="anchored" data-anchor-id="b-レポート2.-試験問題案の作成">b) レポート2. 試験問題案の作成</h4>
+<p>公民（中学校）、公共（高校）、政治経済（高校）の試験の作問を課すレポートです（<a href="https://kariyach.github.io/teaching/Politics1/reportassignment_politics1.html#%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%882.-%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C%E6%A1%88%E3%81%AE%E4%BD%9C%E6%88%90">リンク</a>）｡評価基準及び評価についての基本的な考え方は、前項と同じです｡平均点は9.4点でした｡レポート2はレポート1に比して出来不出来の差が大きかったので、以下の通り、多くの項目で優劣がはっきりとついています。</p>
+<p><strong>特に言及しておきたいことは、各項目のゼロ点に該当する（「授業で扱った基礎的知識を理解・活用しておらず、受講前と比べて理解の変化が見られない」「授業前と比べて理解の深化が見られない」「授業で扱った資料・文献やそのレベルの資料・文献を読み取ろうとしておらず、授業前と比べて文献理解の変化が見られない」「授業で扱った基礎的知識を理解・活用しておらず、受講前と比べて理解の変化が見られない」）レポートが非常に多かった</strong>点です。</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section></section><section id="散布図" class="level2"><h2 class="anchored" data-anchor-id="散布図">散布図</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -446,22 +445,159 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<p><strong>高く評価したレポート</strong>は、内坂さん（問題を吟味しており、単純な選択式問題であっても、ポイントを押さえていないと解けない良問ばかり）、片山さん（政治現象を掘り下げて見るための視角が設問にうまく埋め込まれている）、西田さん（政治学の諸概念が政治現象の読解にどう寄与しているのかがよくわかる良問、資料や会話形式の出題にも工夫が見られる）です。</p>
+<p><strong>低く評価したレポート</strong>は、中学校や高校の社会科で学習するレベルの内容をそのまま出題するに止まり、この授業で学修した事柄がどのように活用できているのかわからないものです。そうした問題が部分的にあってもいいとは思いますが、そのようなものばかりでは何のために授業を受け、どう成長できたのだろうか、という疑問が湧きます。ルーブリックに即して評価されるという意味をよく理解しておらず、提出すれば最低でも6割の点数はもらえると誤解していたのかもしれません。実際には、提出しても15点満点で、0点、1、2点の者が多くいました。</p>
+<p>ルーブリックを用いることで、教員は、直感的、感覚的な評価を避けることができます。また、受講生に何が評価され、何が評価されなかったのかを具体的に伝えることができます。これがルーブリックを活用する利点です。<strong>レポート評価に用いたルーブリックについては、簡単なコメントを付して、成績が開示されるであろう3月下旬に個別にメールで返却</strong>する予定です。</p>
+</section></section><section id="ディスカッション" class="level3"><h3 class="anchored" data-anchor-id="ディスカッション">4. ディスカッション</h3>
+<p>第9講 (2月4日2限) に実施した「<a href="https://kariyach.github.io/teaching/Politics1/resume_politics1_w9.html#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3">国会中継を報道してみよう</a>」と、第14回(2月6日3限 ) に実施した「<a href="https://kariyach.github.io/teaching/Politics1/resume_politics1_w14.html#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3">レポート2. 試験問題案の作成の構想</a>」にもとづき評価しました。各5点です。みなさん、熱心に取り組んでいたと思いますので、参加した者全員に4点、グループで選出された者（ファシリテータを含む）にもう1点を加点しました。</p>
+</section></section><section id="成績分布" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="成績分布">2. 成績分布</h2>
+<p>全体の成績評価は以下の通りとなりました。「秀」の比率がもっとも高く、今年度も多くの受講生によい評価を付けることができてよかったと思います。</p>
+<p>一方で、2種のレポートを提出し成績判定の要件を満たしていたにもかからず、「不可」が2名出ました。「可」についても同様ですが、授業の感想、リーディングアサインメントの提出率が低く、かつ、レポートの不出来が重なっています（以下の散布図を参照下さい）。いい加減な態度で授業に臨んでおり、レポートも舐めてかかればそうなるような、というのが率直な感想です。</p>
+<p>余計なお世話とは思いますが、そのような方は学修態度を見直した方がいいのではないかと思いました。特に2年生に顕著です。単位さえ取得できればいいと思っているのかもしれませんね。島根大学教育学部でGPAがどのように扱われているのか知りませんが、大学によってはGPAが高い者には選択肢が多く与えられたり、各種選択の際によい優先順位が付されますので、心配になりました。</p>
+<div class="cell page-columns page-full" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="review_politics1_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="margin-caption">全体</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="review_politics1_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="margin-caption">1年次と2年次</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="検証" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="検証">3. 検証</h2>
+<p>授業デザインの検証のために散布図などを作っていますが、レポート1とレポート2の出来不出来は中程度の相関が確認され、また、授業の感想（提出率）とレポートの出来不出来の相関も同様の程度で確認されました。</p>
+<div class="cell page-columns page-full" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="review_politics1_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="margin-caption">レポート1 vs.&nbsp;レポート2</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="review_politics1_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="margin-caption">授業の感想 vs.&nbsp;レポート2</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full"><p><img src="review_politics1_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="margin-caption">授業の感想 vs.&nbsp;レポート2</figcaption></figure>
+</div>
+</div>
+</div>
+</section></section><section id="学期末授業アンケート" class="level1"><h1>Ⅱ. 学期末授業アンケート</h1>
+<section id="回答率" class="level2"><h2 class="anchored" data-anchor-id="回答率">1. 回答率</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+</section><section id="成長に関わる自己認識" class="level2"><h2 class="anchored" data-anchor-id="成長に関わる自己認識">2. 成長に関わる自己認識</h2>
+<p>成長に関わる自己認識は、「学修者本位の教育へ転換を図る」ことを目指す文部科学省が近年重視している項目の一つです（<a href="https://www.mext.go.jp/a_menu/koutou/chousa/1421136.htm">全国学生調査</a>）。</p>
+<ul>
+<li>Q3. 受講生が、国民主権を中心とした公民分野の基礎的知識を得て、初学者に対してわかりやすく説明することができる。（公民）</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Q4. 受講生が、選挙制度、政党、政治体制といった政治学の基礎的知識を得て、初学者に対してわかりやすく説明することができる。（基礎的関心）</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Q5. 受講生が､政治学の諸概念について､自分なりの視点を加味した､関係図を作成することができる。（基礎的関心）</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Q6. 受講生が、政治学ならびに公民分野に関わる基本的な資料、文献を読みこなすことができる。（論理的思考・文献読解能力）</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Q7. 受講生が、1及び2で得た知識を背景に、日々のニュース報道や新聞報道をより深く、また相対的に理解したうえで、自分自身の意見や解釈を、確かな根拠を明示しながら、明快に記述することができる。（論理的思考・記述能力）</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="review_politics1_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="所感" class="level2"><h2 class="anchored" data-anchor-id="所感">3. 所感</h2>
+<p>多くの受講生が、授業の到達目標に関わる成長を認識できているようで、この点はとてもよかったと思います。</p>
+<p>自己認識と成績評価を対応させてみましたが、あまり関係はないようです。ですので、「どちらとも言えない」と回答した受講生であっても、私は高く評価していると言えると思います。ただし、Q6については、自己認識と成績に一定の関係が見られたので、ここが政治学の理解の壁であり、よりよく理解するための鍵かもしれません。内容的、論理的に考えても、そう思います。</p>
+<p>一方で成長できたと自認していても、私にはとてもそうは思えない者が数名いたことも留意すべき点だと思います。各自、成績評価や返却されたルーブリックを見て、ギャップがあった場合は、自分なりに問題点を検証して下さい。</p>
+<p>自由記述欄に質問的なコメントがあったので、ここで回答しておきます。</p>
+<p>まず、リーディングアサインメントはどれもおもしろかったのですが、どうやって探しているのですか、という質問についてです。研究者に関しては、研究大会などに参加して面白いことを話す先生だな、と思ってチェックしていることはあるかもしれません。私が面白いと感じるのは、先行研究や世間とは異なる見方をしているか、アイロニカルな説明をしている場合です。リーディングアサインメントで紹介した研究者は、政治学者であれば知らない者はいないほど著名な人ばかりなので、ある程度は、著名＝面白い、と言えるのではないでしょうか。トピックとの絡みで授業では紹介できませんでしたが、先日、「<a href="https://www.chuko.co.jp/shinsho/2026/02/102896.html">明六社：森有礼、西周、福澤諭吉らが集った知的結社</a>」を公刊された河野有理先生の政治観察・社会観察は非常に鋭く、勉強になります。<span class="citation" data-cites="KonoYr:2020essay1">河野有理 <a href="#ref-KonoYr:2020essay1" role="doc-biblioref">(2020)</a></span> や <span class="citation" data-cites="KonoYr:2024journalarticle_dec">河野有理 <a href="#ref-KonoYr:2024journalarticle_dec" role="doc-biblioref">(2024)</a></span> は普遍性がある論説であり、リーディングアサインメントを面白く読めたのであれば、同じように面白く読めるでしょう。</p>
+<p>新聞記事など、研究者以外の文献については、初回でお話しした通り、新聞などを読んでいるくらいです（私は、「こたつ記事」、テレビ、YouTube、SNSの類は、まったく信用しておらず、世相を観察する必要に迫られない限りは、触れないようにしているので、よく知りません）。新聞を読むことは、楽しいばかりでなく、苦行とも言えます（大体、ロシア・ウクライナ戦争のレイプ犯罪など、暗い話が多いので）。ですが、私も含め、社会を観察する者、社会について教える者であれば、避けてはならない道だと思います。</p>
+<p>また、今後の政治の見通しに関する質問もありました。授業で行ったように、テレビ番組が切り抜いた場面ではなく、予算委員会全体をチェックしていますが、政権、与党内の緊張感のなさ、委員長の横暴さが目につきます。政府の統制下にあるのかと訝しくなるNHK「ニュース7」は言うに及ばずですが、新聞の見出しも、「首相、野党の追及をかわす」、「首相、「不適切と思っていない」と答弁」といった事態の深刻さを表していないものが多いという印象です。</p>
+<p>選挙結果に関しては、菅原琢先生の「<a href="https://sugawarataku.theletter.jp/posts/a4bfc8b3-b7f4-4983-8ada-74702711fa99">自民党圧勝を生み出したのは「高市人気」でも「小選挙区制」でもない【2026年衆院選分析】</a>」と、星野俊樹さん（「とびこえる教室」）の「<a href="https://note.com/toshiki_hoshino/n/nbdf76c514edf">『いい人』が社会を停滞させる？私たちが政治と教育に抱く「勘違い</a>」が重要な指摘を行なっていると思います。前者は、自民比例票と自民小選挙区票のギャップに着目し、メディア分析の中心と言えるSNS選挙や「サナ活」を退けている点で秀逸です。</p>
+<blockquote class="blockquote">
+<p>比例区で投票者の37%しか票を入れていない政党が、小選挙区の側で不用意に9割近い議席を得て衆院の3分の2を超える議席率となった事実は、日本の並立制が民主主義の制度として何か重大な欠陥を抱えていると疑わせるに十分である。世論とその変化に対し選挙結果が適切に応答しないことは、並立制のみならず民主主義に対する信頼を損なうものだろう。</p>
+</blockquote>
+<p>元小学校教諭が書かれた後者は、前半部の選挙分析を踏まえた道徳教育が興味深いです。</p>
+<blockquote class="blockquote">
+<p>本来、道徳教育は他者と共に生きる哲学でありえたはずです。しかし実際に強調されたのは、努力、忍耐、自己管理、内面の修養でした。社会を問う視点よりも、自分を改善する語りが前面に出る。ここで失われたのは、批判的思考です。自分の苦しさを構造の側に問い返す力。制度を疑う視点。権力を分析する言葉。それらが「努力不足」の物語に吸収されてしまうのです。</p>
+</blockquote>
+<p>社会科教諭の本当の力量が試される場面は、まさにここではないか、と思います（知識量ではなく）。</p>
+</section><section id="政治学概論ⅱの案内" class="level2"><h2 class="anchored" data-anchor-id="政治学概論ⅱの案内">4. 政治学概論Ⅱの案内</h2>
+<p>来年度開講する政治学概論Ⅱも引き続き、私が担当することになりました。オンライン・対面などの授業の方式は今回と同じです。政治学概論Ⅱは、Ⅰでは触れられなかった国際政治について多く割く他、Ⅰの基礎的な内容を発展させた国際比較を行います。興味がある方は、どうぞ、引き続き、よろしくお願いします。</p>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-KonoYr:2020essay1" class="csl-entry" role="listitem">
+河野有理 (2020) 「「不思議の勝ち」を抱きしめて」. 『Voice』, No.6月, pp.86–93.
+</div>
+<div id="ref-KonoYr:2024journalarticle_dec" class="csl-entry" role="listitem">
+河野有理 (2024) 「中道政治は復活するか：試される政党の「濾過」と「吸い上げ」機能」. 『中央公論』, Vol.138, No.12, pp.88–95. Available at: <a href="https://cir.nii.ac.jp/crid/1520020697895257600">https://cir.nii.ac.jp/crid/1520020697895257600</a>.
+</div>
+</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
