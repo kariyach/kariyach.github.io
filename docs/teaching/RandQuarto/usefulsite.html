@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="苅谷千尋">
+<meta name="author" content="苅谷 千尋">
 
-<title>RとQuarto - Home – CHIHIRO KARIYA</title>
+<title>RとQuartoではじめるデータサイエンス：データを可視化する《2025》 – CHIHIRO KARIYA</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -48,7 +48,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-219b7bcfa526604c6f03a92c308ae945.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-b67e927d2fe1c9ac225062eb53768d12.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/bootstrap/bootstrap-219b7bcfa526604c6f03a92c308ae945.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/collapse-social-embeds-1.1.0/collapse.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -78,7 +77,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<meta name="robots" content="noindex, nofollow">
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
@@ -326,8 +324,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス：データを可視化する《2026》</a></h1>
-            <p class="subtitle lead">Home</p>
+      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス：データを可視化する《2025》</a></h1>
+            <p class="subtitle lead">役立つサイト</p>
                       </div>
   </div>
     
@@ -336,11 +334,11 @@ ul.task-list li input[type="checkbox"] {
     <div class="quarto-title-meta-heading">Affiliation</div>
     
       <div class="quarto-title-meta-contents">
-      <p class="author">苅谷千尋 <a href="mailto:kariyach@staff.kanazawa-u.ac.jp" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+      <p class="author">苅谷 千尋, PhD <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
     </div>
     <div class="quarto-title-meta-contents">
           <p class="affiliation">
-              金沢大学 教育支援センター
+              高大接続コア・センター
             </p>
         </div>
     </div>
@@ -351,7 +349,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Wed, 1, Apr, 2026</p>
+        <p class="date">Wed, 12, Jun, 2024</p>
       </div>
     </div>
     
@@ -373,30 +371,62 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#基本情報" id="toc-基本情報" class="nav-link active" data-scroll-target="#基本情報">0. 基本情報</a></li>
-  <li><a href="#シラバス" id="toc-シラバス" class="nav-link" data-scroll-target="#シラバス">Ⅰ. シラバス</a></li>
-  <li><a href="#講義スケジュール" id="toc-講義スケジュール" class="nav-link" data-scroll-target="#講義スケジュール">Ⅱ. 講義スケジュール</a>
+  <li><a href="#教科書" id="toc-教科書" class="nav-link active" data-scroll-target="#教科書">0. 教科書</a></li>
+  <li><a href="#基本" id="toc-基本" class="nav-link" data-scroll-target="#基本">Ⅰ. 基本</a>
+  <ul>
+  <li><a href="#全般" id="toc-全般" class="nav-link" data-scroll-target="#全般">1. 全般</a></li>
+  <li><a href="#初学者" id="toc-初学者" class="nav-link" data-scroll-target="#初学者">2. 初学者</a></li>
+  <li><a href="#ggplot" id="toc-ggplot" class="nav-link" data-scroll-target="#ggplot">3. ggplot</a>
   <ul class="collapse">
-  <li><a href="#week-1-48-イントロダクション" id="toc-week-1-48-イントロダクション" class="nav-link" data-scroll-target="#week-1-48-イントロダクション">Week 1 (4/8)： イントロダクション</a></li>
-  <li><a href="#week-2-415-rの基本的な操作方法1" id="toc-week-2-415-rの基本的な操作方法1" class="nav-link" data-scroll-target="#week-2-415-rの基本的な操作方法1">Week 2 (4/15) ：Rの基本的な操作方法(1)</a></li>
-  <li><a href="#week-3-422-可視化1" id="toc-week-3-422-可視化1" class="nav-link" data-scroll-target="#week-3-422-可視化1">Week 3 (4/22) ：可視化(1)</a></li>
-  <li><a href="#week-4-430rの基本的な操作方法2" id="toc-week-4-430rの基本的な操作方法2" class="nav-link" data-scroll-target="#week-4-430rの基本的な操作方法2">Week 4 (4/30)：Rの基本的な操作方法(2)</a></li>
-  <li><a href="#week-5-513可視化2" id="toc-week-5-513可視化2" class="nav-link" data-scroll-target="#week-5-513可視化2">Week 5 (5/13)：可視化(2)</a></li>
-  <li><a href="#week-6-520-可視化3" id="toc-week-6-520-可視化3" class="nav-link" data-scroll-target="#week-6-520-可視化3">Week 6 (5/20) ：可視化(3)</a></li>
-  <li><a href="#week-7-527-可視化4" id="toc-week-7-527-可視化4" class="nav-link" data-scroll-target="#week-7-527-可視化4">Week 7 (5/27) ：可視化(4)</a></li>
-  <li><a href="#week-8-63可視化5とプレゼンテーション" id="toc-week-8-63可視化5とプレゼンテーション" class="nav-link" data-scroll-target="#week-8-63可視化5とプレゼンテーション">Week 8 (6/3)：可視化(5)とプレゼンテーション</a></li>
+  <li><a href="#ggplot-1" id="toc-ggplot-1" class="nav-link" data-scroll-target="#ggplot-1">⑴ ggplot</a></li>
+  <li><a href="#アノテーション" id="toc-アノテーション" class="nav-link" data-scroll-target="#アノテーション">⑵ アノテーション</a></li>
+  <li><a href="#カラーパレット" id="toc-カラーパレット" class="nav-link" data-scroll-target="#カラーパレット">⑶ カラーパレット</a></li>
+  <li><a href="#テーマ" id="toc-テーマ" class="nav-link" data-scroll-target="#テーマ">⑷ テーマ</a></li>
+  <li><a href="#ラッパー" id="toc-ラッパー" class="nav-link" data-scroll-target="#ラッパー">⑸ ラッパー</a></li>
+  <li><a href="#アニメーション" id="toc-アニメーション" class="nav-link" data-scroll-target="#アニメーション">⑹アニメーション</a></li>
   </ul></li>
-  <li><a href="#提出物提出先" id="toc-提出物提出先" class="nav-link" data-scroll-target="#提出物提出先">Ⅲ. 提出物（提出先）</a>
+  <li><a href="#テーブル" id="toc-テーブル" class="nav-link" data-scroll-target="#テーブル">4. テーブル</a></li>
+  <li><a href="#出力方法" id="toc-出力方法" class="nav-link" data-scroll-target="#出力方法">5. 出力方法</a>
   <ul class="collapse">
-  <li><a href="#授業の感想" id="toc-授業の感想" class="nav-link" data-scroll-target="#授業の感想">授業の感想</a></li>
-  <li><a href="#演習" id="toc-演習" class="nav-link" data-scroll-target="#演習">演習</a></li>
-  <li><a href="#レポート" id="toc-レポート" class="nav-link" data-scroll-target="#レポート">レポート</a></li>
+  <li><a href="#総論" id="toc-総論" class="nav-link" data-scroll-target="#総論">⑴ 総論</a></li>
+  <li><a href="#pdf" id="toc-pdf" class="nav-link" data-scroll-target="#pdf">⑵ pdf</a></li>
+  <li><a href="#ウェブサイト" id="toc-ウェブサイト" class="nav-link" data-scroll-target="#ウェブサイト">⑶ ウェブサイト</a></li>
+  <li><a href="#ダッシュボード" id="toc-ダッシュボード" class="nav-link" data-scroll-target="#ダッシュボード">⑷ ダッシュボード</a></li>
   </ul></li>
-  <li><a href="#追加教材" id="toc-追加教材" class="nav-link" data-scroll-target="#追加教材">Ⅳ. 追加教材</a></li>
-  <li><a href="#役立つサイト" id="toc-役立つサイト" class="nav-link" data-scroll-target="#役立つサイト">Ⅴ. 役立つサイト</a></li>
-  <li><a href="#講評" id="toc-講評" class="nav-link" data-scroll-target="#講評">Ⅵ. 講評</a></li>
+  <li><a href="#マップ" id="toc-マップ" class="nav-link" data-scroll-target="#マップ">6. マップ</a></li>
+  <li><a href="#コミュニティ" id="toc-コミュニティ" class="nav-link" data-scroll-target="#コミュニティ">7. コミュニティ</a></li>
+  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">8. API</a></li>
+  <li><a href="#インストール他" id="toc-インストール他" class="nav-link" data-scroll-target="#インストール他">9. インストール他</a></li>
+  </ul></li>
+  <li><a href="#研究分野別" id="toc-研究分野別" class="nav-link" data-scroll-target="#研究分野別">Ⅱ. 研究分野別</a>
+  <ul>
+  <li><a href="#社会科学" id="toc-社会科学" class="nav-link" data-scroll-target="#社会科学">1. 社会科学</a></li>
+  <li><a href="#医学生物学" id="toc-医学生物学" class="nav-link" data-scroll-target="#医学生物学">2. 医学・生物学</a></li>
+  <li><a href="#心理学" id="toc-心理学" class="nav-link" data-scroll-target="#心理学">3. 心理学</a></li>
+  <li><a href="#自然科学" id="toc-自然科学" class="nav-link" data-scroll-target="#自然科学">4. 自然科学</a></li>
+  <li><a href="#スポーツ" id="toc-スポーツ" class="nav-link" data-scroll-target="#スポーツ">5. スポーツ</a></li>
+  </ul></li>
+  <li><a href="#分析手法" id="toc-分析手法" class="nav-link" data-scroll-target="#分析手法">Ⅲ. 分析手法</a>
+  <ul>
+  <li><a href="#ネットワーク分析" id="toc-ネットワーク分析" class="nav-link" data-scroll-target="#ネットワーク分析">1. ネットワーク分析</a></li>
+  <li><a href="#テキストマイニング" id="toc-テキストマイニング" class="nav-link" data-scroll-target="#テキストマイニング">2. テキストマイニング</a></li>
+  <li><a href="#コレスポンデンス分析" id="toc-コレスポンデンス分析" class="nav-link" data-scroll-target="#コレスポンデンス分析">3. コレスポンデンス分析</a></li>
+  <li><a href="#クラスター分析" id="toc-クラスター分析" class="nav-link" data-scroll-target="#クラスター分析">4. クラスター分析</a></li>
+  </ul></li>
+  <li><a href="#データ入手" id="toc-データ入手" class="nav-link" data-scroll-target="#データ入手">Ⅳ. データ入手</a>
+  <ul>
+  <li><a href="#日本政府統計の総合窓口e-stat" id="toc-日本政府統計の総合窓口e-stat" class="nav-link" data-scroll-target="#日本政府統計の総合窓口e-stat">1. 日本政府統計の総合窓口（e-stat）</a></li>
+  </ul></li>
+  <li><a href="#前処理データ加工" id="toc-前処理データ加工" class="nav-link" data-scroll-target="#前処理データ加工">Ⅴ. 前処理（データ加工）</a>
+  <ul>
+  <li><a href="#前処理全般" id="toc-前処理全般" class="nav-link" data-scroll-target="#前処理全般">1. 前処理全般</a></li>
+  <li><a href="#時間処理" id="toc-時間処理" class="nav-link" data-scroll-target="#時間処理">2. 時間処理</a></li>
+  <li><a href="#同一処理" id="toc-同一処理" class="nav-link" data-scroll-target="#同一処理">3. 同一処理</a></li>
+  </ul></li>
+  <li><a href="#モデル" id="toc-モデル" class="nav-link" data-scroll-target="#モデル">Ⅵ モデル</a></li>
+  <li><a href="#データセット" id="toc-データセット" class="nav-link" data-scroll-target="#データセット">Ⅶ. データセット</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="usefulsite.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -412,7 +442,7 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>毎回､PCは持参してください</p>
+<p>随時更新します</p>
 </div>
 </div>
 </div>
@@ -422,230 +452,355 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>このウェブサイトは2026年7月31日に削除します</p>
+<p>以下のサイトは有益ですが､今となっては古い情報も交じっています。まずは指定の教科書をしっかりと理解することから始めましょう。いずれ教科書も古くなりますが､教科書内においては､相互に矛盾する記述はないため､理解しやすいです。</p>
 </div>
 </div>
 </div>
-<section id="基本情報" class="level1">
-<h1>0. 基本情報</h1>
+<section id="教科書" class="level2">
+<h2 class="anchored" data-anchor-id="教科書">0. 教科書</h2>
 <ul>
-<li>開講クォーター：Q1 10:30-12:00</li>
-<li>教室：<a href="https://maps.app.goo.gl/W12kGksXB3Kmfm119">総合教育講義棟</a> <a href="https://ilas.w3.kanazawa-u.ac.jp/wp-content/uploads/e6b1d191a74a35e2e21da0b579721b7d.pdf">D2講義室</a></li>
-<li>問い合わせ先：
-<ul>
-<li>メール：<a href="mailto:kariyach@staff.kanazawa-u.ac.jp?subject=【お問い合わせ】RとQuartoではじめるデータサイエンス（2026）">kariyach@staff.kanazawa-u.ac.jp</a></li>
-<li>研究室：<a href="https://maps.app.goo.gl/DQeY2ua7cF8tX5E58">総合教育2号館</a> 680号室（<em>Advance Appointment Required</em>）</li>
-</ul></li>
+<li><a href="https://www.kspub.co.jp/book/detail/5164044.html">《訳書》『データ分析のためのデータ可視化入門』</a></li>
+<li><a href="https://socviz.co">《原著》<em>Data Visualization: A practical introduction</em></a></li>
+<li><a href="https://ill-identified.hatenablog.com/entry/2021/02/03/224034">《書評》『データ分析のためのデータ可視化入門』と最近の R グラフィックスパッケージ事情</a></li>
 </ul>
 </section>
-<section id="シラバス" class="level1">
-<h1>Ⅰ. シラバス</h1>
-<ul>
-<li>シラバス（<a href="syllabus_RandQuarto.html">html</a> / <a href="pdf/syllabus_RandQuarto.pdf">pdf</a>）</li>
-</ul>
-</section>
-<section id="講義スケジュール" class="level1">
-<h1>Ⅱ. 講義スケジュール</h1>
+<section id="基本" class="level2">
+<h2 class="anchored" data-anchor-id="基本">Ⅰ. 基本</h2>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>授業日当日までに､各回のレジュメにアクセスできるようにします</p>
+<p>1から5までの基本的な内容は､この授業内で理解して欲しい範囲です（3の⑸と⑹は除く）</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-important">
+<section id="全般" class="level3">
+<h3 class="anchored" data-anchor-id="全般">1. 全般</h3>
+<ul>
+<li><a href="https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/">Posit Cheatsheets</a></li>
+<li><a href="https://www.jaysong.net/RBook/">私たちのR：ベストプラクティスの探求</a></li>
+<li><a href="https://kts-research-blog.com/2022/04/21/実験データの解析はエクセルではなくrを使った方/">実験データの解析はエクセルではなくRを使った方がその研究は成功する</a></li>
+<li><a href="https://qiita.com/KanNishida/items/8c80934d20a4981f73c1">AirbnbのデータサイエンティストはなぜRが好きなのか?</a></li>
+<li><a href="https://statisticsglobe.com">Statistics Globe</a></li>
+<li><a href="https://jhudatascience.org/tidyversecourse/">Tidyverse Skills for Data Science</a> -<a href="https://cran.r-project.org/web/packages/pubh/vignettes/introduction.html">Introduction to the pubh package</a></li>
+</ul>
+</section>
+<section id="初学者" class="level3">
+<h3 class="anchored" data-anchor-id="初学者">2. 初学者</h3>
+<ul>
+<li><a href="https://qiita.com/nekobo/items/cbf32a13637273f229da">R初学者のためのtidyverse100本ノック</a></li>
+<li><a href="https://qiita.com/okiyuki99/items/df213e52ffefa88bb20d">R初学者からよく質問されること</a></li>
+<li><a href="https://education.rstudio.com/learn/beginner/">R Studio: Beginners</a></li>
+<li><a href="https://allisonhorst.com/allison-horst">Allison Horst</a></li>
+</ul>
+</section>
+<section id="ggplot" class="level3">
+<h3 class="anchored" data-anchor-id="ggplot">3. ggplot</h3>
+<section id="ggplot-1" class="level4">
+<h4 class="anchored" data-anchor-id="ggplot-1">⑴ ggplot</h4>
+<ul>
+<li><a href="https://ggplot2.tidyverse.org">ggplot2(公式サイト)</a></li>
+<li><a href="https://exts.ggplot2.tidyverse.org/gallery/">ggplot2 extensions - gallery（公式サイト）</a></li>
+<li><a href="https://r-graph-gallery.com">The R Graph Gallery</a></li>
+<li><a href="https://qiita.com/K_Nemoto/items/5484699c481045002ed5">RStudio - tidyverse, ggplot2を用いたデータ可視化の用例集</a></li>
+<li><a href="https://yukiyanai.github.io/jp/classes/stat2/contents/R/intro-to-ggplot2.html">統計学2: ggplot2入門</a></li>
+<li><a href="https://izunyan.github.io/practice_ggplot2/">ggplot2の辞書</a></li>
+<li><a href="https://qiita.com/ocean_f/items/4d28b8707ff5c7b977e0">図から逆引きするgeom_*関数 (ggplot2)</a></li>
+<li><a href="https://qiita.com/ocean_f/items/52fcef259f06c503bd4a">ggplot2における 軸関連のコントロール～逆引き的ミニまとめ～</a></li>
+<li><a href="https://brain-storm.space/corrheatmap/942/">【R】ggplot2で相関行列ヒートマップを描く</a></li>
+<li><a href="https://qiita.com/uri/items/892fc597a9076dec501e">複数の図をまとめて表示する際に便利なタグ</a></li>
+<li><a href="https://qiita.com/swathci/items/b08496d863bca4b479b3">ggplot2のstat_*()関数についてのまとめ</a></li>
+</ul>
+</section>
+<section id="アノテーション" class="level4">
+<h4 class="anchored" data-anchor-id="アノテーション">⑵ アノテーション</h4>
+<ul>
+<li><a href="https://ytknzw.github.io/TokyoR/ggplot2のアノテーション技法_TokyoR_20240224.pdf">ggplot2のアノテーション技法</a></li>
+<li><a href="https://mukkujohn.hatenablog.com/entry/2016/09/28/223957">ggplot2を使って、注釈を入れる-1</a></li>
+<li><a href="https://ggplot2.tidyverse.org/articles/faq-annotation.html">FAQ: Annotation</a></li>
+<li><a href="https://www.cararthompson.com/talks/rl-cambridge-beautifully-annotated/">Beautifully Annotated: Enhancing your ggplots with Text</a></li>
+<li><a href="https://indenkun.hatenablog.com/entry/2023/02/15/230000">Rの{gghighlight}で折れ線グラフをいろいろな条件でハイライトするグループを決定したいメモ</a></li>
+</ul>
+</section>
+<section id="カラーパレット" class="level4">
+<h4 class="anchored" data-anchor-id="カラーパレット">⑶ カラーパレット</h4>
+<ul>
+<li><a href="https://nanx.me/ggsci/">ggsci</a></li>
+<li><a href="https://emilhvitfeldt.github.io/r-color-palettes/discrete/fishualize/Paracanthurus_hepatus/">fishualize - Paracanthurus_hepatus</a></li>
+<li><a href="https://emilhvitfeldt.github.io/r-color-palettes/">R Color Palettes</a></li>
+<li><a href="https://github.com/clauswilke/colorblindr?tab=readme-ov-file">colorblindr</a></li>
+<li><a href="https://necostat.hatenablog.jp/entry/2021/10/25/064325">カラーパレットで色を指定する（RColorBrewer, viridis, ggsciパッケージ）[R]</a></li>
+<li><a href="https://malcolmbarrett.github.io/ggokabeito/">ggokabeito＝色覚異常を考慮した岡部・伊藤の提案</a></li>
+</ul>
+</section>
+<section id="テーマ" class="level4">
+<h4 class="anchored" data-anchor-id="テーマ">⑷ テーマ</h4>
+<ul>
+<li><a href="https://jrnold.github.io/ggthemes/">ggthemes</a></li>
+</ul>
+</section>
+<section id="ラッパー" class="level4">
+<h4 class="anchored" data-anchor-id="ラッパー">⑸ ラッパー</h4>
+<ul>
+<li><a href="https://haleyjeppson.github.io/ggmosaic/">ggmosaic（公式サイト）</a></li>
+</ul>
+</section>
+<section id="アニメーション" class="level4">
+<h4 class="anchored" data-anchor-id="アニメーション">⑹アニメーション</h4>
+<ul>
+<li><a href="https://qiita.com/yanami/items/3a211445e3de873e8115">【R, gganimate】COVID-19感染者数Top 5をアニメーションで可視化する</a></li>
+</ul>
+</section>
+</section>
+<section id="テーブル" class="level3">
+<h3 class="anchored" data-anchor-id="テーブル">4. テーブル</h3>
+<ul>
+<li><a href="https://gt.rstudio.com/articles/gt.html">Introduction to Creating gt Tables（gt公式サイト）</a></li>
+<li><a href="https://qiita.com/yanami/items/8684640b20c86594fbec">【R】ガチできれいなTableを作れるgtパッケージとは?</a></li>
+<li><a href="https://qiita.com/yanami/items/117851de49024f5980d0">【R】データ要約ガチ勢のためのgtsummaryで表を書こう</a></li>
+<li><a href="https://necostat.hatenablog.jp/entry/2022/07/19/100231">回帰モデルの結果をキレイに表示する（gtsummaryパッケージtbl_regression関数）[R]</a></li>
+</ul>
+</section>
+<section id="出力方法" class="level3">
+<h3 class="anchored" data-anchor-id="出力方法">5. 出力方法</h3>
+<section id="総論" class="level4">
+<h4 class="anchored" data-anchor-id="総論">⑴ 総論</h4>
+<ul>
+<li><a href="https://gedevan-aleksizde.github.io/rmarkdown-cookbook/">R Markdown クックブック</a></li>
+<li><a href="https://notchained.hatenablog.com/entry/2022/10/31/000354">.qmd を超お手軽完全無料パブリッシュできる Quarto Pub を使ってみる</a></li>
+<li><a href="https://quarto.org/docs/publishing/quarto-pub.html">Quarto Pub</a></li>
+</ul>
+</section>
+<section id="pdf" class="level4">
+<h4 class="anchored" data-anchor-id="pdf">⑵ pdf</h4>
+<ul>
+<li><a href="https://tug.org/texlive/">TeX Live</a></li>
+<li><a href="https://www.tug.org/texlive/doc/texlive-ja/texlive-ja.pdf">TeX Live ガイド（日本語）</a></li>
+<li><a href="https://gedevan-aleksizde.github.io/tinytex-doc-ja/addendum-ja.html">TinyTeX</a></li>
+</ul>
+</section>
+<section id="ウェブサイト" class="level4">
+<h4 class="anchored" data-anchor-id="ウェブサイト">⑶ ウェブサイト</h4>
+<ul>
+<li><a href="https://www.marvinschmitt.com/blog/website-tutorial-quarto/">Create Your Website with Quarto</a></li>
+</ul>
+</section>
+<section id="ダッシュボード" class="level4">
+<h4 class="anchored" data-anchor-id="ダッシュボード">⑷ ダッシュボード</h4>
+<ul>
+<li><a href="https://medium.com/@quinten./how-to-create-a-dashboard-using-quarto-f801265e7c1d">How to create a dashboard using Quarto</a></li>
+<li><a href="https://shiny.posit.co/r/gallery/#user-showcase">Welcome to the Shiny Gallery!</a></li>
+<li><a href="https://www.youtube.com/watch?v=tlOBVZx8Hy0">R Shiny Dashboard Portfolio Project | 1973 USArrests Dashboard | R Shiny Tutorial for Beginners</a></li>
+<li><a href="https://posit.co/blog/how-the-clusterbuster-shiny-app-helps-battle-covid-19-in-the-netherlands/">How the “Clusterbuster” Shiny App Helps Hundreds of Doctors and Epidemiologists Battle COVID-19 in the Netherlands</a></li>
+<li><a href="https://www.economist.com/big-mac-index">Our Big Mac index shows how burger prices differ across borders</a></li>
+</ul>
+</section>
+</section>
+<section id="マップ" class="level3">
+<h3 class="anchored" data-anchor-id="マップ">6. マップ</h3>
+<ul>
+<li><a href="https://kazutan.github.io/kazutanR/leaflet_d.html">leafletではじめるRによる地図プロット はじめに</a></li>
+<li><a href="https://apps.odoo.com/apps/modules/12.0/web_view_leaflet_map/">Leaflet Map View</a></li>
+<li><a href="https://handsondataviz.org/leaflet-maps-with-csv.html">Leaflet Maps with CSV Data・公式サイト</a></li>
+<li><a href="https://github.com/fresques/ggmap/">ggmap・公式サイト</a></li>
+<li><a href="https://rcarto.github.io/user2019/#15">Thematic maps with cartography・公式サイト</a></li>
+<li><a href="https://uribo.hatenablog.com/entry/2018/12/16/084535">Rで国土地理院 基盤地図情報データを扱う</a></li>
+<li><a href="https://ill-identified.hatenablog.com/entry/2021/05/30/180927">ggplot2 で沖縄をずらして日本地図を描きたい</a></li>
+<li><a href="https://ill-identified.hatenablog.com/entry/2020/12/07/134705">[小ネタ] R でコロプレス図 (色分け地図) をなるべく簡単に描く</a></li>
+</ul>
+</section>
+<section id="コミュニティ" class="level3">
+<h3 class="anchored" data-anchor-id="コミュニティ">7. コミュニティ</h3>
+<ul>
+<li><a href="https://qiita.com/uri/items/5583e91bb5301ed5a4ba">r-wakalang へようこそ</a></li>
+<li><a href="https://tokyor.connpass.com">Tokyo.R</a></li>
+<li><a href="https://kanazawar.connpass.com">Kanazawa.R</a></li>
+<li><a href="https://www.r-bloggers.com">R-bloggers</a></li>
+</ul>
+</section>
+<section id="api" class="level3">
+<h3 class="anchored" data-anchor-id="api">8. API</h3>
+<ul>
+<li><a href="https://paulcbauer.github.io/apis_for_social_scientists_a_review/">APIs for social scientists</a></li>
+</ul>
+</section>
+<section id="インストール他" class="level3">
+<h3 class="anchored" data-anchor-id="インストール他">9. インストール他</h3>
+<ul>
+<li><a href="https://okumuralab.org/~okumura/stat/R-win.html">WindowsでのR/RStudioのインストール</a></li>
+<li><a href="https://qiita.com/libra_lt/items/feb65b1742d9508740a9">localeを日本語(ja_JP.UTF-8)にする</a></li>
+<li><a href="https://elsur.jpn.org/diary/2022/12/20/7805/">ものすごくどうでもいい覚え書き: RStudioのエディタ・テーマ総ざらえ</a></li>
+<li><a href="https://www.moderncsv.com">Modern CSV・公式</a></li>
+</ul>
+</section>
+</section>
+<section id="研究分野別" class="level2">
+<h2 class="anchored" data-anchor-id="研究分野別">Ⅱ. 研究分野別</h2>
+<section id="社会科学" class="level3">
+<h3 class="anchored" data-anchor-id="社会科学">1. 社会科学</h3>
+<ul>
+<li><a href="http://www.strengejacke.de/sjPlot/reference/index.html">sjPlot</a></li>
+<li><a href="https://ryotamugiyama.github.io/seminar_sociology_r/domain.html">社会学のデータ分析でよくある処理</a></li>
+<li><a href="http://www.ner.takushoku-u.ac.jp/masano/class_material/waseda/keiryo/R39_visualize_Election.html">総選挙データの可視化</a></li>
+<li><a href="https://uchidamizuki.quarto.pub/blog/posts/2023/04/quantify-vote-disparity-between-generations.html">世代間の「1票の格差」を定量化してみる</a></li>
+<li><a href="https://quanteda.io/articles/pkgdown/examples/japanese_speech_ja.html">quanteda：衆議院外務委員会の議事録</a></li>
+<li><a href="https://ritsu1997.github.io/r-for-nlas-econometrics/">西山 他『計量経済学』のためのR</a></li>
+<li><a href="https://www.econometrics-with-r.org">Introduction to Econometrics with R</a></li>
+<li>金融系のデータ分析パッケージ<a href="https://cran.r-project.org/web/packages/tidyquant/index.html">tidyquant</a></li>
+<li><a href="https://qiita.com/double-y/items/9ddffe96ae27d4b6dd9c">RパッケージtidyquantとExploratoryで始める0からのファイナンス計量分析</a></li>
+<li><a href="https://juliasilge.com/blog/">Julia Silge</a></li>
+</ul>
+</section>
+<section id="医学生物学" class="level3">
+<h3 class="anchored" data-anchor-id="医学生物学">2. 医学・生物学</h3>
+<ul>
+<li><a href="https://epirhandbook.com/jp/index.html">疫学や公衆衛生に関わる業務のためのR</a></li>
+<li><a href="https://zenn.dev/shuntarosato/articles/0f2b780418cdee">医学統計でよく使うRパッケージ</a></li>
+<li><a href="https://www.slideshare.net/slideshow/r-seminar-on-igraph/16967510">Rtigraphではじめる生物ネットワーク解析</a></li>
+<li><a href="https://shiokoji11235.com/rna-seq-analysis-part2">【RNA-seq】RNA-seq解析を徹底的に解説！Part2<sub>発現変動解析(DEG解析)</sub></a></li>
+<li><a href="https://heavywatal.github.io/rstats/bioconductor.html">Bioconductor — Genomicデータ解析ツール群</a></li>
+<li><a href="https://note.com/hamuaka/n/n2884a5e9d820">Qiime2とRを用いて菌叢の機能予測をする</a></li>
+<li><a href="https://academic.oup.com/bioinformatics/article/37/22/4100/6283576">Interfacing Seurat with the R tidy universe</a></li>
+<li><a href="https://cran.r-project.org/web/packages/gggenes/vignettes/introduction-to-gggenes.html">Introduction to ‘gggenes’</a></li>
+<li><a href="https://github.com/ESR-NZ/nz-sars-cov2-variants">Prevelence of SARS-CoV-2 Variants of Concern in Aoteoroa New Zealand</a></li>
+</ul>
+</section>
+<section id="心理学" class="level3">
+<h3 class="anchored" data-anchor-id="心理学">3. 心理学</h3>
+<ul>
+<li><a href="http://blue.zero.jp/yokumura/R.html">無料統計ソフトRで心理学</a></li>
+<li><a href="https://kairi-pf.com/documents/r_psych_practice.html">心理統計Rワークショップ・杉本海里</a></li>
+<li><a href="https://www.kitaohji.com/book/b580057.html">山田剛史編著『Rによる心理学研究法入門』</a></li>
+<li>心理学用パッケージ<a href="https://cran.r-project.org/web/packages/psych/index.html">psych: Procedures for Psychological, Psychometric, and Personality Research</a></li>
+</ul>
+</section>
+<section id="自然科学" class="level3">
+<h3 class="anchored" data-anchor-id="自然科学">4. 自然科学</h3>
+<ul>
+<li><a href="https://ito4303.sakura.ne.jp">生態学・森林科学データの統計解析（伊東生態統計研究室）</a></li>
+<li><a href="https://towardsdatascience.com/democratizing-historical-weather-data-with-r-cc3c76dde7c5">Democratizing Historical Weather Data Analysis with R</a></li>
+<li><a href="https://kuboweb.github.io/-kubo/ce/HowtoInstallWinBUGS.html">生態学のデータ解析 - R2WinBUGS</a></li>
+<li><a href="https://uribo.hatenablog.com/entry/2020/04/20/232214">気象庁提供の潮位表、過去の気象データをRで読み込む</a></li>
+<li><a href="https://bob3.hatenablog.com/entry/2023/08/27/021142">「昔はこんなに暑くなかった」をR言語で可視化する</a></li>
+</ul>
+</section>
+<section id="スポーツ" class="level3">
+<h3 class="anchored" data-anchor-id="スポーツ">5. スポーツ</h3>
+<ul>
+<li><a href="https://medium.com/@danlarson_74954/using-the-r-and-the-tidyverse-to-analyze-joel-embiids-player-stats-efaf332d4836">Using the R and the Tidyverse to analyze Joel Embiid’s Player Stats</a></li>
+</ul>
+<div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>欠席者はご自身で授業内容､宿題をフォローしてください（欠席連絡は不要です）。どうしても不明な点があれば、お気軽にお問い合わせ下さい</p>
-</div>
-</div>
-</div>
-<section id="week-1-48-イントロダクション" class="level2">
-<h2 class="anchored" data-anchor-id="week-1-48-イントロダクション">Week 1 (4/8)： イントロダクション</h2>
-<ul>
-<li><strong>具体的な内容</strong>：
-<ul>
-<li>データを見る；RとR Studioのインストール；プロジェクトの作成；base RとTidyverse</li>
-</ul></li>
-<li><a href="resume_RandQuarto_w1.html">resume</a> / <a href="slide_RandQuarto_w1.html">slide</a></li>
-</ul>
-</section>
-<section id="week-2-415-rの基本的な操作方法1" class="level2">
-<h2 class="anchored" data-anchor-id="week-2-415-rの基本的な操作方法1">Week 2 (4/15) ：Rの基本的な操作方法(1)</h2>
-<ul>
-<li><strong>具体的な内容</strong>：
-<ul>
-<li>データセット；データの読み込み；データの型；データの構造；データの集計；再現可能性（アウトプット）；生成AI</li>
-</ul></li>
-</ul>
-</section>
-<section id="week-3-422-可視化1" class="level2">
-<h2 class="anchored" data-anchor-id="week-3-422-可視化1">Week 3 (4/22) ：可視化(1)</h2>
-<ul>
-<li><strong>具体的な内容</strong>：
-<ul>
-<li>ggplot2；プロットとレイヤー</li>
-</ul></li>
-</ul>
-</section>
-<section id="week-4-430rの基本的な操作方法2" class="level2">
-<h2 class="anchored" data-anchor-id="week-4-430rの基本的な操作方法2">Week 4 (4/30)：Rの基本的な操作方法(2)</h2>
-<ul>
-<li><strong>具体的な内容</strong>：
-<ul>
-<li>Tidyverse；パイプ演算子；データの加工；データの抽出；記述統計量；データの結合；欠損値</li>
-</ul></li>
-</ul>
-<div class="callout callout-style-simple callout-important">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>4月29日（祝）の振替授業日です</p>
+<p>この他､専門分野ごとに多くの専門書が出版されています</p>
 </div>
 </div>
 </div>
 </section>
-<section id="week-5-513可視化2" class="level2">
-<h2 class="anchored" data-anchor-id="week-5-513可視化2">Week 5 (5/13)：可視化(2)</h2>
+</section>
+<section id="分析手法" class="level2">
+<h2 class="anchored" data-anchor-id="分析手法">Ⅲ. 分析手法</h2>
+<section id="ネットワーク分析" class="level3">
+<h3 class="anchored" data-anchor-id="ネットワーク分析">1. ネットワーク分析</h3>
 <ul>
-<li><strong>具体的な内容</strong>：
-<ul>
-<li>5 Named Graphs (5NG)：棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ</li>
-</ul></li>
+<li><a href="https://bob3.hatenablog.com/entry/2023/12/25/221810">bob3’s blog</a></li>
+<li><a href="https://jmsallan.netlify.app">The Jose M Sallan static website</a></li>
 </ul>
 </section>
-<section id="week-6-520-可視化3" class="level2">
-<h2 class="anchored" data-anchor-id="week-6-520-可視化3">Week 6 (5/20) ：可視化(3)</h2>
+<section id="テキストマイニング" class="level3">
+<h3 class="anchored" data-anchor-id="テキストマイニング">2. テキストマイニング</h3>
 <ul>
-<li><strong>具体的な内容</strong>：
-<ul>
-<li>プロットを整える；色とラベル；横持ちデータと縦持ちデータ；チャンクオプション</li>
-</ul></li>
+<li><a href="https://paithiov909.github.io/textmining-ja/">RとMeCabによる日本語テキストマイニングの前処理</a></li>
+<li><a href="https://quanteda.io/articles/pkgdown/quickstart_ja.html">quanteda（公式）</a></li>
 </ul>
 </section>
-<section id="week-7-527-可視化4" class="level2">
-<h2 class="anchored" data-anchor-id="week-7-527-可視化4">Week 7 (5/27) ：可視化(4)</h2>
+<section id="コレスポンデンス分析" class="level3">
+<h3 class="anchored" data-anchor-id="コレスポンデンス分析">3. コレスポンデンス分析</h3>
 <ul>
-<li><strong>具体的な内容</strong>：
-<ul>
-<li>最終成果物; YAML; CSS; テキストラベル</li>
-</ul></li>
+<li><a href="https://bob3.hatenablog.com/entry/2022/01/15/123412">コレスポンデンス分析の同時布置図は本当に使えないのか？</a></li>
 </ul>
 </section>
-<section id="week-8-63可視化5とプレゼンテーション" class="level2">
-<h2 class="anchored" data-anchor-id="week-8-63可視化5とプレゼンテーション">Week 8 (6/3)：可視化(5)とプレゼンテーション</h2>
-<ul>
-<li><strong>具体的な内容</strong>：
-<ul>
-<li>自作関数；ループ処理；プレゼンテーション</li>
-</ul></li>
-</ul>
+<section id="クラスター分析" class="level3">
+<h3 class="anchored" data-anchor-id="クラスター分析">4. クラスター分析</h3>
+<p><a href="https://tidyclust.tidymodels.org/articles/hier_clust.html">Hierarchical Clustering（公式サイト）</a></p>
 </section>
 </section>
-<section id="提出物提出先" class="level1">
-<h1>Ⅲ. 提出物（提出先）</h1>
-<section id="授業の感想" class="level2">
-<h2 class="anchored" data-anchor-id="授業の感想">授業の感想</h2>
+<section id="データ入手" class="level2">
+<h2 class="anchored" data-anchor-id="データ入手">Ⅳ. データ入手</h2>
+<section id="日本政府統計の総合窓口e-stat" class="level3">
+<h3 class="anchored" data-anchor-id="日本政府統計の総合窓口e-stat">1. 日本政府統計の総合窓口（e-stat）</h3>
 <ul>
-<li>授業の感想：
-<ul>
-<li>回答先：<a href="https://forms.gle/yN8UYjBQEcR4sRSf6">Google Forms</a></li>
-<li>締め切り：<em>授業と同じ週の金曜日</em>23時59分</li>
-</ul></li>
-<li>初回アンケート
-<ul>
-<li>回答先：<a href="https://forms.gle/emKzGE81pyNyiSEWA">Google Forms</a></li>
-<li>締め切り：2026年4月8日（水）授業時間内</li>
-</ul></li>
-<li>学期末授業アンケート：準備中<i class="bi bi-lock-fill"></i> <!-- - 回答先：[Google Forms](https://forms.gle/uZhdEwJJxjphPE7i6) --> <!-- - 締め切り：6月5日（金）23時59分 --></li>
-</ul>
-<div class="callout callout-style-simple callout-warning">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<ul>
-<li>各回の授業の感想（計8回）に加え、初回と最終授業回にアンケートを実施します（各回3点・全10回）</li>
-<li>6月5日（金）23:59まで遅延提出を認めますが、得点は2点となります</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="演習" class="level2">
-<h2 class="anchored" data-anchor-id="演習">演習</h2>
-<ul>
-<li>演習：
-<ul>
-<li>回答先：<a href="https://forms.gle/Ewe6tPtRoPyuxExr9">Google Forms</a></li>
-<li>締め切り：<em>授業翌週の火曜日</em>（＝<strong>授業日前日</strong>）23時59分</li>
-</ul></li>
-</ul>
-<div class="callout callout-style-simple callout-warning">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<ul>
-<li><em>毎回、提出を求めるわけではないため</em>、提出回数は未定です</li>
-<li>6月5日（金）23:59まで遅延提出を認めますが、得点は2点となります</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-warning">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>ファイルをアップロードしてもらう場合があります。権限などの関係でアップロードできない場合は､下記メールアドレスまでお問い合わせください</p>
-</div>
-</div>
-</div>
-</section>
-<section id="レポート" class="level2">
-<h2 class="anchored" data-anchor-id="レポート">レポート</h2>
-<ul>
-<li>レポート：詳細は後日連絡します<i class="bi bi-lock-fill"></i> <!-- - 提出：[Google Forms](https://forms.gle/YDwY1p6bAWgWQZaM7) --> <!-- - 締め切り：2025年6月4日（水）10:30 --> <!--   - 締め切り後も修正版については、2025年6月6日（金）23:59まで受け付けます --> <!-- - レポートの評価基準は[ルーブリック](rubric.html)に拠ります --></li>
+<li><a href="https://uchidamizuki.quarto.pub/blog/posts/2022/12/call-e-stat-api-in-r.html">Rで日本の統計データを効率的に取得しよう</a></li>
+<li><a href="https://icu-hsuzuki.github.io/ds4aj/estat.html">みんなのデータサイエンス：e-Stat</a></li>
+<li><a href="https://indenkun.hatenablog.com/entry/2023/02/14/144118">Rでe-statからxls（xlsx）ファイルをダウンロードするときにうまくいかなかったときに対処したメモ</a></li>
 </ul>
 </section>
 </section>
-<section id="追加教材" class="level1">
-<h1>Ⅳ. 追加教材</h1>
+<section id="前処理データ加工" class="level2">
+<h2 class="anchored" data-anchor-id="前処理データ加工">Ⅴ. 前処理（データ加工）</h2>
+<section id="前処理全般" class="level3">
+<h3 class="anchored" data-anchor-id="前処理全般">1. 前処理全般</h3>
 <ul>
-<li><a href="https://drive.google.com/drive/folders/1tHuYbkzmpLwDvEZ6WMHb30gGz3shGgkQ?usp=share_link">Google Drive</a>
+<li><a href="https://izunyan.github.io/excel_r/index.html">Rで読むExcelファイル</a></li>
+<li><a href="https://bob3.hatenablog.com/entry/2019/07/07/154810">複数のファイルを一度に読みこむ方法</a></li>
+<li><a href="https://www.vishalkatti.com/posts/tidyr-pivot-longer/">Pivoting your tables with Tidyr: Part I</a></li>
+<li><a href="https://qiita.com/ground0state/items/b73b4746e10ad5deef2f">「Rによるデータクリーニング実践」をやってみた</a></li>
+<li><a href="https://qiita.com/uri/items/892fc597a9076dec501e">君の知らない物語(あまり知られていないtidyverseの便利な機能)</a></li>
+<li><a href="http://adv-r.had.co.nz/Style.html">Style guide</a></li>
+<li><a href="https://uribo.hatenablog.com/entry/2019/12/02/163114">住所や年号、漢数字のデータ操作を楽にするRパッケージをCRANに登録しました</a></li>
+<li><a href="https://indenkun.hatenablog.com/entry/2022/01/21/134924">Rでデータフレーム ⇔ リスト の変換</a></li>
+</ul>
+</section>
+<section id="時間処理" class="level3">
+<h3 class="anchored" data-anchor-id="時間処理">2. 時間処理</h3>
 <ul>
-<li>データセットやサンプルコードを共有するなどのために使います</li>
+<li><a href="https://lubridate.tidyverse.org">lubridate（公式サイト）</a></li>
+<li><a href="https://datasciencemore.com/lubridate/">【R前処理講座32】{lubridate}：時間処理【tidyverse】</a></li>
+<li><a href="https://qiita.com/nozma/items/01725761d980a0110027">lubridateパッケージ入門</a></li>
+</ul>
+</section>
+<section id="同一処理" class="level3">
+<h3 class="anchored" data-anchor-id="同一処理">3. 同一処理</h3>
+<ul>
+<li><a href="https://indenkun.hatenablog.com/entry/2021/11/12/122044">Rでforループで大量に{ggplot2}でグラフを書きたい（purrr::map()も添えて）</a></li>
+</ul>
+</section>
+</section>
+<section id="モデル" class="level2">
+<h2 class="anchored" data-anchor-id="モデル">Ⅵ モデル</h2>
+<ul>
+<li><a href="https://bob3.hatenablog.com/entry/2023/04/15/214755">Tidymodelsをシンプルに使う</a></li>
+<li><a href="https://qiita.com/kenkenvw/items/053ed45b4ddeeb1cb8ba">【R】tidymodelsとworkflowを中心に〜機械学習のフレームワーク〜(その１）</a></li>
+<li><a href="https://dropout009.hatenablog.com/entry/2019/11/17/112655">tidymodelsとDALEXによるtidyで解釈可能な機械学習</a></li>
+<li><a href="https://www.tidymodels.org">tidymodels（公式サイト）</a></li>
+<li><a href="https://qiita.com/K_Nemoto/items/2efea7c96459ece386c8">R言語の基礎 #04、データの回帰分析・相関分析(diamondsデータ)</a></li>
+<li><a href="https://dropout009.hatenablog.com/entry/2019/01/02/145038">purrrとbroomで複数の回帰モデルを効率的に管理する</a></li>
+<li><a href="https://speakerdeck.com/dropout009/tokyor100">回帰分析ではlm()ではなくestimatr::lm_robust()を使おう / TokyoR100</a></li>
+<li><a href="https://info-zebra.com/fixed-effects-model/">固定効果モデルについて / パネルデータ分析</a>
+<ul>
+<li><a href="https://keita43a.hatenablog.com/entry/2020/12/01/202122">【R】固定効果モデルの推定がめっちゃ速いパッケージ { fixest }</a></li>
+<li><a href="https://grantmcdermott.com/ggfixest/">ggfixest</a></li>
 </ul></li>
 </ul>
 </section>
-<section id="役立つサイト" class="level1">
-<h1>Ⅴ. 役立つサイト</h1>
+<section id="データセット" class="level1">
+<h1>Ⅶ. データセット</h1>
 <ul>
-<li><a href="usefulsite.html">役立つサイト</a></li>
-</ul>
-</section>
-<section id="講評" class="level1">
-<h1>Ⅵ. 講評</h1>
-<ul>
-<li>成績評価後に掲載します（6月中旬に公開予定）<i class="bi bi-lock-fill"></i></li>
+<li><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins（公式サイト）</a></li>
+<li><a href="https://speakerdeck.com/bob3bob3/tokoy-dot-r-number-99-pamasutesiyonfalsepengintati-number-1">Tokoy.R #99 パーマーステーションのペンギンたち #1</a></li>
+<li><a href="https://r-posts.com/basic-data-analysis-with-palmerpenguins/">Basic data analysis with palmerpenguins</a></li>
+<li><a href="https://towardsdatascience.com/penguins-dataset-overview-iris-alternative-9453bb8c8d95">Penguins Dataset Overview — iris alternative</a></li>
 </ul>
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>CHIHIRO KARIYA 2026</div></div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
