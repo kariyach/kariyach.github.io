@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="苅谷 千尋">
+<meta name="author" content="苅谷千尋">
 
-<title>RとQuartoではじめるデータサイエンス：データを可視化する《2025》 – CHIHIRO KARIYA</title>
+<title>RとQuartoではじめるデータサイエンス：データを可視化する《2026》 – CHIHIRO KARIYA</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -48,6 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-219b7bcfa526604c6f03a92c308ae945.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-b67e927d2fe1c9ac225062eb53768d12.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/bootstrap/bootstrap-219b7bcfa526604c6f03a92c308ae945.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/collapse-social-embeds-1.1.0/collapse.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -77,6 +78,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<meta name="robots" content="noindex, nofollow">
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
@@ -324,7 +326,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス：データを可視化する《2025》</a></h1>
+      <h1 class="title"><a href="index.html">RとQuartoではじめるデータサイエンス：データを可視化する《2026》</a></h1>
             <p class="subtitle lead">役立つサイト</p>
                       </div>
   </div>
@@ -334,11 +336,11 @@ ul.task-list li input[type="checkbox"] {
     <div class="quarto-title-meta-heading">Affiliation</div>
     
       <div class="quarto-title-meta-contents">
-      <p class="author">苅谷 千尋, PhD <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+      <p class="author">苅谷千尋 <a href="mailto:kariyach@staff.kanazawa-u.ac.jp" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
     </div>
     <div class="quarto-title-meta-contents">
           <p class="affiliation">
-              高大接続コア・センター
+              金沢大学 教育支援センター
             </p>
         </div>
     </div>
@@ -373,33 +375,19 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#教科書" id="toc-教科書" class="nav-link active" data-scroll-target="#教科書">0. 教科書</a></li>
   <li><a href="#基本" id="toc-基本" class="nav-link" data-scroll-target="#基本">Ⅰ. 基本</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#全般" id="toc-全般" class="nav-link" data-scroll-target="#全般">1. 全般</a></li>
   <li><a href="#初学者" id="toc-初学者" class="nav-link" data-scroll-target="#初学者">2. 初学者</a></li>
-  <li><a href="#ggplot" id="toc-ggplot" class="nav-link" data-scroll-target="#ggplot">3. ggplot</a>
-  <ul class="collapse">
-  <li><a href="#ggplot-1" id="toc-ggplot-1" class="nav-link" data-scroll-target="#ggplot-1">⑴ ggplot</a></li>
-  <li><a href="#アノテーション" id="toc-アノテーション" class="nav-link" data-scroll-target="#アノテーション">⑵ アノテーション</a></li>
-  <li><a href="#カラーパレット" id="toc-カラーパレット" class="nav-link" data-scroll-target="#カラーパレット">⑶ カラーパレット</a></li>
-  <li><a href="#テーマ" id="toc-テーマ" class="nav-link" data-scroll-target="#テーマ">⑷ テーマ</a></li>
-  <li><a href="#ラッパー" id="toc-ラッパー" class="nav-link" data-scroll-target="#ラッパー">⑸ ラッパー</a></li>
-  <li><a href="#アニメーション" id="toc-アニメーション" class="nav-link" data-scroll-target="#アニメーション">⑹アニメーション</a></li>
-  </ul></li>
+  <li><a href="#ggplot" id="toc-ggplot" class="nav-link" data-scroll-target="#ggplot">3. ggplot</a></li>
   <li><a href="#テーブル" id="toc-テーブル" class="nav-link" data-scroll-target="#テーブル">4. テーブル</a></li>
-  <li><a href="#出力方法" id="toc-出力方法" class="nav-link" data-scroll-target="#出力方法">5. 出力方法</a>
-  <ul class="collapse">
-  <li><a href="#総論" id="toc-総論" class="nav-link" data-scroll-target="#総論">⑴ 総論</a></li>
-  <li><a href="#pdf" id="toc-pdf" class="nav-link" data-scroll-target="#pdf">⑵ pdf</a></li>
-  <li><a href="#ウェブサイト" id="toc-ウェブサイト" class="nav-link" data-scroll-target="#ウェブサイト">⑶ ウェブサイト</a></li>
-  <li><a href="#ダッシュボード" id="toc-ダッシュボード" class="nav-link" data-scroll-target="#ダッシュボード">⑷ ダッシュボード</a></li>
-  </ul></li>
+  <li><a href="#出力方法" id="toc-出力方法" class="nav-link" data-scroll-target="#出力方法">5. 出力方法</a></li>
   <li><a href="#マップ" id="toc-マップ" class="nav-link" data-scroll-target="#マップ">6. マップ</a></li>
   <li><a href="#コミュニティ" id="toc-コミュニティ" class="nav-link" data-scroll-target="#コミュニティ">7. コミュニティ</a></li>
   <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">8. API</a></li>
   <li><a href="#インストール他" id="toc-インストール他" class="nav-link" data-scroll-target="#インストール他">9. インストール他</a></li>
   </ul></li>
   <li><a href="#研究分野別" id="toc-研究分野別" class="nav-link" data-scroll-target="#研究分野別">Ⅱ. 研究分野別</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#社会科学" id="toc-社会科学" class="nav-link" data-scroll-target="#社会科学">1. 社会科学</a></li>
   <li><a href="#医学生物学" id="toc-医学生物学" class="nav-link" data-scroll-target="#医学生物学">2. 医学・生物学</a></li>
   <li><a href="#心理学" id="toc-心理学" class="nav-link" data-scroll-target="#心理学">3. 心理学</a></li>
@@ -407,18 +395,18 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#スポーツ" id="toc-スポーツ" class="nav-link" data-scroll-target="#スポーツ">5. スポーツ</a></li>
   </ul></li>
   <li><a href="#分析手法" id="toc-分析手法" class="nav-link" data-scroll-target="#分析手法">Ⅲ. 分析手法</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#ネットワーク分析" id="toc-ネットワーク分析" class="nav-link" data-scroll-target="#ネットワーク分析">1. ネットワーク分析</a></li>
   <li><a href="#テキストマイニング" id="toc-テキストマイニング" class="nav-link" data-scroll-target="#テキストマイニング">2. テキストマイニング</a></li>
   <li><a href="#コレスポンデンス分析" id="toc-コレスポンデンス分析" class="nav-link" data-scroll-target="#コレスポンデンス分析">3. コレスポンデンス分析</a></li>
   <li><a href="#クラスター分析" id="toc-クラスター分析" class="nav-link" data-scroll-target="#クラスター分析">4. クラスター分析</a></li>
   </ul></li>
   <li><a href="#データ入手" id="toc-データ入手" class="nav-link" data-scroll-target="#データ入手">Ⅳ. データ入手</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#日本政府統計の総合窓口e-stat" id="toc-日本政府統計の総合窓口e-stat" class="nav-link" data-scroll-target="#日本政府統計の総合窓口e-stat">1. 日本政府統計の総合窓口（e-stat）</a></li>
   </ul></li>
   <li><a href="#前処理データ加工" id="toc-前処理データ加工" class="nav-link" data-scroll-target="#前処理データ加工">Ⅴ. 前処理（データ加工）</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#前処理全般" id="toc-前処理全般" class="nav-link" data-scroll-target="#前処理全般">1. 前処理全般</a></li>
   <li><a href="#時間処理" id="toc-時間処理" class="nav-link" data-scroll-target="#時間処理">2. 時間処理</a></li>
   <li><a href="#同一処理" id="toc-同一処理" class="nav-link" data-scroll-target="#同一処理">3. 同一処理</a></li>
@@ -426,7 +414,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#モデル" id="toc-モデル" class="nav-link" data-scroll-target="#モデル">Ⅵ モデル</a></li>
   <li><a href="#データセット" id="toc-データセット" class="nav-link" data-scroll-target="#データセット">Ⅶ. データセット</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="usefulsite.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -800,7 +788,7 @@ ul.task-list li input[type="checkbox"] {
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>CHIHIRO KARIYA 2026</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
