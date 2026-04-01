@@ -35,6 +35,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-e697fb1e5eb667a620f691773c983378.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -162,7 +228,10 @@
 <ul>
 <li><a href="#/keywords" id="/toc-keywords">KEYWORDS</a></li>
 <li><a href="#/自己紹介" id="/toc-自己紹介">Ⅰ. 自己紹介</a></li>
-<li><a href="#/データサイエンスの第一歩" id="/toc-データサイエンスの第一歩">データサイエンスの第一歩</a></li>
+<li><a href="#/データサイエンスの第一歩" id="/toc-データサイエンスの第一歩">Ⅱ. データサイエンスの第一歩</a></li>
+<li><a href="#/rの基礎概念" id="/toc-rの基礎概念">Ⅱ. Rの基礎概念</a></li>
+<li><a href="#/r環境の整備" id="/toc-r環境の整備">Ⅲ. R環境の整備</a></li>
+<li><a href="#/rでできること" id="/toc-rでできること">Ⅱ. Rでできること</a></li>
 <li><a href="#/次回の授業と宿題" id="/toc-次回の授業と宿題">Ⅶ. 次回の授業と宿題</a></li>
 <li><a href="#/引用文献" id="/toc-引用文献">引用文献</a></li>
 </ul>
@@ -200,60 +269,52 @@
 </section>
 <section id="自己紹介-2" class="slide level2">
 <h2>自己紹介</h2>
+<h3 id="思想史研究とデジタルヒューマニティーズ">思想史研究とデジタルヒューマニティーズ</h3>
 <ul>
-<li>思想史研究とデジタルヒューマニティーズ
+<li>史料のデータ化（データベース化）
 <ul>
-<li>史料のデータ化（データベース化）</li>
-<li>量的テキスト分析</li>
+<li><a href="https://www.gale.com/jp/primary-sources/eighteenth-century-collections-online">EIGHTEENTH CENTURY COLLECTIONS ONLINE (ECCO)</a></li>
+<li><a href="https://archive.org">Internet Archive</a></li>
+<li><a href="https://www.gutenberg.org">Project Gutenberg</a></li>
 </ul></li>
+<li>量的テキスト分析を可能とする分析ツールの登場
+<ul>
 <li>18世紀イギリスの総合雑誌の比較分析</li>
 <li>日本の議会政治における言い回し・形容詞・副詞の使用の変化
 <ul>
-<li>「ご指摘は当たらない」</li>
+<li>「強い」「美しい」「ご指摘は当たらない」「丁寧に説明する」</li>
+</ul></li>
 </ul></li>
 </ul>
-<div class="columns">
-<div class="column" style="width:80%;">
-<blockquote>
-<p>確かに社会は、一種の契約である。……〔時々の利益を目的とするような契約であれば、好き勝手に契約解消も可能〕。しかし、国家stateを、胡椒やコーヒー……などの交易する際の協力協定partnershipとなんら変わらぬ存在とみなすべきではない。……国家は、今、生きている者、既に死した者、そしてこれから生まれてくる者のあいだの協定である。</p>
-</blockquote>
-</div><div class="column" style="width:20%;">
-<p><img data-src="img/Burke.jpg"></p>
-</div></div>
 </section></section>
 <section>
 <section id="データサイエンスの第一歩" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
-<h1>データサイエンスの第一歩</h1>
+<h1>Ⅱ. データサイエンスの第一歩</h1>
 
 </section>
-<section id="データサイエンスの第一歩-1" class="slide level2">
-<h2>データサイエンスの第一歩</h2>
-<ul>
-<li>データサイエンスの誤解
+<section id="データサイエンスの誤解" class="slide level2">
+<h2>データサイエンスの誤解</h2>
+<h3 id="ツール有益性に依拠した学びが推奨される傾向にある">ツール（有益性）に依拠した学びが推奨される傾向にある</h3>
 <ul>
 <li>Pythonを学ぶ</li>
 <li>AI = データサイエンス
 <ul>
-<li>ツール（有益性）に依拠した学び</li>
-<li>だが<em>もっとも重要なのはデータの形</em>についての思想・哲学
-<ul>
+<li>だが<em>もっとも重要なのはデータの形</em>についての思想・哲学</li>
 <li>ここがデータサイエンスの出発点であるべき</li>
 </ul></li>
-</ul></li>
-</ul></li>
-<li>データの形
+</ul>
+<h3 id="データの形">データの形</h3>
 <ul>
 <li>表の構造; CSV; Excelの問題; Tidy Data
 <ul>
 <li>データの型が整っていないとAIも機械学習も<em>動かない</em></li>
-</ul></li>
 <li>よいデータ構造は、分析を簡単にし、エラーを減らし、再現性を高める</li>
 <li>データ構造を教える大学の授業はごく一部</li>
 </ul></li>
 </ul>
 </section>
-<section id="データサイエンスの第一歩高校情報" class="slide level2">
-<h2>データサイエンスの第一歩：高校「情報」</h2>
+<section id="高校情報" class="slide level2">
+<h2>高校「情報」</h2>
 <h3 id="良い点">良い点</h3>
 <ul>
 <li>必修化</li>
@@ -272,7 +333,7 @@
 <li>「データサイエンス教育」ではなく「プログラミング教育」に近い</li>
 </ul>
 </section>
-<section id="データサイエンスの第一歩-2" class="slide level2">
+<section id="データサイエンスの第一歩-1" class="slide level2">
 <h2>データサイエンスの第一歩</h2>
 <h3 id="プロセス">プロセス</h3>
 <ol type="1">
@@ -446,12 +507,553 @@
 </section>
 <section id="データサイエンスの第一歩microsoft-excelの弊害-3" class="slide level2">
 <h2>データサイエンスの第一歩：Microsoft Excelの弊害</h2>
+<p>aa</p>
+</section></section>
+<section>
+<section id="rの基礎概念" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
+<h1>Ⅱ. Rの基礎概念</h1>
+
+</section>
+<section id="基礎なぜrなのか-なぜquartoなのか" class="slide level2">
+<h2>基礎：なぜRなのか / なぜQuartoなのか</h2>
+<h3 id="コードスクリプト">1. コード（スクリプト）</h3>
+<ul>
+<li>再現可能性
+<ul>
+<li>コードは<em>すべての手順が残る</em>
+<ul>
+<li>真似しやすい / <em>生成AIと親和性が高い</em> / <em>ミスも再現できる</em> / 共同作業・共同研究しやすい</li>
+</ul></li>
+<li>Cf. マウス操作（GUI）中心：<a href="https://www.microsoft.com/ja-jp/microsoft-365/excel?msockid=2fc8d8cc7e2a6c5821f0ceb37f326da4">Microsoft Excel</a>; <a href="https://www.ibm.com/jp-ja/products/spss">SPSS</a>; <a href="https://www.mdf-soft.com/products/graphpad_prism.html">GraphPad Prism</a>; <a href="https://khcoder.net">KH Coder</a></li>
+</ul></li>
+<li>作業の効率化
+<ul>
+<li>一度作ったコード（データ処理）を別のデータでも使い回せる</li>
+</ul></li>
+<li>安全性
+<ul>
+<li><em>元データ（ファイル）を加工しない</em></li>
+<li>Rが、メモリ上にデータを保持し、そのコピーを操作する</li>
+</ul></li>
+</ul>
+</section>
+<section id="基礎なぜrなのか-なぜquartoなのか-1" class="slide level2">
+<h2>基礎：なぜRなのか / なぜQuartoなのか</h2>
+<h3 id="r言語の特性">2. R言語の特性</h3>
+<ul>
+<li><a href="https://www.r-project.org/about.html">R</a>：統計解析・データ分析に特化して開発された言語、構文
+<ul>
+<li>Cf. <a href="https://www.python.org">Python</a>：機械学習・AI・Web系のライブラリに強みあり</li>
+</ul></li>
+</ul>
+<h3 id="豊富な可視化ツール">3. 豊富な可視化ツール</h3>
+<ul>
+<li><a href="https://ggplot2.tidyverse.org">ggplot2</a> / <a href="https://pmassicotte.github.io/paletteer_gallery/">カラーパレットパッケージ</a></li>
+</ul>
+<h3 id="オープンソースと親切なコミュニティ">4. オープンソースと親切なコミュニティ</h3>
+<ul>
+<li><em>各専門分野の研究者が､当該分野に最適なパッケージを作っている</em>
+<ul>
+<li>私（苅谷の場合）：<a href="#/Google-Ngram-Trends">Google Ngram Trends</a>; <a href="https://cran.r-project.org/web/packages/gutenbergr/refman/gutenbergr.html">gutenbergr</a></li>
+</ul></li>
+<li>困っていることはみんな一緒（先達の回答が参考になる）
+<ul>
+<li><a href="https://tokyor.connpass.com">Tokyo.R</a> / <a href="https://r-wakalang.slack.com/join/shared_invite/enQtMzI3OTUxMjMyMjYwLTlhMDMxYjJkZmY3NDhmOWFlNGJmNTgyY2FiMzRjZmQxMzFiM2E3YzAwZGYzZDY4MGZiYTQ2YzMzOWRlMWRjMWY#/shared-invite/email">Tokyo.R—Slack</a> / <a href="https://kanazawar.connpass.com/event/369362/?utm_campaign=event_publish_to_series_watcher&amp;utm_source=notifications&amp;utm_medium=email&amp;utm_content=detail_btn">Kanazawa.R</a>（次回11月15日(土)）</li>
+</ul></li>
+</ul>
+</section>
+<section id="基礎なぜrなのか-なぜquartoなのか-2" class="slide level2">
+<h2>基礎：なぜRなのか / なぜQuartoなのか</h2>
+<h3 id="簡易的な記述法quarto">5. 簡易的な記述法（Quarto）</h3>
+<ul>
+<li><a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a></li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>要素</th>
+<th>Markdown構文</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>見出し</td>
+<td><code># H1</code><br><code>## H2</code></td>
+<td>H1 見出し <br> H2 見出し</td>
+</tr>
+<tr class="even">
+<td>太字</td>
+<td><code>**bold text**</code></td>
+<td><strong>bold text</strong></td>
+</tr>
+<tr class="odd">
+<td>イタリック</td>
+<td><code>*italicized text*</code></td>
+<td><em>italicized text</em></td>
+</tr>
+<tr class="even">
+<td>引用</td>
+<td><code>&gt; blockquote</code></td>
+<td>&gt; blockquote</td>
+</tr>
+<tr class="odd">
+<td>リンク</td>
+<td><code>[金沢大学](https://www.kanazawa-u.ac.jp)</code></td>
+<td><a href="https://www.kanazawa-u.ac.jp">金沢大学</a></td>
+</tr>
+<tr class="even">
+<td>画像</td>
+<td><code>![alt text](img/logo_金沢大学.jpg)</code></td>
+<td><img data-src="img/logo_金沢大学.jpg" style="width:30.0%" alt="alt text"></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>色や文字の大きさは、別途、CSSファイルを用意して、変更する必要があります</p>
+</div>
+</div>
+</div>
+</section>
+<section id="基礎なぜrなのか-なぜquartoなのか-3" class="slide level2">
+<h2>基礎：なぜRなのか / なぜQuartoなのか</h2>
+<h3 id="レポーティング機能と多様な出力形態quarto">6. レポーティング機能と多様な出力形態（Quarto）</h3>
+<ul>
+<li>Rは単なる分析ツールではなく、結果をそのままレポートやスライドとしてまとめるレポーティング機能を備える</li>
+<li>出力形式は多様であり、YAML（ヤムル・後述）の設定を少し変えるだけ
+<ul>
+<li>Documents: <a href="https://quarto.org/docs/output-formats/html-basics.html">html</a>; <a href="https://quarto.org/docs/output-formats/ms-word.html">MS Word</a>; <a href="https://quarto.org/docs/output-formats/typst.html">PDF: Typst</a></li>
+<li>Presentations: <a href="https://quarto.org/docs/presentations/revealjs/">reveal.js</a>; <a href="https://quarto.org/docs/presentations/powerpoint.html">PowerPoint</a>; <a href="https://quarto.org/docs/presentations/beamer.html">PDF: Beamer</a></li>
+<li><a href="https://quarto.org/docs/dashboards/">Dashboards</a></li>
+<li><a href="https://quarto.org/docs/websites/">Website</a></li>
+</ul></li>
+</ul>
+<h3 id="無料">7. 無料</h3>
+</section></section>
+<section>
+<section id="r環境の整備" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
+<h1>Ⅲ. R環境の整備</h1>
+
+</section>
+<section id="準備r-studioとquartoファイル" class="slide level2">
+<h2>準備：R StudioとQuartoファイル</h2>
+<h3 id="r-studio">R Studio</h3>
+<ul>
+<li>Rを効率的に使うための統合開発環境（IDE）
+<ul>
+<li>「コードを書く・実行する・結果を見る」ための道具</li>
+<li>Cf. R 本体:「計算・統計処理」を行う（R Studioを起動すれば、内部でRが自動的に動く）</li>
+<li><a href="https://posit.co">posit</a>社のアプリ（今日のR開発を牽引）</li>
+<li>Pythonとの共存を目指す<a href="https://positron.posit.co">Positron</a>（Microsoft VS Codeに類似したインターフェイス）の開発が進行中</li>
+</ul></li>
+</ul>
+</section>
+<section id="準備r-studioとquartoファイル-1" class="slide level2">
+<h2>準備：R StudioとQuartoファイル</h2>
+<h3 id="quartoファイル">Quartoファイル</h3>
+<ul>
+<li><a href="https://quarto.org">Quarto</a> / 拡張子qmd</li>
+<li>コード（R Chunk）と文章（Markdown）をひとつのファイルにまとめて書き、実行結果つきのレポートやスライドを自動で作成できる
+<ul>
+<li>YAMLのformatを書き換えるだけで多様な出力が可能
+<ul>
+<li>HTML, PDF, Reveal.js, docx, pptx など</li>
+</ul></li>
+<li>R Markdown（拡張子Rmd）の拡張版</li>
+<li><a href="https://posit.co">posit</a>社が開発したファイル形式</li>
+</ul></li>
+</ul>
+</section>
+<section id="準備インストール" class="slide level2">
+<h2>準備：インストール</h2>
+<ul>
+<li>13のステップに分けて説明します</li>
+</ul>
+<h3 id="r本体をインストール">1. R本体をインストール</h3>
+<ul>
+<li>ブラウザから<a href="https://cran.rstudio.com">R</a>にアクセス</li>
+<li>手持ちのPCに適したファイルをダウンロードして、実行
+<ul>
+<li>Windows / macOS / Linux</li>
+</ul></li>
+</ul>
+<h3 id="r-studioをインストール">2. R Studioをインストール</h3>
+<ul>
+<li>ブラウザから<a href="https://posit.co/download/rstudio-desktop/">R Studio</a>にアクセス</li>
+<li>手持ちのPCに適したファイルをダウンロード、実行
+<ul>
+<li>Windows / macOS / Ubuntu</li>
+</ul></li>
+</ul>
+</section>
+<section id="準備ファイルの作成" class="slide level2">
+<h2>準備：ファイルの作成</h2>
+<h3 id="この講習会用のフォルダ作成osで操作">3. この講習会用のフォルダ作成（OSで操作）</h3>
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>ファイル名は<em>念のため英数のみ</em>とし、また<em>空白文字を使わない</em>で下さい</p>
+</div>
+</div>
+</div>
+<h3 id="プロジェクトの作成r-studioで操作以後同じ">4. プロジェクトの作成（R Studioで操作、以後同じ）</h3>
+<ul>
+<li>メニュー &gt; File &gt; New Project &gt; Existing Directory &gt; 3で作成した フォルダを指定 &gt; Create Project</li>
+</ul>
+<h4 id="rprojファイル">Rprojファイル</h4>
+<ul>
+<li>Rprojファイルは、RStudioプロジェクトを管理するための設定ファイルで、作業ディレクトリや環境設定、ファイルの表示状態などを保存する</li>
+<li>プロジェクトを開くと、自動でそのフォルダが作業ディレクトリになり、パスの管理や依存関係の整理が簡単になる</li>
+</ul>
+</section>
+<section id="準備ファイルの作成-1" class="slide level2">
+<h2>準備：ファイルの作成</h2>
+<h3 id="r-quartoファイルの作成">5. R Quartoファイルの作成</h3>
+<ul>
+<li>メニュー &gt; File &gt; Quarto Document &gt; Create
+<ul>
+<li>Title: 任意</li>
+<li>HTML / PDF / Word → <em>HTMLにチェック</em></li>
+<li>「Editor: Use visual markdown editor」のチェックを外す（外れていることを確認する）</li>
+</ul></li>
+<li>名前をつけて保存</li>
+</ul>
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>ファイル名は<em>念のため英数のみ</em>とし、また<em>空白文字を使わない</em>で下さい</p>
+</div>
+</div>
+</div>
+</section>
+<section id="準備うまくいかない場合" class="slide level2">
+<h2>準備：うまくいかない場合</h2>
+<ul>
+<li>Consoleパネルに表示されるメッセージが英語の場合：
+<ul>
+<li>エラーメッセージの日本語化（ターミナル操作が必要）</li>
+<li><a href="https://maku77.github.io/r/basic/locale.html">Mac: R 環境の Locale 設定（日本語を使用する）</a></li>
+<li><a href="https://niszet.hatenablog.com/entry/2022/04/25/083000">Win: (R) R4.2でWindowsでもUTF-8を設定できることを確認した</a></li>
+</ul></li>
+<li>インストールがうまくいかない場合：
+<ul>
+<li><a href="https://okumuralab.org/~okumura/stat/R-win.html">WindowsでのR/RStudioのインストール</a></li>
+<li><a href="http://nineworks2.blog.fc2.com/blog-entry-123.html">RStudioで日本語ユーザー名だとパッケージがインストールできない問題の解決方法</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="準備r-studioペインの見方" class="slide level2">
+<h2>準備：R Studio（ペイン）の見方</h2>
+<ul>
+<li>4画面構成
+<ul>
+<li>主要な操作は左上のソースペインで行う</li>
+</ul></li>
+</ul>
+
+<img data-src="img/pane.png" class="r-stretch"></section>
+<section id="準備r-studioソースペインの外観の変更" class="slide level2">
+<h2>準備：R Studio（ソースペイン）の外観の変更</h2>
+<ul>
+<li>コードを書くうえで、<em>視認性はとても重要</em>です</li>
+</ul>
+<h3 id="文字の配色の変更">6. 文字の配色の変更</h3>
+<ul>
+<li>メニュー &gt; Tools &gt; Global Options &gt; Appearance &gt; <em>Editor Theme</em>
+<ul>
+<li>私（苅谷）は<a href="https://github.com/max-alletsee/rstudio-themes">rstudio-themes</a>からダウンロードしたrscodeio (anthonynorth) をaddで追加しています</li>
+</ul></li>
+</ul>
+<h3 id="不可視文字を表示">7. 不可視文字を表示</h3>
+<ul>
+<li>メニュー &gt; Tools &gt; Global Options &gt; Code &gt; Display
+<ul>
+<li><em>Show whitespace charactersにチェック</em></li>
+<li>Indentation guides:から<em>適当なものを選択</em>
+<ul>
+<li>themeによってはIndentation guidesが適用されない（rscodeioも適用対象外）</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="準備r-studioソースペインの外観の変更-1" class="slide level2">
+<h2>準備：R Studio（ソースペイン）の外観の変更</h2>
+
+<img data-src="img/theme.png" class="r-stretch"></section>
+<section id="準備r-studioソースペインの外観の変更-2" class="slide level2">
+<h2>準備：R Studio（ソースペイン）の外観の変更</h2>
+
+<img data-src="img/空白の可視化.png" class="r-stretch"></section>
+<section id="準備r-studioの保存復元設定" class="slide level2">
+<h2>準備：R Studioの保存・復元設定</h2>
+<ul>
+<li>意図しない古いデータが使われることを避ける必要があります</li>
+</ul>
+<h3 id="rdata保存をオフにする">8. 「.RData」保存をオフにする</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>メニュー &gt; Tools &gt; Global Options &gt; General &gt; Workspace
+<ul>
+<li>Restore .RData into workspace at startup: <em>チェックを外す</em></li>
+<li>Save workspace to .RData on exit: <em>Neverを選択</em></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/restore.png"></p>
+</div></div>
+</section>
+<section id="準備r-studioの保存復元設定-1" class="slide level2">
+<h2>準備：R Studioの保存・復元設定</h2>
+<ul>
+<li>「.RData」には、前回の作業中のすべてのオブジェクト（データフレーム・関数・変数など）が保存される（デフォルト設定）
+<ul>
+<li>再起動時に「.RData」を読み込むと、前回の環境が再現する。一見便利そうだが、トラブルの元になる
+<ul>
+<li>以前のオブジェクトがコードを実行しなくても再現するために、意図せず「古い値」が使われることがありうる</li>
+<li>どこで作られたデータかわからなくなる</li>
+<li>コードを一から実行しても、同じ結果にならない</li>
+</ul></li>
+<li>「.RData」は作業データすべてを保存するため、大規模データを扱うと数百MB〜数GBにもなることがある</li>
+</ul></li>
+</ul>
+</section>
+<section id="準備目次の追加yaml" class="slide level2">
+<h2>準備：目次の追加（YAML）</h2>
+<h3 id="yamlを改変して目次を表示させる">9. YAMLを改変して､目次を表示させる</h3>
+<ul>
+<li>ソースペインの冒頭部分（YAML）を以下の様にする（タイトルは任意）</li>
+</ul>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>目次を付けると見出しレベルを意識しやすくなり､論理的に整ったレポートを作成できます</p>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>title<span class="sc">:</span> <span class="st">"任意"</span></span>
+<span id="cb1-2"><a></a>format<span class="sc">:</span></span>
+<span id="cb1-3"><a></a>  html<span class="sc">:</span></span>
+<span id="cb1-4"><a></a>   toc<span class="sc">:</span> true</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:70%;">
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<ul>
+<li>YAMLは構文が厳格で、エラーが起きやすいです</li>
+<li>YAML領域では、特に半角と全角の違いに注意し、インデントや記号（: ハイフンなど）は<em>全て半角</em>で入力する</li>
+<li>「toc:」と「true」の間に<em>半角空きあり</em></li>
+<li>YAML領域は「—」で始まり「—」で終わります。<em>「—」を消さないこと</em></li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+<ul>
+<li>YAMLを入力（またはコピー）できたら、「Outline」をクリック</li>
+</ul>
+</section>
+<section id="準備目次の追加yaml-1" class="slide level2">
+<h2>準備：目次の追加（YAML）</h2>
+<ul>
+<li>Renderをクリック
+<ul>
+<li>YAMLで設定している出力形式に従って右下のペイン（Viewer/Presentation）にレポートが出力される（全てのR Chunkが実行される（後述））</li>
+</ul></li>
+</ul>
+
+<img data-src="img/toc.png" class="r-stretch"></section>
+<section id="準備パッケージの追加tidyverse" class="slide level2">
+<h2>準備：パッケージの追加（tidyverse）</h2>
+<ul>
+<li><p>modern Rは、tidyverse（整然としたデータ世界）という思想にもとづくパッケージ群からなる</p></li>
+<li><p>base Rには組み込まれていないので、パッケージとして追加することが必要</p></li>
+<li><p><a href="https://tidyverse.org/packages/">tidyverse</a>の中身</p>
+<ul>
+<li>dplyr（データ操作）; tidyr（データ整形）; ggplot2（可視化）; readr（データ読み込み）; purrr（関数型操作）; forcats（factor（カテゴリ変数）の処理）; stringr（文字列処理）; tibble（データフレーム拡張）; rubridate（日付・時間処理）</li>
+</ul></li>
+</ul>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>以上9つのパッケージは、すべてtidyverseパッケージに含まれているので、個別にインストール、読み込む必要はありません</p>
+</div>
+</div>
+</div>
+</section>
+<section id="準備パッケージの追加tidyverse-1" class="slide level2">
+<h2>準備：パッケージの追加（tidyverse）</h2>
+<h3 id="パッケージの追加">10. パッケージの追加</h3>
+<ul>
+<li>Consoleパネル（画面左下）にカーソルを合わせる</li>
+<li>以下のコードを入力（または「クリップボード」でコピー）して実行（Enter）</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-important callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>インストール後、自動でパッケージを使えるわけではありません。各Quartoファイル内において、使いたいパッケージを<em>library() 関数で読み込む</em>必要があります（後述）</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>パッケージは、一度インストールすれば、同じPCではもう一度、インストールする必要はありません（パッケージはR内部から利用する設計になっており、初心者がファイルを探す、触る必要はありません）</p>
+</div>
+</div>
+</div>
+</section>
+<section id="準備setup-chunkの作成" class="slide level2">
+<h2>準備：Setup Chunkの作成</h2>
+<h3 id="r-chunk">R Chunk</h3>
+<ul>
+<li>R Chunkは、Quartoファイルの中でRのコードを書くためのブロック</li>
+<li>一つのR Chunkで、一つの作図、分析を行うのが基本</li>
+</ul>
+<h3 id="setup-chunk">Setup Chunk</h3>
+<ul>
+<li>R Chunkの一種だが、文書全体の設定を行うために慣例的に使われる特別なコードブロック
+<ul>
+<li>パッケージ・読み込み / 前処理（縦持ちデータへの変換など）</li>
+</ul></li>
+<li>Quartoは「ドキュメント内の最初にあるコードチャンク」を<em>自動的にグローバルな設定チャンクとして実行する</em>（ラベルは便宜的なもの）</li>
+</ul>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Setup Chunkを整え、前処理に関わるコードをまとめておくと、後の分析がスムーズになります</p>
+</div>
+</div>
+</div>
+</section>
+<section id="準備setup-chunkの作成-1" class="slide level2">
+<h2>準備：Setup Chunkの作成</h2>
+<h3 id="setup-chunkの作成">11. Setup Chunkの作成</h3>
+<ul>
+<li>ソースペインで、YAMLの下に、Setup Chunkを作成
+<ul>
+<li>メニュー &gt; Code &gt; Insert Chunk &gt; 以下のコードを入力（貼り付けでよい）</li>
+</ul></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co">#| label: setup</span></span>
+<span id="cb3-2"><a></a><span class="co">#| echo: false</span></span>
+<span id="cb3-3"><a></a><span class="co">#| output: false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>label: setup: このチャンクをセットアップチャンクと名付ける</li>
+<li>echo: false: このチャンクのコードは表示しない</li>
+<li>output: false：コードを実行しても、結果は出力に表示しない</li>
+</ul>
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>コードブロックは「てんてんてん（バッククォート）」3つで始まり、同じく「てんてんてん」3つで終わるのが規則です。この中にRのコードを書きます。<em>間違って消さないように！</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="準備パッケージの読み込み" class="slide level2">
+<h2>準備：パッケージの読み込み</h2>
+<ul>
+<li>先に作成したSetup Chunkで、modern Rの基本パッケージ群tidyverseを読み込む</li>
+</ul>
+<h3 id="パッケージの読み込み">12. パッケージの読み込み</h3>
+<p>ソースペインで、Setup Chunk内に以下のコードを書く</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># パッケージの読み込み ---- #「○○ ----」と書いておくと、Outlineに表示されて見やすい（R Studioが区切り線として認識）</span></span>
+<span id="cb4-2"><a></a><span class="fu">library</span>(tidyverse) <span class="co"># modern Rの基本パッケージ</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<ul>
+<li>R Chunk内では #（ハッシュ）をコードの前につけると、その行は実行されずにメモとして残せます</li>
+<li>＃ より右側の文字もRでは実行されません（コメントアウトと呼びます）</li>
+<li>特定のコード（行）が動かないなどの理由で、問題を特定したい場合にも便利です</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>可読性、判読性、視認性を上げ、<a href="https://ja.wikipedia.org/wiki/スパゲティプログラム">スパゲティコード</a>にならないようにすることが重要です</p>
+</div>
+</div>
+</div>
+</section>
+<section id="準備日本語表示ggplot2" class="slide level2">
+<h2>準備：日本語表示（ggplot2）</h2>
+<div class="callout callout-important callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<ul>
+<li>ggplot2（作図パッケージ）の諸関数は、初期設定のままでは、日本語を正しく表示できない場合があります
+<ul>
+<li>特に、WindowsやmacOSでは、デフォルトのフォント設定に日本語フォントが含まれていないため、文字化けや「□」「?」のような記号に置き換えられることがあります</li>
+<li>Linux環境では日本語フォントが標準でインストールされ、日本語がそのまま表示できることが多いです</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="rでできること" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
+<h1>Ⅱ. Rでできること</h1>
+
+</section>
+<section id="aa-1" class="slide level2">
+<h2>aa</h2>
 <h3 id="国の政策への民意の反映総数年ごとの推移1">国の政策への民意の反映（総数・年ごとの推移）[^1]</h3>
 <ul>
 <li>あなたは、全般的にみて、国の政策に国民の考えや意見がどの程度反映されていると思いますか</li>
 </ul>
 
-<img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="データサイエンスの第一歩microsoft-excelの弊害-4" class="slide level2">
 <h2>データサイエンスの第一歩：Microsoft Excelの弊害</h2>
 <h3 id="国の政策への民意の反映クロス集計情報入手先">国の政策への民意の反映（クロス集計：情報入手先）</h3>
@@ -459,7 +1061,7 @@
 <li>あなたは、社会の動きを知ろうとするときに、どこから情報を得ることが多いですか。（○はいくつでも）</li>
 </ul>
 
-<img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="選挙制度-公共東京書籍" class="slide level2">
 <h2>選挙制度： 『公共』（東京書籍）</h2>
 <h3 id="国の政策への民意の反映クロス集計現代日本懸念点">国の政策への民意の反映（クロス集計：現代日本懸念点）</h3>
@@ -467,11 +1069,11 @@
 <li>あなたは、現在の日本の状況について、悪い方向に向かっていると思われるのは、どのような分野についてでしょうか。（○はいくつでも）</li>
 </ul>
 
-<img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="aa-1" class="slide level2">
+<img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="aa-2" class="slide level2">
 <h2>aa</h2>
 
-<img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
 <section id="データサイエンスの第一歩microsoft-excelの弊害-5" class="slide level2">
 <h2>データサイエンスの第一歩：Microsoft Excelの弊害</h2>
 <ul>
