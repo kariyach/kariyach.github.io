@@ -760,7 +760,7 @@
     "href": "teaching/RandQuarto/index.html#week-1-48-イントロダクション",
     "title": "RとQuartoではじめるデータサイエンス：データを可視化する《2026》",
     "section": "Week 1 (4/8)： イントロダクション",
-    "text": "Week 1 (4/8)： イントロダクション\n\n具体的な内容：\n\nデータを見る；RとR Studioのインストール；プロジェクトの作成；base RとTidyverse\n\nresume / slide"
+    "text": "Week 1 (4/8)： イントロダクション\n\n具体的な内容：\n\nデータを見る；RとR Studioのインストール；プロジェクトの作成；base RとTidyverse\n\nレジュメ / 教材(スライド)"
   },
   {
     "objectID": "teaching/RandQuarto/index.html#week-2-415-rの基本的な操作方法1",
@@ -3299,51 +3299,65 @@
   {
     "objectID": "teaching/RandQuarto/resume_RandQuarto_w1.html",
     "href": "teaching/RandQuarto/resume_RandQuarto_w1.html",
-    "title": "RとQuartoではじめるデータサイエンス",
+    "title": "RとQuartoではじめるデータサイエンス《2026》",
     "section": "",
-    "text": "本日の目標\n自己紹介\n学修目標と成績評価\nデータサイエンスの第一歩\nなぜRなのか / なぜQuartoなのか\nR環境の整備\nRにふれてみよう：palmer penguins\nRを使ってデータ分析を深める\n\n\n\n\n授業趣旨と成績評価方法をしっかりと理解する\n表とデータセットの違いをなんとなく理解する\nRの便利さ、凄さをなんとなく理解する\nRを使える環境を各自のPC/macに整備する\nRで散布図を作る\n\n\n\n\n\n名前、学類\n受講動機\nデータ分析したい対象（の有無）\n高校「情報」科目で習ったこと（該当者のみ）\nプログラミングの経験の有無\n\n\n\n\n\n\n\nデータサイエンス＝Pythonを学ぶこと、生成AIを使えるようになること、という誤解（特に日本は顕著）\n\nもっとも重要なのはデータの形についての思想・哲学であり、ここがデータサイエンスの出発点\n\n\n\n\n\n\n表とデータセットを区別する（日本はエンジニアを除いてできていない）\n\n表：人間が目で見て理解できる\nデータセット：コンピュータが理解できる\n\nデータの型が整っていないとAIも機械学習も動かない\nよいデータ構造は、分析を簡単にし、エラーを減らし、再現性を高める\n\n\ntidy（整然な）データ\n\n\n\n\n\n\nコード（スクリプト）\nR言語の特性\n豊富な可視化ツール\nオープンソースと親切なコミュニティ\n簡易的な記述法（Quarto）\nレポーティング機能と多様な出力形態（Quarto）\n無料\n\n\n\n\n\n視認性と可読性\n\nCf. スパゲティコード\n\nSetup Chunk\n\n\n\n\n\nデータセットpenguins\nview()関数\nhead()関数\nパイプ演算子（‘|&gt;’）\n散布図\n\nggplot; geom_point"
+    "text": "本日の目標\n自己紹介\n学修目標と成績評価\nデータサイエンスの第一歩\nなぜRなのか / なぜQuartoなのか\nR環境の整備\nRにふれてみよう：palmer penguins\nRを使ってデータ分析を深める\n\n\n\n\n授業趣旨と成績評価方法をしっかりと理解する\n表とデータセットの違いをなんとなく理解する\nRの便利さ、凄さをなんとなく理解する\nRを使える環境を各自のPC/macに整備する\nRで散布図を作る\n\n\n\n\n\n名前、学類\n受講動機\nデータ分析したい対象（の有無）\n高校「情報」科目で習ったこと（該当者のみ）\nプログラミングの経験の有無\n\n\n\n\n\n\n\n受講生が、R言語の基本的な操作（データの読み込み、加工、抽出、結合など）ができる\n受講生が、ggplot2パッケージを使い、基本的な図（棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ）を作成できる\n受講生が、自分の関心のあるテーマにかかわるデータから適切な図を作成で\n\n\n\n\n\n授業別ルーブリック\n\n\n\n\n\n4月30日（木）は、4月29日（水・祝）の振替授業日\n\n\n\n\n\n\n\n\nデータサイエンス＝Pythonを学ぶこと、生成AIを使えるようになること、という誤解（特に日本は顕著）\n\nもっとも重要なのはデータの形についての思想・哲学であり、ここがデータサイエンスの出発点\n\n\n\n\n\n\n表とデータセットを区別する（日本はエンジニアを除いてできていない）\n\n表：人間が目で見て理解できる\nデータセット：コンピュータが理解できる\n\nデータの型が整っていないとAIも機械学習も動かない\nよいデータ構造は、分析を簡単にし、エラーを減らし、再現性を高める\n\n\ntidy（整然な）データ\n\n\n\n\n\n\nコード（スクリプト）\nR言語の特性\n豊富な可視化ツール\nオープンソースと親切なコミュニティ\n簡易的な記述法（Quarto）\nレポーティング機能と多様な出力形態（Quarto）\n無料\n\n\n\n\n\n視認性と可読性\n\nCf. スパゲティコード\n\nSetup Chunk\n\n\n\n\n\nデータセットpenguins\nview()関数\nhead()関数\nパイプ演算子（‘|&gt;’）\n散布図\n\nggplot; geom_point\n\n\n\n\n\n\n授業の感想：\n\n回答先：Google Forms\n締め切り：4月10日（金）23時59分\n\n初回授業アンケート：\n\n回答先：Google Forms\n締め切り：4月10日（金）23時59分\n\n\n\n\n\n\n\n\n演習の宿題はありません"
   },
   {
     "objectID": "teaching/RandQuarto/resume_RandQuarto_w1.html#本日の目標",
     "href": "teaching/RandQuarto/resume_RandQuarto_w1.html#本日の目標",
-    "title": "RとQuartoではじめるデータサイエンス",
+    "title": "RとQuartoではじめるデータサイエンス《2026》",
     "section": "",
     "text": "授業趣旨と成績評価方法をしっかりと理解する\n表とデータセットの違いをなんとなく理解する\nRの便利さ、凄さをなんとなく理解する\nRを使える環境を各自のPC/macに整備する\nRで散布図を作る"
   },
   {
     "objectID": "teaching/RandQuarto/resume_RandQuarto_w1.html#自己紹介",
     "href": "teaching/RandQuarto/resume_RandQuarto_w1.html#自己紹介",
-    "title": "RとQuartoではじめるデータサイエンス",
+    "title": "RとQuartoではじめるデータサイエンス《2026》",
     "section": "",
     "text": "名前、学類\n受講動機\nデータ分析したい対象（の有無）\n高校「情報」科目で習ったこと（該当者のみ）\nプログラミングの経験の有無"
   },
   {
+    "objectID": "teaching/RandQuarto/resume_RandQuarto_w1.html#学修目標と成績評価",
+    "href": "teaching/RandQuarto/resume_RandQuarto_w1.html#学修目標と成績評価",
+    "title": "RとQuartoではじめるデータサイエンス《2026》",
+    "section": "",
+    "text": "受講生が、R言語の基本的な操作（データの読み込み、加工、抽出、結合など）ができる\n受講生が、ggplot2パッケージを使い、基本的な図（棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ）を作成できる\n受講生が、自分の関心のあるテーマにかかわるデータから適切な図を作成で\n\n\n\n\n\n授業別ルーブリック\n\n\n\n\n\n4月30日（木）は、4月29日（水・祝）の振替授業日"
+  },
+  {
     "objectID": "teaching/RandQuarto/resume_RandQuarto_w1.html#データサイエンスの第一歩",
     "href": "teaching/RandQuarto/resume_RandQuarto_w1.html#データサイエンスの第一歩",
-    "title": "RとQuartoではじめるデータサイエンス",
+    "title": "RとQuartoではじめるデータサイエンス《2026》",
     "section": "",
     "text": "データサイエンス＝Pythonを学ぶこと、生成AIを使えるようになること、という誤解（特に日本は顕著）\n\nもっとも重要なのはデータの形についての思想・哲学であり、ここがデータサイエンスの出発点\n\n\n\n\n\n\n表とデータセットを区別する（日本はエンジニアを除いてできていない）\n\n表：人間が目で見て理解できる\nデータセット：コンピュータが理解できる\n\nデータの型が整っていないとAIも機械学習も動かない\nよいデータ構造は、分析を簡単にし、エラーを減らし、再現性を高める\n\n\ntidy（整然な）データ"
   },
   {
     "objectID": "teaching/RandQuarto/resume_RandQuarto_w1.html#なぜrなのか-なぜquartoなのか",
     "href": "teaching/RandQuarto/resume_RandQuarto_w1.html#なぜrなのか-なぜquartoなのか",
-    "title": "RとQuartoではじめるデータサイエンス",
+    "title": "RとQuartoではじめるデータサイエンス《2026》",
     "section": "",
     "text": "コード（スクリプト）\nR言語の特性\n豊富な可視化ツール\nオープンソースと親切なコミュニティ\n簡易的な記述法（Quarto）\nレポーティング機能と多様な出力形態（Quarto）\n無料"
   },
   {
     "objectID": "teaching/RandQuarto/resume_RandQuarto_w1.html#r環境の整備",
     "href": "teaching/RandQuarto/resume_RandQuarto_w1.html#r環境の整備",
-    "title": "RとQuartoではじめるデータサイエンス",
+    "title": "RとQuartoではじめるデータサイエンス《2026》",
     "section": "",
     "text": "視認性と可読性\n\nCf. スパゲティコード\n\nSetup Chunk"
   },
   {
     "objectID": "teaching/RandQuarto/resume_RandQuarto_w1.html#rにふれてみようpalmer-penguins",
     "href": "teaching/RandQuarto/resume_RandQuarto_w1.html#rにふれてみようpalmer-penguins",
-    "title": "RとQuartoではじめるデータサイエンス",
+    "title": "RとQuartoではじめるデータサイエンス《2026》",
     "section": "",
     "text": "データセットpenguins\nview()関数\nhead()関数\nパイプ演算子（‘|&gt;’）\n散布図\n\nggplot; geom_point"
+  },
+  {
+    "objectID": "teaching/RandQuarto/resume_RandQuarto_w1.html#宿題",
+    "href": "teaching/RandQuarto/resume_RandQuarto_w1.html#宿題",
+    "title": "RとQuartoではじめるデータサイエンス《2026》",
+    "section": "",
+    "text": "授業の感想：\n\n回答先：Google Forms\n締め切り：4月10日（金）23時59分\n\n初回授業アンケート：\n\n回答先：Google Forms\n締め切り：4月10日（金）23時59分\n\n\n\n\n\n\n\n\n演習の宿題はありません"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w1.html#本日の目標-1",
