@@ -3665,7 +3665,14 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w1.html#散布図を作ろう",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "散布図を作ろう",
-    "text": "散布図を作ろう\n\nCodeのコードをクリップボードを使ってコピー\n先に作成したqmdファイルに貼り付ける\nchunkを実行（またはRender）\n\n\nCodePlot\n\n\n\npenguins |&gt; # tidyverseに組み込まれているサンプルのデータセットを使う\n  filter(!if_any(everything(), is.na)) |&gt; # 欠損値を除外\n  ggplot(aes(x = bill_len, y = bill_dep, colour = species)) + # x軸、y軸、分布の色分けを指定\n  geom_point() # 散布図"
+    "text": "散布図を作ろう\n\nCodeのコードをクリップボードを使ってコピー\n先に作成したqmdファイルにR Chunkを作る\n\n\nメニュー &gt; Code &gt; Insert Chunk\n\n\nR Chunk内に貼り付け\nchunkを実行（またはRender）\n\n\nCodePlot\n\n\n\npenguins |&gt; # tidyverseに組み込まれているサンプルのデータセットを使う\n  filter(!if_any(everything(), is.na)) |&gt; # 欠損値を除外\n  ggplot(aes(x = bill_len, y = bill_dep, colour = species)) + # x軸、y軸、分布の色分けを指定\n  geom_point() # 散布図\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "teaching/RandQuarto/slide_RandQuarto_w1.html#見出しを付けよう",
+    "href": "teaching/RandQuarto/slide_RandQuarto_w1.html#見出しを付けよう",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "見出しを付けよう",
+    "text": "見出しを付けよう\n\nR Chunkで囲まれていない領域（＝markdown領域）に見出しを付けて、今日行ったことを整理しよう\n#を付けると見出しになります"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w1.html#社会意識に関する世論調査",
