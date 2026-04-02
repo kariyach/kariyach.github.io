@@ -102,7 +102,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-e697fb1e5eb667a620f691773c983378.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-60ec527219c9e7b771bf68bdaa8fbfd4.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -226,24 +226,33 @@
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a href="#/keywords" id="/toc-keywords">KEYWORDS</a></li>
+<li><a href="#/本日の目標" id="/toc-本日の目標">0. 本日の目標</a></li>
 <li><a href="#/自己紹介" id="/toc-自己紹介">Ⅰ. 自己紹介</a></li>
-<li><a href="#/データサイエンスの第一歩" id="/toc-データサイエンスの第一歩">Ⅱ. データサイエンスの第一歩</a></li>
-<li><a href="#/rの基礎概念" id="/toc-rの基礎概念">Ⅱ. Rの基礎概念</a></li>
-<li><a href="#/r環境の整備" id="/toc-r環境の整備">Ⅲ. R環境の整備</a></li>
-<li><a href="#/rでできること" id="/toc-rでできること">Ⅱ. Rでできること</a></li>
-<li><a href="#/次回の授業と宿題" id="/toc-次回の授業と宿題">Ⅶ. 次回の授業と宿題</a></li>
-<li><a href="#/引用文献" id="/toc-引用文献">引用文献</a></li>
+<li><a href="#/学修目標と成績評価" id="/toc-学修目標と成績評価">Ⅱ. 学修目標と成績評価</a></li>
+<li><a href="#/データサイエンスの第一歩" id="/toc-データサイエンスの第一歩">Ⅲ. データサイエンスの第一歩</a></li>
+<li><a href="#/なぜrなのか-なぜquartoなのか" id="/toc-なぜrなのか-なぜquartoなのか">Ⅳ. なぜRなのか / なぜQuartoなのか</a></li>
+<li><a href="#/r環境の整備" id="/toc-r環境の整備">Ⅴ. R環境の整備</a></li>
+<li><a href="#/rにふれてみようpalmer-penguins" id="/toc-rにふれてみようpalmer-penguins">Ⅵ. Rにふれてみよう：palmer penguins</a></li>
+<li><a href="#/rを使ってデータ分析を深める" id="/toc-rを使ってデータ分析を深める">Ⅶ. Rを使ってデータ分析を深める</a></li>
+<li><a href="#/次回の授業と宿題" id="/toc-次回の授業と宿題">Ⅷ. 次回の授業と宿題</a></li>
 </ul>
 </nav>
 </section>
-<section id="keywords" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
-<h1>KEYWORDS</h1>
-<ul>
-<li>成績評価；データを見る；base R；Tidyverse</li>
-</ul>
-</section>
+<section>
+<section id="本日の目標" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
+<h1>0. 本日の目標</h1>
 
+</section>
+<section id="本日の目標-1" class="slide level2">
+<h2>本日の目標</h2>
+<ol type="1">
+<li>授業趣旨と成績評価方法を<em>しっかりと</em>理解する</li>
+<li>表とデータセットの違いを<em>なんとなく</em>理解する</li>
+<li>Rの便利さ、凄さを<em>なんとなく</em>理解する</li>
+<li>Rを使える環境を各自のPC/macに整備する</li>
+<li>Rで散布図を作る</li>
+</ol>
+</section></section>
 <section>
 <section id="自己紹介" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
 <h1>Ⅰ. 自己紹介</h1>
@@ -259,7 +268,7 @@
 </ul></li>
 <li>専門：政治学 &gt; 政治思想史（イギリス）
 <ul>
-<li>18世紀イギリスの議会政治の発展に、古典古代の著作（キケロ；サルスティウス；タキトゥス）の読解が果たした役割（レトリックの受容史）cf.&nbsp;市民革命史観</li>
+<li>18世紀イギリスの議会政治の発展に、古典古代の著作（キケロ；サルスティウス；タキトゥス）の読解が果たした役割（レトリックの受容史）Cf. 市民革命史観</li>
 </ul></li>
 <li>Webサイト
 <ul>
@@ -279,39 +288,151 @@
 </ul></li>
 <li>量的テキスト分析を可能とする分析ツールの登場
 <ul>
-<li>18世紀イギリスの総合雑誌の比較分析</li>
-<li>日本の議会政治における言い回し・形容詞・副詞の使用の変化
+<li><a href="https://quanteda.io">quanteda</a>; <a href="https://httr2.r-lib.org">httr2</a></li>
+</ul></li>
+<li>研究プロジェクト
 <ul>
-<li>「強い」「美しい」「ご指摘は当たらない」「丁寧に説明する」</li>
+<li>18世紀イギリスの総合雑誌の比較分析</li>
+<li>日本の議会政治における言い回し・形容詞・副詞の使用の変化（「強い」「美しい」「ご指摘は当たらない」「丁寧に説明する」）</li>
 </ul></li>
-</ul></li>
+</ul>
+</section>
+<section id="自己紹介-3" class="slide level2">
+<h2>自己紹介</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li>名前、学類</li>
+<li>受講動機</li>
+<li>データ分析したい対象（の有無）</li>
+<li>高校「情報」科目で習ったこと（該当者のみ）</li>
+<li>プログラミングの経験の有無</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/104.FAQs.png"></p>
+</div></div>
+</section></section>
+<section>
+<section id="学修目標と成績評価" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
+<h1>Ⅱ. 学修目標と成績評価</h1>
+
+</section>
+<section id="授業の主題" class="slide level2">
+<h2>授業の主題</h2>
+<p>データサイエンスは、膨大なデータを分析する、あるいは個々のデータを結合しビッグデータにして解析することが必要です。そのためにはMicrosoft ExcelのようなGUI（グラフィカルユーザーインターフェース）に依拠するアプリケーションではなく、<em>コード中心のプログラム言語が適しています</em>。研究分野を問わず、海外の大学や研究機関において、「R」（後述）や「Python」のスキルが重視される傾向にあるのはこのためです。<em>日本の研究機関は、全般的に、このような海外のトレンドに追いついていません</em>。</p>
+<p>この授業は、統計プログラム言語「R」の基本的な機能と、Quarto（markdownにもとづく簡易入力とRの出力結果をPandocにもとづいて出版するPosit社の推奨する新しい出版システム）を学習するものです｡<em>R言語はプログラム言語のなかでは比較的習得が容易であり、社会科学から自然科学にいたるまで幅広い分野の研究者が利用しています</em>｡</p>
+</section>
+<section id="学修目標到達目標" class="slide level2">
+<h2>学修目標（到達目標）</h2>
+<ol type="1">
+<li>受講生が、R言語の基本的な操作（データの読み込み、加工、抽出、結合など）ができる</li>
+<li>受講生が、ggplot2パッケージを使い、基本的な図（棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ）を作成できる</li>
+<li>受講生が、自分の関心のあるテーマにかかわるデータから適切な図を作成できる</li>
+</ol>
+</section>
+<section id="授業概要" class="slide level2">
+<h2>授業概要</h2>
+<p>授業は、講義と演習の形式でおこないます｡</p>
+<p>講義の前半は、教員が用意した授業教材を中心に、コードの意味や記述方法、動作、実行結果などを例示、解説します｡ 後半の演習は、1. 各自所有のノートPCを使って演習をおこないますので、<em>必ずノートPCを持参して下さい</em>｡テキストの例題と合わせて、2. 自分の関心のあるテーマにかかわるデータセットでも、同様のコードを実践して下さい｡</p>
+<p>授業教材は<a href="https://kariyach.github.io/teaching/RandQuarto/">ウェブサイト</a>で公開します。このウェブサイトはQuartoとGitHubを用いて作成されています。</p>
+</section>
+<section id="評価の割合" class="slide level2">
+<h2>評価の割合</h2>
+<div class="cell">
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_o9wrrqnxwe55dw9g3adm = TinyTable.createTableFunctions("tinytable_o9wrrqnxwe55dw9g3adm");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '5', j: 1 }, { i: '5', j: 2 } ], css_id: 'tinytable_css_roh9rxg0lcg31au7os5g',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_06ij2s4xg8ebkngc7wtr',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_o9wrrqnxwe55dw9g3adm.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_o9wrrqnxwe55dw9g3adm td.tinytable_css_roh9rxg0lcg31au7os5g, #tinytable_o9wrrqnxwe55dw9g3adm th.tinytable_css_roh9rxg0lcg31au7os5g {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_o9wrrqnxwe55dw9g3adm td.tinytable_css_06ij2s4xg8ebkngc7wtr, #tinytable_o9wrrqnxwe55dw9g3adm th.tinytable_css_06ij2s4xg8ebkngc7wtr {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_o9wrrqnxwe55dw9g3adm" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1">項目</th>
+                <th scope="col" data-row="0" data-col="2">比率</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">宿題：授業の感想</td>
+                  <td data-row="1" data-col="2">30</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">宿題：演習</td>
+                  <td data-row="2" data-col="2">30</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">レポート</td>
+                  <td data-row="3" data-col="2">20</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">プレゼンテーション</td>
+                  <td data-row="4" data-col="2">10</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="1">受講態度</td>
+                  <td data-row="5" data-col="2">10</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<ul>
+<li>※授業には3分の2以上の出席を必要とします</li>
+<li>※評価基準は、<a href="http://localhost:3866/teaching/RandQuarto/syllabus_RandQuarto.html#学修目標到達目標">学修目標</a>、<a href="pdf/rubric_RandQuarto.pdf">授業別ルーブリック</a>に準じます</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="問い合わせ先" class="slide level2">
+<h2>問い合わせ先</h2>
+<ul>
+<li><p>メール：<a href="mailto:kariyach@staff.kanazawa-u.ac.jp?subject=【お問い合わせ】RとQuartoではじめるデータサイエンス（2026）">kariyach@staff.kanazawa-u.ac.jp</a></p></li>
+<li><p>研究室：<a href="https://maps.app.goo.gl/DQeY2ua7cF8tX5E58">総合教育2号館</a> 670号室（<em>Advance Appointment Required</em>）</p></li>
+<li><p>その他の点は、各自、シラバスで確認下さい</p></li>
 </ul>
 </section></section>
 <section>
 <section id="データサイエンスの第一歩" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
-<h1>Ⅱ. データサイエンスの第一歩</h1>
+<h1>Ⅲ. データサイエンスの第一歩</h1>
 
-</section>
-<section id="データサイエンスの誤解" class="slide level2">
-<h2>データサイエンスの誤解</h2>
-<h3 id="ツール有益性に依拠した学びが推奨される傾向にある">ツール（有益性）に依拠した学びが推奨される傾向にある</h3>
-<ul>
-<li>Pythonを学ぶ</li>
-<li>AI = データサイエンス
-<ul>
-<li>だが<em>もっとも重要なのはデータの形</em>についての思想・哲学</li>
-<li>ここがデータサイエンスの出発点であるべき</li>
-</ul></li>
-</ul>
-<h3 id="データの形">データの形</h3>
-<ul>
-<li>表の構造; CSV; Excelの問題; Tidy Data
-<ul>
-<li>データの型が整っていないとAIも機械学習も<em>動かない</em></li>
-<li>よいデータ構造は、分析を簡単にし、エラーを減らし、再現性を高める</li>
-<li>データ構造を教える大学の授業はごく一部</li>
-</ul></li>
-</ul>
 </section>
 <section id="高校情報" class="slide level2">
 <h2>高校「情報」</h2>
@@ -333,108 +454,93 @@
 <li>「データサイエンス教育」ではなく「プログラミング教育」に近い</li>
 </ul>
 </section>
-<section id="データサイエンスの第一歩-1" class="slide level2">
-<h2>データサイエンスの第一歩</h2>
-<h3 id="プロセス">プロセス</h3>
-<ol type="1">
-<li>データ収集</li>
-<li>データ整理</li>
-<li>可視化</li>
-<li>データ分析</li>
-<li>モデル作成（生成AIは<em>モデルの一種</em>）</li>
-<li>意思決定</li>
-</ol>
+<section id="高校情報-1" class="slide level2">
+<h2>高校「情報」</h2>
+<h3 id="学習指導要領">学習指導要領</h3>
+<blockquote>
+<p>イ（ウ） データの収集，整理，分析及び結果の表現の方法を適切に選択し，実行し，評価し改善することでは，データを問題の発見・解決に活用するために，<em>必要なデータの収集について，選択，判断する力，それに応じて適切なデータの整理や変換の方法を判断する力，分析の目的に応じた方法を選択，処理する力，その結果について多面的な可視化を行う</em>ことにより，データに含まれる傾向を見いだす力を養う。 また，データの傾向に関して評価するために，客観的な指標を基に判断する力，生徒自身の考えを基にした適正な解釈を行う力を養う。 更に，地域や学校の実態及び生徒の状況に応じて，数学科と連携し，データを収集する前に，分析の構想を練り紐付ける項目を洗い出したり，<em>外れ値の扱いについて確認したり，データの傾向について評価するために仮説検定の考え方などを取り扱ったりする</em>ことも考えられる。</p>
+</blockquote>
 </section>
-<section id="データサイエンスの第一歩microsoft-excelの弊害" class="slide level2">
-<h2>データサイエンスの第一歩：Microsoft Excelの弊害</h2>
+<section id="データサイエンスの誤解" class="slide level2">
+<h2>データサイエンスの誤解</h2>
+<h3 id="ツールに依拠した学びが推奨される傾向にあり">ツールに依拠した学びが推奨される傾向にあり</h3>
 <ul>
-<li>日本では Microsoft Excel が<em>「万能ツール」</em>として使われる傾向にあり
+<li>データサイエンス＝Pythonを学ぶこと、生成AIを使えるようになること、という誤解（特に日本は顕著）
 <ul>
-<li>本来は表<em>計算</em>アプリだが、表<em>作成</em>アプリとして利用される</li>
-<li>Excelの表 = データという誤解が生まれ、一般化している
-<ul>
-<li>複数行の列見出し；セル結合；セル内改行（段落）；見た目重視</li>
+<li><em>もっとも重要なのはデータの形</em>についての思想・哲学であり、ここがデータサイエンスの出発点</li>
 </ul></li>
-</ul></li>
-<li>データの型の大原則
+</ul>
+<h3 id="データの形">データの形</h3>
 <ul>
-<li>1列 = 1種類のデータ
+<li>表とデータセットを区別する（日本はエンジニアを除いてできていない）
 <ul>
-<li>データ分析；並び替え；フィルタ；集計を可能に</li>
+<li>表：人間が目で見て理解できる</li>
+<li>データセット：コンピュータが理解できる
+<ul>
+<li>データの型が整っていないとAIも機械学習も<em>動かない</em></li>
+<li>よいデータ構造は、分析を簡単にし、エラーを減らし、再現性を高める</li>
 </ul></li>
 </ul></li>
 </ul>
 </section>
-<section id="データサイエンスの第一歩microsoft-excelの弊害-1" class="slide level2">
-<h2>データサイエンスの第一歩：Microsoft Excelの弊害</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th></th>
-<th>国語</th>
-<th>国語</th>
-<th>国語</th>
-<th>国語</th>
-<th>数学</th>
-<th>数学</th>
-<th>数学</th>
-<th>数学</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td>中間</td>
-<td>中間</td>
-<td>期末</td>
-<td>期末</td>
-<td>中間</td>
-<td>中間</td>
-<td>期末</td>
-<td>期末</td>
-</tr>
-<tr class="even">
-<td>名前</td>
-<td>知識</td>
-<td>記述</td>
-<td>知識</td>
-<td>記述</td>
-<td>知識</td>
-<td>記述</td>
-<td>知識</td>
-<td>記述</td>
-</tr>
-<tr class="odd">
-<td>田中</td>
-<td>80</td>
-<td>70</td>
-<td>85</td>
-<td>75</td>
-<td>72</td>
-<td>68</td>
-<td>78</td>
-<td>74</td>
-</tr>
-<tr class="even">
-<td>佐藤</td>
-<td>88</td>
-<td>82</td>
-<td>90</td>
-<td>84</td>
-<td>80</td>
-<td>77</td>
-<td>85</td>
-<td>82</td>
-</tr>
-</tbody>
-</table>
+<section id="表によるデータ提供" class="slide level2">
+<h2>表によるデータ提供</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/メッシーなー表を作る.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/メッシーな表で困る.png"></p>
+</div></div>
 <ul>
-<li>この列には科目、試験、評価項目、という <strong>3つの変数</strong> が埋め込まれています。</li>
-<li>列 = 変数 × 変数 × 変数</li>
+<li>総務省統計局 <a href="https://www.e-stat.go.jp">e-stat</a>
+<ul>
+<li>エクセルデータ（複雑なカラム名構造、結合、空白行）。pdfも多い</li>
+</ul></li>
+<li><a href="https://data-explorer.oecd.org">OECD</a>
+<ul>
+<li>データセット、csvによるデータ提供</li>
+</ul></li>
 </ul>
 </section>
-<section id="aa" class="slide level2">
-<h2>aa</h2>
+<section id="microsoft-excelの弊害" class="slide level2">
+<h2>Microsoft Excelの弊害</h2>
+<ul>
+<li>見た目の美しさを優先（<strong>結合</strong>など）し、データの意味や扱いやすさを軽視</li>
+<li>どのような操作をしたのか、再現できない（研究にとっては<em>致命的</em>）</li>
+<li>フィルタリングして、シートを切り分け、作図、作表する</li>
+<li>データの追加や修正があった場合、一からすべての作業をやり直し</li>
+<li>ファイルを直接、操作する</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Microsoft Excelは例示です（デファクト・スタンダードであるため）。マウス操作中心のGUI表計算アプリは、すべて同じ問題を抱えています</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="データセットの基本原則" class="slide level2">
+<h2>データセットの基本原則</h2>
+<ul>
+<li>コンピュータが理解でき、かつ、プログラミングで操作しやすいデータセット（<em>整然tidyな</em>データ）</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="原則">原則</h3>
+<ul>
+<li>1列 = 1種類のデータ</li>
+<li>1行 = 1観測</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="例">例</h3>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -490,32 +596,25 @@
 </tr>
 </tbody>
 </table>
-</section>
-<section id="データサイエンスの第一歩microsoft-excelの弊害-2" class="slide level2">
-<h2>データサイエンスの第一歩：Microsoft Excelの弊害</h2>
-<h3 id="覚えてほしいルール">覚えてほしいルール</h3>
-<ul>
-<li><p>データ表では</p>
-<ul>
-<li>1列 = 1種類のデータ<br>
-</li>
-<li>1行 = 1観測</li>
-</ul></li>
-<li><p>この原則を守るだけで 多くの問題が解決します。</p></li>
-<li><p>データベース；データ設計；データエンジニアリング</p></li>
-</ul>
-</section>
-<section id="データサイエンスの第一歩microsoft-excelの弊害-3" class="slide level2">
-<h2>データサイエンスの第一歩：Microsoft Excelの弊害</h2>
-<p>aa</p>
+</div></div>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>詳しくは次週以降に解説します</p>
+</div>
+</div>
+</div>
 </section></section>
 <section>
-<section id="rの基礎概念" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
-<h1>Ⅱ. Rの基礎概念</h1>
+<section id="なぜrなのか-なぜquartoなのか" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
+<h1>Ⅳ. なぜRなのか / なぜQuartoなのか</h1>
 
 </section>
-<section id="基礎なぜrなのか-なぜquartoなのか" class="slide level2">
-<h2>基礎：なぜRなのか / なぜQuartoなのか</h2>
+<section id="なぜrなのか-なぜquartoなのか-1" class="slide level2">
+<h2>なぜRなのか / なぜQuartoなのか</h2>
 <h3 id="コードスクリプト">1. コード（スクリプト）</h3>
 <ul>
 <li>再現可能性
@@ -537,8 +636,8 @@
 </ul></li>
 </ul>
 </section>
-<section id="基礎なぜrなのか-なぜquartoなのか-1" class="slide level2">
-<h2>基礎：なぜRなのか / なぜQuartoなのか</h2>
+<section id="なぜrなのか-なぜquartoなのか-2" class="slide level2">
+<h2>なぜRなのか / なぜQuartoなのか</h2>
 <h3 id="r言語の特性">2. R言語の特性</h3>
 <ul>
 <li><a href="https://www.r-project.org/about.html">R</a>：統計解析・データ分析に特化して開発された言語、構文
@@ -558,12 +657,12 @@
 </ul></li>
 <li>困っていることはみんな一緒（先達の回答が参考になる）
 <ul>
-<li><a href="https://tokyor.connpass.com">Tokyo.R</a> / <a href="https://r-wakalang.slack.com/join/shared_invite/enQtMzI3OTUxMjMyMjYwLTlhMDMxYjJkZmY3NDhmOWFlNGJmNTgyY2FiMzRjZmQxMzFiM2E3YzAwZGYzZDY4MGZiYTQ2YzMzOWRlMWRjMWY#/shared-invite/email">Tokyo.R—Slack</a> / <a href="https://kanazawar.connpass.com/event/369362/?utm_campaign=event_publish_to_series_watcher&amp;utm_source=notifications&amp;utm_medium=email&amp;utm_content=detail_btn">Kanazawa.R</a>（次回11月15日(土)）</li>
+<li><a href="https://tokyor.connpass.com">Tokyo.R</a> / <a href="https://r-wakalang.slack.com/join/shared_invite/enQtMzI3OTUxMjMyMjYwLTlhMDMxYjJkZmY3NDhmOWFlNGJmNTgyY2FiMzRjZmQxMzFiM2E3YzAwZGYzZDY4MGZiYTQ2YzMzOWRlMWRjMWY#/shared-invite/email">Tokyo.R—Slack</a> / <a href="https://kanazawar.connpass.com/event/369362/?utm_campaign=event_publish_to_series_watcher&amp;utm_source=notifications&amp;utm_medium=email&amp;utm_content=detail_btn">Kanazawa.R</a></li>
 </ul></li>
 </ul>
 </section>
-<section id="基礎なぜrなのか-なぜquartoなのか-2" class="slide level2">
-<h2>基礎：なぜRなのか / なぜQuartoなのか</h2>
+<section id="なぜrなのか-なぜquartoなのか-3" class="slide level2">
+<h2>なぜRなのか / なぜQuartoなのか</h2>
 <h3 id="簡易的な記述法quarto">5. 簡易的な記述法（Quarto）</h3>
 <ul>
 <li><a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a></li>
@@ -620,8 +719,8 @@
 </div>
 </div>
 </section>
-<section id="基礎なぜrなのか-なぜquartoなのか-3" class="slide level2">
-<h2>基礎：なぜRなのか / なぜQuartoなのか</h2>
+<section id="なぜrなのか-なぜquartoなのか-4" class="slide level2">
+<h2>なぜRなのか / なぜQuartoなのか</h2>
 <h3 id="レポーティング機能と多様な出力形態quarto">6. レポーティング機能と多様な出力形態（Quarto）</h3>
 <ul>
 <li>Rは単なる分析ツールではなく、結果をそのままレポートやスライドとしてまとめるレポーティング機能を備える</li>
@@ -637,11 +736,11 @@
 </section></section>
 <section>
 <section id="r環境の整備" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
-<h1>Ⅲ. R環境の整備</h1>
+<h1>Ⅴ. R環境の整備</h1>
 
 </section>
-<section id="準備r-studioとquartoファイル" class="slide level2">
-<h2>準備：R StudioとQuartoファイル</h2>
+<section id="r-studioとquartoファイル" class="slide level2">
+<h2>R StudioとQuartoファイル</h2>
 <h3 id="r-studio">R Studio</h3>
 <ul>
 <li>Rを効率的に使うための統合開発環境（IDE）
@@ -653,8 +752,8 @@
 </ul></li>
 </ul>
 </section>
-<section id="準備r-studioとquartoファイル-1" class="slide level2">
-<h2>準備：R StudioとQuartoファイル</h2>
+<section id="r-studioとquartoファイル-1" class="slide level2">
+<h2>R StudioとQuartoファイル</h2>
 <h3 id="quartoファイル">Quartoファイル</h3>
 <ul>
 <li><a href="https://quarto.org">Quarto</a> / 拡張子qmd</li>
@@ -669,11 +768,28 @@
 </ul></li>
 </ul>
 </section>
-<section id="準備インストール" class="slide level2">
-<h2>準備：インストール</h2>
-<ul>
-<li>13のステップに分けて説明します</li>
-</ul>
+<section id="r環境の整備-1" class="slide level2">
+<h2>R環境の整備</h2>
+<ol type="1">
+<li>R本体をインストール（OSで操作）</li>
+<li>R Studioをインストール（OSで操作）</li>
+<li>授業用フォルダの作成（OSで操作）</li>
+<li>プロジェクトの作成（R Studioで操作・以降同じ）</li>
+<li>ファイルの作成</li>
+<li>R Studio（ソースペイン）の外観の変更
+<ol type="1">
+<li>文字の配色の変更</li>
+<li>不可視文字を表示</li>
+</ol></li>
+<li>R Studioの保存・復元設定</li>
+<li>目次の追加（YAML）</li>
+<li>パッケージの追加（tidyverse）</li>
+<li>Setup Chunkの作成</li>
+<li>パッケージの読み込み</li>
+</ol>
+</section>
+<section id="アプリのインストール" class="slide level2">
+<h2>アプリのインストール</h2>
 <h3 id="r本体をインストール">1. R本体をインストール</h3>
 <ul>
 <li>ブラウザから<a href="https://cran.rstudio.com">R</a>にアクセス</li>
@@ -691,9 +807,9 @@
 </ul></li>
 </ul>
 </section>
-<section id="準備ファイルの作成" class="slide level2">
-<h2>準備：ファイルの作成</h2>
-<h3 id="この講習会用のフォルダ作成osで操作">3. この講習会用のフォルダ作成（OSで操作）</h3>
+<section id="ファイルの作成" class="slide level2">
+<h2>ファイルの作成</h2>
+<h3 id="この授業用のフォルダ作成osで操作">3. この授業用のフォルダ作成（OSで操作）</h3>
 <div class="callout callout-warning callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
@@ -714,8 +830,8 @@
 <li>プロジェクトを開くと、自動でそのフォルダが作業ディレクトリになり、パスの管理や依存関係の整理が簡単になる</li>
 </ul>
 </section>
-<section id="準備ファイルの作成-1" class="slide level2">
-<h2>準備：ファイルの作成</h2>
+<section id="ファイルの作成-1" class="slide level2">
+<h2>ファイルの作成</h2>
 <h3 id="r-quartoファイルの作成">5. R Quartoファイルの作成</h3>
 <ul>
 <li>メニュー &gt; File &gt; Quarto Document &gt; Create
@@ -737,8 +853,8 @@
 </div>
 </div>
 </section>
-<section id="準備うまくいかない場合" class="slide level2">
-<h2>準備：うまくいかない場合</h2>
+<section id="うまくいかない場合" class="slide level2">
+<h2>うまくいかない場合</h2>
 <ul>
 <li>Consoleパネルに表示されるメッセージが英語の場合：
 <ul>
@@ -753,8 +869,8 @@
 </ul></li>
 </ul>
 </section>
-<section id="準備r-studioペインの見方" class="slide level2">
-<h2>準備：R Studio（ペイン）の見方</h2>
+<section id="r-studioペインの見方" class="slide level2">
+<h2>R Studio（ペイン）の見方</h2>
 <ul>
 <li>4画面構成
 <ul>
@@ -762,41 +878,42 @@
 </ul></li>
 </ul>
 
-<img data-src="img/pane.png" class="r-stretch"></section>
-<section id="準備r-studioソースペインの外観の変更" class="slide level2">
-<h2>準備：R Studio（ソースペイン）の外観の変更</h2>
+<img data-src="img/pane.png" style="display: block; margin: 0 auto" class="r-stretch"></section>
+<section id="r-studioソースペインの外観の変更" class="slide level2">
+<h2>R Studio（ソースペイン）の外観の変更</h2>
+<h3 id="r-studioソースペインの外観の変更-1">6. R Studio（ソースペイン）の外観の変更</h3>
 <ul>
 <li>コードを書くうえで、<em>視認性はとても重要</em>です</li>
 </ul>
-<h3 id="文字の配色の変更">6. 文字の配色の変更</h3>
+<h4 id="文字の配色の変更">1. 文字の配色の変更</h4>
 <ul>
 <li>メニュー &gt; Tools &gt; Global Options &gt; Appearance &gt; <em>Editor Theme</em>
 <ul>
-<li>私（苅谷）は<a href="https://github.com/max-alletsee/rstudio-themes">rstudio-themes</a>からダウンロードしたrscodeio (anthonynorth) をaddで追加しています</li>
+<li>私は<a href="https://draculatheme.com/rstudio">Dracula Theme for RStudio</a>を使っています（addで追加）</li>
 </ul></li>
 </ul>
-<h3 id="不可視文字を表示">7. 不可視文字を表示</h3>
+<h4 id="不可視文字を表示">2. 不可視文字を表示</h4>
 <ul>
 <li>メニュー &gt; Tools &gt; Global Options &gt; Code &gt; Display
 <ul>
 <li><em>Show whitespace charactersにチェック</em></li>
 <li>Indentation guides:から<em>適当なものを選択</em>
 <ul>
-<li>themeによってはIndentation guidesが適用されない（rscodeioも適用対象外）</li>
+<li>themeによってはIndentation guidesが適用されないものあり</li>
 </ul></li>
 </ul></li>
 </ul>
 </section>
-<section id="準備r-studioソースペインの外観の変更-1" class="slide level2">
-<h2>準備：R Studio（ソースペイン）の外観の変更</h2>
+<section id="r-studioソースペインの外観の変更-2" class="slide level2">
+<h2>R Studio（ソースペイン）の外観の変更</h2>
 
-<img data-src="img/theme.png" class="r-stretch"></section>
-<section id="準備r-studioソースペインの外観の変更-2" class="slide level2">
-<h2>準備：R Studio（ソースペイン）の外観の変更</h2>
+<img data-src="img/theme.png" style="display: block; margin: 0 auto" class="r-stretch"></section>
+<section id="r-studioソースペインの外観の変更-3" class="slide level2">
+<h2>R Studio（ソースペイン）の外観の変更</h2>
 
-<img data-src="img/空白の可視化.png" class="r-stretch"></section>
-<section id="準備r-studioの保存復元設定" class="slide level2">
-<h2>準備：R Studioの保存・復元設定</h2>
+<img data-src="img/空白の可視化.png" style="display: block; margin: 0 auto" class="r-stretch"></section>
+<section id="r-studioの保存復元設定" class="slide level2">
+<h2>R Studioの保存・復元設定</h2>
 <ul>
 <li>意図しない古いデータが使われることを避ける必要があります</li>
 </ul>
@@ -811,11 +928,11 @@
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><img data-src="img/restore.png"></p>
+<p><img data-src="img/restore.png" style="display: block; margin: 0 auto"></p>
 </div></div>
 </section>
-<section id="準備r-studioの保存復元設定-1" class="slide level2">
-<h2>準備：R Studioの保存・復元設定</h2>
+<section id="r-studioの保存復元設定-1" class="slide level2">
+<h2>R Studioの保存・復元設定</h2>
 <ul>
 <li>「.RData」には、前回の作業中のすべてのオブジェクト（データフレーム・関数・変数など）が保存される（デフォルト設定）
 <ul>
@@ -829,8 +946,8 @@
 </ul></li>
 </ul>
 </section>
-<section id="準備目次の追加yaml" class="slide level2">
-<h2>準備：目次の追加（YAML）</h2>
+<section id="目次の追加yaml" class="slide level2">
+<h2>目次の追加（YAML）</h2>
 <h3 id="yamlを改変して目次を表示させる">9. YAMLを改変して､目次を表示させる</h3>
 <ul>
 <li>ソースペインの冒頭部分（YAML）を以下の様にする（タイトルは任意）</li>
@@ -874,8 +991,8 @@
 <li>YAMLを入力（またはコピー）できたら、「Outline」をクリック</li>
 </ul>
 </section>
-<section id="準備目次の追加yaml-1" class="slide level2">
-<h2>準備：目次の追加（YAML）</h2>
+<section id="目次の追加yaml-1" class="slide level2">
+<h2>目次の追加（YAML）</h2>
 <ul>
 <li>Renderをクリック
 <ul>
@@ -883,12 +1000,12 @@
 </ul></li>
 </ul>
 
-<img data-src="img/toc.png" class="r-stretch"></section>
-<section id="準備パッケージの追加tidyverse" class="slide level2">
-<h2>準備：パッケージの追加（tidyverse）</h2>
+<img data-src="img/toc.png" style="display: block; margin: 0 auto" class="r-stretch"></section>
+<section id="パッケージの追加tidyverse" class="slide level2">
+<h2>パッケージの追加（tidyverse）</h2>
 <ul>
-<li><p>modern Rは、tidyverse（整然としたデータ世界）という思想にもとづくパッケージ群からなる</p></li>
-<li><p>base Rには組み込まれていないので、パッケージとして追加することが必要</p></li>
+<li><p>modern R（<em>次週説明</em>）は、tidyverse（整然としたデータ世界）という思想にもとづくパッケージ群からなる</p></li>
+<li><p>base R（<em>次週説明</em>）には組み込まれていないので、パッケージとして追加することが必要</p></li>
 <li><p><a href="https://tidyverse.org/packages/">tidyverse</a>の中身</p>
 <ul>
 <li>dplyr（データ操作）; tidyr（データ整形）; ggplot2（可視化）; readr（データ読み込み）; purrr（関数型操作）; forcats（factor（カテゴリ変数）の処理）; stringr（文字列処理）; tibble（データフレーム拡張）; rubridate（日付・時間処理）</li>
@@ -905,8 +1022,8 @@
 </div>
 </div>
 </section>
-<section id="準備パッケージの追加tidyverse-1" class="slide level2">
-<h2>準備：パッケージの追加（tidyverse）</h2>
+<section id="パッケージの追加tidyverse-1" class="slide level2">
+<h2>パッケージの追加（tidyverse）</h2>
 <h3 id="パッケージの追加">10. パッケージの追加</h3>
 <ul>
 <li>Consoleパネル（画面左下）にカーソルを合わせる</li>
@@ -919,7 +1036,7 @@
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>インストール後、自動でパッケージを使えるわけではありません。各Quartoファイル内において、使いたいパッケージを<em>library() 関数で読み込む</em>必要があります（後述）</p>
+<p>インストール後、自動でパッケージを使えるわけではありません。各Quartoファイル内において、使いたいパッケージを<em>library() 関数で読み込む</em>必要があります（次週詳しく説明）</p>
 </div>
 </div>
 </div>
@@ -934,8 +1051,8 @@
 </div>
 </div>
 </section>
-<section id="準備setup-chunkの作成" class="slide level2">
-<h2>準備：Setup Chunkの作成</h2>
+<section id="setup-chunkの作成" class="slide level2">
+<h2>Setup Chunkの作成</h2>
 <h3 id="r-chunk">R Chunk</h3>
 <ul>
 <li>R Chunkは、Quartoファイルの中でRのコードを書くためのブロック</li>
@@ -960,9 +1077,9 @@
 </div>
 </div>
 </section>
-<section id="準備setup-chunkの作成-1" class="slide level2">
-<h2>準備：Setup Chunkの作成</h2>
-<h3 id="setup-chunkの作成">11. Setup Chunkの作成</h3>
+<section id="setup-chunkの作成-1" class="slide level2">
+<h2>Setup Chunkの作成</h2>
+<h3 id="setup-chunkの作成-2">11. Setup Chunkの作成</h3>
 <ul>
 <li>ソースペインで、YAMLの下に、Setup Chunkを作成
 <ul>
@@ -988,12 +1105,12 @@
 </div>
 </div>
 </section>
-<section id="準備パッケージの読み込み" class="slide level2">
-<h2>準備：パッケージの読み込み</h2>
+<section id="パッケージの読み込み" class="slide level2">
+<h2>パッケージの読み込み</h2>
 <ul>
 <li>先に作成したSetup Chunkで、modern Rの基本パッケージ群tidyverseを読み込む</li>
 </ul>
-<h3 id="パッケージの読み込み">12. パッケージの読み込み</h3>
+<h3 id="パッケージの読み込み-1">12. パッケージの読み込み</h3>
 <p>ソースペインで、Setup Chunk内に以下のコードを書く</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># パッケージの読み込み ---- #「○○ ----」と書いておくと、Outlineに表示されて見やすい（R Studioが区切り線として認識）</span></span>
 <span id="cb4-2"><a></a><span class="fu">library</span>(tidyverse) <span class="co"># modern Rの基本パッケージ</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1021,100 +1138,213 @@
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="rにふれてみようpalmer-penguins" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
+<h1>Ⅵ. Rにふれてみよう：palmer penguins</h1>
+
 </section>
-<section id="準備日本語表示ggplot2" class="slide level2">
-<h2>準備：日本語表示（ggplot2）</h2>
-<div class="callout callout-important callout-style-simple">
+<section id="データセット" class="slide level2">
+<h2>データセット</h2>
+<h3 id="データセットpalmer-penguins">データセット：palmer penguins</h3>
+<ul>
+<li><a href="https://allisonhorst.com">palmer penguins</a>は、R本体に組み込まれている練習用のデータセット（R4.5以降）
+<ul>
+<li>これは、パッケージを追加したり、データを読み込む必要がないことを意味する</li>
+<li>従来のデータセット（irisなど）とは違い、カラム名、欠損値（na）などの点で、教育的配慮のあるデータセットとされる</li>
+</ul></li>
+</ul>
+<div class="callout callout-warning callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
+<p>以前は、<a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a>という個別パッケージを読み込み、使用する必要がありました。パッケージで提供されるデータセットと、base Rのそれで、カラム名が一部、異なっています。インターネットで検索すると、パッケージのカラム名のコードが現状では多いので、気をつけて下さい</p>
+</div>
+</div>
+</div>
+</section>
+<section id="基本データセット" class="slide level2">
+<h2>基本：データセット</h2>
 <ul>
-<li>ggplot2（作図パッケージ）の諸関数は、初期設定のままでは、日本語を正しく表示できない場合があります
-<ul>
-<li>特に、WindowsやmacOSでは、デフォルトのフォント設定に日本語フォントが含まれていないため、文字化けや「□」「?」のような記号に置き換えられることがあります</li>
-<li>Linux環境では日本語フォントが標準でインストールされ、日本語がそのまま表示できることが多いです</li>
-</ul></li>
+<li>パーマーランド（南極）の3つの島に住むペンギンたちのデータ（<a href="https://allisonhorst.github.io/cv.html">Allison Horst</a>さん作成）</li>
 </ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="ペンギンの種類">ペンギンの種類：</h3>
+<ul>
+<li>Adelie（アデリーペンギン）</li>
+<li>Gentoo（ジェンツーペンギン）</li>
+<li>Chinstrap（ヒゲペンギン）</li>
+</ul>
+<h3 id="島の名前">島の名前：</h3>
+<ul>
+<li>Biscoe（ビスコー）</li>
+<li>Dream（ドリーム）</li>
+<li>Torgersen（トージャーセン）</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/penguins-small.png"></p>
+</div></div>
+</section>
+<section id="簡単な関数を使う" class="slide level2">
+<h2>簡単な関数を使う</h2>
+<ul>
+<li>関数を使ってみよう。以下のコードを入力（<em>自動補完</em>機能を確認下さい）</li>
+</ul>
+<h3 id="view関数">view()関数</h3>
+<ul>
+<li>データを表にして見やすく開く関数。データ全体をチェックしたり、列名や値、また集計途中のデータをざっと確認するときに便利</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a></a>  <span class="fu">view</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<h3 id="パイプ処理">パイプ処理</h3>
+<ul>
+<li>パイプ演算子（’|&gt;’次週以降に説明します）は頻繁に使います</li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>パイプのショートカット</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Win: Ctrl + Shift + M</li>
+<li>Mac: Command + Shift + M</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="簡単な関数を使う-1" class="slide level2">
+<h2>簡単な関数を使う</h2>
+<h3 id="head関数">head()関数</h3>
+<ul>
+<li>データフレームやベクトルの先頭の数行（デフォルトは6行）だけを表示</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  species    island bill_len bill_dep flipper_len body_mass    sex year
+1  Adelie Torgersen     39.1     18.7         181      3750   male 2007
+2  Adelie Torgersen     39.5     17.4         186      3800 female 2007
+3  Adelie Torgersen     40.3     18.0         195      3250 female 2007
+4  Adelie Torgersen       NA       NA          NA        NA   &lt;NA&gt; 2007
+5  Adelie Torgersen     36.7     19.3         193      3450 female 2007
+6  Adelie Torgersen     39.3     20.6         190      3650   male 2007</code></pre>
+</div>
+</div>
+</section>
+<section id="散布図を作ろう" class="slide level2">
+<h2>散布図を作ろう</h2>
+<ol type="1">
+<li>Codeのコードをクリップボードを使ってコピー</li>
+<li>先に作成したqmdファイルに貼り付ける</li>
+<li>chunkを実行（またはRender）</li>
+</ol>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>penguins <span class="sc">|&gt;</span> <span class="co"># tidyverseに組み込まれているサンプルのデータセットを使う</span></span>
+<span id="cb8-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">if_any</span>(<span class="fu">everything</span>(), is.na)) <span class="sc">|&gt;</span> <span class="co"># 欠損値を除外</span></span>
+<span id="cb8-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> bill_dep, <span class="at">colour =</span> species)) <span class="sc">+</span> <span class="co"># x軸、y軸、分布の色分けを指定</span></span>
+<span id="cb8-4"><a></a>  <span class="fu">geom_point</span>() <span class="co"># 散布図</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 </section></section>
 <section>
-<section id="rでできること" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
-<h1>Ⅱ. Rでできること</h1>
+<section id="rを使ってデータ分析を深める" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758, #6A5ACD)" data-background-transition="slide" data-background-color="#113758">
+<h1>Ⅶ. Rを使ってデータ分析を深める</h1>
 
 </section>
-<section id="aa-1" class="slide level2">
-<h2>aa</h2>
-<h3 id="国の政策への民意の反映総数年ごとの推移1">国の政策への民意の反映（総数・年ごとの推移）[^1]</h3>
-<ul>
-<li>あなたは、全般的にみて、国の政策に国民の考えや意見がどの程度反映されていると思いますか</li>
-</ul>
-
-<img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="データサイエンスの第一歩microsoft-excelの弊害-4" class="slide level2">
-<h2>データサイエンスの第一歩：Microsoft Excelの弊害</h2>
-<h3 id="国の政策への民意の反映クロス集計情報入手先">国の政策への民意の反映（クロス集計：情報入手先）</h3>
-<ul>
-<li>あなたは、社会の動きを知ろうとするときに、どこから情報を得ることが多いですか。（○はいくつでも）</li>
-</ul>
-
-<img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="選挙制度-公共東京書籍" class="slide level2">
-<h2>選挙制度： 『公共』（東京書籍）</h2>
-<h3 id="国の政策への民意の反映クロス集計現代日本懸念点">国の政策への民意の反映（クロス集計：現代日本懸念点）</h3>
-<ul>
-<li>あなたは、現在の日本の状況について、悪い方向に向かっていると思われるのは、どのような分野についてでしょうか。（○はいくつでも）</li>
-</ul>
-
-<img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="aa-2" class="slide level2">
-<h2>aa</h2>
-
-<img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
-<section id="データサイエンスの第一歩microsoft-excelの弊害-5" class="slide level2">
-<h2>データサイエンスの第一歩：Microsoft Excelの弊害</h2>
+<section id="社会意識に関する世論調査" class="slide level2">
+<h2>社会意識に関する世論調査</h2>
 <ul>
 <li>内閣府大臣官房政府広報室 世論調査「<a href="https://survey.gov-online.go.jp/living/202501/r06/r06-shakai/">社会意識に関する世論調査</a>」</li>
 </ul>
-</section></section>
+<h3 id="国の政策への民意の反映クロス集計">国の政策への民意の反映（クロス集計）</h3>
+<ul>
+<li>Q. あなたは、全般的にみて、国の政策に国民の考えや意見がどの程度反映されていると思いますか</li>
+<li>Q. あなたは、社会の動きを知ろうとするときに、どこから情報を得ることが多いですか（○はいくつでも）</li>
+</ul>
+
+<img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="社会意識に関する世論調査-1" class="slide level2">
+<h2>社会意識に関する世論調査</h2>
+<ul>
+<li>Q. あなたは、全般的にみて、国の政策に国民の考えや意見がどの程度反映されていると思いますか</li>
+<li>Q. あなたは、現在の日本の状況について、悪い方向に向かっていると思われるのは、どのような分野についてでしょうか（○はいくつでも）</li>
+</ul>
+
+<img data-src="slide_RandQuarto_w1_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
 <section>
 <section id="次回の授業と宿題" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758, #6A5ACD)" data-background-transition="slide" data-background-color="#113758">
-<h1>Ⅶ. 次回の授業と宿題</h1>
+<h1>Ⅷ. 次回の授業と宿題</h1>
 
+</section>
+<section id="復習用教材" class="slide level2">
+<h2>復習用教材</h2>
+<ul>
+<li><p><a href="https://drive.google.com/drive/folders/1tHuYbkzmpLwDvEZ6WMHb30gGz3shGgkQ?usp=share_link">Google Drive</a></p></li>
+<li><p>私が授業内で作業したコードを置いておきます。復習に活用して下さい（特にわからない箇所があった人）</p></li>
+</ul>
 </section>
 <section id="次回の授業と宿題-1" class="slide level2">
 <h2>次回の授業と宿題</h2>
 <h3 id="次回">次回</h3>
 <ul>
-<li>福祉国家と現代日本の課題
+<li>Rの基本的な操作方法(1)
 <ul>
-<li>12月17日（水）の配信を予定</li>
+<li>4月15日（水）</li>
 </ul></li>
 </ul>
 <h3 id="宿題">宿題</h3>
 <ul>
 <li>授業の感想：
 <ul>
-<li>回答先： <a href="https://forms.gle/tk4PUw5TdVw1fsXH9">Google Form</a></li>
-<li>締め切り：12月15日（月）23時59分</li>
+<li>回答先：<a href="https://forms.gle/yN8UYjBQEcR4sRSf6">Google Forms</a></li>
+<li>締め切り：4月10日（金）23時59分</li>
 </ul></li>
-<li>リーディング・アサインメント：
+<li>初回授業アンケート：
 <ul>
-<li>回答先：<a href="https://forms.gle/Jsfdix83vetVSvp76">Google Form</a></li>
-<li>締め切り：12月15日（月）23時59分</li>
+<li>回答先：<a href="https://forms.gle/yN8UYjBQEcR4sRSf6">Google Forms</a></li>
+<li>締め切り：4月10日（金）23時59分</li>
 </ul></li>
 </ul>
-</section></section>
-<section>
-<section id="引用文献" class="title-slide slide level1 center" data-background="linear-gradient(135deg, #113758 40%, #4B3F8A 100%)" data-background-transition="slide" data-background-color="#113758">
-<h1>引用文献</h1>
-
-</section>
-<section id="引用文献-1" class="slide level2">
-<h2>引用文献</h2>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>演習の宿題はありません</p>
+</div>
+</div>
+</div>
 
 
 </section></section>
