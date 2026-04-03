@@ -358,7 +358,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">Thu, 2, Apr, 2026</p>
+        <p class="date-modified">Fri, 3, Apr, 2026</p>
       </div>
     </div>
       
@@ -389,6 +389,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#研究分野別" id="toc-研究分野別" class="nav-link" data-scroll-target="#研究分野別">Ⅱ. 研究分野別</a>
   <ul class="collapse">
   <li><a href="#社会科学" id="toc-社会科学" class="nav-link" data-scroll-target="#社会科学">1. 社会科学</a></li>
+  </ul></li>
+  <li><a href="#政治学" id="toc-政治学" class="nav-link" data-scroll-target="#政治学">政治学</a></li>
+  <li><a href="#経済学" id="toc-経済学" class="nav-link" data-scroll-target="#経済学">経済学</a>
+  <ul class="collapse">
   <li><a href="#医学生物学" id="toc-医学生物学" class="nav-link" data-scroll-target="#医学生物学">2. 医学・生物学</a></li>
   <li><a href="#心理学" id="toc-心理学" class="nav-link" data-scroll-target="#心理学">3. 心理学</a></li>
   <li><a href="#自然科学" id="toc-自然科学" class="nav-link" data-scroll-target="#自然科学">4. 自然科学</a></li>
@@ -413,6 +417,12 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#モデル" id="toc-モデル" class="nav-link" data-scroll-target="#モデル">Ⅵ モデル</a></li>
   <li><a href="#データセット" id="toc-データセット" class="nav-link" data-scroll-target="#データセット">Ⅶ. データセット</a></li>
+  <li><a href="#アカデミックなtips" id="toc-アカデミックなtips" class="nav-link" data-scroll-target="#アカデミックなtips">Ⅸ. アカデミックなTips</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Ⅹ. Quarto</a>
+  <ul class="collapse">
+  <li><a href="#テンプレート" id="toc-テンプレート" class="nav-link" data-scroll-target="#テンプレート">テンプレート</a></li>
+  <li><a href="#機能拡張" id="toc-機能拡張" class="nav-link" data-scroll-target="#機能拡張">機能拡張</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -641,6 +651,44 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://juliasilge.com/blog/">Julia Silge</a></li>
 </ul>
 </section>
+</section>
+<section id="政治学" class="level2">
+<h2 class="anchored" data-anchor-id="政治学">政治学</h2>
+<ul>
+<li><a href="https://github.com/saschagobel/legislatoR">legislatoR</a>
+<ul>
+<li>世界各国の議員に関する標準化データベース</li>
+</ul></li>
+<li><a href="https://zmeers.github.io/ggparliament/">ggparliament</a>
+<ul>
+<li>議席構成や投票結果の可視化</li>
+</ul></li>
+<li><a href="https://christophertkenny.com/congress/">congress</a>
+<ul>
+<li>アメリカ連邦議会（Congress.gov API）が提供しているデータをプログラム的に取得できるインターフェースへのインターフェイス</li>
+</ul></li>
+<li><a href="https://alarm-redist.org/ggredist/">ggredist</a>
+<ul>
+<li>アメリカの政治地図作成のためのggplot2拡張機能</li>
+</ul></li>
+</ul>
+</section>
+<section id="経済学" class="level2">
+<h2 class="anchored" data-anchor-id="経済学">経済学</h2>
+<ul>
+<li><a href="https://business-science.github.io/tidyquant/">tidyquant</a>
+<ul>
+<li>株価データや金融指標の分析、時系列処理</li>
+</ul></li>
+<li><a href="https://cran.r-project.org/web/packages/BIS/index.html">BIS: Programmatic Access to Bank for International Settlements Data</a>
+<ul>
+<li>Bank for International Settlements (BIS) が公開している統計データをプログラム的に取得できるインターフェース</li>
+</ul></li>
+<li><a href="https://cran.r-project.org/web/packages/BOJ/index.html">BOJ: Interface to Bank of Japan Statistics</a>
+<ul>
+<li>日本銀行が公開している統計データをプログラム的に取得できるインターフェース</li>
+</ul></li>
+</ul>
 <section id="医学生物学" class="level3">
 <h3 class="anchored" data-anchor-id="医学生物学">2. 医学・生物学</h3>
 <ul>
@@ -653,11 +701,51 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://academic.oup.com/bioinformatics/article/37/22/4100/6283576">Interfacing Seurat with the R tidy universe</a></li>
 <li><a href="https://cran.r-project.org/web/packages/gggenes/vignettes/introduction-to-gggenes.html">Introduction to ‘gggenes’</a></li>
 <li><a href="https://github.com/ESR-NZ/nz-sars-cov2-variants">Prevelence of SARS-CoV-2 Variants of Concern in Aoteoroa New Zealand</a></li>
+<li><a href="https://github.com/therneau/survival">survival</a>
+<ul>
+<li>生存解析、カプラン・マイヤー曲線の描画</li>
+</ul></li>
+<li><a href="https://insightsengineering.github.io/tern/latest-tag/articles/tern.html">tern</a>
+<ul>
+<li>臨床試験報告表</li>
+</ul></li>
+<li><a href="https://github.com/dpc10ster/rjafroc/">RJafroc</a>
+<ul>
+<li>放射線画像（X線、CT、MRIなど） の読影能力の評価・解析</li>
+</ul></li>
+<li><a href="https://github.com/TomonoriHoshi/jpinfect">jpinfect</a>
+<ul>
+<li>日本での感染性疾患データの取得と処理のためのツール</li>
+</ul></li>
+<li><a href="https://www.bioconductor.org">Bioconductor</a>
+<ul>
+<li>遺伝子・ゲノム・トランスクリプトームなどのバイオデータの解析</li>
+</ul></li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/GenomicRanges.html">GenomicRanges</a>
+<ul>
+<li>Bioconductorの基盤パッケージ。ゲノム領域の計算・操作を行う</li>
+</ul></li>
+<li><a href="https://cran.r-project.org/web/packages/gggenes/vignettes/introduction-to-gggenes.html">gggenes</a>
+<ul>
+<li>遺伝子・オペロン構造の可視化（ggplot2ベース）</li>
+</ul></li>
 </ul>
 </section>
 <section id="心理学" class="level3">
 <h3 class="anchored" data-anchor-id="心理学">3. 心理学</h3>
 <ul>
+<li><a href="https://cran.r-project.org/web/packages/psych/index.html">psych</a>
+<ul>
+<li>心理尺度の分析、因子分析、信頼性分析</li>
+</ul></li>
+<li><a href="https://personality-project.org/r/psych-manual.pdf">psychTools</a>
+<ul>
+<li>psychの補助ツール</li>
+</ul></li>
+<li><a href="https://github.com/ykunisato/psyinfr">psyinfr</a>
+<ul>
+<li>心理学のインフラツールとなることを目的としたRパッケージ</li>
+</ul></li>
 <li><a href="http://blue.zero.jp/yokumura/R.html">無料統計ソフトRで心理学</a></li>
 <li><a href="https://kairi-pf.com/documents/r_psych_practice.html">心理統計Rワークショップ・杉本海里</a></li>
 <li><a href="https://www.kitaohji.com/book/b580057.html">山田剛史編著『Rによる心理学研究法入門』</a></li>
@@ -703,8 +791,18 @@ ul.task-list li input[type="checkbox"] {
 <section id="テキストマイニング" class="level3">
 <h3 class="anchored" data-anchor-id="テキストマイニング">2. テキストマイニング</h3>
 <ul>
-<li><a href="https://paithiov909.github.io/textmining-ja/">RとMeCabによる日本語テキストマイニングの前処理</a></li>
-<li><a href="https://quanteda.io/articles/pkgdown/quickstart_ja.html">quanteda（公式）</a></li>
+<li><a href="https://quanteda.io">quanteda</a>
+<ul>
+<li>自然言語処理（テキスト分析）全般に対応する総合ツール。大量の文章データを扱いやすい形に整理（コーパス作成、トークン化、特徴量行列化など）することで、高速かつ効率的な計算が可能。文書全体の統計や複雑な分析に向く</li>
+</ul></li>
+<li><a href="https://github.com/juliasilge/tidytext">tidytext</a>
+<ul>
+<li>「tidy（整然とした）」データフレーム形式でテキストを扱うことに特化。文章 → 単語のリスト（tidy形式）に変換して、dplyrやggplot2などtidyverseと組み合わせて分析可能。少量のデータや可視化・集計が中心の場合に便利</li>
+</ul></li>
+<li><a href="https://github.com/paithiov909/gibasa">gibasa</a>
+<ul>
+<li>日本語を含むCJK（Chinese, Japanese, Korean）文字列の形態素解析を目的とするパッケージ。日本語に強い形態素解析器MeCabをRから使えるようにラップしたRcppライブラリとして提供される。解析結果はtidytextやquantedaに渡して、統計解析や特徴量抽出に利用することが可能</li>
+</ul></li>
 </ul>
 </section>
 <section id="コレスポンデンス分析" class="level3">
@@ -716,6 +814,20 @@ ul.task-list li input[type="checkbox"] {
 <section id="クラスター分析" class="level3">
 <h3 class="anchored" data-anchor-id="クラスター分析">4. クラスター分析</h3>
 <p><a href="https://tidyclust.tidymodels.org/articles/hier_clust.html">Hierarchical Clustering（公式サイト）</a></p>
+<ul>
+<li>ANOVA（分析分散法）：<a href="https://mutopsy.github.io/pwranova/">pwranova</a>
+<ul>
+<li>ANOVAデザインにおける検出力解析を行うためのパッケージ。任意の因子数に対して、主効果および交互作用効果を完全サポート</li>
+</ul></li>
+<li>ネットワーク分析：<a href="https://ggraph.data-imaginist.com">ggraphh</a>
+<ul>
+<li>ネットワーク・関係データの解析・可視化</li>
+</ul></li>
+<li>時系列分析：<a href="https://github.com/robjhyndman/forecast">forecast</a>
+<ul>
+<li>経済・環境データの予測・解析</li>
+</ul></li>
+</ul>
 </section>
 </section>
 <section id="データ入手" class="level2">
@@ -784,8 +896,42 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://r-posts.com/basic-data-analysis-with-palmerpenguins/">Basic data analysis with palmerpenguins</a></li>
 <li><a href="https://towardsdatascience.com/penguins-dataset-overview-iris-alternative-9453bb8c8d95">Penguins Dataset Overview — iris alternative</a></li>
 </ul>
+</section>
+<section id="アカデミックなtips" class="level1">
+<h1>Ⅸ. アカデミックなTips</h1>
+<ul>
+<li>Kazuharu Yanagimoto, <a href="https://zenn.dev/nicetak">研究周り(特に経済学)で役に立つツール</a>
+<ul>
+<li>研究者を前提とするTipsです（レベル的に中級程度）。特に以下が重要</li>
+<li><a href="https://zenn.dev/nicetak/articles/r-tips-cleaning-2022">Rで論文を書く実践的なテクニック集 (プロジェクト・クリーニング編)</a></li>
+<li><a href="https://zenn.dev/nicetak/articles/r-tips-table-2022">Rで論文を書く実践的なテクニック集 (テーブル編)</a></li>
+<li><a href="https://zenn.dev/nicetak/articles/r-tips-graph-2022">Rで論文を書く実践的なテクニック集 (グラフ編)</a></li>
+<li>これらのTipsだけでなく、Typstなどの新しい技術の活用例（パッケージの開発も含む）も、とても参考になります</li>
+</ul></li>
+</ul>
+</section>
+<section id="quarto" class="level1">
+<h1>Ⅹ. Quarto</h1>
+<section id="テンプレート" class="level2">
+<h2 class="anchored" data-anchor-id="テンプレート">テンプレート</h2>
+<ul>
+<li>Christopher T. Kenny, <a href="https://christophertkenny.com/quarto.html#journal-templates">Quarto Extensions</a>
+<ul>
+<li>APSRやOxford University Press Articleなど、各種ジャーナルのテンプレートが用意されています</li>
+</ul></li>
+</ul>
+</section>
+<section id="機能拡張" class="level2">
+<h2 class="anchored" data-anchor-id="機能拡張">機能拡張</h2>
+<ul>
+<li><a href="https://quarto.org/docs/extensions/">Quarto Extensions</a>
+<ul>
+<li>ポインターやQRコード生成など、多くのExtensionが紹介されいています</li>
+</ul></li>
+</ul>
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>CHIHIRO KARIYA 2026</div></div></section></div></main> <!-- /main -->
