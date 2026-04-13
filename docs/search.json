@@ -753,42 +753,112 @@
     "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#本日の目標-1",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "本日の目標",
-    "text": "本日の目標\n\nデータセットの基本的な構造（行・列・変数）を理解する\nデータの型（数値・文字・文字など）の違いをなんとなく理解する\nデータを抽出・選択する基本的な操作を行ってみる\nデータを簡単に計算し、その結果を図にしてみる（詳しい説明、理解は次週以降）\n生成AIを補助ツールとして活用する可能性と注意点をなんとなく理解する"
+    "text": "本日の目標\n\nggplotの基本構造（data；aes；geom）を理解する\n作図は「何を見たいのか」と「データの型」で決まることをなんとなく理解する\nデータを抽出・選択する基本的な操作を行ってみる\nデータを簡単に計算し、その結果を図にしてみる（詳しい説明、理解は次週以降）\n生成AIを補助ツールとして活用する可能性と注意点をなんとなく理解する"
   },
   {
-    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#基本",
-    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#基本",
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#ggplot-1",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#ggplot-1",
     "title": "RとQuartoではじめるデータサイエンス",
-    "section": "基本",
-    "text": "基本\n基本\n\nggplotは「透明なシート（レイヤー）を重ねて図を作る仕組み」\n\n3要素\n\ndata（材料）：使うデータ\naes（設計図）：\n\nどのデータをどこに使うか」というルール\n全てのレイヤーに共通して適用される\n\ngeom（描く）：\n\n実際に図を描く部分\n複数重ねることができる（棒＋点＋線など）\ngeom_〇〇という関数名をもつ"
+    "section": "ggplot",
+    "text": "ggplot\nggplot\n\n公式サイト\n透明なシート（レイヤー）を重ねて図を作る仕組み\nパッケージggplot2\n\ntidyverseパッケージに組み込まれているので、追加インストール不要\n\nグラフィック文法にもとづく\n\n文法に基づいたグラフィックス表現システム\n\n\n\n見栄えの良いグラフを作るという非本質的な作業にユーザーに注力させるのではなく、データが本来持っている姿をグラフに反映させることを目指して提唱されているルール（Rによるオープン・データの可視化（2））"
   },
   {
-    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#一変数カテゴリ",
-    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#一変数カテゴリ",
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#ggplot-3",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#ggplot-3",
     "title": "RとQuartoではじめるデータサイエンス",
-    "section": "一変数：カテゴリ",
-    "text": "一変数：カテゴリ\n棒グラフ\n\ngeom_bar()\n\nxごとに件数を集計して棒の高さにする（自動カウント・元データを使用する）\n\nCf. geom_col()\n\nデータフレームの列をそのまま使って棒の高さにする（元データを集計してggplotに渡すことが必要）\nニ変数を要する\n\n\n\nCodePlot\n\n\n\npenguins |&gt; \n  drop_na(species) |&gt; \n  ggplot(aes(x = species)) +\n  geom_bar()"
+    "section": "ggplot",
+    "text": "ggplot\n3要素\ndata（材料）：使うデータ\naes（設計図）：\n\n美的マッピング（aes = aesthetic mapping）\nどのデータをどこに使うかというルール\n全てのレイヤーに共通して適用される\n\ngeom（描く）：\n\n実際に図を描く部分\n複数重ねることができる（棒＋点＋線など）\ngeom_〇〇という関数名をもつ\n\ngeometry（ジオメトリ）の略（英語発音は「ジィーム」に近い）"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#ggplot-4",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#ggplot-4",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "ggplot",
+    "text": "ggplot\n\n+ レイヤー演算子\n\nグラフの要素を順番に重ねて追加する\nggplotでは、図を「部品の重ね合わせ」として作るために使う記号\nパイプ演算子（|&gt;）が「処理の流れ」をつなぐのに対して、+ は「図の構成要素を追加する」\n\n\n\nTab APlot\n\n\n\npenguins |&gt;\n  drop_na(species, sex, body_mass) |&gt; \n  group_by(species, sex) |&gt;\n  summarise(avg_body_mass = mean(body_mass), .groups = \"drop\") |&gt;\n  ggplot(aes(x = species, y = avg_body_mass, fill = species)) +\n  geom_col() + # 今回説明するのはここまで。以後の見た目に関わる説明は第5回目に説明予定\n  facet_wrap(~ sex) +\n  labs(\n    title = \"ペンギンの種類ごとの平均体重\",\n    x = \"種類\",\n    y = \"平均体重（g）\"\n  ) +\n  scale_fill_paletteer_d(\"DresdenColor::briefcases\") +\n  theme(\n    legend.position = \"none\",\n    plot.title = element_text(size = 14, face = \"bold\"),\n    axis.text.x = element_text(angle = 5)\n  )"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#ggplot-5",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#ggplot-5",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "ggplot",
+    "text": "ggplot\n5 Named Graphs (5NG)\n\n棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ\nggplotでは他にも様々なグラフを作ることができるが、この授業ではこの5NGの習得を目標とする\n\nグラフの作り方\n\nグラフの種類ではなく、どんな関係を見たいかを考えることが重要\n\n例：分布；比較；関係；推移\n\nそのためにはデータの型（数値（離散；連続）；カテゴリ（名義尺度；順序尺度））を把握することが重要"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#試行錯誤の二つの留意点",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#試行錯誤の二つの留意点",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "試行錯誤の二つの留意点",
+    "text": "試行錯誤の二つの留意点\n\n1つ目は、何かを試すことには常に価値があるということです。たとえその結果何が起こるか完全にはわかっていなかったとしてもです。コンソールを怖がってはいけません。コードを使ってグラフを作るすばらしい点は、いったん壊したら元に戻せないような操作が含まれていないことです。もし何かがうまくいかなかったら、何が起きているかを特定し、それを修正し、そして作図コードをもう一度実行すればよいのです。\n\n\n2つ目の点は、ggplotを使った作業の主な流れはいつも同じだということです。それは、テーブル型のデータから始め、位置・色・形といったグラフに表示される審美的要素に当たる変数をマップし、そしてグラフを描画するために1つか2つのgeom_関数を選ぶ、という流れです。コードの上ではこの流れは、まずデータとマッピングに関する基礎的な情報を持ったオブジェクトを作り、そこに必要な情報を重ねたり加えたりするというプロセスで実装されます。この作図法を一度身につけてしまえば、特に審美的要素のマッピングの指定とその継承方法が重要ですが、図を作るのが簡単になります（ヒーリー，キーラン (2021), 124ページ）。"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#見た目の調整",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#見た目の調整",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "見た目の調整",
+    "text": "見た目の調整\n\nラベルや塗色の変更も重要だが、回を分けて紹介する\n\n今回は必要最低限の範囲で簡単に言及する"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#単変数カテゴリ",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#単変数カテゴリ",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "単変数：カテゴリ",
+    "text": "単変数：カテゴリ\n棒グラフ\n\ngeom_bar()\n\nxごとに件数を集計して棒の高さにする（自動カウント・元データを使用する）\n\nCf. よく似た関数にgeom_col()がある 後ほど説明します\n\nデータフレームの列をそのまま使って棒の高さにする（元データを集計してggplotに渡すことが必要）\n\n\n\nCodePlot\n\n\n\npenguins |&gt; \n  drop_na(species) |&gt; \n  ggplot(aes(x = species)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#単変数連続値",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#単変数連続値",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "単変数：連続値",
+    "text": "単変数：連続値\nヒストグラム\n\ngeom_histogram()\n\n数値の「分布」を見る\n値を区間（ビン）に分けて数える\n\n\nビン区間（デフォルト）\n\nCodePlot\n\n\n\npenguins |&gt; \n  drop_na(body_mass) |&gt; \n  filter(species == \"Adelie\") |&gt; # 複数の種を混ぜてプロットすると意味をとりにくくなるため、種を限定\n  ggplot(aes(x = body_mass)) +\n  geom_histogram()"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#単変数連続値-ヒストグラム",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#単変数連続値-ヒストグラム",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "単変数：連続値 > ヒストグラム",
+    "text": "単変数：連続値 &gt; ヒストグラム\nビン区間を引数で指定\n\nCodePlot\n\n\n\npenguins |&gt; \n  drop_na(body_mass) |&gt; \n  filter(species == \"Adelie\") |&gt; \n  ggplot(aes(x = body_mass)) +\n  geom_histogram(binwidth = 300)"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#演習単変量の作図",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#演習単変量の作図",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "演習：単変量の作図",
+    "text": "演習：単変量の作図\n演習問題①\n\nspecies以外の変数を使って、棒グラフを作って下さい\n\n\n\n\n\n\n\nデータの型をよく確認して、棒グラフに使える変数を選びましょう\n\n\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数数値-数値",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数数値-数値",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "二変数：数値 × 数値",
+    "text": "二変数：数値 × 数値\n散布図\n\ngeom_point\n2つの数値変数の関係（傾向・ばらつき）を可視化\n読み取りのポイント\n\n全体の傾向（右上がり／右下がり）\nばらつき（点の広がり）\n外れ値（他と大きく離れた点）\n\n\n\nTab ATab B\n\n\n\npenguins |&gt; \n  drop_na(bill_len, bill_dep) |&gt; \n  ggplot(aes(x = bill_len, y = bill_dep)) +\n  geom_point()"
   },
   {
     "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数カテゴリカテゴリ",
     "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数カテゴリカテゴリ",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "二変数：カテゴリ×カテゴリ",
-    "text": "二変数：カテゴリ×カテゴリ\n棒グラフ\n\n美的マッピング（aes = aesthetic mapping）で fill を指定\n\n内訳ごとに色分けされて積み上げ表示される\n表示方法は geom_bar の position 引数で変更できる\nstack（何も指定しなければstack）; dodge; fill\n\n\n\nCodePlot\n\n\n\npenguins |&gt; \n  drop_na(species, island) |&gt; \n  ggplot(aes(x = island, fill = species)) +\n  geom_bar() # position = stackがデフォルト"
+    "text": "二変数：カテゴリ×カテゴリ\n積み上げ棒グラフ\n\naes で fill を指定\n\n内訳ごとに色分けされて積み上げ表示される\n表示方法は geom_bar の position 引数で変更できる\n\n3種類：stack（何も指定しなければstack）; dodge; fill\n\nfillは多くのgeom関数で使えるが、表示のされ方は関数で異なる\n\n\n\nCodePlot\n\n\n\npenguins |&gt; \n  drop_na(species, island) |&gt; \n  ggplot(aes(x = island, fill = species)) + # fillを加えただけ\n  geom_bar() # position = stackがデフォルト"
   },
   {
     "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数カテゴリカテゴリ-1",
     "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数カテゴリカテゴリ-1",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "二変数：カテゴリ×カテゴリ",
-    "text": "二変数：カテゴリ×カテゴリ\n並列棒グラフ\n\ngeom_bar(position = “dodge”)\n\ndodge（避ける、かわすの意）：重なりを避けて横に配置\n\n\n\nCodePlot\n\n\n\npenguins |&gt; \n  drop_na(species, island) |&gt; \n  ggplot(aes(x = island, fill = species)) +\n  geom_bar(position = \"dodge\")"
+    "text": "二変数：カテゴリ×カテゴリ\n並列棒グラフ\n\ngeom_bar(position = \"dodge\")\n\ndodge（避ける、かわすの意）：重なりを避けて横に配置\n\n\n\nCodePlot\n\n\n\npenguins |&gt; \n  drop_na(species, island) |&gt; \n  ggplot(aes(x = island, fill = species)) +\n  geom_bar(position = \"dodge\")"
   },
   {
     "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数カテゴリカテゴリ-2",
     "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数カテゴリカテゴリ-2",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "二変数：カテゴリ×カテゴリ",
-    "text": "二変数：カテゴリ×カテゴリ\n積み上げ棒グラフ\n\ngeom_bar(position = “fill”)\n\n\nCodePlotPlot（軸ラベルの修正）\n\n\n\npenguins |&gt; \n  drop_na(species, island) |&gt; \n  ggplot(aes(x = island, fill = species)) +\n  geom_bar(position = \"fill\")"
+    "text": "二変数：カテゴリ×カテゴリ\n帯グラフ\n\ngeom_bar(position = \"fill\")\n\n各カテゴリの構成比（割合）で表示\n\n\n\nCodePlotPlot（軸ラベルの修正）\n\n\n\npenguins |&gt; \n  drop_na(species, island) |&gt; \n  ggplot(aes(x = island, fill = species)) +\n  geom_bar(position = \"fill\")"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数連続値カテゴリ",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数連続値カテゴリ",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "二変数：連続値×カテゴリ",
+    "text": "二変数：連続値×カテゴリ\nヒストグラム\n\ngeom_histogram()\n\n特別な引数はない\nggplotに渡す前にグループ分けを行い、facetで分ける\n\n分布状況の確認に加え、グループ間比較が可能\n\n\nTab ATab B\n\n\n\npenguins |&gt; \n  drop_na(body_mass) |&gt;\n  group_by(species) |&gt; \n  ggplot(aes(x = body_mass)) +\n  geom_histogram() +\n  facet_wrap(~ species)"
   },
   {
     "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数カテゴリ数値",
@@ -798,60 +868,95 @@
     "text": "二変数：カテゴリ×数値\n棒グラフ：geom_col()\n\nカテゴリ別に集計した数値を可視化\ndplyr系の関数（summariseなど）についての知識を要する\nここでは算出した平均値をプロットした例を示す\n\n\nCodeggplotに渡すデータPlot\n\n\n\npenguins |&gt; \n  drop_na(species, body_mass) |&gt;\n  group_by(species) |&gt; \n  summarise(avg_body_mass = mean(body_mass)) |&gt;\n  ggplot(aes(x = species, y = avg_body_mass)) +\n  geom_col()\n\n\n\n\n\n\n\n    \n\n    \n\n    \n    \n    \n      \n        \n        \n              \n                species\n                avg_body_mass\n              \n        \n        \n        \n                \n                  Adelie\n                  3700.662\n                \n                \n                  Chinstrap\n                  3733.088\n                \n                \n                  Gentoo\n                  5076.016"
   },
   {
-    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#section",
-    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#section",
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数連続値または順序-数値",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数連続値または順序-数値",
     "title": "RとQuartoではじめるデータサイエンス",
-    "section": "3",
-    "text": "3"
+    "section": "二変数：連続値（または順序） × 数値",
+    "text": "二変数：連続値（または順序） × 数値\n折れ線グラフ\n\ngeom_line\n\n推移の可視化　Cf. geom_bar：分布の可視化\n\n\n\n\n\n\n\n\ngeom_lineで観測数の変化を描く場合、penguinsデータには観測数の列がないため、ggplotに渡す前に計算する必要あり\n\n\n\n\nTab ATab BPlot（x軸ラベルの修正・説明は後日）\n\n\n\npenguins |&gt;\n  count(year) |&gt; \n  ggplot(aes(x = year, y = n)) +\n  geom_line()"
   },
   {
-    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#データセットとは何か",
-    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#データセットとは何か",
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#演習二変数の作図",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#演習二変数の作図",
     "title": "RとQuartoではじめるデータサイエンス",
-    "section": "データセットとは何か",
-    "text": "データセットとは何か\n⑴ 試行錯誤の大切さ\n\n試行錯誤を始めるときに、2つの点を心に留めてください。1つ目は、何かを試すことには常に価値があるということです。たとえその結果何が起こるか完全にはわかっていなかったとしてもです。コンソールを怖がってはいけません。コードを使ってグラフを作るすばらしい点は、いったん壊したら元に戻せないような操作が含まれていないことです。もし何かがうまくいかなかったら、何が起きているかを特定し、それを修正し、そして作図コードをもう一度実行すればよいのです。\n\n\n2つ目の点は、ggplotを使った作業の主な流れはいつも同じだということです。それは、テーブル型のデータから始め、位置・色・形といったグラフに表示される審美的要素に当たる変数をマップし、そしてグラフを描画するために1つか2つのgeom_関数を選ぶ、という流れです。コードの上ではこの流れは、まずデータとマッピングに関する基礎的な情報を持ったオブジェクトを作り、そこに必要な情報を重ねたり加えたりする というプロセスで実装されます。この作図法を一度身につけてしまえば、特に審美的要素のマッピングの指定とその継承方法が重要ですが、図を作るのが簡単になります（ヒーリー，キーラン (2021), 124ページ）。"
+    "section": "演習：二変数の作図",
+    "text": "演習：二変数の作図\n演習問題②\n\n箱ひげ図をgeom_boxplotを使って作図して下さい。どの変数を使ってもよいですが、一つはカテゴリ変数を使ってグループを分けて下さい\n\nヒント\n\nカテゴリ変数 × 数値変数の2変数を使います。同種の組み合わせであるヒストグラムのコードが参考になります\n箱ひげ図では、数値変数をy軸に、カテゴリ変数をx軸にすると分布が比較しやすくなります\n\n応用\n\n早く終わった人は、完成したコードに geom_jitter() を追加し、データ点の見え方がどのように変わるか確認しましょう"
   },
   {
-    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#データを切り出す操作-1",
-    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#データを切り出す操作-1",
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#演習二変数の作図-1",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#演習二変数の作図-1",
     "title": "RとQuartoではじめるデータサイエンス",
-    "section": "データを切り出す操作",
-    "text": "データを切り出す操作\n\nslice()関数\nfilter()関数\nfilter_out()関数\nselect()関数\n\n列の計算（縦） - sum()：全部足す - mean()：平均を出す\n行の計算（横） - rowSums()：横に足す\n\n\n[1] 130 170"
+    "section": "演習：二変数の作図",
+    "text": "演習：二変数の作図"
   },
   {
-    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#section-1",
-    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#section-1",
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#多変量",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#多変量",
     "title": "RとQuartoではじめるデータサイエンス",
-    "section": "1",
-    "text": "1\n\n\n   species   n   percent\n    Adelie 152 0.4418605\n Chinstrap  68 0.1976744\n    Gentoo 124 0.3604651"
+    "section": "多変量",
+    "text": "多変量\n多変量（3変数以上）\n\n複数の変数を加えることで情報量が増える\n\n➡︎ 関係や違い、各変数の特徴が見えやすくなり、新たな疑問や仮説が生まれる\n\nggplotによる多変量の可視化\n\n色で区別する：colour（点・線）、fill（面）\n図を分ける：facet\nCf. 重回帰分析\n\n\n\n\n\n\n\n\nこの段階になると決まりごとは少なくなります。何をどのように見せたいのかを考えて、適切な方法（色・分割など）を選ぶことが大切です。同じデータでも見せ方によって伝わり方が大きく変わることを理解しましょう。"
   },
   {
-    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#section-2",
-    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#section-2",
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数数値-数値-1",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数数値-数値-1",
     "title": "RとQuartoではじめるデータサイエンス",
-    "section": "2",
-    "text": "2\n\n\n\n\n    \n\n    \n\n    \n    \n    \n      \n        \n        \n              \n                species\n                female\n                male\n                NA_\n              \n        \n        \n        \n                \n                  Adelie\n                  73\n                  73\n                  6\n                \n                \n                  Chinstrap\n                  34\n                  34\n                  0\n                \n                \n                  Gentoo\n                  58\n                  61\n                  5"
+    "section": "二変数：数値 × 数値",
+    "text": "二変数：数値 × 数値\n色で区別する：colour（点）の例\n\ngeom_pointにcolourを追加\n\n\nCodePlotPlot（二変数）\n\n\n\npenguins |&gt; \n  drop_na(bill_len, bill_dep, species) |&gt; \n  ggplot(aes(x = bill_len, y = bill_dep, colour = species)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n種ごとに分布のかたまりがあり、くちばしの形に違いが見られる"
   },
   {
-    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#section-3",
-    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#section-3",
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#多変量連続値または順序-数値-カテゴリ",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#多変量連続値または順序-数値-カテゴリ",
     "title": "RとQuartoではじめるデータサイエンス",
-    "section": "4",
-    "text": "4\n•   「一番大きいペンギンは？」がすぐできる\npenguins |&gt; arrange(desc(body_mass_g)) |&gt; slice(1)\npenguins |&gt; summarise(avg_weight = mean(body_mass_g, na.rm = TRUE))"
+    "section": "多変量：連続値（または順序） × 数値 × カテゴリ",
+    "text": "多変量：連続値（または順序） × 数値 × カテゴリ\n色で区別する：fill（面）の例\n\ngeom_histogramにfillを追加\n\n\nCodePlotPlot（二変数）\n\n\n\npenguins |&gt; \n  drop_na(body_mass, island, species) |&gt;\n  group_by(species, island) |&gt; \n  ggplot(aes(x = body_mass, fill = island)) +\n  geom_histogram()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n種と体重の関係が明確に"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#多変量連続値または順序-数値-カテゴリ-1",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#多変量連続値または順序-数値-カテゴリ-1",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "多変量：連続値（または順序） × 数値 × カテゴリ",
+    "text": "多変量：連続値（または順序） × 数値 × カテゴリ\n図を分ける：facetの例\n\ngeom_histogramにfacetを追加\n\n\nCodePlotPlot（二変数）\n\n\n\npenguins |&gt; \n  drop_na(body_mass, island, species) |&gt;\n  group_by(species, island) |&gt; \n  ggplot(aes(x = body_mass, fill = island)) +\n  geom_histogram() +\n  facet_wrap(~ species)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n種と体重の関係が明確に"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#多変量連続値または順序-数値-カテゴリ-2",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#多変量連続値または順序-数値-カテゴリ-2",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "多変量：連続値（または順序） × 数値 × カテゴリ",
+    "text": "多変量：連続値（または順序） × 数値 × カテゴリ\n色で区別する：colour（線）の例\n\ngeom_lineにcolourを追加\n\n\nCodePlotPlot（二変数）\n\n\n\npenguins |&gt;\n  count(year, species) |&gt;\n  ggplot(aes(x = year, y = n, colour = species)) +\n  geom_line()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdelieの観測数は増えていないことが明らかに\n2008年に見られる変化は実際の個体数の変化？それとも観測方法などの影響？（問いの浮上）"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#演習多変量の作図",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#演習多変量の作図",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "演習：多変量の作図",
+    "text": "演習：多変量の作図\n\npenguinsのデータセットを使い、3つの変数を使った図を作って下さい（サンプルコードの書き写しはダメです）。図（関数）や変数は自由です。また、多変量の図を作図することで新たにわかったことを簡単にまとめて下さい\n\n\n\n\n\n\n\n色（colour）、大きさ（size）、図の分割（facet）などを活用してみましょう\n\n\n\n\n\n\n−+\n15:00"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#発展的理解",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#発展的理解",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "発展的理解",
+    "text": "発展的理解\n\nfacet_gridを使うとさらに変数を加え、情報量を足せる"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#発展的理解-1",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#発展的理解-1",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "発展的理解",
+    "text": "発展的理解\n\n多変量の図を作ることは、現実の複雑な関係を一度に見ることにつながります。例えば、実際の社会現象（犯罪率、健康、教育など）は、一つ、二つの変数では説明できません\n\nアメリカの犯罪率：人種・年齢・学歴・所得・地域など、複数の要因が関係していると考えられます。そしてこれらの変数のうちには、共変関係にあるものもあります。多変量の可視化は、そのような変数同士の関係を見える形で捉えるためのものです\n\n発展的理解"
   },
   {
     "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#次回の授業と宿題-1",
     "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#次回の授業と宿題-1",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "次回の授業と宿題",
-    "text": "次回の授業と宿題\n次回：4月30日（木）\n\nRの基本的な操作方法(2)\n\n宿題\n\n授業の感想：\n\n回答先：Google Forms\n締め切り：4月24日（金）23時59分 ### 演習：\n\n内容：授業内で課した演習①〜④\nファイル：演習の該当箇所を抜き出すのではなく、qmdファイルをそのまま提出\n\nファイル名：氏名をかな表記にして下さい\n例：かりやちひろ.qmd\n\n回答先：dropbox\n締め切り：4月30日（月）23時59分"
+    "text": "次回の授業と宿題\n次回：4月22日（水）\n\nテーブル；可視化(1)"
   },
   {
-    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#section-4",
-    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#section-4",
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#次回の授業と宿題-2",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#次回の授業と宿題-2",
     "title": "RとQuartoではじめるデータサイエンス",
-    "section": "33",
-    "text": "33"
+    "section": "次回の授業と宿題",
+    "text": "次回の授業と宿題\n\n\n宿題\n\n授業の感想：\n\n回答先：Google Forms\n締め切り：4月17日（金）23時59分\n\n\n\n演習：\n\n内容：授業内で課した演習①②\nファイル：演習の該当箇所を抜き出すのではなく、qmdファイルをそのまま提出\n\nファイル名：氏名をかな表記にして下さい\n例：かりやちひろ.qmd\n\n回答先：dropbox\n締め切り：4月20日（月）23時59分"
   },
   {
     "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#引用文献-1",
@@ -882,18 +987,18 @@
     "text": "Week 2 (4/15) ：Rの基本的な操作方法(1)\n\n具体的な内容：\n\nデータの構造と型；データの抽出と集計；欠損値；生成AI；base R とTidyverse；パイプ演算子\n\nレジュメ / 教材(スライド)"
   },
   {
-    "objectID": "teaching/RandQuarto/index.html#week-3-422-テーブル可視化1",
-    "href": "teaching/RandQuarto/index.html#week-3-422-テーブル可視化1",
+    "objectID": "teaching/RandQuarto/index.html#week-3-422-可視化1",
+    "href": "teaching/RandQuarto/index.html#week-3-422-可視化1",
     "title": "RとQuartoではじめるデータサイエンス：データを可視化する《2026》",
-    "section": "Week 3 (4/22) ：テーブル；可視化(1)",
-    "text": "Week 3 (4/22) ：テーブル；可視化(1)\n\n具体的な内容：\n\nテーブル出力；クロス集計；ggplot2；プロットとレイヤー；5 Named Graphs (5NG：棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ）の頭出し；図の書き出し；レポートのためのデータセット探し"
+    "section": "Week 3 (4/22) ：可視化(1)",
+    "text": "Week 3 (4/22) ：可視化(1)\n\n具体的な内容：\n\nggplot2（プロットとレイヤー）；5 Named Graphs (5NG：棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ）；図の書き出し；レポートのためのデータセット探し"
   },
   {
     "objectID": "teaching/RandQuarto/index.html#week-4-430rの基本的な操作方法2",
     "href": "teaching/RandQuarto/index.html#week-4-430rの基本的な操作方法2",
     "title": "RとQuartoではじめるデータサイエンス：データを可視化する《2026》",
     "section": "Week 4 (4/30)：Rの基本的な操作方法(2)",
-    "text": "Week 4 (4/30)：Rの基本的な操作方法(2)\n\n具体的な内容：\n\nデータの読み込みと書き出し；csv editor；記述統計量；代入；データの拡張；縦持ちデータ・横持ちデータ；データの結合；水準の設定\n\n\n\n\n\n\n\n\n4月29日（祝）の振替授業日です"
+    "text": "Week 4 (4/30)：Rの基本的な操作方法(2)\n\n具体的な内容：\n\nテーブル出力；クロス集計表；データの読み込みと書き出し；csv editor；記述統計量；代入；データの拡張；縦持ちデータ・横持ちデータ；データの結合；水準の設定\n\n\n\n\n\n\n\n\n4月29日（祝）の振替授業日です"
   },
   {
     "objectID": "teaching/RandQuarto/index.html#week-5-513可視化2",
@@ -1089,7 +1194,7 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w2.html#授業の感想",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "授業の感想",
-    "text": "授業の感想\n\n今まではデータに対する図や表はエクセルで十分だと考えていたのですが、今回の授業でその良さを知り、特に元データをいじらないという点を聞いた際に、エクセルで元データをいじったせいで面倒臭いことになったことを思い出して、自分の中でとても納得がいったからです（寺西さん）\n\n\n私はパソコンの操作に自信がなく、授業前まで計算関連の数学的な部分で授業についていけなくなるのではないかと不安を感じていた（宮園さん）\n\n\nどこを押せば先生と同じページになるのかが分からなくて手こずってしまった（吉田さん）"
+    "text": "授業の感想\n\n今まではデータに対する図や表はエクセルで十分だと考えていたのですが、今回の授業でその良さを知り、特に元データをいじらないという点を聞いた際に、エクセルで元データをいじったせいで面倒臭いことになったことを思い出して、自分の中でとても納得がいったからです（寺西さん）\n\n\n私はパソコンの操作に自信がなく、授業前まで計算関連の数学的な部分で授業についていけなくなるのではないかと不安を感じていた（宮園さん）\n\n\nどこを押せば先生と同じページになるのかが分からなくて手こずってしまった（吉田さん）\n\n\nプログラムを使うのが日本語だけで不安だったが英語でこの言語についてリソース多いのが知りました（Dulmaa Mandalさん）。"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w2.html#前回の補足viewrが自動展開しない",
@@ -1117,7 +1222,7 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w2.html#初回アンケート集計結果-前回の積み残し",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "初回アンケート集計結果 / 前回の積み残し",
-    "text": "初回アンケート集計結果 / 前回の積み残し\n\n初回アンケート集計\n\n前回の積み残し\n\nRにふれてみよう：palmer penguins\n\n前回作成したRprojファイルを開く（直接qmdファイルを開かない）\n確認してほしいこと：\n\nSetup Chunkの有無\nSetup Chunk内にlibrary(tidyverse)というコードの有無\n\n\nRを使ってデータ分析を深める"
+    "text": "初回アンケート集計結果 / 前回の積み残し\n\n初回アンケート集計\n\n前回の積み残し\n\nRにふれてみよう：palmer penguins\n\n前回作成したRprojファイルを開く（直接qmdファイルを開かない）\n確認してほしいこと：\n\nSetup Chunkの有無\nSetup Chunk内にlibrary(tidyverse)というコードの有無\n\n\nRを使ってデータ分析を深める\n過年度のレポート紹介（実演のみ）"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w2.html#データフレームとは何か",
@@ -1327,7 +1432,7 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w2.html#rの構造",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "Rの構造",
-    "text": "Rの構造\n3層構造\n\n\n\n\n\n\n\ngraph BT\n    A([\"&lt;strong&gt;base R&lt;/strong&gt;\nRの基本構文・関数\n例: mean(), sum(), if\"]) --&gt; \n    B([\"&lt;strong&gt;modern R&lt;/strong&gt;\n便利な文法・スタイル\n例: |&gt; パイプ, tibble, dplyr 文法,&lt;br&gt; ggplot2 文法\"]) --&gt; \n    C([\"&lt;strong&gt;Packages&lt;/strong&gt;\nRに追加するツール集\n例: tidyverse, ggplot2,&lt;br&gt;readr, shiny\"])\n\n\n%% ノードのスタイル\nstyle A text-align:center\nstyle B text-align:center\nstyle A text-align:center, fill:#FFD700,stroke:#333,stroke-width:1px,font-weight:bold;\nstyle B text-align:center, fill:#87CEFA,stroke:#333,stroke-width:1px,font-weight:bold;\nstyle C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight:bold;\n\n\n\n\n\n\n\n\nPackages\n\n目的別に追加するツール：家具や家電\n\nmodern R：tidyな（整然とした）R:\n\nHadley Wickham（ハドリー・ウィッカム）が2016年に開発（統計言語 「R」の神はなぜ無償で貢献したのか）\n近年の改良で、より読みやすく・便利になった文法：家の骨組み・壁・柱、設計の考え方\n\n関数は動詞ベース（何をするかがわかりやすい）\n例：filter（行抽出）; select（列抽出）\nCf. base R: subset（数学の「部分集合」に由来）\n\n\nbase R：統計学者が1990年代に開発（S言語を継承）\n\nR言語そのもの：家の基礎部分"
+    "text": "Rの構造\n3層構造\n\n\n\n\n\n\n\ngraph BT\n    A([\"&lt;strong&gt;base R&lt;/strong&gt;\nRの基本構文・関数\n例: mean(), sum(), if\"]) --&gt; \n    B([\"&lt;strong&gt;modern R&lt;/strong&gt;\n便利な文法・スタイル\n例: |&gt; パイプ, tibble, dplyr 文法,&lt;br&gt; ggplot2 文法\"]) --&gt; \n    C([\"&lt;strong&gt;Packages&lt;/strong&gt;\nRに追加するツール集\n例: tidyverse, ggplot2,&lt;br&gt;readr, shiny\"])\n\n\n%% ノードのスタイル\nstyle A text-align:center\nstyle B text-align:center\nstyle A text-align:center, fill:#FFD700,stroke:#333,stroke-width:1px,font-weight:bold;\nstyle B text-align:center, fill:#87CEFA,stroke:#333,stroke-width:1px,font-weight:bold;\nstyle C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight:bold;\n\n\n\n\n\n\n\n\nPackages\n\n目的別に追加するツール：家具や家電\n\nmodern R：tidyな（整然とした）R:\n\nHadley Wickham が2016年に開発 1\n近年の改良で、より読みやすく・便利になった文法：家の骨組み・壁・柱、設計の考え方\n\n関数は動詞ベース（何をするかがわかりやすい）\n例：filter（行抽出）; select（列抽出） Cf. base R: subset（数学「部分集合」に由来）\n\n\nbase R：統計学者が1990年代に開発\n\nR言語そのもの：家の基礎部分\n\n\n\nHadley Wickham, A personal history of the tidyverse"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w2.html#rの手順",
@@ -1335,6 +1440,13 @@
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "Rの手順",
     "text": "Rの手順\n\n\n\n\n\nflowchart TB\n    Start([YAML設定（ドキュメントの設定）:&lt;br&gt; タイトル、出力形式、テーマなど]) --&gt; B[データの読み込み・前処理:&lt;br&gt; dplyr / tidyr\n    &lt;br&gt;（フィルタリング / 新列作成・計算&lt;br&gt;/ 縦持ち・横持ち変換 / 欠損値処理）]\n    B --&gt; C1[データの概要と可視化:&lt;br&gt; skim, gt_summary / ggplot2]\n    B --&gt; C2[統計分析・モデル構築:&lt;br&gt; lm, glm, 因果推論]\n    C1 --&gt; D[結果の評価・解釈:&lt;br&gt; broom, modelsummary, performance]\n    C2 --&gt; D\n    D --&gt; End([レポート作成（レンダー）:&lt;br&gt; knitr / rmarkdown&lt;br&gt;（pdf; reveal.js; webpage; docx; pptx; pdf）])\n\n    %% 色付け\n    style Start fill:#a2d4f1,stroke:#333,stroke-width:2px\n    style End fill:#f1d4a2,stroke:#333,stroke-width:2px\n    style C1 fill:#d4f1a2,stroke:#333,stroke-width:1px\n    style C2 fill:#f1a2d4,stroke:#333,stroke-width:1px"
+  },
+  {
+    "objectID": "teaching/RandQuarto/slide_RandQuarto_w2.html#quartoファイルの基本構成",
+    "href": "teaching/RandQuarto/slide_RandQuarto_w2.html#quartoファイルの基本構成",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "quartoファイルの基本構成",
+    "text": "quartoファイルの基本構成"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w2.html#パイプ処理",
@@ -1376,7 +1488,7 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w2.html#次回の授業と宿題-2",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "次回の授業と宿題",
-    "text": "次回の授業と宿題\n宿題\n\n授業の感想：\n\n回答先：Google Forms\n締め切り：4月17日（金）23時59分\n\n\n演習：\n\n内容：授業内で課した演習①〜④\nファイル：演習の該当箇所を抜き出すのではなく、qmdファイルをそのまま提出\n\nファイル名：氏名をかな表記にして下さい\n例：かりやちひろ.qmd\n\n回答先：dropbox\n締め切り：4月20日（月）23時59分"
+    "text": "次回の授業と宿題\n\n\n宿題\n\n授業の感想：\n\n回答先：Google Forms\n締め切り：4月17日（金）23時59分\n\n\n\n演習：\n\n内容：授業内で課した演習①〜④\nファイル：演習の該当箇所を抜き出すのではなく、qmdファイルをそのまま提出\n\nファイル名：氏名をかな表記にして下さい\n例：かりやちひろ.qmd\n\n回答先：dropbox\n締め切り：4月20日（月）23時59分"
   },
   {
     "objectID": "teaching/readingseminar/guide_readingseminar_20.html#概要",
@@ -4365,7 +4477,35 @@
     "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#データセットとは何か",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "データセットとは何か",
-    "text": "データセットとは何か\n⑴ 試行錯誤の大切さ\n\n試行錯誤を始めるときに、2つの点を心に留めてください。1つ目は、何かを試すことには常に価値があるということです。たとえその結果何が起こるか完全にはわかっていなかったとしてもです。コンソールを怖がってはいけません。コードを使ってグラフを作るすばらしい点は、いったん壊したら元に戻せないような操作が含まれていないことです。もし何かがうまくいかなかったら、何が起きているかを特定し、それを修正し、そして作図コードをもう一度実行すればよいのです。\n\n\n2つ目の点は、ggplotを使った作業の主な流れはいつも同じだということです。それは、テーブル型のデータから始め、位置・色・形といったグラフに表示される審美的要素に当たる変数をマップし、そしてグラフを描画するために1つか2つのgeom_関数を選ぶ、という流れです。コードの上ではこの流れは、まずデータとマッピングに関する基礎的な情報を持ったオブジェクトを作り、そこに必要な情報を重ねたり加えたりする というプロセスで実装されます。この作図法を一度身につけてしまえば、特に審美的要素のマッピングの指定とその継承方法が重要ですが、図を作るのが簡単になります（ヒーリー，キーラン (2021), 124ページ）。"
+    "text": "データセットとは何か"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#test",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#test",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "test",
+    "text": "test"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#test-1",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#test-1",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "test",
+    "text": "test"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#test-2",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#test-2",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "test",
+    "text": "test"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "4",
+    "text": "4\n•   「一番大きいペンギンは？」がすぐできる\npenguins |&gt; arrange(desc(body_mass_g)) |&gt; slice(1)\npenguins |&gt; summarise(avg_weight = mean(body_mass_g, na.rm = TRUE))"
   },
   {
     "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#データを切り出す操作-1",
@@ -4375,22 +4515,22 @@
     "text": "データを切り出す操作\n\nslice()関数\nfilter()関数\nfilter_out()関数\nselect()関数\n\n列の計算（縦） - sum()：全部足す - mean()：平均を出す\n行の計算（横） - rowSums()：横に足す\n\n\n[1] 130 170"
   },
   {
-    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section",
-    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section",
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-1",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-1",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "1",
     "text": "1\n\n\n   species   n   percent\n    Adelie 152 0.4418605\n Chinstrap  68 0.1976744\n    Gentoo 124 0.3604651"
   },
   {
-    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-1",
-    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-1",
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-2",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-2",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "2",
     "text": "2\n\n\n\n\n    \n\n    \n\n    \n    \n    \n      \n        \n        \n              \n                species\n                female\n                male\n                NA_\n              \n        \n        \n        \n                \n                  Adelie\n                  73\n                  73\n                  6\n                \n                \n                  Chinstrap\n                  34\n                  34\n                  0\n                \n                \n                  Gentoo\n                  58\n                  61\n                  5"
   },
   {
-    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-2",
-    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-2",
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-3",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-3",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "4",
     "text": "4\n•   「一番大きいペンギンは？」がすぐできる\npenguins |&gt; arrange(desc(body_mass_g)) |&gt; slice(1)\npenguins |&gt; summarise(avg_weight = mean(body_mass_g, na.rm = TRUE))"
@@ -4424,15 +4564,15 @@
     "text": "二変数：カテゴリ×カテゴリ\n積み上げ棒グラフ\n\ngeom_bar(position = “fill”)\n\n\nCodePlotPlot（軸ラベルの修正）\n\n\n\npenguins |&gt; \n  drop_na(species, island) |&gt; \n  ggplot(aes(x = island, fill = species)) +\n  geom_bar(position = \"fill\")"
   },
   {
-    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-3",
-    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-3",
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-4",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-4",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "3",
     "text": "3"
   },
   {
-    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-4",
-    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-4",
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-5",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#section-5",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "33",
     "text": "33"
@@ -4442,7 +4582,7 @@
     "href": "teaching/RandQuarto/draft_slide_RandQuarto_w4.html#引用文献-1",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "引用文献",
-    "text": "引用文献\n\n\n\n\nヒーリー，キーラン, 2021. データ分析のためのデータ可視化入門, 瓜生真也・江口哲史・三村喬生 訳. 講談社."
+    "text": "引用文献"
   },
   {
     "objectID": "teaching/RforDatascience/RforDataScience.html#実行環境",
