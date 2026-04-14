@@ -1218,6 +1218,13 @@
     "text": "前回の補足：Kanazawa.R #5\n\n第5回“R”統計解析勉強会@金沢\n\n2026年5月30日(土)：14:00-17:30\n民間のRユーザー中心（例）\n共通テーマを設定して発表（過去：防災；観光）\n無料（懇親会は有料）\nオンライン参加も可能\n資料の多くは後日公開される"
   },
   {
+    "objectID": "teaching/RandQuarto/slide_RandQuarto_w2.html#前回の補足tidyverse-packages",
+    "href": "teaching/RandQuarto/slide_RandQuarto_w2.html#前回の補足tidyverse-packages",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "前回の補足：Tidyverse packages",
+    "text": "前回の補足：Tidyverse packages\n\n\n\nTidyverse packages\n\ntidyなデータ分析を行うための主要パッケージ群\n\nR for Data Science (2e)\n\n公式テキスト（残念ながら電子版の日本語訳はない）"
+  },
+  {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w2.html#初回アンケート集計結果-前回の積み残し",
     "href": "teaching/RandQuarto/slide_RandQuarto_w2.html#初回アンケート集計結果-前回の積み残し",
     "title": "RとQuartoではじめるデータサイエンス",
@@ -1278,7 +1285,7 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w2.html#データの型typeを確認しよう",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "データの型（type）を確認しよう",
-    "text": "データの型（type）を確認しよう\n\nglimpse()関数\n\n英語（glimpse）の「ちらりと見る」に由来\nCf. head()関数でも確認可能\n\n\n\nCodeOutput\n\n\n\npenguins |&gt; glimpse()\n\n\n\n\n\nRows: 344\nColumns: 8\n$ species     &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ad…\n$ island      &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Tor…\n$ bill_len    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, …\n$ bill_dep    &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, …\n$ flipper_len &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180,…\n$ body_mass   &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, …\n$ sex         &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, …\n$ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…"
+    "text": "データの型（type）を確認しよう\nglimpse()関数\n\n英語（glimpse）の「ちらりと見る」に由来\nCf. head()でも確認可能\n\n\nCodeOutput\n\n\n\npenguins |&gt; glimpse()\n\n\n\n\n\nRows: 344\nColumns: 8\n$ species     &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ad…\n$ island      &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Tor…\n$ bill_len    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, …\n$ bill_dep    &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, …\n$ flipper_len &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180,…\n$ body_mass   &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, …\n$ sex         &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, …\n$ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w2.html#データの型typeを確認しよう-1",
@@ -1299,7 +1306,7 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w2.html#データの抽出-1",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "データの抽出",
-    "text": "データの抽出\n\nfilter()：指定した変数のデータのみ残す\nfilter_out()：指定した変数のデータを除外する\n\nfilter()\n\nCodeOutput\n\n\n\npenguins |&gt; \n  filter(species == \"Adelie\") |&gt; \n  skim()\n\n\n\n\n\n\n\n    \n\n    \n\n    \n    \n    \n      \n        \n        \n              \n                species\n                island\n                bill_len\n                bill_dep\n                flipper_len\n                body_mass\n                sex\n                year\n              \n        \n        \n        \n                \n                  Adelie\n                  Torgersen\n                  39.1\n                  18.7\n                  181\n                  3750\n                  male\n                  2007\n                \n                \n                  Adelie\n                  Torgersen\n                  39.5\n                  17.4\n                  186\n                  3800\n                  female\n                  2007\n                \n        \n      \n    \n\n\n\n\n\n\nfilter_out()\n\nCodeOutput\n\n\n\npenguins |&gt; \n  filter_out(species == \"Adelie\") |&gt; \n  skim()\n\n\n\n\n\n\n\n    \n\n    \n\n    \n    \n    \n      \n        \n        \n              \n                species\n                island\n                bill_len\n                bill_dep\n                flipper_len\n                body_mass\n                sex\n                year\n              \n        \n        \n        \n                \n                  Gentoo\n                  Biscoe\n                  46.1\n                  13.2\n                  211\n                  4500\n                  female\n                  2007\n                \n                \n                  Gentoo\n                  Biscoe\n                  50.0\n                  16.3\n                  230\n                  5700\n                  male\n                  2007\n                \n        \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\nイコール記号は二つ連続して下さい（==）。文字（文字ベクトル）は “” で囲んで下さい"
+    "text": "データの抽出\n\nfilter()：指定した変数のデータのみ残す\nfilter_out()：指定した変数のデータを除外する\n\nfilter()関数\n\nCodeOutput\n\n\n\npenguins |&gt; \n  filter(species == \"Adelie\") |&gt; \n  skim()\n\n\n\n\n\n\n\n    \n\n    \n\n    \n    \n    \n      \n        \n        \n              \n                species\n                island\n                bill_len\n                bill_dep\n                flipper_len\n                body_mass\n                sex\n                year\n              \n        \n        \n        \n                \n                  Adelie\n                  Torgersen\n                  39.1\n                  18.7\n                  181\n                  3750\n                  male\n                  2007\n                \n                \n                  Adelie\n                  Torgersen\n                  39.5\n                  17.4\n                  186\n                  3800\n                  female\n                  2007\n                \n        \n      \n    \n\n\n\n\n\n\nfilter_out()関数\n\nCodeOutput\n\n\n\npenguins |&gt; \n  filter_out(species == \"Adelie\") |&gt; \n  skim()\n\n\n\n\n\n\n\n    \n\n    \n\n    \n    \n    \n      \n        \n        \n              \n                species\n                island\n                bill_len\n                bill_dep\n                flipper_len\n                body_mass\n                sex\n                year\n              \n        \n        \n        \n                \n                  Gentoo\n                  Biscoe\n                  46.1\n                  13.2\n                  211\n                  4500\n                  female\n                  2007\n                \n                \n                  Gentoo\n                  Biscoe\n                  50.0\n                  16.3\n                  230\n                  5700\n                  male\n                  2007\n                \n        \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\nイコール記号は二つ連続して下さい（==）。文字（文字ベクトル）は “” で囲んで下さい"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w2.html#演習データの抽出",
@@ -1404,7 +1411,7 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w2.html#繰り返し処理処理",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "繰り返し処理処理",
-    "text": "繰り返し処理処理\n\n\n\n\n\n\n第7回の授業で簡単に説明します。今回は同一処理をこのように単純化できて便利！という点だけ理解しましょう\n\n\n\nmap()関数\n\n指定した値（変数など）を順に取り出して、同じ処理を行う\n\n\nCodePlot\n\n\n\nvars &lt;- c(\"body_mass\", \"bill_len\", \"flipper_len\") # 変数を指定\n\nmap(vars, \\(v) { #map()関数を使って同一処理を指示\n  penguins |&gt;  # タイトルを除くコードは先と同じ\n    drop_na(body_mass) |&gt; \n    group_by(species, sex) |&gt;\n    summarise(avg = mean(.data[[v]])) |&gt;\n    ggplot(aes(x = species, y = avg)) +\n    geom_col() +\n    facet_wrap(~ sex) +\n    labs(title = paste(\"Average of\", v)) # varsからタイトルを付与\n})\n\n\n\n\n\n[[1]]\n\n\n\n\n\n\n\n\n\n\n[[2]]\n\n\n\n\n\n\n\n\n\n\n[[3]]"
+    "text": "繰り返し処理処理\n\n\n\n\n\n\n第7回の授業で簡単に説明します。今回は同一処理をこのように単純化（ループ処理）できて便利！すごい！という点だけ理解しましょう\n\n\n\nmap()関数\n\npurrr（「パー」と発音）パッケージに含まれる\n指定した値（変数など）を順に取り出して、同じ処理を行う\n\n\nCodePlot\n\n\n\nvars &lt;- c(\"body_mass\", \"bill_len\", \"flipper_len\") # 変数を指定\n\nmap(vars, \\(v) { #map()関数を使って同一処理を指示\n  penguins |&gt;  # タイトルを除くコードは先と同じ\n    drop_na(body_mass) |&gt; \n    group_by(species, sex) |&gt;\n    summarise(avg = mean(.data[[v]])) |&gt;\n    ggplot(aes(x = species, y = avg)) +\n    geom_col() +\n    facet_wrap(~ sex) +\n    labs(title = paste(\"Average of\", v)) # varsからタイトルを付与\n})\n\n\n\n\n\n[[1]]\n\n\n\n\n\n\n\n\n\n\n[[2]]\n\n\n\n\n\n\n\n\n\n\n[[3]]"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w2.html#生成aiを活用する-1",
@@ -1425,7 +1432,7 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w2.html#生成aiを活用する-3",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "生成AIを活用する",
-    "text": "生成AIを活用する\n公式サイトAsk AIの活用例"
+    "text": "生成AIを活用する\ntidyverse公式サイト「Ask AI」の活用例"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w2.html#rの構造",
