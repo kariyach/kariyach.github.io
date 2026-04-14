@@ -4358,7 +4358,7 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w1.html#urlからデータ取得oecd景気先行指数",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "URLからデータ取得（OECD景気先行指数）",
-    "text": "URLからデータ取得（OECD景気先行指数）\n\nOECDデータセット：Composite Leading Indicators (CLI)\nurlを指定して、データを取得（ファイルはダウンロードしない）"
+    "text": "URLからデータ取得（OECD景気先行指数）\n\nOECDデータセット：Composite Leading Indicators (CLI)\nurlを指定して、データを取得（ファイルはダウンロードしない）\n\n\nTab APlot\n\n\n\nurl &lt;- \"https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI/.M.LI...AA...H?startPeriod=2023-02&dimensionAtObservation=AllDimensions&format=csvfilewithlabels\"\n\ndf_oecd_cli &lt;- read_csv(url) # 指定したURLから直接データを読み込み\n\nde_oecd_cli_selected &lt;- # 必要な列だけ取り出す\n  df_oecd_cli |&gt; \n  select(REF_AREA, TIME_PERIOD, OBS_VALUE) |&gt; # 必要な列を取り出す\n  mutate(TIME_PERIOD = ym(TIME_PERIOD))  # 年月を日付型に変換\n\ncountries &lt;- c(\"JPN\", \"USA\", \"DEU\", \"FRA\", \"KOR\") #主要国だけ選ぶ（主要国のオブジェクトを作る）\n\nde_oecd_cli_selected |&gt;\n  filter(REF_AREA %in% countries) |&gt; # REF_AREA が countries に含まれる行だけを抽出\n  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = REF_AREA)) +\n  geom_line() +\n  scale_x_date(\n    breaks = scales::breaks_width(\"3 months\"),  # x軸の間隔調整\n    labels = scales::label_date_short()         # 年と月を行を変えて表記\n  ) +\n  scale_y_continuous(\n    breaks = scales::breaks_extended(8),        # 目盛りの個数を指定\n    labels = scales::label_number(accuracy = 1) # 数値表示（小数なし）\n  ) +\n  labs(                                         # ラベル名と凡例名の変更\n    x = \"\",\n    y =  \"Composite Leading Indicator (CLI)\",,\n    color = \"Country\"\n  ) +\n  scale_color_paletteer_d(\"awtools::mpalette\")"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w1.html#復習用教材",
