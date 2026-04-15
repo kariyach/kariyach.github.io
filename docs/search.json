@@ -756,6 +756,20 @@
     "text": "本日の目標\n\nggplotの基本構造（data；aes；geom）を理解する\n作図は「何を見たいのか」と「データの型」で決まることをなんとなく理解する\nデータを抽出・選択する基本的な操作を行ってみる\nデータを簡単に計算し、その結果を図にしてみる（詳しい説明、理解は次週以降）\n生成AIを補助ツールとして活用する可能性と注意点をなんとなく理解する"
   },
   {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#演習問題③",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#演習問題③",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "演習問題③",
+    "text": "演習問題③\n\nコードを積み重ねる\n\n\nCodePlot\n\n\n\npenguins |&gt; \n  filter(island == \"Biscoe\") |&gt;\n  filter_out(species == \"Gentoo\") |&gt; \n  filter(body_mass &gt;= 3000) |&gt; \n  filter(sex == \"female\") |&gt; \n  filter(bill_len &gt;= \"25\") |&gt;\n  count()\n\n\n\n\n\n   n\n1 18"
+  },
+  {
+    "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#演習問題③-1",
+    "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#演習問題③-1",
+    "title": "RとQuartoではじめるデータサイエンス",
+    "section": "演習問題③",
+    "text": "演習問題③\n\n少ない行数で書く\n\n\nCodePlot\n\n\n\npenguins |&gt; \n  filter(island == \"Biscoe\" &  body_mass &gt;= 3000 & sex == \"female\" & bill_len &gt;= 25) |&gt;\n  filter_out(species == \"Gentoo\") |&gt; \n  count()\n\n\n\n\n\n   n\n1 18\n\n\n\n\n\n\n何を残し、何を除外したのかが明確\n除外すべき値を間違って含めていると大きな問題に"
+  },
+  {
     "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#ggplot-1",
     "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#ggplot-1",
     "title": "RとQuartoではじめるデータサイエンス",
@@ -1488,14 +1502,14 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w2.html#次回の授業と宿題-1",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "次回の授業と宿題",
-    "text": "次回の授業と宿題\n次回：4月22日（水）\n可視化(1)\n\nggplot2（プロットとレイヤー）\n5 Named Graphs(5NG)\n\n棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ\n単変量（1変数）；ニ変量（2変数）；多変量（3変数以上）\n\nレポートのためのデータセット探し"
+    "text": "次回の授業と宿題\n次回：4月22日（水）\nRの基本的な操作方法(1)\n\n欠損値から\n\n可視化(1)\n\nggplot2（プロットとレイヤー）\n5 Named Graphs(5NG)\n\n棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ\n単変量（1変数）；ニ変量（2変数）；多変量（3変数以上）\n\nレポートのためのデータセット探し"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w2.html#次回の授業と宿題-2",
     "href": "teaching/RandQuarto/slide_RandQuarto_w2.html#次回の授業と宿題-2",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "次回の授業と宿題",
-    "text": "次回の授業と宿題\n\n\n宿題：授業の感想\n\n回答先：Google Forms\n締め切り：4月17日（金）23時59分\n\n\n宿題：演習\n\n内容：授業内で課した演習①〜④\nファイル：演習の該当箇所を抜き出すのではなく、qmdファイルをそのまま提出\n\nファイル名：どこかに氏名を特定できる文字を入れて下さい\n例：inClassExercise_kariya.qmd\n\n回答先：dropbox\n締め切り：4月20日（月）23時59分\n備考：わからない箇所は「わからなかった」と書いて下さい。減点などはしません"
+    "text": "次回の授業と宿題\n\n\n宿題：授業の感想\n\n回答先：Google Forms\n締め切り：4月17日（金）23時59分\n\n\n宿題：演習\n\n内容：授業内で課した演習①〜③\nファイル：演習の該当箇所を抜き出すのではなく、qmdファイルをそのまま提出\n\nファイル名：どこかに氏名を特定できる文字を入れて下さい\n例：inClassExercise_kariya.qmd\n\n回答先：dropbox\n締め切り：4月20日（月）23時59分\n備考：わからない箇所は「わからなかった」と書いて下さい。減点などはしません"
   },
   {
     "objectID": "teaching/readingseminar/guide_readingseminar_20.html#概要",

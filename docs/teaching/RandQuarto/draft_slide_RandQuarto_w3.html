@@ -274,11 +274,72 @@
 <li>生成AIを補助ツールとして活用する可能性と注意点を<em>なんとなく</em>理解する</li>
 </ol>
 </section></section>
+<section>
 <section id="前回の振り返り" class="title-slide slide level1 center" data-background="linear-gradient(90deg, #FAFAFA 0%, #F0F0F0 50%, #FAFAFA 100%)">
 <h1>Ⅰ. 前回の振り返り</h1>
 
 </section>
-
+<section id="演習問題③" class="slide level2">
+<h2>演習問題③</h2>
+<ul>
+<li>コードを積み重ねる</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a></a>  <span class="fu">filter</span>(island <span class="sc">==</span> <span class="st">"Biscoe"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a></a>  <span class="fu">filter_out</span>(species <span class="sc">==</span> <span class="st">"Gentoo"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-4"><a></a>  <span class="fu">filter</span>(body_mass <span class="sc">&gt;=</span> <span class="dv">3000</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-5"><a></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"female"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-6"><a></a>  <span class="fu">filter</span>(bill_len <span class="sc">&gt;=</span> <span class="st">"25"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-7"><a></a>  <span class="fu">count</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>   n
+1 18</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="演習問題③-1" class="slide level2">
+<h2>演習問題③</h2>
+<ul>
+<li>少ない行数で書く</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Code</a></li><li><a href="#tabset-2-2">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a></a>  <span class="fu">filter</span>(island <span class="sc">==</span> <span class="st">"Biscoe"</span> <span class="sc">&amp;</span>  body_mass <span class="sc">&gt;=</span> <span class="dv">3000</span> <span class="sc">&amp;</span> sex <span class="sc">==</span> <span class="st">"female"</span> <span class="sc">&amp;</span> bill_len <span class="sc">&gt;=</span> <span class="dv">25</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a></a>  <span class="fu">filter_out</span>(species <span class="sc">==</span> <span class="st">"Gentoo"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-4"><a></a>  <span class="fu">count</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>   n
+1 18</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li>何を残し、何を除外したのかが明確</li>
+<li>除外すべき値を間違って含めていると大きな問題に</li>
+</ul>
+</section></section>
 <section>
 <section id="ggplot" class="title-slide slide level1 center" data-background="linear-gradient(90deg, #FAFAFA 0%, #F0F0F0 50%, #FAFAFA 100%)">
 <h1>Ⅱ. ggplot</h1>
@@ -334,36 +395,36 @@
 </ul></li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Tab A</a></li><li><a href="#tabset-1-2">Plot</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Tab A</a></li><li><a href="#tabset-3-2">Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1">
+<div id="tabset-3-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb1-2"><a></a>  <span class="fu">drop_na</span>(species, sex, body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb1-3"><a></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
-<span id="cb1-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb1-6"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="co"># 今回説明するのはここまで。以後の見た目に関わる説明は第5回目に説明予定</span></span>
-<span id="cb1-7"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
-<span id="cb1-8"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-9"><a></a>    <span class="at">title =</span> <span class="st">"ペンギンの種類ごとの平均体重"</span>,</span>
-<span id="cb1-10"><a></a>    <span class="at">x =</span> <span class="st">"種類"</span>,</span>
-<span id="cb1-11"><a></a>    <span class="at">y =</span> <span class="st">"平均体重（g）"</span></span>
-<span id="cb1-12"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb1-13"><a></a>  <span class="fu">scale_fill_paletteer_d</span>(<span class="st">"DresdenColor::briefcases"</span>) <span class="sc">+</span></span>
-<span id="cb1-14"><a></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-15"><a></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb1-16"><a></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb1-17"><a></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">5</span>)</span>
-<span id="cb1-18"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">drop_na</span>(species, sex, body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb5-6"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="co"># 今回説明するのはここまで。以後の見た目に関わる説明は第5回目に説明予定</span></span>
+<span id="cb5-7"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
+<span id="cb5-8"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-9"><a></a>    <span class="at">title =</span> <span class="st">"ペンギンの種類ごとの平均体重"</span>,</span>
+<span id="cb5-10"><a></a>    <span class="at">x =</span> <span class="st">"種類"</span>,</span>
+<span id="cb5-11"><a></a>    <span class="at">y =</span> <span class="st">"平均体重（g）"</span></span>
+<span id="cb5-12"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb5-13"><a></a>  <span class="fu">scale_fill_paletteer_d</span>(<span class="st">"DresdenColor::briefcases"</span>) <span class="sc">+</span></span>
+<span id="cb5-14"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb5-15"><a></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb5-16"><a></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb5-17"><a></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">5</span>)</span>
+<span id="cb5-18"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-1-2">
+<div id="tabset-3-2">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -411,7 +472,7 @@
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -421,7 +482,7 @@
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -447,22 +508,22 @@
 </ul></li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Code</a></li><li><a href="#tabset-2-2">Plot</a></li></ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Code</a></li><li><a href="#tabset-4-2">Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1">
+<div id="tabset-4-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a></a>  <span class="fu">drop_na</span>(species) <span class="sc">|&gt;</span> </span>
-<span id="cb2-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species)) <span class="sc">+</span></span>
-<span id="cb2-4"><a></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a></a>  <span class="fu">drop_na</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species)) <span class="sc">+</span></span>
+<span id="cb6-4"><a></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-2-2">
+<div id="tabset-4-2">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -483,23 +544,23 @@
 </ul>
 <h4 id="ビン区間デフォルト">ビン区間（デフォルト）</h4>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Code</a></li><li><a href="#tabset-3-2">Plot</a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Code</a></li><li><a href="#tabset-5-2">Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1">
+<div id="tabset-5-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb3-3"><a></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> <span class="co"># 複数の種を混ぜてプロットすると意味をとりにくくなるため、種を限定</span></span>
-<span id="cb3-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass)) <span class="sc">+</span></span>
-<span id="cb3-5"><a></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> <span class="co"># 複数の種を混ぜてプロットすると意味をとりにくくなるため、種を限定</span></span>
+<span id="cb7-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass)) <span class="sc">+</span></span>
+<span id="cb7-5"><a></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-3-2">
+<div id="tabset-5-2">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -512,23 +573,23 @@
 <h2>単変数：連続値 &gt; ヒストグラム</h2>
 <h4 id="ビン区間を引数で指定">ビン区間を引数で指定</h4>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Code</a></li><li><a href="#tabset-4-2">Plot</a></li></ul>
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Code</a></li><li><a href="#tabset-6-2">Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1">
+<div id="tabset-6-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb4-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass)) <span class="sc">+</span></span>
-<span id="cb4-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">300</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass)) <span class="sc">+</span></span>
+<span id="cb8-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">300</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-6-2">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -555,7 +616,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c8b8c4d9" data-warn-when="30" data-update-every="1" data-play-sound="true" data-blink-colon="true" tabindex="0" style="top:60%;left:50%;font-size:4em;">
+<div class="countdown" id="timer_da2cab79" data-warn-when="30" data-update-every="1" data-play-sound="true" data-blink-colon="true" tabindex="0" style="top:60%;left:50%;font-size:4em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -581,22 +642,22 @@
 </ol></li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Tab A</a></li><li><a href="#tabset-5-2">Tab B</a></li></ul>
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Tab A</a></li><li><a href="#tabset-7-2">Tab B</a></li></ul>
 <div class="tab-content">
-<div id="tabset-5-1">
+<div id="tabset-7-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a></a>  <span class="fu">drop_na</span>(bill_len, bill_dep) <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> bill_dep)) <span class="sc">+</span></span>
-<span id="cb5-4"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a></a>  <span class="fu">drop_na</span>(bill_len, bill_dep) <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> bill_dep)) <span class="sc">+</span></span>
+<span id="cb9-4"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-5-2">
+<div id="tabset-7-2">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -620,22 +681,22 @@
 </ul></li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Code</a></li><li><a href="#tabset-6-2">Plot</a></li></ul>
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Code</a></li><li><a href="#tabset-8-2">Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-8-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a></a>  <span class="fu">drop_na</span>(species, island) <span class="sc">|&gt;</span> </span>
-<span id="cb6-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">fill =</span> species)) <span class="sc">+</span> <span class="co"># fillを加えただけ</span></span>
-<span id="cb6-4"><a></a>  <span class="fu">geom_bar</span>() <span class="co"># position = stackがデフォルト</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a></a>  <span class="fu">drop_na</span>(species, island) <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">fill =</span> species)) <span class="sc">+</span> <span class="co"># fillを加えただけ</span></span>
+<span id="cb10-4"><a></a>  <span class="fu">geom_bar</span>() <span class="co"># position = stackがデフォルト</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-6-2">
+<div id="tabset-8-2">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -654,22 +715,22 @@
 </ul></li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Code</a></li><li><a href="#tabset-7-2">Plot</a></li></ul>
+<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Code</a></li><li><a href="#tabset-9-2">Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-7-1">
+<div id="tabset-9-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a></a>  <span class="fu">drop_na</span>(species, island) <span class="sc">|&gt;</span> </span>
-<span id="cb7-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb7-4"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a></a>  <span class="fu">drop_na</span>(species, island) <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb11-4"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-7-2">
+<div id="tabset-9-2">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -688,33 +749,33 @@
 </ul></li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Code</a></li><li><a href="#tabset-8-2">Plot</a></li><li><a href="#tabset-8-3">Plot（軸ラベルの修正）</a></li></ul>
+<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">Code</a></li><li><a href="#tabset-10-2">Plot</a></li><li><a href="#tabset-10-3">Plot（軸ラベルの修正）</a></li></ul>
 <div class="tab-content">
-<div id="tabset-8-1">
+<div id="tabset-10-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a></a>  <span class="fu">drop_na</span>(species, island) <span class="sc">|&gt;</span> </span>
-<span id="cb8-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb8-4"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a></a>  <span class="fu">drop_na</span>(species, island) <span class="sc">|&gt;</span> </span>
+<span id="cb12-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb12-4"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-8-2">
+<div id="tabset-10-2">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-<div id="tabset-8-3">
+<div id="tabset-10-3">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -735,24 +796,24 @@
 <li>分布状況の確認に加え、グループ間比較が可能</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Tab A</a></li><li><a href="#tabset-9-2">Tab B</a></li></ul>
+<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">Tab A</a></li><li><a href="#tabset-11-2">Tab B</a></li></ul>
 <div class="tab-content">
-<div id="tabset-9-1">
+<div id="tabset-11-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb9-2"><a></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
-<span id="cb9-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass)) <span class="sc">+</span></span>
-<span id="cb9-5"><a></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb9-6"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> species)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb13-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass)) <span class="sc">+</span></span>
+<span id="cb13-5"><a></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb13-6"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> species)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-9-2">
+<div id="tabset-11-2">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -770,19 +831,19 @@
 <li>ここでは算出した平均値をプロットした例を示す</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">Code</a></li><li><a href="#tabset-10-2">ggplotに渡すデータ</a></li><li><a href="#tabset-10-3">Plot</a></li></ul>
+<ul id="tabset-12" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-12-1">Code</a></li><li><a href="#tabset-12-2">ggplotに渡すデータ</a></li><li><a href="#tabset-12-3">Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-10-1">
+<div id="tabset-12-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb10-2"><a></a>  <span class="fu">drop_na</span>(species, body_mass) <span class="sc">|&gt;</span></span>
-<span id="cb10-3"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
-<span id="cb10-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass)) <span class="sc">|&gt;</span></span>
-<span id="cb10-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass)) <span class="sc">+</span></span>
-<span id="cb10-6"><a></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a></a>  <span class="fu">drop_na</span>(species, body_mass) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb14-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass)) <span class="sc">|&gt;</span></span>
+<span id="cb14-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass)) <span class="sc">+</span></span>
+<span id="cb14-6"><a></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-10-2">
+<div id="tabset-12-2">
 <div class="cell">
 <div class="cell-output-display">
 <!-- preamble start -->
@@ -791,19 +852,19 @@
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_vwczgzh7xmc7ais77v0p = TinyTable.createTableFunctions("tinytable_vwczgzh7xmc7ais77v0p");
+      const tableFns_5j4l2ne81jfhfif8lyla = TinyTable.createTableFunctions("tinytable_5j4l2ne81jfhfif8lyla");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '3', j: 1 }, { i: '3', j: 2 } ], css_id: 'tinytable_css_knf14mp16573vwfzar52',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_9gciev0y04bmtoh0jrc4',}, 
+          { positions: [ { i: '3', j: 1 }, { i: '3', j: 2 } ], css_id: 'tinytable_css_ht0f4dhbd1ysw7rofd6d',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_r8byfer74f2nizqjrzzg',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_vwczgzh7xmc7ais77v0p.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_5j4l2ne81jfhfif8lyla.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -812,11 +873,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_vwczgzh7xmc7ais77v0p td.tinytable_css_knf14mp16573vwfzar52, #tinytable_vwczgzh7xmc7ais77v0p th.tinytable_css_knf14mp16573vwfzar52 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
-    #tinytable_vwczgzh7xmc7ais77v0p td.tinytable_css_9gciev0y04bmtoh0jrc4, #tinytable_vwczgzh7xmc7ais77v0p th.tinytable_css_9gciev0y04bmtoh0jrc4 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_5j4l2ne81jfhfif8lyla td.tinytable_css_ht0f4dhbd1ysw7rofd6d, #tinytable_5j4l2ne81jfhfif8lyla th.tinytable_css_ht0f4dhbd1ysw7rofd6d {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_5j4l2ne81jfhfif8lyla td.tinytable_css_r8byfer74f2nizqjrzzg, #tinytable_5j4l2ne81jfhfif8lyla th.tinytable_css_r8byfer74f2nizqjrzzg {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_vwczgzh7xmc7ais77v0p" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="tinytable" id="tinytable_5j4l2ne81jfhfif8lyla" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
@@ -845,12 +906,12 @@
 </div>
 </div>
 </div>
-<div id="tabset-10-3">
+<div id="tabset-12-3">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-29-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -879,33 +940,33 @@
 </div>
 </div>
 <div class="panel-tabset">
-<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">Tab A</a></li><li><a href="#tabset-11-2">Tab B</a></li><li><a href="#tabset-11-3">Plot（x軸ラベルの修正・説明は後日）</a></li></ul>
+<ul id="tabset-13" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-13-1">Tab A</a></li><li><a href="#tabset-13-2">Tab B</a></li><li><a href="#tabset-13-3">Plot（x軸ラベルの修正・説明は後日）</a></li></ul>
 <div class="tab-content">
-<div id="tabset-11-1">
+<div id="tabset-13-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a></a>  <span class="fu">count</span>(year) <span class="sc">|&gt;</span></span>
-<span id="cb11-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb11-4"><a></a>  <span class="fu">geom_line</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a></a>  <span class="fu">count</span>(year) <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb15-4"><a></a>  <span class="fu">geom_line</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-11-2">
+<div id="tabset-13-2">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-27-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-31-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-<div id="tabset-11-3">
+<div id="tabset-13-3">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-28-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-32-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -933,7 +994,7 @@
 <section id="演習二変数の作図-1" class="slide level2">
 <h2>演習：二変数の作図</h2>
 
-<img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-29-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="多変量三変数の作図" class="title-slide slide level1 center" data-background="linear-gradient(90deg, #FAFAFA 0%, #F0F0F0 50%, #FAFAFA 100%)">
 <h1>Ⅴ. 多変量（三変数）の作図</h1>
@@ -972,33 +1033,33 @@
 <li><code>geom_point</code>にcolourを追加</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-12" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-12-1">Code</a></li><li><a href="#tabset-12-2">Plot</a></li><li><a href="#tabset-12-3">Plot（二変数）</a></li></ul>
+<ul id="tabset-14" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-14-1">Code</a></li><li><a href="#tabset-14-2">Plot</a></li><li><a href="#tabset-14-3">Plot（二変数）</a></li></ul>
 <div class="tab-content">
-<div id="tabset-12-1">
+<div id="tabset-14-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb12-2"><a></a>  <span class="fu">drop_na</span>(bill_len, bill_dep, species) <span class="sc">|&gt;</span> </span>
-<span id="cb12-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> bill_dep, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
-<span id="cb12-4"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a></a>  <span class="fu">drop_na</span>(bill_len, bill_dep, species) <span class="sc">|&gt;</span> </span>
+<span id="cb16-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> bill_dep, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
+<span id="cb16-4"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-12-2">
+<div id="tabset-14-2">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-31-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-35-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-<div id="tabset-12-3">
+<div id="tabset-14-3">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-32-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-36-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1017,34 +1078,34 @@
 <li><code>geom_histogram</code>にfillを追加</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-13" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-13-1">Code</a></li><li><a href="#tabset-13-2">Plot</a></li><li><a href="#tabset-13-3">Plot（二変数）</a></li></ul>
+<ul id="tabset-15" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-15-1">Code</a></li><li><a href="#tabset-15-2">Plot</a></li><li><a href="#tabset-15-3">Plot（二変数）</a></li></ul>
 <div class="tab-content">
-<div id="tabset-13-1">
+<div id="tabset-15-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb13-2"><a></a>  <span class="fu">drop_na</span>(body_mass, island, species) <span class="sc">|&gt;</span></span>
-<span id="cb13-3"><a></a>  <span class="fu">group_by</span>(species, island) <span class="sc">|&gt;</span> </span>
-<span id="cb13-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">fill =</span> island)) <span class="sc">+</span></span>
-<span id="cb13-5"><a></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a></a>  <span class="fu">drop_na</span>(body_mass, island, species) <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a></a>  <span class="fu">group_by</span>(species, island) <span class="sc">|&gt;</span> </span>
+<span id="cb17-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">fill =</span> island)) <span class="sc">+</span></span>
+<span id="cb17-5"><a></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-13-2">
+<div id="tabset-15-2">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-34-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-38-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-<div id="tabset-13-3">
+<div id="tabset-15-3">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-35-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-39-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1063,35 +1124,35 @@
 <li><code>geom_histogram</code>にfacetを追加</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-14" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-14-1">Code</a></li><li><a href="#tabset-14-2">Plot</a></li><li><a href="#tabset-14-3">Plot（二変数）</a></li></ul>
+<ul id="tabset-16" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-16-1">Code</a></li><li><a href="#tabset-16-2">Plot</a></li><li><a href="#tabset-16-3">Plot（二変数）</a></li></ul>
 <div class="tab-content">
-<div id="tabset-14-1">
+<div id="tabset-16-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb14-2"><a></a>  <span class="fu">drop_na</span>(body_mass, island, species) <span class="sc">|&gt;</span></span>
-<span id="cb14-3"><a></a>  <span class="fu">group_by</span>(species, island) <span class="sc">|&gt;</span> </span>
-<span id="cb14-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">fill =</span> island)) <span class="sc">+</span></span>
-<span id="cb14-5"><a></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb14-6"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> species)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb18-2"><a></a>  <span class="fu">drop_na</span>(body_mass, island, species) <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a></a>  <span class="fu">group_by</span>(species, island) <span class="sc">|&gt;</span> </span>
+<span id="cb18-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">fill =</span> island)) <span class="sc">+</span></span>
+<span id="cb18-5"><a></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb18-6"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> species)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-14-2">
+<div id="tabset-16-2">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-37-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-41-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-<div id="tabset-14-3">
+<div id="tabset-16-3">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-38-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-42-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1110,33 +1171,33 @@
 <li><code>geom_line</code>にcolourを追加</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-15" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-15-1">Code</a></li><li><a href="#tabset-15-2">Plot</a></li><li><a href="#tabset-15-3">Plot（二変数）</a></li></ul>
+<ul id="tabset-17" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-17-1">Code</a></li><li><a href="#tabset-17-2">Plot</a></li><li><a href="#tabset-17-3">Plot（二変数）</a></li></ul>
 <div class="tab-content">
-<div id="tabset-15-1">
+<div id="tabset-17-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">count</span>(year, species) <span class="sc">|&gt;</span></span>
-<span id="cb15-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
-<span id="cb15-4"><a></a>  <span class="fu">geom_line</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a></a>  <span class="fu">count</span>(year, species) <span class="sc">|&gt;</span></span>
+<span id="cb19-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
+<span id="cb19-4"><a></a>  <span class="fu">geom_line</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-15-2">
+<div id="tabset-17-2">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-40-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-44-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-<div id="tabset-15-3">
+<div id="tabset-17-3">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-41-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-45-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1166,7 +1227,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_edd3e646" data-warn-when="30" data-update-every="1" data-play-sound="true" data-blink-colon="true" tabindex="0" style="top:60%;left:50%;font-size:4em;">
+<div class="countdown" id="timer_e0c5e242" data-warn-when="30" data-update-every="1" data-play-sound="true" data-blink-colon="true" tabindex="0" style="top:60%;left:50%;font-size:4em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1179,7 +1240,7 @@
 <li>facet_gridを使うとさらに変数を加え、情報量を足せる</li>
 </ul>
 
-<img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-43-1.png" width="960" class="r-stretch"></section>
+<img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-47-1.png" width="960" class="r-stretch"></section>
 <section id="発展的理解-1" class="slide level2">
 <h2>発展的理解</h2>
 <ul>
@@ -1190,7 +1251,7 @@
 <h2 id="発展的理解-2">発展的理解</h2></li>
 </ul>
 
-<img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-44-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="draft_slide_RandQuarto_w3_files/figure-revealjs/unnamed-chunk-48-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="次回の授業と宿題" class="title-slide slide level1 center" data-background="linear-gradient(90deg, #FAFAFA 0%, #F0F0F0 50%, #FAFAFA 100%)">
 <h1>Ⅷ. 次回の授業と宿題</h1>
