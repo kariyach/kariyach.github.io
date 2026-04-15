@@ -767,7 +767,7 @@
     "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#ggplot-3",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "ggplot",
-    "text": "ggplot\n3要素\ndata（材料）：使うデータ\naes（設計図）：\n\n美的マッピング（aes = aesthetic mapping）\nどのデータをどこに使うかというルール\n全てのレイヤーに共通して適用される\n\ngeom（描く）：\n\n実際に図を描く部分\n複数重ねることができる（棒＋点＋線など）\ngeom_〇〇という関数名をもつ\n\ngeometry（ジオメトリ）の略（英語発音は「ジィーム」に近い）"
+    "text": "ggplot\n3要素\ndata（材料）：使うデータ\naes（設計図）：\n\n美的マッピング（aes = aesthetic mapping）\nどのデータをどこに使うかというルール\n全てのレイヤーに共通して適用される\n\ngeom（描く）：\n\n実際に図を描く部分\n複数重ねることができる（棒＋点＋線など）\ngeom_〇〇という関数名をもつ\n\nジオメトリ・幾何学（geometry）に由来。「ジィーム」"
   },
   {
     "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#ggplot-4",
@@ -872,7 +872,7 @@
     "href": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#二変数連続値または順序-数値",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "二変数：連続値（または順序） × 数値",
-    "text": "二変数：連続値（または順序） × 数値\n折れ線グラフ\n\ngeom_line\n\n推移の可視化　Cf. geom_bar：分布の可視化\n\n\n\n\n\n\n\n\ngeom_lineで観測数の変化を描く場合、penguinsデータには観測数の列がないため、ggplotに渡す前に計算する必要あり\n\n\n\n\nTab ATab BPlot（x軸ラベルの修正・説明は後日）\n\n\n\npenguins |&gt;\n  count(year) |&gt; \n  ggplot(aes(x = year, y = n)) +\n  geom_line()"
+    "text": "二変数：連続値（または順序） × 数値\n折れ線グラフ\n\ngeom_line\n\n推移の可視化　Cf. geom_bar：分布の可視化\n\n\n\n\n\n\n\n\ngeom_lineで観測数の変化を描く場合、penguinsデータには観測数の列がないため、ggplotに渡す前に計算する必要あり\n\n\n\n\nTab ATab BPlot（x軸ラベルの修正・説明は後日）\n\n\n\npenguins |&gt;\n  count(year) |&gt;\n  ggplot(aes(x = year, y = n)) +\n  geom_line()"
   },
   {
     "objectID": "teaching/RandQuarto/draft_slide_RandQuarto_w3.html#演習二変数の作図",
@@ -991,14 +991,14 @@
     "href": "teaching/RandQuarto/index.html#week-3-422-可視化1",
     "title": "RとQuartoではじめるデータサイエンス：データを可視化する《2026》",
     "section": "Week 3 (4/22) ：可視化(1)",
-    "text": "Week 3 (4/22) ：可視化(1)\n\n具体的な内容：\n\nggplot2（プロットとレイヤー）；5 Named Graphs (5NG：棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ）；図の書き出し；レポートのためのデータセット探し"
+    "text": "Week 3 (4/22) ：可視化(1)\n\n具体的な内容：\n\nggplot2（プロットとレイヤー）；5 Named Graphs (5NG：棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ）；変量（単変量（1変数）ニ変量（2変数）；多変量（3変数以上））；レポートのためのデータセット探し"
   },
   {
     "objectID": "teaching/RandQuarto/index.html#week-4-430rの基本的な操作方法2",
     "href": "teaching/RandQuarto/index.html#week-4-430rの基本的な操作方法2",
     "title": "RとQuartoではじめるデータサイエンス：データを可視化する《2026》",
     "section": "Week 4 (4/30)：Rの基本的な操作方法(2)",
-    "text": "Week 4 (4/30)：Rの基本的な操作方法(2)\n\n具体的な内容：\n\nテーブル出力；クロス集計表；データの読み込みと書き出し；csv editor；記述統計量；代入；データの拡張；縦持ちデータ・横持ちデータ；データの結合；水準の設定\n\n\n\n\n\n\n\n\n4月29日（祝）の振替授業日です"
+    "text": "Week 4 (4/30)：Rの基本的な操作方法(2)\n\n具体的な内容：\n\nテーブル出力；クロス集計表；データの読み込みと書き出し；csv editor；記述統計量；代入；データの拡張；縦持ちデータ・横持ちデータ；データの結合；水準の設定；図の書き出し\n\n\n\n\n\n\n\n\n4月29日（祝）の振替授業日です"
   },
   {
     "objectID": "teaching/RandQuarto/index.html#week-5-513可視化2",
@@ -1488,7 +1488,7 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w2.html#次回の授業と宿題-1",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "次回の授業と宿題",
-    "text": "次回の授業と宿題\n次回：4月22日（水）\n\n可視化(1)"
+    "text": "次回の授業と宿題\n次回：4月22日（水）\n可視化(1)\n\nggplot2（プロットとレイヤー）\n5 Named Graphs(5NG)\n\n棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ\n単変量（1変数）；ニ変量（2変数）；多変量（3変数以上）\n\nレポートのためのデータセット探し"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w2.html#次回の授業と宿題-2",
@@ -4358,7 +4358,7 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w1.html#urlからデータ取得oecd景気先行指数",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "URLからデータ取得（OECD景気先行指数）",
-    "text": "URLからデータ取得（OECD景気先行指数）\n\nOECDデータセット：Composite Leading Indicators (CLI)\nurlを指定して、データを取得（ファイルはダウンロードしない）\n\n\nTab APlot\n\n\n\nurl &lt;- \"https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI/.M.LI...AA...H?startPeriod=2023-02&dimensionAtObservation=AllDimensions&format=csvfilewithlabels\"\n\ndf_oecd_cli &lt;- read_csv(url) # 指定したURLから直接データを読み込み\n\nde_oecd_cli_selected &lt;- # 必要な列だけ取り出す\n  df_oecd_cli |&gt; \n  select(REF_AREA, TIME_PERIOD, OBS_VALUE) |&gt; # 必要な列を取り出す\n  mutate(TIME_PERIOD = ym(TIME_PERIOD))  # 年月を日付型に変換\n\ncountries &lt;- c(\"JPN\", \"USA\", \"DEU\", \"FRA\", \"KOR\") #主要国だけ選ぶ（主要国のオブジェクトを作る）\n\nde_oecd_cli_selected |&gt;\n  filter(REF_AREA %in% countries) |&gt; # REF_AREA が countries に含まれる行だけを抽出\n  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = REF_AREA)) +\n  geom_line() +\n  scale_x_date(\n    breaks = scales::breaks_width(\"3 months\"),  # x軸の間隔調整\n    labels = scales::label_date_short()         # 年と月を行を変えて表記\n  ) +\n  scale_y_continuous(\n    breaks = scales::breaks_extended(8),        # 目盛りの個数を指定\n    labels = scales::label_number(accuracy = 1) # 数値表示（小数なし）\n  ) +\n  labs(                                         # ラベル名と凡例名の変更\n    x = \"\",\n    y =  \"Composite Leading Indicator (CLI)\",,\n    color = \"Country\"\n  ) +\n  scale_color_paletteer_d(\"awtools::mpalette\")"
+    "text": "URLからデータ取得（OECD景気先行指数）\n\nOECDデータセット：Composite Leading Indicators (CLI)\nurlを指定して、データを取得（ファイルはダウンロードしない）\n\n\nCodePlot\n\n\n\nurl &lt;- \"https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI/.M.LI...AA...H?startPeriod=2023-02&dimensionAtObservation=AllDimensions&format=csvfilewithlabels\"\n\ndf_oecd_cli &lt;- read_csv(url) # 指定したURLから直接データを読み込み\n\nde_oecd_cli_selected &lt;- # 必要な列だけ取り出す\n  df_oecd_cli |&gt; \n  select(REF_AREA, TIME_PERIOD, OBS_VALUE) |&gt; # 必要な列を取り出す\n  mutate(TIME_PERIOD = ym(TIME_PERIOD))  # 年月を日付型に変換\n\ncountries &lt;- c(\"JPN\", \"USA\", \"DEU\", \"FRA\", \"KOR\") #主要国だけ選ぶ（主要国のオブジェクトを作る）\n\nde_oecd_cli_selected |&gt;\n  filter(REF_AREA %in% countries) |&gt; # REF_AREA が countries に含まれる行だけを抽出\n  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = REF_AREA)) +\n  geom_line() +\n  scale_x_date(\n    breaks = scales::breaks_width(\"3 months\"),  # x軸の間隔調整\n    labels = scales::label_date_short()         # 年と月を行を変えて表記\n  ) +\n  scale_y_continuous(\n    breaks = scales::breaks_extended(8),        # 目盛りの個数を指定\n    labels = scales::label_number(accuracy = 1) # 数値表示（小数なし）\n  ) +\n  labs(                                         # ラベル名と凡例名の変更\n    x = \"\",\n    y =  \"Composite Leading Indicator (CLI)\",,\n    color = \"Country\"\n  ) +\n  scale_color_paletteer_d(\"awtools::mpalette\")"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w1.html#復習用教材",
