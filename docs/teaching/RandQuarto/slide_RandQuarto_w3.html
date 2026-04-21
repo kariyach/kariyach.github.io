@@ -268,11 +268,11 @@
 <section id="本日の目標-1" class="slide level2">
 <h2>本日の目標</h2>
 <ol type="1">
-<li>ggplotの基本構造（data；aes；geom）を<strong>大まかに</strong>理解する</li>
+<li>ggplotの基本構造（data；aes；geom）を<em>大まかに</em>理解する</li>
 <li>作図は「何を見たいのか」と「データの型」で決まることを理解する</li>
 <li>変数の数とデータの型に応じて、適切なgeom_関数を選びながら図を作る（サンプルコード参照）</li>
-<li>変数の数に応じて、可視化される情報量が異なることを<strong>直感的に</strong>理解する</li>
-<li>レポートのためのデータセットに触れてみる（<strong>宿題あり</strong>）</li>
+<li>変数の数に応じて、可視化される情報量が異なることを<em>直感的に</em>理解する</li>
+<li>レポートのためのデータセットに触れてみる（<em>宿題あり</em>）</li>
 </ol>
 </section></section>
 <section>
@@ -334,7 +334,10 @@
 <section id="演習問題③-1" class="slide level2">
 <h2>演習問題③</h2>
 <ul>
-<li>解答例②： 少ない行数で書く</li>
+<li>解答例②： 少ない行数で書く
+<ul>
+<li>ただし、<code>filter()</code>と<code>filter_out()</code>を使い分ける</li>
+</ul></li>
 </ul>
 <div class="panel-tabset">
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Code</a></li><li><a href="#tabset-2-2">Output</a></li></ul>
@@ -414,7 +417,7 @@
 <li>1行が1観測のデータ
 <ul>
 <li>例：1羽、1人など（penguins）</li>
-<li>使える<code>geom_()</code>：元データを集計する関数が組み込まれているもの
+<li>使える<code>geom_()</code>：<em>元データを集計する関数が組み込まれている</em>もの
 <ul>
 <li><code>geom_bar()</code>（件数カウント）; <code>geom_histogram()</code>（分布）; <code>geom_point()</code>（散布図）</li>
 </ul></li>
@@ -424,7 +427,7 @@
 <ul>
 <li>平均・合計・割合などを計算した後のデータ
 <ul>
-<li>使える<code>geom_()</code>：集計済みデータをそのまま可視化する
+<li>使える<code>geom_()</code>：集計済みデータを<em>そのまま可視化</em>する
 <ul>
 <li><code>geom_col()</code></li>
 </ul></li>
@@ -449,6 +452,7 @@
 <li>geom_〇〇という関数名をもつ
 <ul>
 <li>ジオメトリ・幾何学（geometry）に由来。「ジィーム」</li>
+<li>たくさんの関数がある（<a href="https://ggplot2.tidyverse.org/reference/index.html#geoms">公式サイト</a>）</li>
 </ul></li>
 </ul>
 </section>
@@ -685,7 +689,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_963cb1c0" data-warn-when="30" data-update-every="1" data-play-sound="true" data-blink-colon="true" tabindex="0" style="top:60%;left:50%;font-size:4em;">
+<div class="countdown" id="timer_fd601127" data-warn-when="30" data-update-every="1" data-play-sound="true" data-blink-colon="true" tabindex="0" style="top:60%;left:50%;font-size:4em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -924,19 +928,19 @@
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_r7ppt5mb4vjyi3u5kqi6 = TinyTable.createTableFunctions("tinytable_r7ppt5mb4vjyi3u5kqi6");
+      const tableFns_4ydq804lfpxw1t29641h = TinyTable.createTableFunctions("tinytable_4ydq804lfpxw1t29641h");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '3', j: 1 }, { i: '3', j: 2 } ], css_id: 'tinytable_css_ue5ikz7fj9mea5qzxujl',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_7ksuis2afyao45h7b4mp',}, 
+          { positions: [ { i: '3', j: 1 }, { i: '3', j: 2 } ], css_id: 'tinytable_css_01qe5azuq5qyfq8nqice',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 } ], css_id: 'tinytable_css_9ijhnzyuimklxuwf0hr1',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_r7ppt5mb4vjyi3u5kqi6.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_4ydq804lfpxw1t29641h.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -945,11 +949,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_r7ppt5mb4vjyi3u5kqi6 td.tinytable_css_ue5ikz7fj9mea5qzxujl, #tinytable_r7ppt5mb4vjyi3u5kqi6 th.tinytable_css_ue5ikz7fj9mea5qzxujl {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
-    #tinytable_r7ppt5mb4vjyi3u5kqi6 td.tinytable_css_7ksuis2afyao45h7b4mp, #tinytable_r7ppt5mb4vjyi3u5kqi6 th.tinytable_css_7ksuis2afyao45h7b4mp {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_4ydq804lfpxw1t29641h td.tinytable_css_01qe5azuq5qyfq8nqice, #tinytable_4ydq804lfpxw1t29641h th.tinytable_css_01qe5azuq5qyfq8nqice {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_4ydq804lfpxw1t29641h td.tinytable_css_9ijhnzyuimklxuwf0hr1, #tinytable_4ydq804lfpxw1t29641h th.tinytable_css_9ijhnzyuimklxuwf0hr1 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_r7ppt5mb4vjyi3u5kqi6" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="tinytable" id="tinytable_4ydq804lfpxw1t29641h" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
@@ -1303,7 +1307,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6987db84" data-warn-when="30" data-update-every="1" data-play-sound="true" data-blink-colon="true" tabindex="0" style="top:60%;left:50%;font-size:4em;">
+<div class="countdown" id="timer_d748ef81" data-warn-when="30" data-update-every="1" data-play-sound="true" data-blink-colon="true" tabindex="0" style="top:60%;left:50%;font-size:4em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>

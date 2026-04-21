@@ -4547,7 +4547,7 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w3.html#演習問題③-1",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "演習問題③",
-    "text": "演習問題③\n\n解答例②： 少ない行数で書く\n\n\nCodeOutput\n\n\n\npenguins |&gt; \n  filter(island == \"Biscoe\" &  body_mass &gt;= 3000 & sex == \"female\" & bill_len &gt;= 25) |&gt;\n  filter_out(species == \"Gentoo\") |&gt; \n  count()\n\n\n\n\n\n   n\n1 18\n\n\n\n\n\n\nこのコードの方が何を残し、何を除外したのかが明確\nミス防止に"
+    "text": "演習問題③\n\n解答例②： 少ない行数で書く\n\nただし、filter()とfilter_out()を使い分ける\n\n\n\nCodeOutput\n\n\n\npenguins |&gt; \n  filter(island == \"Biscoe\" &  body_mass &gt;= 3000 & sex == \"female\" & bill_len &gt;= 25) |&gt;\n  filter_out(species == \"Gentoo\") |&gt; \n  count()\n\n\n\n\n\n   n\n1 18\n\n\n\n\n\n\nこのコードの方が何を残し、何を除外したのかが明確\nミス防止に"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w3.html#前回の積み残し",
@@ -4589,7 +4589,7 @@
     "href": "teaching/RandQuarto/slide_RandQuarto_w3.html#ggplot3要素-geom描く",
     "title": "RとQuartoではじめるデータサイエンス",
     "section": "ggplot：3要素 > geom（描く）",
-    "text": "ggplot：3要素 &gt; geom（描く）\ngeom（描く）\n\n実際に図を描く部分\n複数重ねることができる（棒＋点＋線など）\ngeom_〇〇という関数名をもつ\n\nジオメトリ・幾何学（geometry）に由来。「ジィーム」"
+    "text": "ggplot：3要素 &gt; geom（描く）\ngeom（描く）\n\n実際に図を描く部分\n複数重ねることができる（棒＋点＋線など）\ngeom_〇〇という関数名をもつ\n\nジオメトリ・幾何学（geometry）に由来。「ジィーム」\nたくさんの関数がある（公式サイト）"
   },
   {
     "objectID": "teaching/RandQuarto/slide_RandQuarto_w3.html#ggplot-4",
@@ -4869,7 +4869,7 @@
     "href": "teaching/RandQuarto/resume_RandQuarto_w3.html",
     "title": "RとQuartoではじめるデータサイエンス《2026》",
     "section": "",
-    "text": "前回の振り返り\nggplot\n単変量（1変数）の作図\n二変量（2変数）の作図\n多変量（3変数）の作図\nレポートのためのデータセット探し\n\n\n\n\nggplotの基本構造（data；aes；geom）を大まかに理解する\n作図は「何を見たいのか」と「データの型」で決まることを理解する\n変数の数とデータの型に応じて、適切なgeom_関数を選びながら図を作る（サンプルコード参照）\n変数の数に応じて、可視化される情報量が異なることを直感的に理解する\nレポートのためのデータセットに触れてみる（宿題あり）\n\n\n\n\n\n\n\ndata（材料）：\n\n元データ（行データ）：1行が1観測（例：1羽、1人など）のデータ（例：penguins）\n\ngeom_bar()（件数カウント）; geom_histogram()（分布）; geom_point()（散布図）\n\n集計済みデータ：平均・合計・割合などを計算した後のデータ\n\ngeom_col()\n\n\naes（設計図）：\n\n美的マッピング（aes = aesthetic mapping）/ どのデータをどこに使うかというルール / 全てのレイヤーに共通して適用される\n\ngeom（描く）：\n\n実際に図を描く部分 / 複数重ねることができる（棒＋点＋線など） / geom_〇〇という関数名をもつ\nジオメトリ・幾何学（geometry）に由来。「ジィーム」\n+ レイヤー演算子：グラフの要素を順番に重ねて追加する\n\n\n\n\n\n\n棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ\n\n\n\n\n\nグラフの種類ではなく、どんな関係を見たいのかを考える（例：分布；比較；関係；推移）\nデータの型（数値（離散；連続）；カテゴリ（名義尺度；順序尺度））を把握する\n元データのまま可視化するのか；集計してから可視化するのか\n\n\n\n\n\nコードを使ってグラフを作るすばらしい点は、いったん壊したら元に戻せないような操作が含まれていないことです。もし何かがうまくいかなかったら、何が起きているかを特定し、それを修正し、そして作図コードをもう一度実行すればよいのです。\n\n\n2つ目の点は、ggplotを使った作業の主な流れはいつも同じだということです（ヒーリー，キーラン (2021), 124ページ）。\n\n\n\n\n\n\n1変数：カテゴリ：棒グラフ：geom_bar()\n\nxごとに件数を集計して棒の高さにする（自動カウント・元データを使用する）\n\n1変数：連続値：ヒストグラム： geom_histogram()\n\n数値の「分布」を見る / 値を区間（ビン）に分けて数える\n\n\n\n\n\n\n2変数：数値 × 数値：散布図：geom_point()\n\n2つの数値変数の関係（傾向・ばらつき）を可視化\n\n2変数：カテゴリ×カテゴリ：積み上げ棒グラフ：geom_bar(position = \"stack\")（デフォルト)\n2変数：カテゴリ×カテゴリ：並列棒グラフ：geom_bar(position = \"dodge\")\n\ndodge（避ける、かわすの意）：重なりを避けて横に配置\n\n2変数：カテゴリ×カテゴリ：帯グラフ： geom_bar(position = \"fill\")\n\n各カテゴリの構成比（割合）で表示\n\n2変数：連続値×カテゴリ：ヒストグラム\n\nggplotに渡す前にグループ分け（group_by）を行い、facet_wrapで分ける\n\n2変数：カテゴリ×数値：棒グラフ geom_col()\n\nカテゴリ別に集計した数値を可視化\ndplyr系の関数（summarise()など）についての知識を要する\n\n2変数：連続値（または順序） × 数値：折れ線グラフ geom_line()\n\n\n\n\n\n複数の変数を加えることで情報量が増える\n\n→︎ 関係や違い、各変数の特徴が見えやすくなり、新たな疑問や仮説が生まれる\n\nggplotによる多変量の可視化\n\n色で区別する：colour（点・線）、fill（面）；図を分ける：facet\n\n\n\n\n\n\nSSDSE（教育用標準データセット）\n\n「主要な公的統計を地域別に一覧できる表形式のデータセット」\n1行目を除外すれば、そのままRで使える\nこのデータセットからレポートを作成することを推奨（他を使いたい人は要相談）\n\n\n\n\n\n\n\n\n\n\n授業の感想：\n\n回答先：Google Forms\n締め切り：4月24日（金）23時59分\n\nレポートに使いたいデータセット\n\n回答先：Google Forms\n締め切り：4月30日（木）10時30分\n\n\n\n\n\n\n\n内容：演習④⑦\nファイル：演習の該当箇所を抜き出すのではなく、qmdファイルをそのまま提出\n\nファイル名：氏名をかな表記にして下さい\n例：かりやちひろ.qmd\n\n回答先：dropbox（メールアドレスが入力されていれば、気付いたことをすぐにコメントします）\n締め切り：4月27日（月）23時59分\n\n\n\n\n\n\n\n\n\n\n\n\n\nSOURCE: Data Science with R, Grammar of graphics"
+    "text": "前回の振り返り\nggplot\n単変量（1変数）の作図\n二変量（2変数）の作図\n多変量（3変数）の作図\nレポートのためのデータセット探し\n\n\n\n\nggplotの基本構造（data；aes；geom）を大まかに理解する\n作図は「何を見たいのか」と「データの型」で決まることを理解する\n変数の数とデータの型に応じて、適切なgeom_関数を選びながら図を作る（サンプルコード参照）\n変数の数に応じて、可視化される情報量が異なることを直感的に理解する\nレポートのためのデータセットに触れてみる（宿題あり）\n\n\n\n\n\n\n\ndata（材料）：\n\n元データ（行データ）：1行が1観測（例：1羽、1人など）のデータ（例：penguins）\n\ngeom_bar()（件数カウント）; geom_histogram()（分布）; geom_point()（散布図）\n\n集計済みデータ：平均・合計・割合などを計算した後のデータ\n\ngeom_col()\n\n\naes（設計図）：\n\n美的マッピング（aes = aesthetic mapping）/ どのデータをどこに使うかというルール / 全てのレイヤーに共通して適用される\n\ngeom（描く）：\n\n実際に図を描く部分 / 複数重ねることができる（棒＋点＋線など） / geom_〇〇という関数名をもつ\nジオメトリ・幾何学（geometry）に由来。「ジィーム」\n+ レイヤー演算子：グラフの要素を順番に重ねて追加する\n\n\n\n\n\n\n棒グラフ；ヒストグラム；箱ひげ図；散布図；折れ線グラフ\n\n\n\n\n\nグラフの種類ではなく、どんな関係を見たいのかを考える（例：分布；比較；関係；推移）\nデータの型（数値（離散；連続）；カテゴリ（名義尺度；順序尺度））を把握する\n元データのまま可視化するのか；集計してから可視化するのか\n\n\n\n\n\nコードを使ってグラフを作るすばらしい点は、いったん壊したら元に戻せないような操作が含まれていないことです。もし何かがうまくいかなかったら、何が起きているかを特定し、それを修正し、そして作図コードをもう一度実行すればよいのです。\n\n\n2つ目の点は、ggplotを使った作業の主な流れはいつも同じだということです（ヒーリー，キーラン (2021), 124ページ）。\n\n\n\n\n\n\n1変数：カテゴリ：棒グラフ：geom_bar()\n\nxごとに件数を集計して棒の高さにする（自動カウント・元データを使用する）\n\n1変数：連続値：ヒストグラム： geom_histogram()\n\n数値の「分布」を見る / 値を区間（ビン）に分けて数える\n\n\n\n\n\n\n2変数：数値 × 数値：散布図：geom_point()\n\n2つの数値変数の関係（傾向・ばらつき）を可視化\n\n2変数：カテゴリ×カテゴリ：積み上げ棒グラフ：geom_bar(position = \"stack\")（デフォルト)\n2変数：カテゴリ×カテゴリ：並列棒グラフ：geom_bar(position = \"dodge\")\n\ndodge（避ける、かわすの意）：重なりを避けて横に配置\n\n2変数：カテゴリ×カテゴリ：帯グラフ： geom_bar(position = \"fill\")\n\n各カテゴリの構成比（割合）で表示\n\n2変数：連続値×カテゴリ：ヒストグラム\n\nggplotに渡す前にグループ分け（group_by）を行い、facet_wrapで分ける\n\n2変数：カテゴリ×数値：棒グラフ geom_col()\n\nカテゴリ別に集計した数値を可視化\ndplyr系の関数（summarise()など）についての知識を要する\n\n2変数：連続値（または順序） × 数値：折れ線グラフ geom_line()\n\n\n\n\n\n複数の変数を加えることで情報量が増える\n\n→︎ 関係や違い、各変数の特徴が見えやすくなり、新たな疑問や仮説が生まれる\n\nggplotによる多変量の可視化\n\n色で区別する：colour（点・線）、fill（面）；図を分ける：facet\n\n\n\n\n\n\nSSDSE（教育用標準データセット）\n\n「主要な公的統計を地域別に一覧できる表形式のデータセット」\n1行目を除外すれば、そのままRで使える\nこのデータセットからレポートを作成することを推奨（他を使いたい人は要相談）\n\n\n\n\n\n\n\n\n\n\n授業の感想：\n\n回答先：Google Forms\n締め切り：4月24日（金）23時59分\n\nレポートに使いたいデータセット\n\n回答先：Google Forms\n締め切り：4月30日（木）10時30分\n\n\n\n\n\n\n\n内容：演習④⑦\nファイル：演習の該当箇所を抜き出すのではなく、qmdファイルをそのまま提出\n\nファイル名：どこかに*氏名を特定できる文字を入れて下さい（例：inClassExercise_kariya.qmd）\n\n回答先：dropbox（メールアドレスが入力されていれば、気付いたことをすぐにコメントします）\n締め切り：4月27日（月）23時59分\n\n\n\n\n\n\n\n\n\n\n\n\n\nSOURCE: Data Science with R, Grammar of graphics"
   },
   {
     "objectID": "teaching/RandQuarto/resume_RandQuarto_w3.html#本日の目標",
@@ -4918,7 +4918,7 @@
     "href": "teaching/RandQuarto/resume_RandQuarto_w3.html#宿題",
     "title": "RとQuartoではじめるデータサイエンス《2026》",
     "section": "",
-    "text": "授業の感想：\n\n回答先：Google Forms\n締め切り：4月24日（金）23時59分\n\nレポートに使いたいデータセット\n\n回答先：Google Forms\n締め切り：4月30日（木）10時30分\n\n\n\n\n\n\n\n内容：演習④⑦\nファイル：演習の該当箇所を抜き出すのではなく、qmdファイルをそのまま提出\n\nファイル名：氏名をかな表記にして下さい\n例：かりやちひろ.qmd\n\n回答先：dropbox（メールアドレスが入力されていれば、気付いたことをすぐにコメントします）\n締め切り：4月27日（月）23時59分"
+    "text": "授業の感想：\n\n回答先：Google Forms\n締め切り：4月24日（金）23時59分\n\nレポートに使いたいデータセット\n\n回答先：Google Forms\n締め切り：4月30日（木）10時30分\n\n\n\n\n\n\n\n内容：演習④⑦\nファイル：演習の該当箇所を抜き出すのではなく、qmdファイルをそのまま提出\n\nファイル名：どこかに*氏名を特定できる文字を入れて下さい（例：inClassExercise_kariya.qmd）\n\n回答先：dropbox（メールアドレスが入力されていれば、気付いたことをすぐにコメントします）\n締め切り：4月27日（月）23時59分"
   },
   {
     "objectID": "teaching/RandQuarto/resume_RandQuarto_w3.html#ggplot-layer概念図",
