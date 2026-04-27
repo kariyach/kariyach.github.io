@@ -431,18 +431,19 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>データの読み込み：<code>read_csv()</code>関数
 <ul>
+<li>例：<code>row_data &lt;- read_csv("data/SSDSE-D-2023.csv")</code></li>
 <li>Cf. Excelファイルの読み込み：<a href="https://readxl.tidyverse.org">readxl</a>パッケージを追加</li>
 </ul></li>
 <li>ファイルパス：ファイルがどのフォルダに保存されているかを階層構造で表した文字列
 <ul>
 <li>絶対パス：一番上の階層（ルート）から、ファイルまでの経路をすべて書いたもの
 <ul>
-<li>Windows: <code>C:\Users\user\Documents\大学\レポート.docx</code></li>
+<li>Windows: <code>C:/Users/user/Documents/大学/レポート.docx</code></li>
 </ul></li>
 <li>相対パス：基準となる場所から見たファイルの位置まで書いたもの
 <ul>
-<li>※基準：Documentsフォルダとする</li>
-<li>Windows: <code>大学\レポート.docx</code></li>
+<li>※基準：作業ディレクトリ（例：Documentsフォルダなど）</li>
+<li>Windows: <code>大学/レポート.docx</code></li>
 </ul></li>
 <li>Rの相対パスの基準：プロジェクトのルート（.Rproj）</li>
 </ul></li>
