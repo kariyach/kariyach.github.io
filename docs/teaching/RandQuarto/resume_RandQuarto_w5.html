@@ -24,26 +24,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -395,11 +376,7 @@ div.csl-indent {
   <li><a href="#目次" id="toc-目次" class="nav-link active" data-scroll-target="#目次">目次</a>
   <ul class="collapse">
   <li><a href="#本日の目標" id="toc-本日の目標" class="nav-link" data-scroll-target="#本日の目標">0. 本日の目標</a></li>
-  <li><a href="#ggplotの日本語問題通称豆腐" id="toc-ggplotの日本語問題通称豆腐" class="nav-link" data-scroll-target="#ggplotの日本語問題通称豆腐">3. ggplotの「日本語問題」（通称：豆腐）</a>
-  <ul class="collapse">
-  <li><a href="#現象と原因" id="toc-現象と原因" class="nav-link" data-scroll-target="#現象と原因">⑴ 現象と原因</a></li>
-  <li><a href="#対応方法" id="toc-対応方法" class="nav-link" data-scroll-target="#対応方法">⑵ 対応方法</a></li>
-  </ul></li>
+  <li><a href="#ggplotの日本語問題通称豆腐" id="toc-ggplotの日本語問題通称豆腐" class="nav-link" data-scroll-target="#ggplotの日本語問題通称豆腐">3. ggplotの「日本語問題」（通称：豆腐）</a></li>
   <li><a href="#チャンクオプション" id="toc-チャンクオプション" class="nav-link" data-scroll-target="#チャンクオプション">4. チャンクオプション</a>
   <ul class="collapse">
   <li><a href="#コードの実行関係" id="toc-コードの実行関係" class="nav-link" data-scroll-target="#コードの実行関係">⑴ コードの実行関係</a></li>
@@ -413,7 +390,7 @@ div.csl-indent {
   <li><a href="#軸ラベル凡例ラベル" id="toc-軸ラベル凡例ラベル" class="nav-link" data-scroll-target="#軸ラベル凡例ラベル">⑷ 軸ラベル・凡例ラベル</a></li>
   <li><a href="#labs関数" id="toc-labs関数" class="nav-link" data-scroll-target="#labs関数"><code>labs()</code>関数</a></li>
   </ul></li>
-  <li><a href="#テキストラベル" id="toc-テキストラベル" class="nav-link" data-scroll-target="#テキストラベル">Ⅵ. テキストラベル</a>
+  <li><a href="#テキストラベル" id="toc-テキストラベル" class="nav-link" data-scroll-target="#テキストラベル">6. テキストラベル</a>
   <ul class="collapse">
   <li><a href="#geom_text関数" id="toc-geom_text関数" class="nav-link" data-scroll-target="#geom_text関数"><code>geom_text()</code>関数</a></li>
   </ul></li>
@@ -451,21 +428,16 @@ div.csl-indent {
 </section>
 <section id="ggplotの日本語問題通称豆腐" class="level2">
 <h2 class="anchored" data-anchor-id="ggplotの日本語問題通称豆腐">3. ggplotの「日本語問題」（通称：豆腐）</h2>
-<section id="現象と原因" class="level3">
-<h3 class="anchored" data-anchor-id="現象と原因">⑴ 現象と原因</h3>
 <ul>
-<li>グラフ中の日本語が □（四角）で表示される
+<li>現象と原因
 <ul>
-<li>軸ラベル（x, y）；凡例（legend）；タイトル；geom_text()</li>
-<li>見た目が「豆腐」に見えるため「豆腐現象」と呼ばれる</li>
-</ul></li>
+<li>グラフ中の日本語が □（四角）で表示される</li>
 <li>ggplotのデフォルトフォントが日本語の文字を持っていないために生じる</li>
-</ul>
-</section>
-<section id="対応方法" class="level3">
-<h3 class="anchored" data-anchor-id="対応方法">⑵ 対応方法</h3>
+</ul></li>
+<li>対応方法
 <ul>
 <li>ggplotのコード内（通常、最終行）で、日本語フォントを指定する</li>
+</ul></li>
 </ul>
 <pre><code>+
 theme(text = element_text(family = "Meiryo"))</code></pre>
@@ -475,7 +447,6 @@ theme(text = element_text(family = "Meiryo"))</code></pre>
 <li><a href="aa">教材</a>を参照</li>
 </ul></li>
 </ul>
-</section>
 </section>
 <section id="チャンクオプション" class="level2">
 <h2 class="anchored" data-anchor-id="チャンクオプション">4. チャンクオプション</h2>
@@ -510,44 +481,24 @@ theme(text = element_text(family = "Meiryo"))</code></pre>
 <section id="ggplot公式theme" class="level3">
 <h3 class="anchored" data-anchor-id="ggplot公式theme">⑴ ggplot<a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">公式theme</a></h3>
 <ul>
-<li>theme_gray()：デフォルト</li>
-<li>theme_bw()：白黒（論文向け）</li>
-<li>theme_classic()：軸だけ（<em>推奨</em>）</li>
-<li>theme_minimal()：最小限（プレゼン向け）</li>
-<li>theme_void()：何もなし</li>
+<li>theme_gray()：デフォルト；theme_bw()：白黒（論文向け）；theme_classic()：軸だけ</li>
 </ul>
 </section>
 <section id="色" class="level3">
 <h3 class="anchored" data-anchor-id="色">⑵ 色</h3>
-<section id="i-カラーパレット" class="level4">
-<h4 class="anchored" data-anchor-id="i-カラーパレット">i) カラーパレット</h4>
-<blockquote class="blockquote">
-<p>カラーパレットは、<em>プロットに用いるデータを表現する能力に基づいて選ぶのがよい</em>でしょう。例えば国や性別など、<em>順序なしのカテゴリカル変数を表すには、簡単に混同されないような､はっきり区別できる色が必要</em>です。その一方で、教育レベルといったような<em>順序付きカテゴリカル変数では、大小や早い遅いなど段階的に変化する色の枠組みが必要</em>です（<span class="citation" data-cites="HealyK:2021book1_translJA">ヒーリー，キーラン <a href="#ref-HealyK:2021book1_translJA" role="doc-biblioref">(2021)</a></span>, 283ページ）。</p>
-</blockquote>
-</section>
-<section id="ii-fillとcolourで異なる" class="level4">
-<h4 class="anchored" data-anchor-id="ii-fillとcolourで異なる">ii) fillとcolourで異なる</h4>
 <ul>
-<li><code>scale_fill_brewer(palette = "Set1")</code></li>
-<li><code>scale_colour_brewer(palette = "Set1")</code></li>
-</ul>
-</section>
-<section id="iii-その他" class="level4">
-<h4 class="anchored" data-anchor-id="iii-その他">iii) その他</h4>
-<ul>
+<li>データの意味に応じて配色を考える</li>
+<li>fillとcolourで関数が異なる</li>
 <li>カラー名の他、HTMLカラーコードも使用可</li>
 <li>追加パッケージ：<a href="https://pmassicotte.github.io/paletteer_gallery/">paletteer</a>; <a href="https://github.com/BlakeRMills/MetBrewer/tree/main">MetBrewer</a></li>
 <li>色の透過度：<code>geom_()</code>内の<code>alpha</code>で指定</li>
 </ul>
 </section>
-</section>
 <section id="軸ラベル" class="level3">
 <h3 class="anchored" data-anchor-id="軸ラベル">⑶ 軸ラベル</h3>
 <ul>
-<li><code>scale_x_continuous()</code>関数 / <code>scale_y_continuous()</code>関数：軸の設定を変更する関数</li>
+<li><code>scale_x_continuous()</code>関数 / <code>scale_y_continuous()</code>関数：軸設定を変更する関数</li>
 <li><code>label_percent()</code>関数：数値をパーセント形式に変換する関数</li>
-<li><code>label_comma()</code>関数：軸の値に,を足す関数</li>
-<li><code>label_kansuji()</code>関数：日本語表記の桁数に変える関数</li>
 </ul>
 </section>
 <section id="軸ラベル凡例ラベル" class="level3">
@@ -558,15 +509,13 @@ theme(text = element_text(family = "Meiryo"))</code></pre>
 <ul>
 <li>図に表示される説明的な文字を設定（変更）する関数
 <ul>
-<li>x軸・y軸のラベル（x; y）</li>
-<li>凡例のラベル（fill; colour）</li>
-<li><code>""</code>にすると、ラベルは空白になる</li>
+<li>x軸・y軸のラベル（x; y）；凡例のラベル（fill; colour）</li>
 </ul></li>
 </ul>
 </section>
 </section>
 <section id="テキストラベル" class="level2">
-<h2 class="anchored" data-anchor-id="テキストラベル">Ⅵ. テキストラベル</h2>
+<h2 class="anchored" data-anchor-id="テキストラベル">6. テキストラベル</h2>
 <section id="geom_text関数" class="level3">
 <h3 class="anchored" data-anchor-id="geom_text関数"><code>geom_text()</code>関数</h3>
 <ul>
@@ -604,15 +553,10 @@ theme(text = element_text(family = "Meiryo"))</code></pre>
 </div>
 
 
-
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-HealyK:2021book1_translJA" class="csl-entry" role="listitem">
-ヒーリー，キーラン (2021) 『データ分析のためのデータ可視化入門』, 講談社.
-</div>
-</div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>CHIHIRO KARIYA 2026</div></div></section></div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>CHIHIRO KARIYA 2026</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
