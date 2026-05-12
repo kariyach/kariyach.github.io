@@ -394,10 +394,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#geom_text関数" id="toc-geom_text関数" class="nav-link" data-scroll-target="#geom_text関数"><code>geom_text()</code>関数</a></li>
   </ul></li>
-  <li><a href="#複数の図の配置" id="toc-複数の図の配置" class="nav-link" data-scroll-target="#複数の図の配置">7. 複数の図の配置</a>
-  <ul class="collapse">
-  <li><a href="#patchworkパッケージ" id="toc-patchworkパッケージ" class="nav-link" data-scroll-target="#patchworkパッケージ">patchworkパッケージ</a></li>
-  </ul></li>
+  <li><a href="#複数の図の配置" id="toc-複数の図の配置" class="nav-link" data-scroll-target="#複数の図の配置">7. 複数の図の配置</a></li>
   <li><a href="#宿題" id="toc-宿題" class="nav-link" data-scroll-target="#宿題">宿題</a></li>
   </ul></li>
   </ul>
@@ -450,7 +447,7 @@ theme(text = element_text(family = "Meiryo"))</code></pre>
 <ul>
 <li>すべての図ごとにフォント指定をするのは面倒なので、<em>Setup Chunkで</em>一括設定する
 <ul>
-<li><a href="aa">教材</a>を参照</li>
+<li><a href="https://kariyach.github.io/teaching/RandQuarto/slide_RandQuarto_w5.html#/ggplotの日本語問題通称豆腐-1">教材</a>を参照</li>
 </ul></li>
 </ul>
 </section>
@@ -468,7 +465,6 @@ theme(text = element_text(family = "Meiryo"))</code></pre>
 <li>eval: コードを実行するか（デフォルトはtrue = 実行する）
 <ul>
 <li><em>実行できない（エラーが起こる）チャンクの実行回避</em></li>
-<li>実行したくないチャンクの実行回避</li>
 </ul></li>
 </ul>
 </section>
@@ -534,20 +530,10 @@ theme(text = element_text(family = "Meiryo"))</code></pre>
 </section>
 <section id="複数の図の配置" class="level2">
 <h2 class="anchored" data-anchor-id="複数の図の配置">7. 複数の図の配置</h2>
-<section id="patchworkパッケージ" class="level3">
-<h3 class="anchored" data-anchor-id="patchworkパッケージ">patchworkパッケージ</h3>
 <ul>
-<li><a href="https://patchwork.data-imaginist.com/index.html">公式サイト</a>
-<ul>
-<li>パッケージのインストールと読み込みが必要</li>
-</ul></li>
-<li>手順</li>
+<li>追加パッケージ<a href="https://patchwork.data-imaginist.com/index.html">patchwork</a></li>
+<li>同一チャンク内に、複数のggplotの結果をオブジェクトに代入し、<code>+</code> で並べる（例：p1 + p2）</li>
 </ul>
-<ol type="1">
-<li>同一チャンク内に、複数のggplotの結果をオブジェクトに代入</li>
-<li><code>+</code> で並べる（例：p1 + p2）</li>
-</ol>
-</section>
 </section>
 <section id="宿題" class="level2">
 <h2 class="anchored" data-anchor-id="宿題">宿題</h2>
