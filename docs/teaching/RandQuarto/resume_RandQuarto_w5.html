@@ -422,7 +422,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="本日の目標" class="level2">
 <h2 class="anchored" data-anchor-id="本日の目標">0. 本日の目標</h2>
 <ol type="1">
-<li>レポート課題（<strong>特に内容と締め切り</strong>）を理解する</li>
+<li>レポート課題（<em>特に内容と締め切り</em>）を理解する</li>
 <li>チャンクオプションを試してみる</li>
 <li>データの特徴に見合った配色変更する</li>
 <li>データの特徴に見合ったラベル変更する</li>
@@ -432,15 +432,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="ggplotの日本語問題通称豆腐" class="level2">
 <h2 class="anchored" data-anchor-id="ggplotの日本語問題通称豆腐">3. ggplotの「日本語問題」（通称：豆腐）</h2>
 <ul>
-<li>現象と原因
-<ul>
-<li>グラフ中の日本語が □（四角）で表示される</li>
-<li>ggplotのデフォルトフォントが日本語の文字を持っていないために生じる</li>
-</ul></li>
-<li>対応方法
-<ul>
-<li>ggplotのコード内（通常、最終行）で、日本語フォントを指定する</li>
-</ul></li>
+<li>現象：グラフ中の日本語が □（四角）で表示される</li>
+<li>原因：ggplotのデフォルトフォントが日本語の文字を持っていないために生じる</li>
+<li>対応方法：ggplotのコード内（通常、最終行）で、日本語フォントを指定</li>
 </ul>
 <pre><code>+
 theme(text = element_text(family = "Meiryo"))</code></pre>
@@ -454,8 +448,7 @@ theme(text = element_text(family = "Meiryo"))</code></pre>
 <section id="チャンクオプション" class="level2">
 <h2 class="anchored" data-anchor-id="チャンクオプション">4. チャンクオプション</h2>
 <ul>
-<li>各R chunkの冒頭に書く</li>
-<li><code>#|</code> から書き始める</li>
+<li>各R chunkの冒頭に書く / <code>#|</code> から書き始める</li>
 </ul>
 <section id="コードの実行関係" class="level3">
 <h3 class="anchored" data-anchor-id="コードの実行関係">⑴ コードの実行関係</h3>
@@ -532,7 +525,7 @@ theme(text = element_text(family = "Meiryo"))</code></pre>
 <h2 class="anchored" data-anchor-id="複数の図の配置">7. 複数の図の配置</h2>
 <ul>
 <li>追加パッケージ<a href="https://patchwork.data-imaginist.com/index.html">patchwork</a></li>
-<li>同一チャンク内に、複数のggplotの結果をオブジェクトに代入し、<code>+</code> で並べる（例：p1 + p2）</li>
+<li>同一チャンク内に、複数のggplotの結果をオブジェクトに代入し、<code>+</code> で並べる（p1 + p2）</li>
 </ul>
 </section>
 <section id="宿題" class="level2">
@@ -542,11 +535,8 @@ theme(text = element_text(family = "Meiryo"))</code></pre>
 <section id="授業の感想" class="level3">
 <h3 class="anchored" data-anchor-id="授業の感想">授業の感想：</h3>
 <ul>
-<li>授業の感想：
-<ul>
 <li>回答先：<a href="https://forms.gle/yN8UYjBQEcR4sRSf6">Google Forms</a></li>
 <li>締め切り：5月15日（金）23時59分</li>
-</ul></li>
 </ul>
 </section>
 </div><div class="column" style="width:50%;">
