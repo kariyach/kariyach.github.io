@@ -626,7 +626,10 @@
 <h2>色</h2>
 <h3 id="色の変更マニュアル指定">色の変更：マニュアル指定</h3>
 <ul>
-<li>カラー名の他、HTMLカラーコードも使用可</li>
+<li>カラー名の他、HTMLカラーコードも使用可
+<ul>
+<li>Cf. <a href="https://www.colordic.org">WEB色見本 原色大辞典</a></li>
+</ul></li>
 </ul>
 <div class="panel-tabset">
 <ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Code（カラー名）</a></li><li><a href="#tabset-4-2">Plot（カラー名）</a></li><li><a href="#tabset-4-3">Code（HTMLカラーコード）</a></li><li><a href="#tabset-4-4">Plot（HTMLカラーコード）</a></li></ul>
@@ -1051,9 +1054,18 @@
 <ul>
 <li>x軸・y軸のラベル（x; y）</li>
 <li>凡例のラベル（fill; colour）</li>
-<li><code>""</code>にすると、ラベルは空白になる</li>
 </ul></li>
 </ul>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><code>NULL</code>を入れると（““不要）、ラベルは空白になる。ラベルが自明の場合、図に余分な情報がついていない方が見やすい図になる。</p>
+</div>
+</div>
+</div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">labs</span>(</span>
 <span id="cb20-2"><a></a>  <span class="at">title =</span> <span class="st">""</span>,</span>
