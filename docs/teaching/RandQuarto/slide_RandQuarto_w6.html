@@ -269,7 +269,27 @@
 <section id="前回の積み残し" class="slide level2">
 <h2>前回の積み残し</h2>
 <ul>
-<li>Ⅳ. <a href="hhttps://kariyach.github.io/teaching/RandQuarto/slide_RandQuarto_w5.html#/yaml設定-1">チャンクオプション &gt; YAML設定</a>から</li>
+<li>Meiryoを指定すると警告が出るため、一旦、以下のコードを削除して下さい</li>
+</ul>
+<pre><code># ggplot theme_classicのフォント設定 ----
+ggplot2::theme_set(
+  theme_classic(base_family = "Meiryo") +
+    theme_sub_axis_bottom(
+      title = element_text(size = 7, margin = margin(t = 8)),
+      text  = element_text(size = 6.5)
+    ) +
+    theme_sub_axis_left(
+      title = element_text(size = 7, margin = margin(r = 8)),
+      text  = element_text(size = 7, hjust = 0)
+    ) +
+    theme_sub_legend(
+      position   = "bottom",
+      margin     = margin(t = -6),
+      key.size   = unit(4, "mm")
+    )
+)</code></pre>
+<ul>
+<li>Ⅳ. <a href="https://kariyach.github.io/teaching/RandQuarto/slide_RandQuarto_w5.html#/yaml設定">チャンクオプション &gt; YAML設定</a>から</li>
 </ul>
 </section></section>
 <section>
@@ -299,120 +319,120 @@
 <li>df_long_cat_d_2021とdf_long_cat_d_2023の二つのデータフレームができる</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Setupチャンクに書く</span></span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a>row_data_d_2023 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/SSDSE-D-2023.csv"</span>, </span>
-<span id="cb1-4"><a></a>                     <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"CP932"</span>))</span>
-<span id="cb1-5"><a></a></span>
-<span id="cb1-6"><a></a>row_data_d_2021 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/SSDSE-D-2021.csv"</span>, </span>
-<span id="cb1-7"><a></a>                     <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"CP932"</span>)) </span>
-<span id="cb1-8"><a></a></span>
-<span id="cb1-9"><a></a>df_long_d_2023 <span class="ot">&lt;-</span></span>
-<span id="cb1-10"><a></a>  row_data_d_2023 <span class="sc">|&gt;</span></span>
-<span id="cb1-11"><a></a>  <span class="fu">select</span>(<span class="st">"SSDSE-D-2023"</span>, Prefecture, <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>)) <span class="sc">|&gt;</span> <span class="co"># 「MA01」「MB12」などのように、アルファベット2文字＋数字2桁 になっている列をまとめて選ぶ</span></span>
-<span id="cb1-12"><a></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(MA00, MB00, MC00, MD00, ME00, MF00)) <span class="sc">|&gt;</span> <span class="co"># 複数の列を一括で削除するためにc()で囲む</span></span>
-<span id="cb1-13"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb1-14"><a></a>    <span class="co"># 横に並んでいるデータ（列）を、縦に並べ替える</span></span>
-<span id="cb1-15"><a></a>    <span class="at">cols =</span> <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>), <span class="co"># 対象となる列（コード列）</span></span>
-<span id="cb1-16"><a></a>    <span class="at">names_to =</span> <span class="st">"code"</span>, <span class="co"># 列名（MA01など）を「code」という列に入れる</span></span>
-<span id="cb1-17"><a></a>    <span class="at">values_to =</span> <span class="st">"value"</span></span>
-<span id="cb1-18"><a></a>  ) <span class="co"># 中の値を「value」という列に入れる</span></span>
-<span id="cb1-19"><a></a></span>
-<span id="cb1-20"><a></a>middle_category <span class="ot">&lt;-</span></span>
-<span id="cb1-21"><a></a>  df_long_d_2023 <span class="sc">|&gt;</span></span>
-<span id="cb1-22"><a></a>  <span class="fu">filter</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-23"><a></a>  <span class="fu">select</span>(code, <span class="at">category_middle =</span> value)</span>
-<span id="cb1-24"><a></a></span>
-<span id="cb1-25"><a></a>df_long_cat_d_2023 <span class="ot">&lt;-</span></span>
-<span id="cb1-26"><a></a>  df_long_d_2023 <span class="sc">|&gt;</span></span>
-<span id="cb1-27"><a></a>  <span class="fu">mutate</span>(<span class="at">Prefecture =</span> <span class="fu">factor</span>(Prefecture, <span class="at">levels =</span> pref_levels)) <span class="sc">|&gt;</span></span>
-<span id="cb1-28"><a></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-29"><a></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"男女の別"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-30"><a></a>  <span class="fu">drop_na</span>(Prefecture) <span class="sc">|&gt;</span></span>
-<span id="cb1-31"><a></a>  <span class="fu">left_join</span>(middle_category, <span class="at">by =</span> <span class="st">"code"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-32"><a></a>  <span class="fu">relocate</span>(category_middle, <span class="at">.after =</span> code) <span class="sc">|&gt;</span></span>
-<span id="cb1-33"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb1-34"><a></a>    <span class="at">category_major =</span> <span class="fu">case_when</span>(</span>
-<span id="cb1-35"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MB"</span> <span class="sc">~</span> <span class="st">"学習・自己啓発・訓練"</span>,</span>
-<span id="cb1-36"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MC"</span> <span class="sc">~</span> <span class="st">"スポーツ"</span>,</span>
-<span id="cb1-37"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MD"</span> <span class="sc">~</span> <span class="st">"趣味・娯楽"</span>,</span>
-<span id="cb1-38"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"ME"</span> <span class="sc">~</span> <span class="st">"ボランティア"</span>,</span>
-<span id="cb1-39"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MF"</span> <span class="sc">~</span> <span class="st">"旅行・行楽"</span>,</span>
-<span id="cb1-40"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MG"</span> <span class="sc">~</span> <span class="st">"行動種別"</span>,</span>
-<span id="cb1-41"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MH"</span> <span class="sc">~</span> <span class="st">"平均時刻"</span>,</span>
-<span id="cb1-42"><a></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_character_</span></span>
-<span id="cb1-43"><a></a>    )</span>
-<span id="cb1-44"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb1-45"><a></a>  <span class="fu">relocate</span>(category_major, <span class="at">.after =</span> code) <span class="sc">|&gt;</span></span>
-<span id="cb1-46"><a></a>  <span class="fu">rename</span>(都道府県 <span class="ot">=</span> Prefecture) <span class="sc">|&gt;</span></span>
-<span id="cb1-47"><a></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"0_総数"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-48"><a></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">"性別"</span>), <span class="at">sep =</span> <span class="st">"_"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-49"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb1-50"><a></a>  <span class="fu">mutate</span>(性別 <span class="ot">=</span> <span class="fu">factor</span>(性別, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb1-51"><a></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-52"><a></a>  <span class="fu">drop_na</span>(都道府県) <span class="sc">|&gt;</span> </span>
-<span id="cb1-53"><a></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="dv">2021</span>, <span class="at">.before =</span> 性別) <span class="sc">|&gt;</span> </span>
-<span id="cb1-54"><a></a>  <span class="fu">mutate</span>(<span class="at">data_file_name =</span> <span class="st">"SSDSE-D-2023"</span>, <span class="at">.before =</span> year) <span class="co"># 同種の複数データを結合する際に識別できるようファイル名を追加  </span></span>
-<span id="cb1-55"><a></a></span>
-<span id="cb1-56"><a></a></span>
-<span id="cb1-57"><a></a>df_long_d_2021 <span class="ot">&lt;-</span></span>
-<span id="cb1-58"><a></a>  row_data_d_2021 <span class="sc">|&gt;</span></span>
-<span id="cb1-59"><a></a>  <span class="fu">select</span>(<span class="st">"SSDSE-D-2021"</span>, Prefecture, <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>)) <span class="sc">|&gt;</span> <span class="co"># 「MA01」「MB12」などのように、アルファベット2文字＋数字2桁 になっている列をまとめて選ぶ</span></span>
-<span id="cb1-60"><a></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(MA00, MB00, MC00, MD00, ME00, MF00)) <span class="sc">|&gt;</span> <span class="co"># 複数の列を一括で削除するためにc()で囲む</span></span>
-<span id="cb1-61"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb1-62"><a></a>    <span class="co"># 横に並んでいるデータ（列）を、縦に並べ替える</span></span>
-<span id="cb1-63"><a></a>    <span class="at">cols =</span> <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>), <span class="co"># 対象となる列（コード列）</span></span>
-<span id="cb1-64"><a></a>    <span class="at">names_to =</span> <span class="st">"code"</span>, <span class="co"># 列名（MA01など）を「code」という列に入れる</span></span>
-<span id="cb1-65"><a></a>    <span class="at">values_to =</span> <span class="st">"value"</span></span>
-<span id="cb1-66"><a></a>  ) <span class="co"># 中の値を「value」という列に入れる</span></span>
-<span id="cb1-67"><a></a></span>
-<span id="cb1-68"><a></a>middle_category_2021 <span class="ot">&lt;-</span></span>
-<span id="cb1-69"><a></a>  df_long_d_2021 <span class="sc">|&gt;</span></span>
-<span id="cb1-70"><a></a>  <span class="fu">filter</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-71"><a></a>  <span class="fu">select</span>(code, <span class="at">category_middle =</span> value)</span>
-<span id="cb1-72"><a></a></span>
-<span id="cb1-73"><a></a>df_long_cat_d_2021 <span class="ot">&lt;-</span></span>
-<span id="cb1-74"><a></a>  df_long_d_2021 <span class="sc">|&gt;</span></span>
-<span id="cb1-75"><a></a>  <span class="fu">mutate</span>(<span class="at">Prefecture =</span> <span class="fu">factor</span>(Prefecture, <span class="at">levels =</span> pref_levels)) <span class="sc">|&gt;</span></span>
-<span id="cb1-76"><a></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-77"><a></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2021</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"男女の別"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-78"><a></a>  <span class="fu">drop_na</span>(Prefecture) <span class="sc">|&gt;</span></span>
-<span id="cb1-79"><a></a>  <span class="fu">left_join</span>(middle_category, <span class="at">by =</span> <span class="st">"code"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-80"><a></a>  <span class="fu">relocate</span>(category_middle, <span class="at">.after =</span> code) <span class="sc">|&gt;</span></span>
-<span id="cb1-81"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb1-82"><a></a>    <span class="at">category_major =</span> <span class="fu">case_when</span>(</span>
-<span id="cb1-83"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MB"</span> <span class="sc">~</span> <span class="st">"学習・自己啓発・訓練"</span>,</span>
-<span id="cb1-84"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MC"</span> <span class="sc">~</span> <span class="st">"スポーツ"</span>,</span>
-<span id="cb1-85"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MD"</span> <span class="sc">~</span> <span class="st">"趣味・娯楽"</span>,</span>
-<span id="cb1-86"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"ME"</span> <span class="sc">~</span> <span class="st">"ボランティア"</span>,</span>
-<span id="cb1-87"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MF"</span> <span class="sc">~</span> <span class="st">"旅行・行楽"</span>,</span>
-<span id="cb1-88"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MG"</span> <span class="sc">~</span> <span class="st">"行動種別"</span>,</span>
-<span id="cb1-89"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MH"</span> <span class="sc">~</span> <span class="st">"平均時刻"</span>,</span>
-<span id="cb1-90"><a></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_character_</span></span>
-<span id="cb1-91"><a></a>    )</span>
-<span id="cb1-92"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb1-93"><a></a>  <span class="fu">relocate</span>(category_major, <span class="at">.after =</span> code) <span class="sc">|&gt;</span></span>
-<span id="cb1-94"><a></a>  <span class="fu">rename</span>(都道府県 <span class="ot">=</span> Prefecture) <span class="sc">|&gt;</span></span>
-<span id="cb1-95"><a></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2021</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"0_総数"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-96"><a></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">SSDSE-D-2021</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">"性別"</span>), <span class="at">sep =</span> <span class="st">"_"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-97"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb1-98"><a></a>  <span class="fu">mutate</span>(性別 <span class="ot">=</span> <span class="fu">factor</span>(性別, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb1-99"><a></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-100"><a></a>  <span class="fu">drop_na</span>(都道府県) <span class="sc">|&gt;</span> </span>
-<span id="cb1-101"><a></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="dv">2016</span>, <span class="at">.before =</span> 性別) <span class="sc">|&gt;</span> </span>
-<span id="cb1-102"><a></a>  <span class="fu">mutate</span>(<span class="at">data_file_name =</span> <span class="st">"SSDSE-D-2021"</span>, <span class="at">.before =</span> year) <span class="co"># 同種の複数データを結合する際に識別できるようファイル名を追加  </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Setupチャンクに書く</span></span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a>row_data_d_2023 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/SSDSE-D-2023.csv"</span>, </span>
+<span id="cb2-4"><a></a>                     <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"CP932"</span>))</span>
+<span id="cb2-5"><a></a></span>
+<span id="cb2-6"><a></a>row_data_d_2021 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/SSDSE-D-2021.csv"</span>, </span>
+<span id="cb2-7"><a></a>                     <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"CP932"</span>)) </span>
+<span id="cb2-8"><a></a></span>
+<span id="cb2-9"><a></a>df_long_d_2023 <span class="ot">&lt;-</span></span>
+<span id="cb2-10"><a></a>  row_data_d_2023 <span class="sc">|&gt;</span></span>
+<span id="cb2-11"><a></a>  <span class="fu">select</span>(<span class="st">"SSDSE-D-2023"</span>, Prefecture, <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>)) <span class="sc">|&gt;</span> <span class="co"># 「MA01」「MB12」などのように、アルファベット2文字＋数字2桁 になっている列をまとめて選ぶ</span></span>
+<span id="cb2-12"><a></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(MA00, MB00, MC00, MD00, ME00, MF00)) <span class="sc">|&gt;</span> <span class="co"># 複数の列を一括で削除するためにc()で囲む</span></span>
+<span id="cb2-13"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb2-14"><a></a>    <span class="co"># 横に並んでいるデータ（列）を、縦に並べ替える</span></span>
+<span id="cb2-15"><a></a>    <span class="at">cols =</span> <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>), <span class="co"># 対象となる列（コード列）</span></span>
+<span id="cb2-16"><a></a>    <span class="at">names_to =</span> <span class="st">"code"</span>, <span class="co"># 列名（MA01など）を「code」という列に入れる</span></span>
+<span id="cb2-17"><a></a>    <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb2-18"><a></a>  ) <span class="co"># 中の値を「value」という列に入れる</span></span>
+<span id="cb2-19"><a></a></span>
+<span id="cb2-20"><a></a>middle_category <span class="ot">&lt;-</span></span>
+<span id="cb2-21"><a></a>  df_long_d_2023 <span class="sc">|&gt;</span></span>
+<span id="cb2-22"><a></a>  <span class="fu">filter</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-23"><a></a>  <span class="fu">select</span>(code, <span class="at">category_middle =</span> value)</span>
+<span id="cb2-24"><a></a></span>
+<span id="cb2-25"><a></a>df_long_cat_d_2023 <span class="ot">&lt;-</span></span>
+<span id="cb2-26"><a></a>  df_long_d_2023 <span class="sc">|&gt;</span></span>
+<span id="cb2-27"><a></a>  <span class="fu">mutate</span>(<span class="at">Prefecture =</span> <span class="fu">factor</span>(Prefecture, <span class="at">levels =</span> pref_levels)) <span class="sc">|&gt;</span></span>
+<span id="cb2-28"><a></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-29"><a></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"男女の別"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-30"><a></a>  <span class="fu">drop_na</span>(Prefecture) <span class="sc">|&gt;</span></span>
+<span id="cb2-31"><a></a>  <span class="fu">left_join</span>(middle_category, <span class="at">by =</span> <span class="st">"code"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-32"><a></a>  <span class="fu">relocate</span>(category_middle, <span class="at">.after =</span> code) <span class="sc">|&gt;</span></span>
+<span id="cb2-33"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-34"><a></a>    <span class="at">category_major =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-35"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MB"</span> <span class="sc">~</span> <span class="st">"学習・自己啓発・訓練"</span>,</span>
+<span id="cb2-36"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MC"</span> <span class="sc">~</span> <span class="st">"スポーツ"</span>,</span>
+<span id="cb2-37"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MD"</span> <span class="sc">~</span> <span class="st">"趣味・娯楽"</span>,</span>
+<span id="cb2-38"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"ME"</span> <span class="sc">~</span> <span class="st">"ボランティア"</span>,</span>
+<span id="cb2-39"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MF"</span> <span class="sc">~</span> <span class="st">"旅行・行楽"</span>,</span>
+<span id="cb2-40"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MG"</span> <span class="sc">~</span> <span class="st">"行動種別"</span>,</span>
+<span id="cb2-41"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MH"</span> <span class="sc">~</span> <span class="st">"平均時刻"</span>,</span>
+<span id="cb2-42"><a></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_character_</span></span>
+<span id="cb2-43"><a></a>    )</span>
+<span id="cb2-44"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-45"><a></a>  <span class="fu">relocate</span>(category_major, <span class="at">.after =</span> code) <span class="sc">|&gt;</span></span>
+<span id="cb2-46"><a></a>  <span class="fu">rename</span>(都道府県 <span class="ot">=</span> Prefecture) <span class="sc">|&gt;</span></span>
+<span id="cb2-47"><a></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"0_総数"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-48"><a></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">"性別"</span>), <span class="at">sep =</span> <span class="st">"_"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-49"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-50"><a></a>  <span class="fu">mutate</span>(性別 <span class="ot">=</span> <span class="fu">factor</span>(性別, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb2-51"><a></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-52"><a></a>  <span class="fu">drop_na</span>(都道府県) <span class="sc">|&gt;</span> </span>
+<span id="cb2-53"><a></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="dv">2021</span>, <span class="at">.before =</span> 性別) <span class="sc">|&gt;</span> </span>
+<span id="cb2-54"><a></a>  <span class="fu">mutate</span>(<span class="at">data_file_name =</span> <span class="st">"SSDSE-D-2023"</span>, <span class="at">.before =</span> year) <span class="co"># 同種の複数データを結合する際に識別できるようファイル名を追加  </span></span>
+<span id="cb2-55"><a></a></span>
+<span id="cb2-56"><a></a></span>
+<span id="cb2-57"><a></a>df_long_d_2021 <span class="ot">&lt;-</span></span>
+<span id="cb2-58"><a></a>  row_data_d_2021 <span class="sc">|&gt;</span></span>
+<span id="cb2-59"><a></a>  <span class="fu">select</span>(<span class="st">"SSDSE-D-2021"</span>, Prefecture, <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>)) <span class="sc">|&gt;</span> <span class="co"># 「MA01」「MB12」などのように、アルファベット2文字＋数字2桁 になっている列をまとめて選ぶ</span></span>
+<span id="cb2-60"><a></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(MA00, MB00, MC00, MD00, ME00, MF00)) <span class="sc">|&gt;</span> <span class="co"># 複数の列を一括で削除するためにc()で囲む</span></span>
+<span id="cb2-61"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb2-62"><a></a>    <span class="co"># 横に並んでいるデータ（列）を、縦に並べ替える</span></span>
+<span id="cb2-63"><a></a>    <span class="at">cols =</span> <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>), <span class="co"># 対象となる列（コード列）</span></span>
+<span id="cb2-64"><a></a>    <span class="at">names_to =</span> <span class="st">"code"</span>, <span class="co"># 列名（MA01など）を「code」という列に入れる</span></span>
+<span id="cb2-65"><a></a>    <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb2-66"><a></a>  ) <span class="co"># 中の値を「value」という列に入れる</span></span>
+<span id="cb2-67"><a></a></span>
+<span id="cb2-68"><a></a>middle_category_2021 <span class="ot">&lt;-</span></span>
+<span id="cb2-69"><a></a>  df_long_d_2021 <span class="sc">|&gt;</span></span>
+<span id="cb2-70"><a></a>  <span class="fu">filter</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-71"><a></a>  <span class="fu">select</span>(code, <span class="at">category_middle =</span> value)</span>
+<span id="cb2-72"><a></a></span>
+<span id="cb2-73"><a></a>df_long_cat_d_2021 <span class="ot">&lt;-</span></span>
+<span id="cb2-74"><a></a>  df_long_d_2021 <span class="sc">|&gt;</span></span>
+<span id="cb2-75"><a></a>  <span class="fu">mutate</span>(<span class="at">Prefecture =</span> <span class="fu">factor</span>(Prefecture, <span class="at">levels =</span> pref_levels)) <span class="sc">|&gt;</span></span>
+<span id="cb2-76"><a></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-77"><a></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2021</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"男女の別"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-78"><a></a>  <span class="fu">drop_na</span>(Prefecture) <span class="sc">|&gt;</span></span>
+<span id="cb2-79"><a></a>  <span class="fu">left_join</span>(middle_category, <span class="at">by =</span> <span class="st">"code"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-80"><a></a>  <span class="fu">relocate</span>(category_middle, <span class="at">.after =</span> code) <span class="sc">|&gt;</span></span>
+<span id="cb2-81"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-82"><a></a>    <span class="at">category_major =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-83"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MB"</span> <span class="sc">~</span> <span class="st">"学習・自己啓発・訓練"</span>,</span>
+<span id="cb2-84"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MC"</span> <span class="sc">~</span> <span class="st">"スポーツ"</span>,</span>
+<span id="cb2-85"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MD"</span> <span class="sc">~</span> <span class="st">"趣味・娯楽"</span>,</span>
+<span id="cb2-86"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"ME"</span> <span class="sc">~</span> <span class="st">"ボランティア"</span>,</span>
+<span id="cb2-87"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MF"</span> <span class="sc">~</span> <span class="st">"旅行・行楽"</span>,</span>
+<span id="cb2-88"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MG"</span> <span class="sc">~</span> <span class="st">"行動種別"</span>,</span>
+<span id="cb2-89"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MH"</span> <span class="sc">~</span> <span class="st">"平均時刻"</span>,</span>
+<span id="cb2-90"><a></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_character_</span></span>
+<span id="cb2-91"><a></a>    )</span>
+<span id="cb2-92"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-93"><a></a>  <span class="fu">relocate</span>(category_major, <span class="at">.after =</span> code) <span class="sc">|&gt;</span></span>
+<span id="cb2-94"><a></a>  <span class="fu">rename</span>(都道府県 <span class="ot">=</span> Prefecture) <span class="sc">|&gt;</span></span>
+<span id="cb2-95"><a></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2021</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"0_総数"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-96"><a></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">SSDSE-D-2021</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">"性別"</span>), <span class="at">sep =</span> <span class="st">"_"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-97"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-98"><a></a>  <span class="fu">mutate</span>(性別 <span class="ot">=</span> <span class="fu">factor</span>(性別, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb2-99"><a></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-100"><a></a>  <span class="fu">drop_na</span>(都道府県) <span class="sc">|&gt;</span> </span>
+<span id="cb2-101"><a></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="dv">2016</span>, <span class="at">.before =</span> 性別) <span class="sc">|&gt;</span> </span>
+<span id="cb2-102"><a></a>  <span class="fu">mutate</span>(<span class="at">data_file_name =</span> <span class="st">"SSDSE-D-2021"</span>, <span class="at">.before =</span> year) <span class="co"># 同種の複数データを結合する際に識別できるようファイル名を追加  </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="行結合-3" class="slide level2">
 <h2>行結合</h2>
 <ul>
-<li>df_long_2021とdf_longを結合</li>
-<li>新しいチャンクを作って貼り付け</li>
+<li>df_long_cat_d_2021とdf_long_cat_d_2023を結合</li>
+<li>先のSetupチャンクのコードに続けて貼り付け</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Setupチャンクに書く</span></span>
-<span id="cb2-2"><a></a></span>
-<span id="cb2-3"><a></a>df_long_cat_d_all <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(df_long_cat_d_2021, df_long_cat_d_2023)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Setupチャンクに書く</span></span>
+<span id="cb3-2"><a></a></span>
+<span id="cb3-3"><a></a>df_long_cat_d_all <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(df_long_cat_d_2021, df_long_cat_d_2023)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -431,44 +451,44 @@
 <section id="差分の算出" class="slide level2">
 <h2>差分の算出</h2>
 <ul>
-<li>新しいチャンクを作って貼り付け</li>
-<li>引き算（2021-2016）しやすいように<code>pivot_wider()</code>で横持ちデータに変換</li>
+<li>先のSetupチャンクのコードに続けて貼り付け</li>
+<li>引き算（2021から2016を引く）しやすいように<code>pivot_wider()</code>で横持ちデータに変換</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Setupチャンクに書く</span></span>
-<span id="cb4-2"><a></a></span>
-<span id="cb4-3"><a></a>df_filtered <span class="ot">&lt;-</span> <span class="co"># 2016年にはあって、2021にはないデータを除去</span></span>
-<span id="cb4-4"><a></a>  df_long_cat_d_all <span class="sc">|&gt;</span></span>
-<span id="cb4-5"><a></a>  <span class="fu">group_by</span>(</span>
-<span id="cb4-6"><a></a>    性別,</span>
-<span id="cb4-7"><a></a>    都道府県,</span>
-<span id="cb4-8"><a></a>    code,</span>
-<span id="cb4-9"><a></a>    category_major,</span>
-<span id="cb4-10"><a></a>    category_middle</span>
-<span id="cb4-11"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb4-12"><a></a>  <span class="fu">filter</span>(</span>
-<span id="cb4-13"><a></a>    <span class="fu">n_distinct</span>(year) <span class="sc">==</span> <span class="dv">2</span></span>
-<span id="cb4-14"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb4-15"><a></a>  <span class="fu">ungroup</span>()</span>
-<span id="cb4-16"><a></a></span>
-<span id="cb4-17"><a></a>df_diff <span class="ot">&lt;-</span> <span class="co"># 差分を算出</span></span>
-<span id="cb4-18"><a></a>  df_filtered <span class="sc">|&gt;</span></span>
-<span id="cb4-19"><a></a>  <span class="fu">pivot_wider</span>(</span>
-<span id="cb4-20"><a></a>    <span class="at">id_cols =</span> <span class="fu">c</span>(</span>
-<span id="cb4-21"><a></a>      性別,</span>
-<span id="cb4-22"><a></a>      都道府県,</span>
-<span id="cb4-23"><a></a>      code,</span>
-<span id="cb4-24"><a></a>      category_major,</span>
-<span id="cb4-25"><a></a>      category_middle</span>
-<span id="cb4-26"><a></a>    ),</span>
-<span id="cb4-27"><a></a>    <span class="at">names_from =</span> year,</span>
-<span id="cb4-28"><a></a>    <span class="at">values_from =</span> value</span>
-<span id="cb4-29"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb4-30"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb4-31"><a></a>    <span class="st">`</span><span class="at">2016</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">2016</span><span class="st">`</span>),</span>
-<span id="cb4-32"><a></a>    <span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">2021</span><span class="st">`</span>),</span>
-<span id="cb4-33"><a></a>    <span class="at">diff =</span> <span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="sc">-</span> <span class="st">`</span><span class="at">2016</span><span class="st">`</span></span>
-<span id="cb4-34"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># Setupチャンクに書く</span></span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a>df_filtered <span class="ot">&lt;-</span> <span class="co"># 2016年にはあって、2021にはないデータを除去</span></span>
+<span id="cb5-4"><a></a>  df_long_cat_d_all <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a></a>  <span class="fu">group_by</span>(</span>
+<span id="cb5-6"><a></a>    性別,</span>
+<span id="cb5-7"><a></a>    都道府県,</span>
+<span id="cb5-8"><a></a>    code,</span>
+<span id="cb5-9"><a></a>    category_major,</span>
+<span id="cb5-10"><a></a>    category_middle</span>
+<span id="cb5-11"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb5-12"><a></a>  <span class="fu">filter</span>(</span>
+<span id="cb5-13"><a></a>    <span class="fu">n_distinct</span>(year) <span class="sc">==</span> <span class="dv">2</span></span>
+<span id="cb5-14"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb5-15"><a></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb5-16"><a></a></span>
+<span id="cb5-17"><a></a>df_diff <span class="ot">&lt;-</span> <span class="co"># 差分を算出</span></span>
+<span id="cb5-18"><a></a>  df_filtered <span class="sc">|&gt;</span></span>
+<span id="cb5-19"><a></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb5-20"><a></a>    <span class="at">id_cols =</span> <span class="fu">c</span>(</span>
+<span id="cb5-21"><a></a>      性別,</span>
+<span id="cb5-22"><a></a>      都道府県,</span>
+<span id="cb5-23"><a></a>      code,</span>
+<span id="cb5-24"><a></a>      category_major,</span>
+<span id="cb5-25"><a></a>      category_middle</span>
+<span id="cb5-26"><a></a>    ),</span>
+<span id="cb5-27"><a></a>    <span class="at">names_from =</span> year,</span>
+<span id="cb5-28"><a></a>    <span class="at">values_from =</span> value</span>
+<span id="cb5-29"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb5-30"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-31"><a></a>    <span class="st">`</span><span class="at">2016</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">2016</span><span class="st">`</span>),</span>
+<span id="cb5-32"><a></a>    <span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">2021</span><span class="st">`</span>),</span>
+<span id="cb5-33"><a></a>    <span class="at">diff =</span> <span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="sc">-</span> <span class="st">`</span><span class="at">2016</span><span class="st">`</span></span>
+<span id="cb5-34"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="差分のプロット" class="slide level2">
@@ -478,17 +498,17 @@
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>df_diff <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a></a>  <span class="fu">filter</span>(category_major <span class="sc">==</span> <span class="st">"スポーツ"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-4"><a></a>  <span class="fu">filter</span>(category_middle <span class="sc">==</span> <span class="st">"野球(キャッチボールを含む)"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-5"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">==</span> <span class="st">"男"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-6"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb5-7"><a></a>  <span class="fu">mutate</span>(都道府県 <span class="ot">=</span> <span class="fu">reorder</span>(都道府県, <span class="sc">-</span>diff)) <span class="sc">|&gt;</span> <span class="co"># 値の多い順に並べる</span></span>
-<span id="cb5-8"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 都道府県, <span class="at">y =</span> diff)) <span class="sc">+</span></span>
-<span id="cb5-9"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb5-10"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb5-11"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>df_diff <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a></a>  <span class="fu">filter</span>(category_major <span class="sc">==</span> <span class="st">"スポーツ"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-4"><a></a>  <span class="fu">filter</span>(category_middle <span class="sc">==</span> <span class="st">"野球(キャッチボールを含む)"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-5"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">==</span> <span class="st">"男"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-6"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb6-7"><a></a>  <span class="fu">mutate</span>(都道府県 <span class="ot">=</span> <span class="fu">reorder</span>(都道府県, <span class="sc">-</span>diff)) <span class="sc">|&gt;</span> <span class="co"># 値の多い順に並べる</span></span>
+<span id="cb6-8"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 都道府県, <span class="at">y =</span> diff)) <span class="sc">+</span></span>
+<span id="cb6-9"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb6-10"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb6-11"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -554,7 +574,7 @@
 <p><strong>パッケージ<code>rnaturalearth</code>と<code>rnaturalearthdata</code>をインストールし、読み込む</strong></p>
 </div>
 <div class="callout-content">
-<p><code>install.packages("rnaturalearth")</code> / <code>library(rnaturalearthdata)</code></p>
+<p><code>install.packages("rnaturalearth")</code> / <code>library(rnaturalearth)</code> <code>install.packages("rnaturalearthdata")</code> / <code>library(rnaturalearthdata)</code></p>
 </div>
 </div>
 </div>
@@ -567,34 +587,34 @@
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># 日本地図取得</span></span>
-<span id="cb6-2"><a></a>map_japan <span class="ot">&lt;-</span> <span class="fu">ne_states</span>(<span class="st">"japan"</span>) <span class="sc">|&gt;</span> <span class="co"># 日本の都道府県地図データを取得 ne_statesはrnaturalearthの関数</span></span>
-<span id="cb6-3"><a></a>  <span class="fu">select</span>(iso_3166_2, name_ja, name_en) <span class="co"># name_jaだけでも問題はないが、念の為、iso_3166_2や name_enも残す</span></span>
-<span id="cb6-4"><a></a></span>
-<span id="cb6-5"><a></a><span class="co"># df_long_catを加工してbaseballと性別（例示は男）だけにする</span></span>
-<span id="cb6-6"><a></a>df_baseball <span class="ot">&lt;-</span> </span>
-<span id="cb6-7"><a></a>  df_long_cat <span class="sc">|&gt;</span></span>
-<span id="cb6-8"><a></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-9"><a></a>  <span class="fu">filter</span>(category_major <span class="sc">==</span> <span class="st">"スポーツ"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-10"><a></a>  <span class="fu">filter</span>(category_middle <span class="sc">==</span> <span class="st">"野球(キャッチボールを含む)"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-11"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb6-12"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">==</span><span class="st">"男"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-13"><a></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value))</span>
-<span id="cb6-14"><a></a></span>
-<span id="cb6-15"><a></a><span class="co"># 上記の二つのデータフレームを結合</span></span>
-<span id="cb6-16"><a></a>map_japan <span class="sc">|&gt;</span></span>
-<span id="cb6-17"><a></a>  <span class="fu">left_join</span>(</span>
-<span id="cb6-18"><a></a>    df_baseball,</span>
-<span id="cb6-19"><a></a>    <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"name_ja"</span> <span class="ot">=</span> <span class="st">"都道府県"</span>) <span class="co"># データフレーム間で列名が異なる場合の処理方法</span></span>
-<span id="cb6-20"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb6-21"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb6-22"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="co"># valueで塗り分ける</span></span>
-<span id="cb6-23"><a></a>  <span class="fu">scale_fill_distiller</span>( <span class="co"># 数値の大小を、連続的な色の濃淡で表現するための関数</span></span>
-<span id="cb6-24"><a></a>    <span class="at">palette =</span> <span class="st">"Blues"</span>, <span class="co"># 色の指定</span></span>
-<span id="cb6-25"><a></a>    <span class="at">direction =</span> <span class="dv">1</span> <span class="co"># 値が大きいものを濃く、その逆を薄くする</span></span>
-<span id="cb6-26"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb6-27"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span> <span class="co"># 凡例を削除</span></span>
-<span id="cb6-28"><a></a>  <span class="fu">theme_void</span>() <span class="co"># x軸とy軸の経度と緯度を削除</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># 日本地図取得</span></span>
+<span id="cb7-2"><a></a>map_japan <span class="ot">&lt;-</span> <span class="fu">ne_states</span>(<span class="st">"japan"</span>) <span class="sc">|&gt;</span> <span class="co"># 日本の都道府県地図データを取得 ne_statesはrnaturalearthの関数</span></span>
+<span id="cb7-3"><a></a>  <span class="fu">select</span>(iso_3166_2, name_ja, name_en) <span class="co"># name_jaだけでも問題はないが、念の為、iso_3166_2や name_enも残す</span></span>
+<span id="cb7-4"><a></a></span>
+<span id="cb7-5"><a></a><span class="co"># df_long_catを加工してbaseballと性別（例示は男）だけにする</span></span>
+<span id="cb7-6"><a></a>df_baseball <span class="ot">&lt;-</span> </span>
+<span id="cb7-7"><a></a>  df_long_cat <span class="sc">|&gt;</span></span>
+<span id="cb7-8"><a></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-9"><a></a>  <span class="fu">filter</span>(category_major <span class="sc">==</span> <span class="st">"スポーツ"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-10"><a></a>  <span class="fu">filter</span>(category_middle <span class="sc">==</span> <span class="st">"野球(キャッチボールを含む)"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-11"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-12"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">==</span><span class="st">"男"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-13"><a></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value))</span>
+<span id="cb7-14"><a></a></span>
+<span id="cb7-15"><a></a><span class="co"># 上記の二つのデータフレームを結合</span></span>
+<span id="cb7-16"><a></a>map_japan <span class="sc">|&gt;</span></span>
+<span id="cb7-17"><a></a>  <span class="fu">left_join</span>(</span>
+<span id="cb7-18"><a></a>    df_baseball,</span>
+<span id="cb7-19"><a></a>    <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"name_ja"</span> <span class="ot">=</span> <span class="st">"都道府県"</span>) <span class="co"># データフレーム間で列名が異なる場合の処理方法</span></span>
+<span id="cb7-20"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb7-21"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb7-22"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="co"># valueで塗り分ける</span></span>
+<span id="cb7-23"><a></a>  <span class="fu">scale_fill_distiller</span>( <span class="co"># 数値の大小を、連続的な色の濃淡で表現するための関数</span></span>
+<span id="cb7-24"><a></a>    <span class="at">palette =</span> <span class="st">"Blues"</span>, <span class="co"># 色の指定</span></span>
+<span id="cb7-25"><a></a>    <span class="at">direction =</span> <span class="dv">1</span> <span class="co"># 値が大きいものを濃く、その逆を薄くする</span></span>
+<span id="cb7-26"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb7-27"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span> <span class="co"># 凡例を削除</span></span>
+<span id="cb7-28"><a></a>  <span class="fu">theme_void</span>() <span class="co"># x軸とy軸の経度と緯度を削除</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-2">
@@ -622,62 +642,62 @@
 <div class="tab-content">
 <div id="tabset-3-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mongolia <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(</span>
-<span id="cb7-2"><a></a>  <span class="at">country =</span> <span class="st">"mongolia"</span>,</span>
-<span id="cb7-3"><a></a>  <span class="at">returnclass =</span> <span class="st">"sf"</span></span>
-<span id="cb7-4"><a></a>)</span>
-<span id="cb7-5"><a></a></span>
-<span id="cb7-6"><a></a>rivers <span class="ot">&lt;-</span> <span class="fu">ne_download</span>(</span>
-<span id="cb7-7"><a></a>  <span class="at">scale =</span> <span class="dv">10</span>,</span>
-<span id="cb7-8"><a></a>  <span class="at">type =</span> <span class="st">"rivers_lake_centerlines"</span>,</span>
-<span id="cb7-9"><a></a>  <span class="at">category =</span> <span class="st">"physical"</span>,</span>
-<span id="cb7-10"><a></a>  <span class="at">returnclass =</span> <span class="st">"sf"</span></span>
-<span id="cb7-11"><a></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-12"><a></a>  <span class="fu">st_make_valid</span>()</span>
-<span id="cb7-13"><a></a></span>
-<span id="cb7-14"><a></a>rivers_mg <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(</span>
-<span id="cb7-15"><a></a>  rivers,</span>
-<span id="cb7-16"><a></a>  <span class="fu">st_union</span>(mongolia)</span>
-<span id="cb7-17"><a></a>)</span>
-<span id="cb7-18"><a></a></span>
-<span id="cb7-19"><a></a>lakes <span class="ot">&lt;-</span> <span class="fu">ne_download</span>(</span>
-<span id="cb7-20"><a></a>  <span class="at">scale =</span> <span class="dv">10</span>,</span>
-<span id="cb7-21"><a></a>  <span class="at">type =</span> <span class="st">"lakes"</span>,</span>
-<span id="cb7-22"><a></a>  <span class="at">category =</span> <span class="st">"physical"</span>,</span>
-<span id="cb7-23"><a></a>  <span class="at">returnclass =</span> <span class="st">"sf"</span></span>
-<span id="cb7-24"><a></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-25"><a></a>  <span class="fu">st_make_valid</span>()</span>
-<span id="cb7-26"><a></a></span>
-<span id="cb7-27"><a></a>lakes_mg <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(</span>
-<span id="cb7-28"><a></a>  lakes,</span>
-<span id="cb7-29"><a></a>  <span class="fu">st_union</span>(mongolia)</span>
-<span id="cb7-30"><a></a>)</span>
-<span id="cb7-31"><a></a></span>
-<span id="cb7-32"><a></a>cities <span class="ot">&lt;-</span> <span class="fu">ne_download</span>(</span>
-<span id="cb7-33"><a></a>  <span class="at">scale =</span> <span class="dv">10</span>,</span>
-<span id="cb7-34"><a></a>  <span class="at">type =</span> <span class="st">"populated_places"</span>,</span>
-<span id="cb7-35"><a></a>  <span class="at">category =</span> <span class="st">"cultural"</span>,</span>
-<span id="cb7-36"><a></a>  <span class="at">returnclass =</span> <span class="st">"sf"</span></span>
-<span id="cb7-37"><a></a>)</span>
-<span id="cb7-38"><a></a></span>
-<span id="cb7-39"><a></a>ulaanbaatar <span class="ot">&lt;-</span> cities <span class="sc">|&gt;</span></span>
-<span id="cb7-40"><a></a>  <span class="fu">filter</span>(NAME <span class="sc">==</span> <span class="st">"Ulaanbaatar"</span>)</span>
-<span id="cb7-41"><a></a></span>
-<span id="cb7-42"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb7-43"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mongolia,</span>
-<span id="cb7-44"><a></a>          <span class="at">fill =</span> <span class="st">"cornsilk"</span>,</span>
-<span id="cb7-45"><a></a>          <span class="at">color =</span> <span class="st">"gray40"</span>) <span class="sc">+</span></span>
-<span id="cb7-46"><a></a>  <span class="fu">geom_sf</span>(</span>
-<span id="cb7-47"><a></a>    <span class="at">data =</span> lakes_mg,</span>
-<span id="cb7-48"><a></a>    <span class="at">fill =</span> <span class="st">"skyblue"</span>,</span>
-<span id="cb7-49"><a></a>    <span class="at">color =</span> <span class="cn">NA</span></span>
-<span id="cb7-50"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb7-51"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> rivers_mg,</span>
-<span id="cb7-52"><a></a>          <span class="at">color =</span> <span class="st">"skyblue"</span>) <span class="sc">+</span></span>
-<span id="cb7-53"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> ulaanbaatar,</span>
-<span id="cb7-54"><a></a>          <span class="at">size =</span> <span class="dv">3</span>,</span>
-<span id="cb7-55"><a></a>          <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb7-56"><a></a>  <span class="fu">theme_void</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>mongolia <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(</span>
+<span id="cb8-2"><a></a>  <span class="at">country =</span> <span class="st">"mongolia"</span>,</span>
+<span id="cb8-3"><a></a>  <span class="at">returnclass =</span> <span class="st">"sf"</span></span>
+<span id="cb8-4"><a></a>)</span>
+<span id="cb8-5"><a></a></span>
+<span id="cb8-6"><a></a>rivers <span class="ot">&lt;-</span> <span class="fu">ne_download</span>(</span>
+<span id="cb8-7"><a></a>  <span class="at">scale =</span> <span class="dv">10</span>,</span>
+<span id="cb8-8"><a></a>  <span class="at">type =</span> <span class="st">"rivers_lake_centerlines"</span>,</span>
+<span id="cb8-9"><a></a>  <span class="at">category =</span> <span class="st">"physical"</span>,</span>
+<span id="cb8-10"><a></a>  <span class="at">returnclass =</span> <span class="st">"sf"</span></span>
+<span id="cb8-11"><a></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-12"><a></a>  <span class="fu">st_make_valid</span>()</span>
+<span id="cb8-13"><a></a></span>
+<span id="cb8-14"><a></a>rivers_mg <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(</span>
+<span id="cb8-15"><a></a>  rivers,</span>
+<span id="cb8-16"><a></a>  <span class="fu">st_union</span>(mongolia)</span>
+<span id="cb8-17"><a></a>)</span>
+<span id="cb8-18"><a></a></span>
+<span id="cb8-19"><a></a>lakes <span class="ot">&lt;-</span> <span class="fu">ne_download</span>(</span>
+<span id="cb8-20"><a></a>  <span class="at">scale =</span> <span class="dv">10</span>,</span>
+<span id="cb8-21"><a></a>  <span class="at">type =</span> <span class="st">"lakes"</span>,</span>
+<span id="cb8-22"><a></a>  <span class="at">category =</span> <span class="st">"physical"</span>,</span>
+<span id="cb8-23"><a></a>  <span class="at">returnclass =</span> <span class="st">"sf"</span></span>
+<span id="cb8-24"><a></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-25"><a></a>  <span class="fu">st_make_valid</span>()</span>
+<span id="cb8-26"><a></a></span>
+<span id="cb8-27"><a></a>lakes_mg <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(</span>
+<span id="cb8-28"><a></a>  lakes,</span>
+<span id="cb8-29"><a></a>  <span class="fu">st_union</span>(mongolia)</span>
+<span id="cb8-30"><a></a>)</span>
+<span id="cb8-31"><a></a></span>
+<span id="cb8-32"><a></a>cities <span class="ot">&lt;-</span> <span class="fu">ne_download</span>(</span>
+<span id="cb8-33"><a></a>  <span class="at">scale =</span> <span class="dv">10</span>,</span>
+<span id="cb8-34"><a></a>  <span class="at">type =</span> <span class="st">"populated_places"</span>,</span>
+<span id="cb8-35"><a></a>  <span class="at">category =</span> <span class="st">"cultural"</span>,</span>
+<span id="cb8-36"><a></a>  <span class="at">returnclass =</span> <span class="st">"sf"</span></span>
+<span id="cb8-37"><a></a>)</span>
+<span id="cb8-38"><a></a></span>
+<span id="cb8-39"><a></a>ulaanbaatar <span class="ot">&lt;-</span> cities <span class="sc">|&gt;</span></span>
+<span id="cb8-40"><a></a>  <span class="fu">filter</span>(NAME <span class="sc">==</span> <span class="st">"Ulaanbaatar"</span>)</span>
+<span id="cb8-41"><a></a></span>
+<span id="cb8-42"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb8-43"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mongolia,</span>
+<span id="cb8-44"><a></a>          <span class="at">fill =</span> <span class="st">"cornsilk"</span>,</span>
+<span id="cb8-45"><a></a>          <span class="at">color =</span> <span class="st">"gray40"</span>) <span class="sc">+</span></span>
+<span id="cb8-46"><a></a>  <span class="fu">geom_sf</span>(</span>
+<span id="cb8-47"><a></a>    <span class="at">data =</span> lakes_mg,</span>
+<span id="cb8-48"><a></a>    <span class="at">fill =</span> <span class="st">"skyblue"</span>,</span>
+<span id="cb8-49"><a></a>    <span class="at">color =</span> <span class="cn">NA</span></span>
+<span id="cb8-50"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb8-51"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> rivers_mg,</span>
+<span id="cb8-52"><a></a>          <span class="at">color =</span> <span class="st">"skyblue"</span>) <span class="sc">+</span></span>
+<span id="cb8-53"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> ulaanbaatar,</span>
+<span id="cb8-54"><a></a>          <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb8-55"><a></a>          <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb8-56"><a></a>  <span class="fu">theme_void</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-3-2">
@@ -719,23 +739,28 @@ remotes::install_github("uribo/jpndistrict")
 <div class="tab-content">
 <div id="tabset-4-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>df_ssdse_a <span class="ot">&lt;-</span> </span>
-<span id="cb9-2"><a></a>  <span class="fu">read_csv</span>(<span class="st">"data/ssdse_a.csv"</span>)</span>
-<span id="cb9-3"><a></a></span>
-<span id="cb9-4"><a></a>ishikawa <span class="ot">&lt;-</span></span>
-<span id="cb9-5"><a></a>  <span class="fu">jpn_pref</span>(<span class="at">pref =</span> <span class="dv">17</span>, <span class="at">district =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="co"># pref = 17 は「石川県」を意味するコード</span></span>
-<span id="cb9-6"><a></a>  <span class="fu">left_join</span>(df_ssdse_a, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"city_code"</span> <span class="ot">=</span> <span class="st">"市区町村コード"</span>)) <span class="co"># district = TRUE にすると、市区町村レベルの地図になる</span></span>
-<span id="cb9-7"><a></a></span>
-<span id="cb9-8"><a></a>ishikawa <span class="sc">|&gt;</span> </span>
-<span id="cb9-9"><a></a>  <span class="fu">filter</span>(code_name <span class="sc">==</span> <span class="st">"第２次産業就業者数"</span>) <span class="sc">|&gt;</span> <span class="co"># 「第２次産業就業者数」だけを取り出す</span></span>
-<span id="cb9-10"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb9-11"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="co"># sf（地図データ）を描画。fill = value によって、値に応じて色を塗り分ける</span></span>
-<span id="cb9-12"><a></a>  <span class="fu">scale_fill_distiller</span>( <span class="co"># 数値の大小を、連続的な色の濃淡で表現するための関数</span></span>
-<span id="cb9-13"><a></a>    <span class="at">palette =</span> <span class="st">"Blues"</span>, <span class="co"># 色の指定</span></span>
-<span id="cb9-14"><a></a>    <span class="at">direction =</span> <span class="dv">1</span> <span class="co"># 値が大きいものを濃く、その逆を薄くする</span></span>
-<span id="cb9-15"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb9-16"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb9-17"><a></a>  <span class="fu">theme_void</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>df_ssdse_a <span class="ot">&lt;-</span> </span>
+<span id="cb10-2"><a></a>  <span class="fu">read_csv</span>(<span class="st">"data/ssdse_a.csv"</span>)</span>
+<span id="cb10-3"><a></a></span>
+<span id="cb10-4"><a></a>ishikawa <span class="ot">&lt;-</span></span>
+<span id="cb10-5"><a></a>  <span class="fu">jpn_pref</span>(<span class="at">pref =</span> <span class="dv">17</span>, <span class="at">district =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="co"># pref = 17 は「石川県」を意味するコード</span></span>
+<span id="cb10-6"><a></a>  <span class="fu">left_join</span>(df_ssdse_a, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"city_code"</span> <span class="ot">=</span> <span class="st">"市区町村コード"</span>)) <span class="co"># district = TRUE にすると、市区町村レベルの地図になる</span></span>
+<span id="cb10-7"><a></a></span>
+<span id="cb10-8"><a></a>ishikawa <span class="sc">|&gt;</span> </span>
+<span id="cb10-9"><a></a>  <span class="fu">filter</span>(code_name <span class="sc">==</span> <span class="st">"第２次産業就業者数"</span>) <span class="sc">|&gt;</span> <span class="co"># 「第２次産業就業者数」だけを取り出す</span></span>
+<span id="cb10-10"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb10-11"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="co"># sf（地図データ）を描画。fill = value によって、値に応じて色を塗り分ける</span></span>
+<span id="cb10-12"><a></a>  <span class="fu">scale_fill_distiller</span>( <span class="co"># 数値の大小を、連続的な色の濃淡で表現するための関数</span></span>
+<span id="cb10-13"><a></a>    <span class="at">palette =</span> <span class="st">"Blues"</span>, <span class="co"># 色の指定</span></span>
+<span id="cb10-14"><a></a>    <span class="at">direction =</span> <span class="dv">1</span> <span class="co"># 値が大きいものを濃く、その逆を薄くする</span></span>
+<span id="cb10-15"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb10-16"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb10-17"><a></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb10-18"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-19"><a></a>    <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
+<span id="cb10-20"><a></a>    <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="at">l =</span> <span class="dv">30</span>), <span class="co"># 地図と凡例の位置を調整</span></span>
+<span id="cb10-21"><a></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="fl">5.5</span>, <span class="dv">20</span>, <span class="fl">5.5</span>, <span class="fl">5.5</span>)</span>
+<span id="cb10-22"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-4-2">
@@ -765,35 +790,35 @@ remotes::install_github("uribo/jpndistrict")
 <ul>
 <li>教員の指示；学会の指定</li>
 </ul></li>
-<li>ポイント：代入したオブジェクトをggsave()に渡す</li>
+<li>ポイント：代入したオブジェクトを<code>ggsave()</code>に渡す</li>
 <li>準備：OSで、figuresフォルダを作成する</li>
 <li>出力結果はフォルダを参照</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>p <span class="ot">&lt;-</span></span>
-<span id="cb10-2"><a></a>  penguins <span class="sc">|&gt;</span></span>
-<span id="cb10-3"><a></a>  <span class="fu">drop_na</span>(bill_len, bill_dep) <span class="sc">|&gt;</span></span>
-<span id="cb10-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> bill_dep, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
-<span id="cb10-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb10-6"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb10-7"><a></a>    <span class="at">x =</span> <span class="st">"くちばし長 (mm)"</span>,</span>
-<span id="cb10-8"><a></a>    <span class="at">y =</span> <span class="st">"くちばし深さ (mm)"</span>,</span>
-<span id="cb10-9"><a></a>    <span class="at">colour =</span> <span class="st">"種別"</span></span>
-<span id="cb10-10"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb10-11"><a></a>  <span class="fu">theme</span>(</span>
-<span id="cb10-12"><a></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
-<span id="cb10-13"><a></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)</span>
-<span id="cb10-14"><a></a>  )</span>
-<span id="cb10-15"><a></a></span>
-<span id="cb10-16"><a></a><span class="fu">ggsave</span>(</span>
-<span id="cb10-17"><a></a>  <span class="st">"figures/plot_scatter.png"</span>, <span class="co"># 保存先とファイル名を指定</span></span>
-<span id="cb10-18"><a></a>  <span class="at">plot =</span> p, <span class="co"># プロットするオブジェクトを指定</span></span>
-<span id="cb10-19"><a></a>  <span class="at">width =</span> <span class="dv">6</span>, <span class="co"># 横サイズ（インチ）</span></span>
-<span id="cb10-20"><a></a>  <span class="at">height =</span> <span class="fl">4.5</span>, <span class="co"># 縦サイズ（インチ）</span></span>
-<span id="cb10-21"><a></a>  <span class="at">units =</span> <span class="st">"in"</span>,</span>
-<span id="cb10-22"><a></a>  <span class="at">dpi =</span> <span class="dv">150</span>, <span class="co"># 1インチあたりの画素数（150で十分）</span></span>
-<span id="cb10-23"><a></a>  <span class="at">device =</span> ragg<span class="sc">::</span>agg_png <span class="co"># 高品質なPNG画像として保存（日本語文字を綺麗に描画するなど）</span></span>
-<span id="cb10-24"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>p <span class="ot">&lt;-</span></span>
+<span id="cb11-2"><a></a>  penguins <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a></a>  <span class="fu">drop_na</span>(bill_len, bill_dep) <span class="sc">|&gt;</span></span>
+<span id="cb11-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> bill_dep, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
+<span id="cb11-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb11-6"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-7"><a></a>    <span class="at">x =</span> <span class="st">"くちばし長 (mm)"</span>,</span>
+<span id="cb11-8"><a></a>    <span class="at">y =</span> <span class="st">"くちばし深さ (mm)"</span>,</span>
+<span id="cb11-9"><a></a>    <span class="at">colour =</span> <span class="st">"種別"</span></span>
+<span id="cb11-10"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb11-11"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-12"><a></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb11-13"><a></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)</span>
+<span id="cb11-14"><a></a>  )</span>
+<span id="cb11-15"><a></a></span>
+<span id="cb11-16"><a></a><span class="fu">ggsave</span>(</span>
+<span id="cb11-17"><a></a>  <span class="st">"figures/plot_scatter.png"</span>, <span class="co"># 保存先とファイル名を指定</span></span>
+<span id="cb11-18"><a></a>  <span class="at">plot =</span> p, <span class="co"># プロットするオブジェクトを指定</span></span>
+<span id="cb11-19"><a></a>  <span class="at">width =</span> <span class="dv">6</span>, <span class="co"># 横サイズ（インチ）</span></span>
+<span id="cb11-20"><a></a>  <span class="at">height =</span> <span class="fl">4.5</span>, <span class="co"># 縦サイズ（インチ）</span></span>
+<span id="cb11-21"><a></a>  <span class="at">units =</span> <span class="st">"in"</span>,</span>
+<span id="cb11-22"><a></a>  <span class="at">dpi =</span> <span class="dv">150</span>, <span class="co"># 1インチあたりの画素数（150で十分）</span></span>
+<span id="cb11-23"><a></a>  <span class="at">device =</span> ragg<span class="sc">::</span>agg_png <span class="co"># 高品質なPNG画像として保存（日本語文字を綺麗に描画するなど）</span></span>
+<span id="cb11-24"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -850,7 +875,7 @@ remotes::install_github("uribo/jpndistrict")
 <li>集計・分析に用いるデータをダウンロード</li>
 <li>新しいquartoファイルを作成する</li>
 <li>出力形態を選び、YAMLに反映させる</li>
-<li>Setup Chunkを作成し、データを読み込む</li>
+<li>Setup Chunkを作成し、データとパッケージを読み込み、ggplotのグローバル設定を追加する</li>
 <li>SSDSEデータを用いる場合は、<a href="https://drive.google.com/drive/folders/1tHuYbkzmpLwDvEZ6WMHb30gGz3shGgkQ?usp=sharing">前処理のコード</a>を利用する（<em>パスやファイル名は各自調整すること</em>）</li>
 <li>必要に応じてデータを加工</li>
 <li>図をプロット</li>
