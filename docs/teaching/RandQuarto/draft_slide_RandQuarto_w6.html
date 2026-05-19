@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="../../img/favicon-16x16.png" rel="icon" type="image/png">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/quarto-contrib/quarto-timer-1.0.0/timer.js"></script>
+<link href="../../site_libs/quarto-contrib/quarto-timer-1.0.0/timer.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
+
+  <meta name="author" content="苅谷千尋">
+  <meta name="dcterms.date" content="2026-05-20">
+  <title>CHIHIRO KARIYA – RとQuartoではじめるデータサイエンス</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f7aef81f6d680f4279e68f34134e6463.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/multimodal/multimodal.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/verticator/verticator.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <meta name="robots" content="noindex, nofollow">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="img/penguins-small.png" data-background-position="90% 90%" data-background-size="30%" class="quarto-title-block center">
+  <h1 class="title">RとQuartoではじめるデータサイエンス</h1>
+  <p class="subtitle">#6 可視化(3)と出力</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:kariyach@staff.kanazawa-u.ac.jp">kariyach@staff.kanazawa-u.ac.jp</a>
+</div>
+        <p class="quarto-title-affiliation">
+            金沢大学
+          </p>
+    </div>
+</div>
+
+  <p class="date">May 20, 2026</p>
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#/本日の目標" id="/toc-本日の目標">0. 本日の目標</a></li>
+<li><a href="#/前回の振り返り" id="/toc-前回の振り返り">Ⅰ. 前回の振り返り</a></li>
+<li><a href="#/行結合" id="/toc-行結合">Ⅰ. 行結合</a></li>
+<li><a href="#/地図データ" id="/toc-地図データ">Ⅱ. 地図データ</a></li>
+<li><a href="#/図の書き出し" id="/toc-図の書き出し">Ⅲ. 図の書き出し</a></li>
+<li><a href="#/出力形態の変更" id="/toc-出力形態の変更">Ⅳ. 出力形態の変更</a></li>
+<li><a href="#/レポートの準備" id="/toc-レポートの準備">Ⅴ. レポートの準備</a></li>
+<li><a href="#/次回の授業と宿題" id="/toc-次回の授業と宿題">Ⅵ. 次回の授業と宿題</a></li>
+</ul>
+</nav>
+</section>
+<section>
+<section id="本日の目標" class="title-slide slide level1 center" data-background="linear-gradient(90deg, #FAFAFA 0%, #F0F0F0 50%, #FAFAFA 100%)" data-background-transition="slide">
+<h1>0. 本日の目標</h1>
+
+</section>
+<section id="本日の目標-1" class="slide level2">
+<h2>本日の目標</h2>
+<ol type="1">
+<li>応用的な内容（地理空間データや、差分のための行集計）に触れてみる</li>
+<li>図を書き出せるようになる</li>
+<li>出力形式を変えられるようになる</li>
+<li>レポート課題に備え、何をすべきかを<em>しっかりと</em>理解する</li>
+<li>ZIPファイル形式で保存できるようになる</li>
+</ol>
+</section></section>
+<section>
+<section id="前回の振り返り" class="title-slide slide level1 center" data-background="linear-gradient(90deg, #FAFAFA 0%, #F0F0F0 50%, #FAFAFA 100%)" data-background-transition="slide">
+<h1>Ⅰ. 前回の振り返り</h1>
+
+</section>
+<section id="授業の感想" class="slide level2">
+<h2>授業の感想</h2>
+<blockquote>
+<p>「データのタイトル <code>&lt;-</code>」というコードを、グラフや表を作る前に挿入するということが 重要だと思いました。（楠さん）</p>
+</blockquote>
+<blockquote>
+<p>前より授業についていくことができました。家で課題をやるとき codex ai を使って見たらどこで間違えているか教えるので学習に使いながら、講義を聞くと前より上手くいったと感じた。（Mandalさん）</p>
+</blockquote>
+</section>
+<section id="前回の積み残し" class="slide level2">
+<h2>前回の積み残し</h2>
+<ul>
+<li>Ⅳ. <a href="hhttps://kariyach.github.io/teaching/RandQuarto/slide_RandQuarto_w5.html#/yaml設定-1">チャンクオプション &gt; YAML設定</a>から</li>
+</ul>
+</section></section>
+<section>
+<section id="行結合" class="title-slide slide level1 center" data-background="linear-gradient(90deg, #FAFAFA 0%, #F0F0F0 50%, #FAFAFA 100%)" data-background-transition="slide">
+<h1>Ⅰ. 行結合</h1>
+
+</section>
+<section id="行結合-1" class="slide level2">
+<h2>行結合</h2>
+<h3 id="bind_rows関数"><code>bind_rows</code>()関数</h3>
+<ul>
+<li>列名をそろえて、行方向に追加する</li>
+<li>同じ列名をもつデータを追加するときに使う
+<ul>
+<li>例）<a href="https://www.nstac.go.jp/use/literacy/ssdse/past/#SSDSE-D">SSDSE-D-2021とSSDSE-D-2023</a>を結合</li>
+</ul></li>
+<li>Cf. <code>left_join()</code> は列方向の結合</li>
+</ul>
+</section>
+<section id="行結合-2" class="slide level2">
+<h2>行結合</h2>
+<ul>
+<li>SSDSE-D-2021のデータフレームを作成（SSDSE-D-2023もあらためて作成）
+<ul>
+<li><a href="https://kariyach.github.io/teaching/RandQuarto/slide_RandQuarto_w4.html#/必要なデータを取り出す発展編">第4週教材</a>と同じ要領で書く（2023を2021に変える）だけだが、行結合を前提とする場合、新たにyearとdata_file_nameを追加した方がいい。以下のコードをSetupチャンクには貼り付ける</li>
+</ul></li>
+<li>df_long_cat_d_2021とdf_long_cat_d_2023の二つのデータフレームができる</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Setupチャンクに書く</span></span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>row_data_d_2023 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/SSDSE-D-2023.csv"</span>, </span>
+<span id="cb1-4"><a></a>                     <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"CP932"</span>))</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a>row_data_d_2021 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/SSDSE-D-2021.csv"</span>, </span>
+<span id="cb1-7"><a></a>                     <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"CP932"</span>)) </span>
+<span id="cb1-8"><a></a></span>
+<span id="cb1-9"><a></a>df_long_d_2023 <span class="ot">&lt;-</span></span>
+<span id="cb1-10"><a></a>  row_data_d_2023 <span class="sc">|&gt;</span></span>
+<span id="cb1-11"><a></a>  <span class="fu">select</span>(<span class="st">"SSDSE-D-2023"</span>, Prefecture, <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>)) <span class="sc">|&gt;</span> <span class="co"># 「MA01」「MB12」などのように、アルファベット2文字＋数字2桁 になっている列をまとめて選ぶ</span></span>
+<span id="cb1-12"><a></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(MA00, MB00, MC00, MD00, ME00, MF00)) <span class="sc">|&gt;</span> <span class="co"># 複数の列を一括で削除するためにc()で囲む</span></span>
+<span id="cb1-13"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb1-14"><a></a>    <span class="co"># 横に並んでいるデータ（列）を、縦に並べ替える</span></span>
+<span id="cb1-15"><a></a>    <span class="at">cols =</span> <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>), <span class="co"># 対象となる列（コード列）</span></span>
+<span id="cb1-16"><a></a>    <span class="at">names_to =</span> <span class="st">"code"</span>, <span class="co"># 列名（MA01など）を「code」という列に入れる</span></span>
+<span id="cb1-17"><a></a>    <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb1-18"><a></a>  ) <span class="co"># 中の値を「value」という列に入れる</span></span>
+<span id="cb1-19"><a></a></span>
+<span id="cb1-20"><a></a>middle_category <span class="ot">&lt;-</span></span>
+<span id="cb1-21"><a></a>  df_long_d_2023 <span class="sc">|&gt;</span></span>
+<span id="cb1-22"><a></a>  <span class="fu">filter</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-23"><a></a>  <span class="fu">select</span>(code, <span class="at">category_middle =</span> value)</span>
+<span id="cb1-24"><a></a></span>
+<span id="cb1-25"><a></a>df_long_cat_d_2023 <span class="ot">&lt;-</span></span>
+<span id="cb1-26"><a></a>  df_long_d_2023 <span class="sc">|&gt;</span></span>
+<span id="cb1-27"><a></a>  <span class="fu">mutate</span>(<span class="at">Prefecture =</span> <span class="fu">factor</span>(Prefecture, <span class="at">levels =</span> pref_levels)) <span class="sc">|&gt;</span></span>
+<span id="cb1-28"><a></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-29"><a></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"男女の別"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-30"><a></a>  <span class="fu">drop_na</span>(Prefecture) <span class="sc">|&gt;</span></span>
+<span id="cb1-31"><a></a>  <span class="fu">left_join</span>(middle_category, <span class="at">by =</span> <span class="st">"code"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-32"><a></a>  <span class="fu">relocate</span>(category_middle, <span class="at">.after =</span> code) <span class="sc">|&gt;</span></span>
+<span id="cb1-33"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-34"><a></a>    <span class="at">category_major =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-35"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MB"</span> <span class="sc">~</span> <span class="st">"学習・自己啓発・訓練"</span>,</span>
+<span id="cb1-36"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MC"</span> <span class="sc">~</span> <span class="st">"スポーツ"</span>,</span>
+<span id="cb1-37"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MD"</span> <span class="sc">~</span> <span class="st">"趣味・娯楽"</span>,</span>
+<span id="cb1-38"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"ME"</span> <span class="sc">~</span> <span class="st">"ボランティア"</span>,</span>
+<span id="cb1-39"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MF"</span> <span class="sc">~</span> <span class="st">"旅行・行楽"</span>,</span>
+<span id="cb1-40"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MG"</span> <span class="sc">~</span> <span class="st">"行動種別"</span>,</span>
+<span id="cb1-41"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MH"</span> <span class="sc">~</span> <span class="st">"平均時刻"</span>,</span>
+<span id="cb1-42"><a></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_character_</span></span>
+<span id="cb1-43"><a></a>    )</span>
+<span id="cb1-44"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-45"><a></a>  <span class="fu">relocate</span>(category_major, <span class="at">.after =</span> code) <span class="sc">|&gt;</span></span>
+<span id="cb1-46"><a></a>  <span class="fu">rename</span>(都道府県 <span class="ot">=</span> Prefecture) <span class="sc">|&gt;</span></span>
+<span id="cb1-47"><a></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"0_総数"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-48"><a></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">"性別"</span>), <span class="at">sep =</span> <span class="st">"_"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-49"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-50"><a></a>  <span class="fu">mutate</span>(性別 <span class="ot">=</span> <span class="fu">factor</span>(性別, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb1-51"><a></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-52"><a></a>  <span class="fu">drop_na</span>(都道府県) <span class="sc">|&gt;</span> </span>
+<span id="cb1-53"><a></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="dv">2021</span>, <span class="at">.before =</span> 性別) <span class="sc">|&gt;</span> </span>
+<span id="cb1-54"><a></a>  <span class="fu">mutate</span>(<span class="at">data_file_name =</span> <span class="st">"SSDSE-D-2023"</span>, <span class="at">.before =</span> year) <span class="co"># 同種の複数データを結合する際に識別できるようファイル名を追加  </span></span>
+<span id="cb1-55"><a></a></span>
+<span id="cb1-56"><a></a></span>
+<span id="cb1-57"><a></a>df_long_d_2021 <span class="ot">&lt;-</span></span>
+<span id="cb1-58"><a></a>  row_data_d_2021 <span class="sc">|&gt;</span></span>
+<span id="cb1-59"><a></a>  <span class="fu">select</span>(<span class="st">"SSDSE-D-2021"</span>, Prefecture, <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>)) <span class="sc">|&gt;</span> <span class="co"># 「MA01」「MB12」などのように、アルファベット2文字＋数字2桁 になっている列をまとめて選ぶ</span></span>
+<span id="cb1-60"><a></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(MA00, MB00, MC00, MD00, ME00, MF00)) <span class="sc">|&gt;</span> <span class="co"># 複数の列を一括で削除するためにc()で囲む</span></span>
+<span id="cb1-61"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb1-62"><a></a>    <span class="co"># 横に並んでいるデータ（列）を、縦に並べ替える</span></span>
+<span id="cb1-63"><a></a>    <span class="at">cols =</span> <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>), <span class="co"># 対象となる列（コード列）</span></span>
+<span id="cb1-64"><a></a>    <span class="at">names_to =</span> <span class="st">"code"</span>, <span class="co"># 列名（MA01など）を「code」という列に入れる</span></span>
+<span id="cb1-65"><a></a>    <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb1-66"><a></a>  ) <span class="co"># 中の値を「value」という列に入れる</span></span>
+<span id="cb1-67"><a></a></span>
+<span id="cb1-68"><a></a>middle_category_2021 <span class="ot">&lt;-</span></span>
+<span id="cb1-69"><a></a>  df_long_d_2021 <span class="sc">|&gt;</span></span>
+<span id="cb1-70"><a></a>  <span class="fu">filter</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-71"><a></a>  <span class="fu">select</span>(code, <span class="at">category_middle =</span> value)</span>
+<span id="cb1-72"><a></a></span>
+<span id="cb1-73"><a></a>df_long_cat_d_2021 <span class="ot">&lt;-</span></span>
+<span id="cb1-74"><a></a>  df_long_d_2021 <span class="sc">|&gt;</span></span>
+<span id="cb1-75"><a></a>  <span class="fu">mutate</span>(<span class="at">Prefecture =</span> <span class="fu">factor</span>(Prefecture, <span class="at">levels =</span> pref_levels)) <span class="sc">|&gt;</span></span>
+<span id="cb1-76"><a></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-77"><a></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2021</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"男女の別"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-78"><a></a>  <span class="fu">drop_na</span>(Prefecture) <span class="sc">|&gt;</span></span>
+<span id="cb1-79"><a></a>  <span class="fu">left_join</span>(middle_category, <span class="at">by =</span> <span class="st">"code"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-80"><a></a>  <span class="fu">relocate</span>(category_middle, <span class="at">.after =</span> code) <span class="sc">|&gt;</span></span>
+<span id="cb1-81"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-82"><a></a>    <span class="at">category_major =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-83"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MB"</span> <span class="sc">~</span> <span class="st">"学習・自己啓発・訓練"</span>,</span>
+<span id="cb1-84"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MC"</span> <span class="sc">~</span> <span class="st">"スポーツ"</span>,</span>
+<span id="cb1-85"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MD"</span> <span class="sc">~</span> <span class="st">"趣味・娯楽"</span>,</span>
+<span id="cb1-86"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"ME"</span> <span class="sc">~</span> <span class="st">"ボランティア"</span>,</span>
+<span id="cb1-87"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MF"</span> <span class="sc">~</span> <span class="st">"旅行・行楽"</span>,</span>
+<span id="cb1-88"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MG"</span> <span class="sc">~</span> <span class="st">"行動種別"</span>,</span>
+<span id="cb1-89"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MH"</span> <span class="sc">~</span> <span class="st">"平均時刻"</span>,</span>
+<span id="cb1-90"><a></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_character_</span></span>
+<span id="cb1-91"><a></a>    )</span>
+<span id="cb1-92"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-93"><a></a>  <span class="fu">relocate</span>(category_major, <span class="at">.after =</span> code) <span class="sc">|&gt;</span></span>
+<span id="cb1-94"><a></a>  <span class="fu">rename</span>(都道府県 <span class="ot">=</span> Prefecture) <span class="sc">|&gt;</span></span>
+<span id="cb1-95"><a></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2021</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"0_総数"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-96"><a></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">SSDSE-D-2021</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">"性別"</span>), <span class="at">sep =</span> <span class="st">"_"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-97"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-98"><a></a>  <span class="fu">mutate</span>(性別 <span class="ot">=</span> <span class="fu">factor</span>(性別, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb1-99"><a></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-100"><a></a>  <span class="fu">drop_na</span>(都道府県) <span class="sc">|&gt;</span> </span>
+<span id="cb1-101"><a></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="dv">2016</span>, <span class="at">.before =</span> 性別) <span class="sc">|&gt;</span> </span>
+<span id="cb1-102"><a></a>  <span class="fu">mutate</span>(<span class="at">data_file_name =</span> <span class="st">"SSDSE-D-2021"</span>, <span class="at">.before =</span> year) <span class="co"># 同種の複数データを結合する際に識別できるようファイル名を追加  </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="行結合-3" class="slide level2">
+<h2>行結合</h2>
+<ul>
+<li>df_long_2021とdf_longを結合</li>
+<li>新しいチャンクを作って貼り付け</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Setupチャンクに書く</span></span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a>df_long_cat_d_all <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(df_long_cat_d_2021, df_long_cat_d_2023)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  data_file_name  year 性別  都道府県 code  category_major category_middle value
+  &lt;chr&gt;          &lt;dbl&gt; &lt;fct&gt; &lt;fct&gt;    &lt;chr&gt; &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt;
+1 SSDSE-D-2021    2016 男    北海道   MB01  学習・自己啓発・訓練…… 外国語          9.9  
+2 SSDSE-D-2021    2016 男    北海道   MB02  学習・自己啓発・訓練…… 商業実務・ビジネス関係(総数… 16.7 
+3 SSDSE-D-2021    2016 男    北海道   MB03  学習・自己啓発・訓練…… 介護関係        2.1  
+4 SSDSE-D-2021    2016 男    北海道   MB04  学習・自己啓発・訓練…… 家政・家事(料理・裁縫・家庭… 7.1  
+5 SSDSE-D-2021    2016 男    北海道   MB05  学習・自己啓発・訓練…… 人文・社会・自然科学(歴史・… 7.8  
+6 SSDSE-D-2021    2016 男    北海道   MB06  学習・自己啓発・訓練…… 芸術・文化      7.2  </code></pre>
+</div>
+</div>
+</section>
+<section id="差分の算出" class="slide level2">
+<h2>差分の算出</h2>
+<ul>
+<li>新しいチャンクを作って貼り付け</li>
+<li>引き算（2021-2016）しやすいように<code>pivot_wider()</code>で横持ちデータに変換</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Setupチャンクに書く</span></span>
+<span id="cb4-2"><a></a></span>
+<span id="cb4-3"><a></a>df_filtered <span class="ot">&lt;-</span> <span class="co"># 2016年にはあって、2021にはないデータを除去</span></span>
+<span id="cb4-4"><a></a>  df_long_cat_d_all <span class="sc">|&gt;</span></span>
+<span id="cb4-5"><a></a>  <span class="fu">group_by</span>(</span>
+<span id="cb4-6"><a></a>    性別,</span>
+<span id="cb4-7"><a></a>    都道府県,</span>
+<span id="cb4-8"><a></a>    code,</span>
+<span id="cb4-9"><a></a>    category_major,</span>
+<span id="cb4-10"><a></a>    category_middle</span>
+<span id="cb4-11"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb4-12"><a></a>  <span class="fu">filter</span>(</span>
+<span id="cb4-13"><a></a>    <span class="fu">n_distinct</span>(year) <span class="sc">==</span> <span class="dv">2</span></span>
+<span id="cb4-14"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb4-15"><a></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb4-16"><a></a></span>
+<span id="cb4-17"><a></a>df_diff <span class="ot">&lt;-</span> <span class="co"># 差分を算出</span></span>
+<span id="cb4-18"><a></a>  df_filtered <span class="sc">|&gt;</span></span>
+<span id="cb4-19"><a></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb4-20"><a></a>    <span class="at">id_cols =</span> <span class="fu">c</span>(</span>
+<span id="cb4-21"><a></a>      性別,</span>
+<span id="cb4-22"><a></a>      都道府県,</span>
+<span id="cb4-23"><a></a>      code,</span>
+<span id="cb4-24"><a></a>      category_major,</span>
+<span id="cb4-25"><a></a>      category_middle</span>
+<span id="cb4-26"><a></a>    ),</span>
+<span id="cb4-27"><a></a>    <span class="at">names_from =</span> year,</span>
+<span id="cb4-28"><a></a>    <span class="at">values_from =</span> value</span>
+<span id="cb4-29"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb4-30"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-31"><a></a>    <span class="st">`</span><span class="at">2016</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">2016</span><span class="st">`</span>),</span>
+<span id="cb4-32"><a></a>    <span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="st">`</span><span class="at">2021</span><span class="st">`</span>),</span>
+<span id="cb4-33"><a></a>    <span class="at">diff =</span> <span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="sc">-</span> <span class="st">`</span><span class="at">2016</span><span class="st">`</span></span>
+<span id="cb4-34"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="差分のプロット" class="slide level2">
+<h2>差分のプロット</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>df_diff <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a></a>  <span class="fu">filter</span>(category_major <span class="sc">==</span> <span class="st">"スポーツ"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-4"><a></a>  <span class="fu">filter</span>(category_middle <span class="sc">==</span> <span class="st">"野球(キャッチボールを含む)"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-5"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">==</span> <span class="st">"男"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-6"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-7"><a></a>  <span class="fu">mutate</span>(都道府県 <span class="ot">=</span> <span class="fu">reorder</span>(都道府県, <span class="sc">-</span>diff)) <span class="sc">|&gt;</span> <span class="co"># 値の多い順に並べる</span></span>
+<span id="cb5-8"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 都道府県, <span class="at">y =</span> diff)) <span class="sc">+</span></span>
+<span id="cb5-9"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb5-10"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb5-11"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="draft_slide_RandQuarto_w6_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li>ほとんどの都道府県で、男性の「野球(キャッチボールを含む)」の時間が縮小している（単独のデータだけでは見えなかった発見）</li>
+</ul>
+</section></section>
+<section>
+<section id="地図データ" class="title-slide slide level1 center" data-background="linear-gradient(90deg, #FAFAFA 0%, #F0F0F0 50%, #FAFAFA 100%)" data-background-transition="slide">
+<h1>Ⅱ. 地図データ</h1>
+
+</section>
+<section id="地図データ-1" class="slide level2">
+<h2>地図データ</h2>
+<h3 id="地理空間データ">地理空間データ</h3>
+<h4 id="sf"><a href="https://r-spatial.github.io/sf/">sf</a></h4>
+<ul>
+<li>Rで地理空間データ（地図データ）を扱うための標準的なパッケージ</li>
+<li>国際標準の地理データ形式（Simple Features）に準拠</li>
+<li>通常のデータフレームに、点、線、面（ポリゴン）などの地理情報を追加したものを扱えるようにする</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>パッケージ<code>sf</code>をインストールし、読み込む</strong></p>
+</div>
+<div class="callout-content">
+<p><code>install.packages("sf")</code> / <code>library(sf)</code></p>
+</div>
+</div>
+</div>
+</section>
+<section id="地図データ-2" class="slide level2">
+<h2>地図データ</h2>
+<h3 id="地図データ-3">地図データ</h3>
+<h4 id="rnaturalearth関数本体"><a href="https://github.com/ropensci/rnaturalearth">rnaturalearth</a>：関数本体</h4>
+<h4 id="rnaturalearthdata地図データ本体"><a href="https://cran.r-project.org/web/packages/rnaturalearthdata/index.html">rnaturalearthdata</a>：地図データ本体</h4>
+<ul>
+<li>世界各国の地理データ（国境・行政区域・河川・海岸線など）を簡単に取得できる Rパッケージ</li>
+<li><a href="https://www.naturalearthdata.com">Natural Earth</a>と言う公開地図データを、Rから直接利用できるようにしたもの</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>パッケージ<code>rnaturalearth</code>と<code>rnaturalearthdata</code>をインストールし、読み込む</strong></p>
+</div>
+<div class="callout-content">
+<p><code>install.packages("rnaturalearth")</code> / <code>library(rnaturalearthdata)</code></p>
+</div>
+</div>
+</div>
+</section>
+<section id="都道府県単位の日本地図" class="slide level2">
+<h2>都道府県単位の日本地図</h2>
+<h3 id="野球キャッチボールを含むに費やす時間の可視化地図">「野球（キャッチボールを含む）」に費やす時間の可視化（地図）</h3>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Code</a></li><li><a href="#tabset-2-2">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># 日本地図取得</span></span>
+<span id="cb6-2"><a></a>map_japan <span class="ot">&lt;-</span> <span class="fu">ne_states</span>(<span class="st">"japan"</span>) <span class="sc">|&gt;</span> <span class="co"># 日本の都道府県地図データを取得 ne_statesはrnaturalearthの関数</span></span>
+<span id="cb6-3"><a></a>  <span class="fu">select</span>(iso_3166_2, name_ja, name_en) <span class="co"># name_jaだけでも問題はないが、念の為、iso_3166_2や name_enも残す</span></span>
+<span id="cb6-4"><a></a></span>
+<span id="cb6-5"><a></a><span class="co"># df_long_catを加工してbaseballと性別（例示は男）だけにする</span></span>
+<span id="cb6-6"><a></a>df_baseball <span class="ot">&lt;-</span> </span>
+<span id="cb6-7"><a></a>  df_long_cat <span class="sc">|&gt;</span></span>
+<span id="cb6-8"><a></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-9"><a></a>  <span class="fu">filter</span>(category_major <span class="sc">==</span> <span class="st">"スポーツ"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-10"><a></a>  <span class="fu">filter</span>(category_middle <span class="sc">==</span> <span class="st">"野球(キャッチボールを含む)"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-11"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb6-12"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">==</span><span class="st">"男"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-13"><a></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value))</span>
+<span id="cb6-14"><a></a></span>
+<span id="cb6-15"><a></a><span class="co"># 上記の二つのデータフレームを結合</span></span>
+<span id="cb6-16"><a></a>map_japan <span class="sc">|&gt;</span></span>
+<span id="cb6-17"><a></a>  <span class="fu">left_join</span>(</span>
+<span id="cb6-18"><a></a>    df_baseball,</span>
+<span id="cb6-19"><a></a>    <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"name_ja"</span> <span class="ot">=</span> <span class="st">"都道府県"</span>) <span class="co"># データフレーム間で列名が異なる場合の処理方法</span></span>
+<span id="cb6-20"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb6-21"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb6-22"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="co"># valueで塗り分ける</span></span>
+<span id="cb6-23"><a></a>  <span class="fu">scale_fill_distiller</span>( <span class="co"># 数値の大小を、連続的な色の濃淡で表現するための関数</span></span>
+<span id="cb6-24"><a></a>    <span class="at">palette =</span> <span class="st">"Blues"</span>, <span class="co"># 色の指定</span></span>
+<span id="cb6-25"><a></a>    <span class="at">direction =</span> <span class="dv">1</span> <span class="co"># 値が大きいものを濃く、その逆を薄くする</span></span>
+<span id="cb6-26"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb6-27"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span> <span class="co"># 凡例を削除</span></span>
+<span id="cb6-28"><a></a>  <span class="fu">theme_void</span>() <span class="co"># x軸とy軸の経度と緯度を削除</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="draft_slide_RandQuarto_w6_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="国境河川湖の地図のプロット" class="slide level2">
+<h2>国境・河川・湖の地図のプロット</h2>
+<ul>
+<li>rnaturalearthの地理データの利用</li>
+</ul>
+<h3 id="モンゴルの地図に地理データを乗せる">モンゴルの地図に地理データを乗せる</h3>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Code</a></li><li><a href="#tabset-3-2">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mongolia <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(</span>
+<span id="cb7-2"><a></a>  <span class="at">country =</span> <span class="st">"mongolia"</span>,</span>
+<span id="cb7-3"><a></a>  <span class="at">returnclass =</span> <span class="st">"sf"</span></span>
+<span id="cb7-4"><a></a>)</span>
+<span id="cb7-5"><a></a></span>
+<span id="cb7-6"><a></a>rivers <span class="ot">&lt;-</span> <span class="fu">ne_download</span>(</span>
+<span id="cb7-7"><a></a>  <span class="at">scale =</span> <span class="dv">10</span>,</span>
+<span id="cb7-8"><a></a>  <span class="at">type =</span> <span class="st">"rivers_lake_centerlines"</span>,</span>
+<span id="cb7-9"><a></a>  <span class="at">category =</span> <span class="st">"physical"</span>,</span>
+<span id="cb7-10"><a></a>  <span class="at">returnclass =</span> <span class="st">"sf"</span></span>
+<span id="cb7-11"><a></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-12"><a></a>  <span class="fu">st_make_valid</span>()</span>
+<span id="cb7-13"><a></a></span>
+<span id="cb7-14"><a></a>rivers_mg <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(</span>
+<span id="cb7-15"><a></a>  rivers,</span>
+<span id="cb7-16"><a></a>  <span class="fu">st_union</span>(mongolia)</span>
+<span id="cb7-17"><a></a>)</span>
+<span id="cb7-18"><a></a></span>
+<span id="cb7-19"><a></a>lakes <span class="ot">&lt;-</span> <span class="fu">ne_download</span>(</span>
+<span id="cb7-20"><a></a>  <span class="at">scale =</span> <span class="dv">10</span>,</span>
+<span id="cb7-21"><a></a>  <span class="at">type =</span> <span class="st">"lakes"</span>,</span>
+<span id="cb7-22"><a></a>  <span class="at">category =</span> <span class="st">"physical"</span>,</span>
+<span id="cb7-23"><a></a>  <span class="at">returnclass =</span> <span class="st">"sf"</span></span>
+<span id="cb7-24"><a></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-25"><a></a>  <span class="fu">st_make_valid</span>()</span>
+<span id="cb7-26"><a></a></span>
+<span id="cb7-27"><a></a>lakes_mg <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(</span>
+<span id="cb7-28"><a></a>  lakes,</span>
+<span id="cb7-29"><a></a>  <span class="fu">st_union</span>(mongolia)</span>
+<span id="cb7-30"><a></a>)</span>
+<span id="cb7-31"><a></a></span>
+<span id="cb7-32"><a></a>cities <span class="ot">&lt;-</span> <span class="fu">ne_download</span>(</span>
+<span id="cb7-33"><a></a>  <span class="at">scale =</span> <span class="dv">10</span>,</span>
+<span id="cb7-34"><a></a>  <span class="at">type =</span> <span class="st">"populated_places"</span>,</span>
+<span id="cb7-35"><a></a>  <span class="at">category =</span> <span class="st">"cultural"</span>,</span>
+<span id="cb7-36"><a></a>  <span class="at">returnclass =</span> <span class="st">"sf"</span></span>
+<span id="cb7-37"><a></a>)</span>
+<span id="cb7-38"><a></a></span>
+<span id="cb7-39"><a></a>ulaanbaatar <span class="ot">&lt;-</span> cities <span class="sc">|&gt;</span></span>
+<span id="cb7-40"><a></a>  <span class="fu">filter</span>(NAME <span class="sc">==</span> <span class="st">"Ulaanbaatar"</span>)</span>
+<span id="cb7-41"><a></a></span>
+<span id="cb7-42"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb7-43"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mongolia,</span>
+<span id="cb7-44"><a></a>          <span class="at">fill =</span> <span class="st">"cornsilk"</span>,</span>
+<span id="cb7-45"><a></a>          <span class="at">color =</span> <span class="st">"gray40"</span>) <span class="sc">+</span></span>
+<span id="cb7-46"><a></a>  <span class="fu">geom_sf</span>(</span>
+<span id="cb7-47"><a></a>    <span class="at">data =</span> lakes_mg,</span>
+<span id="cb7-48"><a></a>    <span class="at">fill =</span> <span class="st">"skyblue"</span>,</span>
+<span id="cb7-49"><a></a>    <span class="at">color =</span> <span class="cn">NA</span></span>
+<span id="cb7-50"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb7-51"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> rivers_mg,</span>
+<span id="cb7-52"><a></a>          <span class="at">color =</span> <span class="st">"skyblue"</span>) <span class="sc">+</span></span>
+<span id="cb7-53"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> ulaanbaatar,</span>
+<span id="cb7-54"><a></a>          <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb7-55"><a></a>          <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb7-56"><a></a>  <span class="fu">theme_void</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="draft_slide_RandQuarto_w6_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="市町村単位の日本地図" class="slide level2">
+<h2>市町村単位の日本地図</h2>
+<h3 id="jpndistrict"><a href="https://uribo.github.io/jpndistrict/">jpndistrict</a></h3>
+<ul>
+<li>日本の都道府県・市区町村の地図データを、sf形式で簡単に取得できるRパッケージ
+<ul>
+<li>パッケージがCRANにおいてないため、<code>install.packages</code>が使えない</li>
+<li>パッケージ<code>remotes</code>を利用。以下のコードをConsoleに入力して実行</li>
+</ul></li>
+</ul>
+<pre><code>install.packages("remotes")
+remotes::install_github("uribo/jpndistrict")
+</code></pre>
+</section>
+<section id="市町村単位の日本地図-1" class="slide level2">
+<h2>市町村単位の日本地図</h2>
+<h3 id="石川県内の第2次産業就業者数の可視化市町村別の地図">石川県内の第2次産業就業者数の可視化（市町村別の地図）</h3>
+<ul>
+<li>準備：市町村単位のデータ（<a href="https://www.nstac.go.jp/use/literacy/ssdse/#SSDSE-A">SSDSE-A-2025</a>）を取得し、dataフォルダに入れる</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Code</a></li><li><a href="#tabset-4-2">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>df_ssdse_a <span class="ot">&lt;-</span> </span>
+<span id="cb9-2"><a></a>  <span class="fu">read_csv</span>(<span class="st">"data/ssdse_a.csv"</span>)</span>
+<span id="cb9-3"><a></a></span>
+<span id="cb9-4"><a></a>ishikawa <span class="ot">&lt;-</span></span>
+<span id="cb9-5"><a></a>  <span class="fu">jpn_pref</span>(<span class="at">pref =</span> <span class="dv">17</span>, <span class="at">district =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="co"># pref = 17 は「石川県」を意味するコード</span></span>
+<span id="cb9-6"><a></a>  <span class="fu">left_join</span>(df_ssdse_a, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"city_code"</span> <span class="ot">=</span> <span class="st">"市区町村コード"</span>)) <span class="co"># district = TRUE にすると、市区町村レベルの地図になる</span></span>
+<span id="cb9-7"><a></a></span>
+<span id="cb9-8"><a></a>ishikawa <span class="sc">|&gt;</span> </span>
+<span id="cb9-9"><a></a>  <span class="fu">filter</span>(code_name <span class="sc">==</span> <span class="st">"第２次産業就業者数"</span>) <span class="sc">|&gt;</span> <span class="co"># 「第２次産業就業者数」だけを取り出す</span></span>
+<span id="cb9-10"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb9-11"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="co"># sf（地図データ）を描画。fill = value によって、値に応じて色を塗り分ける</span></span>
+<span id="cb9-12"><a></a>  <span class="fu">scale_fill_distiller</span>( <span class="co"># 数値の大小を、連続的な色の濃淡で表現するための関数</span></span>
+<span id="cb9-13"><a></a>    <span class="at">palette =</span> <span class="st">"Blues"</span>, <span class="co"># 色の指定</span></span>
+<span id="cb9-14"><a></a>    <span class="at">direction =</span> <span class="dv">1</span> <span class="co"># 値が大きいものを濃く、その逆を薄くする</span></span>
+<span id="cb9-15"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb9-16"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb9-17"><a></a>  <span class="fu">theme_void</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-4-2">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="draft_slide_RandQuarto_w6_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="図の書き出し" class="title-slide slide level1 center" data-background="linear-gradient(90deg, #FAFAFA 0%, #F0F0F0 50%, #FAFAFA 100%)" data-background-transition="slide">
+<h1>Ⅲ. 図の書き出し</h1>
+
+</section>
+<section id="図の書き出し-1" class="slide level2">
+<h2>図の書き出し</h2>
+<h3 id="ggsave関数"><code>ggsave()</code>関数</h3>
+<ul>
+<li>特定の図を別途、プロットしなければならない場合がある
+<ul>
+<li>教員の指示；学会の指定</li>
+</ul></li>
+<li>ポイント：代入したオブジェクトをggsave()に渡す</li>
+<li>準備：OSで、figuresフォルダを作成する</li>
+<li>出力結果はフォルダを参照</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>p <span class="ot">&lt;-</span></span>
+<span id="cb10-2"><a></a>  penguins <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a></a>  <span class="fu">drop_na</span>(bill_len, bill_dep) <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> bill_dep, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
+<span id="cb10-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb10-6"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-7"><a></a>    <span class="at">x =</span> <span class="st">"くちばし長 (mm)"</span>,</span>
+<span id="cb10-8"><a></a>    <span class="at">y =</span> <span class="st">"くちばし深さ (mm)"</span>,</span>
+<span id="cb10-9"><a></a>    <span class="at">colour =</span> <span class="st">"種別"</span></span>
+<span id="cb10-10"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb10-11"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-12"><a></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb10-13"><a></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)</span>
+<span id="cb10-14"><a></a>  )</span>
+<span id="cb10-15"><a></a></span>
+<span id="cb10-16"><a></a><span class="fu">ggsave</span>(</span>
+<span id="cb10-17"><a></a>  <span class="st">"figures/plot_scatter.png"</span>, <span class="co"># 保存先とファイル名を指定</span></span>
+<span id="cb10-18"><a></a>  <span class="at">plot =</span> p, <span class="co"># プロットするオブジェクトを指定</span></span>
+<span id="cb10-19"><a></a>  <span class="at">width =</span> <span class="dv">6</span>, <span class="co"># 横サイズ（インチ）</span></span>
+<span id="cb10-20"><a></a>  <span class="at">height =</span> <span class="fl">4.5</span>, <span class="co"># 縦サイズ（インチ）</span></span>
+<span id="cb10-21"><a></a>  <span class="at">units =</span> <span class="st">"in"</span>,</span>
+<span id="cb10-22"><a></a>  <span class="at">dpi =</span> <span class="dv">150</span>, <span class="co"># 1インチあたりの画素数（150で十分）</span></span>
+<span id="cb10-23"><a></a>  <span class="at">device =</span> ragg<span class="sc">::</span>agg_png <span class="co"># 高品質なPNG画像として保存（日本語文字を綺麗に描画するなど）</span></span>
+<span id="cb10-24"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section></section>
+<section>
+<section id="出力形態の変更" class="title-slide slide level1 center" data-background="linear-gradient(90deg, #FAFAFA 0%, #F0F0F0 50%, #FAFAFA 100%)">
+<h1>Ⅳ. 出力形態の変更</h1>
+
+</section>
+<section id="出力形態の変更-1" class="slide level2">
+<h2>出力形態の変更</h2>
+<h3 id="方法">方法</h3>
+<ul>
+<li>YAMLのformatを変更
+<ul>
+<li><a href="https://quarto.org/docs/guide/">公式サイト</a></li>
+</ul></li>
+<li>Presentations
+<ul>
+<li><em>Revealjs</em> (HTML); <em>PowerPoint</em> (Office); Beamer (PDF)</li>
+</ul></li>
+<li>Documents
+<ul>
+<li><em>HTML</em>; PDF; <em>MS Word</em>; Typst</li>
+</ul></li>
+</ul>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><a href="https://drive.google.com/drive/folders/1tHuYbkzmpLwDvEZ6WMHb30gGz3shGgkQ?usp=sharing">Googleドライブ</a>にデモファイル（sample_format.zip）を置いておきます</p>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>PowerPoint/MS Word出力は手軽に共有・編集しやすい一方、revealjs はCSSによる細かなデザイン調整がしやすいです</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="レポートの準備" class="title-slide slide level1 center" data-background="linear-gradient(90deg, #FAFAFA 0%, #F0F0F0 50%, #FAFAFA 100%)">
+<h1>Ⅴ. レポートの準備</h1>
+
+</section>
+<section id="レポートの準備-1" class="slide level2">
+<h2>レポートの準備</h2>
+<ol type="1">
+<li>集計・分析に用いるデータをダウンロード</li>
+<li>新しいquartoファイルを作成する</li>
+<li>出力形態を選び、YAMLに反映させる</li>
+<li>Setup Chunkを作成し、データを読み込む</li>
+<li>SSDSEデータを用いる場合は、<a href="https://drive.google.com/drive/folders/1tHuYbkzmpLwDvEZ6WMHb30gGz3shGgkQ?usp=sharing">前処理のコード</a>を利用する（<em>パスやファイル名は各自調整すること</em>）</li>
+<li>必要に応じてデータを加工</li>
+<li>図をプロット</li>
+<li>説明などを文章にまとめる</li>
+<li>提出のために、フォルダごとzipファイルにまとめる</li>
+</ol>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><a href="https://drive.google.com/drive/folders/1tHuYbkzmpLwDvEZ6WMHb30gGz3shGgkQ?usp=sharing">Googleドライブ</a>にデモファイル（sample_report.zip）を置いておきます</p>
+</div>
+</div>
+</div>
+</section>
+<section id="レポートの準備-2" class="slide level2">
+<h2>レポートの準備</h2>
+<h3 id="zipファイル">ZIPファイル</h3>
+<ul>
+<li>ファイルやフォルダをまとめ、容量を小さくする（圧縮する）仕組み（ファイル形式）</li>
+</ul>
+<h3 id="方法-1">方法</h3>
+<ul>
+<li><a href="https://support.microsoft.com/ja-jp/windows/ファイルを圧縮および展開する-8d28fa72-f2f9-712f-67df-f80cf89fd4e5">ファイルを圧縮および展開する</a></li>
+</ul>
+</section></section>
+<section>
+<section id="次回の授業と宿題" class="title-slide slide level1 center" data-background="linear-gradient(90deg, #FAFAFA 0%, #F0F0F0 50%, #FAFAFA 100%)">
+<h1>Ⅵ. 次回の授業と宿題</h1>
+
+</section>
+<section id="次回の授業と宿題-1" class="slide level2">
+<h2>次回の授業と宿題</h2>
+<h3 id="次回5月27日水">次回：5月27日（水）</h3>
+<h4 id="テーブル">テーブル</h4>
+<ol type="1">
+<li>テーブル出力</li>
+<li>クロス集計表</li>
+<li>記述統計量</li>
+<li>レポート課題の準備・相談</li>
+</ol>
+</section>
+<section id="次回の授業と宿題-2" class="slide level2">
+<h2>次回の授業と宿題</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="宿題">宿題</h3>
+<ul>
+<li>授業の感想：
+<ul>
+<li>回答先：<a href="https://forms.gle/yN8UYjBQEcR4sRSf6">Google Forms</a></li>
+<li>締め切り：5月22日（金）23時59分</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="演習">演習：</h3>
+<ul>
+<li>内容：レポート課題のドラフト（できたところまで構いません）</li>
+<li>ファイル：ZIPファイル
+<ul>
+<li>ファイル名：どこかに<em>氏名を特定できる文字</em>を入れて下さい</li>
+<li>例：<em>kariya</em>.zip</li>
+</ul></li>
+<li>回答先：<a href="https://www.dropbox.com/request/vPUbDxLt6gGwNKiZCUGF">dropbox</a></li>
+<li>締め切り：5月25日（月）23時59分</li>
+</ul>
+</div></div>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-confetti/confetti.js"></script>
+  <script src="../../site_libs/revealjs/plugin/multimodal/multimodal.js"></script>
+  <script src="../../site_libs/revealjs/plugin/verticator/verticator.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true,"width":"wide","numbers":true},
+'pointer': {"key":"q","color":"red","pointerSize":16,"alwaysVisible":false},
+'confetti': {"particleCount":50,"angle":90,"spread":45,"startVelocity":45,"decay":0.9,"gravity":1,"drift":0,"ticks":200,"colors":null,"shapes":null,"scalar":1,"zIndex":100,"disableForReducedMotion":false},
+'verticator': {"themetag":"h1","color":"#C62828","inversecolor":"","skipuncounted":false,"clickable":true,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'h.v',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, RevealConfetti, Multimodal, Verticator, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/kariyach\.github\.io\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+                // target, if specified
+                link.setAttribute("target", "_blank");
+                if (link.getAttribute("rel") === null) {
+                  link.setAttribute("rel", "noopener");
+                }
+                // default icon
+                link.classList.add("external");
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
