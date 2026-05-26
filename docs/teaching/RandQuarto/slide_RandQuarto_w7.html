@@ -255,16 +255,31 @@
 <section id="授業の感想" class="slide level2">
 <h2>授業の感想</h2>
 <blockquote>
-<p>「データのタイトル <code>&lt;-</code>」というコードを、グラフや表を作る前に挿入するということが 重要だと思いました。（楠さん）</p>
+<p>私は全国の家計のデータを都道府県別に出力したいと思っていますが、表のほうが見やすいのか地図のほうが見やすいのか吟味しなければいけないと思ったからです。（楠さん）</p>
 </blockquote>
 <blockquote>
-<p>前より授業についていくことができました。家で課題をやるとき codex ai を使って見たらどこで間違えているか教えるので学習に使いながら、講義を聞くと前より上手くいったと感じた。（Mandalさん）</p>
+<p>グラフを作るためのコードは教えてもらっていたが、見やすいグラフをつくための軸の表記や色、文字などは別のコードやパッケージをダウンロードをする必要があるので、難しいと感じた。（山田さん）</p>
 </blockquote>
 </section>
 <section id="前回の積み残し" class="slide level2">
 <h2>前回の積み残し</h2>
+<h3 id="訂正">訂正</h3>
 <ul>
-<li>Ⅳ. <a href="https://kariyach.github.io/teaching/RandQuarto/slide_RandQuarto_w5.html#/yaml設定">チャンクオプション &gt; YAML設定</a>から</li>
+<li>row_data → raw_data</li>
+</ul>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>row_dataのままでも動きますが、英語が間違っていて気持ち悪いという人は修正下さい</p>
+</div>
+</div>
+</div>
+<h3 id="前回の積み残し-1">前回の積み残し</h3>
+<ul>
+<li>Ⅱ. <a href="https://kariyach.github.io/teaching/RandQuarto/slide_RandQuarto_w6.html#/行結合">行結合</a>から</li>
 </ul>
 </section></section>
 <section>
@@ -299,19 +314,19 @@
 <ul>
 <li><code>gt()</code>: 得意な出力形態：HTML
 <ul>
-<li><a href="https://gt.rstudio.com">公式サイト</a>；install.packages(“gt”) / library(gt)</li>
+<li><a href="https://gt.rstudio.com">公式サイト</a>: install.packages(“gt”) / library(gt)</li>
 </ul></li>
 <li><code>kable()</code>: 得意な出力形態：HTML / Word / PDF / pptx 全般
 <ul>
-<li><a href="https://yihui.org/knitr/">公式サイト</a>；install.packages(“knitr”) / library(knitr)</li>
+<li><a href="https://yihui.org/knitr/">公式サイト</a>: install.packages(“knitr”) / library(knitr)</li>
 </ul></li>
 <li><code>flextable()</code>: 得意な出力形態：Word・pptx
 <ul>
-<li><a href="https://ardata-fr.github.io/flextable-book/">公式サイト</a>；install.packages(“flextable”) / library(flextable)</li>
+<li><a href="https://ardata-fr.github.io/flextable-book/">公式サイト</a>: install.packages(“flextable”) / library(flextable)</li>
 </ul></li>
 <li><code>tt()</code>: 得意な出力形態：PDF
 <ul>
-<li><a href="https://vincentarelbundock.github.io/tinytable/">公式サイト</a>；install.packages(“tinytable”) / library(tinytable)</li>
+<li><a href="https://vincentarelbundock.github.io/tinytable/">公式サイト</a>: install.packages(“tinytable”) / library(tinytable)</li>
 </ul></li>
 </ul>
 </section>
@@ -382,7 +397,7 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>penguins <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb3-3"><a></a>  <span class="fu">tabyl</span>(species, island) <span class="sc">|&gt;</span> <span class="co"># 2変数を指定</span></span>
-<span id="cb3-4"><a></a>  <span class="fu">adorn_percentages</span>(<span class="st">"row"</span>) <span class="sc">|&gt;</span> <span class="co"># 各行を100%にする割合表："row"＝行方向に集計</span></span>
+<span id="cb3-4"><a></a>  <span class="fu">adorn_percentages</span>(<span class="st">"row"</span>) <span class="sc">|&gt;</span> <span class="co"># 各行を100%にする割合表："raw"＝行方向に集計</span></span>
 <span id="cb3-5"><a></a>  <span class="fu">adorn_pct_formatting</span>(<span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb3-6"><a></a>  <span class="fu">adorn_ns</span>() <span class="sc">|&gt;</span> <span class="co"># 元の件数nを括弧付きで追加</span></span>
 <span id="cb3-7"><a></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
