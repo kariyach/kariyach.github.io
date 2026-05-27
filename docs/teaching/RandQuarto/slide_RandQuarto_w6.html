@@ -321,14 +321,14 @@ ggplot2::theme_set(
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Setupチャンクに書く</span></span>
 <span id="cb2-2"><a></a></span>
-<span id="cb2-3"><a></a>row_data_d_2023 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/SSDSE-D-2023.csv"</span>, </span>
+<span id="cb2-3"><a></a>raw_data_d_2023 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/SSDSE-D-2023.csv"</span>, </span>
 <span id="cb2-4"><a></a>                     <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"CP932"</span>))</span>
 <span id="cb2-5"><a></a></span>
-<span id="cb2-6"><a></a>row_data_d_2021 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/SSDSE-D-2021.csv"</span>, </span>
+<span id="cb2-6"><a></a>raw_data_d_2021 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/SSDSE-D-2021.csv"</span>, </span>
 <span id="cb2-7"><a></a>                     <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"CP932"</span>)) </span>
 <span id="cb2-8"><a></a></span>
 <span id="cb2-9"><a></a>df_long_d_2023 <span class="ot">&lt;-</span></span>
-<span id="cb2-10"><a></a>  row_data_d_2023 <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a></a>  raw_data_d_2023 <span class="sc">|&gt;</span></span>
 <span id="cb2-11"><a></a>  <span class="fu">select</span>(<span class="st">"SSDSE-D-2023"</span>, Prefecture, <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>)) <span class="sc">|&gt;</span> <span class="co"># 「MA01」「MB12」などのように、アルファベット2文字＋数字2桁 になっている列をまとめて選ぶ</span></span>
 <span id="cb2-12"><a></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(MA00, MB00, MC00, MD00, ME00, MF00)) <span class="sc">|&gt;</span> <span class="co"># 複数の列を一括で削除するためにc()で囲む</span></span>
 <span id="cb2-13"><a></a>  <span class="fu">pivot_longer</span>(</span>
@@ -376,7 +376,7 @@ ggplot2::theme_set(
 <span id="cb2-55"><a></a></span>
 <span id="cb2-56"><a></a></span>
 <span id="cb2-57"><a></a>df_long_d_2021 <span class="ot">&lt;-</span></span>
-<span id="cb2-58"><a></a>  row_data_d_2021 <span class="sc">|&gt;</span></span>
+<span id="cb2-58"><a></a>  raw_data_d_2021 <span class="sc">|&gt;</span></span>
 <span id="cb2-59"><a></a>  <span class="fu">select</span>(<span class="st">"SSDSE-D-2021"</span>, Prefecture, <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>)) <span class="sc">|&gt;</span> <span class="co"># 「MA01」「MB12」などのように、アルファベット2文字＋数字2桁 になっている列をまとめて選ぶ</span></span>
 <span id="cb2-60"><a></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(MA00, MB00, MC00, MD00, ME00, MF00)) <span class="sc">|&gt;</span> <span class="co"># 複数の列を一括で削除するためにc()で囲む</span></span>
 <span id="cb2-61"><a></a>  <span class="fu">pivot_longer</span>(</span>
@@ -495,7 +495,7 @@ ggplot2::theme_set(
 </section>
 <section id="差分のプロット" class="slide level2">
 <h2>差分のプロット</h2>
-<h3 id="絶対値">絶対値</h3>
+<h3 id="実数">実数</h3>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Plot</a></li></ul>
 <div class="tab-content">
@@ -865,37 +865,95 @@ remotes::install_github("uribo/jpndistrict")
 </section>
 <section id="市町村単位の日本地図-1" class="slide level2">
 <h2>市町村単位の日本地図</h2>
-<h3 id="石川県内の第2次産業就業者数の可視化市町村別の地図絶対値">石川県内の第2次産業就業者数の可視化（市町村別の地図・絶対値）</h3>
-<ul>
-<li>準備：市町村単位のデータ（<a href="https://www.nstac.go.jp/use/literacy/ssdse/#SSDSE-A">SSDSE-A-2025</a>）を取得し、dataフォルダに入れる</li>
-</ul>
+<h3 id="石川県内の第2次産業就業者数の可視化市町村別の地図実数">石川県内の第2次産業就業者数の可視化（市町村別の地図・実数）</h3>
+<h4 id="準備">準備</h4>
+<ol type="1">
+<li>市町村単位のデータ（<a href="https://www.nstac.go.jp/use/literacy/ssdse/#SSDSE-A">SSDSE-A-2025</a>）を取得し、dataフォルダに入れる</li>
+<li>以下のコードをSetup Chunkに追加する</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># データ読み込み -----</span></span>
+<span id="cb13-2"><a></a></span>
+<span id="cb13-3"><a></a>raw_data_a <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb13-4"><a></a>  <span class="st">"data/SSDSE-A-2025.csv"</span>,　<span class="co"># ファイル名の指定は各自調整下さい</span></span>
+<span id="cb13-5"><a></a>  <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"CP932"</span>)</span>
+<span id="cb13-6"><a></a>)</span>
+<span id="cb13-7"><a></a></span>
+<span id="cb13-8"><a></a>year_raw_a <span class="ot">&lt;-</span></span>
+<span id="cb13-9"><a></a>  raw_data_a <span class="sc">|&gt;</span></span>
+<span id="cb13-10"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span>)</span>
+<span id="cb13-11"><a></a></span>
+<span id="cb13-12"><a></a>code_name_a <span class="ot">&lt;-</span></span>
+<span id="cb13-13"><a></a>  raw_data_a <span class="sc">|&gt;</span></span>
+<span id="cb13-14"><a></a>  <span class="fu">slice</span>(<span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-15"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb13-16"><a></a>    <span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(<span class="st">`</span><span class="at">SSDSE-A-2025</span><span class="st">`</span>, Prefecture, Municipality),</span>
+<span id="cb13-17"><a></a>    <span class="at">names_to =</span> <span class="st">"code"</span>,</span>
+<span id="cb13-18"><a></a>    <span class="at">values_to =</span> <span class="st">"code_name"</span></span>
+<span id="cb13-19"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb13-20"><a></a>  <span class="fu">select</span>(code, code_name) <span class="sc">|&gt;</span></span>
+<span id="cb13-21"><a></a>  <span class="fu">filter</span>(code <span class="sc">&lt;=</span> <span class="st">"J250302"</span>)</span>
+<span id="cb13-22"><a></a></span>
+<span id="cb13-23"><a></a>code_name_a <span class="ot">&lt;-</span></span>
+<span id="cb13-24"><a></a>  code_name_a <span class="sc">|&gt;</span></span>
+<span id="cb13-25"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">match</span>(<span class="st">"J250302"</span>, code))</span>
+<span id="cb13-26"><a></a></span>
+<span id="cb13-27"><a></a>code_year_a <span class="ot">&lt;-</span></span>
+<span id="cb13-28"><a></a>  year_raw_a <span class="sc">|&gt;</span></span>
+<span id="cb13-29"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb13-30"><a></a>    <span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(<span class="st">`</span><span class="at">SSDSE-A-2025</span><span class="st">`</span>, Prefecture, Municipality),</span>
+<span id="cb13-31"><a></a>    <span class="at">names_to =</span> <span class="st">"code"</span>,</span>
+<span id="cb13-32"><a></a>    <span class="at">values_to =</span> <span class="st">"year"</span></span>
+<span id="cb13-33"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb13-34"><a></a>  <span class="fu">select</span>(code, year)</span>
+<span id="cb13-35"><a></a></span>
+<span id="cb13-36"><a></a>tmp_df_a <span class="ot">&lt;-</span></span>
+<span id="cb13-37"><a></a>  raw_data_a <span class="sc">|&gt;</span></span>
+<span id="cb13-38"><a></a>  <span class="fu">slice</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb13-39"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb13-40"><a></a>    <span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(<span class="st">`</span><span class="at">SSDSE-A-2025</span><span class="st">`</span>, Prefecture, Municipality),</span>
+<span id="cb13-41"><a></a>    <span class="at">names_to =</span> <span class="st">"code"</span>,</span>
+<span id="cb13-42"><a></a>    <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb13-43"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb13-44"><a></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-45"><a></a>  <span class="fu">rename</span>(市区町村コード <span class="ot">=</span> <span class="st">`</span><span class="at">SSDSE-A-2025</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-46"><a></a>  <span class="fu">mutate</span>(市区町村コード <span class="ot">=</span> <span class="fu">str_remove</span>(市区町村コード, <span class="st">"^R"</span>)) <span class="co"># sfデータと結合するため、先頭のRを削除</span></span>
+<span id="cb13-47"><a></a></span>
+<span id="cb13-48"><a></a>df_a_2025 <span class="ot">&lt;-</span></span>
+<span id="cb13-49"><a></a>  tmp_df_a <span class="sc">|&gt;</span></span>
+<span id="cb13-50"><a></a>  <span class="fu">left_join</span>(code_name_a, <span class="at">by =</span> <span class="st">"code"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-51"><a></a>  <span class="fu">left_join</span>(code_year_a, <span class="at">by =</span> <span class="st">"code"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-52"><a></a>  <span class="fu">relocate</span>(code_name, year, <span class="at">.after =</span> code) <span class="sc">|&gt;</span> </span>
+<span id="cb13-53"><a></a>  <span class="fu">mutate</span>(<span class="at">data_file_name =</span> <span class="st">"SSDSE-A-2025"</span>, <span class="at">.before =</span> 市区町村コード) <span class="sc">|&gt;</span> <span class="co"># 同種の複数データを結合する際に識別できるようファイル名を追加</span></span>
+<span id="cb13-54"><a></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="市町村単位の日本地図-2" class="slide level2">
+<h2>市町村単位の日本地図</h2>
 <div class="panel-tabset">
 <ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Code</a></li><li><a href="#tabset-7-2">Plot</a></li></ul>
 <div class="tab-content">
 <div id="tabset-7-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>df_ssdse_a <span class="ot">&lt;-</span> </span>
-<span id="cb13-2"><a></a>  <span class="fu">read_csv</span>(<span class="st">"data/ssdse_a.csv"</span>)</span>
-<span id="cb13-3"><a></a></span>
-<span id="cb13-4"><a></a>ishikawa <span class="ot">&lt;-</span></span>
-<span id="cb13-5"><a></a>  <span class="fu">jpn_pref</span>(<span class="at">pref =</span> <span class="dv">17</span>, <span class="at">district =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="co"># pref = 17 は「石川県」を意味するコード</span></span>
-<span id="cb13-6"><a></a>  <span class="fu">left_join</span>(df_ssdse_a, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"city_code"</span> <span class="ot">=</span> <span class="st">"市区町村コード"</span>)) <span class="co"># district = TRUE にすると、市区町村レベルの地図になる</span></span>
-<span id="cb13-7"><a></a></span>
-<span id="cb13-8"><a></a>ishikawa <span class="sc">|&gt;</span> </span>
-<span id="cb13-9"><a></a>  <span class="fu">filter</span>(code_name <span class="sc">==</span> <span class="st">"第２次産業就業者数"</span>) <span class="sc">|&gt;</span> <span class="co"># 「第２次産業就業者数」だけを取り出す</span></span>
-<span id="cb13-10"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb13-11"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="co"># sf（地図データ）を描画。fill = value によって、値に応じて色を塗り分ける</span></span>
-<span id="cb13-12"><a></a>  <span class="fu">scale_fill_distiller</span>( <span class="co"># 数値の大小を、連続的な色の濃淡で表現するための関数</span></span>
-<span id="cb13-13"><a></a>    <span class="at">palette =</span> <span class="st">"Blues"</span>, <span class="co"># 色の指定</span></span>
-<span id="cb13-14"><a></a>    <span class="at">direction =</span> <span class="dv">1</span> <span class="co"># 値が大きいものを濃く、その逆を薄くする</span></span>
-<span id="cb13-15"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb13-16"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb13-17"><a></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb13-18"><a></a>  <span class="fu">theme</span>(</span>
-<span id="cb13-19"><a></a>    <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
-<span id="cb13-20"><a></a>    <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="at">l =</span> <span class="dv">30</span>), <span class="co"># 地図と凡例の位置を調整</span></span>
-<span id="cb13-21"><a></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="fl">5.5</span>, <span class="dv">20</span>, <span class="fl">5.5</span>, <span class="fl">5.5</span>)</span>
-<span id="cb13-22"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>ishikawa <span class="ot">&lt;-</span></span>
+<span id="cb14-2"><a></a>  <span class="fu">jpn_pref</span>(<span class="at">pref =</span> <span class="dv">17</span>, <span class="at">district =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="co"># pref = 17 は「石川県」を意味するコード</span></span>
+<span id="cb14-3"><a></a>  <span class="fu">left_join</span>(df_a_2025, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"city_code"</span> <span class="ot">=</span> <span class="st">"市区町村コード"</span>)) <span class="co"># district = TRUE にすると、市区町村レベルの地図になる</span></span>
+<span id="cb14-4"><a></a></span>
+<span id="cb14-5"><a></a>ishikawa <span class="sc">|&gt;</span> </span>
+<span id="cb14-6"><a></a>  <span class="fu">filter</span>(code_name <span class="sc">==</span> <span class="st">"第２次産業就業者数"</span>) <span class="sc">|&gt;</span> <span class="co"># 「第２次産業就業者数」だけを取り出す</span></span>
+<span id="cb14-7"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb14-8"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="co"># sf（地図データ）を描画。fill = value によって、値に応じて色を塗り分ける</span></span>
+<span id="cb14-9"><a></a>  <span class="fu">scale_fill_distiller</span>( <span class="co"># 数値の大小を、連続的な色の濃淡で表現するための関数</span></span>
+<span id="cb14-10"><a></a>    <span class="at">palette =</span> <span class="st">"Blues"</span>, <span class="co"># 色の指定</span></span>
+<span id="cb14-11"><a></a>    <span class="at">direction =</span> <span class="dv">1</span> <span class="co"># 値が大きいものを濃く、その逆を薄くする</span></span>
+<span id="cb14-12"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb14-13"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb14-14"><a></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb14-15"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb14-16"><a></a>    <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
+<span id="cb14-17"><a></a>    <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="at">l =</span> <span class="dv">30</span>), <span class="co"># 地図と凡例の位置を調整</span></span>
+<span id="cb14-18"><a></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="fl">5.5</span>, <span class="dv">20</span>, <span class="fl">5.5</span>, <span class="fl">5.5</span>)</span>
+<span id="cb14-19"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-7-2">
@@ -903,7 +961,7 @@ remotes::install_github("uribo/jpndistrict")
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="slide_RandQuarto_w6_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="slide_RandQuarto_w6_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -912,7 +970,7 @@ remotes::install_github("uribo/jpndistrict")
 </div>
 </div>
 </section>
-<section id="市町村単位の日本地図-2" class="slide level2">
+<section id="市町村単位の日本地図-3" class="slide level2">
 <h2>市町村単位の日本地図</h2>
 <h3 id="石川県内の第2次産業就業者数の可視化市町村別の地図比率">石川県内の第2次産業就業者数の可視化（市町村別の地図・比率）</h3>
 <div class="panel-tabset">
@@ -920,31 +978,31 @@ remotes::install_github("uribo/jpndistrict")
 <div class="tab-content">
 <div id="tabset-8-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>ishikawa_wide <span class="ot">&lt;-</span> ishikawa <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a></a>  <span class="fu">select</span>(city, code_name, value) <span class="sc">|&gt;</span></span>
-<span id="cb14-3"><a></a>  <span class="fu">pivot_wider</span>(</span>
-<span id="cb14-4"><a></a>    <span class="at">names_from =</span> code_name,</span>
-<span id="cb14-5"><a></a>    <span class="at">values_from =</span> value</span>
-<span id="cb14-6"><a></a>  )</span>
-<span id="cb14-7"><a></a></span>
-<span id="cb14-8"><a></a>ishikawa_wide <span class="sc">|&gt;</span></span>
-<span id="cb14-9"><a></a>  <span class="fu">select</span>(city, <span class="st">`</span><span class="at">第２次産業就業者数</span><span class="st">`</span>, 総人口) <span class="sc">|&gt;</span> </span>
-<span id="cb14-10"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb14-11"><a></a>    比率 <span class="ot">=</span> <span class="st">`</span><span class="at">第２次産業就業者数</span><span class="st">`</span> <span class="sc">/</span> 総人口</span>
-<span id="cb14-12"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb14-13"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb14-14"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> 比率)) <span class="sc">+</span> <span class="co"># sf（地図データ）を描画。fill = value によって、値に応じて色を塗り分ける</span></span>
-<span id="cb14-15"><a></a>  <span class="fu">scale_fill_distiller</span>( <span class="co"># 数値の大小を、連続的な色の濃淡で表現するための関数</span></span>
-<span id="cb14-16"><a></a>    <span class="at">palette =</span> <span class="st">"Blues"</span>, <span class="co"># 色の指定</span></span>
-<span id="cb14-17"><a></a>    <span class="at">direction =</span> <span class="dv">1</span> <span class="co"># 値が大きいものを濃く、その逆を薄くする</span></span>
-<span id="cb14-18"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb14-19"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb14-20"><a></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb14-21"><a></a>  <span class="fu">theme</span>(</span>
-<span id="cb14-22"><a></a>    <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
-<span id="cb14-23"><a></a>    <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="at">l =</span> <span class="dv">30</span>), <span class="co"># 地図と凡例の位置を調整</span></span>
-<span id="cb14-24"><a></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="fl">5.5</span>, <span class="dv">20</span>, <span class="fl">5.5</span>, <span class="fl">5.5</span>)</span>
-<span id="cb14-25"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>ishikawa_wide <span class="ot">&lt;-</span> ishikawa <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a></a>  <span class="fu">select</span>(city, code_name, value) <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb15-4"><a></a>    <span class="at">names_from =</span> code_name,</span>
+<span id="cb15-5"><a></a>    <span class="at">values_from =</span> value</span>
+<span id="cb15-6"><a></a>  )</span>
+<span id="cb15-7"><a></a></span>
+<span id="cb15-8"><a></a>ishikawa_wide <span class="sc">|&gt;</span></span>
+<span id="cb15-9"><a></a>  <span class="fu">select</span>(city, <span class="st">`</span><span class="at">第２次産業就業者数</span><span class="st">`</span>, 総人口) <span class="sc">|&gt;</span> </span>
+<span id="cb15-10"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-11"><a></a>    比率 <span class="ot">=</span> <span class="st">`</span><span class="at">第２次産業就業者数</span><span class="st">`</span> <span class="sc">/</span> 総人口</span>
+<span id="cb15-12"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb15-13"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb15-14"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> 比率)) <span class="sc">+</span> <span class="co"># sf（地図データ）を描画。fill = value によって、値に応じて色を塗り分ける</span></span>
+<span id="cb15-15"><a></a>  <span class="fu">scale_fill_distiller</span>( <span class="co"># 数値の大小を、連続的な色の濃淡で表現するための関数</span></span>
+<span id="cb15-16"><a></a>    <span class="at">palette =</span> <span class="st">"Blues"</span>, <span class="co"># 色の指定</span></span>
+<span id="cb15-17"><a></a>    <span class="at">direction =</span> <span class="dv">1</span> <span class="co"># 値が大きいものを濃く、その逆を薄くする</span></span>
+<span id="cb15-18"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb15-19"><a></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb15-20"><a></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb15-21"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb15-22"><a></a>    <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
+<span id="cb15-23"><a></a>    <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="at">l =</span> <span class="dv">30</span>), <span class="co"># 地図と凡例の位置を調整</span></span>
+<span id="cb15-24"><a></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="fl">5.5</span>, <span class="dv">20</span>, <span class="fl">5.5</span>, <span class="fl">5.5</span>)</span>
+<span id="cb15-25"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-8-2">
@@ -952,7 +1010,7 @@ remotes::install_github("uribo/jpndistrict")
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="slide_RandQuarto_w6_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="slide_RandQuarto_w6_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -981,60 +1039,60 @@ remotes::install_github("uribo/jpndistrict")
 <div class="tab-content">
 <div id="tabset-9-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>df_long_cat <span class="ot">&lt;-</span> </span>
-<span id="cb15-2"><a></a>  df_long_cat <span class="sc">|&gt;</span></span>
-<span id="cb15-3"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb15-4"><a></a>    地域ブロック <span class="ot">=</span> <span class="fu">case_when</span>(</span>
-<span id="cb15-5"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"北海道"</span>, <span class="st">"青森県"</span>, <span class="st">"岩手県"</span>, <span class="st">"宮城県"</span>, </span>
-<span id="cb15-6"><a></a>                  <span class="st">"秋田県"</span>, <span class="st">"山形県"</span>, <span class="st">"福島県"</span>) <span class="sc">~</span> <span class="st">"北海道・東北"</span>,</span>
-<span id="cb15-7"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"茨城県"</span>, <span class="st">"栃木県"</span>, <span class="st">"群馬県"</span>,</span>
-<span id="cb15-8"><a></a>                  <span class="st">"埼玉県"</span>, <span class="st">"千葉県"</span>, <span class="st">"東京都"</span>, <span class="st">"神奈川県"</span>,</span>
-<span id="cb15-9"><a></a>                  <span class="st">"新潟県"</span>, <span class="st">"山梨県"</span>, <span class="st">"長野県"</span>) <span class="sc">~</span> <span class="st">"関東・甲信越"</span>,</span>
-<span id="cb15-10"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"富山県"</span>, <span class="st">"石川県"</span>, <span class="st">"福井県"</span>) <span class="sc">~</span> <span class="st">"北陸三県"</span>,</span>
-<span id="cb15-11"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"岐阜県"</span>, <span class="st">"静岡県"</span>, <span class="st">"愛知県"</span>, <span class="st">"三重県"</span>) <span class="sc">~</span> <span class="st">"東海地域"</span>,</span>
-<span id="cb15-12"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"滋賀県"</span>, <span class="st">"京都府"</span>,</span>
-<span id="cb15-13"><a></a>                  <span class="st">"大阪府"</span>, <span class="st">"兵庫県"</span>, <span class="st">"奈良県"</span>, <span class="st">"和歌山県"</span>) <span class="sc">~</span> <span class="st">"近畿"</span>,</span>
-<span id="cb15-14"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"鳥取県"</span>, <span class="st">"島根県"</span>, <span class="st">"岡山県"</span>,</span>
-<span id="cb15-15"><a></a>                  <span class="st">"広島県"</span>, <span class="st">"山口県"</span>) <span class="sc">~</span> <span class="st">"中国"</span>,</span>
-<span id="cb15-16"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"徳島県"</span>, <span class="st">"香川県"</span>, <span class="st">"愛媛県"</span>, <span class="st">"高知県"</span>) <span class="sc">~</span> <span class="st">"四国"</span>,</span>
-<span id="cb15-17"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"福岡県"</span>, <span class="st">"佐賀県"</span>, <span class="st">"長崎県"</span>, <span class="st">"熊本県"</span>,</span>
-<span id="cb15-18"><a></a>                  <span class="st">"大分県"</span>, <span class="st">"宮崎県"</span>, <span class="st">"鹿児島県"</span>, <span class="st">"沖縄県"</span>) <span class="sc">~</span> <span class="st">"九州・沖縄"</span>,</span>
-<span id="cb15-19"><a></a>      <span class="at">.default =</span> <span class="cn">NA</span></span>
-<span id="cb15-20"><a></a>    ),</span>
-<span id="cb15-21"><a></a>    <span class="at">.before =</span> 都道府県</span>
-<span id="cb15-22"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb15-23"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb15-24"><a></a>    地域ブロック <span class="ot">=</span> <span class="fu">factor</span>(</span>
-<span id="cb15-25"><a></a>      地域ブロック,</span>
-<span id="cb15-26"><a></a>      <span class="at">levels =</span> <span class="fu">c</span>(</span>
-<span id="cb15-27"><a></a>        <span class="st">"北海道・東北"</span>,</span>
-<span id="cb15-28"><a></a>        <span class="st">"関東・甲信越"</span>,</span>
-<span id="cb15-29"><a></a>        <span class="st">"北陸三県"</span>,</span>
-<span id="cb15-30"><a></a>        <span class="st">"東海地域"</span>,</span>
-<span id="cb15-31"><a></a>        <span class="st">"近畿"</span>,</span>
-<span id="cb15-32"><a></a>        <span class="st">"中国"</span>,</span>
-<span id="cb15-33"><a></a>        <span class="st">"四国"</span>,</span>
-<span id="cb15-34"><a></a>        <span class="st">"九州・沖縄"</span></span>
-<span id="cb15-35"><a></a>      )</span>
-<span id="cb15-36"><a></a>    )</span>
-<span id="cb15-37"><a></a>  )</span>
-<span id="cb15-38"><a></a></span>
-<span id="cb15-39"><a></a>df_long_cat <span class="sc">|&gt;</span></span>
-<span id="cb15-40"><a></a>  <span class="fu">filter</span>(category_major <span class="sc">==</span> <span class="st">"スポーツ"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb15-41"><a></a>  <span class="fu">filter</span>(category_middle <span class="sc">==</span> <span class="st">"野球(キャッチボールを含む)"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb15-42"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">==</span> <span class="st">"男"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb15-43"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
-<span id="cb15-44"><a></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value)) <span class="sc">|&gt;</span></span>
-<span id="cb15-45"><a></a>  <span class="fu">group_by</span>(地域ブロック) <span class="sc">|&gt;</span></span>
-<span id="cb15-46"><a></a>  <span class="fu">summarise</span>(</span>
-<span id="cb15-47"><a></a>    <span class="at">value_sum =</span> <span class="fu">sum</span>(value)</span>
-<span id="cb15-48"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb15-49"><a></a>  <span class="fu">mutate</span>(地域ブロック <span class="ot">=</span> <span class="fu">fct_rev</span>(地域ブロック)) <span class="sc">|&gt;</span> <span class="co"># 都道順にしたい場合</span></span>
-<span id="cb15-50"><a></a>  <span class="co"># mutate(地域ブロック = reorder(地域ブロック, value)) |&gt; # 値の多い順に並べる場合</span></span>
-<span id="cb15-51"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 地域ブロック, <span class="at">y =</span> value_sum)) <span class="sc">+</span></span>
-<span id="cb15-52"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb15-53"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb15-54"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>df_long_cat <span class="ot">&lt;-</span> </span>
+<span id="cb16-2"><a></a>  df_long_cat <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-4"><a></a>    地域ブロック <span class="ot">=</span> <span class="fu">case_when</span>(</span>
+<span id="cb16-5"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"北海道"</span>, <span class="st">"青森県"</span>, <span class="st">"岩手県"</span>, <span class="st">"宮城県"</span>, </span>
+<span id="cb16-6"><a></a>                  <span class="st">"秋田県"</span>, <span class="st">"山形県"</span>, <span class="st">"福島県"</span>) <span class="sc">~</span> <span class="st">"北海道・東北"</span>,</span>
+<span id="cb16-7"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"茨城県"</span>, <span class="st">"栃木県"</span>, <span class="st">"群馬県"</span>,</span>
+<span id="cb16-8"><a></a>                  <span class="st">"埼玉県"</span>, <span class="st">"千葉県"</span>, <span class="st">"東京都"</span>, <span class="st">"神奈川県"</span>,</span>
+<span id="cb16-9"><a></a>                  <span class="st">"新潟県"</span>, <span class="st">"山梨県"</span>, <span class="st">"長野県"</span>) <span class="sc">~</span> <span class="st">"関東・甲信越"</span>,</span>
+<span id="cb16-10"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"富山県"</span>, <span class="st">"石川県"</span>, <span class="st">"福井県"</span>) <span class="sc">~</span> <span class="st">"北陸三県"</span>,</span>
+<span id="cb16-11"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"岐阜県"</span>, <span class="st">"静岡県"</span>, <span class="st">"愛知県"</span>, <span class="st">"三重県"</span>) <span class="sc">~</span> <span class="st">"東海地域"</span>,</span>
+<span id="cb16-12"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"滋賀県"</span>, <span class="st">"京都府"</span>,</span>
+<span id="cb16-13"><a></a>                  <span class="st">"大阪府"</span>, <span class="st">"兵庫県"</span>, <span class="st">"奈良県"</span>, <span class="st">"和歌山県"</span>) <span class="sc">~</span> <span class="st">"近畿"</span>,</span>
+<span id="cb16-14"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"鳥取県"</span>, <span class="st">"島根県"</span>, <span class="st">"岡山県"</span>,</span>
+<span id="cb16-15"><a></a>                  <span class="st">"広島県"</span>, <span class="st">"山口県"</span>) <span class="sc">~</span> <span class="st">"中国"</span>,</span>
+<span id="cb16-16"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"徳島県"</span>, <span class="st">"香川県"</span>, <span class="st">"愛媛県"</span>, <span class="st">"高知県"</span>) <span class="sc">~</span> <span class="st">"四国"</span>,</span>
+<span id="cb16-17"><a></a>      都道府県 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"福岡県"</span>, <span class="st">"佐賀県"</span>, <span class="st">"長崎県"</span>, <span class="st">"熊本県"</span>,</span>
+<span id="cb16-18"><a></a>                  <span class="st">"大分県"</span>, <span class="st">"宮崎県"</span>, <span class="st">"鹿児島県"</span>, <span class="st">"沖縄県"</span>) <span class="sc">~</span> <span class="st">"九州・沖縄"</span>,</span>
+<span id="cb16-19"><a></a>      <span class="at">.default =</span> <span class="cn">NA</span></span>
+<span id="cb16-20"><a></a>    ),</span>
+<span id="cb16-21"><a></a>    <span class="at">.before =</span> 都道府県</span>
+<span id="cb16-22"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-23"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-24"><a></a>    地域ブロック <span class="ot">=</span> <span class="fu">factor</span>(</span>
+<span id="cb16-25"><a></a>      地域ブロック,</span>
+<span id="cb16-26"><a></a>      <span class="at">levels =</span> <span class="fu">c</span>(</span>
+<span id="cb16-27"><a></a>        <span class="st">"北海道・東北"</span>,</span>
+<span id="cb16-28"><a></a>        <span class="st">"関東・甲信越"</span>,</span>
+<span id="cb16-29"><a></a>        <span class="st">"北陸三県"</span>,</span>
+<span id="cb16-30"><a></a>        <span class="st">"東海地域"</span>,</span>
+<span id="cb16-31"><a></a>        <span class="st">"近畿"</span>,</span>
+<span id="cb16-32"><a></a>        <span class="st">"中国"</span>,</span>
+<span id="cb16-33"><a></a>        <span class="st">"四国"</span>,</span>
+<span id="cb16-34"><a></a>        <span class="st">"九州・沖縄"</span></span>
+<span id="cb16-35"><a></a>      )</span>
+<span id="cb16-36"><a></a>    )</span>
+<span id="cb16-37"><a></a>  )</span>
+<span id="cb16-38"><a></a></span>
+<span id="cb16-39"><a></a>df_long_cat <span class="sc">|&gt;</span></span>
+<span id="cb16-40"><a></a>  <span class="fu">filter</span>(category_major <span class="sc">==</span> <span class="st">"スポーツ"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-41"><a></a>  <span class="fu">filter</span>(category_middle <span class="sc">==</span> <span class="st">"野球(キャッチボールを含む)"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-42"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">==</span> <span class="st">"男"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-43"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb16-44"><a></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value)) <span class="sc">|&gt;</span></span>
+<span id="cb16-45"><a></a>  <span class="fu">group_by</span>(地域ブロック) <span class="sc">|&gt;</span></span>
+<span id="cb16-46"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb16-47"><a></a>    <span class="at">value_sum =</span> <span class="fu">sum</span>(value)</span>
+<span id="cb16-48"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-49"><a></a>  <span class="fu">mutate</span>(地域ブロック <span class="ot">=</span> <span class="fu">fct_rev</span>(地域ブロック)) <span class="sc">|&gt;</span> <span class="co"># 都道順にしたい場合</span></span>
+<span id="cb16-50"><a></a>  <span class="co"># mutate(地域ブロック = reorder(地域ブロック, value)) |&gt; # 値の多い順に並べる場合</span></span>
+<span id="cb16-51"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 地域ブロック, <span class="at">y =</span> value_sum)) <span class="sc">+</span></span>
+<span id="cb16-52"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb16-53"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb16-54"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-9-2">
@@ -1042,7 +1100,7 @@ remotes::install_github("uribo/jpndistrict")
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="slide_RandQuarto_w6_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="slide_RandQuarto_w6_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1069,30 +1127,30 @@ remotes::install_github("uribo/jpndistrict")
 <li>出力結果はフォルダを参照</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>p <span class="ot">&lt;-</span></span>
-<span id="cb16-2"><a></a>  penguins <span class="sc">|&gt;</span></span>
-<span id="cb16-3"><a></a>  <span class="fu">drop_na</span>(bill_len, bill_dep) <span class="sc">|&gt;</span></span>
-<span id="cb16-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> bill_dep, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
-<span id="cb16-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb16-6"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb16-7"><a></a>    <span class="at">x =</span> <span class="st">"くちばし長 (mm)"</span>,</span>
-<span id="cb16-8"><a></a>    <span class="at">y =</span> <span class="st">"くちばし深さ (mm)"</span>,</span>
-<span id="cb16-9"><a></a>    <span class="at">colour =</span> <span class="st">"種別"</span></span>
-<span id="cb16-10"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb16-11"><a></a>  <span class="fu">theme</span>(</span>
-<span id="cb16-12"><a></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
-<span id="cb16-13"><a></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)</span>
-<span id="cb16-14"><a></a>  )</span>
-<span id="cb16-15"><a></a></span>
-<span id="cb16-16"><a></a><span class="fu">ggsave</span>(</span>
-<span id="cb16-17"><a></a>  <span class="st">"figures/plot_scatter.png"</span>, <span class="co"># 保存先とファイル名を指定</span></span>
-<span id="cb16-18"><a></a>  <span class="at">plot =</span> p, <span class="co"># プロットするオブジェクトを指定</span></span>
-<span id="cb16-19"><a></a>  <span class="at">width =</span> <span class="dv">6</span>, <span class="co"># 横サイズ（インチ）</span></span>
-<span id="cb16-20"><a></a>  <span class="at">height =</span> <span class="fl">4.5</span>, <span class="co"># 縦サイズ（インチ）</span></span>
-<span id="cb16-21"><a></a>  <span class="at">units =</span> <span class="st">"in"</span>,</span>
-<span id="cb16-22"><a></a>  <span class="at">dpi =</span> <span class="dv">150</span>, <span class="co"># 1インチあたりの画素数（150で十分）</span></span>
-<span id="cb16-23"><a></a>  <span class="at">device =</span> ragg<span class="sc">::</span>agg_png <span class="co"># 高品質なPNG画像として保存（日本語文字を綺麗に描画するなど）</span></span>
-<span id="cb16-24"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>p <span class="ot">&lt;-</span></span>
+<span id="cb17-2"><a></a>  penguins <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a></a>  <span class="fu">drop_na</span>(bill_len, bill_dep) <span class="sc">|&gt;</span></span>
+<span id="cb17-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> bill_dep, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
+<span id="cb17-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb17-6"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb17-7"><a></a>    <span class="at">x =</span> <span class="st">"くちばし長 (mm)"</span>,</span>
+<span id="cb17-8"><a></a>    <span class="at">y =</span> <span class="st">"くちばし深さ (mm)"</span>,</span>
+<span id="cb17-9"><a></a>    <span class="at">colour =</span> <span class="st">"種別"</span></span>
+<span id="cb17-10"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb17-11"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb17-12"><a></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb17-13"><a></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)</span>
+<span id="cb17-14"><a></a>  )</span>
+<span id="cb17-15"><a></a></span>
+<span id="cb17-16"><a></a><span class="fu">ggsave</span>(</span>
+<span id="cb17-17"><a></a>  <span class="st">"figures/plot_scatter.png"</span>, <span class="co"># 保存先とファイル名を指定</span></span>
+<span id="cb17-18"><a></a>  <span class="at">plot =</span> p, <span class="co"># プロットするオブジェクトを指定</span></span>
+<span id="cb17-19"><a></a>  <span class="at">width =</span> <span class="dv">6</span>, <span class="co"># 横サイズ（インチ）</span></span>
+<span id="cb17-20"><a></a>  <span class="at">height =</span> <span class="fl">4.5</span>, <span class="co"># 縦サイズ（インチ）</span></span>
+<span id="cb17-21"><a></a>  <span class="at">units =</span> <span class="st">"in"</span>,</span>
+<span id="cb17-22"><a></a>  <span class="at">dpi =</span> <span class="dv">150</span>, <span class="co"># 1インチあたりの画素数（150で十分）</span></span>
+<span id="cb17-23"><a></a>  <span class="at">device =</span> ragg<span class="sc">::</span>agg_png <span class="co"># 高品質なPNG画像として保存（日本語文字を綺麗に描画するなど）</span></span>
+<span id="cb17-24"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
