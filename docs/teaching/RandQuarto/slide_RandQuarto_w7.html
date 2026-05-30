@@ -517,6 +517,16 @@
 <li>クロス集計表を作り、変数間の値の違いが偶然かどうかを調べる</li>
 <li>例：ペンギンの種類と島に関係はあるのか</li>
 </ul>
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>以下のコードが動かない場合、次のページのコードを試して下さい</p>
+</div>
+</div>
+</div>
 <div class="panel-tabset">
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Code</a></li><li><a href="#tabset-3-2">Plot</a></li></ul>
 <div class="tab-content">
@@ -545,6 +555,34 @@ X-squared = 284.59, df = 4, p-value &lt; 2.2e-16</code></pre>
 <section id="検定-1" class="slide level2">
 <h2>検定</h2>
 <h3 id="カイ二乗検定-1">カイ二乗検定</h3>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Code</a></li><li><a href="#tabset-4-2">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a></a>  <span class="fu">drop_na</span>(species, island) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a></a>  <span class="fu">with</span>(<span class="fu">table</span>(species, island)) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a></a>  stats<span class="sc">::</span><span class="fu">chisq.test</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-4-2">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test
+
+data:  with(drop_na(penguins, species, island), table(species, island))
+X-squared = 299.55, df = 4, p-value &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="検定-2" class="slide level2">
+<h2>検定</h2>
+<h3 id="カイ二乗検定-2">カイ二乗検定</h3>
 <ul>
 <li>仮説「ペンギンの種類と島は無関係」を検定</li>
 </ul>
@@ -574,19 +612,19 @@ X-squared = 284.59, df = 4, p-value &lt; 2.2e-16</code></pre>
 <li><a href="https://gt.rstudio.com">公式サイト</a>；install.packages(“gtsummary”) / library(gtsummary)</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Code</a></li><li><a href="#tabset-4-2">Plot</a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Code</a></li><li><a href="#tabset-5-2">Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1">
+<div id="tabset-5-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a></a>  <span class="fu">select</span>(species, sex, body_mass) <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb7-4"><a></a>  <span class="fu">tbl_summary</span>(<span class="at">by =</span> species) <span class="sc">|&gt;</span> </span>
-<span id="cb7-5"><a></a>  <span class="fu">add_p</span>() <span class="sc">|&gt;</span></span>
-<span id="cb7-6"><a></a>  <span class="fu">as_kable</span>() <span class="co"># pptxなどで出力する場合はas_flex_table()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a></a>  <span class="fu">select</span>(species, sex, body_mass) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a></a>  <span class="fu">tbl_summary</span>(<span class="at">by =</span> species) <span class="sc">|&gt;</span> </span>
+<span id="cb9-5"><a></a>  <span class="fu">add_p</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-6"><a></a>  <span class="fu">as_kable</span>() <span class="co"># pptxなどで出力する場合はas_flex_table()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-5-2">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top">
@@ -651,17 +689,17 @@ X-squared = 284.59, df = 4, p-value &lt; 2.2e-16</code></pre>
 <li>例：くちばしが長いペンギンほど体重も重いかを調べる</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Code</a></li><li><a href="#tabset-5-2">Output</a></li></ul>
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Code</a></li><li><a href="#tabset-6-2">Output</a></li></ul>
 <div class="tab-content">
-<div id="tabset-5-1">
+<div id="tabset-6-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a></a>  <span class="fu">select</span>(body_mass, bill_len) <span class="sc">|&gt;</span> <span class="co"># 必要な変数に絞る</span></span>
-<span id="cb8-3"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
-<span id="cb8-4"><a></a>  <span class="fu">lm</span>(body_mass <span class="sc">~</span> bill_len, <span class="at">data =</span> _) <span class="co"># 被説明変数、説明変数を指定。 data = _は「直前のデータを使う」の意</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a></a>  <span class="fu">select</span>(body_mass, bill_len) <span class="sc">|&gt;</span> <span class="co"># 必要な変数に絞る</span></span>
+<span id="cb10-3"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a></a>  <span class="fu">lm</span>(body_mass <span class="sc">~</span> bill_len, <span class="at">data =</span> _) <span class="co"># 被説明変数、説明変数を指定。 data = _は「直前のデータを使う」の意</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-5-2">
+<div id="tabset-6-2">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -701,17 +739,17 @@ Coefficients:
 <li>方法：単回帰分析のコードに、説明変数を<code>+</code>を付けて足す</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Code</a></li><li><a href="#tabset-6-2">Output</a></li></ul>
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Code</a></li><li><a href="#tabset-7-2">Output</a></li></ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-7-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a></a>  <span class="fu">select</span>(body_mass, bill_len, flipper_len) <span class="sc">|&gt;</span></span>
-<span id="cb10-3"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
-<span id="cb10-4"><a></a>  <span class="fu">lm</span>(body_mass <span class="sc">~</span> bill_len <span class="sc">+</span> flipper_len, <span class="at">data =</span> _)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a></a>  <span class="fu">select</span>(body_mass, bill_len, flipper_len) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a></a>  <span class="fu">lm</span>(body_mass <span class="sc">~</span> bill_len <span class="sc">+</span> flipper_len, <span class="at">data =</span> _)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-6-2">
+<div id="tabset-7-2">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
