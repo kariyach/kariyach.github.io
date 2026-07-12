@@ -105,6 +105,90 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-bookreviews .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-subtitle','listing-description','listing-categories','listing-file',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-bookreviews'] = new List('listing-bookreviews', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-translation .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-subtitle','listing-description','listing-categories','listing-file',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-translation'] = new List('listing-translation', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-misc .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-subtitle','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-misc'] = new List('listing-misc', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -409,7 +493,7 @@ window.Quarto = {
   <li><a href="#misc" id="toc-misc" class="nav-link" data-scroll-target="#misc">misc</a></li>
   </ul>
 </nav>
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="RWRtdW5kJTIwQnVya2U=">Edmund Burke <span class="quarto-category-count">(6)</span></div><div class="category" data-category="SmFwYW5lc2U=">Japanese <span class="quarto-category-count">(6)</span></div><div class="category" data-category="UmVjZXB0aW9uJTIwb2YlMjBSaGV0b3JpYw==">Reception of Rhetoric <span class="quarto-category-count">(2)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="RWRtdW5kJTIwQnVya2U=">Edmund Burke <span class="quarto-category-count">(9)</span></div><div class="category" data-category="SmFwYW5lc2U=">Japanese <span class="quarto-category-count">(10)</span></div><div class="category" data-category="UmVjZXB0aW9uJTIwb2YlMjBSaGV0b3JpYw==">Reception of Rhetoric <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -601,27 +685,142 @@ March 31, 2013
 </section>
 <section id="book-reviews" class="level2">
 <h2 class="anchored" data-anchor-id="book-reviews">Book Reviews</h2>
-<div class="{bookreviews}">
+<div id="listing-bookreviews" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="SmFwYW5lc2U=" data-listing-date-sort="1520780400000" data-listing-file-modified-sort="1783860663388" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="26">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/BookReviews/ConceptofRepresentation.html" class="no-external">Review of Hanna Fenichel Pitkin, <em>The Concept of Representation</em></a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/BookReviews/ConceptofRepresentation.html" class="no-external"><em>Tosho Shinbun</em> [The Book Review]</a>
+</div>
+<div class="listing-categories">
 
+<div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
+
+</div>
+<div class="delink listing-description"><a href="../publications/BookReviews/ConceptofRepresentation.html" class="no-external">
+
+<li>‘Review of Hanna Fenichel Pitkin, <em>The Concept of Representation</em> (Japanese translation, Nagoya University Press, 2017), <em>Tosho Shinbun</em> [The Book Review], The Book Review Press, 3350.</li>
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="../publications/BookReviews/ConceptofRepresentation.html" class="no-external">
+<div class="listing-date">
+March 12, 2018
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="RWRtdW5kJTIwQnVya2UlMkNKYXBhbmVzZQ==" data-listing-date-sort="1520780400000" data-listing-file-modified-sort="1783860809870" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/BookReviews/EmpireandRevolution.html" class="no-external">Review of Richard Bourke, <em>Empire and Revolution: The Political Life of Edmund Burke</em></a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/BookReviews/EmpireandRevolution.html" class="no-external"><em>Igirisu Tetugaku Kenkyu</em> [Studies in British Philosophy]</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RWRtdW5kJTIwQnVya2U='); return false;">Edmund Burke</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
+
+</div>
+<div class="delink listing-description"><a href="../publications/BookReviews/EmpireandRevolution.html" class="no-external">
+
+<li>‘Review of Richard Bourke, <em>Empire and Revolution: The Political Life of Edmund Burke</em>, Princeton University Press, 2015’, <em>Igirisu Tetugaku Kenkyu</em> [Studies in British Philosophy], Japanese Society for British Philosophy, 40, 88-89.</li>
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="../publications/BookReviews/EmpireandRevolution.html" class="no-external">
+<div class="listing-date">
+March 12, 2018
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="RWRtdW5kJTIwQnVya2UlMkNKYXBhbmVzZQ==" data-listing-date-sort="1520780400000" data-listing-file-modified-sort="1783860878947" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/BookReviews/FoundationsofModernInternationalThought.html" class="no-external">‘Review of David Armitage, <em>Foundations of Modern International Thought</em></a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/BookReviews/FoundationsofModernInternationalThought.html" class="no-external"><em>Igirisu Tetugaku Kenkyu</em> [Studies in British Philosophy]</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RWRtdW5kJTIwQnVya2U='); return false;">Edmund Burke</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
+
+</div>
+<div class="delink listing-description"><a href="../publications/BookReviews/FoundationsofModernInternationalThought.html" class="no-external">
+
+<li>‘Review of David Armitage, <em>Foundations of Modern International Thought</em> (Japanese translation, Hosei University Press, 2015), <em>Igirisu Tetugaku Kenkyu</em> [Studies in British Philosophy], Japanese Society for British Philosophy, 39, 105-107.</li>
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="../publications/BookReviews/FoundationsofModernInternationalThought.html" class="no-external">
+<div class="listing-date">
+March 12, 2018
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>
 <section id="translation" class="level2">
 <h2 class="anchored" data-anchor-id="translation">Translation</h2>
-<div id="translation">
+<div id="listing-translation" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="RWRtdW5kJTIwQnVya2UlMkNKYXBhbmVzZQ==" data-listing-date-sort="1520780400000" data-listing-file-modified-sort="1783860983407" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/Translations/KautilyanPrinciplesandtheLawofNations.html" class="no-external">C. H. Alexandrowicz. ‘Kautilyan Principles and the Law of Nations’</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/Translations/KautilyanPrinciplesandtheLawofNations.html" class="no-external"><em>Gurobal Hisutori to Kokusai-ho</em> [Globai History and International Law]</a>
+</div>
+<div class="listing-categories">
 
+<div class="listing-category" onclick="window.quartoListingCategory('RWRtdW5kJTIwQnVya2U='); return false;">Edmund Burke</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
+
+</div>
+<div class="delink listing-description"><a href="../publications/Translations/KautilyanPrinciplesandtheLawofNations.html" class="no-external">
+
+<li>C. H. Alexandrowicz (2017), ‘Kautilyan Principles and the Law of Nations (1965-66)’, in <em>The Law of Nations in Global History</em>, David Armitage and Jennifer Pitts, eds, Oxford: Oxford University Press, 35-52. (Japanese translation, <em>Gurobal Hisutori to Kokusai-ho</em> [Globai History and International Law], Nihon Keizai Hyoronsya, 2020).</li>
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="../publications/Translations/KautilyanPrinciplesandtheLawofNations.html" class="no-external">
+<div class="listing-date">
+March 12, 2018
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>
 <section id="misc" class="level2">
 <h2 class="anchored" data-anchor-id="misc">misc</h2>
-<div id="misc">
+<div id="listing-misc" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
 
 </div>
-<!-- ## Book Reviews -->
-<!-- - ‘Review of Hanna Fenichel Pitkin, *The Concept of Representation* (Japanese translation, Nagoya University Press, 2017), *Tosho Shinbun* [The Book Review], The Book Review Press, 3350. -->
-<!-- - ‘Review of Richard Bourke, *Empire and Revolution: The Political Life of Edmund Burke*, Princeton University Press, 2015’, *Igirisu Tetugaku Kenkyu* [Studies in British Philosophy], Japanese Society for British Philosophy, 40, 88-89. -->
-<!-- - ‘Review of David Armitage, *Foundations of Modern International Thought* (Japanese translation, Hosei University Press, 2015), *Igirisu Tetugaku Kenkyu* [Studies in British Philosophy], Japanese Society for British Philosophy, 39, 105-107. -->
-<!-- ## Translation -->
-<!-- - C. H. Alexandrowicz (2017), 'Kautilyan Principles and the Law of Nations (1965-66)', in *The Law of Nations in Global History*, David Armitage and Jennifer Pitts,  eds, Oxford: Oxford University Press, 35-52. (Japanese translation, *Gurobal Hisutori to Kokusai-ho* [Globai History and International Law], Nihon Keizai Hyoronsya, 2020). -->
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
 
 
 
