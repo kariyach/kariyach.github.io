@@ -33,6 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../img/favicon-16x16.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -75,7 +77,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-articlesandchapters .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-subtitle','listing-description','listing-categories','listing-file',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-articlesandchapters'] = new List('listing-articlesandchapters', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -321,13 +381,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Publications</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -335,7 +395,7 @@ ul.task-list li input[type="checkbox"] {
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -343,108 +403,226 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#articles-chapters" id="toc-articles-chapters" class="nav-link active" data-scroll-target="#articles-chapters">Articles &amp; Chapters</a>
-  <ul class="collapse">
-  <li><a href="#james-mackintosh-in-bombay-colonial-rule-of-the-scottish-enlightenment" id="toc-james-mackintosh-in-bombay-colonial-rule-of-the-scottish-enlightenment" class="nav-link" data-scroll-target="#james-mackintosh-in-bombay-colonial-rule-of-the-scottish-enlightenment">James Mackintosh in Bombay: Colonial Rule of the Scottish Enlightenment</a></li>
-  <li><a href="#the-eloquence-in-wartime-mackintosh-on-burkes-letters-on-a-regicide-peace" id="toc-the-eloquence-in-wartime-mackintosh-on-burkes-letters-on-a-regicide-peace" class="nav-link" data-scroll-target="#the-eloquence-in-wartime-mackintosh-on-burkes-letters-on-a-regicide-peace">The Eloquence in Wartime: Mackintosh on Burke’s <em>Letters on a Regicide Peace</em></a></li>
-  <li><a href="#the-international-politics-of-jealousy-edmund-burke-adam-smith-and-james-mackintosh" id="toc-the-international-politics-of-jealousy-edmund-burke-adam-smith-and-james-mackintosh" class="nav-link" data-scroll-target="#the-international-politics-of-jealousy-edmund-burke-adam-smith-and-james-mackintosh">The International Politics of Jealousy: Edmund Burke, Adam Smith and James Mackintosh</a></li>
-  <li><a href="#the-language-of-war-and-peace-in-britain-during-the-french-revolution-controversy-over-burkes-letters-on-a-regicide-peace" id="toc-the-language-of-war-and-peace-in-britain-during-the-french-revolution-controversy-over-burkes-letters-on-a-regicide-peace" class="nav-link" data-scroll-target="#the-language-of-war-and-peace-in-britain-during-the-french-revolution-controversy-over-burkes-letters-on-a-regicide-peace">The Language of War and Peace in Britain during the French Revolution: Controversy over Burke’s Letters on a Regicide Peace’</a></li>
-  <li><a href="#the-law-of-nations-in-britain-during-the-french-revolution-edmund-burke-and-james-mackintosh" id="toc-the-law-of-nations-in-britain-during-the-french-revolution-edmund-burke-and-james-mackintosh" class="nav-link" data-scroll-target="#the-law-of-nations-in-britain-during-the-french-revolution-edmund-burke-and-james-mackintosh">The Law of Nations in Britain during the French Revolution: Edmund Burke and James Mackintosh</a></li>
-  <li><a href="#burke-on-empire-the-dilemma-of-liberty-and-empire" id="toc-burke-on-empire-the-dilemma-of-liberty-and-empire" class="nav-link" data-scroll-target="#burke-on-empire-the-dilemma-of-liberty-and-empire">Burke on Empire: The Dilemma of Liberty and Empire</a></li>
-  </ul></li>
+  <li><a href="#articles-chapters" id="toc-articles-chapters" class="nav-link active" data-scroll-target="#articles-chapters">Articles &amp; Chapters</a></li>
   <li><a href="#book-reviews" id="toc-book-reviews" class="nav-link" data-scroll-target="#book-reviews">Book Reviews</a></li>
   <li><a href="#translation" id="toc-translation" class="nav-link" data-scroll-target="#translation">Translation</a></li>
+  <li><a href="#misc" id="toc-misc" class="nav-link" data-scroll-target="#misc">misc</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
-    </div>
+</nav>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="RWRtdW5kJTIwQnVya2U=">Edmund Burke <span class="quarto-category-count">(6)</span></div><div class="category" data-category="SmFwYW5lc2U=">Japanese <span class="quarto-category-count">(6)</span></div><div class="category" data-category="UmVjZXB0aW9uJTIwb2YlMjBSaGV0b3JpYw==">Reception of Rhetoric <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
 
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>WARNING
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>All following papers are written in Japanese.</li>
-<li>This page shows abstracts in English attached to each paper or abstracts translated into English for this website.</li>
-</ul>
-</div>
-</div>
+<!-- :::{.callout-warning} -->
+<!-- ## WARNING -->
+<!-- - All following papers are written in Japanese. -->
+<!-- - This page shows abstracts in English attached to each paper or abstracts translated into English for this website. -->
+<!-- ::: -->
 <section id="articles-chapters" class="level2">
 <h2 class="anchored" data-anchor-id="articles-chapters">Articles &amp; Chapters</h2>
-<section id="james-mackintosh-in-bombay-colonial-rule-of-the-scottish-enlightenment" class="level3">
-<h3 class="anchored" data-anchor-id="james-mackintosh-in-bombay-colonial-rule-of-the-scottish-enlightenment">James Mackintosh in Bombay: Colonial Rule of the Scottish Enlightenment</h3>
-<blockquote class="blockquote">
-<p><strong>Abstract</strong>: Neither his contemporaries nor today’s scholarship has paid enough attention to James Mackintosh in Bombay. Mackintosh, a leading figure in the Scottish Enlightenment, was the author of A Discourse on the Study of the Law of Nature and Nations, a book that is forgotten today but that attracted the attention of his contemporaries. He was an exceptional political theorist who stayed in the Indian subcontinent. This study organizes his discussion of state, relations between states, and narrative on civilization and barbarism from the discourse, and discusses how these ideas and narrative were or were not utilized by Mackintosh in Bombay. The essay concludes as follows: He used the idea of state in the rule of law and civil society in Bombay. On the other hand, his theory on the law of nations does not have sufficient concepts and language to discuss empire, such as referring to the protectorate of Great Britain as if it were an independent state. This study argues that he, who had the aporia of legitimacy of acquisition and legitimacy of administration, seems to have wandered into a further aporia, by neglecting to discuss the natives in the subcontinent. The author implies that the colonial application of his Enlightenment thought ̶ especially his conception of political economy ̶ was his own answer to getting out of the aporia.</p>
-</blockquote>
-<ul>
-<li><i class="ai  ai-doi" aria-label="doi"></i> <a href="https://doi.org/10.34382/0002000641">https://doi.org/10.34382/0002000641</a> / <i class="bi bi-filetype-pdf"></i> <a href="https://ritsumei.repo.nii.ac.jp/record/2000641/files/ps_31_4_kariya.pdf">pdf</a></li>
-</ul>
-</section>
-<section id="the-eloquence-in-wartime-mackintosh-on-burkes-letters-on-a-regicide-peace" class="level3">
-<h3 class="anchored" data-anchor-id="the-eloquence-in-wartime-mackintosh-on-burkes-letters-on-a-regicide-peace">The Eloquence in Wartime: Mackintosh on Burke’s <em>Letters on a Regicide Peace</em></h3>
-<blockquote class="blockquote">
-<p><strong>Abstract</strong>: This paper explores the political context of eloquence in Britain during the French Revolutionary Wars, by examining the controversy on peace with France. Burke’s enigmatic political pamphlet <em>Letters on a Regicide Peace</em>, published for continuing the war in 1796, is one of the most difficult works to interpret. The pamphlet which interweaves threads of rich rhetoric and antagonism toward France has kept scholarship away for a long time. Some scholars have found in the text international theory, and a newly invented word, diplomacy, emphasizing his talent, originality, and innovation. But since they have not paid attention to the reaction from his contemporary, his intention, and the context, the interpretations may be anachronistic. This essay reads the pamphlet in the contemporary controversy, especially with James Mackintosh, who published <em>Vindiciae Gallicae</em> in 1791. His review on Letters on a Regicide Peace, which appeared in <em>Monthly Review</em> in 1796 and refuted Burke’s opinion, has been rarely considered. This paper argues Mackintosh adapted the alternative strategy focusing on Burke’s eloquence or rhetoric, rule of law, and opinions, which were not any subject to Burke. First, after introducing the period background and brief overview of <em>Letters on a Regicide Peace</em>, it shows that Mackintosh warned Burkes’ eloquence by referring to the canonical speeches by Demosthenes and Cicero, and by putting his pamphlet in the context of literature such as <em>The Life of Henry the Fifth</em> (William Shakespeare) and <em>Paradise Regained</em> (John Milton). Second, it focuses on disagreement on the idea of opinions between them. He locked Burke’s perilous gift for eloquence, which incited people to the war persuasively, and called for anti-war.</p>
-</blockquote>
-<ul>
-<li><i class="ai  ai-doi" aria-label="doi"></i> <a href="https://doi.org/10.34382/00014305">https://doi.org/10.34382/00014305</a> / <i class="bi bi-filetype-pdf"></i> <a href="https://ritsumei.repo.nii.ac.jp/record/14321/files/ps_28_3_kariya.pdf">pdf</a></li>
-</ul>
-</section>
-<section id="the-international-politics-of-jealousy-edmund-burke-adam-smith-and-james-mackintosh" class="level3">
-<h3 class="anchored" data-anchor-id="the-international-politics-of-jealousy-edmund-burke-adam-smith-and-james-mackintosh">The International Politics of Jealousy: Edmund Burke, Adam Smith and James Mackintosh</h3>
-<blockquote class="blockquote">
-<p><strong>Abstract</strong>: This paper aims to think about global governance through the classics, focusing on the language, in particular on jealousy, of international relations in Britain during the French Revolutionary Wars. This paper explores perceptions on relations between states of the statesman Edmund Burke (1730-1797) and his contemporaries (the political economist (philosopher) Adam Smith (1723-1790) and the political pamphleteer James Mackintosh (1765-1832) . Through the above discussion, it questions what is “classics” in the study of global governance. It is not common to focus on jealousy in the discussion of global governance and inter-state relations. This is partly because jealousy is not a phenomenon or an analytical concept unique to inter-state relations, such as diplomacy, sovereignty (external sovereignty), balance of power theory, or hegemony, and therefore has been avoided from being discussed head-on. But in today’s relations between states too, jealousy, far from disappearing, continues to be a source of great trouble.This paper finds that Burke, Smith and Mackintosh commonly perceived that inter-state relations were hampered by jealousy, and they all seem to be pessimistic about overcoming jealousy. What is interesting for this paper, however, is Burke has repeatedly expressed concern that other states or nations were jealous of his state. Adam Smith, in arguing for the ‘impartial observer’ in his The Theory of Moral Sentiments, emphasis of the importance of lowering passions to the point where others can follow. It is true that we may not be able to overcome jealousy, but by asking ourselves whether our state is not the object of jealousy from other states, we seem to open the way to cooperative governance with other countries.At any given time, classical texts and later generations does not share preconditions. In this respect, the limitations of this paper do not stem solely from global governance. What is important is that we continue to have a sense of learning from the classics, and that we form a common understanding among contemporaries by sharing the classics, or at least sharing the need to do so. Just as the study of international relations has developed primarily through the classicization of international law, global governance seems to need a corresponding classic. Since the study of global governance has a broader scope than the study of international relations, the scope of the classics should be even broader.</p>
-</blockquote>
-<ul>
-<li><i class="ai  ai-doi" aria-label="doi"></i> <a href="https://doi.org/10.51054/sgg.2022.8_51">https://doi.org/10.51054/sgg.2022.8_51</a> / <i class="bi bi-filetype-pdf"></i> <a href="https://www.jstage.jst.go.jp/article/sgg/2022/8/2022_51/_pdf/-char/ja">pdf</a></li>
-</ul>
-</section>
-<section id="the-language-of-war-and-peace-in-britain-during-the-french-revolution-controversy-over-burkes-letters-on-a-regicide-peace" class="level3">
-<h3 class="anchored" data-anchor-id="the-language-of-war-and-peace-in-britain-during-the-french-revolution-controversy-over-burkes-letters-on-a-regicide-peace">The Language of War and Peace in Britain during the French Revolution: Controversy over Burke’s Letters on a Regicide Peace’</h3>
-<ul>
-<li><a href="https://www.kansai-u.ac.jp/ILS/publication/report.html">Institute of Legal Studies</a>, Kansai University</li>
-</ul>
-</section>
-<section id="the-law-of-nations-in-britain-during-the-french-revolution-edmund-burke-and-james-mackintosh" class="level3">
-<h3 class="anchored" data-anchor-id="the-law-of-nations-in-britain-during-the-french-revolution-edmund-burke-and-james-mackintosh">The Law of Nations in Britain during the French Revolution: Edmund Burke and James Mackintosh</h3>
-<ul>
-<li><a href="https://www.kansai-u.ac.jp/ILS/publication/report.html">Institute of Legal Studies</a>, Kansai University</li>
-</ul>
-</section>
-<section id="burke-on-empire-the-dilemma-of-liberty-and-empire" class="level3">
-<h3 class="anchored" data-anchor-id="burke-on-empire-the-dilemma-of-liberty-and-empire">Burke on Empire: The Dilemma of Liberty and Empire</h3>
-<blockquote class="blockquote">
-<p><strong>Abstract</strong>: British conceptions of empire were shaped by political arguments on liberty. This study revisits on Edmund Burke’s empire thought in the light of the dilemma of liberty and empire, demonstrating that he struggled to reconcile liberty with empire. And the paper tries to offer his original contribution to history of discourse on empire. Burke regarded British Empire’s problems after the Seven Years’ War as unknown, and could not rely on the example of Roman, Greek, or even British colonies. In order to find the reason, the paper pays attention to Burke’s perception that political sphere in empire of the seas is too vast for power and authority of imperial government to exercise enough. And the perception brought him distinction between state and empire, and plan of colonial self-government.</p>
-</blockquote>
-<ul>
-<li><i class="ai  ai-doi" aria-label="doi"></i> <a href="https://doi.org/10.24587/sbp.2013_043">https://doi.org/10.24587/sbp.2013_043</a></li>
-</ul>
-</section>
+<div id="listing-articlesandchapters" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="RWRtdW5kJTIwQnVya2UlMkNSZWNlcHRpb24lMjBvZiUyMFJoZXRvcmljJTJDSmFwYW5lc2U=" data-listing-date-sort="1741705200000" data-listing-file-modified-sort="1783858274982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="276">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/ArticlesandChapters/EloquenceinWartime.html" class="no-external">The Eloquence in Wartime:</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/ArticlesandChapters/EloquenceinWartime.html" class="no-external">Mackintosh on Burke’s <em>Letters on a Regicide Peace</em></a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RWRtdW5kJTIwQnVya2U='); return false;">Edmund Burke</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVjZXB0aW9uJTIwb2YlMjBSaGV0b3JpYw=='); return false;">Reception of Rhetoric</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
+
+</div>
+<div class="delink listing-description"><a href="../publications/ArticlesandChapters/EloquenceinWartime.html" class="no-external">
+This paper explores the political context of eloquence in Britain during the French Revolutionary Wars, by examining the controversy on peace with France. Burke’s enigmatic political pamphlet <em>Letters on a Regicide Peace</em>, published for continuing the war in 1796, is one of the most difficult works to interpret. The pamphlet which interweaves threads of rich rhetoric and antagonism toward France has kept scholarship away for a long time. Some scholars have found in the text international theory…<em></em><em></em><em></em><em></em><em></em>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../publications/ArticlesandChapters/EloquenceinWartime.html" class="no-external">
+<div class="listing-date">
+March 12, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="RWRtdW5kJTIwQnVya2UlMkNKYXBhbmVzZQ==" data-listing-date-sort="1741705200000" data-listing-file-modified-sort="1783858256482" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="393">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/ArticlesandChapters/InternationalPoliticsofJealousy.html" class="no-external">The International Politics of Jealousy:</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/ArticlesandChapters/InternationalPoliticsofJealousy.html" class="no-external">Edmund Burke, Adam Smith and James Mackintosh</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RWRtdW5kJTIwQnVya2U='); return false;">Edmund Burke</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
+
+</div>
+<div class="delink listing-description"><a href="../publications/ArticlesandChapters/InternationalPoliticsofJealousy.html" class="no-external">
+This paper aims to think about global governance through the classics, focusing on the language, in particular on jealousy, of international relations in Britain during the French Revolutionary Wars. This paper explores perceptions on relations between states of the statesman Edmund Burke (1730-1797) and his contemporaries (the political economist (philosopher) Adam Smith (1723-1790) and the political pamphleteer James Mackintosh (1765-1832) . Through the above discussion, it questions what is…
+</a></div>
+</div>
+<div class="metadata">
+<a href="../publications/ArticlesandChapters/InternationalPoliticsofJealousy.html" class="no-external">
+<div class="listing-date">
+March 12, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="RWRtdW5kJTIwQnVya2UlMkNKYXBhbmVzZQ==" data-listing-date-sort="1741705200000" data-listing-file-modified-sort="1783858369015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="236">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/ArticlesandChapters/JamesMackintoshinBombay.html" class="no-external">James Mackintosh in Bombay:</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/ArticlesandChapters/JamesMackintoshinBombay.html" class="no-external">Colonial Rule of the Scottish Enlightenment</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RWRtdW5kJTIwQnVya2U='); return false;">Edmund Burke</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
+
+</div>
+<div class="delink listing-description"><a href="../publications/ArticlesandChapters/JamesMackintoshinBombay.html" class="no-external">
+Neither his contemporaries nor today’s scholarship has paid enough attention to James Mackintosh in Bombay. Mackintosh, a leading figure in the Scottish Enlightenment, was the author of A Discourse on the Study of the Law of Nature and Nations, a book that is forgotten today but that attracted the attention of his contemporaries. He was an exceptional political theorist who stayed in the Indian subcontinent. This study organizes his discussion of state, relations between states, and narrative…
+</a></div>
+</div>
+<div class="metadata">
+<a href="../publications/ArticlesandChapters/JamesMackintoshinBombay.html" class="no-external">
+<div class="listing-date">
+March 12, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="RWRtdW5kJTIwQnVya2UlMkNSZWNlcHRpb24lMjBvZiUyMFJoZXRvcmljJTJDSmFwYW5lc2U=" data-listing-date-sort="1741705200000" data-listing-file-modified-sort="1783858288652" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="8">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/ArticlesandChapters/LanguageofWarandPeaceinBritain.html" class="no-external">The Language of War and Peace in Britain during the French Revolution:</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/ArticlesandChapters/LanguageofWarandPeaceinBritain.html" class="no-external">Controversy over Burke’s Letters on a Regicide Peace</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RWRtdW5kJTIwQnVya2U='); return false;">Edmund Burke</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVjZXB0aW9uJTIwb2YlMjBSaGV0b3JpYw=='); return false;">Reception of Rhetoric</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
+
+</div>
+<div class="delink listing-description"><a href="../publications/ArticlesandChapters/LanguageofWarandPeaceinBritain.html" class="no-external">
+
+<li>Institute of Legal Studies, Kansai University</li>
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="../publications/ArticlesandChapters/LanguageofWarandPeaceinBritain.html" class="no-external">
+<div class="listing-date">
+March 12, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="RWRtdW5kJTIwQnVya2UlMkNKYXBhbmVzZQ==" data-listing-date-sort="1741705200000" data-listing-file-modified-sort="1783858279547" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="7">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/ArticlesandChapters/LawofNationsinBritain.html" class="no-external">The Law of Nations in Britain during the French Revolution</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/ArticlesandChapters/LawofNationsinBritain.html" class="no-external">Edmund Burke and James Mackintosh</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RWRtdW5kJTIwQnVya2U='); return false;">Edmund Burke</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
+
+</div>
+<div class="delink listing-description"><a href="../publications/ArticlesandChapters/LawofNationsinBritain.html" class="no-external">
+Institute of Legal Studies, Kansai University
+</a></div>
+</div>
+<div class="metadata">
+<a href="../publications/ArticlesandChapters/LawofNationsinBritain.html" class="no-external">
+<div class="listing-date">
+March 12, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="RWRtdW5kJTIwQnVya2UlMkNKYXBhbmVzZQ==" data-listing-date-sort="1364655600000" data-listing-file-modified-sort="1783858265022" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="135">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/ArticlesandChapters/BurkeonEmpire.html" class="no-external">Burke on Empire:</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/ArticlesandChapters/BurkeonEmpire.html" class="no-external">The Dilemma of Liberty and Empire</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RWRtdW5kJTIwQnVya2U='); return false;">Edmund Burke</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
+
+</div>
+<div class="delink listing-description"><a href="../publications/ArticlesandChapters/BurkeonEmpire.html" class="no-external">
+British conceptions of empire were shaped by political arguments on liberty. This study revisits on Edmund Burke’s empire thought in the light of the dilemma of liberty and empire, demonstrating that he struggled to reconcile liberty with empire. And the paper tries to offer his original contribution to history of discourse on empire. Burke regarded British Empire’s problems after the Seven Years’ War as unknown, and could not rely on the example of Roman, Greek, or even British colonies. In…
+</a></div>
+</div>
+<div class="metadata">
+<a href="../publications/ArticlesandChapters/BurkeonEmpire.html" class="no-external">
+<div class="listing-date">
+March 31, 2013
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
 </section>
 <section id="book-reviews" class="level2">
 <h2 class="anchored" data-anchor-id="book-reviews">Book Reviews</h2>
-<ul>
-<li><p>‘Review of Hanna Fenichel Pitkin, <em>The Concept of Representation</em> (Japanese translation, Nagoya University Press, 2017), <em>Tosho Shinbun</em> [The Book Review], The Book Review Press, 3350.</p></li>
-<li><p>‘Review of Richard Bourke, <em>Empire and Revolution: The Political Life of Edmund Burke</em>, Princeton University Press, 2015’, <em>Igirisu Tetugaku Kenkyu</em> [Studies in British Philosophy], Japanese Society for British Philosophy, 40, 88-89.</p></li>
-<li><p>‘Review of David Armitage, <em>Foundations of Modern International Thought</em> (Japanese translation, Hosei University Press, 2015), <em>Igirisu Tetugaku Kenkyu</em> [Studies in British Philosophy], Japanese Society for British Philosophy, 39, 105-107.</p></li>
-</ul>
+<div class="{bookreviews}">
+
+</div>
 </section>
 <section id="translation" class="level2">
 <h2 class="anchored" data-anchor-id="translation">Translation</h2>
-<ul>
-<li>C. H. Alexandrowicz (2017), ‘Kautilyan Principles and the Law of Nations (1965-66)’, in <em>The Law of Nations in Global History</em>, David Armitage and Jennifer Pitts, eds, Oxford: Oxford University Press, 35-52. (Japanese translation, <em>Gurobal Hisutori to Kokusai-ho</em> [Globai History and International Law], Nihon Keizai Hyoronsya, 2020).</li>
-</ul>
+<div id="translation">
+
+</div>
+</section>
+<section id="misc" class="level2">
+<h2 class="anchored" data-anchor-id="misc">misc</h2>
+<div id="misc">
+
+</div>
+<!-- ## Book Reviews -->
+<!-- - ‘Review of Hanna Fenichel Pitkin, *The Concept of Representation* (Japanese translation, Nagoya University Press, 2017), *Tosho Shinbun* [The Book Review], The Book Review Press, 3350. -->
+<!-- - ‘Review of Richard Bourke, *Empire and Revolution: The Political Life of Edmund Burke*, Princeton University Press, 2015’, *Igirisu Tetugaku Kenkyu* [Studies in British Philosophy], Japanese Society for British Philosophy, 40, 88-89. -->
+<!-- - ‘Review of David Armitage, *Foundations of Modern International Thought* (Japanese translation, Hosei University Press, 2015), *Igirisu Tetugaku Kenkyu* [Studies in British Philosophy], Japanese Society for British Philosophy, 39, 105-107. -->
+<!-- ## Translation -->
+<!-- - C. H. Alexandrowicz (2017), 'Kautilyan Principles and the Law of Nations (1965-66)', in *The Law of Nations in Global History*, David Armitage and Jennifer Pitts,  eds, Oxford: Oxford University Press, 35-52. (Japanese translation, *Gurobal Hisutori to Kokusai-ho* [Globai History and International Law], Nihon Keizai Hyoronsya, 2020). -->
+
 
 
 </section>
