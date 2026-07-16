@@ -77,7 +77,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css">
@@ -328,6 +327,8 @@ ul.task-list li input[type="checkbox"] {
       <h1 class="title">Quantitative Literacy: Why I Teach Quantitative Analysis</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">manifesto</div>
+                <div class="quarto-category">data science</div>
+                <div class="quarto-category">R</div>
               </div>
                   </div>
   </div>
@@ -371,17 +372,25 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#quantitative-literacy" id="toc-quantitative-literacy" class="nav-link active" data-scroll-target="#quantitative-literacy">Quantitative Literacy</a></li>
   <li><a href="#the-r-community" id="toc-the-r-community" class="nav-link" data-scroll-target="#the-r-community">The R Community</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="QuantitativeLiteracy.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/kariyach/research-paper-code"><i class="bi bi-github"></i>Source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
 
 
 
-<section id="quantitative-literacy" class="level2">
+<div class="epigraph">
+<blockquote class="blockquote">
+<p>Truth is confirmed by inspection and delay; falsehood by haste and uncertainty.</p>
+</blockquote>
+<div class="epigraph-footer">
+<p>Tacitus</p>
+</div>
+</div>
+<section id="quantitative-literacy" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="quantitative-literacy">Quantitative Literacy</h2>
 <p>I have always been cautious about quantitative methods. Not because I dislike numbers, but because I distrust the authority that numbers are often given. Statistics can illuminate patterns, but they can also conceal complexity. Indicators can simplify reality, yet what they leave out is often just as important as what they measure. Jerry Z. Muller’s <em>The Tyranny of Metrics</em> captures this concern well. When measurement becomes an end in itself, we risk valuing only what can be counted while overlooking what truly matters.</p>
 <p>For this reason, I do not believe that quantitative analysis should ever stand alone as the sole basis for an argument. As Theodore Porter and many others have argued, “numbers do not speak for themselves’. Every dataset reflects choices about what to collect, what to ignore, how to classify observations, and how to interpret results. A statistical model is not a mirror of reality but one possible representation of it. Without historical context, qualitative evidence, and careful interpretation, quantitative findings can easily be misunderstood or misused. Yet my skepticism does not lead me to reject quantitative methods. Quite the opposite.</p>
@@ -391,17 +400,18 @@ ul.task-list li input[type="checkbox"] {
 <p>This is precisely why I believe students in the humanities and social sciences should learn quantitative methods. My goal is not to turn every student into a statistician or a data scientist. I do not present myself as a data scientist, nor do I aspire to become one. I teach quantitative methods from the perspective of a historian.</p>
 <p>When someone claims that “the data show” or “research proves,” students should be able to ask basic but important questions. What data were collected? How were the variables defined? Which observations were excluded? What assumptions underlie the statistical model? Does the visualization faithfully represent the data, or does it exaggerate a particular conclusion? These questions do not require advanced mathematics. They require curiosity, skepticism, and a willingness to look beyond the surface of a graph or a table.</p>
 <p>I also believe that learning quantitative methods can enrich, rather than replace, qualitative inquiry. A graph may reveal an unexpected pattern, but it cannot explain why that pattern exists. Statistical analysis can identify relationships, but it cannot fully capture historical contingency, political ideas, or human experience. Quantitative and qualitative approaches answer different kinds of questions, and they are most powerful when they inform one another.</p>
-<p>Ultimately, I teach quantitative methods not because I believe numbers reveal the truth, but because numbers are increasingly used to claim the truth. Students should understand how quantitative evidence is produced, analyzed, and visualized—not so that they accept it uncritically, but so that they can evaluate it thoughtfully. In a society where decisions are increasingly justified by data, quantitative literacy is not merely a technical skill. It is an essential part of democratic citizenship and responsible scholarship.</p>
-</section>
+<p>Ultimately, I teach quantitative methods not because I believe numbers reveal the truth, but because numbers are increasingly used to claim the truth. Students should understand how quantitative evidence is produced, analyzed, and visualized—not so that they accept it uncritically, but so that they can evaluate it thoughtfully. In a society where decisions are increasingly justified by data, quantitative literacy is not merely a technical skill. It is an essential part of democratic citizenship and responsible scholarship<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;In Japan, data science is still often regarded as a technical specialty belonging primarily to the natural sciences. Consequently, discussions about data science education have been shaped largely by information engineering and related disciplines. My serious concern is that this perspective naturally emphasizes technical competence, while giving less attention to quantitative literacy as a civic and scholarly responsibility.</p></div></div></section>
 <section id="the-r-community" class="level2">
 <h2 class="anchored" data-anchor-id="the-r-community">The R Community</h2>
 <p>I teach with R, a free and open-source programming language for statistical computing, and have increasingly incorporated it into my own research. My preference for R is rooted in the same commitment to democratic access to quantitative literacy. The tidyverse, a widely used collection of R packages led by Hadley Wickham, embodies that philosophy by making data analysis more accessible, more consistent, and easier to share. The tidyverse is not simply a collection of packages; it is an attempt to lower the barriers to quantitative analysis without lowering intellectual standards.</p>
 <p>As Wickham himself recounts in his personal history of the tidyverse, what began as an individual project has become a collaborative effort sustained by a vibrant global community. Beyond the software itself, I value the culture of the R community. Thousands of volunteers devote their time to developing, improving, and freely sharing packages because they believe that what they have built may be useful to others. This spirit of openness and collaboration embodies the idea that knowledge advances not only through competition, but also through generosity. It is also one of the reasons I choose to teach with R.</p>
 <p>For anyone interested in the philosophy behind the tidyverse, I highly recommend Hadley Wickham’s essay, ‘<a href="https://hadley.github.io/25-tidyverse-history/">A personal history of the tidyverse</a>’.</p>
-<p><img src="img/393.Piking-Ideas.png" class="img-fluid" style="width:40.0%"></p>
+<p><img src="img/393.Piking-Ideas.png" class="float-right img-fluid" style="width:40.0%"></p>
 
 
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -842,5 +852,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
