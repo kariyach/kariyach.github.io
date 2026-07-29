@@ -15,7 +15,39 @@
 <link>https://kariyach.github.io/blog/</link>
 </image>
 <generator>quarto-1.9.36</generator>
-<lastBuildDate>Wed, 22 Jul 2026 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 28 Jul 2026 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>Omni:</title>
+  <link>https://kariyach.github.io/blog/posts/omni.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="hidden-assets" class="level2">
+<h2 class="anchored" data-anchor-id="hidden-assets">Hidden Assets</h2>
+<p>Over the years, our computers have become personal archives of knowledge. Research papers, lecture materials, source code, datasets, presentations, and notes accumulate quietly in folders. These files often contain valuable ideas and previous work, but finding them again can be surprisingly difficult. We may remember what we created, but not the exact filename, folder location, or keywords used at the time. This is where semantic search becomes important.</p>
+<p>Traditional file search is mainly based on keywords. If a document contains the exact word we enter, it is likely to appear in the results. However, this approach has a limitation: our memory does not always work in keywords. We often remember the meaning of something rather than the exact expression used in a file.</p>
+</section>
+<section id="omni-and-semantic-search" class="level2">
+<h2 class="anchored" data-anchor-id="omni-and-semantic-search">Omni and Semantic Search</h2>
+<p>Semantic search attempts to overcome this limitation. Instead of simply matching words, it analyzes the meaning of queries and documents. As a result, it can discover connections that ordinary keyword search may miss. Searching becomes less about remembering filenames and more about asking questions about our own information. This is what makes <a href="https://hanxiao.io/omni/">Omni</a>, an AI-powered local search application developed by <a href="https://hanxiao.io">Han Xiao</a>, particularly interesting. Omni indexes files on your computer and allows you to search your personal archive through meaning rather than only keywords. It aims to help users rediscover information that already exists on their own machines.</p>
+<p>After installing Omni, I experimented with several search queries using my own files. In some cases, it successfully surfaced documents that I would not have found through Finder or Spotlight. These were files hidden in old project folders or documents whose contents were relevant even though they did not contain the exact search terms I expected. This experience showed the potential of semantic search as a way to uncover forgotten parts of a personal archive.</p>
+<p>As someone who works with both Japanese and English materials, I was also pleased to find that Omni supports multilingual search. Research and teaching materials rarely exist in only one language. I often move between Japanese articles, English papers, code, and presentation materials. The ability to search across languages reflects an important reality of modern knowledge work: our digital archives are increasingly multilingual.</p>
+<p>There are still limitations. For example, in my initial experiments, Quarto (.qmd) files did not appear to be indexed. This is an important issue for data analysts and researchers because Quarto documents often combine narrative, code, and results in a single file. I would be excited to see future support for formats like Quarto. Being able to ask a question such as, “Where did I create the stacked bar chart comparing SSH and WWL students?” and immediately locate the relevant project would represent a powerful application of AI-powered local search.</p>
+<p>Of course, it is too early to know whether Omni will become a widely used application. Search quality, indexing support, and reliability will determine its long-term value. The underlying algorithms are not always visible to users, and I cannot yet say that it will always find exactly what I am looking for. Nevertheless, Omni suggests an important direction for the future of personal computing. The next generation of AI may not only help us create new information; it may also help us rediscover the knowledge we have already produced but forgotten. Our computers are not just collections of files. They are archives of our intellectual activities. Tools like Omni offer a glimpse of a future where these hidden assets become easier to find, understand, and reuse.</p>
+<p><img src="https://kariyach.github.io/blog/posts/img/omni-mascot.png" class="img-fluid" style="width:30.0%"></p>
+
+
+</section>
+
+ ]]></description>
+  <category>AI</category>
+  <category>mac</category>
+  <guid>https://kariyach.github.io/blog/posts/omni.html</guid>
+  <pubDate>Tue, 28 Jul 2026 15:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Wickham’s Proposal:</title>
   <link>https://kariyach.github.io/blog/posts/metadata.html</link>
@@ -35,7 +67,7 @@
 </div>
 <section id="the-idea-of-data-dict.yaml-and-its-broader-implications" class="level2">
 <h2 class="anchored" data-anchor-id="the-idea-of-data-dict.yaml-and-its-broader-implications">The Idea of data-dict.yaml and Its Broader Implications</h2>
-<p><a href="https://hadley.nz">Hadley Wickham</a>, creator of the tidyverse ecosystem for R, recently proposed <a href="https://data-dict.tidyverse.org">data-dict.yaml</a>, a machine-readable data dictionary designed to accompany tabular datasets. Rather than embedding explanations within spreadsheets or leaving documentation to a README file, Wickham proposes storing metadata describing variables, units, labels, and constraints in a standardized format. In my view, Wickham’s proposal has not yet received the attention they deserve.</p>
+<p><a href="https://hadley.nz">Hadley Wickham</a>, creator of the tidyverse ecosystem for R, recently proposed <a href="https://data-dict.tidyverse.org">data-dict.yaml</a>, a machine-readable data dictionary designed to accompany tabular datasets. Rather than embedding explanations within spreadsheets or leaving documentation to a README file, Wickham proposes storing metadata describing variables, units, labels, and constraints in a standardized format. In my view, Wickham’s proposal has not yet received the attention it deserve.</p>
 <p>At first glance, the proposal may appear to address nothing more than a practical problem in data analysis. Yet the proposal points toward a much larger question: the future of artificial intelligence may depend not only on larger models and datasets, but also on richer forms of knowledge representation.</p>
 <p>This idea deserves attention beyond the R community. A data dictionary is not simply documentation for human readers; it is a description that software can interpret directly. In other words, metadata becomes part of the information itself. Wickham’s proposal therefore illustrates a broader principle: whenever meaning can be expressed explicitly rather than inferred implicitly, both humans and machines benefit. Although data-dict.yaml is currently intended for tabular data, its underlying philosophy could influence many other forms of digital information, from documents and research data to archives and public records.</p>
 <p>The emergence of AI invites us to rethink the design philosophy behind how information is published and documented. For decades, digital resources were designed primarily for human readers. Combining data, explanatory notes, visual formatting, and contextual information in a single document made sense because people could easily integrate these elements while reading.</p>
