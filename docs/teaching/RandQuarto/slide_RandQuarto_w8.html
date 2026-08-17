@@ -7,10 +7,10 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/quarto-contrib/quarto-timer-1.0.0/timer.js"></script>
 <link href="../../site_libs/quarto-contrib/quarto-timer-1.0.0/timer.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="苅谷千尋">
   <meta name="dcterms.date" content="2026-06-03">
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -212,7 +215,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid" aria-label="ORCID profile for 苅谷千尋"> <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
 </div>
 <div class="quarto-title-author-email">
 <a href="mailto:kariyach@staff.kanazawa-u.ac.jp">kariyach@staff.kanazawa-u.ac.jp</a>
@@ -533,20 +536,20 @@
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># 可視化したい変数をまとめて指定（この3つを順番に処理する）</span></span>
-<span id="cb1-2"><a></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"body_mass"</span>, <span class="st">"bill_len"</span>, <span class="st">"flipper_len"</span>) </span>
-<span id="cb1-3"><a></a></span>
-<span id="cb1-4"><a></a><span class="co"># map()：同じ処理を変数ごとに繰り返す（マップ＝マッピング＝写しとる）</span></span>
-<span id="cb1-5"><a></a><span class="fu">map</span>(vars, \(v) { <span class="co">#map()関数を使って同一処理を指示</span></span>
-<span id="cb1-6"><a></a>  penguins <span class="sc">|&gt;</span>  <span class="co"># タイトルを除くコードは先と同じ</span></span>
-<span id="cb1-7"><a></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb1-8"><a></a>    <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
-<span id="cb1-9"><a></a>    <span class="fu">summarise</span>(<span class="at">avg =</span> <span class="fu">mean</span>(.data[[v]])) <span class="sc">|&gt;</span> <span class="co"># 指定した変数 v の平均を計算。data[[v]]：文字列で指定した列名を使う書き方（ここが少し特殊）</span></span>
-<span id="cb1-10"><a></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg)) <span class="sc">+</span></span>
-<span id="cb1-11"><a></a>    <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb1-12"><a></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
-<span id="cb1-13"><a></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Average of"</span>, v)) <span class="co"># varsからタイトルを持ってくる</span></span>
-<span id="cb1-14"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a><span class="co"># 可視化したい変数をまとめて指定（この3つを順番に処理する）</span></span>
+<span id="cb1-2"><a aria-label="2"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"body_mass"</span>, <span class="st">"bill_len"</span>, <span class="st">"flipper_len"</span>) </span>
+<span id="cb1-3"><a aria-label="3"></a></span>
+<span id="cb1-4"><a aria-label="4"></a><span class="co"># map()：同じ処理を変数ごとに繰り返す（マップ＝マッピング＝写しとる）</span></span>
+<span id="cb1-5"><a aria-label="5"></a><span class="fu">map</span>(vars, \(v) { <span class="co">#map()関数を使って同一処理を指示</span></span>
+<span id="cb1-6"><a aria-label="6"></a>  penguins <span class="sc">|&gt;</span>  <span class="co"># タイトルを除くコードは先と同じ</span></span>
+<span id="cb1-7"><a aria-label="7"></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb1-8"><a aria-label="8"></a>    <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
+<span id="cb1-9"><a aria-label="9"></a>    <span class="fu">summarise</span>(<span class="at">avg =</span> <span class="fu">mean</span>(.data[[v]])) <span class="sc">|&gt;</span> <span class="co"># 指定した変数 v の平均を計算。data[[v]]：文字列で指定した列名を使う書き方（ここが少し特殊）</span></span>
+<span id="cb1-10"><a aria-label="10"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg)) <span class="sc">+</span></span>
+<span id="cb1-11"><a aria-label="11"></a>    <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb1-12"><a aria-label="12"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
+<span id="cb1-13"><a aria-label="13"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Average of"</span>, v)) <span class="co"># varsからタイトルを持ってくる</span></span>
+<span id="cb1-14"><a aria-label="14"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -596,18 +599,18 @@
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>result <span class="ot">&lt;-</span> <span class="co"># 以下の結果をresultというオブジェクトに入れる</span></span>
-<span id="cb5-2"><a></a>  penguins <span class="sc">|&gt;</span></span>
-<span id="cb5-3"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-4"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span></span>
-<span id="cb5-5"><a></a>  <span class="fu">nest</span>() <span class="sc">|&gt;</span> <span class="co"># データフレームの中に、さらにデータフレームを入れる　＝ species（3種類）に分かれたデータフレームになる</span></span>
-<span id="cb5-6"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb5-7"><a></a>    <span class="at">plot =</span> <span class="fu">map</span>(data, <span class="sc">~</span></span>
-<span id="cb5-8"><a></a>                 <span class="fu">ggplot</span>(.x, <span class="fu">aes</span>(bill_len, flipper_len)) <span class="sc">+</span></span>
-<span id="cb5-9"><a></a>                 <span class="fu">geom_point</span>())</span>
-<span id="cb5-10"><a></a>  )</span>
-<span id="cb5-11"><a></a></span>
-<span id="cb5-12"><a></a>result<span class="sc">$</span>plot <span class="sc">|&gt;</span> <span class="fu">walk</span>(print) <span class="co"># 実行（ここではprint）を指示</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>result <span class="ot">&lt;-</span> <span class="co"># 以下の結果をresultというオブジェクトに入れる</span></span>
+<span id="cb5-2"><a aria-label="2"></a>  penguins <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a aria-label="3"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a aria-label="4"></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a aria-label="5"></a>  <span class="fu">nest</span>() <span class="sc">|&gt;</span> <span class="co"># データフレームの中に、さらにデータフレームを入れる　＝ species（3種類）に分かれたデータフレームになる</span></span>
+<span id="cb5-6"><a aria-label="6"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-7"><a aria-label="7"></a>    <span class="at">plot =</span> <span class="fu">map</span>(data, <span class="sc">~</span></span>
+<span id="cb5-8"><a aria-label="8"></a>                 <span class="fu">ggplot</span>(.x, <span class="fu">aes</span>(bill_len, flipper_len)) <span class="sc">+</span></span>
+<span id="cb5-9"><a aria-label="9"></a>                 <span class="fu">geom_point</span>())</span>
+<span id="cb5-10"><a aria-label="10"></a>  )</span>
+<span id="cb5-11"><a aria-label="11"></a></span>
+<span id="cb5-12"><a aria-label="12"></a>result<span class="sc">$</span>plot <span class="sc">|&gt;</span> <span class="fu">walk</span>(print) <span class="co"># 実行（ここではprint）を指示</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-2">
@@ -646,42 +649,42 @@
 <div class="tab-content">
 <div id="tabset-3-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>df_long_cat_d_all <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a></a>  <span class="fu">filter</span>(category_major <span class="sc">==</span> <span class="st">"スポーツ"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a></a>  <span class="fu">split</span>(<span class="sc">~</span> category_middle) <span class="sc">|&gt;</span> <span class="co"># データをスポーツ種目ごとに分ける</span></span>
-<span id="cb6-4"><a></a>  <span class="fu">walk</span>( <span class="co"># 分けたデータを1つずつ取り出して処理する</span></span>
-<span id="cb6-5"><a></a>    \(df) {</span>
-<span id="cb6-6"><a></a>      p <span class="ot">&lt;-</span> <span class="co"># オブジェクトpに代入</span></span>
-<span id="cb6-7"><a></a>        df <span class="sc">|&gt;</span></span>
-<span id="cb6-8"><a></a>        <span class="fu">filter</span>(性別 <span class="sc">==</span> <span class="st">"男"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-9"><a></a>        <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-10"><a></a>        <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value)) <span class="sc">|&gt;</span></span>
-<span id="cb6-11"><a></a>        <span class="fu">group_by</span>(地域ブロック) <span class="sc">|&gt;</span></span>
-<span id="cb6-12"><a></a>        <span class="fu">summarise</span>(</span>
-<span id="cb6-13"><a></a>          <span class="at">value_sum =</span> <span class="fu">sum</span>(value),</span>
-<span id="cb6-14"><a></a>          <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb6-15"><a></a>        ) <span class="sc">|&gt;</span></span>
-<span id="cb6-16"><a></a>        <span class="fu">mutate</span>(</span>
-<span id="cb6-17"><a></a>          地域ブロック <span class="ot">=</span> <span class="fu">fct_rev</span>(地域ブロック)</span>
-<span id="cb6-18"><a></a>        ) <span class="sc">|&gt;</span></span>
-<span id="cb6-19"><a></a>        <span class="fu">ggplot</span>(</span>
-<span id="cb6-20"><a></a>          <span class="fu">aes</span>(</span>
-<span id="cb6-21"><a></a>            <span class="at">x =</span> 地域ブロック,</span>
-<span id="cb6-22"><a></a>            <span class="at">y =</span> value_sum</span>
-<span id="cb6-23"><a></a>          )</span>
-<span id="cb6-24"><a></a>        ) <span class="sc">+</span></span>
-<span id="cb6-25"><a></a>        <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb6-26"><a></a>        <span class="fu">labs</span>(</span>
-<span id="cb6-27"><a></a>          <span class="at">title =</span> <span class="fu">unique</span>(df<span class="sc">$</span>category_middle),</span>
-<span id="cb6-28"><a></a>          <span class="at">x =</span> <span class="cn">NULL</span>,</span>
-<span id="cb6-29"><a></a>          <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb6-30"><a></a>        ) <span class="sc">+</span></span>
-<span id="cb6-31"><a></a>        <span class="fu">coord_flip</span>()</span>
-<span id="cb6-32"><a></a></span>
-<span id="cb6-33"><a></a>      <span class="fu">print</span>(p) <span class="co">#オブジェクトpをプロット</span></span>
-<span id="cb6-34"><a></a></span>
-<span id="cb6-35"><a></a>    }</span>
-<span id="cb6-36"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>df_long_cat_d_all <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a aria-label="2"></a>  <span class="fu">filter</span>(category_major <span class="sc">==</span> <span class="st">"スポーツ"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a aria-label="3"></a>  <span class="fu">split</span>(<span class="sc">~</span> category_middle) <span class="sc">|&gt;</span> <span class="co"># データをスポーツ種目ごとに分ける</span></span>
+<span id="cb6-4"><a aria-label="4"></a>  <span class="fu">walk</span>( <span class="co"># 分けたデータを1つずつ取り出して処理する</span></span>
+<span id="cb6-5"><a aria-label="5"></a>    \(df) {</span>
+<span id="cb6-6"><a aria-label="6"></a>      p <span class="ot">&lt;-</span> <span class="co"># オブジェクトpに代入</span></span>
+<span id="cb6-7"><a aria-label="7"></a>        df <span class="sc">|&gt;</span></span>
+<span id="cb6-8"><a aria-label="8"></a>        <span class="fu">filter</span>(性別 <span class="sc">==</span> <span class="st">"男"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-9"><a aria-label="9"></a>        <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-10"><a aria-label="10"></a>        <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value)) <span class="sc">|&gt;</span></span>
+<span id="cb6-11"><a aria-label="11"></a>        <span class="fu">group_by</span>(地域ブロック) <span class="sc">|&gt;</span></span>
+<span id="cb6-12"><a aria-label="12"></a>        <span class="fu">summarise</span>(</span>
+<span id="cb6-13"><a aria-label="13"></a>          <span class="at">value_sum =</span> <span class="fu">sum</span>(value),</span>
+<span id="cb6-14"><a aria-label="14"></a>          <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb6-15"><a aria-label="15"></a>        ) <span class="sc">|&gt;</span></span>
+<span id="cb6-16"><a aria-label="16"></a>        <span class="fu">mutate</span>(</span>
+<span id="cb6-17"><a aria-label="17"></a>          地域ブロック <span class="ot">=</span> <span class="fu">fct_rev</span>(地域ブロック)</span>
+<span id="cb6-18"><a aria-label="18"></a>        ) <span class="sc">|&gt;</span></span>
+<span id="cb6-19"><a aria-label="19"></a>        <span class="fu">ggplot</span>(</span>
+<span id="cb6-20"><a aria-label="20"></a>          <span class="fu">aes</span>(</span>
+<span id="cb6-21"><a aria-label="21"></a>            <span class="at">x =</span> 地域ブロック,</span>
+<span id="cb6-22"><a aria-label="22"></a>            <span class="at">y =</span> value_sum</span>
+<span id="cb6-23"><a aria-label="23"></a>          )</span>
+<span id="cb6-24"><a aria-label="24"></a>        ) <span class="sc">+</span></span>
+<span id="cb6-25"><a aria-label="25"></a>        <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb6-26"><a aria-label="26"></a>        <span class="fu">labs</span>(</span>
+<span id="cb6-27"><a aria-label="27"></a>          <span class="at">title =</span> <span class="fu">unique</span>(df<span class="sc">$</span>category_middle),</span>
+<span id="cb6-28"><a aria-label="28"></a>          <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb6-29"><a aria-label="29"></a>          <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb6-30"><a aria-label="30"></a>        ) <span class="sc">+</span></span>
+<span id="cb6-31"><a aria-label="31"></a>        <span class="fu">coord_flip</span>()</span>
+<span id="cb6-32"><a aria-label="32"></a></span>
+<span id="cb6-33"><a aria-label="33"></a>      <span class="fu">print</span>(p) <span class="co">#オブジェクトpをプロット</span></span>
+<span id="cb6-34"><a aria-label="34"></a></span>
+<span id="cb6-35"><a aria-label="35"></a>    }</span>
+<span id="cb6-36"><a aria-label="36"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-3-2">

@@ -7,10 +7,10 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/quarto-contrib/quarto-timer-1.0.0/timer.js"></script>
 <link href="../../site_libs/quarto-contrib/quarto-timer-1.0.0/timer.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="苅谷千尋">
   <meta name="dcterms.date" content="2026-05-13">
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -230,7 +233,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid" aria-label="ORCID profile for 苅谷千尋"> <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
 </div>
 <div class="quarto-title-author-email">
 <a href="mailto:kariyach@staff.kanazawa-u.ac.jp">kariyach@staff.kanazawa-u.ac.jp</a>
@@ -410,11 +413,11 @@
 </section>
 <section id="チャンクオプション-3" class="slide level2">
 <h2>チャンクオプション</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co">#| echo: false</span></span>
-<span id="cb3-2"><a></a><span class="co">#| output: true</span></span>
-<span id="cb3-3"><a></a><span class="co">#| fig-width: 8</span></span>
-<span id="cb3-4"><a></a><span class="co">#| fig-asp: 0.5</span></span>
-<span id="cb3-5"><a></a><span class="co">#| fig-align: center</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-2"><a aria-label="2"></a><span class="co">#| output: true</span></span>
+<span id="cb3-3"><a aria-label="3"></a><span class="co">#| fig-width: 8</span></span>
+<span id="cb3-4"><a aria-label="4"></a><span class="co">#| fig-asp: 0.5</span></span>
+<span id="cb3-5"><a aria-label="5"></a><span class="co">#| fig-align: center</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="チャンクオプション-4" class="slide level2">
 <h2>チャンクオプション</h2>
@@ -466,10 +469,10 @@
 <li>YAMLの最後の方に以下のコードを入れましょう</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>execute<span class="sc">:</span></span>
-<span id="cb4-2"><a></a>  freeze<span class="sc">:</span> auto</span>
-<span id="cb4-3"><a></a>  echo<span class="sc">:</span> false</span>
-<span id="cb4-4"><a></a>  warning<span class="sc">:</span> false</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a>execute<span class="sc">:</span></span>
+<span id="cb4-2"><a aria-label="2"></a>  freeze<span class="sc">:</span> auto</span>
+<span id="cb4-3"><a aria-label="3"></a>  echo<span class="sc">:</span> false</span>
+<span id="cb4-4"><a aria-label="4"></a>  warning<span class="sc">:</span> false</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -492,12 +495,12 @@
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a></a>  <span class="fu">drop_na</span>(body_mass, sex) <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb5-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">300</span>) <span class="sc">+</span></span>
-<span id="cb5-6"><a></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(body_mass, sex) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a aria-label="3"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-4"><a aria-label="4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb5-5"><a aria-label="5"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">300</span>) <span class="sc">+</span></span>
+<span id="cb5-6"><a aria-label="6"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -530,12 +533,12 @@
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a></a>  <span class="fu">drop_na</span>(body_mass, sex) <span class="sc">|&gt;</span> </span>
-<span id="cb6-3"><a></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb6-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">300</span>) <span class="sc">+</span></span>
-<span id="cb6-6"><a></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(body_mass, sex) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a aria-label="3"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-4"><a aria-label="4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb6-5"><a aria-label="5"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">300</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a aria-label="6"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-2">
@@ -557,11 +560,11 @@
 <div class="tab-content">
 <div id="tabset-3-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a></a>  <span class="fu">count</span>(year, species) <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
-<span id="cb7-4"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb7-5"><a></a>  <span class="fu">scale_colour_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a aria-label="2"></a>  <span class="fu">count</span>(year, species) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a aria-label="3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
+<span id="cb7-4"><a aria-label="4"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb7-5"><a aria-label="5"></a>  <span class="fu">scale_colour_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-3-2">
@@ -592,17 +595,17 @@
 <div class="tab-content">
 <div id="tabset-4-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" data-code-line-numbers="6-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a></a>  <span class="fu">drop_na</span>(body_mass, sex) <span class="sc">|&gt;</span> </span>
-<span id="cb8-3"><a></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb8-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb8-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">300</span>) <span class="sc">+</span></span>
-<span id="cb8-6"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb8-7"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb8-8"><a></a>      <span class="st">"female"</span> <span class="ot">=</span> <span class="st">"pink"</span>,</span>
-<span id="cb8-9"><a></a>      <span class="st">"male"</span>   <span class="ot">=</span> <span class="st">"lightblue"</span></span>
-<span id="cb8-10"><a></a>    )</span>
-<span id="cb8-11"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" data-code-line-numbers="6-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(body_mass, sex) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a aria-label="3"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-4"><a aria-label="4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb8-5"><a aria-label="5"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">300</span>) <span class="sc">+</span></span>
+<span id="cb8-6"><a aria-label="6"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb8-7"><a aria-label="7"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb8-8"><a aria-label="8"></a>      <span class="st">"female"</span> <span class="ot">=</span> <span class="st">"pink"</span>,</span>
+<span id="cb8-9"><a aria-label="9"></a>      <span class="st">"male"</span>   <span class="ot">=</span> <span class="st">"lightblue"</span></span>
+<span id="cb8-10"><a aria-label="10"></a>    )</span>
+<span id="cb8-11"><a aria-label="11"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-4-2">
@@ -618,17 +621,17 @@
 </div>
 <div id="tabset-4-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" data-code-line-numbers="6-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb9-2"><a></a>  <span class="fu">drop_na</span>(body_mass, sex) <span class="sc">|&gt;</span> </span>
-<span id="cb9-3"><a></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb9-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb9-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">300</span>) <span class="sc">+</span></span>
-<span id="cb9-6"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb9-7"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb9-8"><a></a>      <span class="st">"female"</span> <span class="ot">=</span> <span class="st">"#E69F00"</span>,</span>
-<span id="cb9-9"><a></a>      <span class="st">"male"</span>   <span class="ot">=</span> <span class="st">"#56B4E9"</span></span>
-<span id="cb9-10"><a></a>    )</span>
-<span id="cb9-11"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" data-code-line-numbers="6-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(body_mass, sex) <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a aria-label="3"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a aria-label="4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb9-5"><a aria-label="5"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">300</span>) <span class="sc">+</span></span>
+<span id="cb9-6"><a aria-label="6"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb9-7"><a aria-label="7"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb9-8"><a aria-label="8"></a>      <span class="st">"female"</span> <span class="ot">=</span> <span class="st">"#E69F00"</span>,</span>
+<span id="cb9-9"><a aria-label="9"></a>      <span class="st">"male"</span>   <span class="ot">=</span> <span class="st">"#56B4E9"</span></span>
+<span id="cb9-10"><a aria-label="10"></a>    )</span>
+<span id="cb9-11"><a aria-label="11"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-4-4">
@@ -669,14 +672,14 @@
 <div class="tab-content">
 <div id="tabset-5-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a></a>  <span class="fu">drop_na</span>(species, sex, body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb10-3"><a></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
-<span id="cb10-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb10-6"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
-<span id="cb10-7"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
-<span id="cb10-8"><a></a>  <span class="fu">scale_fill_paletteer_d</span>(<span class="st">"DresdenColor::briefcases"</span>) <span class="co"># "ダブルクォテーション内がパレット名"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(species, sex, body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a aria-label="3"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a aria-label="4"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-5"><a aria-label="5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb10-6"><a aria-label="6"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
+<span id="cb10-7"><a aria-label="7"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
+<span id="cb10-8"><a aria-label="8"></a>  <span class="fu">scale_fill_paletteer_d</span>(<span class="st">"DresdenColor::briefcases"</span>) <span class="co"># "ダブルクォテーション内がパレット名"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-5-2">
@@ -717,14 +720,14 @@
 <div class="tab-content">
 <div id="tabset-6-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a></a>  <span class="fu">drop_na</span>(species, sex, body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb11-3"><a></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
-<span id="cb11-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb11-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb11-6"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
-<span id="cb11-7"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
-<span id="cb11-8"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">met.brewer</span>(<span class="st">"Klimt"</span>, <span class="dv">3</span>)) <span class="co"># "ダブルクォテーション内がパレット名"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(species, sex, body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a aria-label="3"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
+<span id="cb11-4"><a aria-label="4"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-5"><a aria-label="5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb11-6"><a aria-label="6"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
+<span id="cb11-7"><a aria-label="7"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
+<span id="cb11-8"><a aria-label="8"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">met.brewer</span>(<span class="st">"Klimt"</span>, <span class="dv">3</span>)) <span class="co"># "ダブルクォテーション内がパレット名"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-6-2">
@@ -766,14 +769,14 @@
 <div class="tab-content">
 <div id="tabset-7-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a></a>  <span class="fu">drop_na</span>(species, sex, body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb12-3"><a></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
-<span id="cb12-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb12-6"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
-<span id="cb12-7"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
-<span id="cb12-8"><a></a>  <span class="fu">scale_fill_lancet</span>() <span class="co"># 学術誌lancetのカラーに</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(species, sex, body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb12-3"><a aria-label="3"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a aria-label="4"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-5"><a aria-label="5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb12-6"><a aria-label="6"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
+<span id="cb12-7"><a aria-label="7"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
+<span id="cb12-8"><a aria-label="8"></a>  <span class="fu">scale_fill_lancet</span>() <span class="co"># 学術誌lancetのカラーに</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-7-2">
@@ -804,17 +807,17 @@
 <div class="tab-content">
 <div id="tabset-8-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb13-2"><a></a>  <span class="fu">drop_na</span>(body_mass, sex) <span class="sc">|&gt;</span> </span>
-<span id="cb13-3"><a></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb13-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb13-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">300</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb13-6"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb13-7"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb13-8"><a></a>      <span class="st">"female"</span> <span class="ot">=</span> <span class="st">"#E69F00"</span>,</span>
-<span id="cb13-9"><a></a>      <span class="st">"male"</span>   <span class="ot">=</span> <span class="st">"#56B4E9"</span></span>
-<span id="cb13-10"><a></a>    )</span>
-<span id="cb13-11"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(body_mass, sex) <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a aria-label="3"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb13-4"><a aria-label="4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb13-5"><a aria-label="5"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">300</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb13-6"><a aria-label="6"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb13-7"><a aria-label="7"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb13-8"><a aria-label="8"></a>      <span class="st">"female"</span> <span class="ot">=</span> <span class="st">"#E69F00"</span>,</span>
+<span id="cb13-9"><a aria-label="9"></a>      <span class="st">"male"</span>   <span class="ot">=</span> <span class="st">"#56B4E9"</span></span>
+<span id="cb13-10"><a aria-label="10"></a>    )</span>
+<span id="cb13-11"><a aria-label="11"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-8-2">
@@ -850,10 +853,10 @@
 <div class="tab-content">
 <div id="tabset-9-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb14-2"><a></a>  <span class="fu">drop_na</span>(species) <span class="sc">|&gt;</span> </span>
-<span id="cb14-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species)) <span class="sc">+</span></span>
-<span id="cb14-4"><a></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"#C5DFF4FF"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb14-3"><a aria-label="3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species)) <span class="sc">+</span></span>
+<span id="cb14-4"><a aria-label="4"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"#C5DFF4FF"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-9-2">
@@ -888,14 +891,14 @@
 <div class="tab-content">
 <div id="tabset-10-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb15-2"><a></a>  <span class="fu">drop_na</span>(species, island) <span class="sc">|&gt;</span> </span>
-<span id="cb15-3"><a></a>  <span class="fu">count</span>(island, species) <span class="sc">|&gt;</span> </span>
-<span id="cb15-4"><a></a>  <span class="fu">group_by</span>(island) <span class="sc">|&gt;</span> </span>
-<span id="cb15-5"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">|&gt;</span> </span>
-<span id="cb15-6"><a></a>  <span class="fu">ggplot</span>( <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">y =</span> prop, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb15-7"><a></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
-<span id="cb15-8"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>()) <span class="co"># y軸を比率表示に変更</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(species, island) <span class="sc">|&gt;</span> </span>
+<span id="cb15-3"><a aria-label="3"></a>  <span class="fu">count</span>(island, species) <span class="sc">|&gt;</span> </span>
+<span id="cb15-4"><a aria-label="4"></a>  <span class="fu">group_by</span>(island) <span class="sc">|&gt;</span> </span>
+<span id="cb15-5"><a aria-label="5"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">|&gt;</span> </span>
+<span id="cb15-6"><a aria-label="6"></a>  <span class="fu">ggplot</span>( <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">y =</span> prop, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb15-7"><a aria-label="7"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb15-8"><a aria-label="8"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>()) <span class="co"># y軸を比率表示に変更</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-10-2">
@@ -926,13 +929,13 @@
 <div class="tab-content">
 <div id="tabset-11-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb16-2"><a></a>  <span class="fu">drop_na</span>(species, body_mass) <span class="sc">|&gt;</span></span>
-<span id="cb16-3"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
-<span id="cb16-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">round</span>(<span class="fu">mean</span>(body_mass), <span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb16-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass)) <span class="sc">+</span></span>
-<span id="cb16-6"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb16-7"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(species, body_mass) <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a aria-label="3"></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb16-4"><a aria-label="4"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">round</span>(<span class="fu">mean</span>(body_mass), <span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb16-5"><a aria-label="5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass)) <span class="sc">+</span></span>
+<span id="cb16-6"><a aria-label="6"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb16-7"><a aria-label="7"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-11-2">
@@ -976,13 +979,13 @@ remotes::install_github("uribo/zipangu")</code></pre>
 <div class="tab-content">
 <div id="tabset-12-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18" data-code-line-numbers="6-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>df_pop_all <span class="sc">|&gt;</span> </span>
-<span id="cb18-2"><a></a>  <span class="fu">mutate</span>(都道府県 <span class="ot">=</span> <span class="fu">factor</span>(都道府県, <span class="at">levels =</span> pref_levels)) <span class="sc">|&gt;</span> </span>
-<span id="cb18-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 都道府県, <span class="at">y =</span> 推定人口)) <span class="sc">+</span></span>
-<span id="cb18-4"><a></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#D55E00"</span>) <span class="sc">+</span></span>
-<span id="cb18-5"><a></a>  <span class="fu">gghighlight</span>(都道府県 <span class="sc">==</span> <span class="st">"石川県"</span>) <span class="sc">+</span></span>
-<span id="cb18-6"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> zipangu<span class="sc">::</span><span class="fu">label_kansuji</span>()) <span class="sc">+</span> <span class="co"># y軸のラベルを日本語にして視認性を高める</span></span>
-<span id="cb18-7"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="co"># x軸のラベルの角度を調整</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18" data-code-line-numbers="6-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-label="1"></a>df_pop_all <span class="sc">|&gt;</span> </span>
+<span id="cb18-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(都道府県 <span class="ot">=</span> <span class="fu">factor</span>(都道府県, <span class="at">levels =</span> pref_levels)) <span class="sc">|&gt;</span> </span>
+<span id="cb18-3"><a aria-label="3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 都道府県, <span class="at">y =</span> 推定人口)) <span class="sc">+</span></span>
+<span id="cb18-4"><a aria-label="4"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#D55E00"</span>) <span class="sc">+</span></span>
+<span id="cb18-5"><a aria-label="5"></a>  <span class="fu">gghighlight</span>(都道府県 <span class="sc">==</span> <span class="st">"石川県"</span>) <span class="sc">+</span></span>
+<span id="cb18-6"><a aria-label="6"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> zipangu<span class="sc">::</span><span class="fu">label_kansuji</span>()) <span class="sc">+</span> <span class="co"># y軸のラベルを日本語にして視認性を高める</span></span>
+<span id="cb18-7"><a aria-label="7"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="co"># x軸のラベルの角度を調整</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-12-2">
@@ -1020,17 +1023,17 @@ remotes::install_github("uribo/zipangu")</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">labs</span>(</span>
-<span id="cb19-2"><a></a>  <span class="at">title =</span> <span class="st">""</span>,</span>
-<span id="cb19-3"><a></a>  <span class="at">subtitle =</span> <span class="st">""</span>,</span>
-<span id="cb19-4"><a></a>  <span class="at">caption =</span> <span class="st">""</span>,</span>
-<span id="cb19-5"><a></a>  <span class="at">x =</span> <span class="st">""</span>,</span>
-<span id="cb19-6"><a></a>  <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb19-7"><a></a>  <span class="at">colour =</span> <span class="st">""</span>,</span>
-<span id="cb19-8"><a></a>  <span class="at">fill =</span> <span class="st">""</span>,</span>
-<span id="cb19-9"><a></a>  <span class="at">shape =</span> <span class="st">""</span>,</span>
-<span id="cb19-10"><a></a>  <span class="at">size =</span> <span class="st">""</span></span>
-<span id="cb19-11"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-label="1"></a><span class="fu">labs</span>(</span>
+<span id="cb19-2"><a aria-label="2"></a>  <span class="at">title =</span> <span class="st">""</span>,</span>
+<span id="cb19-3"><a aria-label="3"></a>  <span class="at">subtitle =</span> <span class="st">""</span>,</span>
+<span id="cb19-4"><a aria-label="4"></a>  <span class="at">caption =</span> <span class="st">""</span>,</span>
+<span id="cb19-5"><a aria-label="5"></a>  <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb19-6"><a aria-label="6"></a>  <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb19-7"><a aria-label="7"></a>  <span class="at">colour =</span> <span class="st">""</span>,</span>
+<span id="cb19-8"><a aria-label="8"></a>  <span class="at">fill =</span> <span class="st">""</span>,</span>
+<span id="cb19-9"><a aria-label="9"></a>  <span class="at">shape =</span> <span class="st">""</span>,</span>
+<span id="cb19-10"><a aria-label="10"></a>  <span class="at">size =</span> <span class="st">""</span></span>
+<span id="cb19-11"><a aria-label="11"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="軸ラベル凡例ラベル-1" class="slide level2">
@@ -1041,17 +1044,17 @@ remotes::install_github("uribo/zipangu")</code></pre>
 <div class="tab-content">
 <div id="tabset-13-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20" data-code-line-numbers="4-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb20-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(bill_len, <span class="at">fill =</span> island)) <span class="sc">+</span></span>
-<span id="cb20-3"><a></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb20-4"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb20-5"><a></a>    <span class="at">title =</span> <span class="st">"ペンギンのくちばしの長さ"</span>,</span>
-<span id="cb20-6"><a></a>    <span class="at">subtitle =</span> <span class="st">"島ごとの比較"</span>,</span>
-<span id="cb20-7"><a></a>    <span class="at">x =</span> <span class="st">"くちばしの長さ(mm)"</span>,</span>
-<span id="cb20-8"><a></a>    <span class="at">y =</span> <span class="st">"個体数"</span>,</span>
-<span id="cb20-9"><a></a>    <span class="at">fill =</span> <span class="st">"島"</span>, <span class="co"># 凡例の名前</span></span>
-<span id="cb20-10"><a></a>    <span class="at">caption =</span> <span class="st">"Source: palmerpenguins"</span></span>
-<span id="cb20-11"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20" data-code-line-numbers="4-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a aria-label="2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(bill_len, <span class="at">fill =</span> island)) <span class="sc">+</span></span>
+<span id="cb20-3"><a aria-label="3"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb20-4"><a aria-label="4"></a>  <span class="fu">labs</span>(</span>
+<span id="cb20-5"><a aria-label="5"></a>    <span class="at">title =</span> <span class="st">"ペンギンのくちばしの長さ"</span>,</span>
+<span id="cb20-6"><a aria-label="6"></a>    <span class="at">subtitle =</span> <span class="st">"島ごとの比較"</span>,</span>
+<span id="cb20-7"><a aria-label="7"></a>    <span class="at">x =</span> <span class="st">"くちばしの長さ(mm)"</span>,</span>
+<span id="cb20-8"><a aria-label="8"></a>    <span class="at">y =</span> <span class="st">"個体数"</span>,</span>
+<span id="cb20-9"><a aria-label="9"></a>    <span class="at">fill =</span> <span class="st">"島"</span>, <span class="co"># 凡例の名前</span></span>
+<span id="cb20-10"><a aria-label="10"></a>    <span class="at">caption =</span> <span class="st">"Source: palmerpenguins"</span></span>
+<span id="cb20-11"><a aria-label="11"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-13-2">
@@ -1076,15 +1079,15 @@ remotes::install_github("uribo/zipangu")</code></pre>
 <div class="tab-content">
 <div id="tabset-14-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21" data-code-line-numbers="4-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb21-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(bill_len, body_mass, <span class="at">colour =</span> island)) <span class="sc">+</span></span>
-<span id="cb21-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb21-4"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb21-5"><a></a>    <span class="at">title =</span> <span class="st">"ペンギンの体重"</span>,</span>
-<span id="cb21-6"><a></a>    <span class="at">subtitle =</span> <span class="st">"Palmer Penguins データセット"</span>,</span>
-<span id="cb21-7"><a></a>    <span class="at">colour =</span> <span class="st">"島"</span>, <span class="co"># 凡例の名前</span></span>
-<span id="cb21-8"><a></a>    <span class="at">caption =</span> <span class="st">"Source: palmerpenguins"</span></span>
-<span id="cb21-9"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21" data-code-line-numbers="4-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a aria-label="2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(bill_len, body_mass, <span class="at">colour =</span> island)) <span class="sc">+</span></span>
+<span id="cb21-3"><a aria-label="3"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb21-4"><a aria-label="4"></a>  <span class="fu">labs</span>(</span>
+<span id="cb21-5"><a aria-label="5"></a>    <span class="at">title =</span> <span class="st">"ペンギンの体重"</span>,</span>
+<span id="cb21-6"><a aria-label="6"></a>    <span class="at">subtitle =</span> <span class="st">"Palmer Penguins データセット"</span>,</span>
+<span id="cb21-7"><a aria-label="7"></a>    <span class="at">colour =</span> <span class="st">"島"</span>, <span class="co"># 凡例の名前</span></span>
+<span id="cb21-8"><a aria-label="8"></a>    <span class="at">caption =</span> <span class="st">"Source: palmerpenguins"</span></span>
+<span id="cb21-9"><a aria-label="9"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-14-2">
@@ -1124,11 +1127,11 @@ remotes::install_github("uribo/zipangu")</code></pre>
 <div class="tab-content">
 <div id="tabset-15-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22" data-code-line-numbers="4-5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb22-2"><a></a>  <span class="fu">drop_na</span>(body_mass, flipper_len) <span class="sc">|&gt;</span> </span>
-<span id="cb22-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_len, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
-<span id="cb22-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#D55E00"</span>) <span class="sc">+</span> <span class="co"># デフォルトだと色分けがわかりづらいので、追加指定</span></span>
-<span id="cb22-5"><a></a>  <span class="fu">gghighlight</span>(body_mass <span class="sc">&gt;</span> <span class="dv">4500</span>) <span class="co"># body_massが4500より大きい値だけをハイライト</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22" data-code-line-numbers="4-5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb22-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(body_mass, flipper_len) <span class="sc">|&gt;</span> </span>
+<span id="cb22-3"><a aria-label="3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_len, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
+<span id="cb22-4"><a aria-label="4"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#D55E00"</span>) <span class="sc">+</span> <span class="co"># デフォルトだと色分けがわかりづらいので、追加指定</span></span>
+<span id="cb22-5"><a aria-label="5"></a>  <span class="fu">gghighlight</span>(body_mass <span class="sc">&gt;</span> <span class="dv">4500</span>) <span class="co"># body_massが4500より大きい値だけをハイライト</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-15-2">
@@ -1160,52 +1163,52 @@ remotes::install_github("uribo/zipangu")</code></pre>
 <div class="tab-content">
 <div id="tabset-16-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="co"># ggplotのデフォルトテーマ（全プロットに適用） ----</span></span>
-<span id="cb23-2"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(</span>
-<span id="cb23-3"><a></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb23-4"><a></a>    <span class="fu">theme_sub_axis_bottom</span>(</span>
-<span id="cb23-5"><a></a>      <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">8</span>)),</span>
-<span id="cb23-6"><a></a>      <span class="at">text  =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fl">8.5</span>)</span>
-<span id="cb23-7"><a></a>    ) <span class="sc">+</span></span>
-<span id="cb23-8"><a></a>    <span class="fu">theme_sub_axis_left</span>(</span>
-<span id="cb23-9"><a></a>      <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">r =</span> <span class="dv">8</span>)),</span>
-<span id="cb23-10"><a></a>      <span class="at">text  =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">hjust =</span> <span class="dv">0</span>)</span>
-<span id="cb23-11"><a></a>    ) <span class="sc">+</span></span>
-<span id="cb23-12"><a></a>    <span class="fu">theme_sub_legend</span>(</span>
-<span id="cb23-13"><a></a>      <span class="at">position   =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb23-14"><a></a>      <span class="at">margin     =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">4</span>),</span>
-<span id="cb23-15"><a></a>      <span class="at">key.size   =</span> <span class="fu">unit</span>(<span class="dv">8</span>, <span class="st">"mm"</span>)</span>
-<span id="cb23-16"><a></a>    ) <span class="sc">+</span></span>
-<span id="cb23-17"><a></a>    <span class="fu">theme_sub_plot</span>(</span>
-<span id="cb23-18"><a></a>      <span class="at">title   =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
-<span id="cb23-19"><a></a>      <span class="at">caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)</span>
-<span id="cb23-20"><a></a>    )</span>
-<span id="cb23-21"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-label="1"></a><span class="co"># ggplotのデフォルトテーマ（全プロットに適用） ----</span></span>
+<span id="cb23-2"><a aria-label="2"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(</span>
+<span id="cb23-3"><a aria-label="3"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb23-4"><a aria-label="4"></a>    <span class="fu">theme_sub_axis_bottom</span>(</span>
+<span id="cb23-5"><a aria-label="5"></a>      <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">8</span>)),</span>
+<span id="cb23-6"><a aria-label="6"></a>      <span class="at">text  =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fl">8.5</span>)</span>
+<span id="cb23-7"><a aria-label="7"></a>    ) <span class="sc">+</span></span>
+<span id="cb23-8"><a aria-label="8"></a>    <span class="fu">theme_sub_axis_left</span>(</span>
+<span id="cb23-9"><a aria-label="9"></a>      <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">r =</span> <span class="dv">8</span>)),</span>
+<span id="cb23-10"><a aria-label="10"></a>      <span class="at">text  =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">hjust =</span> <span class="dv">0</span>)</span>
+<span id="cb23-11"><a aria-label="11"></a>    ) <span class="sc">+</span></span>
+<span id="cb23-12"><a aria-label="12"></a>    <span class="fu">theme_sub_legend</span>(</span>
+<span id="cb23-13"><a aria-label="13"></a>      <span class="at">position   =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb23-14"><a aria-label="14"></a>      <span class="at">margin     =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">4</span>),</span>
+<span id="cb23-15"><a aria-label="15"></a>      <span class="at">key.size   =</span> <span class="fu">unit</span>(<span class="dv">8</span>, <span class="st">"mm"</span>)</span>
+<span id="cb23-16"><a aria-label="16"></a>    ) <span class="sc">+</span></span>
+<span id="cb23-17"><a aria-label="17"></a>    <span class="fu">theme_sub_plot</span>(</span>
+<span id="cb23-18"><a aria-label="18"></a>      <span class="at">title   =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
+<span id="cb23-19"><a aria-label="19"></a>      <span class="at">caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)</span>
+<span id="cb23-20"><a aria-label="20"></a>    )</span>
+<span id="cb23-21"><a aria-label="21"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-16-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="co"># ggplot theme_classicのフォント設定 ----</span></span>
-<span id="cb24-2"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(</span>
-<span id="cb24-3"><a></a>  <span class="fu">theme_classic</span>(<span class="at">base_family =</span> <span class="st">"Hiragino Sans"</span>) <span class="sc">+</span></span>
-<span id="cb24-4"><a></a>  <span class="fu">theme_sub_axis_bottom</span>(</span>
-<span id="cb24-5"><a></a>      <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">8</span>)),</span>
-<span id="cb24-6"><a></a>      <span class="at">text  =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fl">8.5</span>)</span>
-<span id="cb24-7"><a></a>    ) <span class="sc">+</span></span>
-<span id="cb24-8"><a></a>    <span class="fu">theme_sub_axis_left</span>(</span>
-<span id="cb24-9"><a></a>      <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">r =</span> <span class="dv">8</span>)),</span>
-<span id="cb24-10"><a></a>      <span class="at">text  =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">hjust =</span> <span class="dv">0</span>)</span>
-<span id="cb24-11"><a></a>    ) <span class="sc">+</span></span>
-<span id="cb24-12"><a></a>    <span class="fu">theme_sub_legend</span>(</span>
-<span id="cb24-13"><a></a>      <span class="at">position   =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb24-14"><a></a>      <span class="at">margin     =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">4</span>),</span>
-<span id="cb24-15"><a></a>      <span class="at">key.size   =</span> <span class="fu">unit</span>(<span class="dv">8</span>, <span class="st">"mm"</span>)</span>
-<span id="cb24-16"><a></a>    ) <span class="sc">+</span></span>
-<span id="cb24-17"><a></a>    <span class="fu">theme_sub_plot</span>(</span>
-<span id="cb24-18"><a></a>      <span class="at">title   =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
-<span id="cb24-19"><a></a>      <span class="at">caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)</span>
-<span id="cb24-20"><a></a>    )</span>
-<span id="cb24-21"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-label="1"></a><span class="co"># ggplot theme_classicのフォント設定 ----</span></span>
+<span id="cb24-2"><a aria-label="2"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(</span>
+<span id="cb24-3"><a aria-label="3"></a>  <span class="fu">theme_classic</span>(<span class="at">base_family =</span> <span class="st">"Hiragino Sans"</span>) <span class="sc">+</span></span>
+<span id="cb24-4"><a aria-label="4"></a>  <span class="fu">theme_sub_axis_bottom</span>(</span>
+<span id="cb24-5"><a aria-label="5"></a>      <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">8</span>)),</span>
+<span id="cb24-6"><a aria-label="6"></a>      <span class="at">text  =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fl">8.5</span>)</span>
+<span id="cb24-7"><a aria-label="7"></a>    ) <span class="sc">+</span></span>
+<span id="cb24-8"><a aria-label="8"></a>    <span class="fu">theme_sub_axis_left</span>(</span>
+<span id="cb24-9"><a aria-label="9"></a>      <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">r =</span> <span class="dv">8</span>)),</span>
+<span id="cb24-10"><a aria-label="10"></a>      <span class="at">text  =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">hjust =</span> <span class="dv">0</span>)</span>
+<span id="cb24-11"><a aria-label="11"></a>    ) <span class="sc">+</span></span>
+<span id="cb24-12"><a aria-label="12"></a>    <span class="fu">theme_sub_legend</span>(</span>
+<span id="cb24-13"><a aria-label="13"></a>      <span class="at">position   =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb24-14"><a aria-label="14"></a>      <span class="at">margin     =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">4</span>),</span>
+<span id="cb24-15"><a aria-label="15"></a>      <span class="at">key.size   =</span> <span class="fu">unit</span>(<span class="dv">8</span>, <span class="st">"mm"</span>)</span>
+<span id="cb24-16"><a aria-label="16"></a>    ) <span class="sc">+</span></span>
+<span id="cb24-17"><a aria-label="17"></a>    <span class="fu">theme_sub_plot</span>(</span>
+<span id="cb24-18"><a aria-label="18"></a>      <span class="at">title   =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
+<span id="cb24-19"><a aria-label="19"></a>      <span class="at">caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)</span>
+<span id="cb24-20"><a aria-label="20"></a>    )</span>
+<span id="cb24-21"><a aria-label="21"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1227,15 +1230,15 @@ remotes::install_github("uribo/zipangu")</code></pre>
 <div class="tab-content">
 <div id="tabset-17-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25" data-code-line-numbers="5-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb25-2"><a></a>  <span class="fu">drop_na</span>(species) <span class="sc">|&gt;</span> </span>
-<span id="cb25-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species)) <span class="sc">+</span></span>
-<span id="cb25-4"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb25-5"><a></a>  <span class="fu">geom_text</span>(</span>
-<span id="cb25-6"><a></a>    <span class="at">stat =</span> <span class="st">"count"</span>, <span class="co"># 集計済みデータではないので、数値を算出する必要がある</span></span>
-<span id="cb25-7"><a></a>    <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">after_stat</span>(count)),</span>
-<span id="cb25-8"><a></a>    <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>　<span class="co"># 位置を調整</span></span>
-<span id="cb25-9"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25" data-code-line-numbers="5-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb25-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb25-3"><a aria-label="3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species)) <span class="sc">+</span></span>
+<span id="cb25-4"><a aria-label="4"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb25-5"><a aria-label="5"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb25-6"><a aria-label="6"></a>    <span class="at">stat =</span> <span class="st">"count"</span>, <span class="co"># 集計済みデータではないので、数値を算出する必要がある</span></span>
+<span id="cb25-7"><a aria-label="7"></a>    <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">after_stat</span>(count)),</span>
+<span id="cb25-8"><a aria-label="8"></a>    <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>　<span class="co"># 位置を調整</span></span>
+<span id="cb25-9"><a aria-label="9"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-17-2">
@@ -1263,14 +1266,14 @@ remotes::install_github("uribo/zipangu")</code></pre>
 <div class="tab-content">
 <div id="tabset-18-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26" data-code-line-numbers="7-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb26-2"><a></a>  <span class="fu">drop_na</span>(species, body_mass) <span class="sc">|&gt;</span></span>
-<span id="cb26-3"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
-<span id="cb26-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">round</span>(<span class="fu">mean</span>(body_mass), <span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb26-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass)) <span class="sc">+</span></span>
-<span id="cb26-6"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb26-7"><a></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> avg_body_mass, <span class="co"># 平均値は算出済みなので、ラベルを指示するだけでいい</span></span>
-<span id="cb26-8"><a></a>                <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>)) <span class="co"># 位置を調整</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26" data-code-line-numbers="7-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb26-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(species, body_mass) <span class="sc">|&gt;</span></span>
+<span id="cb26-3"><a aria-label="3"></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb26-4"><a aria-label="4"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">round</span>(<span class="fu">mean</span>(body_mass), <span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb26-5"><a aria-label="5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass)) <span class="sc">+</span></span>
+<span id="cb26-6"><a aria-label="6"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb26-7"><a aria-label="7"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> avg_body_mass, <span class="co"># 平均値は算出済みなので、ラベルを指示するだけでいい</span></span>
+<span id="cb26-8"><a aria-label="8"></a>                <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>)) <span class="co"># 位置を調整</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-18-2">
@@ -1297,25 +1300,25 @@ remotes::install_github("uribo/zipangu")</code></pre>
 <div class="tab-content">
 <div id="tabset-19-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27" data-code-line-numbers="8-17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb27-2"><a></a>  <span class="fu">drop_na</span>(species, island) <span class="sc">|&gt;</span> </span>
-<span id="cb27-3"><a></a>  <span class="fu">count</span>(island, species) <span class="sc">|&gt;</span> </span>
-<span id="cb27-4"><a></a>  <span class="fu">group_by</span>(island) <span class="sc">|&gt;</span> </span>
-<span id="cb27-5"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">|&gt;</span> </span>
-<span id="cb27-6"><a></a>  <span class="fu">ggplot</span>( <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">y =</span> prop, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb27-7"><a></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
-<span id="cb27-8"><a></a>  <span class="fu">geom_text</span>(</span>
-<span id="cb27-9"><a></a>    <span class="fu">aes</span>(</span>
-<span id="cb27-10"><a></a>      <span class="at">label =</span> <span class="fu">str_c</span>( <span class="co"># 複数の要素を文字列として結合する</span></span>
-<span id="cb27-11"><a></a>        scales<span class="sc">::</span><span class="fu">percent</span>(prop), <span class="co"># 比率（%が付される）</span></span>
-<span id="cb27-12"><a></a>        <span class="st">"</span><span class="sc">\n</span><span class="st">(n="</span>, n, <span class="st">")"</span> <span class="co"># 実数</span></span>
-<span id="cb27-13"><a></a>      )</span>
-<span id="cb27-14"><a></a>    ),</span>
-<span id="cb27-15"><a></a>    <span class="at">position =</span> <span class="fu">position_fill</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>), <span class="co"># 位置</span></span>
-<span id="cb27-16"><a></a>    <span class="at">size =</span> <span class="dv">3</span> <span class="co"># 文字サイズ</span></span>
-<span id="cb27-17"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb27-18"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>()) <span class="sc">+</span> <span class="co"># y軸を比率表示に変更</span></span>
-<span id="cb27-19"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"proportion"</span>) <span class="co"># y軸のラベルを変える（%が付されているので、proportionを削って""だけにしてよい＝y軸のラベルがなくなる）</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27" data-code-line-numbers="8-17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb27-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(species, island) <span class="sc">|&gt;</span> </span>
+<span id="cb27-3"><a aria-label="3"></a>  <span class="fu">count</span>(island, species) <span class="sc">|&gt;</span> </span>
+<span id="cb27-4"><a aria-label="4"></a>  <span class="fu">group_by</span>(island) <span class="sc">|&gt;</span> </span>
+<span id="cb27-5"><a aria-label="5"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">|&gt;</span> </span>
+<span id="cb27-6"><a aria-label="6"></a>  <span class="fu">ggplot</span>( <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">y =</span> prop, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb27-7"><a aria-label="7"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb27-8"><a aria-label="8"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb27-9"><a aria-label="9"></a>    <span class="fu">aes</span>(</span>
+<span id="cb27-10"><a aria-label="10"></a>      <span class="at">label =</span> <span class="fu">str_c</span>( <span class="co"># 複数の要素を文字列として結合する</span></span>
+<span id="cb27-11"><a aria-label="11"></a>        scales<span class="sc">::</span><span class="fu">percent</span>(prop), <span class="co"># 比率（%が付される）</span></span>
+<span id="cb27-12"><a aria-label="12"></a>        <span class="st">"</span><span class="sc">\n</span><span class="st">(n="</span>, n, <span class="st">")"</span> <span class="co"># 実数</span></span>
+<span id="cb27-13"><a aria-label="13"></a>      )</span>
+<span id="cb27-14"><a aria-label="14"></a>    ),</span>
+<span id="cb27-15"><a aria-label="15"></a>    <span class="at">position =</span> <span class="fu">position_fill</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>), <span class="co"># 位置</span></span>
+<span id="cb27-16"><a aria-label="16"></a>    <span class="at">size =</span> <span class="dv">3</span> <span class="co"># 文字サイズ</span></span>
+<span id="cb27-17"><a aria-label="17"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-18"><a aria-label="18"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_percent</span>()) <span class="sc">+</span> <span class="co"># y軸を比率表示に変更</span></span>
+<span id="cb27-19"><a aria-label="19"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"proportion"</span>) <span class="co"># y軸のラベルを変える（%が付されているので、proportionを削って""だけにしてよい＝y軸のラベルがなくなる）</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-19-2">
@@ -1366,19 +1369,19 @@ remotes::install_github("uribo/zipangu")</code></pre>
 <div class="tab-content">
 <div id="tabset-20-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>p1 <span class="ot">&lt;-</span> </span>
-<span id="cb28-2"><a></a>  penguins <span class="sc">|&gt;</span> </span>
-<span id="cb28-3"><a></a>  <span class="fu">drop_na</span>(bill_len, body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb28-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
-<span id="cb28-5"><a></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb28-6"><a></a></span>
-<span id="cb28-7"><a></a>p2 <span class="ot">&lt;-</span> </span>
-<span id="cb28-8"><a></a>  penguins <span class="sc">|&gt;</span> </span>
-<span id="cb28-9"><a></a>  <span class="fu">drop_na</span>(species, body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb28-10"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
-<span id="cb28-11"><a></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb28-12"><a></a></span>
-<span id="cb28-13"><a></a>p1 <span class="sc">+</span> p2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-label="1"></a>p1 <span class="ot">&lt;-</span> </span>
+<span id="cb28-2"><a aria-label="2"></a>  penguins <span class="sc">|&gt;</span> </span>
+<span id="cb28-3"><a aria-label="3"></a>  <span class="fu">drop_na</span>(bill_len, body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb28-4"><a aria-label="4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
+<span id="cb28-5"><a aria-label="5"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb28-6"><a aria-label="6"></a></span>
+<span id="cb28-7"><a aria-label="7"></a>p2 <span class="ot">&lt;-</span> </span>
+<span id="cb28-8"><a aria-label="8"></a>  penguins <span class="sc">|&gt;</span> </span>
+<span id="cb28-9"><a aria-label="9"></a>  <span class="fu">drop_na</span>(species, body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb28-10"><a aria-label="10"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
+<span id="cb28-11"><a aria-label="11"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb28-12"><a aria-label="12"></a></span>
+<span id="cb28-13"><a aria-label="13"></a>p1 <span class="sc">+</span> p2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-20-2">
@@ -1408,13 +1411,13 @@ remotes::install_github("uribo/zipangu")</code></pre>
 <div class="tab-content">
 <div id="tabset-21-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(mpg, disp))</span>
-<span id="cb29-2"><a></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(gear, disp, <span class="at">group =</span> gear))</span>
-<span id="cb29-3"><a></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(disp, qsec))</span>
-<span id="cb29-4"><a></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="fu">aes</span>(carb))</span>
-<span id="cb29-5"><a></a></span>
-<span id="cb29-6"><a></a>(p1 <span class="sc">|</span> p2 <span class="sc">|</span> p3) <span class="sc">/</span></span>
-<span id="cb29-7"><a></a>      p4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a aria-label="1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(mpg, disp))</span>
+<span id="cb29-2"><a aria-label="2"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(gear, disp, <span class="at">group =</span> gear))</span>
+<span id="cb29-3"><a aria-label="3"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(disp, qsec))</span>
+<span id="cb29-4"><a aria-label="4"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="fu">aes</span>(carb))</span>
+<span id="cb29-5"><a aria-label="5"></a></span>
+<span id="cb29-6"><a aria-label="6"></a>(p1 <span class="sc">|</span> p2 <span class="sc">|</span> p3) <span class="sc">/</span></span>
+<span id="cb29-7"><a aria-label="7"></a>      p4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-21-2">

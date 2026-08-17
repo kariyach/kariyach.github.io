@@ -7,10 +7,10 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/quarto-contrib/quarto-timer-1.0.0/timer.js"></script>
 <link href="../../site_libs/quarto-contrib/quarto-timer-1.0.0/timer.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="苅谷千尋">
   <meta name="dcterms.date" content="2026-04-30">
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -212,7 +215,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid" aria-label="ORCID profile for 苅谷千尋"> <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
 </div>
 <div class="quarto-title-author-email">
 <a href="mailto:kariyach@staff.kanazawa-u.ac.jp">kariyach@staff.kanazawa-u.ac.jp</a>
@@ -290,14 +293,14 @@
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb1-2"><a></a>  <span class="fu">drop_na</span>(species, sex, body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb1-3"><a></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
-<span id="cb1-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb1-6"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="co"># 今回説明するのはここまで。以後の見た目に関わる説明は第5回目に説明予定</span></span>
-<span id="cb1-7"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
-<span id="cb1-8"><a></a>  <span class="fu">scale_fill_paletteer_d</span>(<span class="st">"DresdenColor::briefcases"</span>) <span class="co"># "ダブルクォテーション内がパレット名"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(species, sex, body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb1-3"><a aria-label="3"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a aria-label="4"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a aria-label="5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb1-6"><a aria-label="6"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="co"># 今回説明するのはここまで。以後の見た目に関わる説明は第5回目に説明予定</span></span>
+<span id="cb1-7"><a aria-label="7"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
+<span id="cb1-8"><a aria-label="8"></a>  <span class="fu">scale_fill_paletteer_d</span>(<span class="st">"DresdenColor::briefcases"</span>) <span class="co"># "ダブルクォテーション内がパレット名"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -313,14 +316,14 @@
 </div>
 <div id="tabset-1-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb2-2"><a></a>  <span class="fu">drop_na</span>(species, sex, body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb2-3"><a></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
-<span id="cb2-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb2-6"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="co"># 今回説明するのはここまで。以後の見た目に関わる説明は第5回目に説明予定</span></span>
-<span id="cb2-7"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
-<span id="cb2-8"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">met.brewer</span>(<span class="st">"Klimt"</span>, <span class="dv">3</span>)) <span class="co"># "ダブルクォテーション内がパレット名"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(species, sex, body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb2-3"><a aria-label="3"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a aria-label="4"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a aria-label="5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb2-6"><a aria-label="6"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="co"># 今回説明するのはここまで。以後の見た目に関わる説明は第5回目に説明予定</span></span>
+<span id="cb2-7"><a aria-label="7"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
+<span id="cb2-8"><a aria-label="8"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">met.brewer</span>(<span class="st">"Klimt"</span>, <span class="dv">3</span>)) <span class="co"># "ダブルクォテーション内がパレット名"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-4">
@@ -344,13 +347,13 @@
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb3-3"><a></a>  <span class="fu">group_by</span>(species, island) <span class="sc">|&gt;</span></span>
-<span id="cb3-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass)) <span class="sc">|&gt;</span></span>
-<span id="cb3-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass)) <span class="sc">+</span> <span class="co"># 座標軸などを指定</span></span>
-<span id="cb3-6"><a></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>()) <span class="sc">+</span> <span class="co"># 棒グラフを作る</span></span>
-<span id="cb3-7"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> island) <span class="co"># 雌雄ごとにグラフを分ける</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a aria-label="3"></a>  <span class="fu">group_by</span>(species, island) <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a aria-label="4"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass)) <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a aria-label="5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass)) <span class="sc">+</span> <span class="co"># 座標軸などを指定</span></span>
+<span id="cb3-6"><a aria-label="6"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>()) <span class="sc">+</span> <span class="co"># 棒グラフを作る</span></span>
+<span id="cb3-7"><a aria-label="7"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> island) <span class="co"># 雌雄ごとにグラフを分ける</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-2">
@@ -374,11 +377,11 @@
 <div class="tab-content">
 <div id="tabset-3-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
-<span id="cb4-4"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb4-5"><a></a>  <span class="fu">geom_jitter</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a aria-label="3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
+<span id="cb4-4"><a aria-label="4"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb4-5"><a aria-label="5"></a>  <span class="fu">geom_jitter</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-3-2">
@@ -554,15 +557,15 @@
 <div class="tab-content">
 <div id="tabset-4-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>ishikawa <span class="ot">&lt;-</span></span>
-<span id="cb5-2"><a></a>  <span class="fu">jpn_pref</span>(<span class="at">pref =</span> <span class="dv">17</span>, <span class="at">district =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="co"># pref = 17 は「石川県」を意味するコード</span></span>
-<span id="cb5-3"><a></a>  <span class="fu">left_join</span>(df_a, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"city_code"</span> <span class="ot">=</span> <span class="st">"市区町村コード"</span>)) <span class="co"># district = TRUE にすると、市区町村レベルの地図になる</span></span>
-<span id="cb5-4"><a></a></span>
-<span id="cb5-5"><a></a>ishikawa <span class="sc">|&gt;</span> </span>
-<span id="cb5-6"><a></a>  <span class="fu">filter</span>(code_name <span class="sc">==</span> <span class="st">"第２次産業就業者数"</span>) <span class="sc">|&gt;</span> <span class="co"># 「第２次産業就業者数」だけを取り出す</span></span>
-<span id="cb5-7"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb5-8"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="co"># sf（地図データ）を描画。fill = value によって、値に応じて色を塗り分ける</span></span>
-<span id="cb5-9"><a></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="co"># 配色の指示、デフォルトだと人数の多寡と配色の濃淡が直感に反するために、direction -1で逆に</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>ishikawa <span class="ot">&lt;-</span></span>
+<span id="cb5-2"><a aria-label="2"></a>  <span class="fu">jpn_pref</span>(<span class="at">pref =</span> <span class="dv">17</span>, <span class="at">district =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="co"># pref = 17 は「石川県」を意味するコード</span></span>
+<span id="cb5-3"><a aria-label="3"></a>  <span class="fu">left_join</span>(df_a, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"city_code"</span> <span class="ot">=</span> <span class="st">"市区町村コード"</span>)) <span class="co"># district = TRUE にすると、市区町村レベルの地図になる</span></span>
+<span id="cb5-4"><a aria-label="4"></a></span>
+<span id="cb5-5"><a aria-label="5"></a>ishikawa <span class="sc">|&gt;</span> </span>
+<span id="cb5-6"><a aria-label="6"></a>  <span class="fu">filter</span>(code_name <span class="sc">==</span> <span class="st">"第２次産業就業者数"</span>) <span class="sc">|&gt;</span> <span class="co"># 「第２次産業就業者数」だけを取り出す</span></span>
+<span id="cb5-7"><a aria-label="7"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb5-8"><a aria-label="8"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="co"># sf（地図データ）を描画。fill = value によって、値に応じて色を塗り分ける</span></span>
+<span id="cb5-9"><a aria-label="9"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="co"># 配色の指示、デフォルトだと人数の多寡と配色の濃淡が直感に反するために、direction -1で逆に</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-4-2">
@@ -698,7 +701,7 @@
 <div class="tab-content">
 <div id="tabset-5-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-5-2">
@@ -895,10 +898,10 @@
 <li><em>Setup Chunkに以下のコードを入力</em></li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># データ読み込み -----</span></span>
-<span id="cb8-2"><a></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/SSDSE-D-2023.csv"</span>, <span class="co"># 教材の手順通り行っていればこのパスでいいはずです</span></span>
-<span id="cb8-3"><a></a>               <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"CP932"</span>) <span class="co"># 文字コードがShift_JISであることを伝える（UTF-8で読み込んでくれる）</span></span>
-<span id="cb8-4"><a></a>               )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a><span class="co"># データ読み込み -----</span></span>
+<span id="cb8-2"><a aria-label="2"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/SSDSE-D-2023.csv"</span>, <span class="co"># 教材の手順通り行っていればこのパスでいいはずです</span></span>
+<span id="cb8-3"><a aria-label="3"></a>               <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"CP932"</span>) <span class="co"># 文字コードがShift_JISであることを伝える（UTF-8で読み込んでくれる）</span></span>
+<span id="cb8-4"><a aria-label="4"></a>               )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-tip callout-style-simple">
 <div class="callout-body">
@@ -964,17 +967,17 @@
 <div class="tab-content">
 <div id="tabset-6-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>raw_data <span class="sc">|&gt;</span> </span>
-<span id="cb10-2"><a></a>  <span class="fu">slice</span>(<span class="sc">-</span><span class="dv">1</span>) <span class="sc">|&gt;</span> <span class="co">#1行目(ラベル)を削除</span></span>
-<span id="cb10-3"><a></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>, Prefecture, MA00) <span class="sc">|&gt;</span> <span class="co"># 変数名に記号が入っている場合は``で囲む</span></span>
-<span id="cb10-4"><a></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"0_総数"</span>) <span class="sc">|&gt;</span> <span class="co"># 性別を除外</span></span>
-<span id="cb10-5"><a></a>  <span class="fu">select</span>(<span class="sc">!</span><span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>) <span class="sc">|&gt;</span> <span class="co"># 総数だけになったので、この列自体不要 !は除外を意味する</span></span>
-<span id="cb10-6"><a></a>  <span class="fu">mutate</span>(<span class="at">MA00 =</span> <span class="fu">as.numeric</span>(MA00)) <span class="sc">|&gt;</span> <span class="co"># 既存列の上書き（文字列を数値に）</span></span>
-<span id="cb10-7"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb10-8"><a></a>    推定人口 <span class="ot">=</span> <span class="st">`</span><span class="at">MA00</span><span class="st">`</span> <span class="sc">*</span> <span class="dv">1000</span>, <span class="at">.before =</span> MA00 <span class="co"># 単位が千人表記なので実数にするための1000をかける</span></span>
-<span id="cb10-9"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb10-10"><a></a>  <span class="fu">select</span>(<span class="sc">!</span>MA00) <span class="sc">|&gt;</span> </span>
-<span id="cb10-11"><a></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"全国"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a>raw_data <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a aria-label="2"></a>  <span class="fu">slice</span>(<span class="sc">-</span><span class="dv">1</span>) <span class="sc">|&gt;</span> <span class="co">#1行目(ラベル)を削除</span></span>
+<span id="cb10-3"><a aria-label="3"></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>, Prefecture, MA00) <span class="sc">|&gt;</span> <span class="co"># 変数名に記号が入っている場合は``で囲む</span></span>
+<span id="cb10-4"><a aria-label="4"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"0_総数"</span>) <span class="sc">|&gt;</span> <span class="co"># 性別を除外</span></span>
+<span id="cb10-5"><a aria-label="5"></a>  <span class="fu">select</span>(<span class="sc">!</span><span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>) <span class="sc">|&gt;</span> <span class="co"># 総数だけになったので、この列自体不要 !は除外を意味する</span></span>
+<span id="cb10-6"><a aria-label="6"></a>  <span class="fu">mutate</span>(<span class="at">MA00 =</span> <span class="fu">as.numeric</span>(MA00)) <span class="sc">|&gt;</span> <span class="co"># 既存列の上書き（文字列を数値に）</span></span>
+<span id="cb10-7"><a aria-label="7"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb10-8"><a aria-label="8"></a>    推定人口 <span class="ot">=</span> <span class="st">`</span><span class="at">MA00</span><span class="st">`</span> <span class="sc">*</span> <span class="dv">1000</span>, <span class="at">.before =</span> MA00 <span class="co"># 単位が千人表記なので実数にするための1000をかける</span></span>
+<span id="cb10-9"><a aria-label="9"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb10-10"><a aria-label="10"></a>  <span class="fu">select</span>(<span class="sc">!</span>MA00) <span class="sc">|&gt;</span> </span>
+<span id="cb10-11"><a aria-label="11"></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"全国"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-6-2">
@@ -1248,12 +1251,12 @@
 <h2>新しい変数を作る</h2>
 <h3 id="データフレームの作成">データフレームの作成</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>df_math_eng <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb11-2"><a></a>  名前 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>),</span>
-<span id="cb11-3"><a></a>  クラス <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"1組"</span>, <span class="st">"1組"</span>, <span class="st">"1組"</span>, <span class="st">"2組"</span>, <span class="st">"2組"</span>, <span class="st">"2組"</span>),</span>
-<span id="cb11-4"><a></a>  数学 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">90</span>, <span class="dv">50</span>, <span class="dv">65</span>),</span>
-<span id="cb11-5"><a></a>  英語 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">70</span>, <span class="dv">65</span>, <span class="dv">75</span>, <span class="dv">85</span>, <span class="dv">55</span>, <span class="dv">60</span>)</span>
-<span id="cb11-6"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-label="1"></a>df_math_eng <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb11-2"><a aria-label="2"></a>  名前 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>),</span>
+<span id="cb11-3"><a aria-label="3"></a>  クラス <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"1組"</span>, <span class="st">"1組"</span>, <span class="st">"1組"</span>, <span class="st">"2組"</span>, <span class="st">"2組"</span>, <span class="st">"2組"</span>),</span>
+<span id="cb11-4"><a aria-label="4"></a>  数学 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">90</span>, <span class="dv">50</span>, <span class="dv">65</span>),</span>
+<span id="cb11-5"><a aria-label="5"></a>  英語 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">70</span>, <span class="dv">65</span>, <span class="dv">75</span>, <span class="dv">85</span>, <span class="dv">55</span>, <span class="dv">60</span>)</span>
+<span id="cb11-6"><a aria-label="6"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <h3 id="合計点">合計点</h3>
 <div class="panel-tabset">
@@ -1261,8 +1264,8 @@
 <div class="tab-content">
 <div id="tabset-7-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>df_math_eng <span class="sc">|&gt;</span> </span>
-<span id="cb12-2"><a></a>  <span class="fu">mutate</span>(合計 <span class="ot">=</span> 数学 <span class="sc">+</span> 英語) <span class="co"># 「合計」という列を作る。その値は列名「数学」と「英語」を合算する</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-label="1"></a>df_math_eng <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(合計 <span class="ot">=</span> 数学 <span class="sc">+</span> 英語) <span class="co"># 「合計」という列を作る。その値は列名「数学」と「英語」を合算する</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-7-2">
@@ -1375,11 +1378,11 @@
 <div class="tab-content">
 <div id="tabset-8-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>df_math_eng <span class="sc">|&gt;</span> </span>
-<span id="cb13-2"><a></a>  <span class="fu">mutate</span>(合計 <span class="ot">=</span> 数学 <span class="sc">+</span> 英語) <span class="sc">|&gt;</span> </span>
-<span id="cb13-3"><a></a>  <span class="fu">mutate</span>(平均 <span class="ot">=</span> (数学 <span class="sc">+</span> 英語) <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb13-4"><a></a>  <span class="fu">mutate</span>(平均との差 <span class="ot">=</span> 数学 <span class="sc">-</span> <span class="fu">mean</span>(数学)) <span class="sc">|&gt;</span> </span>
-<span id="cb13-5"><a></a>  <span class="fu">mutate</span>(偏差値 <span class="ot">=</span> <span class="dv">50</span> <span class="sc">+</span> <span class="dv">10</span> <span class="sc">*</span> (数学 <span class="sc">-</span> <span class="fu">mean</span>(数学)) <span class="sc">/</span> <span class="fu">sd</span>(数学)) <span class="co"># 偏差値の算出方法： 平均が50、標準偏差が10になるように変換する</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-label="1"></a>df_math_eng <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(合計 <span class="ot">=</span> 数学 <span class="sc">+</span> 英語) <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a aria-label="3"></a>  <span class="fu">mutate</span>(平均 <span class="ot">=</span> (数学 <span class="sc">+</span> 英語) <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb13-4"><a aria-label="4"></a>  <span class="fu">mutate</span>(平均との差 <span class="ot">=</span> 数学 <span class="sc">-</span> <span class="fu">mean</span>(数学)) <span class="sc">|&gt;</span> </span>
+<span id="cb13-5"><a aria-label="5"></a>  <span class="fu">mutate</span>(偏差値 <span class="ot">=</span> <span class="dv">50</span> <span class="sc">+</span> <span class="dv">10</span> <span class="sc">*</span> (数学 <span class="sc">-</span> <span class="fu">mean</span>(数学)) <span class="sc">/</span> <span class="fu">sd</span>(数学)) <span class="co"># 偏差値の算出方法： 平均が50、標準偏差が10になるように変換する</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-8-2">
@@ -1501,13 +1504,13 @@
 </div>
 <div id="tabset-8-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>df_math_eng <span class="sc">|&gt;</span> </span>
-<span id="cb14-2"><a></a>  <span class="fu">mutate</span>(合計 <span class="ot">=</span> 数学 <span class="sc">+</span> 英語) <span class="sc">|&gt;</span> </span>
-<span id="cb14-3"><a></a>  <span class="fu">mutate</span>(平均 <span class="ot">=</span> (数学 <span class="sc">+</span> 英語) <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb14-4"><a></a>  <span class="fu">mutate</span>(平均との差 <span class="ot">=</span> 数学 <span class="sc">-</span> <span class="fu">mean</span>(数学)) <span class="sc">|&gt;</span> </span>
-<span id="cb14-5"><a></a>  <span class="fu">mutate</span>(偏差値 <span class="ot">=</span> <span class="dv">50</span> <span class="sc">+</span> <span class="dv">10</span> <span class="sc">*</span> (数学 <span class="sc">-</span> <span class="fu">mean</span>(数学)) <span class="sc">/</span> <span class="fu">sd</span>(数学)) <span class="sc">|&gt;</span></span>
-<span id="cb14-6"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 名前, <span class="at">y =</span> 偏差値)) <span class="sc">+</span></span>
-<span id="cb14-7"><a></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-label="1"></a>df_math_eng <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(合計 <span class="ot">=</span> 数学 <span class="sc">+</span> 英語) <span class="sc">|&gt;</span> </span>
+<span id="cb14-3"><a aria-label="3"></a>  <span class="fu">mutate</span>(平均 <span class="ot">=</span> (数学 <span class="sc">+</span> 英語) <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-4"><a aria-label="4"></a>  <span class="fu">mutate</span>(平均との差 <span class="ot">=</span> 数学 <span class="sc">-</span> <span class="fu">mean</span>(数学)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-5"><a aria-label="5"></a>  <span class="fu">mutate</span>(偏差値 <span class="ot">=</span> <span class="dv">50</span> <span class="sc">+</span> <span class="dv">10</span> <span class="sc">*</span> (数学 <span class="sc">-</span> <span class="fu">mean</span>(数学)) <span class="sc">/</span> <span class="fu">sd</span>(数学)) <span class="sc">|&gt;</span></span>
+<span id="cb14-6"><a aria-label="6"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 名前, <span class="at">y =</span> 偏差値)) <span class="sc">+</span></span>
+<span id="cb14-7"><a aria-label="7"></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-8-4">
@@ -1542,17 +1545,17 @@
 <div class="tab-content">
 <div id="tabset-9-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>df_math_eng <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">mutate</span>(合計点 <span class="ot">=</span> 数学 <span class="sc">+</span> 英語) <span class="sc">|&gt;</span></span>
-<span id="cb15-3"><a></a>  <span class="fu">group_by</span>(クラス) <span class="sc">|&gt;</span></span>
-<span id="cb15-4"><a></a>  <span class="fu">summarise</span>(</span>
-<span id="cb15-5"><a></a>    数学平均 <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(数学), <span class="dv">1</span>), <span class="co"># round()で小数第1位まで</span></span>
-<span id="cb15-6"><a></a>    英語平均 <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(英語), <span class="dv">1</span>),</span>
-<span id="cb15-7"><a></a>    合計点平均 <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(数学 <span class="sc">+</span> 英語), <span class="dv">1</span>),</span>
-<span id="cb15-8"><a></a>    数学<span class="at">SD =</span> <span class="fu">round</span>(<span class="fu">sd</span>(数学), <span class="dv">1</span>),</span>
-<span id="cb15-9"><a></a>    英語<span class="at">SD =</span> <span class="fu">round</span>(<span class="fu">sd</span>(英語), <span class="dv">1</span>),</span>
-<span id="cb15-10"><a></a>    合計点<span class="at">SD =</span> <span class="fu">round</span>(<span class="fu">sd</span>(数学 <span class="sc">+</span> 英語), <span class="dv">1</span>)</span>
-<span id="cb15-11"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-label="1"></a>df_math_eng <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(合計点 <span class="ot">=</span> 数学 <span class="sc">+</span> 英語) <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a aria-label="3"></a>  <span class="fu">group_by</span>(クラス) <span class="sc">|&gt;</span></span>
+<span id="cb15-4"><a aria-label="4"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb15-5"><a aria-label="5"></a>    数学平均 <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(数学), <span class="dv">1</span>), <span class="co"># round()で小数第1位まで</span></span>
+<span id="cb15-6"><a aria-label="6"></a>    英語平均 <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(英語), <span class="dv">1</span>),</span>
+<span id="cb15-7"><a aria-label="7"></a>    合計点平均 <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(数学 <span class="sc">+</span> 英語), <span class="dv">1</span>),</span>
+<span id="cb15-8"><a aria-label="8"></a>    数学<span class="at">SD =</span> <span class="fu">round</span>(<span class="fu">sd</span>(数学), <span class="dv">1</span>),</span>
+<span id="cb15-9"><a aria-label="9"></a>    英語<span class="at">SD =</span> <span class="fu">round</span>(<span class="fu">sd</span>(英語), <span class="dv">1</span>),</span>
+<span id="cb15-10"><a aria-label="10"></a>    合計点<span class="at">SD =</span> <span class="fu">round</span>(<span class="fu">sd</span>(数学 <span class="sc">+</span> 英語), <span class="dv">1</span>)</span>
+<span id="cb15-11"><a aria-label="11"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-9-2">
@@ -1631,24 +1634,24 @@
 </div>
 <div id="tabset-9-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>df_math_eng <span class="sc">|&gt;</span></span>
-<span id="cb16-2"><a></a>  <span class="fu">mutate</span>(合計点 <span class="ot">=</span> 数学 <span class="sc">+</span> 英語) <span class="sc">|&gt;</span></span>
-<span id="cb16-3"><a></a>  <span class="fu">group_by</span>(クラス) <span class="sc">|&gt;</span></span>
-<span id="cb16-4"><a></a>  <span class="fu">summarise</span>(</span>
-<span id="cb16-5"><a></a>    数学平均 <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(数学), <span class="dv">1</span>),</span>
-<span id="cb16-6"><a></a>    英語平均 <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(英語), <span class="dv">1</span>),</span>
-<span id="cb16-7"><a></a>    合計点平均 <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(数学 <span class="sc">+</span> 英語), <span class="dv">1</span>),</span>
-<span id="cb16-8"><a></a>    数学<span class="at">SD =</span> <span class="fu">round</span>(<span class="fu">sd</span>(数学), <span class="dv">1</span>),</span>
-<span id="cb16-9"><a></a>    英語<span class="at">SD =</span> <span class="fu">round</span>(<span class="fu">sd</span>(英語), <span class="dv">1</span>),</span>
-<span id="cb16-10"><a></a>    合計点<span class="at">SD =</span> <span class="fu">round</span>(<span class="fu">sd</span>(数学 <span class="sc">+</span> 英語), <span class="dv">1</span>)</span>
-<span id="cb16-11"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb16-12"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> クラス, <span class="at">y =</span> 数学平均, <span class="at">fill =</span> クラス)) <span class="sc">+</span></span>
-<span id="cb16-13"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb16-14"><a></a>  <span class="fu">geom_errorbar</span>( <span class="co"># エラーバー関数</span></span>
-<span id="cb16-15"><a></a>    <span class="fu">aes</span>(<span class="at">ymin =</span> 数学平均 <span class="sc">-</span> 数学SD,</span>
-<span id="cb16-16"><a></a>        <span class="at">ymax =</span> 数学平均 <span class="sc">+</span> 数学SD),</span>
-<span id="cb16-17"><a></a>    <span class="at">width =</span> <span class="fl">0.2</span></span>
-<span id="cb16-18"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-label="1"></a>df_math_eng <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(合計点 <span class="ot">=</span> 数学 <span class="sc">+</span> 英語) <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a aria-label="3"></a>  <span class="fu">group_by</span>(クラス) <span class="sc">|&gt;</span></span>
+<span id="cb16-4"><a aria-label="4"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb16-5"><a aria-label="5"></a>    数学平均 <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(数学), <span class="dv">1</span>),</span>
+<span id="cb16-6"><a aria-label="6"></a>    英語平均 <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(英語), <span class="dv">1</span>),</span>
+<span id="cb16-7"><a aria-label="7"></a>    合計点平均 <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(数学 <span class="sc">+</span> 英語), <span class="dv">1</span>),</span>
+<span id="cb16-8"><a aria-label="8"></a>    数学<span class="at">SD =</span> <span class="fu">round</span>(<span class="fu">sd</span>(数学), <span class="dv">1</span>),</span>
+<span id="cb16-9"><a aria-label="9"></a>    英語<span class="at">SD =</span> <span class="fu">round</span>(<span class="fu">sd</span>(英語), <span class="dv">1</span>),</span>
+<span id="cb16-10"><a aria-label="10"></a>    合計点<span class="at">SD =</span> <span class="fu">round</span>(<span class="fu">sd</span>(数学 <span class="sc">+</span> 英語), <span class="dv">1</span>)</span>
+<span id="cb16-11"><a aria-label="11"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-12"><a aria-label="12"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> クラス, <span class="at">y =</span> 数学平均, <span class="at">fill =</span> クラス)) <span class="sc">+</span></span>
+<span id="cb16-13"><a aria-label="13"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb16-14"><a aria-label="14"></a>  <span class="fu">geom_errorbar</span>( <span class="co"># エラーバー関数</span></span>
+<span id="cb16-15"><a aria-label="15"></a>    <span class="fu">aes</span>(<span class="at">ymin =</span> 数学平均 <span class="sc">-</span> 数学SD,</span>
+<span id="cb16-16"><a aria-label="16"></a>        <span class="at">ymax =</span> 数学平均 <span class="sc">+</span> 数学SD),</span>
+<span id="cb16-17"><a aria-label="17"></a>    <span class="at">width =</span> <span class="fl">0.2</span></span>
+<span id="cb16-18"><a aria-label="18"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-9-4">
@@ -1672,19 +1675,19 @@
 <li>再利用したい場合は <code>&lt;-</code>（代入演算子）でオブジェクトに保存する</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>df_pop_all <span class="ot">&lt;-</span> </span>
-<span id="cb17-2"><a></a>  raw_data <span class="sc">|&gt;</span> </span>
-<span id="cb17-3"><a></a>  <span class="fu">slice</span>(<span class="sc">-</span><span class="dv">1</span>) <span class="sc">|&gt;</span> <span class="co">#1行目(ラベル)を削除</span></span>
-<span id="cb17-4"><a></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>, Prefecture, MA00) <span class="sc">|&gt;</span> <span class="co"># 変数名に記号が入っている場合は``で囲む</span></span>
-<span id="cb17-5"><a></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"0_総数"</span>) <span class="sc">|&gt;</span> <span class="co"># 性別を除外</span></span>
-<span id="cb17-6"><a></a>  <span class="fu">select</span>(<span class="sc">!</span><span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>) <span class="sc">|&gt;</span> <span class="co"># 総数だけになったので、この列自体不要 !は除外を意味する</span></span>
-<span id="cb17-7"><a></a>  <span class="fu">mutate</span>(<span class="at">MA00 =</span> <span class="fu">as.numeric</span>(MA00)) <span class="sc">|&gt;</span> <span class="co"># 文字列に</span></span>
-<span id="cb17-8"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb17-9"><a></a>    推定人口 <span class="ot">=</span> <span class="st">`</span><span class="at">MA00</span><span class="st">`</span> <span class="sc">*</span> <span class="dv">1000</span>, <span class="at">.before =</span> MA00 <span class="co"># 単位が千人表記なので実数にするための1000をかける</span></span>
-<span id="cb17-10"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb17-11"><a></a>  <span class="fu">select</span>(<span class="sc">!</span>MA00) <span class="sc">|&gt;</span> </span>
-<span id="cb17-12"><a></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb17-13"><a></a>  <span class="fu">rename</span>(都道府県 <span class="ot">=</span> Prefecture)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-label="1"></a>df_pop_all <span class="ot">&lt;-</span> </span>
+<span id="cb17-2"><a aria-label="2"></a>  raw_data <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a aria-label="3"></a>  <span class="fu">slice</span>(<span class="sc">-</span><span class="dv">1</span>) <span class="sc">|&gt;</span> <span class="co">#1行目(ラベル)を削除</span></span>
+<span id="cb17-4"><a aria-label="4"></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>, Prefecture, MA00) <span class="sc">|&gt;</span> <span class="co"># 変数名に記号が入っている場合は``で囲む</span></span>
+<span id="cb17-5"><a aria-label="5"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"0_総数"</span>) <span class="sc">|&gt;</span> <span class="co"># 性別を除外</span></span>
+<span id="cb17-6"><a aria-label="6"></a>  <span class="fu">select</span>(<span class="sc">!</span><span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>) <span class="sc">|&gt;</span> <span class="co"># 総数だけになったので、この列自体不要 !は除外を意味する</span></span>
+<span id="cb17-7"><a aria-label="7"></a>  <span class="fu">mutate</span>(<span class="at">MA00 =</span> <span class="fu">as.numeric</span>(MA00)) <span class="sc">|&gt;</span> <span class="co"># 文字列に</span></span>
+<span id="cb17-8"><a aria-label="8"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb17-9"><a aria-label="9"></a>    推定人口 <span class="ot">=</span> <span class="st">`</span><span class="at">MA00</span><span class="st">`</span> <span class="sc">*</span> <span class="dv">1000</span>, <span class="at">.before =</span> MA00 <span class="co"># 単位が千人表記なので実数にするための1000をかける</span></span>
+<span id="cb17-10"><a aria-label="10"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb17-11"><a aria-label="11"></a>  <span class="fu">select</span>(<span class="sc">!</span>MA00) <span class="sc">|&gt;</span> </span>
+<span id="cb17-12"><a aria-label="12"></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb17-13"><a aria-label="13"></a>  <span class="fu">rename</span>(都道府県 <span class="ot">=</span> Prefecture)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>右上のペイン「Environment」に、作成した新しいオブジェクトdfがあることを確認（これで他のチャンクでも繰り返し使える）</li>
@@ -1709,9 +1712,9 @@
 <div class="tab-content">
 <div id="tabset-10-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>df_pop_all <span class="sc">|&gt;</span> </span>
-<span id="cb18-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 都道府県, <span class="at">y =</span> 推定人口)) <span class="sc">+</span></span>
-<span id="cb18-3"><a></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-label="1"></a>df_pop_all <span class="sc">|&gt;</span> </span>
+<span id="cb18-2"><a aria-label="2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 都道府県, <span class="at">y =</span> 推定人口)) <span class="sc">+</span></span>
+<span id="cb18-3"><a aria-label="3"></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-10-2">
@@ -1752,17 +1755,17 @@
 <li>以下のコードを<em>Setup Chunkに追加</em>（データの読み込みより下がいい）</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># 水準の設定</span></span>
-<span id="cb19-2"><a></a>pref_levels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"北海道"</span>,</span>
-<span id="cb19-3"><a></a>                 <span class="st">"青森県"</span>,<span class="st">"岩手県"</span>,<span class="st">"宮城県"</span>,<span class="st">"秋田県"</span>,<span class="st">"山形県"</span>,<span class="st">"福島県"</span>,</span>
-<span id="cb19-4"><a></a>                 <span class="st">"茨城県"</span>,<span class="st">"栃木県"</span>,<span class="st">"群馬県"</span>,<span class="st">"埼玉県"</span>,<span class="st">"千葉県"</span>,<span class="st">"東京都"</span>,<span class="st">"神奈川県"</span>,</span>
-<span id="cb19-5"><a></a>                 <span class="st">"新潟県"</span>,<span class="st">"富山県"</span>,<span class="st">"石川県"</span>,<span class="st">"福井県"</span>,<span class="st">"山梨県"</span>,<span class="st">"長野県"</span>,</span>
-<span id="cb19-6"><a></a>                 <span class="st">"岐阜県"</span>,<span class="st">"静岡県"</span>,<span class="st">"愛知県"</span>,<span class="st">"三重県"</span>,</span>
-<span id="cb19-7"><a></a>                 <span class="st">"滋賀県"</span>,<span class="st">"京都府"</span>,<span class="st">"大阪府"</span>,<span class="st">"兵庫県"</span>,<span class="st">"奈良県"</span>,<span class="st">"和歌山県"</span>,</span>
-<span id="cb19-8"><a></a>                 <span class="st">"鳥取県"</span>,<span class="st">"島根県"</span>,<span class="st">"岡山県"</span>,<span class="st">"広島県"</span>,<span class="st">"山口県"</span>,</span>
-<span id="cb19-9"><a></a>                 <span class="st">"徳島県"</span>,<span class="st">"香川県"</span>,<span class="st">"愛媛県"</span>,<span class="st">"高知県"</span>,</span>
-<span id="cb19-10"><a></a>                 <span class="st">"福岡県"</span>,<span class="st">"佐賀県"</span>,<span class="st">"長崎県"</span>,<span class="st">"熊本県"</span>,<span class="st">"大分県"</span>,<span class="st">"宮崎県"</span>,<span class="st">"鹿児島県"</span>,</span>
-<span id="cb19-11"><a></a>                 <span class="st">"沖縄県"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-label="1"></a><span class="co"># 水準の設定</span></span>
+<span id="cb19-2"><a aria-label="2"></a>pref_levels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"北海道"</span>,</span>
+<span id="cb19-3"><a aria-label="3"></a>                 <span class="st">"青森県"</span>,<span class="st">"岩手県"</span>,<span class="st">"宮城県"</span>,<span class="st">"秋田県"</span>,<span class="st">"山形県"</span>,<span class="st">"福島県"</span>,</span>
+<span id="cb19-4"><a aria-label="4"></a>                 <span class="st">"茨城県"</span>,<span class="st">"栃木県"</span>,<span class="st">"群馬県"</span>,<span class="st">"埼玉県"</span>,<span class="st">"千葉県"</span>,<span class="st">"東京都"</span>,<span class="st">"神奈川県"</span>,</span>
+<span id="cb19-5"><a aria-label="5"></a>                 <span class="st">"新潟県"</span>,<span class="st">"富山県"</span>,<span class="st">"石川県"</span>,<span class="st">"福井県"</span>,<span class="st">"山梨県"</span>,<span class="st">"長野県"</span>,</span>
+<span id="cb19-6"><a aria-label="6"></a>                 <span class="st">"岐阜県"</span>,<span class="st">"静岡県"</span>,<span class="st">"愛知県"</span>,<span class="st">"三重県"</span>,</span>
+<span id="cb19-7"><a aria-label="7"></a>                 <span class="st">"滋賀県"</span>,<span class="st">"京都府"</span>,<span class="st">"大阪府"</span>,<span class="st">"兵庫県"</span>,<span class="st">"奈良県"</span>,<span class="st">"和歌山県"</span>,</span>
+<span id="cb19-8"><a aria-label="8"></a>                 <span class="st">"鳥取県"</span>,<span class="st">"島根県"</span>,<span class="st">"岡山県"</span>,<span class="st">"広島県"</span>,<span class="st">"山口県"</span>,</span>
+<span id="cb19-9"><a aria-label="9"></a>                 <span class="st">"徳島県"</span>,<span class="st">"香川県"</span>,<span class="st">"愛媛県"</span>,<span class="st">"高知県"</span>,</span>
+<span id="cb19-10"><a aria-label="10"></a>                 <span class="st">"福岡県"</span>,<span class="st">"佐賀県"</span>,<span class="st">"長崎県"</span>,<span class="st">"熊本県"</span>,<span class="st">"大分県"</span>,<span class="st">"宮崎県"</span>,<span class="st">"鹿児島県"</span>,</span>
+<span id="cb19-11"><a aria-label="11"></a>                 <span class="st">"沖縄県"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="カテゴリを整える水準の設定-1" class="slide level2">
@@ -1775,10 +1778,10 @@
 <div class="tab-content">
 <div id="tabset-11-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>df_pop_all <span class="sc">|&gt;</span> </span>
-<span id="cb20-2"><a></a>  <span class="fu">mutate</span>(都道府県 <span class="ot">=</span> <span class="fu">factor</span>(都道府県, <span class="at">levels =</span> pref_levels)) <span class="sc">|&gt;</span> </span>
-<span id="cb20-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 都道府県, <span class="at">y =</span> 推定人口)) <span class="sc">+</span></span>
-<span id="cb20-4"><a></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-label="1"></a>df_pop_all <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(都道府県 <span class="ot">=</span> <span class="fu">factor</span>(都道府県, <span class="at">levels =</span> pref_levels)) <span class="sc">|&gt;</span> </span>
+<span id="cb20-3"><a aria-label="3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 都道府県, <span class="at">y =</span> 推定人口)) <span class="sc">+</span></span>
+<span id="cb20-4"><a aria-label="4"></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-11-2">
@@ -1809,10 +1812,10 @@
 <div class="tab-content">
 <div id="tabset-12-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>df_pop_all <span class="sc">|&gt;</span> </span>
-<span id="cb21-2"><a></a>  <span class="fu">mutate</span>(都道府県 <span class="ot">=</span> <span class="fu">reorder</span>(都道府県, 推定人口)) <span class="sc">|&gt;</span> <span class="co"># 都道府県に順序を付ける（同じ列名を指定しているので、上書き）</span></span>
-<span id="cb21-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 都道府県, <span class="at">y =</span> 推定人口)) <span class="sc">+</span></span>
-<span id="cb21-4"><a></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-label="1"></a>df_pop_all <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(都道府県 <span class="ot">=</span> <span class="fu">reorder</span>(都道府県, 推定人口)) <span class="sc">|&gt;</span> <span class="co"># 都道府県に順序を付ける（同じ列名を指定しているので、上書き）</span></span>
+<span id="cb21-3"><a aria-label="3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 都道府県, <span class="at">y =</span> 推定人口)) <span class="sc">+</span></span>
+<span id="cb21-4"><a aria-label="4"></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-12-2">
@@ -1853,20 +1856,20 @@
 <div class="tab-content">
 <div id="tabset-13-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>raw_data <span class="sc">|&gt;</span> </span>
-<span id="cb22-2"><a></a>  <span class="fu">slice</span>(<span class="sc">-</span><span class="dv">1</span>) <span class="sc">|&gt;</span> <span class="co">#1行目(ラベル)を削除</span></span>
-<span id="cb22-3"><a></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>, Prefecture, MA00) <span class="sc">|&gt;</span> </span>
-<span id="cb22-4"><a></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"0_総数"</span>) <span class="sc">|&gt;</span> <span class="co"># 性別のみにする</span></span>
-<span id="cb22-5"><a></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">"性別"</span>), <span class="at">sep =</span> <span class="st">"_"</span>) <span class="sc">|&gt;</span> <span class="co"># 性別という列を作り、アンダースコアで値を分けて入れる</span></span>
-<span id="cb22-6"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>)) <span class="sc">|&gt;</span> <span class="co"># すでに値は男もしくは女だけのはずだが、念の為</span></span>
-<span id="cb22-7"><a></a>  <span class="fu">mutate</span>(<span class="at">MA00 =</span> <span class="fu">as.numeric</span>(MA00)) <span class="sc">|&gt;</span> </span>
-<span id="cb22-8"><a></a>  <span class="fu">mutate</span>(推定人口 <span class="ot">=</span> MA00 <span class="sc">*</span> <span class="dv">1000</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb22-9"><a></a>  <span class="fu">mutate</span>(<span class="at">Prefecture =</span> <span class="fu">factor</span>(Prefecture, <span class="at">levels =</span> pref_levels)) <span class="sc">|&gt;</span> </span>
-<span id="cb22-10"><a></a>  <span class="fu">mutate</span>(性別 <span class="ot">=</span> <span class="fu">factor</span>(性別, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>))) <span class="sc">|&gt;</span> </span>
-<span id="cb22-11"><a></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb22-12"><a></a>  <span class="fu">rename</span>(都道府県 <span class="ot">=</span> Prefecture) <span class="sc">|&gt;</span> </span>
-<span id="cb22-13"><a></a>  <span class="fu">select</span>(<span class="sc">!</span>MA00) <span class="sc">|&gt;</span>  <span class="co"># コードに即した値でなく、すでに推定人口は算出したので不要（ミスのもとになり得る）</span></span>
-<span id="cb22-14"><a></a>  <span class="fu">drop_na</span>(都道府県) <span class="co"># 総数なので不要</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-label="1"></a>raw_data <span class="sc">|&gt;</span> </span>
+<span id="cb22-2"><a aria-label="2"></a>  <span class="fu">slice</span>(<span class="sc">-</span><span class="dv">1</span>) <span class="sc">|&gt;</span> <span class="co">#1行目(ラベル)を削除</span></span>
+<span id="cb22-3"><a aria-label="3"></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>, Prefecture, MA00) <span class="sc">|&gt;</span> </span>
+<span id="cb22-4"><a aria-label="4"></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"0_総数"</span>) <span class="sc">|&gt;</span> <span class="co"># 性別のみにする</span></span>
+<span id="cb22-5"><a aria-label="5"></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">"性別"</span>), <span class="at">sep =</span> <span class="st">"_"</span>) <span class="sc">|&gt;</span> <span class="co"># 性別という列を作り、アンダースコアで値を分けて入れる</span></span>
+<span id="cb22-6"><a aria-label="6"></a>  <span class="fu">filter</span>(性別 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>)) <span class="sc">|&gt;</span> <span class="co"># すでに値は男もしくは女だけのはずだが、念の為</span></span>
+<span id="cb22-7"><a aria-label="7"></a>  <span class="fu">mutate</span>(<span class="at">MA00 =</span> <span class="fu">as.numeric</span>(MA00)) <span class="sc">|&gt;</span> </span>
+<span id="cb22-8"><a aria-label="8"></a>  <span class="fu">mutate</span>(推定人口 <span class="ot">=</span> MA00 <span class="sc">*</span> <span class="dv">1000</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb22-9"><a aria-label="9"></a>  <span class="fu">mutate</span>(<span class="at">Prefecture =</span> <span class="fu">factor</span>(Prefecture, <span class="at">levels =</span> pref_levels)) <span class="sc">|&gt;</span> </span>
+<span id="cb22-10"><a aria-label="10"></a>  <span class="fu">mutate</span>(性別 <span class="ot">=</span> <span class="fu">factor</span>(性別, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb22-11"><a aria-label="11"></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb22-12"><a aria-label="12"></a>  <span class="fu">rename</span>(都道府県 <span class="ot">=</span> Prefecture) <span class="sc">|&gt;</span> </span>
+<span id="cb22-13"><a aria-label="13"></a>  <span class="fu">select</span>(<span class="sc">!</span>MA00) <span class="sc">|&gt;</span>  <span class="co"># コードに即した値でなく、すでに推定人口は算出したので不要（ミスのもとになり得る）</span></span>
+<span id="cb22-14"><a aria-label="14"></a>  <span class="fu">drop_na</span>(都道府県) <span class="co"># 総数なので不要</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-13-2">
@@ -1958,13 +1961,13 @@
 <div class="tab-content">
 <div id="tabset-14-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>raw_data <span class="sc">|&gt;</span> </span>
-<span id="cb24-2"><a></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>, Prefecture, <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>)) <span class="sc">|&gt;</span> <span class="co"># 「MA01」「MB12」などのように、アルファベット2文字＋数字2桁 になっている列をまとめて選ぶ</span></span>
-<span id="cb24-3"><a></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(MA00, MB00, MC00, MD00, ME00, MF00)) <span class="sc">|&gt;</span> <span class="co"># 複数の列を一括で削除するためにc()で囲む</span></span>
-<span id="cb24-4"><a></a>  <span class="fu">pivot_longer</span>( <span class="co"># 横に並んでいるデータ（列）を、縦に並べ替える</span></span>
-<span id="cb24-5"><a></a>    <span class="at">cols =</span> <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>), <span class="co"># 対象となる列（コード列）</span></span>
-<span id="cb24-6"><a></a>    <span class="at">names_to =</span> <span class="st">"code"</span>, <span class="co"># 列名（MA01など）を「code」という列に入れる</span></span>
-<span id="cb24-7"><a></a>    <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="co"># 中の値を「value」という列に入れる</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-label="1"></a>raw_data <span class="sc">|&gt;</span> </span>
+<span id="cb24-2"><a aria-label="2"></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>, Prefecture, <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>)) <span class="sc">|&gt;</span> <span class="co"># 「MA01」「MB12」などのように、アルファベット2文字＋数字2桁 になっている列をまとめて選ぶ</span></span>
+<span id="cb24-3"><a aria-label="3"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(MA00, MB00, MC00, MD00, ME00, MF00)) <span class="sc">|&gt;</span> <span class="co"># 複数の列を一括で削除するためにc()で囲む</span></span>
+<span id="cb24-4"><a aria-label="4"></a>  <span class="fu">pivot_longer</span>( <span class="co"># 横に並んでいるデータ（列）を、縦に並べ替える</span></span>
+<span id="cb24-5"><a aria-label="5"></a>    <span class="at">cols =</span> <span class="fu">matches</span>(<span class="st">"^[A-Z]{2}[0-9]{2}$"</span>), <span class="co"># 対象となる列（コード列）</span></span>
+<span id="cb24-6"><a aria-label="6"></a>    <span class="at">names_to =</span> <span class="st">"code"</span>, <span class="co"># 列名（MA01など）を「code」という列に入れる</span></span>
+<span id="cb24-7"><a aria-label="7"></a>    <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="co"># 中の値を「value」という列に入れる</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-14-2">
@@ -91651,11 +91654,11 @@
 <div class="tab-content">
 <div id="tabset-15-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>df_math_eng <span class="sc">|&gt;</span> </span>
-<span id="cb25-2"><a></a>  <span class="fu">mutate</span>(合計 <span class="ot">=</span> 数学 <span class="sc">+</span> 英語) <span class="sc">|&gt;</span> </span>
-<span id="cb25-3"><a></a>  <span class="fu">mutate</span>(平均 <span class="ot">=</span> (数学 <span class="sc">+</span> 英語) <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb25-4"><a></a>  <span class="fu">mutate</span>(平均との差 <span class="ot">=</span> 数学 <span class="sc">-</span> <span class="fu">mean</span>(数学)) <span class="sc">|&gt;</span> </span>
-<span id="cb25-5"><a></a>  <span class="fu">mutate</span>(偏差値 <span class="ot">=</span> <span class="dv">50</span> <span class="sc">+</span> <span class="dv">10</span> <span class="sc">*</span> (数学 <span class="sc">-</span> <span class="fu">mean</span>(数学)) <span class="sc">/</span> <span class="fu">sd</span>(数学))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-label="1"></a>df_math_eng <span class="sc">|&gt;</span> </span>
+<span id="cb25-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(合計 <span class="ot">=</span> 数学 <span class="sc">+</span> 英語) <span class="sc">|&gt;</span> </span>
+<span id="cb25-3"><a aria-label="3"></a>  <span class="fu">mutate</span>(平均 <span class="ot">=</span> (数学 <span class="sc">+</span> 英語) <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb25-4"><a aria-label="4"></a>  <span class="fu">mutate</span>(平均との差 <span class="ot">=</span> 数学 <span class="sc">-</span> <span class="fu">mean</span>(数学)) <span class="sc">|&gt;</span> </span>
+<span id="cb25-5"><a aria-label="5"></a>  <span class="fu">mutate</span>(偏差値 <span class="ot">=</span> <span class="dv">50</span> <span class="sc">+</span> <span class="dv">10</span> <span class="sc">*</span> (数学 <span class="sc">-</span> <span class="fu">mean</span>(数学)) <span class="sc">/</span> <span class="fu">sd</span>(数学))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-15-2">
@@ -91785,16 +91788,16 @@
 <div class="tab-content">
 <div id="tabset-16-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>df_math_eng <span class="sc">|&gt;</span> </span>
-<span id="cb26-2"><a></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(数学, 英語), <span class="co"># 縦持ちに変えたい列名を選択（複数あるのでcで囲む）</span></span>
-<span id="cb26-3"><a></a>               <span class="at">names_to =</span> <span class="st">"科目"</span>, <span class="co"># 新しく作る列名（カテゴリであるはず）</span></span>
-<span id="cb26-4"><a></a>               <span class="at">values_to =</span> <span class="st">"点数"</span>) <span class="sc">|&gt;</span> <span class="co"># 元々の値の意味</span></span>
-<span id="cb26-5"><a></a>  <span class="fu">group_by</span>(科目) <span class="sc">|&gt;</span> </span>
-<span id="cb26-6"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb26-7"><a></a>    平均 <span class="ot">=</span> <span class="fu">mean</span>(点数),</span>
-<span id="cb26-8"><a></a>    平均差 <span class="ot">=</span> 点数 <span class="sc">-</span> 平均,</span>
-<span id="cb26-9"><a></a>    偏差値 <span class="ot">=</span> <span class="dv">50</span> <span class="sc">+</span> <span class="dv">10</span> <span class="sc">*</span> 平均差 <span class="sc">/</span> <span class="fu">sd</span>(点数)</span>
-<span id="cb26-10"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-label="1"></a>df_math_eng <span class="sc">|&gt;</span> </span>
+<span id="cb26-2"><a aria-label="2"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(数学, 英語), <span class="co"># 縦持ちに変えたい列名を選択（複数あるのでcで囲む）</span></span>
+<span id="cb26-3"><a aria-label="3"></a>               <span class="at">names_to =</span> <span class="st">"科目"</span>, <span class="co"># 新しく作る列名（カテゴリであるはず）</span></span>
+<span id="cb26-4"><a aria-label="4"></a>               <span class="at">values_to =</span> <span class="st">"点数"</span>) <span class="sc">|&gt;</span> <span class="co"># 元々の値の意味</span></span>
+<span id="cb26-5"><a aria-label="5"></a>  <span class="fu">group_by</span>(科目) <span class="sc">|&gt;</span> </span>
+<span id="cb26-6"><a aria-label="6"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb26-7"><a aria-label="7"></a>    平均 <span class="ot">=</span> <span class="fu">mean</span>(点数),</span>
+<span id="cb26-8"><a aria-label="8"></a>    平均差 <span class="ot">=</span> 点数 <span class="sc">-</span> 平均,</span>
+<span id="cb26-9"><a aria-label="9"></a>    偏差値 <span class="ot">=</span> <span class="dv">50</span> <span class="sc">+</span> <span class="dv">10</span> <span class="sc">*</span> 平均差 <span class="sc">/</span> <span class="fu">sd</span>(点数)</span>
+<span id="cb26-10"><a aria-label="10"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-16-2">
@@ -91821,18 +91824,18 @@
 </div>
 <div id="tabset-16-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>df_math_eng <span class="sc">|&gt;</span> </span>
-<span id="cb28-2"><a></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(数学, 英語),</span>
-<span id="cb28-3"><a></a>               <span class="at">names_to =</span> <span class="st">"科目"</span>,</span>
-<span id="cb28-4"><a></a>               <span class="at">values_to =</span> <span class="st">"点数"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb28-5"><a></a>  <span class="fu">group_by</span>(科目) <span class="sc">|&gt;</span> </span>
-<span id="cb28-6"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb28-7"><a></a>    平均 <span class="ot">=</span> <span class="fu">mean</span>(点数),</span>
-<span id="cb28-8"><a></a>    平均差 <span class="ot">=</span> 点数 <span class="sc">-</span> 平均,</span>
-<span id="cb28-9"><a></a>    偏差値 <span class="ot">=</span> <span class="dv">50</span> <span class="sc">+</span> <span class="dv">10</span> <span class="sc">*</span> 平均差 <span class="sc">/</span> <span class="fu">sd</span>(点数)</span>
-<span id="cb28-10"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb28-11"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 名前, <span class="at">y =</span> 偏差値, <span class="at">fill =</span> 科目)) <span class="sc">+</span></span>
-<span id="cb28-12"><a></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-label="1"></a>df_math_eng <span class="sc">|&gt;</span> </span>
+<span id="cb28-2"><a aria-label="2"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(数学, 英語),</span>
+<span id="cb28-3"><a aria-label="3"></a>               <span class="at">names_to =</span> <span class="st">"科目"</span>,</span>
+<span id="cb28-4"><a aria-label="4"></a>               <span class="at">values_to =</span> <span class="st">"点数"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb28-5"><a aria-label="5"></a>  <span class="fu">group_by</span>(科目) <span class="sc">|&gt;</span> </span>
+<span id="cb28-6"><a aria-label="6"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb28-7"><a aria-label="7"></a>    平均 <span class="ot">=</span> <span class="fu">mean</span>(点数),</span>
+<span id="cb28-8"><a aria-label="8"></a>    平均差 <span class="ot">=</span> 点数 <span class="sc">-</span> 平均,</span>
+<span id="cb28-9"><a aria-label="9"></a>    偏差値 <span class="ot">=</span> <span class="dv">50</span> <span class="sc">+</span> <span class="dv">10</span> <span class="sc">*</span> 平均差 <span class="sc">/</span> <span class="fu">sd</span>(点数)</span>
+<span id="cb28-10"><a aria-label="10"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb28-11"><a aria-label="11"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 名前, <span class="at">y =</span> 偏差値, <span class="at">fill =</span> 科目)) <span class="sc">+</span></span>
+<span id="cb28-12"><a aria-label="12"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-16-4">
@@ -91882,10 +91885,10 @@
 <div class="tab-content">
 <div id="tabset-17-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>middle_category <span class="ot">&lt;-</span></span>
-<span id="cb29-2"><a></a>  df_long <span class="sc">|&gt;</span></span>
-<span id="cb29-3"><a></a>  <span class="fu">filter</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb29-4"><a></a>  <span class="fu">select</span>(code, <span class="at">category_middle =</span> value)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a aria-label="1"></a>middle_category <span class="ot">&lt;-</span></span>
+<span id="cb29-2"><a aria-label="2"></a>  df_long <span class="sc">|&gt;</span></span>
+<span id="cb29-3"><a aria-label="3"></a>  <span class="fu">filter</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb29-4"><a aria-label="4"></a>  <span class="fu">select</span>(code, <span class="at">category_middle =</span> value)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-17-2">
@@ -92361,35 +92364,35 @@
 <div class="tab-content">
 <div id="tabset-18-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>df_long <span class="sc">|&gt;</span></span>
-<span id="cb30-2"><a></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb30-3"><a></a>  <span class="fu">left_join</span>(middle_category, <span class="at">by =</span> <span class="st">"code"</span>) <span class="sc">|&gt;</span> <span class="co"># 先に作ったカテゴリのデータフレームを結合</span></span>
-<span id="cb30-4"><a></a>  <span class="fu">relocate</span>(category_middle, <span class="at">.after =</span> code) <span class="sc">|&gt;</span></span>
-<span id="cb30-5"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb30-6"><a></a>    <span class="at">category_major =</span> <span class="fu">case_when</span>(</span>
-<span id="cb30-7"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MB"</span> <span class="sc">~</span> <span class="st">"学習・自己啓発・訓練"</span>,</span>
-<span id="cb30-8"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MC"</span> <span class="sc">~</span> <span class="st">"スポーツ"</span>,</span>
-<span id="cb30-9"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MD"</span> <span class="sc">~</span> <span class="st">"趣味・娯楽"</span>,</span>
-<span id="cb30-10"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"ME"</span> <span class="sc">~</span> <span class="st">"ボランティア"</span>,</span>
-<span id="cb30-11"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MF"</span> <span class="sc">~</span> <span class="st">"旅行・行楽"</span>,</span>
-<span id="cb30-12"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MG"</span> <span class="sc">~</span> <span class="st">"行動種別"</span>,</span>
-<span id="cb30-13"><a></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MH"</span> <span class="sc">~</span> <span class="st">"平均時刻"</span>,</span>
-<span id="cb30-14"><a></a>      <span class="at">.default =</span>  <span class="cn">NA_character_</span></span>
-<span id="cb30-15"><a></a>    )</span>
-<span id="cb30-16"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb30-17"><a></a>  <span class="fu">relocate</span>(category_major, <span class="at">.after =</span> code) <span class="sc">|&gt;</span> </span>
-<span id="cb30-18"><a></a>  <span class="fu">rename</span>(都道府県 <span class="ot">=</span> Prefecture) <span class="sc">|&gt;</span> </span>
-<span id="cb30-19"><a></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"0_総数"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb30-20"><a></a>  <span class="fu">separate_wider_delim</span>(</span>
-<span id="cb30-21"><a></a>    <span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>,</span>
-<span id="cb30-22"><a></a>    <span class="at">delim =</span> <span class="st">"_"</span>,</span>
-<span id="cb30-23"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">"性別"</span>)</span>
-<span id="cb30-24"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb30-25"><a></a>  <span class="fu">filter</span>(性別 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb30-26"><a></a>  <span class="fu">mutate</span>(都道府県 <span class="ot">=</span> <span class="fu">factor</span>(都道府県, <span class="at">levels =</span> pref_levels)) <span class="sc">|&gt;</span> </span>
-<span id="cb30-27"><a></a>  <span class="fu">mutate</span>(性別 <span class="ot">=</span> <span class="fu">factor</span>(性別, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>))) <span class="sc">|&gt;</span> </span>
-<span id="cb30-28"><a></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb30-29"><a></a>  <span class="fu">drop_na</span>(都道府県) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-label="1"></a>df_long <span class="sc">|&gt;</span></span>
+<span id="cb30-2"><a aria-label="2"></a>  <span class="fu">filter_out</span>(Prefecture <span class="sc">==</span> <span class="st">"都道府県"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb30-3"><a aria-label="3"></a>  <span class="fu">left_join</span>(middle_category, <span class="at">by =</span> <span class="st">"code"</span>) <span class="sc">|&gt;</span> <span class="co"># 先に作ったカテゴリのデータフレームを結合</span></span>
+<span id="cb30-4"><a aria-label="4"></a>  <span class="fu">relocate</span>(category_middle, <span class="at">.after =</span> code) <span class="sc">|&gt;</span></span>
+<span id="cb30-5"><a aria-label="5"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb30-6"><a aria-label="6"></a>    <span class="at">category_major =</span> <span class="fu">case_when</span>(</span>
+<span id="cb30-7"><a aria-label="7"></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MB"</span> <span class="sc">~</span> <span class="st">"学習・自己啓発・訓練"</span>,</span>
+<span id="cb30-8"><a aria-label="8"></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MC"</span> <span class="sc">~</span> <span class="st">"スポーツ"</span>,</span>
+<span id="cb30-9"><a aria-label="9"></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MD"</span> <span class="sc">~</span> <span class="st">"趣味・娯楽"</span>,</span>
+<span id="cb30-10"><a aria-label="10"></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"ME"</span> <span class="sc">~</span> <span class="st">"ボランティア"</span>,</span>
+<span id="cb30-11"><a aria-label="11"></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MF"</span> <span class="sc">~</span> <span class="st">"旅行・行楽"</span>,</span>
+<span id="cb30-12"><a aria-label="12"></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MG"</span> <span class="sc">~</span> <span class="st">"行動種別"</span>,</span>
+<span id="cb30-13"><a aria-label="13"></a>      <span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">==</span> <span class="st">"MH"</span> <span class="sc">~</span> <span class="st">"平均時刻"</span>,</span>
+<span id="cb30-14"><a aria-label="14"></a>      <span class="at">.default =</span>  <span class="cn">NA_character_</span></span>
+<span id="cb30-15"><a aria-label="15"></a>    )</span>
+<span id="cb30-16"><a aria-label="16"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb30-17"><a aria-label="17"></a>  <span class="fu">relocate</span>(category_major, <span class="at">.after =</span> code) <span class="sc">|&gt;</span> </span>
+<span id="cb30-18"><a aria-label="18"></a>  <span class="fu">rename</span>(都道府県 <span class="ot">=</span> Prefecture) <span class="sc">|&gt;</span> </span>
+<span id="cb30-19"><a aria-label="19"></a>  <span class="fu">filter_out</span>(<span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"0_総数"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb30-20"><a aria-label="20"></a>  <span class="fu">separate_wider_delim</span>(</span>
+<span id="cb30-21"><a aria-label="21"></a>    <span class="st">`</span><span class="at">SSDSE-D-2023</span><span class="st">`</span>,</span>
+<span id="cb30-22"><a aria-label="22"></a>    <span class="at">delim =</span> <span class="st">"_"</span>,</span>
+<span id="cb30-23"><a aria-label="23"></a>    <span class="at">names =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">"性別"</span>)</span>
+<span id="cb30-24"><a aria-label="24"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb30-25"><a aria-label="25"></a>  <span class="fu">filter</span>(性別 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb30-26"><a aria-label="26"></a>  <span class="fu">mutate</span>(都道府県 <span class="ot">=</span> <span class="fu">factor</span>(都道府県, <span class="at">levels =</span> pref_levels)) <span class="sc">|&gt;</span> </span>
+<span id="cb30-27"><a aria-label="27"></a>  <span class="fu">mutate</span>(性別 <span class="ot">=</span> <span class="fu">factor</span>(性別, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"男"</span>, <span class="st">"女"</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb30-28"><a aria-label="28"></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb30-29"><a aria-label="29"></a>  <span class="fu">drop_na</span>(都道府県) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-18-2">
@@ -169916,17 +169919,17 @@
 <div class="tab-content">
 <div id="tabset-19-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>df_long_cat <span class="sc">|&gt;</span> </span>
-<span id="cb31-2"><a></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb31-3"><a></a>  <span class="fu">filter</span>(category_major <span class="sc">==</span> <span class="st">"スポーツ"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb31-4"><a></a>  <span class="fu">filter</span>(category_middle <span class="sc">==</span> <span class="st">"野球(キャッチボールを含む)"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb31-5"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb31-6"><a></a>  <span class="co"># mutate(都道府県 = fct_rev(都道府県)) |&gt; # 都道府県順にしたい場合</span></span>
-<span id="cb31-7"><a></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value)) <span class="sc">|&gt;</span> </span>
-<span id="cb31-8"><a></a>  <span class="fu">mutate</span>(都道府県 <span class="ot">=</span> <span class="fu">reorder</span>(都道府県, value)) <span class="sc">|&gt;</span> <span class="co"># 値の多い順に並べる</span></span>
-<span id="cb31-9"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 都道府県, <span class="at">y =</span> value)) <span class="sc">+</span></span>
-<span id="cb31-10"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb31-11"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a aria-label="1"></a>df_long_cat <span class="sc">|&gt;</span> </span>
+<span id="cb31-2"><a aria-label="2"></a>  <span class="fu">filter_out</span>(都道府県 <span class="sc">==</span> <span class="st">"全国"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb31-3"><a aria-label="3"></a>  <span class="fu">filter</span>(category_major <span class="sc">==</span> <span class="st">"スポーツ"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb31-4"><a aria-label="4"></a>  <span class="fu">filter</span>(category_middle <span class="sc">==</span> <span class="st">"野球(キャッチボールを含む)"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb31-5"><a aria-label="5"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb31-6"><a aria-label="6"></a>  <span class="co"># mutate(都道府県 = fct_rev(都道府県)) |&gt; # 都道府県順にしたい場合</span></span>
+<span id="cb31-7"><a aria-label="7"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value)) <span class="sc">|&gt;</span> </span>
+<span id="cb31-8"><a aria-label="8"></a>  <span class="fu">mutate</span>(都道府県 <span class="ot">=</span> <span class="fu">reorder</span>(都道府県, value)) <span class="sc">|&gt;</span> <span class="co"># 値の多い順に並べる</span></span>
+<span id="cb31-9"><a aria-label="9"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> 都道府県, <span class="at">y =</span> value)) <span class="sc">+</span></span>
+<span id="cb31-10"><a aria-label="10"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb31-11"><a aria-label="11"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-19-2">
@@ -169953,15 +169956,15 @@
 <div class="tab-content">
 <div id="tabset-20-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>df_long_cat <span class="sc">|&gt;</span></span>
-<span id="cb32-2"><a></a>  <span class="fu">filter</span>(都道府県 <span class="sc">==</span> <span class="st">"石川県"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb32-3"><a></a>  <span class="fu">filter</span>(category_major <span class="sc">==</span> <span class="st">"スポーツ"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb32-4"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb32-5"><a></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value)) <span class="sc">|&gt;</span> </span>
-<span id="cb32-6"><a></a>  <span class="fu">mutate</span>(<span class="at">category_middle =</span> <span class="fu">reorder</span>(category_middle, value)) <span class="sc">|&gt;</span> </span>
-<span id="cb32-7"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> value, <span class="at">x =</span> category_middle, <span class="at">fill =</span> 性別)) <span class="sc">+</span></span>
-<span id="cb32-8"><a></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb32-9"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a aria-label="1"></a>df_long_cat <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a aria-label="2"></a>  <span class="fu">filter</span>(都道府県 <span class="sc">==</span> <span class="st">"石川県"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb32-3"><a aria-label="3"></a>  <span class="fu">filter</span>(category_major <span class="sc">==</span> <span class="st">"スポーツ"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb32-4"><a aria-label="4"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb32-5"><a aria-label="5"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">as.numeric</span>(value)) <span class="sc">|&gt;</span> </span>
+<span id="cb32-6"><a aria-label="6"></a>  <span class="fu">mutate</span>(<span class="at">category_middle =</span> <span class="fu">reorder</span>(category_middle, value)) <span class="sc">|&gt;</span> </span>
+<span id="cb32-7"><a aria-label="7"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> value, <span class="at">x =</span> category_middle, <span class="at">fill =</span> 性別)) <span class="sc">+</span></span>
+<span id="cb32-8"><a aria-label="8"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb32-9"><a aria-label="9"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-20-2">

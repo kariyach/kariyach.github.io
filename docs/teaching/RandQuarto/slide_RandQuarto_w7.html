@@ -7,10 +7,10 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/quarto-contrib/quarto-timer-1.0.0/timer.js"></script>
 <link href="../../site_libs/quarto-contrib/quarto-timer-1.0.0/timer.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="苅谷千尋">
   <meta name="dcterms.date" content="2026-05-27">
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -210,7 +213,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid" aria-label="ORCID profile for 苅谷千尋"> <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
 </div>
 <div class="quarto-title-author-email">
 <a href="mailto:kariyach@staff.kanazawa-u.ac.jp">kariyach@staff.kanazawa-u.ac.jp</a>
@@ -295,14 +298,14 @@
 <li>データフレームや計算結果を代入して、<code>write_csv()</code>に渡す</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>df <span class="ot">&lt;-</span> </span>
-<span id="cb1-2"><a></a>  penguins <span class="sc">|&gt;</span></span>
-<span id="cb1-3"><a></a>  <span class="fu">drop_na</span>(species, sex, body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb1-4"><a></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
-<span id="cb1-5"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass), <span class="at">.groups =</span> <span class="st">"drop"</span>) </span>
-<span id="cb1-6"><a></a></span>
-<span id="cb1-7"><a></a><span class="co"># csvで書き出す</span></span>
-<span id="cb1-8"><a></a><span class="fu">write_csv</span>(df, <span class="st">"data/penguins_avg_body_mass.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a>df <span class="ot">&lt;-</span> </span>
+<span id="cb1-2"><a aria-label="2"></a>  penguins <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a aria-label="3"></a>  <span class="fu">drop_na</span>(species, sex, body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb1-4"><a aria-label="4"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a aria-label="5"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass), <span class="at">.groups =</span> <span class="st">"drop"</span>) </span>
+<span id="cb1-6"><a aria-label="6"></a></span>
+<span id="cb1-7"><a aria-label="7"></a><span class="co"># csvで書き出す</span></span>
+<span id="cb1-8"><a aria-label="8"></a><span class="fu">write_csv</span>(df, <span class="st">"data/penguins_avg_body_mass.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="テーブル出力関数" class="slide level2">
@@ -343,11 +346,11 @@
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb2-2"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb2-3"><a></a>  <span class="fu">tabyl</span>(species) <span class="sc">|&gt;</span> <span class="co"># 件数表の作成</span></span>
-<span id="cb2-4"><a></a>  <span class="fu">adorn_pct_formatting</span>() <span class="sc">|&gt;</span> <span class="co"># 割合を%表記にする</span></span>
-<span id="cb2-5"><a></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb2-3"><a aria-label="3"></a>  <span class="fu">tabyl</span>(species) <span class="sc">|&gt;</span> <span class="co"># 件数表の作成</span></span>
+<span id="cb2-4"><a aria-label="4"></a>  <span class="fu">adorn_pct_formatting</span>() <span class="sc">|&gt;</span> <span class="co"># 割合を%表記にする</span></span>
+<span id="cb2-5"><a aria-label="5"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -394,13 +397,13 @@
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb3-3"><a></a>  <span class="fu">tabyl</span>(species, island) <span class="sc">|&gt;</span> <span class="co"># 2変数を指定</span></span>
-<span id="cb3-4"><a></a>  <span class="fu">adorn_percentages</span>(<span class="st">"row"</span>) <span class="sc">|&gt;</span> <span class="co"># 各行を100%にする割合表："raw"＝行方向に集計</span></span>
-<span id="cb3-5"><a></a>  <span class="fu">adorn_pct_formatting</span>(<span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb3-6"><a></a>  <span class="fu">adorn_ns</span>() <span class="sc">|&gt;</span> <span class="co"># 元の件数nを括弧付きで追加</span></span>
-<span id="cb3-7"><a></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a aria-label="3"></a>  <span class="fu">tabyl</span>(species, island) <span class="sc">|&gt;</span> <span class="co"># 2変数を指定</span></span>
+<span id="cb3-4"><a aria-label="4"></a>  <span class="fu">adorn_percentages</span>(<span class="st">"row"</span>) <span class="sc">|&gt;</span> <span class="co"># 各行を100%にする割合表："raw"＝行方向に集計</span></span>
+<span id="cb3-5"><a aria-label="5"></a>  <span class="fu">adorn_pct_formatting</span>(<span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-6"><a aria-label="6"></a>  <span class="fu">adorn_ns</span>() <span class="sc">|&gt;</span> <span class="co"># 元の件数nを括弧付きで追加</span></span>
+<span id="cb3-7"><a aria-label="7"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-2">
@@ -532,10 +535,10 @@
 <div class="tab-content">
 <div id="tabset-3-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a></a>  <span class="fu">tabyl</span>(species, island) <span class="sc">|&gt;</span> <span class="co"># 種類×島の件数表</span></span>
-<span id="cb5-4"><a></a>  <span class="fu">chisq.test</span>() <span class="co"># 種類と島に関連があるかを検定</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a aria-label="3"></a>  <span class="fu">tabyl</span>(species, island) <span class="sc">|&gt;</span> <span class="co"># 種類×島の件数表</span></span>
+<span id="cb5-4"><a aria-label="4"></a>  <span class="fu">chisq.test</span>() <span class="co"># 種類と島に関連があるかを検定</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-3-2">
@@ -560,10 +563,10 @@ X-squared = 284.59, df = 4, p-value &lt; 2.2e-16</code></pre>
 <div class="tab-content">
 <div id="tabset-4-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a></a>  <span class="fu">drop_na</span>(species, island) <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a></a>  <span class="fu">with</span>(<span class="fu">table</span>(species, island)) <span class="sc">|&gt;</span></span>
-<span id="cb7-4"><a></a>  stats<span class="sc">::</span><span class="fu">chisq.test</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(species, island) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a aria-label="3"></a>  <span class="fu">with</span>(<span class="fu">table</span>(species, island)) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a aria-label="4"></a>  stats<span class="sc">::</span><span class="fu">chisq.test</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-4-2">
@@ -616,12 +619,12 @@ X-squared = 299.55, df = 4, p-value &lt; 2.2e-16</code></pre>
 <div class="tab-content">
 <div id="tabset-5-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a></a>  <span class="fu">select</span>(species, sex, body_mass) <span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb9-4"><a></a>  <span class="fu">tbl_summary</span>(<span class="at">by =</span> species) <span class="sc">|&gt;</span> </span>
-<span id="cb9-5"><a></a>  <span class="fu">add_p</span>() <span class="sc">|&gt;</span></span>
-<span id="cb9-6"><a></a>  <span class="fu">as_kable</span>() <span class="co"># pptxなどで出力する場合はas_flex_table()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a aria-label="2"></a>  <span class="fu">select</span>(species, sex, body_mass) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a aria-label="3"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a aria-label="4"></a>  <span class="fu">tbl_summary</span>(<span class="at">by =</span> species) <span class="sc">|&gt;</span> </span>
+<span id="cb9-5"><a aria-label="5"></a>  <span class="fu">add_p</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-6"><a aria-label="6"></a>  <span class="fu">as_kable</span>() <span class="co"># pptxなどで出力する場合はas_flex_table()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-5-2">
@@ -693,10 +696,10 @@ X-squared = 299.55, df = 4, p-value &lt; 2.2e-16</code></pre>
 <div class="tab-content">
 <div id="tabset-6-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a></a>  <span class="fu">select</span>(body_mass, bill_len) <span class="sc">|&gt;</span> <span class="co"># 必要な変数に絞る</span></span>
-<span id="cb10-3"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
-<span id="cb10-4"><a></a>  <span class="fu">lm</span>(body_mass <span class="sc">~</span> bill_len, <span class="at">data =</span> _) <span class="co"># 被説明変数、説明変数を指定。 data = _は「直前のデータを使う」の意</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a aria-label="2"></a>  <span class="fu">select</span>(body_mass, bill_len) <span class="sc">|&gt;</span> <span class="co"># 必要な変数に絞る</span></span>
+<span id="cb10-3"><a aria-label="3"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a aria-label="4"></a>  <span class="fu">lm</span>(body_mass <span class="sc">~</span> bill_len, <span class="at">data =</span> _) <span class="co"># 被説明変数、説明変数を指定。 data = _は「直前のデータを使う」の意</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-6-2">
@@ -743,10 +746,10 @@ Coefficients:
 <div class="tab-content">
 <div id="tabset-7-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a></a>  <span class="fu">select</span>(body_mass, bill_len, flipper_len) <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
-<span id="cb12-4"><a></a>  <span class="fu">lm</span>(body_mass <span class="sc">~</span> bill_len <span class="sc">+</span> flipper_len, <span class="at">data =</span> _)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a aria-label="2"></a>  <span class="fu">select</span>(body_mass, bill_len, flipper_len) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a aria-label="3"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a aria-label="4"></a>  <span class="fu">lm</span>(body_mass <span class="sc">~</span> bill_len <span class="sc">+</span> flipper_len, <span class="at">data =</span> _)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-7-2">

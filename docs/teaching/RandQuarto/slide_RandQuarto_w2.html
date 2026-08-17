@@ -7,10 +7,10 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/quarto-contrib/quarto-timer-1.0.0/timer.js"></script>
 <link href="../../site_libs/quarto-contrib/quarto-timer-1.0.0/timer.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="苅谷千尋">
   <meta name="dcterms.date" content="2026-04-15">
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -215,7 +218,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid" aria-label="ORCID profile for 苅谷千尋"> <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
 </div>
 <div class="quarto-title-author-email">
 <a href="mailto:kariyach@staff.kanazawa-u.ac.jp">kariyach@staff.kanazawa-u.ac.jp</a>
@@ -3143,7 +3146,7 @@
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>penguins <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -3184,7 +3187,7 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>penguins <span class="sc">|&gt;</span> <span class="fu">skim</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> <span class="fu">skim</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-2">
@@ -3315,7 +3318,7 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-3-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">summary</span>(penguins)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a><span class="fu">summary</span>(penguins)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-3-2">
@@ -3347,7 +3350,7 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-4-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">str</span>(penguins)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a><span class="fu">str</span>(penguins)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-4-2">
@@ -3385,9 +3388,9 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-5-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb8-3"><a></a>  <span class="fu">skim</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a aria-label="2"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a aria-label="3"></a>  <span class="fu">skim</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-5-2">
@@ -3475,9 +3478,9 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-6-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb9-2"><a></a>  <span class="fu">filter_out</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb9-3"><a></a>  <span class="fu">skim</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a aria-label="2"></a>  <span class="fu">filter_out</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a aria-label="3"></a>  <span class="fu">skim</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-6-2">
@@ -3576,10 +3579,10 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <ul>
 <li>Biscoe島にいるペンギンだけを取り出し、何羽いるか数えよう</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a></span>
-<span id="cb10-2"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb10-3"><a></a>  <span class="fu">filter</span>(          )</span>
-<span id="cb10-4"><a></a>  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a></span>
+<span id="cb10-2"><a aria-label="2"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a aria-label="3"></a>  <span class="fu">filter</span>(          )</span>
+<span id="cb10-4"><a aria-label="4"></a>  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <h3 id="ヒント">ヒント</h3>
 <ul>
 <li>島の名前が入っている列は island</li>
@@ -3626,16 +3629,16 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <li>両方の条件を満たすものだけ</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb11-2"><a></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span> <span class="sc">&amp;</span> sex <span class="sc">==</span> <span class="st">"male"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a aria-label="2"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span> <span class="sc">&amp;</span> sex <span class="sc">==</span> <span class="st">"male"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <h4 id="または">|（または）</h4>
 <ul>
 <li>どちらか一方でも満たせばOK</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb12-2"><a></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span> <span class="sc">|</span> species <span class="sc">==</span> <span class="st">"Gentoo"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a aria-label="2"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span> <span class="sc">|</span> species <span class="sc">==</span> <span class="st">"Gentoo"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="演習データの抽出-2" class="slide level2">
@@ -3681,8 +3684,8 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-7-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb13-2"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass)) <span class="co"># summarise()関数については後ほど説明</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a aria-label="2"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass)) <span class="co"># summarise()関数については後ほど説明</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-7-2">
@@ -3773,7 +3776,7 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-8-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>penguins <span class="sc">|&gt;</span> <span class="fu">skim</span>(body_mass)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> <span class="fu">skim</span>(body_mass)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-8-2">
@@ -3859,8 +3862,8 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-9-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb15-2"><a></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span> <span class="fu">skim</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span> <span class="fu">skim</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-9-2">
@@ -3960,8 +3963,8 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-10-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb16-2"><a></a>  <span class="fu">filter_out</span>(<span class="fu">is.na</span>(body_mass)) <span class="sc">|&gt;</span> <span class="fu">skim</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a aria-label="2"></a>  <span class="fu">filter_out</span>(<span class="fu">is.na</span>(body_mass)) <span class="sc">|&gt;</span> <span class="fu">skim</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-10-2">
@@ -4053,9 +4056,9 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-11-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb17-2"><a></a>  <span class="fu">filter_out</span>(<span class="fu">if_any</span>(<span class="fu">everything</span>(), is.na)) <span class="sc">|&gt;</span></span>
-<span id="cb17-3"><a></a>  <span class="fu">skim</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a aria-label="2"></a>  <span class="fu">filter_out</span>(<span class="fu">if_any</span>(<span class="fu">everything</span>(), is.na)) <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a aria-label="3"></a>  <span class="fu">skim</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-11-2">
@@ -4164,16 +4167,16 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-12-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>sales <span class="ot">&lt;-</span> <span class="fu">tibble</span>( <span class="co"># penguinsでは例示できないので、架空のデータを作る</span></span>
-<span id="cb18-2"><a></a>  店舗 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"A店"</span>, <span class="st">"A店"</span>, <span class="st">"B店"</span>, <span class="st">"B店"</span>),</span>
-<span id="cb18-3"><a></a>  商品 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"りんご"</span>, <span class="st">"みかん"</span>, <span class="st">"りんご"</span>, <span class="st">"みかん"</span>),</span>
-<span id="cb18-4"><a></a>  売上 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="cn">NA</span>, <span class="dv">150</span>, <span class="cn">NA</span>)</span>
-<span id="cb18-5"><a></a>)</span>
-<span id="cb18-6"><a></a></span>
-<span id="cb18-7"><a></a>sales <span class="sc">|&gt;</span> </span>
-<span id="cb18-8"><a></a>  <span class="fu">mutate</span>( <span class="co"># mutate()関数は新しい列を作るための関数ですやや高度なので後日解説します（ここでは、列名「売上」に対して新しく作る列名「売上」なので、新しい列を作るのではなく、上書きになります）</span></span>
-<span id="cb18-9"><a></a>    売上 <span class="ot">=</span> <span class="fu">replace_na</span>(売上, <span class="dv">0</span>)</span>
-<span id="cb18-10"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-label="1"></a>sales <span class="ot">&lt;-</span> <span class="fu">tibble</span>( <span class="co"># penguinsでは例示できないので、架空のデータを作る</span></span>
+<span id="cb18-2"><a aria-label="2"></a>  店舗 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"A店"</span>, <span class="st">"A店"</span>, <span class="st">"B店"</span>, <span class="st">"B店"</span>),</span>
+<span id="cb18-3"><a aria-label="3"></a>  商品 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"りんご"</span>, <span class="st">"みかん"</span>, <span class="st">"りんご"</span>, <span class="st">"みかん"</span>),</span>
+<span id="cb18-4"><a aria-label="4"></a>  売上 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="cn">NA</span>, <span class="dv">150</span>, <span class="cn">NA</span>)</span>
+<span id="cb18-5"><a aria-label="5"></a>)</span>
+<span id="cb18-6"><a aria-label="6"></a></span>
+<span id="cb18-7"><a aria-label="7"></a>sales <span class="sc">|&gt;</span> </span>
+<span id="cb18-8"><a aria-label="8"></a>  <span class="fu">mutate</span>( <span class="co"># mutate()関数は新しい列を作るための関数ですやや高度なので後日解説します（ここでは、列名「売上」に対して新しく作る列名「売上」なので、新しい列を作るのではなく、上書きになります）</span></span>
+<span id="cb18-9"><a aria-label="9"></a>    売上 <span class="ot">=</span> <span class="fu">replace_na</span>(売上, <span class="dv">0</span>)</span>
+<span id="cb18-10"><a aria-label="10"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-12-2">
@@ -4282,9 +4285,9 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-13-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb19-2"><a></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb19-3"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb19-3"><a aria-label="3"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-13-2">
@@ -4363,10 +4366,10 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-14-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb20-2"><a></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb20-3"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> <span class="co">#speciesごとに集計したい</span></span>
-<span id="cb20-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb20-3"><a aria-label="3"></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> <span class="co">#speciesごとに集計したい</span></span>
+<span id="cb20-4"><a aria-label="4"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-14-2">
@@ -4448,10 +4451,10 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-15-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb21-2"><a></a>  <span class="fu">drop_na</span>(body_mass, sex) <span class="sc">|&gt;</span> </span>
-<span id="cb21-3"><a></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
-<span id="cb21-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(body_mass, sex) <span class="sc">|&gt;</span> </span>
+<span id="cb21-3"><a aria-label="3"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
+<span id="cb21-4"><a aria-label="4"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-15-2">
@@ -4552,13 +4555,13 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-16-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb22-2"><a></a>  <span class="fu">drop_na</span>(body_mass, sex) <span class="sc">|&gt;</span> </span>
-<span id="cb22-3"><a></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
-<span id="cb22-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass)) <span class="sc">|&gt;</span></span>
-<span id="cb22-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass)) <span class="sc">+</span> <span class="co"># 座標軸などを指定</span></span>
-<span id="cb22-6"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="co"># 棒グラフを作る</span></span>
-<span id="cb22-7"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="co"># 雌雄ごとにグラフを分割</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb22-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(body_mass, sex) <span class="sc">|&gt;</span> </span>
+<span id="cb22-3"><a aria-label="3"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
+<span id="cb22-4"><a aria-label="4"></a>  <span class="fu">summarise</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass)) <span class="sc">|&gt;</span></span>
+<span id="cb22-5"><a aria-label="5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg_body_mass)) <span class="sc">+</span> <span class="co"># 座標軸などを指定</span></span>
+<span id="cb22-6"><a aria-label="6"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="co"># 棒グラフを作る</span></span>
+<span id="cb22-7"><a aria-label="7"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="co"># 雌雄ごとにグラフを分割</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-16-2">
@@ -4633,20 +4636,20 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-17-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="co"># 可視化したい変数をまとめて指定（この3つを順番に処理する）</span></span>
-<span id="cb23-2"><a></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"body_mass"</span>, <span class="st">"bill_len"</span>, <span class="st">"flipper_len"</span>) </span>
-<span id="cb23-3"><a></a></span>
-<span id="cb23-4"><a></a><span class="co"># map()：同じ処理を変数ごとに繰り返す（マップ＝マッピング＝写しとる）</span></span>
-<span id="cb23-5"><a></a><span class="fu">map</span>(vars, \(v) { <span class="co">#map()関数を使って同一処理を指示</span></span>
-<span id="cb23-6"><a></a>  penguins <span class="sc">|&gt;</span>  <span class="co"># タイトルを除くコードは先と同じ</span></span>
-<span id="cb23-7"><a></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb23-8"><a></a>    <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
-<span id="cb23-9"><a></a>    <span class="fu">summarise</span>(<span class="at">avg =</span> <span class="fu">mean</span>(.data[[v]])) <span class="sc">|&gt;</span> <span class="co"># 指定した変数 v の平均を計算。data[[v]]：文字列で指定した列名を使う書き方（ここが少し特殊）</span></span>
-<span id="cb23-10"><a></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg)) <span class="sc">+</span></span>
-<span id="cb23-11"><a></a>    <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb23-12"><a></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
-<span id="cb23-13"><a></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Average of"</span>, v)) <span class="co"># varsからタイトルを持ってくる</span></span>
-<span id="cb23-14"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-label="1"></a><span class="co"># 可視化したい変数をまとめて指定（この3つを順番に処理する）</span></span>
+<span id="cb23-2"><a aria-label="2"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"body_mass"</span>, <span class="st">"bill_len"</span>, <span class="st">"flipper_len"</span>) </span>
+<span id="cb23-3"><a aria-label="3"></a></span>
+<span id="cb23-4"><a aria-label="4"></a><span class="co"># map()：同じ処理を変数ごとに繰り返す（マップ＝マッピング＝写しとる）</span></span>
+<span id="cb23-5"><a aria-label="5"></a><span class="fu">map</span>(vars, \(v) { <span class="co">#map()関数を使って同一処理を指示</span></span>
+<span id="cb23-6"><a aria-label="6"></a>  penguins <span class="sc">|&gt;</span>  <span class="co"># タイトルを除くコードは先と同じ</span></span>
+<span id="cb23-7"><a aria-label="7"></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb23-8"><a aria-label="8"></a>    <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span></span>
+<span id="cb23-9"><a aria-label="9"></a>    <span class="fu">summarise</span>(<span class="at">avg =</span> <span class="fu">mean</span>(.data[[v]])) <span class="sc">|&gt;</span> <span class="co"># 指定した変数 v の平均を計算。data[[v]]：文字列で指定した列名を使う書き方（ここが少し特殊）</span></span>
+<span id="cb23-10"><a aria-label="10"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> avg)) <span class="sc">+</span></span>
+<span id="cb23-11"><a aria-label="11"></a>    <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb23-12"><a aria-label="12"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span> sex) <span class="sc">+</span></span>
+<span id="cb23-13"><a aria-label="13"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Average of"</span>, v)) <span class="co"># varsからタイトルを持ってくる</span></span>
+<span id="cb23-14"><a aria-label="14"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-17-2">
@@ -4696,18 +4699,18 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="tab-content">
 <div id="tabset-18-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>result <span class="ot">&lt;-</span> <span class="co"># 以下の結果をresultというオブジェクトに入れる</span></span>
-<span id="cb27-2"><a></a>  penguins <span class="sc">|&gt;</span></span>
-<span id="cb27-3"><a></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
-<span id="cb27-4"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span></span>
-<span id="cb27-5"><a></a>  <span class="fu">nest</span>() <span class="sc">|&gt;</span> <span class="co"># データフレームの中に、さらにデータフレームを入れる　＝ species（3種類）に分かれたデータフレームになる</span></span>
-<span id="cb27-6"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb27-7"><a></a>    <span class="at">plot =</span> <span class="fu">map</span>(data, <span class="sc">~</span></span>
-<span id="cb27-8"><a></a>                 <span class="fu">ggplot</span>(.x, <span class="fu">aes</span>(bill_len, flipper_len)) <span class="sc">+</span></span>
-<span id="cb27-9"><a></a>                 <span class="fu">geom_point</span>())</span>
-<span id="cb27-10"><a></a>  )</span>
-<span id="cb27-11"><a></a></span>
-<span id="cb27-12"><a></a>result<span class="sc">$</span>plot <span class="sc">|&gt;</span> <span class="fu">walk</span>(print) <span class="co"># 実行（ここではprint）を指示</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a aria-label="1"></a>result <span class="ot">&lt;-</span> <span class="co"># 以下の結果をresultというオブジェクトに入れる</span></span>
+<span id="cb27-2"><a aria-label="2"></a>  penguins <span class="sc">|&gt;</span></span>
+<span id="cb27-3"><a aria-label="3"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb27-4"><a aria-label="4"></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span></span>
+<span id="cb27-5"><a aria-label="5"></a>  <span class="fu">nest</span>() <span class="sc">|&gt;</span> <span class="co"># データフレームの中に、さらにデータフレームを入れる　＝ species（3種類）に分かれたデータフレームになる</span></span>
+<span id="cb27-6"><a aria-label="6"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb27-7"><a aria-label="7"></a>    <span class="at">plot =</span> <span class="fu">map</span>(data, <span class="sc">~</span></span>
+<span id="cb27-8"><a aria-label="8"></a>                 <span class="fu">ggplot</span>(.x, <span class="fu">aes</span>(bill_len, flipper_len)) <span class="sc">+</span></span>
+<span id="cb27-9"><a aria-label="9"></a>                 <span class="fu">geom_point</span>())</span>
+<span id="cb27-10"><a aria-label="10"></a>  )</span>
+<span id="cb27-11"><a aria-label="11"></a></span>
+<span id="cb27-12"><a aria-label="12"></a>result<span class="sc">$</span>plot <span class="sc">|&gt;</span> <span class="fu">walk</span>(print) <span class="co"># 実行（ここではprint）を指示</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-18-2">
@@ -4900,10 +4903,10 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 </ul></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>オブジェクト（データ） <span class="sc">|&gt;</span></span>
-<span id="cb28-2"><a></a>  処理<span class="fu">A</span>() <span class="sc">|&gt;</span></span>
-<span id="cb28-3"><a></a>  処理<span class="fu">B</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb28-4"><a></a>  <span class="fu">print</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-label="1"></a>オブジェクト（データ） <span class="sc">|&gt;</span></span>
+<span id="cb28-2"><a aria-label="2"></a>  処理<span class="fu">A</span>() <span class="sc">|&gt;</span></span>
+<span id="cb28-3"><a aria-label="3"></a>  処理<span class="fu">B</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb28-4"><a aria-label="4"></a>  <span class="fu">print</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>料理で喩えると
@@ -4916,23 +4919,23 @@ style C text-align:center, fill:#90EE90,stroke:#333,stroke-width:1px,font-weight
 <h2>パイプ処理</h2>
 <h3 id="パイプを使った書き方modern-r-tidyverse">パイプを使った書き方（modern R = tidyverse）</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb29-2"><a></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb29-3"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
-<span id="cb29-4"><a></a>  <span class="fu">summarize</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb29-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>(body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb29-3"><a aria-label="3"></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb29-4"><a aria-label="4"></a>  <span class="fu">summarize</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><em>何をどうしたいのかが明確</em>（書きやすく、読みやすい）</li>
 </ul>
 <h3 id="パイプを使わない書き方base-r">パイプを使わない書き方（base R）</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">summarize</span>(</span>
-<span id="cb30-2"><a></a>  <span class="fu">group_by</span>(</span>
-<span id="cb30-3"><a></a>    <span class="fu">drop_na</span>(penguins, body_mass),</span>
-<span id="cb30-4"><a></a>    species</span>
-<span id="cb30-5"><a></a>  ),</span>
-<span id="cb30-6"><a></a>  <span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass)</span>
-<span id="cb30-7"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-label="1"></a><span class="fu">summarize</span>(</span>
+<span id="cb30-2"><a aria-label="2"></a>  <span class="fu">group_by</span>(</span>
+<span id="cb30-3"><a aria-label="3"></a>    <span class="fu">drop_na</span>(penguins, body_mass),</span>
+<span id="cb30-4"><a aria-label="4"></a>    species</span>
+<span id="cb30-5"><a aria-label="5"></a>  ),</span>
+<span id="cb30-6"><a aria-label="6"></a>  <span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass)</span>
+<span id="cb30-7"><a aria-label="7"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>関数が<em>入れ子構造（ネスト）</em>になり、関数がわかりにくい</li>

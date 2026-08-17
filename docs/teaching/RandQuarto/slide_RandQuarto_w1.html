@@ -7,10 +7,10 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/quarto-contrib/quarto-timer-1.0.0/timer.js"></script>
 <link href="../../site_libs/quarto-contrib/quarto-timer-1.0.0/timer.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="苅谷千尋">
   <meta name="dcterms.date" content="2026-04-08">
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -212,7 +215,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+苅谷千尋 <a href="https://orcid.org/0009-0008-3085-947X" class="quarto-title-author-orcid" aria-label="ORCID profile for 苅谷千尋"> <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
 </div>
 <div class="quarto-title-author-email">
 <a href="mailto:kariyach@staff.kanazawa-u.ac.jp">kariyach@staff.kanazawa-u.ac.jp</a>
@@ -1043,10 +1046,10 @@
 <div class="columns">
 <div class="column" style="width:30%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>title<span class="sc">:</span> <span class="st">"任意"</span></span>
-<span id="cb1-2"><a></a>format<span class="sc">:</span></span>
-<span id="cb1-3"><a></a>  html<span class="sc">:</span></span>
-<span id="cb1-4"><a></a>   toc<span class="sc">:</span> true</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a>title<span class="sc">:</span> <span class="st">"任意"</span></span>
+<span id="cb1-2"><a aria-label="2"></a>format<span class="sc">:</span></span>
+<span id="cb1-3"><a aria-label="3"></a>  html<span class="sc">:</span></span>
+<span id="cb1-4"><a aria-label="4"></a>   toc<span class="sc">:</span> true</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:70%;">
 <div class="callout callout-warning callout-style-simple">
@@ -1107,7 +1110,7 @@
 <li>Consoleパネル（画面左下）にカーソルを合わせる</li>
 <li>以下のコードを入力（または「クリップボード」でコピー）して実行（Enter）</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-important callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
@@ -1164,9 +1167,9 @@
 <li>メニュー &gt; Code &gt; Insert Chunk &gt; 以下のコードを入力（貼り付けでよい）</li>
 </ul></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co">#| label: setup</span></span>
-<span id="cb3-2"><a></a><span class="co">#| echo: false</span></span>
-<span id="cb3-3"><a></a><span class="co">#| output: false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a><span class="co">#| label: setup</span></span>
+<span id="cb3-2"><a aria-label="2"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-3"><a aria-label="3"></a><span class="co">#| output: false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>label: setup: このチャンクをセットアップチャンクと名付ける</li>
 <li>echo: false: このチャンクのコードは表示しない</li>
@@ -1190,8 +1193,8 @@
 </ul>
 <h3 id="パッケージの読み込み-1">12. パッケージの読み込み</h3>
 <p>ソースペインで、Setup Chunk内に以下のコードを書く</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># パッケージの読み込み ---- #「○○ ----」と書いておくと、Outlineに表示されて見やすい（R Studioが区切り線として認識）</span></span>
-<span id="cb4-2"><a></a><span class="fu">library</span>(tidyverse) <span class="co"># modern Rの基本パッケージ</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a><span class="co"># パッケージの読み込み ---- #「○○ ----」と書いておくと、Outlineに表示されて見やすい（R Studioが区切り線として認識）</span></span>
+<span id="cb4-2"><a aria-label="2"></a><span class="fu">library</span>(tidyverse) <span class="co"># modern Rの基本パッケージ</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-tip callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
@@ -1281,8 +1284,8 @@
 <li>データを表にして見やすく開く関数。データ全体をチェックしたり、列名や値、また集計途中のデータをざっと確認するときに便利</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a></a>  <span class="fu">view</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a aria-label="2"></a>  <span class="fu">view</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <h3 id="パイプ処理">パイプ処理</h3>
 <ul>
@@ -1312,8 +1315,8 @@
 <li>データフレームやベクトルの先頭の数行（デフォルトは6行）だけを表示</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a aria-label="2"></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -1330,8 +1333,8 @@
 <li>括弧に数字を入れる（引数＝関数の動きを決める値）と、その行数だけ出力される</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a aria-label="2"></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -1354,8 +1357,8 @@
 <li>データセットを使って何が分析できそうか考える手がかりになる</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb10-2"><a></a>  <span class="fu">colnames</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a aria-label="2"></a>  <span class="fu">colnames</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -1376,8 +1379,8 @@
 <li>データの特徴や分類の仕方を考える手がかりになる</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a></a>  <span class="fu">distinct</span>(island)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a aria-label="2"></a>  <span class="fu">distinct</span>(island)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -1401,10 +1404,10 @@
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>penguins <span class="sc">|&gt;</span> <span class="co"># tidyverseに組み込まれているサンプルのデータセットを使う</span></span>
-<span id="cb14-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">if_any</span>(<span class="fu">everything</span>(), is.na)) <span class="sc">|&gt;</span> <span class="co"># 欠損値を除外</span></span>
-<span id="cb14-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> bill_dep, <span class="at">colour =</span> species)) <span class="sc">+</span> <span class="co"># x軸、y軸、分布の色分けを指定</span></span>
-<span id="cb14-4"><a></a>  <span class="fu">geom_point</span>() <span class="co"># 散布図</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-label="1"></a>penguins <span class="sc">|&gt;</span> <span class="co"># tidyverseに組み込まれているサンプルのデータセットを使う</span></span>
+<span id="cb14-2"><a aria-label="2"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">if_any</span>(<span class="fu">everything</span>(), is.na)) <span class="sc">|&gt;</span> <span class="co"># 欠損値を除外</span></span>
+<span id="cb14-3"><a aria-label="3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, <span class="at">y =</span> bill_dep, <span class="at">colour =</span> species)) <span class="sc">+</span> <span class="co"># x軸、y軸、分布の色分けを指定</span></span>
+<span id="cb14-4"><a aria-label="4"></a>  <span class="fu">geom_point</span>() <span class="co"># 散布図</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -1499,35 +1502,35 @@ penguins |&gt; # tidyverseに組み込まれているサンプルのデータセ
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI/.M.LI...AA...H?startPeriod=2023-02&amp;dimensionAtObservation=AllDimensions&amp;format=csvfilewithlabels"</span></span>
-<span id="cb16-2"><a></a></span>
-<span id="cb16-3"><a></a>df_oecd_cli <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url) <span class="co"># 指定したURLから直接データを読み込み</span></span>
-<span id="cb16-4"><a></a></span>
-<span id="cb16-5"><a></a>de_oecd_cli_selected <span class="ot">&lt;-</span> <span class="co"># 必要な列だけ取り出す</span></span>
-<span id="cb16-6"><a></a>  df_oecd_cli <span class="sc">|&gt;</span> </span>
-<span id="cb16-7"><a></a>  <span class="fu">select</span>(REF_AREA, TIME_PERIOD, OBS_VALUE) <span class="sc">|&gt;</span> <span class="co"># 必要な列を取り出す</span></span>
-<span id="cb16-8"><a></a>  <span class="fu">mutate</span>(<span class="at">TIME_PERIOD =</span> <span class="fu">ym</span>(TIME_PERIOD))  <span class="co"># 年月を日付型に変換</span></span>
-<span id="cb16-9"><a></a></span>
-<span id="cb16-10"><a></a>countries <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"JPN"</span>, <span class="st">"USA"</span>, <span class="st">"DEU"</span>, <span class="st">"FRA"</span>, <span class="st">"KOR"</span>) <span class="co">#主要国だけ選ぶ（主要国のオブジェクトを作る）</span></span>
-<span id="cb16-11"><a></a></span>
-<span id="cb16-12"><a></a>de_oecd_cli_selected <span class="sc">|&gt;</span></span>
-<span id="cb16-13"><a></a>  <span class="fu">filter</span>(REF_AREA <span class="sc">%in%</span> countries) <span class="sc">|&gt;</span> <span class="co"># REF_AREA が countries に含まれる行だけを抽出</span></span>
-<span id="cb16-14"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> TIME_PERIOD, <span class="at">y =</span> OBS_VALUE, <span class="at">color =</span> REF_AREA)) <span class="sc">+</span></span>
-<span id="cb16-15"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb16-16"><a></a>  <span class="fu">scale_x_date</span>(</span>
-<span id="cb16-17"><a></a>    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="st">"3 months"</span>),  <span class="co"># x軸の間隔調整</span></span>
-<span id="cb16-18"><a></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_date_short</span>()         <span class="co"># 年と月を行を変えて表記</span></span>
-<span id="cb16-19"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb16-20"><a></a>  <span class="fu">scale_y_continuous</span>(</span>
-<span id="cb16-21"><a></a>    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_extended</span>(<span class="dv">8</span>),        <span class="co"># 目盛りの個数を指定</span></span>
-<span id="cb16-22"><a></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">accuracy =</span> <span class="dv">1</span>) <span class="co"># 数値表示（小数なし）</span></span>
-<span id="cb16-23"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb16-24"><a></a>  <span class="fu">labs</span>(                                         <span class="co"># ラベル名と凡例名の変更</span></span>
-<span id="cb16-25"><a></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
-<span id="cb16-26"><a></a>    <span class="at">y =</span>  <span class="st">"Composite Leading Indicator (CLI)"</span>,,</span>
-<span id="cb16-27"><a></a>    <span class="at">color =</span> <span class="st">"Country"</span></span>
-<span id="cb16-28"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb16-29"><a></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"awtools::mpalette"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-label="1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_CLI/.M.LI...AA...H?startPeriod=2023-02&amp;dimensionAtObservation=AllDimensions&amp;format=csvfilewithlabels"</span></span>
+<span id="cb16-2"><a aria-label="2"></a></span>
+<span id="cb16-3"><a aria-label="3"></a>df_oecd_cli <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url) <span class="co"># 指定したURLから直接データを読み込み</span></span>
+<span id="cb16-4"><a aria-label="4"></a></span>
+<span id="cb16-5"><a aria-label="5"></a>de_oecd_cli_selected <span class="ot">&lt;-</span> <span class="co"># 必要な列だけ取り出す</span></span>
+<span id="cb16-6"><a aria-label="6"></a>  df_oecd_cli <span class="sc">|&gt;</span> </span>
+<span id="cb16-7"><a aria-label="7"></a>  <span class="fu">select</span>(REF_AREA, TIME_PERIOD, OBS_VALUE) <span class="sc">|&gt;</span> <span class="co"># 必要な列を取り出す</span></span>
+<span id="cb16-8"><a aria-label="8"></a>  <span class="fu">mutate</span>(<span class="at">TIME_PERIOD =</span> <span class="fu">ym</span>(TIME_PERIOD))  <span class="co"># 年月を日付型に変換</span></span>
+<span id="cb16-9"><a aria-label="9"></a></span>
+<span id="cb16-10"><a aria-label="10"></a>countries <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"JPN"</span>, <span class="st">"USA"</span>, <span class="st">"DEU"</span>, <span class="st">"FRA"</span>, <span class="st">"KOR"</span>) <span class="co">#主要国だけ選ぶ（主要国のオブジェクトを作る）</span></span>
+<span id="cb16-11"><a aria-label="11"></a></span>
+<span id="cb16-12"><a aria-label="12"></a>de_oecd_cli_selected <span class="sc">|&gt;</span></span>
+<span id="cb16-13"><a aria-label="13"></a>  <span class="fu">filter</span>(REF_AREA <span class="sc">%in%</span> countries) <span class="sc">|&gt;</span> <span class="co"># REF_AREA が countries に含まれる行だけを抽出</span></span>
+<span id="cb16-14"><a aria-label="14"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> TIME_PERIOD, <span class="at">y =</span> OBS_VALUE, <span class="at">color =</span> REF_AREA)) <span class="sc">+</span></span>
+<span id="cb16-15"><a aria-label="15"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb16-16"><a aria-label="16"></a>  <span class="fu">scale_x_date</span>(</span>
+<span id="cb16-17"><a aria-label="17"></a>    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_width</span>(<span class="st">"3 months"</span>),  <span class="co"># x軸の間隔調整</span></span>
+<span id="cb16-18"><a aria-label="18"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_date_short</span>()         <span class="co"># 年と月を行を変えて表記</span></span>
+<span id="cb16-19"><a aria-label="19"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-20"><a aria-label="20"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb16-21"><a aria-label="21"></a>    <span class="at">breaks =</span> scales<span class="sc">::</span><span class="fu">breaks_extended</span>(<span class="dv">8</span>),        <span class="co"># 目盛りの個数を指定</span></span>
+<span id="cb16-22"><a aria-label="22"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">accuracy =</span> <span class="dv">1</span>) <span class="co"># 数値表示（小数なし）</span></span>
+<span id="cb16-23"><a aria-label="23"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-24"><a aria-label="24"></a>  <span class="fu">labs</span>(                                         <span class="co"># ラベル名と凡例名の変更</span></span>
+<span id="cb16-25"><a aria-label="25"></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb16-26"><a aria-label="26"></a>    <span class="at">y =</span>  <span class="st">"Composite Leading Indicator (CLI)"</span>,,</span>
+<span id="cb16-27"><a aria-label="27"></a>    <span class="at">color =</span> <span class="st">"Country"</span></span>
+<span id="cb16-28"><a aria-label="28"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-29"><a aria-label="29"></a>  <span class="fu">scale_color_paletteer_d</span>(<span class="st">"awtools::mpalette"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-2">
