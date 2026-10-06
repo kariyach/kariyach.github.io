@@ -38,6 +38,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -185,11 +251,10 @@
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a href="#/問題の所在" id="/toc-問題の所在">Ⅰ. 問題の所在</a></li>
-<li><a href="#/論点" id="/toc-論点">Ⅱ. 論点</a></li>
-<li><a href="#/部屋の中の象探究とは何か" id="/toc-部屋の中の象探究とは何か">Ⅲ. 部屋の中の象：探究とは何か</a></li>
-<li><a href="#/盲人と象探究学習の多様性" id="/toc-盲人と象探究学習の多様性">Ⅳ. 盲人と象：探究学習の多様性</a></li>
-<li><a href="#/自問する象自己の変化を捉える振り返り" id="/toc-自問する象自己の変化を捉える振り返り">Ⅴ. 自問する象：自己の変化を捉える振り返り</a></li>
+<li><a href="#/はじめに論点提示" id="/toc-はじめに論点提示">Ⅰ. はじめに——論点提示</a></li>
+<li><a href="#/部屋の中の象探究とは何か" id="/toc-部屋の中の象探究とは何か">Ⅱ. 部屋の中の象：探究とは何か</a></li>
+<li><a href="#/盲人と象探究活動の複数性" id="/toc-盲人と象探究活動の複数性">Ⅲ. 盲人と象：探究活動の複数性</a></li>
+<li><a href="#/自問する象自己の変化を捉える" id="/toc-自問する象自己の変化を捉える">Ⅳ. 自問する象：自己の変化を捉える</a></li>
 <li><a href="#/参考文献" id="/toc-参考文献">参考文献</a></li>
 </ul>
 </nav>
@@ -197,8 +262,13 @@
 <section class="slide level2">
 
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a><span class="fu">use_roadmap</span>(</span>
+<span id="cb1-2"><a aria-label="2"></a>  <span class="fu">c</span>(<span class="st">"論点提示"</span>, <span class="st">"部屋の中の象"</span>, <span class="st">"盲人と象"</span>, <span class="st">"自問する象"</span>, <span class="st">"参考文献"</span>),</span>
+<span id="cb1-3"><a aria-label="3"></a>  <span class="at">style =</span> <span class="st">"progress"</span>,</span>
+<span id="cb1-4"><a aria-label="4"></a>  <span class="at">active_bg_color =</span> <span class="st">"#C62828"</span></span>
+<span id="cb1-5"><a aria-label="5"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="roadmap-config" data-sections="問題の所在|論点|探究とは何か|探究の多様性|振り返り|参考文献" data-style="progress" data-inherit-tags="true" style="display:none;--deckroadmap-font-size:16px;--deckroadmap-bottom:16px;--deckroadmap-active-bg-color:#C62828;--deckroadmap-done-bg-color:;--deckroadmap-todo-bg-color:;--deckroadmap-active-color:;--deckroadmap-done-color:;--deckroadmap-todo-color:;"></div>
+<div id="roadmap-config" data-sections="論点提示|部屋の中の象|盲人と象|自問する象|参考文献" data-style="progress" data-inherit-tags="true" style="display:none;--deckroadmap-font-size:16px;--deckroadmap-bottom:16px;--deckroadmap-active-bg-color:#C62828;--deckroadmap-done-bg-color:;--deckroadmap-todo-bg-color:;--deckroadmap-active-color:;--deckroadmap-done-color:;--deckroadmap-todo-color:;"></div>
 </div>
 </div>
 <div class="columns">
@@ -220,8 +290,8 @@
 </div></div>
 </section>
 <section>
-<section id="問題の所在" class="title-slide slide level1 center" data-transition="slide" data-transition-speed="slow" data-roadmap="問題の所在">
-<h1>Ⅰ. 問題の所在</h1>
+<section id="はじめに論点提示" class="title-slide slide level1 center" data-transition="slide" data-transition-speed="slow" data-roadmap="論点提示">
+<h1>Ⅰ. はじめに——論点提示</h1>
 
 </section>
 <section id="自己紹介" class="slide level2" data-transition="slide" data-transition-speed="slow">
@@ -259,16 +329,16 @@
 </ul></li>
 </ul>
 </section>
-<section id="問題の所在-1" class="slide level2">
+<section id="問題の所在" class="slide level2">
 <h2>問題の所在</h2>
 <ul>
 <li>高校と大学の埋めがたいギャップ
 <ul>
 <li><span class="citation" data-cites="MizokamiSi:2023presentation">溝上 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2023</a>）</span>; <span class="citation" data-cites="OkadaKh:2025a1">岡田 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2025</a>）</span>; <span class="citation" data-cites="ThompsonM_etal:2021a1">Thompson et al. （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2021</a>）</span></li>
 </ul></li>
-<li>探究学習の文脈において、高大接続は<em>案外</em>、論じられない
+<li>探究学習の文脈において、高大接続は<em>案外</em>、正面切っては論じられない
 <ul>
-<li>中教審ワーキング（生活、総合）; <span class="citation" data-cites="MizokamiSi:2026book">溝上 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2026</a>）</span>; Cf. <span class="citation" data-cites="SCJ_sinri:2023proposal">日本学術会議 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2023</a>）</span> <sup>1</sup></li>
+<li>中教審; <span class="citation" data-cites="MizokamiSi:2026book">溝上 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2026</a>）</span>; Cf. <span class="citation" data-cites="SCJ_sinri:2023proposal">日本学術会議 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2023</a>）</span> <sup>1</sup></li>
 </ul></li>
 <li>探究学習の「研究」化（<span class="citation" data-cites="TakahashiAkk:2020a1">高橋 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2020</a>）</span>）
 <ul>
@@ -277,8 +347,8 @@
 <li>探究で頑張った生徒は、大学でも頑張る、は検証を要する仮説（願望？）
 <ul>
 <li>探究学習の経験は大学でどう活きるのか（プレゼンテーション能力など、目に見えやすいアカデミック・スキルだけ？）</li>
-<li>現場の高校の先生の声や実践が大学教員に届いていない（のでは？）</li>
 </ul></li>
+<li>現場の高校の先生の声が大学教員に届いていない（のでは？）Cf. <span class="citation" data-cites="SakaiJp:2026book">酒井 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2026</a>）</span></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn2"><p>IDE大学セミナー「 「探究」と「研究」は、なにが異なり、どのようにつながるのか」（2026年8月開催）は、貴重な例外であり、報告者の問題意識と重なる</p></li></ol></aside></section>
 <section id="大学4年次3月時点での意識調査探究活動で育成された資質能力" class="slide level2">
@@ -294,32 +364,23 @@
 <img data-src="img/大学生活_注力by探究学習への熱意.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="問題の所在-高大接続の難しさ" class="slide level2">
 <h2>問題の所在 &gt; 高大接続の難しさ</h2>
-<h3 id="学校と社会をつなぐ調査通称10年トランジション調査河合塾"><a href="https://www.kawaijuku.jp/business/rd/research/sch/">学校と社会をつなぐ調査</a>（通称：10年トランジション調査、河合塾）</h3>
-<ul>
-<li>学習や成長に対するマインドセットやキャリア意識は高校までに形成されており、大学で後から変えることは容易ではない</li>
-</ul>
 <blockquote>
-<p>高校の先生方が「大学受験が一番大事」「いろいろ我慢しても、大学にとにかく入れ」「大学に入ったら好きなことをして」と言うことが駄目だという話を実証的に示すために、この調査〔「10年トランジション調査」〕を始めたわけです。たくさん我慢して大学生になっても、<em>それまでにしてこなかったことは大学生になってもできない</em>。大学でいろいろと育てようと思っても、学生自身にその意欲がないのです。そういうマインドセットは、高校までにしっかりと出来上がっていて、キャリア意識も大きいです。<em>自分が成長しようと端から思っていない</em>（<span class="citation" data-cites="MizokamiSi:2023presentation">溝上 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2023</a>）</span>）。</p>
+<p>高校の先生方が「大学受験が一番大事」「いろいろ我慢しても、大学にとにかく入れ」「大学に入ったら好きなことをして」と言うことが駄目だという話を実証的に示すために、この調査〔「10年トランジション調査」〕を始めたわけです。たくさん我慢して大学生になっても、<em>それまでにしてこなかったことは大学生になってもできない</em>。大学でいろいろと育てようと思っても、学生自身にその意欲がないのです。そういうマインドセットは、高校までにしっかりと出来上がっていて、キャリア意識も大きいです。自分が成長しようと端から思っていない（<span class="citation" data-cites="MizokamiSi:2023presentation">溝上 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2023</a>）</span>）</p>
 </blockquote>
 </section>
 <section id="問題の所在-探究学習の研究化" class="slide level2">
 <h2>問題の所在 &gt; 探究学習の「研究」化</h2>
 <blockquote>
-<p>学会発表，論文執筆，論文投稿，コンテスト入賞など，推薦入試で求められる探究学習の内容は，学習指導要領の内容を遥かに超える（<span class="citation" data-cites="TakahashiAkk:2020a1">高橋 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2020</a>）</span>, 42）。</p>
+<p>学会発表，論文執筆，論文投稿，コンテスト入賞など，推薦入試で求められる探究学習の内容は，学習指導要領の内容を遥かに超える（<span class="citation" data-cites="TakahashiAkk:2020a1">高橋 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2020</a>）</span>, 42）</p>
 </blockquote>
 <blockquote>
-<p>先端的な科学研究，学会発表や論文執筆は，本来大学教育で行う内容ではないかという疑問も残る。「探究」ではなく「研究」が行われるようになり，それを“獲得ポイント”として，大学に進学するという道筋は，<em>自己の方向性を見つめ，社会との関わりを見出す発達段階にある高校生にとって果たして適切な教育なのだろうか</em>（<span class="citation" data-cites="TakahashiAkk:2020a1">高橋 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2020</a>）</span>, 42）。</p>
+<p>先端的な科学研究，学会発表や論文執筆は，本来大学教育で行う内容ではないかという疑問も残る。「探究」ではなく「研究」が行われるようになり，それを“獲得ポイント”として，大学に進学するという道筋は，<em>自己の方向性を見つめ，社会との関わりを見出す発達段階にある高校生にとって果たして適切な教育なのだろうか</em>（<span class="citation" data-cites="TakahashiAkk:2020a1">高橋 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2020</a>）</span>, 42）</p>
 </blockquote>
 <blockquote>
-<p>多忙な中で，対応しきれないと「総合的な学習の時間」のように形式的な対応を取ったり，探究学習を“外注”したりする場合には，高校生の教育活動としての探究学習は後退していくであろう（<span class="citation" data-cites="TakahashiAkk:2020a1">高橋 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2020</a>）</span>, 42）。<sup>1</sup></p>
+<p>多忙な中で，対応しきれないと「総合的な学習の時間」のように形式的な対応を取ったり，探究学習を“外注”したりする場合には，高校生の教育活動としての探究学習は後退していくであろう（<span class="citation" data-cites="TakahashiAkk:2020a1">高橋 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2020</a>）</span>, 42）<sup>1</sup></p>
 </blockquote>
-<aside><ol class="aside-footnotes"><li id="fn3"><p>類似の指摘として以下を挙げておきたい。「高校の探究は、生徒が探究するための教育なのか。それとも、評価される探究成果を生産するための教育になっていないか」（<span class="citation" data-cites="NishiokaKneandOhnukiM:2020a1">西岡・大貫 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2020</a>）</span>）。</p></li></ol></aside></section></section>
-<section>
-<section id="論点" class="title-slide slide level1 center" data-transition="slide" data-transition-speed="slow" data-roadmap="論点">
-<h1>Ⅱ. 論点</h1>
-
-</section>
-<section id="論点-1" class="slide level2">
+<aside><ol class="aside-footnotes"><li id="fn3"><p>類似の指摘として以下を挙げておきたい。「高校の探究は、生徒が探究するための教育なのか。それとも、評価される探究成果を生産するための教育になっていないか」（<span class="citation" data-cites="NishiokaKneandOhnukiM:2020a1">西岡・大貫 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2020</a>）</span>）。</p></li></ol></aside></section>
+<section id="論点" class="slide level2">
 <h2>論点</h2>
 <h3 id="探究学習は高大接続の切り札になるのかなるとすればどのような条件が必要か">探究学習は、高大接続の「切り札」になるのか？なるとすれば、どのような条件が必要か？</h3>
 <ul>
@@ -334,20 +395,20 @@
 </ul>
 </section></section>
 <section>
-<section id="部屋の中の象探究とは何か" class="title-slide slide level1 center" data-transition="slide" data-transition-speed="slow" data-roadmap="探究とは何か">
-<h1>Ⅲ. 部屋の中の象：探究とは何か</h1>
+<section id="部屋の中の象探究とは何か" class="title-slide slide level1 center" data-transition="slide" data-transition-speed="slow" data-roadmap="部屋の中の象">
+<h1>Ⅱ. 部屋の中の象：探究とは何か</h1>
 
 </section>
 <section id="部屋の中の象" class="slide level2">
 <h2>部屋の中の象</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
 <ul>
 <li>なぜパーティールームに象がいるのか？おかしいのに誰も問わない（問題が大きすぎると問えなくなる）の喩え
 <ul>
 <li>そもそも探究とは何かが十分に問われていない</li>
 </ul></li>
 </ul>
-<div class="columns">
-<div class="column" style="width:70%;">
 <h3 id="類型">3類型</h3>
 <ol type="1">
 <li>文部科学省「探究の学び」やそれを参照した定義</li>
@@ -367,35 +428,32 @@
 <section id="既存の定義の類型-1.-文部科学省の探究の学びやそれを参照した定義" class="slide level2">
 <h2>既存の定義の類型 &gt; 1. 文部科学省の「探究の学び」やそれを参照した定義</h2>
 <blockquote>
-<p><em>実社会・実生活との関わり</em>の中で見いだす<em>自己の興味・関心や問題意識に基づき</em>課題を設定し、必要な知識や方略を活用し、<em>試行錯誤</em>しながら、課題解決を通じた新たな価値の創造を繰り返していく学習のプロセス（<a href="https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo3/115/index.html">教育課程部会　生活、総合的な学習・探究の時間ワーキンググループ</a>）。</p>
+<p>実社会・実生活との関わりの中で見いだす<em>自己の興味・関心や問題意識に基づき</em>課題を設定し、必要な知識や方略を活用し、<em>試行錯誤</em>しながら、課題解決を通じた新たな価値の創造を繰り返していく学習のプロセス」（<a href="https://www.mext.go.jp/b_menu/shingi/chukyo/chukyo3/115/index.html">教育課程部会　生活、総合的な学習・探究の時間ワーキンググループ</a>）。</p>
 </blockquote>
-<h3 id="特徴">特徴</h3>
-<ul>
-<li>起点に「興味・関心や問題意識に基づく<em>素朴な問い</em>」を置く</li>
-<li>「好きや得意を伸ばし、夢や希望を育む」ための取り組みと位置づける</li>
-</ul>
 <h4 id="問題点">問題点</h4>
 <ul>
-<li>探究をプロセスで定義づけるため、To Doリスト化、形式化しやすい</li>
-<li>注記がないと意味を特定しづらい</li>
+<li>興味・関心 → 課題設定 → 知識・方略 → 試行錯誤 → 課題解決 → 新たな価値創造
+<ul>
+<li>探究そのものを定義するというより、「探究で何をするか」というプロセスによって探究を定義している</li>
+<li>プロセスとして定義することで、To Doリスト化、スケジュール化、形式化しやすい</li>
+</ul></li>
 </ul>
 </section>
 <section id="既存の定義の類型-2.-学術研究に準拠した定義" class="slide level2">
 <h2>既存の定義の類型 &gt; 2. 学術研究に準拠した定義</h2>
 <blockquote>
-<p>探究的学習とは、（a）自ら問題を発見して問いを立て課題を設定し、（b）調査・観察・実験などによって情報を収集して事実を明らかにし、（c）事実に基づいて、整理・分析、<em>論理的・批判的思考・判断</em>を行い、（d）導いた結論を表現したり，問題を解決し、検証したりする学習活動であり、学習者主体のアクティブラーニングの一形態である（<span class="citation" data-cites="KusumiT:2025a1">楠見 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2025</a>）</span>, 28）。</p>
+<p>「①自ら問題を発見し、②調査・観察・実験などによって事実を明らかにし、③事実にもとづいて論理的・批判的な思考・判断を行い，④導いた結論を表現したり、問題を解決したりする学習活動」（楠見，2017, p.68）。</p>
 </blockquote>
 <ul>
 <li>学術研究のプレ体験：研究の作法を学ぶ。生徒に新規性は求めない
 <ul>
-<li>（暗黙の）<em>発達モデル</em>：調べ学習（小・中学生） → 探究学習（高校生） → 学術研究（大学生）</li>
+<li>（暗黙の）<em>発達モデル</em>：「調べ学習 → 探究学習 → 学術研究」</li>
 </ul></li>
 </ul>
 <h3 id="問題点-1">問題点</h3>
 <ul>
-<li>探究学習を学術研究に近づけようとする力学が働く</li>
-<li>探究学習の固有性が見えなくなる</li>
-<li>学術研究的な探究を実施するリソースが高校にはない（「探究公害」）</li>
+<li>より良い探究学習のモデルは学術研究であるため、探究を学術研究に近づけようとする力学が働く</li>
+<li>高校に十分なリソースはなく、生徒が大学教員に直接、問い合わせる、いわゆる「探究公害」現象の要因に（特別入試はこの傾向に拍車をかける）</li>
 </ul>
 <!-- [^2]: 「高校の探究は、生徒が探究するための教育なのか。それとも、評価される探究成果を生産するための教育になっていない」（@NishiokaKneandOhnukiM:2020a1）。「何が調べ学習で、何が探究学習なのか、定義できていない。調べれば調べるほど、自分の研究に価値がない、自分にはできない、という袋小路に至る」(@HondaYk:2022a1)。 -->
 </section>
@@ -406,22 +464,10 @@
 </blockquote>
 <h3 id="問題点-2">問題点</h3>
 <ul>
-<li>学習者が起点になるのか怪しい
-<ul>
-<li>社会で今、何が問題かが起点に。生徒は「大人の期待」に応えようとするが、興味がなければ「やらされ探究」に陥る</li>
-</ul></li>
+<li>学習者が起点になるのか怪しい</li>
 <li>文脈によって意味・適用範囲が自在に変わる<em>伸縮自在な概念</em>であるため、さまざまな活動を包摂できる一方、「探究」の固有性を問えない</li>
+<li>「社会が解決を必要としている問題は何か」という外在的な問いが、探究の出発点になりやすい</li>
 </ul>
-</section>
-<section id="中教審ワーキング生活総合" class="slide level2">
-<h2>中教審ワーキング（生活・総合）</h2>
-<ul>
-<li>次期学習指導要領（2030年から実施）の改定を目指して「質の高い探究」をどう実現するのかについて、定義や連携のあり方などが議論された（2025年10月から2026年8月）</li>
-</ul>
-<h4 id="委員として参加する酒井先生立命館宇治中学校高校の感想">委員として参加する酒井先生（立命館宇治中学校・高校）の感想</h4>
-<blockquote>
-<p>こうした議論〔ワーキング〕に参加しながら、「成果物ができたか」「発表がうまくいったか」だけでは測れない学びを、言葉にしようとしていることを感じています。とりわけ、<em>学びの成果を成果物の完成度そのものではなく、問いを通して意味や価値に向かっていく学習のプロセスとして整理し直そうとする姿勢は、現場で感じられてきた違和感と深くつながっています</em>。また、問いが変わること、仮説が外れることは、失敗ではなく学びの途中なのだというメッセージが、制度の言葉として表れ始めているようにも感じました（ <span class="citation" data-cites="SakaiJp:2026book">酒井 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2026</a>）</span>, 143）。</p>
-</blockquote>
 </section>
 <section id="デューイの探究論に立ち戻る" class="slide level2">
 <h2>デューイの「探究」論に立ち戻る</h2>
@@ -431,18 +477,15 @@
 <li>C. S. パース、J. デューイ（プラグマティズム、<span class="citation" data-cites="ItoKt:2016book">伊藤 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2016</a>）</span>）
 <ul>
 <li><strong>パース</strong>：疑い・不確かさが探究を引き起こす</li>
-<li><strong>デューイ</strong>：問題状況の中で、何が問題なのかを明らかにしながら探究する
-<ul>
-<li>外から与えられた課題への回答ではなく、<em>「気になる」「何かおかしい」という経験から探究は始まる</em></li>
-<li>探究を<em>人間の日常的な営み</em>として捉える</li>
-</ul></li>
+<li><strong>デューイ</strong>：問題状況の中で、何が問題なのかを明らかにしながら探究する</li>
+<li>→ 外から与えられた課題への回答ではなく、<em>「気になる」「何かおかしい」という経験から探究は始まる</em></li>
+<li>→ 探究を<em>人間の日常的な営み</em>として捉える</li>
 </ul></li>
 </ul>
 <!-- [^30] なお、デューイの探究概念については、報告者は@MizokamiSi:2026bookとは異なる見解をとる。報告者のデューイを含むプラグマティズム理解については、@ItoKt:2016bookを参照。 -->
 <aside><ol class="aside-footnotes"><li id="fn4"><p>ただし、文部科学省は「自己の在り方生き方と一体的で不可分な課題を自ら発見し，解決していくような学びを展開していくことを重視している。高等学校においてこのような生徒の姿を実現するためには，生徒がより洗練された質の高い探究に取り組む必要がある」（<span class="citation" data-cites="MEXT:2023text">文部科学省 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2023</a>）</span>）など仰々しい表現を用いることもあり、意味を了解しづらい</p></li></ol></aside></section>
-<section id="デューイの探究論に立ち戻る-1" class="slide level2">
-<h2>デューイの「探究」論に立ち戻る</h2>
-<h3 id="デューイの定義">デューイの定義</h3>
+<section id="デューイの定義" class="slide level2">
+<h2>デューイの定義</h2>
 <blockquote>
 <p>探究は生活のあらゆる領域に、そして各領域のあらゆる側面に浸透している。日常生活において、人間は物事を検証し、知的に考察し、推論し、判断する。それは、種を蒔き、収穫し、商品を生産し、交換するのと同じくらい「自然な」ことである（<span class="citation" data-cites="DeweyJ:2008works12">Dewey （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2008a</a>）</span>, 106）</p>
 </blockquote>
@@ -450,34 +493,30 @@
 <p>探究とは、不確定な状況を、その構成要素の区別や関係において極めて確定的な状況へと、制御または誘導的に転換し、それによって元の状況の要素を統一された全体へと変容させることである（<span class="citation" data-cites="DeweyJ:2008works12">Dewey （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2008a</a>）</span>, 108）<sup>1</sup></p>
 </blockquote>
 <ul>
-<li><em>最初のモヤモヤが、自分にとって説明可能なものになっていく</em> <!-- - ただし、授業で実施される「探究学習」は、なぜ納得できたのかを他人にわかるような説明がされるべき --></li>
+<li><em>最初のモヤモヤが、自分にとって説明可能なものになっていく</em></li>
+<li>ただし、授業で実施される「探究学習」は、なぜ納得できたのかを他人にわかるような説明がされるべき</li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn5"><p>デューイは、不確定な状況を特徴づける際の個人的な言語表現として、我を忘れてしまう、動揺した、悩ましい、曖昧な、混乱した、相反する傾向に満ちた、不明瞭な、を挙げる（<span class="citation" data-cites="DeweyJ:2008works12">Dewey （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2008a</a>）</span>, 109）。</p></li></ol></aside></section>
-<section id="デューイの探究論に立ち戻る-2" class="slide level2">
-<h2>デューイの「探究」論に立ち戻る</h2>
-<h3 id="デューイの定義-1">デューイの定義</h3>
+<section id="デューイの定義-1" class="slide level2">
+<h2>デューイの定義</h2>
 <blockquote>
-<p><em>「問題」と「解決」は、まったく同時に明らかになる</em>。それまでは、私たちの問題の捉え方は、多かれ少なかれ曖昧で暫定的なものである。うまくいかなかった最初の考えをきっかけに、目の前の状況をあらためて見直す。すると、行動が妨げられていることへの戸惑いが、<em>具体的な状況や対象に即して、少しずつ言葉になる</em>。単に「溝がある」ことではなく、その幅や土手の滑りやすさが問題なのである。…こうして、<em>困惑がどこから生じているのかが、より明確になる</em>（<span class="citation" data-cites="DeweyJ:2008works8">Dewey （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2008b</a>）</span>, 201）。</p>
+<p>「問題」と「解決」は、まったく同時に明らかになる。それまでは、私たちの問題の捉え方は、多かれ少なかれ曖昧で暫定的なものである。うまくいかなかった最初の考えをきっかけに、目の前の状況をあらためて見直す。すると、行動が妨げられていることへの戸惑いが、具体的な状況や対象に即して、少しずつ言葉になる。単に「溝がある」ことではなく、その幅や土手の滑りやすさが問題なのである。…こうして、困惑がどこから生じているのかが、より明確になる（<span class="citation" data-cites="DeweyJ:2008works8">Dewey （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2008b</a>）</span>, 201）。</p>
 </blockquote>
 <blockquote>
-<p>省察的な活動が生じるあらゆる場面において、当初は状況全体に対する漠然とした<em>感情にすぎなかったものが、知的に捉え直されていく</em>。この転換は、<em>何が困難を生じさせ、行動を止めているのか、その諸条件をより明確に捉えることによって生じる</em>（<span class="citation" data-cites="DeweyJ:2008works8">Dewey （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2008b</a>）</span>, 202）。</p>
+<p>省察的な活動が生じるあらゆる場面において、当初は状況全体に対する漠然とした感情にすぎなかったものが、知的に捉え直されていく。この転換は、何が困難を生じさせ、行動を止めているのか、その諸条件をより明確に捉えることによって生じる（<span class="citation" data-cites="DeweyJ:2008works8">Dewey （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2008b</a>）</span>, 202）。</p>
 </blockquote>
 </section>
-<section id="デューイ的に再定義された探究の例示" class="slide level2">
-<h2>デューイ的に再定義された探究の例示</h2>
+<section id="デューイ的に再定義された探究学習の例示" class="slide level2">
+<h2>デューイ的に再定義された探究学習の例示</h2>
 <ul>
 <li>児童の場合
 <ul>
 <li>（探究学習ではない）先生が児童に「カブトムシはなぜ夜に活動するのか、調べてみよう」と問いかける</li>
-<li>（探究学習）児童本人が「去年は同じ時期、同じ場所でカブトムシが採れたのに、今年は採れなかった。なぜ？」と疑問を持ち、調べ始める</li>
+<li>（探究学習）児童本人が「昨日まで夜になると動いていたのに、今日は全然動かない。なんでだろう？」と疑問を持ち、調べ始める</li>
 </ul></li>
 <li>生徒（中高生）の場合
 <ul>
 <li>（探究学習）近所の空き地に、ドラッグストアB店ができることになった。すでに近くにはドラッグストアA店がある。そこで生徒が、「なんでまたドラッグストアなんだろう？私はパン屋になってほしかったのに」とモヤモヤする。なぜB店がここに出店するのか？と調べ始める（社会問題を解決するための活動ではない）</li>
-</ul></li>
-<li>高校の先生の場合
-<ul>
-<li>探究学習を大学の研究をモデルに捉えるのは、違うのではないか、と思い、有志で議論を始める</li>
 </ul></li>
 </ul>
 </section>
@@ -531,7 +570,7 @@
 <tr class="odd">
 <td><em>プロセス</em></td>
 <td>調べ、考え、問い直し、自分が納得できる理解をつくる</td>
-<td>調べ、考え、検証し、他者が納得・検討できる知見を得る</td>
+<td>調べ、考え、検証し、他者が納得・検討できる知識をつくる</td>
 </tr>
 <tr class="even">
 <td><em>他者への説明</em></td>
@@ -542,8 +581,8 @@
 </table>
 </section></section>
 <section>
-<section id="盲人と象探究学習の多様性" class="title-slide slide level1 center" data-transition="slide" data-transition-speed="slow" data-roadmap="探究の多様性">
-<h1>Ⅳ. 盲人と象：探究学習の多様性</h1>
+<section id="盲人と象探究活動の複数性" class="title-slide slide level1 center" data-transition="slide" data-transition-speed="slow" data-roadmap="盲人と象">
+<h1>Ⅲ. 盲人と象：探究活動の複数性</h1>
 
 </section>
 <section id="群盲象を評す" class="slide level2">
@@ -578,9 +617,9 @@
 <li>インタビュー調査や観察は「それで終わり？」という印象を持たれやすい</li>
 <li>解決が困難な問い（自由とは何か）は「意見」であって探究ではないと解されやすい</li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn6"><p><span class="citation" data-cites="HondaYk:2022a1">本田 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2022</a>）</span> は、探究活動の指導における生徒と指導者（大学院生）の会話を分析し、指導者が、何が「調べ学習」で、何が「探究学習」なのか定義せずに、否定的な文脈で安易に「調べ学習」という言葉を使うこと、また、その結果、学習者が、調べれば調べるほど、何であれ先行研究が存在し、自分の探究には価値がない、自分にはできない、という袋小路に陥りやすい点を問題点として指摘する。報告者が見聞きする限り、「調べ学習」と呼ばれている活動の多くは、研究者が「文献調査」と呼ぶ研究手法に相当する。自分の興味・関心と自分の<em>読解力レベルに見合った文献を選択することは案外難しく</em>、また、選択した文献をまとめる作業も、単なる情報の羅列ではなく、<em>なぜ、ある情報を選び、別の情報を選ばなかったのかを考え、（本来は）説明する義務があることを踏まえれば、決して単純な作業、受動的な作業ではない</em>。「調べる」ことを低く評価することで、むしろ生徒の探究の可能性を狭めてしまっているのではないか。たとえば、アンケートをとることが主体的（探究学習に適した手法）で、本を読むことは受動的（調べ学習にとどまる）だとするような位置づけがあるとすれば、早急に見直したほうがよい（大学の学びへの接続を意識するのであれば、文献を読むことを「受動的」、研究にとりかかるための「前処理」とみなすのは、おかしい）。</p></li></ol></aside></section>
-<section id="探究学習の多様性とそれぞれの特徴を捉えるためのマトリックス-32-33" class="slide level2">
-<h2>探究学習の多様性とそれぞれの特徴を捉えるためのマトリックス <sup>1</sup> <sup>2</sup></h2>
+<aside><ol class="aside-footnotes"><li id="fn6"><p><span class="citation" data-cites="HondaYk:2022a1">本田 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2022</a>）</span> は、探究活動の指導における生徒と指導者（大学院生）の会話を分析し、指導者が、何が「調べ学習」で、何が「探究学習」なのか定義せずに、否定的な文脈で安易に「調べ学習」という言葉を使うこと、また、その結果、学習者が、調べれば調べるほど、何であれ先行研究が存在し、自分の探究には価値がない、自分にはできない、という袋小路に陥りやすい点を問題点として指摘する。報告者が見聞きする限り、「調べ学習」と呼ばれている活動の多くは、研究者が「文献調査」と呼ぶ研究手法に相当する。自分の興味・関心と自分の<em>読解力レベルに見合った文献を選択することは案外難しく</em>、また、選択した文献をまとめる作業も、単なる情報の羅列ではなく、<em>なぜ、ある情報を選び、別の情報を選ばなかったのかを考え、（本来は）説明する義務があることを踏まえれば、決して単純な作業、受動的な作業ではない</em>。「調べる」ことを低く評価することで、むしろ生徒の探究の可能性を狭めてしまっているのではないか。たとえば、アンケートをとることが主体的（探究学習に適した手法）で、本を読むことは受動的（調べ学習にとどまる）だとするような位置づけがあるとすれば、早急に見直したほうがよい。</p></li></ol></aside></section>
+<section id="探究活動の多様性とそれぞれの特徴を捉えるためのマトリックス-32-33" class="slide level2">
+<h2>探究活動の多様性とそれぞれの特徴を捉えるためのマトリックス <sup>1</sup> <sup>2</sup></h2>
 <table class="caption-top">
 <colgroup>
 <col style="width: 33%">
@@ -608,8 +647,8 @@
 </tbody>
 </table>
 <aside><ol class="aside-footnotes"><li id="fn7"><p>研究を、対象となる現象や目的・視点に応じて区分けして把握しようとする営為は、認識論や科学哲学においてなされてきた。古くはアリストテレスが対象の性質に応じて求められる精密さが異なることを論じ、ポパーは科学的知識の批判的検討可能性を重視した。近年では、たとえば、<span class="citation" data-cites="MahoneyJandGoertzAG:2006a1">Mahoney &amp; Goertz （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2006</a>）</span> が、量的研究と質的研究を異なる「文化」と捉え、両者は大きな研究目標を共有しながらも、具体的な研究目的の違いによって、研究実践のあり方も異なると論じている。このような議論が探究学習に援用されず、「仮説→検証→考察」といった一律の探究学習がありうるかのような説明がなされていることは、報告者には不思議である。</p></li><li id="fn8"><p>右下のセルを代表する研究に、ブルーカラー労働者、農民、小店主、失業者、外国人労働者などにインタビュー調査したピエール・ブルデュー編著『<a href="https://www.fujiwara-shoten-store.jp/SHOP/9784865782431.html">世界の悲惨</a>』がある。少なくとも、人文学、社会科学系の研究者がこのような研究を、「聞き取っただけ」「So What ?」と評価することはあり得ない。</p></li></ol></aside></section>
-<section id="探究学習の多様性とそれぞれの特徴を捉えるためのマトリックス" class="slide level2">
-<h2>探究学習の多様性とそれぞれの特徴を捉えるためのマトリックス</h2>
+<section id="探究活動の多様性とそれぞれの特徴を捉えるためのマトリックス" class="slide level2">
+<h2>探究活動の多様性とそれぞれの特徴を捉えるためのマトリックス</h2>
 <h3 id="それぞれのセルで用いられる代表的な方法">それぞれのセルで用いられる代表的な方法</h3>
 <table class="caption-top">
 <colgroup>
@@ -638,6 +677,85 @@
 </tbody>
 </table>
 </section>
+<section id="問いの多様性と探究の方向性のマトリックス" class="slide level2">
+<h2>問いの多様性と探究の方向性のマトリックス</h2>
+<ul>
+<li>探究（研究）では、何を知りたいのかによって、探究の向かう方向が異なる</li>
+<li>「何を知りたいのか」を2つの軸から考える
+<ul>
+<li>対象の数</li>
+<li>対象そのものの理解 ↔︎ 抽象化・一般化</li>
+</ul></li>
+</ul>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>それぞれに優劣があるわけではない。探究の途中で、知りたいことが変わることもある。帰納法・演繹法と似ているが、そもそも規則性や一般化を目指さない探究（研究）もある</p>
+</div>
+</div>
+</div>
+</section>
+<section id="問いの多様性と探究の方向性のマトリックス-探究学習のあり方について検討する高校の先生の場合" class="slide level2">
+<h2>問いの多様性と探究の方向性のマトリックス &gt; 探究学習のあり方について検討する高校の先生の場合</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><em>抽象化・一般化</em></th>
+<th><em>事例の記述・比較</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>複数の事例・対象</em></td>
+<td>特定の高校という固有名詞を使わず、進学校・進路多様校などのカテゴリや、カリキュラム、教師の働きかけ、生徒の活動などを「変数」として捉える。変数間の関係や、条件と結果の関係を分析し、同様の条件でどのような結果が見込まれるのかを検討する</td>
+<td>複数の高校の探究活動を比較し、カリキュラム、教師の働きかけ、生徒の活動などの共通点や違いを明らかにする</td>
+</tr>
+<tr class="even">
+<td><em>一つの事例・対象</em></td>
+<td>特徴的な探究活動を詳しく調べ、その背景や成立条件を探索する。そこから他の高校にも当てはまる可能性のある関係や規則性を探り、新たな問いや仮説につなげる</td>
+<td>自校の探究活動を詳しく調べ、カリキュラム、教師の働きかけ、生徒の活動などを記述し、その学校固有の探究のあり方を明らかにする</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="問いの多様性と探究の方向性のマトリックス-小学生に向けて探究活動を説明する場合" class="slide level2">
+<h2>問いの多様性と探究の方向性のマトリックス &gt; 小学生に向けて探究活動を説明する場合</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><em>抽象化・一般化</em></th>
+<th><em>事例の記述・比較</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>複数の事例・対象</em></td>
+<td>「犬は、大きな音を怖がることがあるのかな？」図鑑を読んだり、先生や大人に聞いたりして、犬に一般的に見られる性質なのかを調べる。スヌーピーだけの特徴なのか、犬に共通する性質なのかを考える</td>
+<td>「スヌーピーは雷が鳴ると隠れるけど、チャッピーも隠れるのかな？」チャッピーの様子を記録してもらい、スヌーピーの記録と比べる。雷だけでなく、花火や大きな音のときの行動も観察し、複数の事例・条件を比較する</td>
+</tr>
+<tr class="even">
+<td><em>一つの事例・対象</em></td>
+<td>「スヌーピーが雷で隠れるのは、何と関係しているのだろう？」雷を音、光、雨、風などに分けて考え、「大きな音が関係しているのでは？」など、より一般的な条件や関係に目を向け、新しい問いをつくる</td>
+<td>「うちの犬、スヌーピーは雷が鳴ると隠れる。いつから、どんなときにそうするのだろう？」これまでの反応を思い出してメモし、雷が鳴ったときには、その反応と状況を詳しく記録する</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="探究学習のイメージ" class="slide level2">
 <h2>探究学習のイメージ</h2>
 <div class="columns">
@@ -649,7 +767,7 @@
 </div><div class="column" style="width:37%;">
 <h3 id="探究学習">探究学習 ⇒</h3>
 <ul>
-<li>なぜだろう？ → 調べてみる → 考えてみる → 「なるほど、そういうことか」→「でも、こっちはどうなんだろう？」→「自分なりの理解にたどり着く」<sup>1</sup></li>
+<li>なぜだろう？ → 調べてみる → 考えてみる → 「なるほど、そういうことか」→「でも、こっちはどうなんだろう？」→「自分なりの理解にたどり着く」（<em>「問いの多様性と探究の方向性のマトリックス」を行き来</em>）<sup>1</sup></li>
 </ul>
 </div><div class="column" style="width:37%;">
 <h3 id="探究学習の結果">探究学習の結果</h3>
@@ -681,25 +799,19 @@
 </ul>
 </section></section>
 <section>
-<section id="自問する象自己の変化を捉える振り返り" class="title-slide slide level1 center" data-transition="slide" data-transition-speed="slow" data-roadmap="振り返り">
-<h1>Ⅴ. 自問する象：自己の変化を捉える振り返り</h1>
+<section id="自問する象自己の変化を捉える" class="title-slide slide level1 center" data-transition="slide" data-transition-speed="slow" data-roadmap="自問する象">
+<h1>Ⅳ. 自問する象：自己の変化を捉える</h1>
 
 </section>
 <section id="探究学習の振り返り" class="slide level2">
 <h2>探究学習の振り返り</h2>
-<h3 id="高校の探究学習">高校の探究学習</h3>
-<ul>
-<li>（濃淡はあれ）振り返りシートなどを用いて、振り返る時間、機会を設けている
-<ul>
-<li>Cf. 大学のゼミ、研究室活動において、どのような力が養われたかを言語化するような機会は一般にはない</li>
-</ul></li>
-</ul>
 <h3 id="何を学んだかからどう考えが変わったかへ">「何を学んだか」から「どう考えが変わったか」へ</h3>
 <ul>
-<li>「知識が増えた」「調べ方がわかった」だけでは、経験を捉えきれない</li>
-<li>探究を通して、自分の認識がどう変わったのか、この変化を、具体的な経験にもとづいて言葉にする</li>
+<li>「知識が増えた」「調べ方がわかった」だけでは、探究の経験を捉えきれない</li>
+<li>探究を通して、自分の認識がどう変わったのか</li>
+<li>その変化を、具体的な経験にもとづいて言葉にする</li>
 </ul>
-<p>→ 振り返りの言語化を支援することも（こそ？）、教師の重要な役割では？（Cf. <span class="citation" data-cites="KimuraTy_etal:2022a1">木村 他 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2022</a>）</span>）。深い振り返り、浅い振り返りを言語化できていない</p>
+<p>→ 振り返りの言語化を支援することも（こそ？）、教師の重要な役割では？（Cf. <span class="citation" data-cites="KimuraTy_etal:2022a1">木村 他 （<a href="#/参考文献-1" role="doc-biblioref" onclick="">2022</a>）</span>）</p>
 </section>
 <section id="振り返り例" class="slide level2">
 <h2>振り返り例</h2>
@@ -715,9 +827,7 @@
 <p>今回、自校の探究活動の取り組みをまとめ、報告するという活動を通して、多角的な視点を身につけることができた。このプロセスにおいて、多くの同僚と議論を重ねたが、それによってコミュニケーション能力や課題解決能力の重要性を再認識した。今後は、今回の経験を生かして、生徒一人ひとりの主体性を尊重しながら、より効果的な探究活動を実践していきたい。教師自身も常に学び続ける姿勢を持ち、多様な視点を取り入れながら、生徒の成長を支援していきたい。</p>
 </blockquote>
 <ul>
-<li>「正しい教育者」の言葉が書かれているが、それ以上でもそれ以下でもない</li>
-<li>だが、何を「多角的」に見るようになったのか、以前はどう見ていたのか、何がきっかけだったのか、まったくわからない</li>
-<li>当たり前のことを再認識しただけ？</li>
+<li>それぞれの文言は、教育的には否定しにくいことばかりだが、何を「多角的」に見るようになったのか、以前はどう見ていたのか、何がきっかけだったのか、まったくわからない</li>
 </ul>
 </section>
 <section id="海外の事例" class="slide level2">
@@ -778,9 +888,6 @@
 </div>
 <div id="ref-KimuraTy_etal:2022a1" class="csl-entry" role="listitem">
 <div class="csl-block">木村 竜也・寺西 望・伊藤 大輔（2022）．PBLに基づいた「総合的な探究の時間」における生徒の振り返りの検討　日本教育工学会研究報告集，<em>2022</em>(4), 134–141. <a href="https://doi.org/10.15077/jsetstudy.2022.4_134">https://doi.org/10.15077/jsetstudy.2022.4_134</a></div>
-</div>
-<div id="ref-KusumiT:2025a1" class="csl-entry" role="listitem">
-<div class="csl-block">楠見 孝（2025）．高校生の探究的学習スキルと批判的思考態度の向上：スーパーサイエンスハイスクールにおける3年間の縦断調査　教育心理学研究，<em>73</em>(1), 28–41. <a href="https://doi.org/10.5926/jjep.73.28">https://doi.org/10.5926/jjep.73.28</a></div>
 </div>
 <div id="ref-SakaiJp:2026book" class="csl-entry" role="listitem">
 <div class="csl-block">酒井 淳平（2026）．誤解だらけの探究学習：「手応えがない」ときの25のヒント　明治図書</div>
@@ -1037,44 +1144,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
