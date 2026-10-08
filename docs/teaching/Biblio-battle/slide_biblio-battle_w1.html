@@ -66,6 +66,7 @@
   <link href="../../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/multimodal/multimodal.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/verticator/verticator.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chat-bubbles/chat-bubbles.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -195,6 +196,21 @@
 <li><a href="#/引用文献" id="/toc-引用文献">引用文献</a></li>
 </ul>
 </nav>
+</section>
+<section id="aa" class="slide level2">
+<h2>aa</h2>
+<div class="chat" data-names="Jo,Meg" data-avatars="jo.png,meg.png">
+<div class="speaker-1">
+<p>この本、面白かったよ</p>
+</div>
+<p><span class="fragment reaction">😮</span> <span class="fragment reaction">👍</span></p>
+<div class="fragment speaker-2">
+<p>それって中学生が読むような本じゃない🤭</p>
+</div>
+<div class="fragment speaker-1">
+<p>・・・🫠</p>
+</div>
+</div>
 </section>
 <section id="keywords" class="title-slide slide level1 center" data-transition="slide" data-transition-speed="slow" data-roadmap="Keywords">
 <h1>Keywords</h1>
@@ -972,6 +988,7 @@
   <script src="../../site_libs/revealjs/plugin/reveal-confetti/confetti.js"></script>
   <script src="../../site_libs/revealjs/plugin/multimodal/multimodal.js"></script>
   <script src="../../site_libs/revealjs/plugin/verticator/verticator.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chat-bubbles/chat-bubbles.js"></script>
   <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -1167,7 +1184,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, RevealConfetti, Multimodal, Verticator, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, RevealConfetti, Multimodal, Verticator, RevealChatBubbles, QuartoSupport,
 
           RevealMath,
           RevealNotes,
