@@ -38,6 +38,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-8e9573f1d26bebee154ef4e47bb6d88f.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -147,7 +213,7 @@
 
 <section id="title-slide" data-background-image="img/logo_金沢大学.png" data-background-position="90% 90%" data-background-size="10%" data-roadmap="none" class="quarto-title-block center">
   <h1 class="title">ビブリオバトル入門《2026》</h1>
-  <p class="subtitle">#3 研究分野の本を紹介しよう①：第1ラウンド</p>
+  <p class="subtitle">#4 研究分野の本を紹介しよう①：第1ラウンド</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -204,7 +270,7 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><a href="https://booklog.jp/users/kariyach?tag=研究分野の本&amp;display=front">ブクログ</a></li>
+<li><a href="https://booklog.jp/users/kariyach?category_id=3955466&amp;display=front">ブクログ</a></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="img/ogp_booklog.png"></p>
@@ -217,8 +283,19 @@
 <li>研究したいこと、研究していることについて自由に話しあって下さい</li>
 </ul>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a><span class="fu">countdown</span>(<span class="at">minutes =</span> <span class="dv">6</span>,</span>
+<span id="cb1-2"><a aria-label="2"></a>          <span class="at">seconds =</span> <span class="dv">0</span>,</span>
+<span id="cb1-3"><a aria-label="3"></a>          <span class="at">top =</span> <span class="st">"70%"</span>,</span>
+<span id="cb1-4"><a aria-label="4"></a>          <span class="at">left =</span> <span class="st">"60%"</span>,</span>
+<span id="cb1-5"><a aria-label="5"></a>          <span class="co"># padding = "10px",</span></span>
+<span id="cb1-6"><a aria-label="6"></a>          <span class="co"># margin = "50%",</span></span>
+<span id="cb1-7"><a aria-label="7"></a>          <span class="at">font_size =</span> <span class="st">"4em"</span>,</span>
+<span id="cb1-8"><a aria-label="8"></a>          <span class="at">warn_when =</span> <span class="dv">30</span>,</span>
+<span id="cb1-9"><a aria-label="9"></a>          <span class="at">blink_colon =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-10"><a aria-label="10"></a>          <span class="at">play_sound =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-11"><a aria-label="11"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_b71a8143" minutes="6" seconds="0" warn-when="30" update-every="1" play-sound="true" blink-colon="true" tabindex="0" style="top:70%;left:60%;--countdown-font-size:4em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_109ab343" minutes="6" seconds="0" warn-when="30" update-every="1" play-sound="true" blink-colon="true" tabindex="0" style="top:70%;left:60%;--countdown-font-size:4em;"></countdown-timer>
 </div>
 </div>
 </section>
@@ -253,8 +330,19 @@
 <!--     - 配布するカードに、日付、グループチャンプ本のタイトル、その受講生の名前、簡単な理由を書いて提出して下さい -->
 <!--   - 残りの時間は、ブックカードのまとめ方、質疑応答の続きなど、各グループで有効に活用して下さい -->
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a><span class="fu">countdown</span>(<span class="at">minutes =</span> <span class="dv">40</span>,</span>
+<span id="cb2-2"><a aria-label="2"></a>          <span class="at">seconds =</span> <span class="dv">0</span>,</span>
+<span id="cb2-3"><a aria-label="3"></a>          <span class="at">top =</span> <span class="st">"60%"</span>,</span>
+<span id="cb2-4"><a aria-label="4"></a>          <span class="at">left =</span> <span class="st">"5%"</span>,</span>
+<span id="cb2-5"><a aria-label="5"></a>          <span class="co"># padding = "10px",</span></span>
+<span id="cb2-6"><a aria-label="6"></a>          <span class="co"># margin = "50%",</span></span>
+<span id="cb2-7"><a aria-label="7"></a>          <span class="at">font_size =</span> <span class="st">"4em"</span>,</span>
+<span id="cb2-8"><a aria-label="8"></a>          <span class="at">warn_when =</span> <span class="dv">30</span>,</span>
+<span id="cb2-9"><a aria-label="9"></a>          <span class="at">blink_colon =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-10"><a aria-label="10"></a>          <span class="at">play_sound =</span> <span class="cn">TRUE</span></span>
+<span id="cb2-11"><a aria-label="11"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_0302d6ef" minutes="40" seconds="0" warn-when="30" update-every="1" play-sound="true" blink-colon="true" tabindex="0" style="top:60%;left:5%;--countdown-font-size:4em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_5dd84359" minutes="40" seconds="0" warn-when="30" update-every="1" play-sound="true" blink-colon="true" tabindex="0" style="top:60%;left:5%;--countdown-font-size:4em;"></countdown-timer>
 </div>
 </div>
 </section></section>
@@ -279,22 +367,55 @@
 </div>
 </div>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a><span class="fu">countdown</span>(<span class="at">minutes =</span> <span class="dv">5</span>,</span>
+<span id="cb3-2"><a aria-label="2"></a>          <span class="at">seconds =</span> <span class="dv">0</span>,</span>
+<span id="cb3-3"><a aria-label="3"></a>          <span class="at">top =</span> <span class="st">"60%"</span>,</span>
+<span id="cb3-4"><a aria-label="4"></a>          <span class="at">left =</span> <span class="st">"1%"</span>,</span>
+<span id="cb3-5"><a aria-label="5"></a>          <span class="co"># padding = "10px",</span></span>
+<span id="cb3-6"><a aria-label="6"></a>          <span class="co"># margin = "50%",</span></span>
+<span id="cb3-7"><a aria-label="7"></a>          <span class="at">font_size =</span> <span class="st">"3.5em"</span>,</span>
+<span id="cb3-8"><a aria-label="8"></a>          <span class="at">warn_when =</span> <span class="dv">30</span>,</span>
+<span id="cb3-9"><a aria-label="9"></a>          <span class="at">blink_colon =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-10"><a aria-label="10"></a>          <span class="at">play_sound =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-11"><a aria-label="11"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_b60a9b0e" minutes="5" seconds="0" warn-when="30" update-every="1" play-sound="true" blink-colon="true" tabindex="0" style="top:60%;left:1%;--countdown-font-size:3.5em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_06e84fd4" minutes="5" seconds="0" warn-when="30" update-every="1" play-sound="true" blink-colon="true" tabindex="0" style="top:60%;left:1%;--countdown-font-size:3.5em;"></countdown-timer>
 </div>
 </div>
 </div><div class="column" style="width:33%;">
 <h3 id="メモ2分">メモ：2分</h3>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a><span class="fu">countdown</span>(<span class="at">minutes =</span> <span class="dv">2</span>,</span>
+<span id="cb4-2"><a aria-label="2"></a>          <span class="at">seconds =</span> <span class="dv">0</span>,</span>
+<span id="cb4-3"><a aria-label="3"></a>          <span class="at">top =</span> <span class="st">"60%"</span>,</span>
+<span id="cb4-4"><a aria-label="4"></a>          <span class="at">left =</span> <span class="st">"35%"</span>,</span>
+<span id="cb4-5"><a aria-label="5"></a>          <span class="co"># padding = "10px",</span></span>
+<span id="cb4-6"><a aria-label="6"></a>          <span class="co"># margin = "50%",</span></span>
+<span id="cb4-7"><a aria-label="7"></a>          <span class="at">font_size =</span> <span class="st">"3.5em"</span>,</span>
+<span id="cb4-8"><a aria-label="8"></a>          <span class="at">warn_when =</span> <span class="dv">30</span>,</span>
+<span id="cb4-9"><a aria-label="9"></a>          <span class="at">blink_colon =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-10"><a aria-label="10"></a>          <span class="at">play_sound =</span> <span class="cn">TRUE</span></span>
+<span id="cb4-11"><a aria-label="11"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_dceab6c8" minutes="2" seconds="0" warn-when="30" update-every="1" play-sound="true" blink-colon="true" tabindex="0" style="top:60%;left:35%;--countdown-font-size:3.5em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_256c0604" minutes="2" seconds="0" warn-when="30" update-every="1" play-sound="true" blink-colon="true" tabindex="0" style="top:60%;left:35%;--countdown-font-size:3.5em;"></countdown-timer>
 </div>
 </div>
 </div><div class="column" style="width:30%;">
 <h3 id="質疑応答3分">質疑応答：3分</h3>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a><span class="fu">countdown</span>(<span class="at">minutes =</span> <span class="dv">3</span>,</span>
+<span id="cb5-2"><a aria-label="2"></a>          <span class="at">seconds =</span> <span class="dv">0</span>,</span>
+<span id="cb5-3"><a aria-label="3"></a>          <span class="at">top =</span> <span class="st">"60%"</span>,</span>
+<span id="cb5-4"><a aria-label="4"></a>          <span class="at">left =</span> <span class="st">"70%"</span>,</span>
+<span id="cb5-5"><a aria-label="5"></a>          <span class="co"># padding = "10px",</span></span>
+<span id="cb5-6"><a aria-label="6"></a>          <span class="co"># margin = "50%",</span></span>
+<span id="cb5-7"><a aria-label="7"></a>          <span class="at">font_size =</span> <span class="st">"3.5em"</span>,</span>
+<span id="cb5-8"><a aria-label="8"></a>          <span class="at">warn_when =</span> <span class="dv">30</span>,</span>
+<span id="cb5-9"><a aria-label="9"></a>          <span class="at">blink_colon =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-10"><a aria-label="10"></a>          <span class="at">play_sound =</span> <span class="cn">TRUE</span></span>
+<span id="cb5-11"><a aria-label="11"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_6e00bf9c" minutes="3" seconds="0" warn-when="30" update-every="1" play-sound="true" blink-colon="true" tabindex="0" style="top:60%;left:70%;--countdown-font-size:3.5em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_d3e6ca58" minutes="3" seconds="0" warn-when="30" update-every="1" play-sound="true" blink-colon="true" tabindex="0" style="top:60%;left:70%;--countdown-font-size:3.5em;"></countdown-timer>
 </div>
 </div>
 <div class="callout callout-important callout-style-simple">
@@ -562,44 +683,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
