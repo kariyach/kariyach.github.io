@@ -342,7 +342,7 @@
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>reveal.jsを例に説明しますが、html出力で同じです</p>
+<p>reveal.jsを例に説明しますが、出力フォーマットのhtmlも、同じ問題を抱えており、同様の解決策が役立ちます</p>
 </div>
 </div>
 </div>
@@ -365,7 +365,10 @@
 <h2>設定の共有と管理 &gt; 問題</h2>
 <h3 id="前提">前提</h3>
 <ul>
-<li>複数のスライドファイルを作成する必要がある</li>
+<li>複数のスライドファイルを作成する必要がある
+<ul>
+<li>授業教材；学会報告</li>
+</ul></li>
 <li>スライドごとにコンテンツは異なるが、基本的な体裁・デザイン・設定は共通
 <ul>
 <li>共通点：氏名や所属、メールアドレスなどの基本情報</li>
@@ -407,7 +410,7 @@
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>生成AIは知りたいことを教えてくれることが多いですが、ネット検索には、思いがけない情報やアイデアとの「偶然の出会い」があります</p>
+<p>生成AIは知りたいことを教えてくれることが多いですが、ネット検索には、思いがけない情報やアイデアとの「偶然の出会い」があります（芋づる式に発見がある）</p>
 </div>
 </div>
 </div>
@@ -545,19 +548,14 @@ title-slide-attributes:
     data-background-position: 90% 90%
 </code></pre>
 </div></div>
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<ul>
-<li>共通する設定：_slides.yml に記述</li>
-<li>スライドごとに異なる設定（タイトル、日付、画像など）：YAMLフロントマターに記述</li>
-</ul>
-</div>
-</div>
-</div>
+<ol type="1">
+<li>タイトル類を除くすべてのコードをコピーして、「_slides.yml」名で保存</li>
+<li><code>metadata-files:</code>でファイルを読み込み</li>
+</ol>
+<!-- :::{.callout-note appearance="simple"} -->
+<!-- - 共通する設定：_slides.yml に記述 -->
+<!-- - スライドごとに異なる設定（タイトル、日付、画像など）：YAMLフロントマターに記述 -->
+<!-- ::: -->
 </section>
 <section id="設定の共有と管理-setupチャンク" class="slide level2">
 <h2>設定の共有と管理 &gt; setupチャンク</h2>
@@ -619,6 +617,10 @@ title-slide-attributes:
 <span id="cb4-6"><a aria-label="6"></a><span class="fu">library</span>(countdown)</span>
 <span id="cb4-7"><a aria-label="7"></a><span class="fu">library</span>(qrcode)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<ol type="1">
+<li>左のコードをすべてコピーして「_setup.R」名で保存</li>
+<li>setupチャンクにsource()関数を挿入して「_setup.R」をロード</li>
+</ol>
 <div class="callout callout-note callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
@@ -725,7 +727,7 @@ title-slide-attributes:
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_a5dc1d65" minutes="20" seconds="0" warn-when="30" update-every="1" play-sound="true" blink-colon="true" tabindex="0" style="top:75%;left:60%;--countdown-font-size:4em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_2d0f34b4" minutes="20" seconds="0" warn-when="30" update-every="1" play-sound="true" blink-colon="true" tabindex="0" style="top:75%;left:60%;--countdown-font-size:4em;"></countdown-timer>
 </div>
 </div>
 </section>
