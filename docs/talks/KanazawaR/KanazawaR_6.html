@@ -332,10 +332,6 @@
 </section>
 <section id="設定の共有と管理-1" class="slide level2">
 <h2>設定の共有と管理</h2>
-<h3 id="reveal.js">reveal.js</h3>
-<ul>
-<li>Quartoでスライドを作成するための出力フォーマット（JavaScriptベース）</li>
-</ul>
 <div class="callout callout-tip callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
@@ -346,6 +342,10 @@
 </div>
 </div>
 </div>
+<h3 id="reveal.js">reveal.js</h3>
+<ul>
+<li>Quartoでスライドを作成するための出力フォーマット（JavaScriptベース）</li>
+</ul>
 <h4 id="利点">利点</h4>
 <ul>
 <li>Rのコードを実行し、その結果（表・グラフなど）をスライドに表示できる
@@ -676,6 +676,7 @@ title-slide-attributes:
 <h3 id="quarto-reveal.jsのみ">quarto-reveal.jsのみ</h3>
 <ul>
 <li><a href="https://github.com/CodingTigerTang/deckroadmap">deckroadmap</a></li>
+<li><a href="https://github.com/royfrancis/quarto-revealjs-pointer">quarto-revealjs-pointer</a></li>
 <li><a href="https://github.com/EmilHvitfeldt/quarto-revealjs-chat-bubbles">quarto-revealjs-chat-bubbles</a></li>
 <li><a href="https://github.com/denniskniep/reveal.js-plugin-spotlight">reveal.js-plugin-spotlight</a></li>
 </ul>
@@ -709,9 +710,20 @@ title-slide-attributes:
 ## コンテンツ
 ## コンテンツ</code></pre>
 </section>
+<section id="quarto-revealjs-pointer" class="slide level2">
+<h2>quarto-revealjs-pointer</h2>
+<pre><code>
+    pointer:
+      key: p
+      color: red
+      trail: true
+      trailDuration: 300
+      trailSampling: 1
+      trailMaxPoints: 25
+</code></pre>
+</section>
 <section id="chat-bubbles-レンダー" class="slide level2">
 <h2>chat-bubbles &gt; レンダー</h2>
-<h3 id="受講生の心理的安全性">受講生の心理的安全性</h3>
 <div class="chat">
 <div class="speaker-1">
 <p>この本、面白かったよ</p>
@@ -782,20 +794,20 @@ title-slide-attributes:
 <li>countdown</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-label="1"></a><span class="fu">countdown</span>(</span>
-<span id="cb9-2"><a aria-label="2"></a>  <span class="at">minutes =</span> <span class="dv">20</span>,</span>
-<span id="cb9-3"><a aria-label="3"></a>  <span class="at">seconds =</span> <span class="dv">0</span>,</span>
-<span id="cb9-4"><a aria-label="4"></a>  <span class="at">top =</span> <span class="st">"75%"</span>,</span>
-<span id="cb9-5"><a aria-label="5"></a>  <span class="at">left =</span> <span class="st">"60%"</span>,</span>
-<span id="cb9-6"><a aria-label="6"></a>  <span class="at">font_size =</span> <span class="st">"4em"</span>,</span>
-<span id="cb9-7"><a aria-label="7"></a>  <span class="at">warn_when =</span> <span class="dv">30</span>,</span>
-<span id="cb9-8"><a aria-label="8"></a>  <span class="at">blink_colon =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb9-9"><a aria-label="9"></a>  <span class="at">play_sound =</span> <span class="cn">TRUE</span></span>
-<span id="cb9-10"><a aria-label="10"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a><span class="fu">countdown</span>(</span>
+<span id="cb10-2"><a aria-label="2"></a>  <span class="at">minutes =</span> <span class="dv">20</span>,</span>
+<span id="cb10-3"><a aria-label="3"></a>  <span class="at">seconds =</span> <span class="dv">0</span>,</span>
+<span id="cb10-4"><a aria-label="4"></a>  <span class="at">top =</span> <span class="st">"75%"</span>,</span>
+<span id="cb10-5"><a aria-label="5"></a>  <span class="at">left =</span> <span class="st">"60%"</span>,</span>
+<span id="cb10-6"><a aria-label="6"></a>  <span class="at">font_size =</span> <span class="st">"4em"</span>,</span>
+<span id="cb10-7"><a aria-label="7"></a>  <span class="at">warn_when =</span> <span class="dv">30</span>,</span>
+<span id="cb10-8"><a aria-label="8"></a>  <span class="at">blink_colon =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-9"><a aria-label="9"></a>  <span class="at">play_sound =</span> <span class="cn">TRUE</span></span>
+<span id="cb10-10"><a aria-label="10"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_1d9bc292" minutes="20" seconds="0" warn-when="30" update-every="1" play-sound="true" blink-colon="true" tabindex="0" style="top:75%;left:60%;--countdown-font-size:4em;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_f01b5350" minutes="20" seconds="0" warn-when="30" update-every="1" play-sound="true" blink-colon="true" tabindex="0" style="top:75%;left:60%;--countdown-font-size:4em;"></countdown-timer>
 </div>
 </div>
 </section>
@@ -804,9 +816,9 @@ title-slide-attributes:
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a>code <span class="ot">&lt;-</span> <span class="fu">qr_code</span>(<span class="st">"https://kanazawar.connpass.com"</span>)</span>
-<span id="cb10-2"><a aria-label="2"></a></span>
-<span id="cb10-3"><a aria-label="3"></a><span class="fu">plot</span>(code)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-label="1"></a>code <span class="ot">&lt;-</span> <span class="fu">qr_code</span>(<span class="st">"https://kanazawar.connpass.com"</span>)</span>
+<span id="cb11-2"><a aria-label="2"></a></span>
+<span id="cb11-3"><a aria-label="3"></a><span class="fu">plot</span>(code)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" data-align="center">
