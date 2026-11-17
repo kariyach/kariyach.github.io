@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -40,18 +40,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-84db9afa2f72c9c9483aca3c02636b03.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-68bd8c76dbcdefe7c52e224e8f16d286.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-84db9afa2f72c9c9483aca3c02636b03.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f587e388f3c2c0943f16466343e7e1e5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-895b0ec5b199259a731aa66729b6f6e6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-f587e388f3c2c0943f16466343e7e1e5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -102,12 +103,6 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -130,12 +125,6 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -158,12 +147,6 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -201,7 +184,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../style_en.css">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -224,6 +207,7 @@ window.Quarto = {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -253,13 +237,19 @@ window.Quarto = {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -353,6 +343,7 @@ window.Quarto = {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -367,15 +358,14 @@ window.Quarto = {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CHIHIRO KARIYA</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -432,8 +422,9 @@ window.Quarto = {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -458,7 +449,7 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">Contents</h2>
    
   <ul>
@@ -469,7 +460,7 @@ window.Quarto = {
 </nav>
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="QWN0aXZlJTIwTGVhcm5pbmc=">Active Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RGF0YSUyMFNjaWVuY2U=">Data Science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SW50cm9kdWN0aW9u">Introduction <span class="quarto-category-count">(2)</span></div><div class="category" data-category="SmFwYW5lc2U=">Japanese <span class="quarto-category-count">(4)</span></div><div class="category" data-category="UG9saXRpY3M=">Politics <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content" tabindex="-1">
 
 
 
@@ -481,17 +472,17 @@ window.Quarto = {
 <div id="listing-course" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
 <div class="quarto-post image-right" data-index="0" data-categories="QWN0aXZlJTIwTGVhcm5pbmclMkNKYXBhbmVzZQ==" data-listing-file-modified-sort="1784870604181" data-listing-reading-time-sort="1" data-listing-word-count-sort="176">
-<div class="thumbnail"><a href="../teaching/course/Biblio-Battle.html" class="no-external">
+<div class="thumbnail"><a href="../teaching/course/Biblio-Battle.html" class="no-external-icon">
 
 <p class="card-img-top"><img loading='lazy' src="course/img/Biblio-Battle.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../teaching/course/Biblio-Battle.html" class="no-external">Introduction to ‘Biblio-Battle’ (A Popular Japanese Book-review Game):</a>
+<a href="../teaching/course/Biblio-Battle.html" class="no-external-icon">Introduction to ‘Biblio-Battle’ (A Popular Japanese Book-review Game):</a>
 </h3>
 <div class="listing-subtitle">
-<a href="../teaching/course/Biblio-Battle.html" class="no-external">Sharing the Delight of Reading</a>
+<a href="../teaching/course/Biblio-Battle.html" class="no-external-icon">Sharing the Delight of Reading</a>
 </div>
 <div class="listing-categories">
 
@@ -500,27 +491,28 @@ window.Quarto = {
 <div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
 
 </div>
-<div class="delink listing-description"><a href="../teaching/course/Biblio-Battle.html" class="no-external">
+<div class="listing-description">
+<a href="../teaching/course/Biblio-Battle.html" class="no-external-icon">
 This course introduces Biblio-Battle, a popular Japanese book-review game in which participants each have five minutes to present a recommended book, followed by a vote to select the “Champion Book” that the audience most wants to read. Through small-group activities and practice sessions, students develop skills in summarizing books, delivering engaging presentations, facilitating discussions, and managing time effectively. The course also encourages participants to appreciate diverse reading…
-</a></div>
-</div>
-<div class="metadata">
-<a href="../teaching/course/Biblio-Battle.html" class="no-external">
 </a>
 </div>
 </div>
+<div class="metadata">
+
+</div>
+</div>
 <div class="quarto-post image-right" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNKYXBhbmVzZQ==" data-listing-file-modified-sort="1784103736562" data-listing-reading-time-sort="1" data-listing-word-count-sort="170">
-<div class="thumbnail"><a href="../teaching/course/DataScience.html" class="no-external">
+<div class="thumbnail"><a href="../teaching/course/DataScience.html" class="no-external-icon">
 
 <p class="card-img-top"><img loading='lazy' src="course/img/tidyverse_circle.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../teaching/course/DataScience.html" class="no-external">R and Quarto for Data Science:</a>
+<a href="../teaching/course/DataScience.html" class="no-external-icon">R and Quarto for Data Science:</a>
 </h3>
 <div class="listing-subtitle">
-<a href="../teaching/course/DataScience.html" class="no-external">Visualizing Data Visualizing Data</a>
+<a href="../teaching/course/DataScience.html" class="no-external-icon">Visualizing Data Visualizing Data</a>
 </div>
 <div class="listing-categories">
 
@@ -529,28 +521,26 @@ This course introduces Biblio-Battle, a popular Japanese book-review game in whi
 <div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
 
 </div>
-<div class="delink listing-description"><a href="../teaching/course/DataScience.html" class="no-external">
+<div class="listing-description">
+<a href="../teaching/course/DataScience.html" class="no-external-icon">
 This course introduces the statistical programming language R and Quarto, a modern publishing system for reproducible research. Designed for beginners and open to students from all disciplines, it emphasizes practical data visualization rather than statistical theory. Students learn to create clear, effective graphics with ggplot2, automate repetitive tasks through coding, and improve the reproducibility of their work. The course also encourages the use of generative AI tools, such as ChatGPT…
-</a></div>
-</div>
-<div class="metadata">
-<a href="../teaching/course/DataScience.html" class="no-external">
 </a>
 </div>
 </div>
+<div class="metadata">
+
+</div>
+</div>
 <div class="quarto-post image-right" data-index="2" data-categories="UG9saXRpY3MlMkNJbnRyb2R1Y3Rpb24lMkNKYXBhbmVzZQ==" data-listing-file-modified-sort="1784103681101" data-listing-reading-time-sort="1" data-listing-word-count-sort="168">
-<div class="thumbnail"><a href="../teaching/course/politics1.html" class="no-external">
+<div class="thumbnail"><a href="../teaching/course/politics1.html" class="no-external-icon">
 
 <p class="card-img-top"><img loading='lazy' src="course/img/politics1.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../teaching/course/politics1.html" class="no-external">Introduction to Political Science I</a>
+<a href="../teaching/course/politics1.html" class="no-external-icon">Introduction to Political Science I</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../teaching/course/politics1.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('UG9saXRpY3M='); return false;">Politics</div>
@@ -560,28 +550,26 @@ This course introduces the statistical programming language R and Quarto, a mode
 <div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
 
 </div>
-<div class="delink listing-description"><a href="../teaching/course/politics1.html" class="no-external">
+<div class="listing-description">
+<a href="../teaching/course/politics1.html" class="no-external-icon">
 This introductory course provides students with a foundational understanding of political science by examining the institutions, concepts, and processes that shape contemporary politics. It explores topics including popular sovereignty, the welfare state, electoral systems, democracy and totalitarianism, political institutions, bureaucracy, and local government in Japan. Through lectures, discussions, group work, and the analysis of current news and parliamentary proceedings, students learn to…
-</a></div>
-</div>
-<div class="metadata">
-<a href="../teaching/course/politics1.html" class="no-external">
 </a>
 </div>
 </div>
+<div class="metadata">
+
+</div>
+</div>
 <div class="quarto-post image-right" data-index="3" data-categories="UG9saXRpY3MlMkNJbnRyb2R1Y3Rpb24lMkNKYXBhbmVzZQ==" data-listing-file-modified-sort="1784869850063" data-listing-reading-time-sort="1" data-listing-word-count-sort="177">
-<div class="thumbnail"><a href="../teaching/course/politics2.html" class="no-external">
+<div class="thumbnail"><a href="../teaching/course/politics2.html" class="no-external-icon">
 
 <p class="card-img-top"><img loading='lazy' src="course/img/politics2.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../teaching/course/politics2.html" class="no-external">Introduction to Political Science II</a>
+<a href="../teaching/course/politics2.html" class="no-external-icon">Introduction to Political Science II</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../teaching/course/politics2.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('UG9saXRpY3M='); return false;">Politics</div>
@@ -591,13 +579,14 @@ This introductory course provides students with a foundational understanding of 
 <div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
 
 </div>
-<div class="delink listing-description"><a href="../teaching/course/politics2.html" class="no-external">
+<div class="listing-description">
+<a href="../teaching/course/politics2.html" class="no-external-icon">
 This course introduces the fundamental concepts of international relations and comparative politics, emphasizing the importance of understanding Japan within a global context. Through comparative analysis, students examine how political institutions, international society, and public policy operate across different countries. Major topics include sovereignty, the nation-state, international law, electoral and bureaucratic systems, global issues, and comparative political institutions. Case…
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../teaching/course/politics2.html" class="no-external">
-</a>
+
 </div>
 </div>
 </div>
@@ -609,91 +598,83 @@ This course introduces the fundamental concepts of international relations and c
 <div id="listing-workshop" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
 <div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1786141999758" data-listing-reading-time-sort="3" data-listing-word-count-sort="418">
-<div class="thumbnail"><a href="../teaching/workshop/InquiryWorkshopattheLibrary.html" class="no-external">
+<div class="thumbnail"><a href="../teaching/workshop/InquiryWorkshopattheLibrary.html" class="no-external-icon">
 
 <p class="card-img-top"><img loading='lazy' src="workshop/img/logo_InquiryWorkshopattheLibrary.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../teaching/workshop/InquiryWorkshopattheLibrary.html" class="no-external">Growing Questions through Books: An Inquiry Workshop at the Library</a>
+<a href="../teaching/workshop/InquiryWorkshopattheLibrary.html" class="no-external-icon">Growing Questions through Books: An Inquiry Workshop at the Library</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../teaching/workshop/InquiryWorkshopattheLibrary.html" class="no-external"></a>
-</div>
-<div class="delink listing-description"><a href="../teaching/workshop/InquiryWorkshopattheLibrary.html" class="no-external">
+<div class="listing-description">
+<a href="../teaching/workshop/InquiryWorkshopattheLibrary.html" class="no-external-icon">
 Inquiry-based learning has become a required component of upper secondary education in Japan. As a result, many high school students are now expected to identify their own topics, formulate questions, gather information, and pursue an extended inquiry. However, students often struggle with the earliest stages of this process, particularly with deciding what to investigate and developing meaningful questions.
-</a></div>
-</div>
-<div class="metadata">
-<a href="../teaching/workshop/InquiryWorkshopattheLibrary.html" class="no-external">
 </a>
 </div>
 </div>
+<div class="metadata">
+
+</div>
+</div>
 <div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1784870437943" data-listing-reading-time-sort="3" data-listing-word-count-sort="432">
-<div class="thumbnail"><a href="../teaching/workshop/ReadingSeminar.html" class="no-external">
+<div class="thumbnail"><a href="../teaching/workshop/ReadingSeminar.html" class="no-external-icon">
 
 <p class="card-img-top"><img loading='lazy' src="workshop/img/logo_ReadingSeminar.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../teaching/workshop/ReadingSeminar.html" class="no-external">Reading Seminar: Bridging High School and University Learning</a>
+<a href="../teaching/workshop/ReadingSeminar.html" class="no-external-icon">Reading Seminar: Bridging High School and University Learning</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../teaching/workshop/ReadingSeminar.html" class="no-external"></a>
-</div>
-<div class="delink listing-description"><a href="../teaching/workshop/ReadingSeminar.html" class="no-external">
+<div class="listing-description">
+<a href="../teaching/workshop/ReadingSeminar.html" class="no-external-icon">
 This reading seminar bridges high school and university learning by encouraging students to share the experience of reading and discussing a topical book written for, or accessible to, high school students. Participants read the assigned text in advance, complete a short preparatory task, exchange ideas on its key arguments, questions, and insights, and collaboratively write a book introduction. Through seminar-style discussion, students deepen their understanding of both the text and its…
-</a></div>
-</div>
-<div class="metadata">
-<a href="../teaching/workshop/ReadingSeminar.html" class="no-external">
 </a>
 </div>
 </div>
+<div class="metadata">
+
+</div>
+</div>
 <div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1784870417233" data-listing-reading-time-sort="1" data-listing-word-count-sort="141">
-<div class="thumbnail"><a href="../teaching/workshop/UnequalMonopoly.html" class="no-external">
+<div class="thumbnail"><a href="../teaching/workshop/UnequalMonopoly.html" class="no-external-icon">
 
 <p class="card-img-top"><img loading='lazy' src="workshop/img/logo_UnequalMonopoly.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../teaching/workshop/UnequalMonopoly.html" class="no-external">“Unfair Monopoly”: Experiencing Social Inequality Through a Board Game</a>
+<a href="../teaching/workshop/UnequalMonopoly.html" class="no-external-icon">“Unfair Monopoly”: Experiencing Social Inequality Through a Board Game</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../teaching/workshop/UnequalMonopoly.html" class="no-external"></a>
-</div>
-<div class="delink listing-description"><a href="../teaching/workshop/UnequalMonopoly.html" class="no-external">
+<div class="listing-description">
+<a href="../teaching/workshop/UnequalMonopoly.html" class="no-external-icon">
 This seminar uses a specially designed board game, “Unfair Monopoly” developed by the French nonprofit organization Observatoire des inégalités for educational purposes, to explore social inequality. Unlike ordinary board games, in which all players begin with equal conditions, this game assigns players different starting resources, opportunities, and advantages based on social categories. Through gameplay, students experience how unequal initial conditions and institutional rules can shape…
-</a></div>
-</div>
-<div class="metadata">
-<a href="../teaching/workshop/UnequalMonopoly.html" class="no-external">
 </a>
 </div>
 </div>
+<div class="metadata">
+
+</div>
+</div>
 <div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1784873107518" data-listing-reading-time-sort="1" data-listing-word-count-sort="136">
-<div class="thumbnail"><a href="../teaching/workshop/cinema-dialog.html" class="no-external">
+<div class="thumbnail"><a href="../teaching/workshop/cinema-dialog.html" class="no-external-icon">
 
 <p class="card-img-top"><img loading='lazy' src="workshop/img/logo_cinema-dialog.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../teaching/workshop/cinema-dialog.html" class="no-external">Cinema Dialog</a>
+<a href="../teaching/workshop/cinema-dialog.html" class="no-external-icon">Cinema Dialog</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../teaching/workshop/cinema-dialog.html" class="no-external"></a>
-</div>
-<div class="delink listing-description"><a href="../teaching/workshop/cinema-dialog.html" class="no-external">
+<div class="listing-description">
+<a href="../teaching/workshop/cinema-dialog.html" class="no-external-icon">
 This seminar provides an opportunity for participants to watch films and documentaries on the themes of humanity, society, and nature, and to engage in dialogue among groups based on their impressions and questions about the films. By expressing their own opinions and engaging with the perspectives of others, participants can deepen their understanding of the works while broadening and deepening their perspectives and ways of thinking about humanity, society, and nature.
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../teaching/workshop/cinema-dialog.html" class="no-external">
-</a>
+
 </div>
 </div>
 </div>
@@ -718,15 +699,50 @@ This seminar provides an opportunity for participants to watch films and documen
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -801,11 +817,30 @@ This seminar provides an opportunity for participants to watch films and documen
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
         var filterRegex = new RegExp("https:\/\/kariyach\.github\.io\/");
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -819,10 +854,72 @@ This seminar provides an opportunity for participants to watch films and documen
             if (link.getAttribute("rel") === null) {
               link.setAttribute("rel", "noopener");
             }
+            describeNewWindow(link);
+          if (!link.classList.contains('no-external-icon')) {
             // default icon
             link.classList.add("external");
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -836,6 +933,7 @@ This seminar provides an opportunity for participants to watch films and documen
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -998,44 +1096,54 @@ This seminar provides an opportunity for participants to watch films and documen
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1133,6 +1241,9 @@ This seminar provides an opportunity for participants to watch films and documen
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 <footer class="footer">

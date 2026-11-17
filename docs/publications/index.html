@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -40,18 +40,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-84db9afa2f72c9c9483aca3c02636b03.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-68bd8c76dbcdefe7c52e224e8f16d286.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-84db9afa2f72c9c9483aca3c02636b03.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f587e388f3c2c0943f16466343e7e1e5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-895b0ec5b199259a731aa66729b6f6e6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-f587e388f3c2c0943f16466343e7e1e5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -102,12 +103,6 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -130,12 +125,6 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -158,12 +147,6 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -186,12 +169,6 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -229,7 +206,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../style_en.css">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -252,6 +229,7 @@ window.Quarto = {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -281,13 +259,19 @@ window.Quarto = {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -381,6 +365,7 @@ window.Quarto = {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -395,15 +380,14 @@ window.Quarto = {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CHIHIRO KARIYA</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -460,8 +444,9 @@ window.Quarto = {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -486,7 +471,7 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">Contents</h2>
    
   <ul>
@@ -498,7 +483,7 @@ window.Quarto = {
 </nav>
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="RWRtdW5kJTIwQnVya2U=">Edmund Burke <span class="quarto-category-count">(8)</span></div><div class="category" data-category="RW1waXJl">Empire <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RW1waXJlcw==">Empires <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RW5saWdodGVubWVudA==">Enlightenment <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SW50ZXJzdGF0ZSUyMFJlbGF0aW9ucw==">Interstate Relations <span class="quarto-category-count">(2)</span></div><div class="category" data-category="SmFwYW5lc2U=">Japanese <span class="quarto-category-count">(10)</span></div><div class="category" data-category="UmVjZXB0aW9uJTIwb2YlMjBSaGV0b3JpYw==">Reception of Rhetoric <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content" tabindex="-1">
 
 
 
@@ -517,10 +502,10 @@ window.Quarto = {
 <div class="quarto-post image-right" data-index="0" data-categories="RWRtdW5kJTIwQnVya2UlMkNKYXBhbmVzZQ==" data-listing-date-sort="1741705200000" data-listing-file-modified-sort="1784086543553" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="393">
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../publications/ArticlesandChapters/InternationalPoliticsofJealousy.html" class="no-external">The International Politics of Jealousy:</a>
+<a href="../publications/ArticlesandChapters/InternationalPoliticsofJealousy.html" class="no-external-icon">The International Politics of Jealousy:</a>
 </h3>
 <div class="listing-subtitle">
-<a href="../publications/ArticlesandChapters/InternationalPoliticsofJealousy.html" class="no-external">Edmund Burke, Adam Smith and James Mackintosh</a>
+<a href="../publications/ArticlesandChapters/InternationalPoliticsofJealousy.html" class="no-external-icon">Edmund Burke, Adam Smith and James Mackintosh</a>
 </div>
 <div class="listing-categories">
 
@@ -529,12 +514,14 @@ window.Quarto = {
 <div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
 
 </div>
-<div class="delink listing-description"><a href="../publications/ArticlesandChapters/InternationalPoliticsofJealousy.html" class="no-external">
+<div class="listing-description">
+<a href="../publications/ArticlesandChapters/InternationalPoliticsofJealousy.html" class="no-external-icon">
 This paper aims to think about global governance through the classics, focusing on the language, in particular on jealousy, of international relations in Britain during the French Revolutionary Wars. This paper explores perceptions on relations between states of the statesman Edmund Burke (1730-1797) and his contemporaries (the political economist (philosopher) Adam Smith (1723-1790) and the political pamphleteer James Mackintosh (1765-1832) . Through the above discussion, it questions what is…
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../publications/ArticlesandChapters/InternationalPoliticsofJealousy.html" class="no-external">
+<a href="../publications/ArticlesandChapters/InternationalPoliticsofJealousy.html" class="no-external-icon">
 <div class="listing-date">
 March 12, 2025
 </div>
@@ -544,10 +531,10 @@ March 12, 2025
 <div class="quarto-post image-right" data-index="1" data-categories="RW5saWdodGVubWVudCUyQ0VtcGlyZSUyQ0phcGFuZXNl" data-listing-date-sort="1710428400000" data-listing-file-modified-sort="1784086638445" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="236">
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../publications/ArticlesandChapters/JamesMackintoshinBombay.html" class="no-external">James Mackintosh in Bombay:</a>
+<a href="../publications/ArticlesandChapters/JamesMackintoshinBombay.html" class="no-external-icon">James Mackintosh in Bombay:</a>
 </h3>
 <div class="listing-subtitle">
-<a href="../publications/ArticlesandChapters/JamesMackintoshinBombay.html" class="no-external">Colonial Rule of the Scottish Enlightenment</a>
+<a href="../publications/ArticlesandChapters/JamesMackintoshinBombay.html" class="no-external-icon">Colonial Rule of the Scottish Enlightenment</a>
 </div>
 <div class="listing-categories">
 
@@ -558,12 +545,14 @@ March 12, 2025
 <div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
 
 </div>
-<div class="delink listing-description"><a href="../publications/ArticlesandChapters/JamesMackintoshinBombay.html" class="no-external">
+<div class="listing-description">
+<a href="../publications/ArticlesandChapters/JamesMackintoshinBombay.html" class="no-external-icon">
 Neither his contemporaries nor today’s scholarship has paid enough attention to James Mackintosh in Bombay. Mackintosh, a leading figure in the Scottish Enlightenment, was the author of A Discourse on the Study of the Law of Nature and Nations, a book that is forgotten today but that attracted the attention of his contemporaries. He was an exceptional political theorist who stayed in the Indian subcontinent. This study organizes his discussion of state, relations between states, and narrative…
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../publications/ArticlesandChapters/JamesMackintoshinBombay.html" class="no-external">
+<a href="../publications/ArticlesandChapters/JamesMackintoshinBombay.html" class="no-external-icon">
 <div class="listing-date">
 March 15, 2024
 </div>
@@ -573,10 +562,10 @@ March 15, 2024
 <div class="quarto-post image-right" data-index="2" data-categories="RWRtdW5kJTIwQnVya2UlMkNJbnRlcnN0YXRlJTIwUmVsYXRpb25zJTJDRW1waXJlcyUyQ0phcGFuZXNl" data-listing-date-sort="1648134000000" data-listing-file-modified-sort="1784086638782" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="123">
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../publications/ArticlesandChapters/LanguageofWarandPeaceinBritain.html" class="no-external">The Language of War and Peace in Britain during the French Revolution:</a>
+<a href="../publications/ArticlesandChapters/LanguageofWarandPeaceinBritain.html" class="no-external-icon">The Language of War and Peace in Britain during the French Revolution:</a>
 </h3>
 <div class="listing-subtitle">
-<a href="../publications/ArticlesandChapters/LanguageofWarandPeaceinBritain.html" class="no-external">Controversy over Burke’s Letters on a Regicide Peace</a>
+<a href="../publications/ArticlesandChapters/LanguageofWarandPeaceinBritain.html" class="no-external-icon">Controversy over Burke’s Letters on a Regicide Peace</a>
 </div>
 <div class="listing-categories">
 
@@ -589,12 +578,14 @@ March 15, 2024
 <div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
 
 </div>
-<div class="delink listing-description"><a href="../publications/ArticlesandChapters/LanguageofWarandPeaceinBritain.html" class="no-external">
+<div class="listing-description">
+<a href="../publications/ArticlesandChapters/LanguageofWarandPeaceinBritain.html" class="no-external-icon">
 This paper examines the language of war and peace in Revolutionary-era Britain through political pamphlets responding to Edmund Burke’s <em>Letters on a Regicide Peace</em> (First and Second Letters). While Burke defended continued war against Revolutionary France, his opponents challenged both his arguments and his conception of peace. By analysing how these pamphleteers interpreted Burke and the rhetorical strategies they employed, and by comparing their arguments with leading modern interpretations…
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../publications/ArticlesandChapters/LanguageofWarandPeaceinBritain.html" class="no-external">
+<a href="../publications/ArticlesandChapters/LanguageofWarandPeaceinBritain.html" class="no-external-icon">
 <div class="listing-date">
 March 25, 2022
 </div>
@@ -604,10 +595,10 @@ March 25, 2022
 <div class="quarto-post image-right" data-index="3" data-categories="RWRtdW5kJTIwQnVya2UlMkNSZWNlcHRpb24lMjBvZiUyMFJoZXRvcmljJTJDSmFwYW5lc2U=" data-listing-date-sort="1615734000000" data-listing-file-modified-sort="1784086638514" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="280">
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../publications/ArticlesandChapters/EloquenceinWartime.html" class="no-external">The Eloquence in Wartime:</a>
+<a href="../publications/ArticlesandChapters/EloquenceinWartime.html" class="no-external-icon">The Eloquence in Wartime:</a>
 </h3>
 <div class="listing-subtitle">
-<a href="../publications/ArticlesandChapters/EloquenceinWartime.html" class="no-external">Mackintosh on Burke’s <em>Letters on a Regicide Peace</em></a>
+<a href="../publications/ArticlesandChapters/EloquenceinWartime.html" class="no-external-icon">Mackintosh on Burke’s <em>Letters on a Regicide Peace</em></a>
 </div>
 <div class="listing-categories">
 
@@ -618,12 +609,14 @@ March 25, 2022
 <div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
 
 </div>
-<div class="delink listing-description"><a href="../publications/ArticlesandChapters/EloquenceinWartime.html" class="no-external">
+<div class="listing-description">
+<a href="../publications/ArticlesandChapters/EloquenceinWartime.html" class="no-external-icon">
 This paper explores the political context of eloquence in Britain during the French Revolutionary Wars, by examining the controversy on peace with France. Burke’s enigmatic political pamphlet <em>Letters on a Regicide Peace</em>, published for continuing the war in 1796, is one of the most difficult works to interpret. The pamphlet which interweaves threads of rich rhetoric and antagonism toward France has kept scholarship away for a long time. Some scholars have found in the text international theory…<em></em><em></em><em></em><em></em><em></em>
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../publications/ArticlesandChapters/EloquenceinWartime.html" class="no-external">
+<a href="../publications/ArticlesandChapters/EloquenceinWartime.html" class="no-external-icon">
 <div class="listing-date">
 March 15, 2021
 </div>
@@ -633,10 +626,10 @@ March 15, 2021
 <div class="quarto-post image-right" data-index="4" data-categories="RWRtdW5kJTIwQnVya2UlMkNJbnRlcnN0YXRlJTIwUmVsYXRpb25zJTJDRW1waXJlcyUyQ0phcGFuZXNl" data-listing-date-sort="1572534000000" data-listing-file-modified-sort="1784086638387" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="114">
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../publications/ArticlesandChapters/LawofNationsinBritain.html" class="no-external">The Law of Nations in Britain during the French Revolution</a>
+<a href="../publications/ArticlesandChapters/LawofNationsinBritain.html" class="no-external-icon">The Law of Nations in Britain during the French Revolution</a>
 </h3>
 <div class="listing-subtitle">
-<a href="../publications/ArticlesandChapters/LawofNationsinBritain.html" class="no-external">Edmund Burke and James Mackintosh</a>
+<a href="../publications/ArticlesandChapters/LawofNationsinBritain.html" class="no-external-icon">Edmund Burke and James Mackintosh</a>
 </div>
 <div class="listing-categories">
 
@@ -649,12 +642,14 @@ March 15, 2021
 <div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
 
 </div>
-<div class="delink listing-description"><a href="../publications/ArticlesandChapters/LawofNationsinBritain.html" class="no-external">
+<div class="listing-description">
+<a href="../publications/ArticlesandChapters/LawofNationsinBritain.html" class="no-external-icon">
 This paper examines how the French Revolution transformed British understandings of the law of nations through the lens of counter-revolutionary thought. Focusing on Edmund Burke’s <em>Letters on a Regicide Peace</em> and James Mackintosh’s <em>A Discourse on the Law of Nature and Nations</em> (1799), it analyses how both authors reinterpreted international order in response to revolutionary France. Drawing on the frameworks of David Armitage and Edward Keene, and contrasting their arguments with Blackstone’s…
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../publications/ArticlesandChapters/LawofNationsinBritain.html" class="no-external">
+<a href="../publications/ArticlesandChapters/LawofNationsinBritain.html" class="no-external-icon">
 <div class="listing-date">
 November 1, 2019
 </div>
@@ -664,10 +659,10 @@ November 1, 2019
 <div class="quarto-post image-right" data-index="5" data-categories="RWRtdW5kJTIwQnVya2UlMkNFbXBpcmUlMkNKYXBhbmVzZQ==" data-listing-date-sort="1364655600000" data-listing-file-modified-sort="1784086511682" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="135">
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../publications/ArticlesandChapters/BurkeonEmpire.html" class="no-external">Burke on Empire:</a>
+<a href="../publications/ArticlesandChapters/BurkeonEmpire.html" class="no-external-icon">Burke on Empire:</a>
 </h3>
 <div class="listing-subtitle">
-<a href="../publications/ArticlesandChapters/BurkeonEmpire.html" class="no-external">The Dilemma of Liberty and Empire</a>
+<a href="../publications/ArticlesandChapters/BurkeonEmpire.html" class="no-external-icon">The Dilemma of Liberty and Empire</a>
 </div>
 <div class="listing-categories">
 
@@ -678,12 +673,14 @@ November 1, 2019
 <div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
 
 </div>
-<div class="delink listing-description"><a href="../publications/ArticlesandChapters/BurkeonEmpire.html" class="no-external">
+<div class="listing-description">
+<a href="../publications/ArticlesandChapters/BurkeonEmpire.html" class="no-external-icon">
 British conceptions of empire were shaped by political arguments on liberty. This study revisits on Edmund Burke’s empire thought in the light of the dilemma of liberty and empire, demonstrating that he struggled to reconcile liberty with empire. And the paper tries to offer his original contribution to history of discourse on empire. Burke regarded British Empire’s problems after the Seven Years’ War as unknown, and could not rely on the example of Roman, Greek, or even British colonies. In…
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../publications/ArticlesandChapters/BurkeonEmpire.html" class="no-external">
+<a href="../publications/ArticlesandChapters/BurkeonEmpire.html" class="no-external-icon">
 <div class="listing-date">
 March 31, 2013
 </div>
@@ -701,24 +698,26 @@ March 31, 2013
 <div class="quarto-post image-right" data-index="0" data-categories="SmFwYW5lc2U=" data-listing-date-sort="1520780400000" data-listing-file-modified-sort="1784086638581" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="26">
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../publications/BookReviews/ConceptofRepresentation.html" class="no-external">Review of Hanna Fenichel Pitkin, <em>The Concept of Representation</em></a>
+<a href="../publications/BookReviews/ConceptofRepresentation.html" class="no-external-icon">Review of Hanna Fenichel Pitkin, <em>The Concept of Representation</em></a>
 </h3>
 <div class="listing-subtitle">
-<a href="../publications/BookReviews/ConceptofRepresentation.html" class="no-external"><em>Tosho Shinbun</em> [The Book Review]</a>
+<a href="../publications/BookReviews/ConceptofRepresentation.html" class="no-external-icon"><em>Tosho Shinbun</em> [The Book Review]</a>
 </div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
 
 </div>
-<div class="delink listing-description"><a href="../publications/BookReviews/ConceptofRepresentation.html" class="no-external">
+<div class="listing-description">
+<a href="../publications/BookReviews/ConceptofRepresentation.html" class="no-external-icon">
 
 <li>‘Review of Hanna Fenichel Pitkin, <em>The Concept of Representation</em> (Japanese translation, Nagoya University Press, 2017), <em>Tosho Shinbun</em> [The Book Review], The Book Review Press, 3350.</li>
 
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../publications/BookReviews/ConceptofRepresentation.html" class="no-external">
+<a href="../publications/BookReviews/ConceptofRepresentation.html" class="no-external-icon">
 <div class="listing-date">
 March 12, 2018
 </div>
@@ -728,10 +727,10 @@ March 12, 2018
 <div class="quarto-post image-right" data-index="1" data-categories="RWRtdW5kJTIwQnVya2UlMkNKYXBhbmVzZQ==" data-listing-date-sort="1520780400000" data-listing-file-modified-sort="1784086638650" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../publications/BookReviews/EmpireandRevolution.html" class="no-external">Review of Richard Bourke, <em>Empire and Revolution: The Political Life of Edmund Burke</em></a>
+<a href="../publications/BookReviews/EmpireandRevolution.html" class="no-external-icon">Review of Richard Bourke, <em>Empire and Revolution: The Political Life of Edmund Burke</em></a>
 </h3>
 <div class="listing-subtitle">
-<a href="../publications/BookReviews/EmpireandRevolution.html" class="no-external"><em>Igirisu Tetugaku Kenkyu</em> [Studies in British Philosophy]</a>
+<a href="../publications/BookReviews/EmpireandRevolution.html" class="no-external-icon"><em>Igirisu Tetugaku Kenkyu</em> [Studies in British Philosophy]</a>
 </div>
 <div class="listing-categories">
 
@@ -740,14 +739,16 @@ March 12, 2018
 <div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
 
 </div>
-<div class="delink listing-description"><a href="../publications/BookReviews/EmpireandRevolution.html" class="no-external">
+<div class="listing-description">
+<a href="../publications/BookReviews/EmpireandRevolution.html" class="no-external-icon">
 
 <li>‘Review of Richard Bourke, <em>Empire and Revolution: The Political Life of Edmund Burke</em>, Princeton University Press, 2015’, <em>Igirisu Tetugaku Kenkyu</em> [Studies in British Philosophy], Japanese Society for British Philosophy, 40, 88-89.</li>
 
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../publications/BookReviews/EmpireandRevolution.html" class="no-external">
+<a href="../publications/BookReviews/EmpireandRevolution.html" class="no-external-icon">
 <div class="listing-date">
 March 12, 2018
 </div>
@@ -757,10 +758,10 @@ March 12, 2018
 <div class="quarto-post image-right" data-index="2" data-categories="RWRtdW5kJTIwQnVya2UlMkNKYXBhbmVzZQ==" data-listing-date-sort="1520780400000" data-listing-file-modified-sort="1784086617601" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30">
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../publications/BookReviews/FoundationsofModernInternationalThought.html" class="no-external">‘Review of David Armitage, <em>Foundations of Modern International Thought</em></a>
+<a href="../publications/BookReviews/FoundationsofModernInternationalThought.html" class="no-external-icon">‘Review of David Armitage, <em>Foundations of Modern International Thought</em></a>
 </h3>
 <div class="listing-subtitle">
-<a href="../publications/BookReviews/FoundationsofModernInternationalThought.html" class="no-external"><em>Igirisu Tetugaku Kenkyu</em> [Studies in British Philosophy]</a>
+<a href="../publications/BookReviews/FoundationsofModernInternationalThought.html" class="no-external-icon"><em>Igirisu Tetugaku Kenkyu</em> [Studies in British Philosophy]</a>
 </div>
 <div class="listing-categories">
 
@@ -769,14 +770,16 @@ March 12, 2018
 <div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
 
 </div>
-<div class="delink listing-description"><a href="../publications/BookReviews/FoundationsofModernInternationalThought.html" class="no-external">
+<div class="listing-description">
+<a href="../publications/BookReviews/FoundationsofModernInternationalThought.html" class="no-external-icon">
 
 <li>‘Review of David Armitage, <em>Foundations of Modern International Thought</em> (Japanese translation, Hosei University Press, 2015), <em>Igirisu Tetugaku Kenkyu</em> [Studies in British Philosophy], Japanese Society for British Philosophy, 39, 105-107.</li>
 
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../publications/BookReviews/FoundationsofModernInternationalThought.html" class="no-external">
+<a href="../publications/BookReviews/FoundationsofModernInternationalThought.html" class="no-external-icon">
 <div class="listing-date">
 March 12, 2018
 </div>
@@ -794,10 +797,10 @@ March 12, 2018
 <div class="quarto-post image-right" data-index="0" data-categories="RWRtdW5kJTIwQnVya2UlMkNKYXBhbmVzZQ==" data-listing-date-sort="1520780400000" data-listing-file-modified-sort="1784090890830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../publications/Translations/KautilyanPrinciplesandtheLawofNations.html" class="no-external">C. H. Alexandrowicz. ‘Kautilyan Principles and the Law of Nations’</a>
+<a href="../publications/Translations/KautilyanPrinciplesandtheLawofNations.html" class="no-external-icon">C. H. Alexandrowicz. ‘Kautilyan Principles and the Law of Nations’</a>
 </h3>
 <div class="listing-subtitle">
-<a href="../publications/Translations/KautilyanPrinciplesandtheLawofNations.html" class="no-external"><em>Gurobal Hisutori to Kokusai-ho</em> [Globai History and International Law]</a>
+<a href="../publications/Translations/KautilyanPrinciplesandtheLawofNations.html" class="no-external-icon"><em>Gurobal Hisutori to Kokusai-ho</em> [Globai History and International Law]</a>
 </div>
 <div class="listing-categories">
 
@@ -806,14 +809,16 @@ March 12, 2018
 <div class="listing-category" onclick="window.quartoListingCategory('SmFwYW5lc2U='); return false;">Japanese</div>
 
 </div>
-<div class="delink listing-description"><a href="../publications/Translations/KautilyanPrinciplesandtheLawofNations.html" class="no-external">
+<div class="listing-description">
+<a href="../publications/Translations/KautilyanPrinciplesandtheLawofNations.html" class="no-external-icon">
 
 <li>C. H. Alexandrowicz (2017), ‘Kautilyan Principles and the Law of Nations (1965-66)’, in <em>The Law of Nations in Global History</em>, David Armitage and Jennifer Pitts, eds, Oxford: Oxford University Press, 35-52. (Japanese translation, <em>Gurobal Hisutori to Kokusai-ho</em> [Globai History and International Law], Nihon Keizai Hyoronsya, 2020).</li>
 
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../publications/Translations/KautilyanPrinciplesandtheLawofNations.html" class="no-external">
+<a href="../publications/Translations/KautilyanPrinciplesandtheLawofNations.html" class="no-external-icon">
 <div class="listing-date">
 March 12, 2018
 </div>
@@ -842,15 +847,50 @@ March 12, 2018
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -925,11 +965,30 @@ March 12, 2018
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
         var filterRegex = new RegExp("https:\/\/kariyach\.github\.io\/");
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -943,10 +1002,72 @@ March 12, 2018
             if (link.getAttribute("rel") === null) {
               link.setAttribute("rel", "noopener");
             }
+            describeNewWindow(link);
+          if (!link.classList.contains('no-external-icon')) {
             // default icon
             link.classList.add("external");
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -960,6 +1081,7 @@ March 12, 2018
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1122,44 +1244,54 @@ March 12, 2018
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1257,6 +1389,9 @@ March 12, 2018
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 <footer class="footer">
